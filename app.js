@@ -1,0 +1,744 @@
+/* ==========================================================================
+   Bizu do Concurseiro X — aplicação (app.js)
+   Projeto independente. A organização (menu lateral, painel, cronômetro,
+   cronograma, revisões, desempenho, administração) segue a lógica do Bizu
+   Delta X, mas todo o código e a API (/api → Edge Function cx-api do projeto
+   Supabase bizu-concurseiro-x) são próprios.
+   Hierarquia: Curso → Disciplina → Assunto → Subassunto.
+   Nesta etapa só existe a estrutura curricular: toda área de conteúdo mostra
+   estado vazio até o material ser publicado pela administração.
+   ========================================================================== */
+'use strict';
+const API = '/api';
+const S = { cursos: [], curso: null, est: [], ass: {}, disc: {}, admin: false, dom: {}, perfil: {}, email: '', view: 'painel' };
+const $ = (id) => document.getElementById(id);
+const $$ = (s, r) => Array.from((r || document).querySelectorAll(s));
+const esc = (s) => String(s == null ? '' : s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+const pctOf = (o) => (o && o.total ? Math.round((o.acertos / o.total) * 100) : 0);
+const corP = (p) => (p < 50 ? 'var(--err)' : p < 70 ? 'var(--warn)' : 'var(--ok)');
+const hms = (s) => { s = Math.max(0, Math.floor(s)); return [Math.floor(s / 3600), Math.floor((s % 3600) / 60), s % 60].map((n) => String(n).padStart(2, '0')).join(':'); };
+const hm = (s) => { s = Math.max(0, Math.floor(s || 0)); const h = Math.floor(s / 3600), m = Math.floor((s % 3600) / 60); return h + 'h' + String(m).padStart(2, '0'); };
+const diaISO = (d) => d.getFullYear() + '-' + String(d.getMonth() + 1).padStart(2, '0') + '-' + String(d.getDate()).padStart(2, '0');
+const nomeDia = (iso, o) => { const [a, m, d] = iso.split('-').map(Number); return new Date(a, m - 1, d).toLocaleDateString('pt-BR', o || { weekday: 'long', day: '2-digit', month: '2-digit' }); };
+const lsGet = (k, d) => { try { const v = localStorage.getItem(k); return v == null ? d : v; } catch (e) { return d; } };
+const lsSet = (k, v) => { try { localStorage.setItem(k, v); } catch (e) {} };
+function emp(txt, sub) { return `<div class="empty"><div class="empty-icon"></div><div class="empty-txt">${esc(txt)}</div>${sub ? `<div class="muted small mt1">${esc(sub)}</div>` : ''}</div>`; }
+function ld(t) { return `<div style="padding:16px;color:var(--text-2);display:flex;align-items:center;gap:8px"><div class="ldots"><span></span><span></span><span></span></div>${t ? `<span>${esc(t)}</span>` : ''}</div>`; }
+const EM_PREPARO = 'Conteúdo em preparação';
+const EM_PREPARO_SUB = 'Nesta primeira etapa o Bizu do Concurseiro X tem apenas a estrutura do edital. O material será publicado aqui assim que estiver pronto.';
+
+async function api(path, opts = {}) {
+  opts.credentials = 'same-origin';
+  opts.headers = opts.headers || {};
+  if (opts.body && typeof opts.body !== 'string') opts.body = JSON.stringify(opts.body);
+  if (opts.body) { opts.headers['Content-Type'] = 'application/json'; opts.method = opts.method || 'POST'; }
+  const r = await fetch(API + path, opts);
+  const d = await r.json().catch(() => ({}));
+  if (r.status === 401 && !path.startsWith('/login') && $('shell').classList.contains('on')) { location.reload(); throw new Error('Sessão expirada'); }
+  if (r.status >= 400 || d.error) throw new Error(d.message || 'Erro ' + r.status);
+  return d;
+}
+const cq = () => 'curso=' + encodeURIComponent(S.curso ? S.curso.id : '');
+
+/* ---------------- LOGIN ---------------- */
+async function doLogin() {
+  const msg = $('loginMsg'); msg.textContent = '';
+  try {
+    await api('/login', { body: { email: $('loginEmail').value.trim(), password: $('loginSenha').value } });
+    iniciar();
+  } catch (e) { msg.textContent = e.message || 'E-mail ou senha incorretos'; }
+}
+$('btnLogin').addEventListener('click', doLogin);
+$('loginSenha').addEventListener('keydown', (e) => { if (e.key === 'Enter') doLogin(); });
+$('lnkEsqueci').addEventListener('click', async (e) => {
+  e.preventDefault();
+  const msg = $('loginMsg');
+  const email = ($('loginEmail').value || '').trim() || prompt('Digite seu e-mail cadastrado:') || '';
+  if (!email) return;
+  msg.textContent = 'Enviando...';
+  try { await api('/password/recover', { body: { email, redirect_to: location.origin + location.pathname } }); } catch (err) {}
+  msg.textContent = 'Se o e-mail existir, um link de recuperação foi enviado.';
+});
+$('btnReset').addEventListener('click', async () => {
+  const msg = $('resetMsg'); const p1 = $('resetSenha').value, p2 = $('resetSenha2').value;
+  if (p1.length < 6) { msg.textContent = 'A senha deve ter no mínimo 6 caracteres.'; return; }
+  if (p1 !== p2) { msg.textContent = 'As senhas não coincidem.'; return; }
+  const token = new URLSearchParams(location.hash.slice(1)).get('access_token');
+  if (!token) { msg.textContent = 'Link de recuperação inválido ou expirado.'; return; }
+  msg.textContent = 'Salvando...';
+  try {
+    await api('/password/redefinir', { body: { access_token: token, password: p1 } });
+    history.replaceState(null, '', location.pathname);
+    msg.textContent = 'Senha alterada! Você já pode entrar.';
+    setTimeout(() => { $('resetPanel').classList.add('hidden'); $('loginPanel').classList.remove('hidden'); }, 1500);
+  } catch (e) { msg.textContent = e.message; }
+});
+$('btnLogout').addEventListener('click', () => { api('/logout', { method: 'POST' }).catch(() => {}).finally(() => location.reload()); });
+
+/* ---------------- INÍCIO ---------------- */
+async function iniciar() {
+  const d = await api('/bootstrap');
+  $('gate').style.display = 'none'; $('shell').classList.add('on');
+  S.cursos = d.cursos || []; S.admin = !!d.admin; S.perfil = d.profile || {}; S.email = d.profile?.email || '';
+  S.metrics = d.metrics || {};
+  S.curso = S.cursos.find((c) => c.id === d.curso_id) || S.cursos[0] || null;
+  if (S.admin) { $('admNavSec').classList.remove('hidden'); $('admNavBtn').classList.remove('hidden'); }
+  $('xpPill').textContent = (S.metrics.xp || 0) + ' XP';
+  $('painelNome').textContent = (S.perfil.full_name || '').split(' ')[0] || 'Candidato';
+  $('painelData').textContent = new Date().toLocaleDateString('pt-BR', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' });
+  renderCursoSwitch();
+  await Promise.all([carregarEstrutura(), carregarDominio()]);
+  cronRecuperar();
+  const v = (location.hash.match(/^#v=([\w-]+)/) || [])[1];
+  showView(v && $('v-' + (v.startsWith('m-') ? 'material' : v)) ? v : 'painel');
+}
+async function carregarEstrutura() {
+  if (!S.curso) return;
+  const d = await api('/estrutura?' + cq());
+  S.est = d.disciplinas || []; S.ass = {}; S.disc = {};
+  S.est.forEach((di) => { S.disc[di.id] = di; di.assuntos.forEach((a) => { S.ass[a.id] = { ...a, disciplina: di.nome, disciplina_id: di.id }; }); });
+  preencherCascatas();
+}
+async function carregarDominio() { try { S.dom = (await api('/dominio')).dominio || {}; } catch (e) { S.dom = {}; } }
+function renderCursoSwitch() {
+  $('cursoSwitch').innerHTML = S.cursos.map((c) => `<button type="button" class="career-btn${S.curso && c.id === S.curso.id ? ' on' : ''}" data-curso="${esc(c.id)}" aria-pressed="${S.curso && c.id === S.curso.id}" title="${esc(c.nome)}"><strong>${esc(c.nome.toUpperCase())}</strong></button>`).join('');
+  $$('#cursoSwitch .career-btn').forEach((b) => b.addEventListener('click', () => trocarCurso(b.dataset.curso)));
+  $('uiTrilhaNome').textContent = S.curso ? S.curso.nome.toUpperCase() : '—';
+}
+async function trocarCurso(id) {
+  if (S.curso && S.curso.id === id) return;
+  S.curso = S.cursos.find((c) => c.id === id) || S.curso;
+  S.crono = undefined;
+  renderCursoSwitch();
+  api('/perfil', { body: { curso_id: id } }).catch(() => {});
+  await carregarEstrutura();
+  showView(S.view.startsWith('assunto') ? 'materias' : S.view);
+}
+
+/* ---------------- NAVEGAÇÃO ---------------- */
+const TITULOS = {};
+$$('.nav-btn[data-v]').forEach((b) => { TITULOS[b.dataset.v] = b.querySelector('.nl').textContent.trim(); });
+Object.assign(TITULOS, { assunto: 'Assunto', admin: 'Central Administrativa' });
+const TIPOS = {
+  pdf: { nome: 'Bizu PDF', sub: 'Apostilas em PDF organizadas por assunto do edital' },
+  aula: { nome: 'Aulas', sub: 'Videoaulas organizadas por assunto do edital' },
+  lei_seca: { nome: 'Lei Seca', sub: 'Texto literal da legislação cobrada, com link para a fonte oficial' },
+  jurisprudencia: { nome: 'Jurisprudência', sub: 'Súmulas e decisões relevantes, com link para a fonte oficial' },
+  mapa_mental: { nome: 'Mapas Mentais', sub: 'Mapas mentais por assunto' },
+  flashcard: { nome: 'Flashcards', sub: 'Cartões de memorização por assunto' },
+  revisao: { nome: 'Revisões rápidas', sub: 'Material de revisão por assunto' },
+};
+const SLOTS = [['questoes', 'Questões'], ['pdf', 'Bizu PDF'], ['aula', 'Aulas'], ['flashcard', 'Flashcards'], ['mapa_mental', 'Mapas mentais'], ['lei_seca', 'Lei seca'], ['jurisprudencia', 'Jurisprudência'], ['revisao', 'Revisões rápidas']];
+
+function showView(name, arg) {
+  S.view = name;
+  const alvo = name.startsWith('m-') ? 'material' : name;
+  $$('.view').forEach((v) => v.classList.toggle('on', v.id === 'v-' + alvo));
+  $$('.nav-btn').forEach((b) => b.classList.toggle('on', b.dataset.v === name));
+  $('uiPageTitle').textContent = name.startsWith('m-') ? TIPOS[name.slice(2)].nome : TITULOS[name] || '';
+  document.title = ($('uiPageTitle').textContent ? $('uiPageTitle').textContent + ' · ' : '') + 'Bizu do Concurseiro X';
+  if (name !== 'assunto') history.replaceState(null, '', '#v=' + name);
+  fecharDrawer();
+  try { window.scrollTo({ top: 0, behavior: 'instant' }); } catch (e) { window.scrollTo(0, 0); }
+  const fn = {
+    painel: renderPainel, estudar: () => { $('eaContainer').innerHTML = emp('Escolha o tempo disponível e clique em Gerar recomendação'); },
+    cronograma: carregarCronograma, calendario: renderCalendario, cronometro: carregarCronometro,
+    materias: renderMaterias, assunto: () => renderAssunto(arg), busca: () => { $('buscaInp').focus(); buscar(); },
+    material: () => renderMaterial(name.slice(2)), meuresumo: renderMeuResumo, questoes: () => { $('qContainer').innerHTML = emp('Escolha os filtros e clique em Buscar questões'); },
+    simulados: renderSimulados, salvas: renderSalvas, revisoes: renderRevisoes, redacao: renderRedacao,
+    desempenho: renderDesempenho, dominio: renderDominio, conta: renderConta, admin: renderAdmin,
+  }[alvo];
+  if (fn) fn();
+}
+$$('.nav-btn[data-v]').forEach((b) => b.addEventListener('click', () => showView(b.dataset.v)));
+document.addEventListener('click', (e) => { const g = e.target.closest('[data-go]'); if (g) showView(g.dataset.go); });
+
+/* Menu lateral: recolher (desktop) e gaveta (mobile) */
+const isMobile = () => window.innerWidth <= 860;
+function abrirDrawer() { $('sidebar').classList.add('open'); $('uiBackdrop').hidden = false; $('menuToggle').setAttribute('aria-expanded', 'true'); }
+function fecharDrawer() { $('sidebar').classList.remove('open'); $('uiBackdrop').hidden = true; $('menuToggle').setAttribute('aria-expanded', 'false'); }
+$('menuToggle').addEventListener('click', () => ($('sidebar').classList.contains('open') ? fecharDrawer() : abrirDrawer()));
+$('uiBackdrop').addEventListener('click', fecharDrawer);
+document.addEventListener('keydown', (e) => { if (e.key === 'Escape') fecharDrawer(); });
+function setCollapsed(v) {
+  $('shell').classList.toggle('ui-collapsed', !!v);
+  $('uiCollapse').setAttribute('aria-pressed', v ? 'true' : 'false');
+  $('uiCollapse').setAttribute('aria-label', v ? 'Expandir menu lateral' : 'Recolher menu lateral');
+  lsSet('cx_sb_collapsed', v ? '1' : '0');
+}
+$('uiCollapse').addEventListener('click', () => setCollapsed(!$('shell').classList.contains('ui-collapsed')));
+if (lsGet('cx_sb_collapsed', '0') === '1') setCollapsed(true);
+$('uiTrilhaChip').addEventListener('click', () => { if (isMobile()) abrirDrawer(); else setCollapsed(false); const on = document.querySelector('#cursoSwitch .career-btn.on'); if (on) setTimeout(() => on.focus(), 250); });
+
+/* ---------------- FILTROS EM CASCATA (Disciplina → Assunto → Subassunto) ---------------- */
+const CASCATAS = [
+  { d: 'qDisc', a: 'qAss', s: 'qSubA' }, { d: 'matlDisc', a: 'matlAss', s: 'matlSubA', onChange: () => renderMaterial(S.view.slice(2)) },
+  { d: 'mrDisc', a: 'mrAss', onChange: () => abrirResumo() }, { d: 'cronDisc', a: 'cronAss' },
+];
+function opts(lista, vazio) { return `<option value="">${esc(vazio)}</option>` + lista.map((x) => `<option value="${esc(x.id)}">${esc(x.nome)}</option>`).join(''); }
+function preencherCascatas() {
+  CASCATAS.forEach((c) => {
+    const d = $(c.d), val = d.value;
+    d.innerHTML = opts(S.est, 'Todas as disciplinas');
+    if (S.disc[val]) d.value = val;
+    preencherAss(c);
+  });
+  $('domDisc').innerHTML = opts(S.est, 'Todas as disciplinas');
+}
+function preencherAss(c) {
+  const di = S.disc[$(c.d).value], a = $(c.a), val = a.value;
+  a.innerHTML = opts(di ? di.assuntos : [], di ? 'Todos os assuntos' : 'Escolha a disciplina');
+  a.disabled = !di;
+  if (di && di.assuntos.some((x) => x.id === val)) a.value = val;
+  if (c.s) preencherSub(c);
+}
+function preencherSub(c) {
+  const as = S.ass[$(c.a).value], s = $(c.s), val = s.value;
+  s.innerHTML = opts(as ? as.subassuntos : [], as ? (as.subassuntos.length ? 'Todos os subassuntos' : 'Sem subassuntos') : 'Escolha o assunto');
+  s.disabled = !as || !as.subassuntos.length;
+  if (as && as.subassuntos.some((x) => x.id === val)) s.value = val;
+}
+CASCATAS.forEach((c) => {
+  $(c.d).addEventListener('change', () => { preencherAss(c); if (c.onChange) c.onChange(); });
+  $(c.a).addEventListener('change', () => { if (c.s) preencherSub(c); if (c.onChange) c.onChange(); });
+  if (c.s) $(c.s).addEventListener('change', () => { if (c.onChange) c.onChange(); });
+});
+function filtroQS(c) {
+  const p = [cq()];
+  if ($(c.d).value) p.push('disciplina_id=' + $(c.d).value);
+  if ($(c.a).value) p.push('assunto_id=' + $(c.a).value);
+  if (c.s && $(c.s).value) p.push('subassunto_id=' + $(c.s).value);
+  return p.join('&');
+}
+function selecionar(c, discId, assId, subId) {
+  $(c.d).value = discId || ''; preencherAss(c);
+  $(c.a).value = assId || ''; if (c.s) { preencherSub(c); $(c.s).value = subId || ''; }
+}
+const totalAssuntos = () => Object.keys(S.ass).length;
+const totalSub = () => Object.values(S.ass).reduce((n, a) => n + a.subassuntos.length, 0);
+const totalConteudo = (a) => Object.values(a.conteudo || {}).reduce((n, v) => n + v, 0);
+
+/* ---------------- PAINEL ---------------- */
+async function renderPainel() {
+  const c = S.curso;
+  const m = S.metrics || {};
+  $('stQ').textContent = m.questions || 0; $('stA').textContent = Math.round(m.accuracy || 0) + '%';
+  $('stXP').textContent = m.xp || 0; $('stNivel').textContent = m.nivel || 1;
+  $('stAssuntos').textContent = totalAssuntos();
+  $('stDom').textContent = Object.keys(S.ass).filter((id) => (S.dom[id] || 0) >= 4).length;
+  if (c) {
+    const nQ = S.est.reduce((n, d) => n + (d.questoes || 0), 0);
+    $('painelCurso').innerHTML = `<div class="now-mat">${esc(c.nome)}</div>
+      <div class="now-meta">${esc(c.banca || '')} · ${S.est.length} disciplinas · ${totalAssuntos()} assuntos · ${totalSub()} subassuntos${nQ ? ` · ${nQ} questões na prova objetiva` : ''}</div>
+      <p class="muted small mt1">${esc(c.edital_ref || '')}</p>
+      <div class="now-actions mt2"><button type="button" class="btn-blue" data-go="materias">Ver disciplinas do edital</button><button type="button" class="btn-ghost" data-go="redacao">Redação</button></div>`;
+  }
+  try {
+    const d = await api('/desempenho?' + cq()); const pd = d.por_disciplina || {};
+    const ms = Object.keys(pd).sort((a, b) => pctOf(pd[a]) - pctOf(pd[b]));
+    $('painelDesemp').innerHTML = ms.length ? ms.slice(0, 8).map((mt) => { const p = pctOf(pd[mt]); return `<div class="prow"><div class="plabel" title="${esc(mt)}">${esc(mt)}</div><div class="pbar-bg"><div class="pbar" style="width:${p}%;background:${corP(p)}"></div></div><div class="ppct" style="color:${corP(p)}">${p}%</div></div>`; }).join('') : emp('Responda questões para ver aqui', 'As questões do curso ainda estão em preparação.');
+  } catch (e) { $('painelDesemp').innerHTML = emp('Não foi possível carregar o desempenho'); }
+  try {
+    const r = await api('/revisoes?' + cq());
+    $('stRevP').textContent = r.total || 0; badgeRev(r.total || 0);
+    $('painelRevs').innerHTML = r.revisoes.length ? r.revisoes.slice(0, 5).map(revCard).join('') : emp('Sem revisões pendentes');
+  } catch (e) { $('painelRevs').innerHTML = emp('Sem revisões pendentes'); }
+  $('cobContainer').innerHTML = S.est.map((di) => {
+    const com = di.assuntos.filter((a) => totalConteudo(a) > 0).length;
+    return `<div class="prow"><div class="plabel" title="${esc(di.nome)}">${esc(di.nome)}</div><div class="pbar-bg"><div class="pbar" style="width:${di.assuntos.length ? Math.round((com / di.assuntos.length) * 100) : 0}%;background:var(--primary)"></div></div><div class="ppct">${com}/${di.assuntos.length}</div></div>`;
+  }).join('') + `<p class="muted small mt1">Assuntos com algum material publicado. ${EM_PREPARO}.</p>`;
+}
+function badgeRev(n) { $('badgeRev').textContent = n; $('badgeRev').classList.toggle('hidden', !n); }
+
+/* ---------------- O QUE ESTUDAR ---------------- */
+function prioridades() {
+  // Peso da disciplina na prova (quando o edital informa) × falta de domínio do aluno.
+  const lista = [];
+  S.est.forEach((di) => di.assuntos.forEach((a) => {
+    const peso = di.questoes ? di.questoes / Math.max(1, di.assuntos.length) : 1;
+    lista.push({ a, di, score: peso * (5 - (S.dom[a.id] || 0)) });
+  }));
+  return lista.sort((x, y) => y.score - x.score || x.di.nome.localeCompare(y.di.nome));
+}
+$('btnEA').addEventListener('click', async () => {
+  const cont = $('eaContainer'); const t = parseInt($('eaTempo').value, 10);
+  cont.innerHTML = ld('Analisando...');
+  let revs = [];
+  try { revs = (await api('/revisoes?' + cq())).revisoes.filter((r) => r.vencida || r.hoje); } catch (e) {}
+  const pri = prioridades();
+  if (!pri.length) { cont.innerHTML = emp('O curso ainda não tem assuntos cadastrados'); return; }
+  const foco = revs.length ? { a: S.ass[revs[0].assunto_id], di: S.disc[revs[0].disciplina_id], rev: true } : pri[0];
+  const seg = pri.find((p) => p.a.id !== foco.a.id) || foco;
+  const nome = (x) => `${x.di.nome} — ${x.a.nome}`;
+  cont.innerHTML = `<div class="ea-box">
+    <div class="ea-lbl">Sessão — ${t} min</div>
+    <div class="ea-sessao">Foco: ${esc(nome(foco))}</div>
+    <p class="muted small mb1">${foco.rev ? 'Motivo: revisão programada vencendo.' : 'Motivo: peso da disciplina na prova e seu domínio atual do assunto.'}</p>
+    <ul class="ea-steps">
+      <li class="ea-step"><span class="ea-num">1</span><div><strong>Teoria de ${esc(foco.a.nome)}</strong><div class="muted small">${Math.round(t * 0.35)} min · Bizu PDF / aulas / lei seca do assunto</div></div></li>
+      <li class="ea-step"><span class="ea-num">2</span><div><strong>Questões de ${esc(foco.a.nome)}</strong><div class="muted small">${Math.round(t * 0.3)} min</div></div></li>
+      <li class="ea-step"><span class="ea-num">3</span><div><strong>Revisão dos erros e do Meu Resumo</strong><div class="muted small">${Math.round(t * 0.15)} min</div></div></li>
+      <li class="ea-step"><span class="ea-num">4</span><div><strong>Flashcards de ${esc(nome(seg))}</strong><div class="muted small">${Math.round(t * 0.1)} min</div></div></li>
+      <li class="ea-step"><span class="ea-num">5</span><div><strong>Redação: planeje um parágrafo</strong><div class="muted small">${Math.round(t * 0.1)} min</div></div></li>
+    </ul>
+    <div class="flex gap1 mt2" style="flex-wrap:wrap">
+      <button type="button" class="btn-blue" onclick="showView('assunto','${foco.a.id}')">Abrir o assunto</button>
+      <button type="button" class="btn-ghost" onclick="estudarNoCronometro('${foco.a.id}')">Iniciar no Cronômetro X</button>
+      <button type="button" class="btn-ghost" data-go="redacao">Redação</button>
+    </div></div>
+    <div class="card"><div class="card-title">Próximos assuntos prioritários</div>${pri.slice(0, 8).map((p) => `<div class="cob-tema-row link-row" onclick="showView('assunto','${p.a.id}')"><span>${esc(p.a.nome)}</span><span class="badge">${esc(p.di.nome)}</span><span class="badge">${NIVEIS[S.dom[p.a.id] || 0]}</span></div>`).join('')}</div>`;
+});
+
+/* ---------------- DISCIPLINAS (estrutura) ---------------- */
+function renderMaterias() {
+  const c = S.curso;
+  $('matSub').textContent = c ? `${c.nome} · ${S.est.length} disciplinas · ${totalAssuntos()} assuntos · ${totalSub()} subassuntos` : '';
+  if (!S.est.length) { $('matContainer').innerHTML = emp('Nenhuma disciplina cadastrada neste curso'); return; }
+  $('matContainer').innerHTML = S.est.map((di, i) => `<div class="cob-mat${i === 0 ? ' exp' : ''}">
+      <div class="cob-hdr" role="button" tabindex="0" aria-expanded="${i === 0}"><span class="cob-nome">${esc(di.nome)}</span>${di.questoes ? `<span class="badge">${di.questoes} questões</span>` : ''}<span class="badge">${di.assuntos.length} assuntos</span><span aria-hidden="true">▾</span></div>
+      <div class="cob-temas">${di.assuntos.map((a) => `<div class="cob-tema-row link-row" data-ass="${a.id}"><span>${esc(a.nome)}</span>${a.subassuntos.length ? `<span class="badge">${a.subassuntos.length} subassuntos</span>` : ''}${totalConteudo(a) ? `<span class="badge bok">${totalConteudo(a)} materiais</span>` : `<span class="badge">${EM_PREPARO}</span>`}${S.dom[a.id] ? `<span class="badge">${NIVEIS[S.dom[a.id]]}</span>` : ''}</div>`).join('')}</div>
+    </div>`).join('');
+  $$('#matContainer .cob-hdr').forEach((h) => {
+    const t = () => { h.parentElement.classList.toggle('exp'); h.setAttribute('aria-expanded', h.parentElement.classList.contains('exp')); };
+    h.addEventListener('click', t); h.addEventListener('keydown', (e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); t(); } });
+  });
+  $$('#matContainer [data-ass]').forEach((r) => r.addEventListener('click', () => showView('assunto', r.dataset.ass)));
+}
+
+/* ---------------- ASSUNTO ---------------- */
+const NIVEIS = ['Não estudei', 'Iniciante', 'Intermediário', 'Avançado', 'Dominado'];
+let ASS_ATUAL = null, notaTimer = null;
+async function renderAssunto(id) {
+  const a = S.ass[id]; if (!a) { showView('materias'); return; }
+  ASS_ATUAL = id;
+  $('uiPageTitle').textContent = a.nome;
+  $('assCrumb').innerHTML = `<a data-go="materias">${esc(S.curso.nome)}</a> › <a data-go="materias">${esc(a.disciplina)}</a>`;
+  $('assTitulo').textContent = a.nome;
+  $('assSub').textContent = `${a.subassuntos.length} subassuntos · ${totalConteudo(a)} materiais publicados`;
+  $('assSubs').innerHTML = a.subassuntos.length ? `<ul class="sub-list">${a.subassuntos.map((s) => `<li>${esc(s.nome)}</li>`).join('')}</ul>` : '<p class="muted small">O edital não detalha subassuntos para este assunto.</p>';
+  $('assConteudo').innerHTML = SLOTS.map(([k, n]) => { const q = (a.conteudo || {})[k] || 0; return `<button type="button" class="slot${q ? ' tem' : ''}" data-slot="${k}"><strong>${n}</strong><small>${q ? q + ' publicado(s)' : EM_PREPARO}</small></button>`; }).join('');
+  $$('#assConteudo [data-slot]').forEach((b) => b.addEventListener('click', () => {
+    const k = b.dataset.slot;
+    if (k === 'questoes') { showView('questoes'); selecionar(CASCATAS[0], a.disciplina_id, id); buscarQuestoes(); }
+    else { showView('m-' + k); selecionar(CASCATAS[1], a.disciplina_id, id); renderMaterial(k); }
+  }));
+  renderDomBtns($('assDominio'), id);
+  $('assNota').value = ''; $('assNotaMsg').textContent = 'Carregando...';
+  try { const n = (await api('/notas?assunto_id=' + id)).nota; if (ASS_ATUAL === id) { $('assNota').value = n ? n.texto : ''; $('assNotaMsg').textContent = n ? 'Salvo em ' + new Date(n.atualizado_em).toLocaleString('pt-BR') : ''; } } catch (e) { $('assNotaMsg').textContent = ''; }
+}
+$('assNota').addEventListener('input', () => {
+  clearTimeout(notaTimer); $('assNotaMsg').textContent = 'Digitando...';
+  const id = ASS_ATUAL, txt = $('assNota').value;
+  notaTimer = setTimeout(() => api('/notas', { body: { assunto_id: id, texto: txt } }).then(() => { $('assNotaMsg').textContent = 'Salvo'; }).catch((e) => { $('assNotaMsg').textContent = e.message; }), 900);
+});
+$('assEstudar').addEventListener('click', () => estudarNoCronometro(ASS_ATUAL));
+function estudarNoCronometro(id) { const a = S.ass[id]; showView('cronometro'); if (a) selecionar(CASCATAS[3], a.disciplina_id, id); }
+function renderDomBtns(box, id) {
+  box.innerHTML = NIVEIS.map((n, i) => `<button type="button" class="dom-btn d${Math.min(2, Math.floor(i / 2))}" aria-pressed="${(S.dom[id] || 0) === i}" data-n="${i}">${n}</button>`).join('');
+  $$('.dom-btn', box).forEach((b) => b.addEventListener('click', async () => {
+    S.dom[id] = +b.dataset.n; renderDomBtns(box, id);
+    try { await api('/dominio', { body: { assunto_id: id, nivel: +b.dataset.n } }); } catch (e) { alert(e.message); }
+  }));
+}
+
+/* ---------------- BUSCA ---------------- */
+let buscaTimer = null;
+$('buscaInp').addEventListener('input', () => { clearTimeout(buscaTimer); buscaTimer = setTimeout(buscar, 250); });
+async function buscar() {
+  const q = $('buscaInp').value.trim(), box = $('buscaRes');
+  if (q.length < 2) { box.innerHTML = emp('Digite ao menos 2 letras'); return; }
+  box.innerHTML = ld('Buscando...');
+  try {
+    const r = (await api('/busca?' + cq() + '&q=' + encodeURIComponent(q))).resultados;
+    box.innerHTML = r.length ? `<div class="card">${r.map((x) => `<div class="cob-tema-row link-row" ${x.assunto_id ? `data-ass="${x.assunto_id}"` : `data-disc="${x.disciplina_id}"`}><span><strong>${esc(x.subassunto || x.assunto || x.disciplina)}</strong></span><span class="badge">${x.nivel}</span><span class="muted small">${esc([x.disciplina, x.subassunto ? x.assunto : ''].filter(Boolean).join(' › '))}</span></div>`).join('')}</div>` : emp('Nada encontrado no edital deste curso');
+    $$('#buscaRes [data-ass]').forEach((el) => el.addEventListener('click', () => showView('assunto', el.dataset.ass)));
+    $$('#buscaRes [data-disc]').forEach((el) => el.addEventListener('click', () => showView('materias')));
+  } catch (e) { box.innerHTML = emp(e.message); }
+}
+
+/* ---------------- MATERIAIS (PDF, aulas, lei seca, jurisprudência, mapas, flashcards) ---------------- */
+async function renderMaterial(tipo) {
+  const t = TIPOS[tipo]; if (!t) return;
+  $('matlTitulo').textContent = t.nome; $('matlSub').textContent = t.sub;
+  const box = $('matlLista'); box.innerHTML = ld('Carregando...');
+  try {
+    const itens = (await api('/materiais?tipo=' + tipo + '&' + filtroQS(CASCATAS[1]))).materiais;
+    if (!itens.length) { box.innerHTML = emp(EM_PREPARO, EM_PREPARO_SUB); return; }
+    if (tipo === 'flashcard') {
+      box.innerHTML = `<div class="res-grid" id="fcGrid">${itens.map((f) => `<div class="fccard" tabindex="0"><span class="badge">${esc(S.ass[f.assunto_id]?.nome || '')}</span><div class="fcfront">${esc(f.conteudo.pergunta || f.titulo)}</div><div class="fcback">${esc(f.conteudo.resposta || '')}</div></div>`).join('')}</div>`;
+      $$('#fcGrid .fccard').forEach((c) => c.addEventListener('click', () => c.classList.toggle('flip')));
+      return;
+    }
+    box.innerHTML = itens.map((m) => `<div class="card"><div class="card-title">${esc(m.titulo)}</div><div class="muted small">${esc(S.ass[m.assunto_id]?.disciplina || '')} › ${esc(S.ass[m.assunto_id]?.nome || '')}</div>
+      ${m.conteudo && m.conteudo.texto ? `<p class="mt1" style="white-space:pre-wrap">${esc(m.conteudo.texto)}</p>` : ''}
+      <div class="flex gap1 mt1">${m.url ? `<a class="btn-blue" href="${esc(m.url)}" target="_blank" rel="noopener">Abrir</a>` : ''}${m.fonte_oficial ? `<a class="btn-ghost" href="${esc(m.fonte_oficial)}" target="_blank" rel="noopener">Fonte oficial</a>` : ''}</div></div>`).join('');
+  } catch (e) { box.innerHTML = emp(e.message); }
+}
+
+/* ---------------- MEU RESUMO ---------------- */
+async function renderMeuResumo() {
+  abrirResumo();
+  const box = $('mrLista'); box.innerHTML = ld();
+  try {
+    const ns = (await api('/notas')).notas.filter((n) => S.ass[n.assunto_id] && n.texto.trim());
+    box.innerHTML = ns.length ? ns.map((n) => `<div class="cob-tema-row link-row" data-ass="${n.assunto_id}"><span><strong>${esc(S.ass[n.assunto_id].nome)}</strong><br><span class="muted small">${esc(n.texto)}</span></span><span class="badge">${esc(S.ass[n.assunto_id].disciplina)}</span></div>`).join('') : emp('Você ainda não escreveu resumos neste curso');
+    $$('#mrLista [data-ass]').forEach((el) => el.addEventListener('click', () => { const a = S.ass[el.dataset.ass]; selecionar(CASCATAS[2], a.disciplina_id, a.id); abrirResumo(); }));
+  } catch (e) { box.innerHTML = emp(e.message); }
+}
+async function abrirResumo() {
+  const id = $('mrAss').value;
+  $('mrEditor').classList.toggle('hidden', !id); $('mrMsg').textContent = '';
+  if (!id) return;
+  $('mrTexto').value = '';
+  try { const n = (await api('/notas?assunto_id=' + id)).nota; $('mrTexto').value = n ? n.texto : ''; } catch (e) {}
+}
+$('btnMrSalvar').addEventListener('click', async () => {
+  try { await api('/notas', { body: { assunto_id: $('mrAss').value, texto: $('mrTexto').value } }); $('mrMsg').textContent = 'Salvo'; renderMeuResumo(); } catch (e) { $('mrMsg').textContent = e.message; }
+});
+
+/* ---------------- QUESTÕES ---------------- */
+$('btnQ').addEventListener('click', buscarQuestoes);
+async function buscarQuestoes() {
+  const box = $('qContainer'); box.innerHTML = ld('Buscando...');
+  try {
+    const qs = (await api('/questoes?limit=10&' + filtroQS(CASCATAS[0]))).questoes;
+    box.innerHTML = qs.length ? qs.map(qCard).join('') : emp('Nenhuma questão publicada para este filtro', EM_PREPARO_SUB);
+    ligarQuestoes(box);
+  } catch (e) { box.innerHTML = emp(e.message); }
+}
+function qCard(q) {
+  const a = S.ass[q.assunto_id];
+  return `<div class="qcard" data-q="${q.id}"><div class="qmeta"><span class="badge">${esc(a ? a.disciplina : '')}</span><span class="badge">${esc(a ? a.nome : '')}</span>${q.banca ? `<span class="badge">${esc(q.banca)} ${q.ano || ''}</span>` : ''}</div>
+    <div class="qenunciado">${esc(q.enunciado)}</div>
+    <div class="opcoes-w">${(q.opcoes || []).map((o, i) => `<button type="button" class="opcao" data-i="${i}"><span class="letra">${String.fromCharCode(65 + i)}</span><span>${esc(o)}</span></button>`).join('')}</div>
+    <div class="gab-box hidden"></div><button type="button" class="btn-ghost btn-sm btn-salvar">Salvar questão</button></div>`;
+}
+function ligarQuestoes(box) {
+  $$('.qcard', box).forEach((card) => {
+    $$('.opcao', card).forEach((b) => b.addEventListener('click', async () => {
+      $$('.opcao', card).forEach((x) => { x.disabled = true; });
+      try {
+        const r = await api('/responder', { body: { questao_id: card.dataset.q, resposta: +b.dataset.i } });
+        $$('.opcao', card)[r.gabarito].classList.add('certa'); if (!r.correta) b.classList.add('errada');
+        const g = $$('.gab-box', card)[0]; if (r.comentario) { g.innerHTML = `<div class="gab-title">Comentário</div><div>${esc(r.comentario)}</div>`; g.classList.remove('hidden'); }
+      } catch (e) { alert(e.message); $$('.opcao', card).forEach((x) => { x.disabled = false; }); }
+    }));
+    $$('.btn-salvar', card)[0].addEventListener('click', (e) => api('/questoes/salvar', { body: { questao_id: card.dataset.q } }).then(() => { e.target.textContent = 'Salva'; }).catch((er) => alert(er.message)));
+  });
+}
+async function renderSalvas() {
+  const box = $('salvasLista'); box.innerHTML = ld();
+  try { const qs = (await api('/questoes/salvas')).questoes; box.innerHTML = qs.length ? qs.map(qCard).join('') : emp('Nenhuma questão salva'); ligarQuestoes(box); } catch (e) { box.innerHTML = emp(e.message); }
+}
+
+/* ---------------- SIMULADOS ---------------- */
+let SIM = null, SIM_T = null;
+async function renderSimulados() {
+  $('simProva').classList.add('hidden'); $('simLista').classList.remove('hidden');
+  try {
+    const d = await api('/simulados?' + cq());
+    $('simLista').innerHTML = d.simulados.length ? `<div class="agenda">${d.simulados.map((s) => `<div class="card"><div class="card-title">${esc(s.titulo)}</div><div class="muted small">${s.questoes} questões · ${s.duracao_min} min</div><button type="button" class="btn-blue mt2" onclick="iniciarSimulado('${s.id}')">Iniciar</button></div>`).join('')}</div>` : emp('Nenhum simulado publicado para este curso', EM_PREPARO_SUB);
+    $('simHist').innerHTML = d.historico.filter((h) => h.entregue_em).length ? d.historico.filter((h) => h.entregue_em).map((h) => `<div class="cob-tema-row"><span>${new Date(h.entregue_em).toLocaleString('pt-BR')}</span><span class="badge">${h.acertos}/${h.total}</span></div>`).join('') : emp('Nenhum simulado feito ainda');
+  } catch (e) { $('simLista').innerHTML = emp(e.message); }
+}
+async function iniciarSimulado(id) {
+  try {
+    SIM = await api('/simulado/iniciar', { body: { simulado_id: id } }); SIM.resp = {}; SIM.fim = Date.now() + SIM.duracao_min * 60000;
+    $('simLista').classList.add('hidden'); const box = $('simProva'); box.classList.remove('hidden');
+    box.innerHTML = `<div class="card"><div class="flex between center"><div class="card-title">${esc(SIM.titulo)}</div><div class="sim-timer" id="simTimer"></div></div></div>` +
+      SIM.questoes.map((q, n) => `<div class="qcard" data-q="${q.id}"><div class="qmeta"><span class="badge">Questão ${n + 1}</span></div><div class="qenunciado">${esc(q.enunciado)}</div><div class="opcoes-w">${q.opcoes.map((o, i) => `<button type="button" class="opcao" data-i="${i}"><span class="letra">${String.fromCharCode(65 + i)}</span><span>${esc(o)}</span></button>`).join('')}</div></div>`).join('') +
+      '<button type="button" class="btn-blue" id="btnSimEntregar">Entregar simulado</button>';
+    $$('#simProva .qcard').forEach((c) => $$('.opcao', c).forEach((b) => b.addEventListener('click', () => { SIM.resp[c.dataset.q] = +b.dataset.i; $$('.opcao', c).forEach((x) => x.classList.toggle('certa', x === b)); })));
+    $('btnSimEntregar').addEventListener('click', entregarSimulado);
+    clearInterval(SIM_T); SIM_T = setInterval(() => { const r = (SIM.fim - Date.now()) / 1000; $('simTimer').textContent = hms(r); if (r <= 0) entregarSimulado(); }, 1000);
+  } catch (e) { alert(e.message); }
+}
+async function entregarSimulado() {
+  clearInterval(SIM_T); if (!SIM) return; const s = SIM; SIM = null;
+  try { const r = await api('/simulado/entregar', { body: { tentativa_id: s.tentativa_id, respostas: s.resp } }); alert(`Resultado: ${r.acertos} de ${r.total}`); } catch (e) { alert(e.message); }
+  renderSimulados();
+}
+window.iniciarSimulado = iniciarSimulado;
+
+/* ---------------- REVISÕES ---------------- */
+function revCard(r) {
+  const cor = r.vencida ? 'var(--err)' : r.hoje ? 'var(--warn)' : 'var(--info)';
+  const lbl = r.vencida ? 'Vencida' : r.hoje ? 'Hoje' : nomeDia(r.vence_em, { day: '2-digit', month: '2-digit' });
+  return `<div class="rev-card"><div class="rev-dot" style="background:${cor}"></div><div class="rev-info"><div class="rev-tema">${esc(r.assunto)}</div><div class="rev-meta">${esc(r.disciplina)} — revisão de ${r.tipo === '24h' ? '24 horas' : r.tipo === '7dias' ? '7 dias' : '30 dias'} · ${lbl}</div></div>
+    <div class="rev-actions"><button type="button" class="btn-blue btn-sm" onclick="showView('assunto','${r.assunto_id}')">Revisar</button><button type="button" class="btn-ghost btn-sm" onclick="revFeita('${r.id}')">Feita</button></div></div>`;
+}
+async function renderRevisoes() {
+  const box = $('revLista'); box.innerHTML = ld();
+  try { const r = await api('/revisoes?' + cq()); badgeRev(r.total); box.innerHTML = r.revisoes.length ? r.revisoes.map(revCard).join('') : emp('Nenhuma revisão pendente', 'As revisões são criadas automaticamente quando você resolve questões de um assunto.'); } catch (e) { box.innerHTML = emp(e.message); }
+}
+window.revFeita = async (id) => { try { await api('/revisoes/feita', { body: { id } }); } catch (e) {} if (S.view === 'painel') renderPainel(); else renderRevisoes(); };
+
+/* ---------------- REDAÇÃO ---------------- */
+let RED = { id: null, tema_id: null };
+function renderRedacao() {
+  const c = S.curso;
+  $('redSub').textContent = `${c.nome} — escreva, guarde e acompanhe suas redações`;
+  $('redFormato').innerHTML = `<div class="card-title">Formato cobrado</div><p class="small">${esc(c.redacao_formato || 'Consulte o edital.')}</p>`;
+  contarRed();
+}
+$$('#redTabs .tab').forEach((t) => t.addEventListener('click', () => {
+  $$('#redTabs .tab').forEach((x) => x.classList.toggle('on', x === t));
+  $$('#v-redacao [data-rp]').forEach((p) => p.classList.toggle('hidden', p.dataset.rp !== t.dataset.rt));
+  if (t.dataset.rt === 'temas') carregarTemasRed(); if (t.dataset.rt === 'minhas') carregarMinhasRed();
+}));
+function abaRed(n) { $$('#redTabs .tab').find((t) => t.dataset.rt === n).click(); }
+function contarRed() {
+  const t = $('redTexto').value; const pal = (t.match(/\S+/g) || []).length;
+  const linhas = t.split('\n').reduce((n, l) => n + Math.max(1, Math.ceil(l.length / 75)), 0) * (t ? 1 : 0);
+  $('redContagem').innerHTML = `<span>${pal} palavras</span><span>≈ ${linhas} linhas manuscritas (estimativa de 75 caracteres por linha)</span>`;
+}
+$('redTexto').addEventListener('input', contarRed);
+async function salvarRed(status) {
+  try {
+    const r = await api('/redacoes/salvar', { body: { id: RED.id, curso_id: S.curso.id, tema_id: RED.tema_id, tema_livre: $('redTema').value, titulo: $('redTituloInp').value, texto: $('redTexto').value, status } });
+    RED.id = r.id; $('redMsg').textContent = status === 'finalizada' ? 'Redação finalizada e guardada em Minhas redações.' : 'Rascunho salvo.';
+  } catch (e) { $('redMsg').textContent = e.message; }
+}
+$('btnRedRasc').addEventListener('click', () => salvarRed('rascunho'));
+$('btnRedFinal').addEventListener('click', () => { if (!$('redTexto').value.trim()) { $('redMsg').textContent = 'Escreva o texto antes de finalizar.'; return; } salvarRed('finalizada'); });
+$('btnRedNova').addEventListener('click', () => { RED = { id: null, tema_id: null }; $('redTema').value = ''; $('redTituloInp').value = ''; $('redTexto').value = ''; $('redMsg').textContent = ''; contarRed(); });
+async function carregarTemasRed() {
+  const box = $('redTemasLista'); box.innerHTML = ld();
+  try {
+    const ts = (await api('/redacao/temas?' + cq())).temas;
+    box.innerHTML = ts.length ? ts.map((t) => `<div class="card"><div class="card-title">${esc(t.titulo)}</div><p class="small" style="white-space:pre-wrap">${esc(t.proposta)}</p><button type="button" class="btn-blue btn-sm mt1" data-tema="${t.id}" data-titulo="${esc(t.titulo)}">Escrever sobre este tema</button></div>`).join('') : emp('Nenhum tema de redação publicado ainda', 'Enquanto isso, você pode escrever sobre um tema de sua escolha na aba Escrever.');
+    $$('#redTemasLista [data-tema]').forEach((b) => b.addEventListener('click', () => { $('btnRedNova').click(); RED.tema_id = b.dataset.tema; $('redTema').value = b.dataset.titulo; abaRed('escrever'); }));
+  } catch (e) { box.innerHTML = emp(e.message); }
+}
+async function carregarMinhasRed() {
+  const box = $('redMinhas'); box.innerHTML = ld();
+  try {
+    const rs = (await api('/redacoes?' + cq())).redacoes; S.redacoes = rs;
+    box.innerHTML = rs.length ? `<div class="card">${rs.map((r) => `<div class="cob-tema-row"><span><strong>${esc(r.titulo || r.tema_livre || 'Sem título')}</strong><br><span class="muted small">${new Date(r.atualizado_em).toLocaleString('pt-BR')} · ${(r.texto.match(/\S+/g) || []).length} palavras</span></span><span class="badge ${r.status === 'finalizada' ? 'bok' : ''}">${r.status === 'finalizada' ? 'Finalizada' : 'Rascunho'}</span><button type="button" class="btn-ghost btn-sm" data-abrir="${r.id}">Abrir</button><button type="button" class="btn-ghost btn-sm" data-excluir="${r.id}">Excluir</button></div>`).join('')}</div>` : emp('Você ainda não escreveu redações neste curso');
+    $$('#redMinhas [data-abrir]').forEach((b) => b.addEventListener('click', () => { const r = S.redacoes.find((x) => x.id === b.dataset.abrir); RED = { id: r.id, tema_id: r.tema_id }; $('redTema').value = r.tema_livre || ''; $('redTituloInp').value = r.titulo || ''; $('redTexto').value = r.texto; $('redMsg').textContent = ''; contarRed(); abaRed('escrever'); }));
+    $$('#redMinhas [data-excluir]').forEach((b) => b.addEventListener('click', async () => { if (!confirm('Excluir esta redação?')) return; await api('/redacoes/excluir', { body: { id: b.dataset.excluir } }).catch(() => {}); if (RED.id === b.dataset.excluir) RED.id = null; carregarMinhasRed(); }));
+  } catch (e) { box.innerHTML = emp(e.message); }
+}
+
+/* ---------------- DESEMPENHO ---------------- */
+async function renderDesempenho() {
+  $('despKpis').innerHTML = ''; $('despDisc').innerHTML = ld(); $('despAss').innerHTML = '';
+  try {
+    const d = await api('/desempenho?' + cq());
+    const pd = d.por_disciplina || {}, pa = d.por_assunto || {};
+    const tot = Object.values(pd).reduce((o, x) => ({ acertos: o.acertos + x.acertos, total: o.total + x.total }), { acertos: 0, total: 0 });
+    $('despKpis').innerHTML = `<div class="kpi"><span class="kpi-val">${tot.total}</span><span class="kpi-lbl">Questões resolvidas</span></div><div class="kpi"><span class="kpi-val">${pctOf(tot)}%</span><span class="kpi-lbl">Acerto geral</span></div><div class="kpi"><span class="kpi-val">${hm(d.tempo_s)}</span><span class="kpi-lbl">Tempo líquido no curso</span></div><div class="kpi"><span class="kpi-val">${Object.keys(pa).length}</span><span class="kpi-lbl">Assuntos praticados</span></div><div class="kpi"><span class="kpi-val">${Object.keys(S.ass).filter((id) => (S.dom[id] || 0) >= 4).length}</span><span class="kpi-lbl">Assuntos dominados</span></div>`;
+    $('despDisc').innerHTML = S.est.map((di) => { const x = pd[di.nome]; const p = pctOf(x); return `<div class="prow"><div class="plabel" title="${esc(di.nome)}">${esc(di.nome)}</div><div class="pbar-bg"><div class="pbar" style="width:${p}%;background:${x ? corP(p) : 'transparent'}"></div></div><div class="ppct">${x ? p + '% · ' + x.total : '—'}</div></div>`; }).join('');
+    const ks = Object.keys(pa).sort((a, b) => pctOf(pa[a]) - pctOf(pa[b]));
+    $('despAss').innerHTML = ks.length ? ks.map((k) => { const p = pctOf(pa[k]); return `<div class="prow link-row" onclick="showView('assunto','${k}')"><div class="plabel" title="${esc(pa[k].assunto)}">${esc(pa[k].assunto)}</div><div class="pbar-bg"><div class="pbar" style="width:${p}%;background:${corP(p)}"></div></div><div class="ppct">${p}%</div></div>`; }).join('') : emp('Responda questões para ver o desempenho por assunto', 'As questões do curso ainda estão em preparação.');
+  } catch (e) { $('despDisc').innerHTML = emp(e.message); }
+}
+
+/* ---------------- DOMÍNIO ---------------- */
+function renderDominio() {
+  const f = $('domDisc').value; const box = $('domLista');
+  box.innerHTML = S.est.filter((di) => !f || di.id === f).map((di) => `<div class="card"><div class="card-title">${esc(di.nome)}</div>${di.assuntos.map((a) => `<div class="dom-item"><div class="link-row" onclick="showView('assunto','${a.id}')"><strong>${esc(a.nome)}</strong></div><div class="flex gap1 mt1" style="flex-wrap:wrap" data-dom="${a.id}"></div></div>`).join('')}</div>`).join('');
+  $$('#domLista [data-dom]').forEach((b) => renderDomBtns(b, b.dataset.dom));
+}
+$('domDisc').addEventListener('change', renderDominio);
+
+/* ---------------- CRONOGRAMA ---------------- */
+function gerarPlano() {
+  const h = Math.max(1, Math.min(14, parseFloat($('cronoH').value) || 3)), dias = parseInt($('cronoDias').value, 10);
+  const sab = $('cronoSabSim').checked, dom = $('cronoDomRed').checked;
+  const fila = prioridades().map((p) => p.a.id);
+  const blocos = Math.max(1, Math.floor((h * 60) / 50));
+  const plano = []; const hoje = new Date(); let k = 0; const rev = {};
+  for (let i = 0; i < 14; i++) {
+    const dt = new Date(hoje.getFullYear(), hoje.getMonth(), hoje.getDate() + i), wd = dt.getDay(), iso = diaISO(dt);
+    // Segunda a sexta: estudo. Sábado: simulado (se marcado) ou estudo a partir de 6 dias/semana.
+    // Domingo: redação (se marcado) ou estudo só com 7 dias/semana. O resto é folga.
+    const especial = (wd === 6 && sab) ? 'simulado' : (wd === 0 && dom) ? 'redacao' : null;
+    const estuda = wd >= 1 && wd <= 5 || (wd === 6 && dias >= 6) || (wd === 0 && dias >= 7);
+    if (!especial && !estuda) { plano.push({ data: iso, folga: true, itens: [] }); continue; }
+    const itens = [];
+    (rev[iso] || []).forEach((id) => itens.push({ tipo: 'revisao', assunto_id: id, min: 20 }));
+    if (especial === 'simulado') itens.push({ tipo: 'simulado', min: Math.min(h * 60, 240) });
+    else if (especial === 'redacao') itens.push({ tipo: 'redacao', min: Math.min(h * 60, 90) });
+    else {
+      const n = Math.max(1, blocos - Math.ceil(itens.length / 2));
+      for (let b = 0; b < n && fila.length; b++) {
+        const id = fila[k++ % fila.length]; itens.push({ tipo: 'estudo', assunto_id: id, min: 50 });
+        [1, 7].forEach((dd) => { const r = diaISO(new Date(dt.getFullYear(), dt.getMonth(), dt.getDate() + dd)); (rev[r] = rev[r] || []).push(id); });
+      }
+    }
+    plano.push({ data: iso, itens });
+  }
+  return { plano, config: { h, dias, sab, dom } };
+}
+$('btnCrono').addEventListener('click', async () => {
+  const { plano, config } = gerarPlano(); S.crono = { plano, config };
+  desenharCronograma(plano, {});
+  try { await api('/cronograma/salvar', { body: { curso_id: S.curso.id, plano, config } }); } catch (e) { $('cronoContainer').insertAdjacentHTML('afterbegin', `<p class="err">O plano foi gerado, mas não foi salvo: ${esc(e.message)}</p>`); }
+  carregarCronograma(true);
+});
+async function carregarCronograma(soReal) {
+  let porDia = {};
+  try { porDia = (await api('/cron/resumo')).por_dia || {}; } catch (e) {}
+  if (!soReal) {
+    try { const c = (await api('/cronograma?' + cq())).cronograma; S.crono = c; if (c && c.config) { $('cronoH').value = c.config.h; $('cronoDias').value = c.config.dias; $('cronoSabSim').checked = !!c.config.sab; $('cronoDomRed').checked = !!c.config.dom; } } catch (e) { S.crono = null; }
+  }
+  if (!S.crono || !S.crono.plano || !S.crono.plano.length) { $('cronoContainer').innerHTML = emp('Configure a agenda e clique em Gerar cronograma'); return; }
+  desenharCronograma(S.crono.plano, porDia);
+}
+function desenharCronograma(plano, porDia) {
+  const nomeItem = (it) => it.tipo === 'simulado' ? 'Simulado completo' : it.tipo === 'redacao' ? 'Redação: escrever um texto completo' : (S.ass[it.assunto_id] ? `${S.ass[it.assunto_id].disciplina} — ${S.ass[it.assunto_id].nome}` : 'Assunto removido');
+  const cls = { revisao: 'is-rev', simulado: 'is-sim', redacao: 'is-red', estudo: '' };
+  const tag = { revisao: '<span class="crono-tag t-rev">revisão</span>', simulado: '<span class="crono-tag t-sim">simulado</span>', redacao: '<span class="crono-tag t-red">redação</span>', estudo: '' };
+  $('cronoContainer').innerHTML = plano.map((d) => {
+    const plan = d.itens.reduce((n, i) => n + i.min, 0) * 60, real = porDia[d.data] || 0;
+    return `<div class="crono-card"><div class="crono-dia">${esc(nomeDia(d.data))}</div>
+      ${plan && d.data <= diaISO(new Date()) ? `<div class="crono-real"><span>Real ${hm(real)} / plano ${hm(plan)}</span><div class="pbar-bg" style="flex:1"><div class="pbar" style="width:${Math.min(100, Math.round((real / plan) * 100))}%;background:${corP(Math.round((real / plan) * 100))}"></div></div></div>` : ''}
+      ${d.folga ? '<p class="muted small">Folga</p>' : d.itens.map((it) => `<div class="crono-sess ${cls[it.tipo]}"><span class="crono-t">${it.min}min</span><span>${esc(nomeItem(it))}${tag[it.tipo]}</span></div>`).join('')}</div>`;
+  }).join('');
+}
+
+/* ---------------- CALENDÁRIO ---------------- */
+let CAL = { ano: new Date().getFullYear(), mes: new Date().getMonth(), sel: diaISO(new Date()), eventos: [] };
+async function renderCalendario() {
+  const ini = new Date(CAL.ano, CAL.mes, 1), fim = new Date(CAL.ano, CAL.mes + 1, 0);
+  $('calMes').textContent = ini.toLocaleDateString('pt-BR', { month: 'long', year: 'numeric' });
+  try { CAL.eventos = (await api(`/eventos?de=${diaISO(new Date(CAL.ano, CAL.mes, -6))}&ate=${diaISO(new Date(CAL.ano, CAL.mes + 1, 7))}`)).eventos; } catch (e) { CAL.eventos = []; }
+  if (S.crono === undefined) { try { S.crono = (await api('/cronograma?' + cq())).cronograma; } catch (e) { S.crono = null; } }
+  const plano = {}; ((S.crono && S.crono.plano) || []).forEach((d) => { if (d.itens.length) plano[d.data] = d; });
+  const hoje = diaISO(new Date());
+  let h = ['Dom', 'Seg', 'Ter', 'Qua', 'Qui', 'Sex', 'Sáb'].map((d) => `<div class="cal-h">${d}</div>`).join('');
+  const start = new Date(CAL.ano, CAL.mes, 1 - ini.getDay());
+  const semanas = Math.ceil((ini.getDay() + fim.getDate()) / 7);
+  for (let i = 0; i < semanas * 7; i++) {
+    const dt = new Date(start.getFullYear(), start.getMonth(), start.getDate() + i), iso = diaISO(dt);
+    const evs = CAL.eventos.filter((e) => e.data === iso);
+    h += `<button type="button" class="cal-cell${dt.getMonth() !== CAL.mes ? ' fora' : ''}${iso === hoje ? ' hoje' : ''}${iso === CAL.sel ? ' sel' : ''}" data-dia="${iso}" aria-label="${esc(nomeDia(iso))}: ${evs.length} compromissos"><span class="n">${dt.getDate()}</span><span class="cal-dots">${plano[iso] ? '<span class="cal-dot t-plano" title="Cronograma"></span>' : ''}${evs.map((e) => `<span class="cal-dot t-${e.tipo}"></span>`).join('')}</span></button>`;
+  }
+  $('calGrid').innerHTML = h;
+  $$('#calGrid [data-dia]').forEach((b) => b.addEventListener('click', () => { CAL.sel = b.dataset.dia; $$('#calGrid .cal-cell').forEach((x) => x.classList.toggle('sel', x === b)); renderDia(plano); }));
+  renderDia(plano);
+}
+function renderDia(plano) {
+  $('calDiaTitulo').textContent = nomeDia(CAL.sel, { weekday: 'long', day: '2-digit', month: 'long' });
+  const evs = CAL.eventos.filter((e) => e.data === CAL.sel);
+  const p = plano[CAL.sel];
+  $('calDiaLista').innerHTML = (p ? `<div class="ev-row"><span class="badge">cronograma</span><span class="grow">${p.itens.length} bloco(s) planejado(s)</span><button type="button" class="btn-ghost btn-sm" data-go="cronograma">Ver</button></div>` : '') +
+    (evs.map((e) => `<div class="ev-row${e.feito ? ' feito' : ''}"><input type="checkbox" ${e.feito ? 'checked' : ''} data-feito="${e.id}" aria-label="Concluído"><span class="badge">${esc(e.tipo)}</span><span class="grow">${esc(e.titulo)}</span><button type="button" class="btn-ghost btn-sm" data-del="${e.id}">Excluir</button></div>`).join('') || (p ? '' : '<p class="muted small">Nenhum compromisso neste dia.</p>'));
+  $$('#calDiaLista [data-feito]').forEach((c) => c.addEventListener('change', async () => { const e = CAL.eventos.find((x) => x.id === c.dataset.feito); await api('/eventos/salvar', { body: { ...e, feito: c.checked } }).catch(() => {}); renderCalendario(); }));
+  $$('#calDiaLista [data-del]').forEach((b) => b.addEventListener('click', async () => { await api('/eventos/excluir', { body: { id: b.dataset.del } }).catch(() => {}); renderCalendario(); }));
+}
+$('calPrev').addEventListener('click', () => { CAL.mes--; if (CAL.mes < 0) { CAL.mes = 11; CAL.ano--; } renderCalendario(); });
+$('calNext').addEventListener('click', () => { CAL.mes++; if (CAL.mes > 11) { CAL.mes = 0; CAL.ano++; } renderCalendario(); });
+$('btnCalAdd').addEventListener('click', async () => {
+  const t = $('calTitulo').value.trim(); if (!t) { $('calTitulo').focus(); return; }
+  try { await api('/eventos/salvar', { body: { data: CAL.sel, titulo: t, tipo: $('calTipo').value } }); $('calTitulo').value = ''; renderCalendario(); } catch (e) { alert(e.message); }
+});
+
+/* ---------------- CRONÔMETRO X ---------------- */
+let CRON = null, CRON_T = null, CRON_OFF = 0;
+function cronLiquido() {
+  if (!CRON) return 0;
+  const agora = Date.now() + CRON_OFF;
+  let pausa = CRON.pausas_s || 0;
+  if (CRON.pausado_em) pausa += (agora - Date.parse(CRON.pausado_em)) / 1000;
+  return Math.min(16 * 3600, (agora - Date.parse(CRON.inicio)) / 1000 - pausa);
+}
+function cronTick() {
+  const l = cronLiquido(), rod = CRON && !CRON.pausado_em;
+  $('cronDisplay').textContent = hms(CRON ? l : 0);
+  $('cronDisplay').className = 'cron-display' + (CRON ? (rod ? ' rodando' : ' pausado') : '');
+  const pill = $('cronPill'); pill.className = 'cron-pill' + (CRON ? (rod ? ' rodando' : ' pausado') : ' vazio');
+  $('cronPillTxt').textContent = CRON ? hms(l) : 'Estudar';
+}
+function cronUI() {
+  const on = !!CRON;
+  $('cronEstado').textContent = on ? (CRON.pausado_em ? 'Sessão pausada' : 'Estudando') : 'Nenhuma sessão em andamento';
+  const a = on && CRON.assunto_id ? S.ass[CRON.assunto_id] : null, d = on && CRON.disciplina_id ? S.disc[CRON.disciplina_id] : null;
+  $('cronAlvo').textContent = on ? [a ? a.disciplina : d ? d.nome : '', a ? a.nome : '', CRON.atividade].filter(Boolean).join(' · ') : '';
+  $('cronSetup').classList.toggle('hidden', on);
+  $('btnCronIniciar').classList.toggle('hidden', on);
+  $('btnCronPausar').classList.toggle('hidden', !on || !!CRON.pausado_em);
+  $('btnCronRetomar').classList.toggle('hidden', !on || !CRON.pausado_em);
+  $('btnCronEncerrar').classList.toggle('hidden', !on);
+  clearInterval(CRON_T); if (on) CRON_T = setInterval(cronTick, 1000);
+  cronTick();
+}
+async function cronRecuperar() { try { const d = await api('/cron/ativa'); CRON = d.sessao; CRON_OFF = Date.parse(d.agora) - Date.now(); } catch (e) { CRON = null; } cronUI(); }
+async function cronAcao(p, body) { $('cronMsg').textContent = ''; try { const d = await api('/cron/' + p, { body: body || {} }); CRON = d.sessao && d.sessao.ativa ? d.sessao : null; if (p === 'encerrar') $('cronMsg').textContent = 'Sessão registrada: ' + hm(d.sessao.liquido_s) + ' de estudo líquido.'; cronUI(); carregarCronometro(true); } catch (e) { $('cronMsg').textContent = e.message; } }
+$('btnCronIniciar').addEventListener('click', () => cronAcao('iniciar', { curso_id: S.curso.id, disciplina_id: $('cronDisc').value || null, assunto_id: $('cronAss').value || null, atividade: $('cronAtiv').value }));
+$('btnCronPausar').addEventListener('click', () => cronAcao('pausar'));
+$('btnCronRetomar').addEventListener('click', () => cronAcao('retomar'));
+$('btnCronEncerrar').addEventListener('click', () => cronAcao('encerrar'));
+async function carregarCronometro(soResumo) {
+  if (!soResumo) cronRecuperar();
+  try {
+    const r = await api('/cron/resumo');
+    $('cronKHoje').textContent = hm(r.hoje_s); $('cronKSess').textContent = r.sessoes_hoje; $('cronKSem').textContent = hm(r.semana_s); $('cronKTotal').textContent = hm(r.total_s);
+    const fe = r.sessoes.filter((s) => !s.ativa);
+    $('cronHist').innerHTML = fe.length ? fe.map((s) => { const a = S.ass[s.assunto_id], d = S.disc[s.disciplina_id]; return `<div class="crono-sess"><span class="crono-t">${hm(s.liquido_s)}</span><span>${esc(new Date(s.inicio).toLocaleString('pt-BR', { day: '2-digit', month: '2-digit', hour: '2-digit', minute: '2-digit' }))} · ${esc([a ? a.disciplina : d ? d.nome : 'Sem disciplina', a ? a.nome : '', s.atividade].filter(Boolean).join(' · '))}</span></div>`; }).join('') : emp('Nenhuma sessão registrada ainda');
+  } catch (e) { $('cronHist').innerHTML = emp(e.message); }
+}
+
+/* ---------------- MINHA CONTA ---------------- */
+function renderConta() { $('contaEmail').textContent = S.email; $('contaNome').value = S.perfil.full_name || ''; $('contaMsg').textContent = ''; }
+$('btnContaNome').addEventListener('click', async () => { try { await api('/perfil', { body: { nome: $('contaNome').value } }); S.perfil.full_name = $('contaNome').value; $('painelNome').textContent = $('contaNome').value.split(' ')[0] || 'Candidato'; $('contaMsg').textContent = 'Nome salvo.'; } catch (e) { $('contaMsg').textContent = e.message; } });
+$('btnContaSenha').addEventListener('click', async () => {
+  const p1 = $('contaSenha').value, p2 = $('contaSenha2').value;
+  if (p1.length < 6) { $('contaMsg').textContent = 'A senha deve ter no mínimo 6 caracteres.'; return; }
+  if (p1 !== p2) { $('contaMsg').textContent = 'As senhas não coincidem.'; return; }
+  try { await api('/senha/alterar', { body: { password: p1 } }); $('contaSenha').value = $('contaSenha2').value = ''; $('contaMsg').textContent = 'Senha alterada.'; } catch (e) { $('contaMsg').textContent = e.message; }
+});
+
+/* ---------------- CENTRAL ADMINISTRATIVA ---------------- */
+$$('#admTabs .tab').forEach((t) => t.addEventListener('click', () => {
+  $$('#admTabs .tab').forEach((x) => x.classList.toggle('on', x === t));
+  $$('#v-admin [data-ap]').forEach((p) => p.classList.toggle('hidden', p.dataset.ap !== t.dataset.at));
+  ({ estrutura: renderAdmEstrutura, cobertura: renderAdmCobertura, usuarios: renderAdmUsuarios })[t.dataset.at]();
+}));
+function renderAdmin() { if (!S.admin) { showView('painel'); return; } const t = $$('#admTabs .tab.on')[0]; t.click(); }
+function renderAdmEstrutura() {
+  const box = $('admEstrutura');
+  const btn = (acao, nivel, id, pai, rot) => `<button type="button" class="btn-ghost" data-ae="${acao}" data-nivel="${nivel}" data-id="${id || ''}" data-pai="${pai || ''}">${rot}</button>`;
+  box.innerHTML = `<div class="card"><div class="flex between center"><div class="card-title">${esc(S.curso.nome)}</div>${btn('criar', 'disciplina', '', S.curso.id, '+ Disciplina')}</div><p class="muted small">Curso → Disciplina → Assunto → Subassunto. Alterações valem só para o Bizu do Concurseiro X.</p></div>
+    <div class="adm-tree">${S.est.map((di) => `<div class="cob-mat"><div class="cob-hdr"><span class="cob-nome">${esc(di.nome)}</span><span class="adm-acts">${btn('criar', 'assunto', '', di.id, '+ Assunto')}${btn('renomear', 'disciplina', di.id, '', 'Renomear')}${btn('excluir', 'disciplina', di.id, '', 'Excluir')}</span><span aria-hidden="true">▾</span></div>
+      <div class="cob-temas">${di.assuntos.map((a) => `<div class="cob-tema-row"><span>${esc(a.nome)}</span><span class="adm-acts">${btn('criar', 'subassunto', '', a.id, '+ Sub')}${btn('renomear', 'assunto', a.id, '', 'Renomear')}${btn('excluir', 'assunto', a.id, '', 'Excluir')}</span></div>
+        ${a.subassuntos.length ? `<ul class="adm-sub">${a.subassuntos.map((s) => `<li><span>• ${esc(s.nome)}</span><span class="adm-acts">${btn('renomear', 'subassunto', s.id, '', 'Renomear')}${btn('excluir', 'subassunto', s.id, '', 'Excluir')}</span></li>`).join('')}</ul>` : ''}`).join('')}</div></div>`).join('')}</div>`;
+  $$('#admEstrutura .cob-hdr').forEach((h) => h.addEventListener('click', (e) => { if (!e.target.closest('button')) h.parentElement.classList.toggle('exp'); }));
+  $$('#admEstrutura [data-ae]').forEach((b) => b.addEventListener('click', async (e) => {
+    e.stopPropagation();
+    const { ae, nivel, id, pai } = b.dataset; let nome = '';
+    if (ae === 'criar') { nome = prompt(`Nome do novo ${nivel}:`); if (!nome) return; }
+    if (ae === 'renomear') { nome = prompt('Novo nome:', b.closest('.cob-hdr,.cob-tema-row,li').querySelector('span').textContent.replace(/^•\s*/, '')); if (!nome) return; }
+    if (ae === 'excluir' && !confirm(`Excluir este ${nivel} e tudo o que estiver dentro dele?`)) return;
+    try { await api('/admin/estrutura', { body: { acao: ae, nivel, id, pai_id: pai, nome } }); const abertos = $$('#admEstrutura .cob-mat.exp').map((m) => m.querySelector('.cob-nome').textContent); await carregarEstrutura(); renderAdmEstrutura(); $$('#admEstrutura .cob-mat').forEach((m) => { if (abertos.includes(m.querySelector('.cob-nome').textContent)) m.classList.add('exp'); }); } catch (er) { alert(er.message); }
+  }));
+}
+async function renderAdmCobertura() {
+  const box = $('admCobertura'); box.innerHTML = ld();
+  try {
+    const est = (await api('/admin/cobertura?' + cq())).disciplinas;
+    box.innerHTML = `<div class="card tbl-wrap"><table class="tbl"><thead><tr><th>Disciplina / assunto</th>${SLOTS.map(([, n]) => `<th>${n}</th>`).join('')}</tr></thead><tbody>${est.map((di) => `<tr><td colspan="${SLOTS.length + 1}"><strong>${esc(di.nome)}</strong></td></tr>${di.assuntos.map((a) => `<tr><td>${esc(a.nome)}</td>${SLOTS.map(([k]) => `<td>${a.conteudo[k] || 0}</td>`).join('')}</tr>`).join('')}`).join('')}</tbody></table><p class="muted small mt1">Inclui material ainda não publicado.</p></div>`;
+  } catch (e) { box.innerHTML = emp(e.message); }
+}
+async function renderAdmUsuarios() {
+  $('admUCurso').innerHTML = S.cursos.map((c) => `<option value="${esc(c.id)}">${esc(c.nome)}</option>`).join('');
+  const box = $('admUsuarios'); box.innerHTML = ld();
+  try {
+    const us = (await api('/admin/usuarios')).usuarios;
+    const nomeC = (id) => (S.cursos.find((c) => c.id === id) || {}).nome || '—';
+    box.innerHTML = `<div class="tbl-wrap"><table class="tbl"><thead><tr><th>E-mail</th><th>Nome</th><th>Curso</th><th>XP</th><th>Último acesso</th></tr></thead><tbody>${us.map((u) => `<tr><td>${esc(u.email)}${u.admin ? ' <span class="badge bgold">admin</span>' : ''}</td><td>${esc(u.nome || '—')}</td><td>${esc(nomeC(u.curso_id))}</td><td>${u.xp}</td><td>${u.ultimo_login ? new Date(u.ultimo_login).toLocaleString('pt-BR') : '—'}</td></tr>`).join('')}</tbody></table></div>`;
+  } catch (e) { box.innerHTML = emp(e.message); }
+}
+$('btnAdmUCriar').addEventListener('click', async () => {
+  try { await api('/admin/usuarios/criar', { body: { nome: $('admUNome').value, email: $('admUEmail').value, password: $('admUSenha').value, curso_id: $('admUCurso').value } }); $('admUMsg').textContent = 'Usuário criado.'; ['admUNome', 'admUEmail', 'admUSenha'].forEach((i) => { $(i).value = ''; }); renderAdmUsuarios(); } catch (e) { $('admUMsg').textContent = e.message; }
+});
+
+/* ---------------- PARTIDA ---------------- */
+window.showView = showView; window.estudarNoCronometro = estudarNoCronometro;
+if (location.hash.includes('type=recovery') && location.hash.includes('access_token')) {
+  $('loginPanel').classList.add('hidden'); $('resetPanel').classList.remove('hidden');
+} else {
+  api('/session').then(() => iniciar()).catch(() => {});
+}
+if ('serviceWorker' in navigator) window.addEventListener('load', () => navigator.serviceWorker.register('/sw.js').catch(() => {}));

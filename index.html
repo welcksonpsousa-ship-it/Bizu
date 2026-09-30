@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#0b1017">
+<meta name="description" content="Bizu do Concurseiro X — plataforma de estudo para PM-SP Soldado e GCM.">
+<title>Bizu do Concurseiro X</title>
+<link rel="manifest" href="/manifest.webmanifest">
+<link rel="icon" href="/icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/icon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+<a class="skip-link" href="#mainContent">Pular para o conteúdo</a>
+
+<!-- Biblioteca única de ícones (traço 2px, 24x24) -->
+<svg xmlns="http://www.w3.org/2000/svg" style="display:none" aria-hidden="true">
+  <symbol id="i-home" viewBox="0 0 24 24"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><path d="M9 22V12h6v10"/></symbol>
+  <symbol id="i-target" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></symbol>
+  <symbol id="i-calendar" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></symbol>
+  <symbol id="i-book" viewBox="0 0 24 24"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></symbol>
+  <symbol id="i-file" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M16 13H8M16 17H8M10 9H8"/></symbol>
+  <symbol id="i-scale" viewBox="0 0 24 24"><path d="m16 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z"/><path d="m2 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z"/><path d="M7 21h10M12 3v18M3 7h2c2 0 5-1 7-2 2 1 5 2 7 2h2"/></symbol>
+  <symbol id="i-landmark" viewBox="0 0 24 24"><path d="M3 22h18M6 18v-7M10 18v-7M14 18v-7M18 18v-7"/><path d="M12 2 20 7H4z"/></symbol>
+  <symbol id="i-map" viewBox="0 0 24 24"><circle cx="12" cy="5" r="3"/><circle cx="5" cy="19" r="3"/><circle cx="19" cy="19" r="3"/><path d="M12 8v4m0 0-5 4.5M12 12l5 4.5"/></symbol>
+  <symbol id="i-pen" viewBox="0 0 24 24"><path d="M12 20h9"/><path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4Z"/></symbol>
+  <symbol id="i-help" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3M12 17h.01"/></symbol>
+  <symbol id="i-layers" viewBox="0 0 24 24"><path d="M12 2 2 7l10 5 10-5z"/><path d="m2 17 10 5 10-5M2 12l10 5 10-5"/></symbol>
+  <symbol id="i-clipboard" viewBox="0 0 24 24"><rect x="8" y="2" width="8" height="4" rx="1"/><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><path d="m9 14 2 2 4-4"/></symbol>
+  <symbol id="i-bookmark" viewBox="0 0 24 24"><path d="m19 21-7-4-7 4V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></symbol>
+  <symbol id="i-refresh" viewBox="0 0 24 24"><path d="M21 12a9 9 0 0 0-9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5M3 12a9 9 0 0 0 9 9 9.75 9.75 0 0 0 6.74-2.74L21 16"/><path d="M16 16h5v5"/></symbol>
+  <symbol id="i-edit" viewBox="0 0 24 24"><path d="M4 22h14a2 2 0 0 0 2-2V7l-5-5H6a2 2 0 0 0-2 2v4"/><path d="M14 2v5h5M10.4 12.6a2 2 0 1 1 3 3L8 21l-4 1 1-4Z"/></symbol>
+  <symbol id="i-chart" viewBox="0 0 24 24"><path d="M12 20V10M18 20V4M6 20v-4"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="M22 4 12 14.01l-3-3"/></symbol>
+  <symbol id="i-spark" viewBox="0 0 24 24"><path d="m12 3-1.9 5.8a2 2 0 0 1-1.3 1.3L3 12l5.8 1.9a2 2 0 0 1 1.3 1.3L12 21l1.9-5.8a2 2 0 0 1 1.3-1.3L21 12l-5.8-1.9a2 2 0 0 1-1.3-1.3Z"/></symbol>
+  <symbol id="i-play" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="m10 8 6 4-6 4z"/></symbol>
+  <symbol id="i-sliders" viewBox="0 0 24 24"><path d="M4 21v-7M4 10V3M12 21v-9M12 8V3M20 21v-5M20 12V3M1 14h6M9 8h6M17 16h6"/></symbol>
+  <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"/></symbol>
+  <symbol id="i-logout" viewBox="0 0 24 24"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4M16 17l5-5-5-5M21 12H9"/></symbol>
+  <symbol id="i-collapse" viewBox="0 0 24 24"><path d="m11 17-5-5 5-5M18 17l-5-5 5-5"/></symbol>
+  <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></symbol>
+  <symbol id="i-back" viewBox="0 0 24 24"><path d="M19 12H5M12 19l-7-7 7-7"/></symbol>
+  <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></symbol>
+  <symbol id="i-plus" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M12 8v8M8 12h8"/></symbol>
+  <symbol id="i-activity" viewBox="0 0 24 24"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></symbol>
+  <symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></symbol>
+  <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></symbol>
+</svg>
+<!-- LOGIN -->
+<div id="gate">
+  <div class="gate-panel fi" id="loginPanel">
+    <div class="gate-logo">
+      <div class="gate-mark" aria-hidden="true"><svg><use href="#i-shield"/></svg></div>
+      <div class="gate-logo-top">Bizu do <span>Concurseiro X</span></div>
+      <div class="gate-logo-sub">Carreiras policiais e de segurança</div>
+      <div class="gate-logo-badge">PM-SP SOLDADO · GCM GERAL</div>
+    </div>
+    <div id="loginMsg" class="gate-msg" role="alert" aria-live="polite"></div>
+    <div class="form-group"><label class="form-label" for="loginEmail">E-mail</label><input id="loginEmail" type="email" required placeholder="seu@email.com" autocomplete="email"></div>
+    <div class="form-group"><label class="form-label" for="loginSenha">Senha</label><input id="loginSenha" type="password" required placeholder="••••••••••" autocomplete="current-password"></div>
+    <button type="button" class="btn-primary" id="btnLogin">Entrar na plataforma</button>
+    <div class="gate-foot"><a href="#" id="lnkEsqueci">Esqueci minha senha</a></div>
+  </div>
+  <div class="gate-panel fi hidden" id="resetPanel">
+    <div class="gate-logo">
+      <div class="gate-mark" aria-hidden="true"><svg><use href="#i-shield"/></svg></div>
+      <div class="gate-logo-top">Bizu do <span>Concurseiro X</span></div>
+      <div class="gate-logo-sub">Definir nova senha</div>
+    </div>
+    <div id="resetMsg" class="gate-msg" role="alert" aria-live="polite"></div>
+    <div class="form-group"><label class="form-label" for="resetSenha">Nova senha</label><input id="resetSenha" type="password" placeholder="mínimo 6 caracteres" autocomplete="new-password"></div>
+    <div class="form-group"><label class="form-label" for="resetSenha2">Confirmar senha</label><input id="resetSenha2" type="password" placeholder="repita a senha" autocomplete="new-password"></div>
+    <button type="button" class="btn-primary" id="btnReset">Salvar nova senha</button>
+  </div>
+</div>
+
+<!-- SHELL -->
+<div id="shell">
+  <header class="topbar">
+    <button type="button" class="menu-toggle" id="menuToggle" aria-label="Abrir menu de navegação" aria-controls="sidebar" aria-expanded="false"><svg class="ic"><use href="#i-menu"/></svg></button>
+    <div class="topbar-title">
+      <span class="topbar-brand">Bizu do <span>Concurseiro X</span></span>
+      <span class="topbar-page" id="uiPageTitle">Painel</span>
+    </div>
+    <button type="button" class="trilha-chip" id="uiTrilhaChip" aria-label="Curso selecionado. Trocar curso"><span class="trilha-chip-lbl">Curso</span><strong id="uiTrilhaNome">—</strong></button>
+    <div class="topbar-right">
+      <button type="button" class="cron-pill" id="cronPill" data-go="cronometro" title="Cronômetro X — tempo de estudo"><svg class="ic"><use href="#i-clock"/></svg><span id="cronPillTxt">Estudar</span></button>
+      <span class="xp-pill" id="xpPill" title="Pontos de experiência">0 XP</span>
+      <button type="button" class="btn-ghost btn-sm" id="btnLogout" aria-label="Sair da conta"><svg class="ic"><use href="#i-logout"/></svg><span class="hide-sm">Sair</span></button>
+    </div>
+  </header>
+
+  <div class="shell-body">
+    <nav class="sidebar" id="sidebar" aria-label="Navegação principal">
+      <div class="sb-head">
+        <div class="sb-brand">
+          <div class="sb-mark" aria-hidden="true"><svg><use href="#i-shield"/></svg></div>
+          <div class="sb-brand-txt"><div class="sb-name">Bizu do <span>Concurseiro X</span></div><div class="sb-sub">PM-SP · GCM</div></div>
+        </div>
+        <button type="button" class="sb-collapse" id="uiCollapse" aria-label="Recolher menu lateral" aria-pressed="false" title="Recolher menu"><svg class="ic"><use href="#i-collapse"/></svg></button>
+      </div>
+
+      <div class="trilha" role="group" aria-labelledby="trilhaLbl">
+        <div class="trilha-lbl" id="trilhaLbl">Curso</div>
+        <div class="career-switch" id="cursoSwitch"></div>
+      </div>
+
+      <div class="sb-nav" id="uiStudentNav">
+        <div class="nav-section">Início</div>
+        <button type="button" class="nav-btn on" data-v="painel"><svg class="ni"><use href="#i-home"/></svg><span class="nl">Painel</span></button>
+        <button type="button" class="nav-btn" data-v="estudar"><svg class="ni"><use href="#i-target"/></svg><span class="nl">O que estudar?</span></button>
+        <button type="button" class="nav-btn" data-v="cronograma"><svg class="ni"><use href="#i-calendar"/></svg><span class="nl">Cronograma</span></button>
+        <button type="button" class="nav-btn" data-v="calendario"><svg class="ni"><use href="#i-calendar"/></svg><span class="nl">Calendário</span></button>
+        <button type="button" class="nav-btn" data-v="cronometro"><svg class="ni"><use href="#i-clock"/></svg><span class="nl">Cronômetro X</span></button>
+
+        <div class="nav-section">Estudo</div>
+        <button type="button" class="nav-btn" data-v="materias"><svg class="ni"><use href="#i-book"/></svg><span class="nl">Disciplinas</span></button>
+        <button type="button" class="nav-btn" data-v="busca"><svg class="ni"><use href="#i-search"/></svg><span class="nl">Busca</span></button>
+        <button type="button" class="nav-btn" data-v="m-pdf"><svg class="ni"><use href="#i-file"/></svg><span class="nl">Bizu PDF</span></button>
+        <button type="button" class="nav-btn" data-v="m-aula"><svg class="ni"><use href="#i-play"/></svg><span class="nl">Aulas</span></button>
+        <button type="button" class="nav-btn" data-v="m-lei_seca"><svg class="ni"><use href="#i-scale"/></svg><span class="nl">Lei Seca</span></button>
+        <button type="button" class="nav-btn" data-v="m-jurisprudencia"><svg class="ni"><use href="#i-landmark"/></svg><span class="nl">Jurisprudência</span></button>
+        <button type="button" class="nav-btn" data-v="m-mapa_mental"><svg class="ni"><use href="#i-map"/></svg><span class="nl">Mapas Mentais</span></button>
+        <button type="button" class="nav-btn" data-v="meuresumo"><svg class="ni"><use href="#i-pen"/></svg><span class="nl">Meu Resumo</span></button>
+
+        <div class="nav-section">Prática</div>
+        <button type="button" class="nav-btn" data-v="questoes"><svg class="ni"><use href="#i-help"/></svg><span class="nl">Questões</span></button>
+        <button type="button" class="nav-btn" data-v="m-flashcard"><svg class="ni"><use href="#i-layers"/></svg><span class="nl">Flashcards</span></button>
+        <button type="button" class="nav-btn" data-v="simulados"><svg class="ni"><use href="#i-clipboard"/></svg><span class="nl">Simulados</span></button>
+        <button type="button" class="nav-btn" data-v="salvas"><svg class="ni"><use href="#i-bookmark"/></svg><span class="nl">Questões Salvas</span></button>
+
+        <div class="nav-section">Revisão</div>
+        <button type="button" class="nav-btn" data-v="revisoes"><svg class="ni"><use href="#i-refresh"/></svg><span class="nl">Revisões</span><span id="badgeRev" class="nav-badge hidden" aria-label="revisões pendentes">0</span></button>
+        <button type="button" class="nav-btn" data-v="redacao"><svg class="ni"><use href="#i-edit"/></svg><span class="nl">Redação</span></button>
+
+        <div class="nav-section">Desempenho</div>
+        <button type="button" class="nav-btn" data-v="desempenho"><svg class="ni"><use href="#i-chart"/></svg><span class="nl">Desempenho</span></button>
+        <button type="button" class="nav-btn" data-v="dominio"><svg class="ni"><use href="#i-check"/></svg><span class="nl">Domínio</span></button>
+        <button type="button" class="nav-btn" data-v="conta"><svg class="ni"><use href="#i-sliders"/></svg><span class="nl">Minha conta</span></button>
+
+        <div class="nav-section nav-section-adm hidden" id="admNavSec">Administração</div>
+        <button type="button" class="nav-btn nav-btn-admin hidden" data-v="admin" id="admNavBtn"><svg class="ni"><use href="#i-sliders"/></svg><span class="nl">Central Administrativa</span></button>
+      </div>
+    </nav>
+    <div class="backdrop" id="uiBackdrop" hidden></div>
+
+    <main class="main" id="mainContent" tabindex="-1">
+
+      <!-- PAINEL -->
+      <section id="v-painel" class="view on">
+        <div class="view-hdr"><div><h1 class="view-title">Olá, <span id="painelNome">Candidato</span></h1><div class="view-sub" id="painelData"></div></div></div>
+        <section class="now-card">
+          <div class="now-eyebrow">Curso selecionado</div>
+          <div id="painelCurso"></div>
+        </section>
+        <div class="kpis" role="list" aria-label="Resumo do aluno">
+          <div class="kpi" role="listitem"><span class="kpi-val" id="stQ">0</span><span class="kpi-lbl">Questões</span></div>
+          <div class="kpi" role="listitem"><span class="kpi-val" id="stA">0%</span><span class="kpi-lbl">% de acerto</span></div>
+          <div class="kpi" role="listitem"><span class="kpi-val" id="stXP">0</span><span class="kpi-lbl">XP · nível <span id="stNivel">1</span></span></div>
+          <div class="kpi" role="listitem"><span class="kpi-val"><span id="stDom">0</span><span class="kpi-of">/<span id="stAssuntos">0</span></span></span><span class="kpi-lbl">Assuntos dominados</span></div>
+          <div class="kpi" role="listitem"><span class="kpi-val" id="stRevP">0</span><span class="kpi-lbl">Revisões pendentes</span></div>
+        </div>
+        <div class="dash-grid">
+          <section class="card dash-main">
+            <div class="sec-title">Seu progresso por disciplina</div>
+            <div class="sec-sub">Acerto nas questões — da menor para a maior</div>
+            <div id="painelDesemp"></div>
+          </section>
+          <aside class="dash-side">
+            <section class="card">
+              <div class="sec-title-row"><div class="sec-title">Revisões pendentes</div><button type="button" class="link-btn" data-go="revisoes">Ver todas</button></div>
+              <div id="painelRevs"></div>
+            </section>
+            <section class="card">
+              <div class="sec-title">Atalhos</div>
+              <div class="shortcuts">
+                <button type="button" class="shortcut" data-go="materias"><svg class="ni"><use href="#i-book"/></svg><span><strong>Disciplinas</strong><small>Edital organizado por assunto</small></span></button>
+                <button type="button" class="shortcut" data-go="cronograma"><svg class="ni"><use href="#i-calendar"/></svg><span><strong>Cronograma</strong><small>Plano de 14 dias</small></span></button>
+                <button type="button" class="shortcut" data-go="questoes"><svg class="ni"><use href="#i-help"/></svg><span><strong>Questões</strong><small>Treine por assunto</small></span></button>
+                <button type="button" class="shortcut" data-go="redacao"><svg class="ni"><use href="#i-edit"/></svg><span><strong>Redação</strong><small>Escreva e guarde seus textos</small></span></button>
+              </div>
+            </section>
+          </aside>
+        </div>
+        <details class="card card-details" id="cobDetails">
+          <summary><span class="sec-title">Cobertura do conteúdo</span><span class="muted small">Material disponível por assunto no curso selecionado</span></summary>
+          <div id="cobContainer"></div>
+        </details>
+      </section>
+
+      <!-- O QUE ESTUDAR -->
+      <section id="v-estudar" class="view">
+        <div class="view-hdr"><div><h1 class="view-title">O que estudar agora?</h1><div class="view-sub">Recomendação baseada no seu desempenho, nas revisões pendentes e no seu domínio de cada assunto</div></div></div>
+        <div class="filters">
+          <div class="fgroup"><label for="eaTempo">Tempo disponível</label>
+            <select id="eaTempo"><option value="60">60 min</option><option value="90" selected>90 min</option><option value="120">2 horas</option><option value="180">3 horas</option><option value="240">4+ horas</option></select></div>
+          <button type="button" class="btn-blue" id="btnEA">Gerar recomendação</button>
+        </div>
+        <div id="eaContainer"></div>
+      </section>
+
+      <!-- CRONOGRAMA -->
+      <section id="v-cronograma" class="view">
+        <div class="view-hdr"><div><h1 class="view-title">Cronograma</h1><div class="view-sub">Plano de 14 dias com revisões integradas · Sábado: simulado · Domingo: redação</div></div></div>
+        <div class="card mb2">
+          <div class="card-title">Configurar agenda</div>
+          <div class="filters">
+            <div class="fgroup"><label for="cronoH">Horas por dia</label><input type="number" id="cronoH" value="3" min="1" max="14"></div>
+            <div class="fgroup"><label for="cronoDias">Dias por semana</label><select id="cronoDias"><option value="5">5 dias</option><option value="6" selected>6 dias</option><option value="7">7 dias</option></select></div>
+            <button type="button" class="btn-blue" id="btnCrono">Gerar cronograma</button>
+          </div>
+          <div class="check-row">
+            <label class="check"><input type="checkbox" id="cronoSabSim" checked> Sábado: simulado</label>
+            <label class="check"><input type="checkbox" id="cronoDomRed" checked> Domingo: redação</label>
+          </div>
+        </div>
+        <div id="cronoContainer" class="agenda"></div>
+      </section>
+
+      <!-- CALENDÁRIO -->
+      <section id="v-calendario" class="view">
+        <div class="view-hdr"><div><h1 class="view-title">Calendário</h1><div class="view-sub">Seus compromissos de estudo, revisões programadas e a data da prova</div></div></div>
+        <div class="card mb2">
+          <div class="cal-top">
+            <button type="button" class="btn-ghost btn-sm" id="calPrev" aria-label="Mês anterior">‹</button>
+            <strong id="calMes"></strong>
+            <button type="button" class="btn-ghost btn-sm" id="calNext" aria-label="Próximo mês">›</button>
+          </div>
+          <div class="cal-grid" id="calGrid"></div>
+        </div>
+        <div class="card">
+          <div class="card-title" id="calDiaTitulo">Selecione um dia</div>
+          <div id="calDiaLista"></div>
+          <div class="filters mt2" id="calForm">
+            <div class="fgroup fgrow"><label for="calTitulo">Novo compromisso</label><input id="calTitulo" placeholder="Ex.: Revisar Língua Portuguesa"></div>
+            <div class="fgroup"><label for="calTipo">Tipo</label><select id="calTipo"><option value="estudo">Estudo</option><option value="revisao">Revisão</option><option value="simulado">Simulado</option><option value="redacao">Redação</option><option value="prova">Prova</option><option value="outro">Outro</option></select></div>
+            <button type="button" class="btn-blue" id="btnCalAdd">Adicionar</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- CRONÔMETRO X -->
+      <section id="v-cronometro" class="view">
+        <div class="view-hdr"><div><h1 class="view-title">Cronômetro X</h1><div class="view-sub">Tempo líquido de estudo: o relógio desconta as pausas e o registro fica salvo, mesmo se você fechar a página</div></div></div>
+        <div class="kpis" role="list">
+          <div class="kpi" role="listitem"><span class="kpi-val" id="cronKHoje">0h00</span><span class="kpi-lbl">Hoje · tempo líquido</span></div>
+          <div class="kpi" role="listitem"><span class="kpi-val" id="cronKSess">0</span><span class="kpi-lbl">Sessões hoje</span></div>
+          <div class="kpi" role="listitem"><span class="kpi-val" id="cronKSem">0h00</span><span class="kpi-lbl">Últimos 7 dias</span></div>
+          <div class="kpi" role="listitem"><span class="kpi-val" id="cronKTotal">0h00</span><span class="kpi-lbl">Total acumulado</span></div>
+        </div>
+        <section class="card cron-card mb2">
+          <div class="cron-estado" id="cronEstado">Nenhuma sessão em andamento</div>
+          <div class="cron-display" id="cronDisplay">00:00:00</div>
+          <div class="cron-alvo" id="cronAlvo"></div>
+          <div id="cronSetup">
+            <div class="filters" data-cascata="cron">
+              <div class="fgroup"><label for="cronDisc">Disciplina</label><select id="cronDisc"></select></div>
+              <div class="fgroup"><label for="cronAss">Assunto</label><select id="cronAss"></select></div>
+              <div class="fgroup"><label for="cronAtiv">Atividade</label>
+                <select id="cronAtiv"><option value="teoria">Teoria / leitura</option><option value="questoes">Questões</option><option value="revisao">Revisão</option><option value="flashcards">Flashcards</option><option value="lei-seca">Lei seca</option><option value="simulado">Simulado</option><option value="redacao">Redação</option></select></div>
+            </div>
+          </div>
+          <div class="cron-acoes">
+            <button type="button" class="btn-blue" id="btnCronIniciar">Iniciar estudo</button>
+            <button type="button" class="btn-ghost hidden" id="btnCronPausar">Pausar</button>
+            <button type="button" class="btn-ghost hidden" id="btnCronRetomar">Retomar</button>
+            <button type="button" class="btn-gold hidden" id="btnCronEncerrar">Encerrar sessão</button>
+          </div>
+          <div class="cron-msg" id="cronMsg" role="status"></div>
+        </section>
+        <div class="card"><div class="card-title">Sessões recentes</div><div id="cronHist"></div></div>
+      </section>
+
+      <!-- DISCIPLINAS (estrutura curricular) -->
+      <section id="v-materias" class="view">
+        <div class="view-hdr"><div><h1 class="view-title">Disciplinas</h1><div class="view-sub" id="matSub">Curso → Disciplina → Assunto → Subassunto, conforme o edital</div></div></div>
+        <div id="matContainer"></div>
+      </section>
+
+      <!-- ASSUNTO (página de um assunto) -->
+      <section id="v-assunto" class="view">
+        <div class="view-hdr"><div><div class="crumb" id="assCrumb"></div><h1 class="view-title" id="assTitulo"></h1><div class="view-sub" id="assSub"></div></div></div>
+        <div class="dash-grid">
+          <div class="dash-main">
+            <section class="card mb2"><div class="card-title">Subassuntos</div><div id="assSubs"></div></section>
+            <section class="card mb2"><div class="card-title">Conteúdo deste assunto</div><div id="assConteudo" class="slot-grid"></div></section>
+          </div>
+          <aside class="dash-side">
+            <section class="card mb2"><div class="card-title">Seu domínio</div><div id="assDominio" class="flex gap1" style="flex-wrap:wrap"></div></section>
+            <section class="card mb2"><div class="card-title">Meu resumo</div><textarea id="assNota" rows="8" placeholder="Suas anotações sobre este assunto (salvas automaticamente)"></textarea><div class="muted small mt1" id="assNotaMsg"></div></section>
+            <button type="button" class="btn-blue" id="assEstudar" style="width:100%">Estudar este assunto no Cronômetro X</button>
+          </aside>
+        </div>
+      </section>
+
+      <!-- BUSCA -->
+      <section id="v-busca" class="view">
+        <div class="view-hdr"><div><h1 class="view-title">Busca</h1><div class="view-sub">Encontre disciplinas, assuntos e subassuntos do curso selecionado</div></div></div>
+        <div class="filters"><div class="fgroup fgrow"><label for="buscaInp">Buscar</label><input id="buscaInp" type="search" placeholder="Ex.: concordância, porcentagem, Estatuto..." autocomplete="off"></div></div>
+        <div id="buscaRes"></div>
+      </section>
+
+      <!-- MATERIAIS (visão genérica: PDF, aulas, lei seca, jurisprudência, mapas, flashcards) -->
+      <section id="v-material" class="view">
+        <div class="view-hdr"><div><h1 class="view-title" id="matlTitulo"></h1><div class="view-sub" id="matlSub"></div></div></div>
+        <div class="filters" data-cascata="matl">
+          <div class="fgroup"><label for="matlDisc">Disciplina</label><select id="matlDisc"></select></div>
+          <div class="fgroup"><label for="matlAss">Assunto</label><select id="matlAss"></select></div>
+          <div class="fgroup"><label for="matlSub">Subassunto</label><select id="matlSubA"></select></div>
+        </div>
+        <div id="matlLista"></div>
+      </section>
+
+      <!-- MEU RESUMO -->
+      <section id="v-meuresumo" class="view">
+        <div class="view-hdr"><div><h1 class="view-title">Meu Resumo</h1><div class="view-sub">Suas anotações pessoais, organizadas por assunto</div></div></div>
+        <div class="filters" data-cascata="mr">
+          <div class="fgroup"><label for="mrDisc">Disciplina</label><select id="mrDisc"></select></div>
+          <div class="fgroup"><label for="mrAss">Assunto</label><select id="mrAss"></select></div>
+        </div>
+        <div class="card mb2 hidden" id="mrEditor"><textarea id="mrTexto" rows="12" placeholder="Escreva seu resumo deste assunto"></textarea><div class="flex gap1 mt2 center"><button type="button" class="btn-blue" id="btnMrSalvar">Salvar</button><span class="muted small" id="mrMsg"></span></div></div>
+        <div class="card"><div class="card-title">Resumos já escritos</div><div id="mrLista"></div></div>
+      </section>
+
+      <!-- QUESTÕES -->
+      <section id="v-questoes" class="view">
+        <div class="view-hdr"><div><h1 class="view-title">Questões</h1><div class="view-sub">Treine por disciplina, assunto e subassunto</div></div></div>
+        <div class="filters" data-cascata="q">
+          <div class="fgroup"><label for="qDisc">Disciplina</label><select id="qDisc"></select></div>
+          <div class="fgroup"><label for="qAss">Assunto</label><select id="qAss"></select></div>
+          <div class="fgroup"><label for="qSubA">Subassunto</label><select id="qSubA"></select></div>
+          <button type="button" class="btn-blue" id="btnQ">Buscar questões</button>
+        </div>
+        <div id="qContainer"></div>
+      </section>
+
+      <!-- SIMULADOS -->
+      <section id="v-simulados" class="view">
+        <div class="view-hdr"><div><h1 class="view-title">Simulados</h1><div class="view-sub">Provas completas no formato do edital, com tempo</div></div></div>
+        <div id="simLista"></div>
+        <div id="simProva" class="hidden"></div>
+        <div class="card mt2"><div class="card-title">Seu histórico</div><div id="simHist"></div></div>
+      </section>
+
+      <!-- SALVAS -->
+      <section id="v-salvas" class="view">
+        <div class="view-hdr"><div><h1 class="view-title">Questões Salvas</h1><div class="view-sub">Questões que você marcou para rever</div></div></div>
+        <div id="salvasLista"></div>
+      </section>
+
+      <!-- REVISÕES -->
+      <section id="v-revisoes" class="view">
+        <div class="view-hdr"><div><h1 class="view-title">Revisões</h1><div class="view-sub">Revisão espaçada: 24 horas, 7 dias e 30 dias depois de estudar cada assunto</div></div></div>
+        <div id="revLista"></div>
+      </section>
+
+      <!-- REDAÇÃO -->
+      <section id="v-redacao" class="view">
+        <div class="view-hdr"><div><h1 class="view-title">Redação</h1><div class="view-sub" id="redSub"></div></div></div>
+        <div class="tabs" role="tablist" id="redTabs">
+          <button type="button" class="tab on" data-rt="escrever" role="tab">Escrever</button>
+          <button type="button" class="tab" data-rt="temas" role="tab">Temas propostos</button>
+          <button type="button" class="tab" data-rt="minhas" role="tab">Minhas redações</button>
+        </div>
+        <div data-rp="escrever">
+          <div class="card mb2" id="redFormato"></div>
+          <div class="card">
+            <div class="filters">
+              <div class="fgroup fgrow"><label for="redTema">Tema</label><input id="redTema" placeholder="Escreva o tema que você vai desenvolver"></div>
+              <div class="fgroup fgrow"><label for="redTituloInp">Título (opcional)</label><input id="redTituloInp"></div>
+            </div>
+            <textarea id="redTexto" rows="18" class="red-texto" placeholder="Desenvolva seu texto aqui."></textarea>
+            <div class="flex gap2 mt1 muted small" id="redContagem"></div>
+            <div class="flex gap1 mt2" style="flex-wrap:wrap">
+              <button type="button" class="btn-ghost" id="btnRedNova">Nova redação</button>
+              <button type="button" class="btn-ghost" id="btnRedRasc">Salvar rascunho</button>
+              <button type="button" class="btn-blue" id="btnRedFinal">Finalizar</button>
+              <span class="muted small center flex" id="redMsg"></span>
+            </div>
+          </div>
+        </div>
+        <div data-rp="temas" class="hidden"><div id="redTemasLista"></div></div>
+        <div data-rp="minhas" class="hidden"><div id="redMinhas"></div></div>
+      </section>
+
+      <!-- DESEMPENHO -->
+      <section id="v-desempenho" class="view">
+        <div class="view-hdr"><div><h1 class="view-title">Desempenho</h1><div class="view-sub">Acerto por disciplina e por assunto, e tempo líquido estudado no curso</div></div></div>
+        <div class="kpis" id="despKpis"></div>
+        <div class="card mb2"><div class="card-title">Por disciplina</div><div id="despDisc"></div></div>
+        <div class="card"><div class="card-title">Por assunto</div><div id="despAss"></div></div>
+      </section>
+
+      <!-- DOMÍNIO -->
+      <section id="v-dominio" class="view">
+        <div class="view-hdr"><div><h1 class="view-title">Domínio</h1><div class="view-sub">Marque quanto você domina cada assunto do edital</div></div></div>
+        <div class="filters"><div class="fgroup"><label for="domDisc">Disciplina</label><select id="domDisc"></select></div></div>
+        <div id="domLista"></div>
+      </section>
+
+      <!-- MINHA CONTA -->
+      <section id="v-conta" class="view">
+        <div class="view-hdr"><div><h1 class="view-title">Minha conta</h1><div class="view-sub" id="contaEmail"></div></div></div>
+        <div class="card mb2">
+          <div class="card-title">Perfil</div>
+          <div class="filters"><div class="fgroup fgrow"><label for="contaNome">Nome</label><input id="contaNome" autocomplete="name"></div><button type="button" class="btn-blue" id="btnContaNome">Salvar</button></div>
+        </div>
+        <div class="card">
+          <div class="card-title">Alterar senha</div>
+          <div class="filters">
+            <div class="fgroup"><label for="contaSenha">Nova senha</label><input id="contaSenha" type="password" autocomplete="new-password"></div>
+            <div class="fgroup"><label for="contaSenha2">Confirmar</label><input id="contaSenha2" type="password" autocomplete="new-password"></div>
+            <button type="button" class="btn-blue" id="btnContaSenha">Alterar senha</button>
+          </div>
+          <div class="muted small" id="contaMsg" role="status"></div>
+        </div>
+      </section>
+
+      <!-- ADMINISTRAÇÃO -->
+      <section id="v-admin" class="view">
+        <div class="view-hdr"><div><h1 class="view-title">Central Administrativa</h1><div class="view-sub">Estrutura curricular, cobertura de conteúdo e usuários</div></div></div>
+        <div class="tabs" role="tablist" id="admTabs">
+          <button type="button" class="tab on" data-at="estrutura" role="tab">Estrutura curricular</button>
+          <button type="button" class="tab" data-at="cobertura" role="tab">Cobertura</button>
+          <button type="button" class="tab" data-at="usuarios" role="tab">Usuários</button>
+        </div>
+        <div data-ap="estrutura"><div id="admEstrutura"></div></div>
+        <div data-ap="cobertura" class="hidden"><div id="admCobertura"></div></div>
+        <div data-ap="usuarios" class="hidden">
+          <div class="card mb2">
+            <div class="card-title">Criar usuário</div>
+            <div class="filters">
+              <div class="fgroup"><label for="admUNome">Nome</label><input id="admUNome"></div>
+              <div class="fgroup"><label for="admUEmail">E-mail</label><input id="admUEmail" type="email"></div>
+              <div class="fgroup"><label for="admUSenha">Senha inicial</label><input id="admUSenha" type="text" autocomplete="off"></div>
+              <div class="fgroup"><label for="admUCurso">Curso</label><select id="admUCurso"></select></div>
+              <button type="button" class="btn-blue" id="btnAdmUCriar">Criar</button>
+            </div>
+            <div class="muted small" id="admUMsg" role="status"></div>
+          </div>
+          <div class="card"><div class="card-title">Usuários</div><div id="admUsuarios"></div></div>
+        </div>
+      </section>
+
+    </main>
+  </div>
+</div>
+<script src="/app.js"></script>
+</body>
+</html>
