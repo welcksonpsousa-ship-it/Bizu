@@ -1,8 +1,8 @@
 // Bizu do Concurseiro X — API (Edge Function cx-api, projeto Supabase bizu-concurseiro-x).
 // Projeto independente do Bizu Delta X: banco, funções e sessão próprios.
-// Nesta etapa a plataforma só tem a ESTRUTURA curricular; as rotas de conteúdo
-// (questões, materiais, simulados, temas de redação) devolvem apenas o que foi
-// publicado — hoje, nada. Nenhuma rota gera conteúdo de estudo.
+// As rotas de conteúdo (questões, materiais, simulados, temas de redação) devolvem
+// apenas o que foi publicado. O conteúdo entra pelas rotas /admin/* (importação por
+// assunto, montagem de simulados e temas de redação), restritas a administradores.
 import { createClient } from 'jsr:@supabase/supabase-js@2';
 
 const SUPABASE_URL = Deno.env.get('SUPABASE_URL')!;
@@ -475,6 +475,67 @@ async function handle(req: Request, ck: Ck): Promise<Response> {
         if (error) return fail(error.message.includes('already') ? 'Este e-mail já está cadastrado.' : 'Não foi possível criar o usuário.');
         await db.from('cx_perfis').upsert({ user_id: data.user.id, nome: body.nome ? String(body.nome).slice(0, 120) : null, curso_id: (await cursoValido(body.curso_id)) ? body.curso_id : null });
         return json({ ok: true, id: data.user.id });
+      }
+      // Importação de conteúdo de um assunto (idempotente: `limpar` apaga antes o que for do mesmo tipo).
+      if (path === '/admin/importar' && req.method === 'POST') {
+        const { data: as } = await db.from('cx_assuntos').select('id,cx_disciplinas!inner(nome,curso_id),cx_subassuntos(id,nome)')
+          .eq('nome', body.assunto).eq('cx_disciplinas.nome', body.disciplina).eq('cx_disciplinas.curso_id', body.curso).maybeSingle();
+        if (!as) return fail(`Assunto não encontrado: ${body.curso} / ${body.disciplina} / ${body.assunto}`, 404);
+        const subId = (nome: unknown) => (as.cx_subassuntos ?? []).find((s: any) => s.nome === nome)?.id ?? null;
+        const limpar: string[] = Array.isArray(body.limpar) ? body.limpar : [];
+        if (limpar.includes('questoes')) await db.from('cx_questoes').delete().eq('assunto_id', as.id);
+        const tiposLimpar = limpar.filter((t) => TIPOS_MATERIAL.includes(t));
+        if (tiposLimpar.length) await db.from('cx_materiais').delete().eq('assunto_id', as.id).in('tipo', tiposLimpar);
+        const qs = (Array.isArray(body.questoes) ? body.questoes : []).filter((q: any) =>
+          q && q.enunciado && Array.isArray(q.opcoes) && q.opcoes.length === 5 && Number.isInteger(q.gabarito) && q.gabarito >= 0 && q.gabarito <= 4);
+        const ms = (Array.isArray(body.materiais) ? body.materiais : []).filter((m: any) => m && TIPOS_MATERIAL.includes(m.tipo) && m.titulo);
+        if (qs.length) {
+          const { error } = await db.from('cx_questoes').insert(qs.map((q: any) => ({
+            assunto_id: as.id, subassunto_id: subId(q.subassunto), enunciado: String(q.enunciado), opcoes: q.opcoes.map(String),
+            gabarito: q.gabarito, comentario: q.comentario ?? null, banca: q.banca ?? 'Bizu do Concurseiro X (inédita)', ano: q.ano ?? null,
+            orgao: q.orgao ?? null, dificuldade: ['facil', 'media', 'dificil'].includes(q.dificuldade) ? q.dificuldade : null, publicado: q.publicado !== false,
+          })));
+          if (error) return fail('Erro ao gravar questões: ' + error.message, 500);
+        }
+        if (ms.length) {
+          const { error } = await db.from('cx_materiais').insert(ms.map((m: any) => ({
+            assunto_id: as.id, subassunto_id: subId(m.subassunto), tipo: m.tipo, titulo: String(m.titulo).slice(0, 300),
+            conteudo: m.conteudo ?? {}, url: m.url ?? null, fonte_oficial: m.fonte_oficial ?? null, publicado: m.publicado !== false,
+          })));
+          if (error) return fail('Erro ao gravar materiais: ' + error.message, 500);
+        }
+        return json({ ok: true, assunto_id: as.id, questoes: qs.length, materiais: ms.length, descartadas: (body.questoes?.length ?? 0) - qs.length });
+      }
+      // Monta um simulado sorteando questões publicadas por disciplina: { distribuicao: { "<disciplina>": n } }.
+      if (path === '/admin/simulado/criar' && req.method === 'POST') {
+        if (!(await cursoValido(body.curso_id))) return fail('Curso inválido');
+        const ids: string[] = [];
+        for (const [disc, n] of Object.entries(body.distribuicao ?? {})) {
+          const { data } = await db.from('cx_questoes').select('id,cx_assuntos!inner(cx_disciplinas!inner(nome,curso_id))')
+            .eq('publicado', true).eq('cx_assuntos.cx_disciplinas.curso_id', body.curso_id).eq('cx_assuntos.cx_disciplinas.nome', disc);
+          const pool = (data ?? []).map((r: any) => r.id).filter((id: string) => !ids.includes(id));
+          for (let i = pool.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [pool[i], pool[j]] = [pool[j], pool[i]]; }
+          ids.push(...pool.slice(0, Number(n) || 0));
+        }
+        if (!ids.length) return fail('Nenhuma questão disponível para montar o simulado');
+        const { data, error } = await db.from('cx_simulados').insert({ curso_id: body.curso_id, titulo: String(body.titulo ?? 'Simulado').slice(0, 200), questao_ids: ids, duracao_min: parseInt(body.duracao_min) || 180, publicado: body.publicado !== false }).select('id').single();
+        if (error) return fail('Não foi possível criar o simulado');
+        return json({ ok: true, id: data.id, questoes: ids.length });
+      }
+      if (path === '/admin/limpar-simulados' && req.method === 'POST') {
+        if (!(await cursoValido(body.curso_id))) return fail('Curso inválido');
+        await db.from('cx_simulados').delete().eq('curso_id', body.curso_id);
+        return json({ ok: true });
+      }
+      if (path === '/admin/redacao-temas' && req.method === 'POST') {
+        if (!(await cursoValido(body.curso_id))) return fail('Curso inválido');
+        if (body.limpar) await db.from('cx_redacao_temas').delete().eq('curso_id', body.curso_id);
+        const temas = (Array.isArray(body.temas) ? body.temas : []).filter((t: any) => t && t.titulo && t.proposta);
+        if (temas.length) {
+          const { error } = await db.from('cx_redacao_temas').insert(temas.map((t: any) => ({ curso_id: body.curso_id, titulo: String(t.titulo), proposta: String(t.proposta), textos_apoio: t.textos_apoio ?? [], publicado: t.publicado !== false })));
+          if (error) return fail('Erro ao gravar temas: ' + error.message, 500);
+        }
+        return json({ ok: true, temas: temas.length });
       }
       if (path === '/admin/estrutura' && req.method === 'POST') {
         const nivel = body.nivel as string, acao = body.acao as string;

@@ -734,3 +734,15 @@ div:has(>.ldots:first-child)[style]{font-size:var(--fs-sm)}
 .tbl th{color:var(--text-3);font-weight:600;font-size:11.5px;text-transform:uppercase;letter-spacing:.04em}
 .tbl-wrap{overflow-x:auto}
 @media (max-width:860px){.cal-cell{min-height:48px;padding:3px}.info-list{grid-template-columns:1fr}.info-list dt{margin-top:6px}}
+.mat-item>summary{list-style:none;cursor:pointer;display:flex;flex-direction:column;gap:2px}
+.mat-item>summary::-webkit-details-marker{display:none}
+.mat-item>summary .card-title{margin-bottom:0}
+.mat-item[open]>summary{margin-bottom:10px;padding-bottom:10px;border-bottom:1px solid var(--border)}
+.mat-corpo p{margin:0 0 10px;line-height:1.7}
+.mat-h{font-size:15px;font-weight:700;margin:16px 0 6px;color:var(--primary-text)}
+.mat-h:first-child{margin-top:0}
+.mat-lista{margin:0 0 10px 20px;line-height:1.7}
+.mat-bizus li{margin-bottom:4px}
+.red-apoio{background:var(--surface-2);border:1px solid var(--border);border-radius:var(--r);padding:10px 14px;margin-bottom:8px;font-size:13.5px}
+.red-apoio p{margin:4px 0}
+.red-proposta{margin-top:10px;padding:10px 14px;border-left:3px solid var(--accent);background:var(--accent-soft);border-radius:var(--r-sm)}

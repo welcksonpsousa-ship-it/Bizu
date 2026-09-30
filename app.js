@@ -121,7 +121,7 @@ $$('.nav-btn[data-v]').forEach((b) => { TITULOS[b.dataset.v] = b.querySelector('
 Object.assign(TITULOS, { assunto: 'Assunto', admin: 'Central Administrativa' });
 const TIPOS = {
   pdf: { nome: 'Bizu PDF', sub: 'Apostilas em PDF organizadas por assunto do edital' },
-  aula: { nome: 'Aulas', sub: 'Videoaulas organizadas por assunto do edital' },
+  aula: { nome: 'Aulas', sub: 'Aulas em texto, organizadas por assunto do edital' },
   lei_seca: { nome: 'Lei Seca', sub: 'Texto literal da legislação cobrada, com link para a fonte oficial' },
   jurisprudencia: { nome: 'Jurisprudência', sub: 'Súmulas e decisões relevantes, com link para a fonte oficial' },
   mapa_mental: { nome: 'Mapas Mentais', sub: 'Mapas mentais por assunto' },
@@ -369,10 +369,27 @@ async function renderMaterial(tipo) {
       $$('#fcGrid .fccard').forEach((c) => c.addEventListener('click', () => c.classList.toggle('flip')));
       return;
     }
-    box.innerHTML = itens.map((m) => `<div class="card"><div class="card-title">${esc(m.titulo)}</div><div class="muted small">${esc(S.ass[m.assunto_id]?.disciplina || '')} › ${esc(S.ass[m.assunto_id]?.nome || '')}</div>
-      ${m.conteudo && m.conteudo.texto ? `<p class="mt1" style="white-space:pre-wrap">${esc(m.conteudo.texto)}</p>` : ''}
-      <div class="flex gap1 mt1">${m.url ? `<a class="btn-blue" href="${esc(m.url)}" target="_blank" rel="noopener">Abrir</a>` : ''}${m.fonte_oficial ? `<a class="btn-ghost" href="${esc(m.fonte_oficial)}" target="_blank" rel="noopener">Fonte oficial</a>` : ''}</div></div>`).join('');
+    const aberto = !!$('matlAss').value;
+    box.innerHTML = itens.map((m) => { const a = S.ass[m.assunto_id]; return `<details class="card mat-item"${aberto ? ' open' : ''}><summary><span class="card-title">${esc(m.titulo)}</span><span class="muted small">${esc(a ? a.disciplina + ' › ' + a.nome : '')}</span></summary><div class="mat-corpo">${corpoMaterial(m)}</div></details>`; }).join('');
   } catch (e) { box.innerHTML = emp(e.message); }
+}
+
+/* Corpo de cada tipo de material. Texto vem do banco: sempre escapado. */
+function textoFmt(t) {
+  const linhas = String(t || '').split('\n'); let h = '', lista = [];
+  const fecha = () => { if (lista.length) { h += '<ul class="mat-lista">' + lista.map((l) => `<li>${esc(l)}</li>`).join('') + '</ul>'; lista = []; } };
+  linhas.forEach((l) => { const x = l.trim(); if (/^[•\-–]\s+/.test(x)) lista.push(x.replace(/^[•\-–]\s+/, '')); else { fecha(); if (x) h += `<p>${esc(x)}</p>`; } });
+  fecha(); return h;
+}
+function corpoMaterial(m) {
+  const c = m.conteudo || {};
+  const fonte = m.fonte_oficial ? `<p class="mt1"><a class="btn-ghost btn-sm" href="${esc(m.fonte_oficial)}" target="_blank" rel="noopener">Fonte oficial</a></p>` : '';
+  if (m.tipo === 'aula') return (c.secoes || []).map((sec) => `<h3 class="mat-h">${esc(sec.titulo)}</h3>${textoFmt(sec.texto)}`).join('') || textoFmt(c.texto);
+  if (m.tipo === 'revisao') return `<ul class="mat-lista mat-bizus">${(c.pontos || []).map((p) => `<li>${esc(p)}</li>`).join('')}</ul>`;
+  if (m.tipo === 'mapa_mental') return `<p class="small" style="margin:0 0 8px"><strong>${esc(c.no_central || m.titulo)}</strong></p><ul class="mapa-ul">${(c.ramos || []).map((r) => `<li><strong>${esc(r.label)}</strong>${(r.filhos || []).length ? `<ul class="mapa-ul">${r.filhos.map((f) => `<li>${esc(f)}</li>`).join('')}</ul>` : ''}</li>`).join('')}</ul>`;
+  if (m.tipo === 'lei_seca') return `${c.lei ? `<div class="badge">${esc(c.lei)}${c.artigo ? ' · ' + esc(c.artigo) : ''}</div>` : ''}<div class="scrl mt1">${esc(c.texto || '')}</div>${c.observacao ? `<p class="muted small mt1">${esc(c.observacao)}</p>` : ''}${fonte}`;
+  if (m.tipo === 'jurisprudencia') return `<div class="juris-trib">${esc([c.tribunal, c.referencia].filter(Boolean).join(' · '))}</div><div class="juris-tese">${esc(c.enunciado || '')}</div>${fonte}`;
+  return textoFmt(c.texto) + (m.url ? `<p class="mt1"><a class="btn-blue btn-sm" href="${esc(m.url)}" target="_blank" rel="noopener">Abrir</a></p>` : '') + fonte;
 }
 
 /* ---------------- MEU RESUMO ---------------- */
@@ -506,7 +523,7 @@ async function carregarTemasRed() {
   const box = $('redTemasLista'); box.innerHTML = ld();
   try {
     const ts = (await api('/redacao/temas?' + cq())).temas;
-    box.innerHTML = ts.length ? ts.map((t) => `<div class="card"><div class="card-title">${esc(t.titulo)}</div><p class="small" style="white-space:pre-wrap">${esc(t.proposta)}</p><button type="button" class="btn-blue btn-sm mt1" data-tema="${t.id}" data-titulo="${esc(t.titulo)}">Escrever sobre este tema</button></div>`).join('') : emp('Nenhum tema de redação publicado ainda', 'Enquanto isso, você pode escrever sobre um tema de sua escolha na aba Escrever.');
+    box.innerHTML = ts.length ? ts.map((t) => `<div class="card"><div class="card-title">${esc(t.titulo)}</div>${(t.textos_apoio || []).map((x, i) => `<div class="red-apoio"><div class="muted small">Texto ${i + 1}${x.fonte ? ' — ' + esc(x.fonte) : ''}</div>${textoFmt(x.texto || x)}</div>`).join('')}<p class="small red-proposta" style="white-space:pre-wrap">${esc(t.proposta)}</p><button type="button" class="btn-blue btn-sm mt1" data-tema="${t.id}" data-titulo="${esc(t.titulo)}">Escrever sobre este tema</button></div>`).join('') : emp('Nenhum tema de redação publicado ainda', 'Enquanto isso, você pode escrever sobre um tema de sua escolha na aba Escrever.');
     $$('#redTemasLista [data-tema]').forEach((b) => b.addEventListener('click', () => { $('btnRedNova').click(); RED.tema_id = b.dataset.tema; $('redTema').value = b.dataset.titulo; abaRed('escrever'); }));
   } catch (e) { box.innerHTML = emp(e.message); }
 }
