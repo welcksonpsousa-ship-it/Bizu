@@ -19,6 +19,10 @@ Plataforma de estudo para **PM-SP Soldado** e **GCM Geral**. Projeto **independe
 | `data/estrutura-curricular.json` | Fonte da estrutura curricular |
 | `scripts/gerar-seed.py` | Gera o `002_seed_estrutura.sql` a partir do JSON |
 
+## Publicação
+- **Site:** projeto Vercel `bizu-concurseiro-x` (https://bizu-concurseiro-x.vercel.app), ligado a este repositório: cada envio para `main` publica o site automaticamente.
+- **API e banco:** projeto Supabase `bizu-concurseiro-x` (independente do Bizu Delta X). A função `cx-api` e as migrações são publicadas à parte.
+
 ## Recriar do zero
 1. Aplicar `001_estrutura.sql` e `002_seed_estrutura.sql` no projeto Supabase (a carga é idempotente: rodar de novo recria/atualiza sem duplicar).
 2. Publicar a função `cx-api` (sem verificação de JWT: a própria função valida a sessão por cookie).
