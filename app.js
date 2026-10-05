@@ -361,10 +361,12 @@ async function renderMaterial(tipo) {
   const t = TIPOS[tipo]; if (!t) return;
   $('matlTitulo').textContent = t.nome; $('matlSub').textContent = t.sub;
   const box = $('matlLista'); box.innerHTML = ld('Carregando...');
+  const seq = (S.matSeq = (S.matSeq || 0) + 1);
   try {
     // Sem disciplina escolhida, busca por disciplina (a API devolve no máximo 200 itens por consulta).
     const itens = $(CASCATAS[1].d).value ? (await api('/materiais?tipo=' + tipo + '&' + filtroQS(CASCATAS[1]))).materiais
       : (await Promise.all(S.est.map((d) => api('/materiais?tipo=' + tipo + '&' + cq() + '&disciplina_id=' + d.id)))).flatMap((r) => r.materiais);
+    if (seq !== S.matSeq) return; // outra tela de material foi aberta enquanto esta carregava
     if (!itens.length) { box.innerHTML = emp(EM_PREPARO, EM_PREPARO_SUB); return; }
     if (tipo === 'flashcard') {
       box.innerHTML = `<div class="res-grid" id="fcGrid">${itens.map((f) => `<div class="fccard" tabindex="0"><span class="badge">${esc(S.ass[f.assunto_id]?.nome || '')}</span><div class="fcfront">${esc(f.conteudo.pergunta || f.titulo)}</div><div class="fcback">${esc(f.conteudo.resposta || '')}</div></div>`).join('')}</div>`;
@@ -373,7 +375,7 @@ async function renderMaterial(tipo) {
     }
     const aberto = !!$('matlAss').value;
     box.innerHTML = itens.map((m) => { const a = S.ass[m.assunto_id]; return `<details class="card mat-item"${aberto ? ' open' : ''}><summary><span class="card-title">${esc(m.titulo)}</span><span class="muted small">${esc(a ? a.disciplina + ' › ' + a.nome : '')}</span></summary><div class="mat-corpo">${corpoMaterial(m)}</div></details>`; }).join('');
-  } catch (e) { box.innerHTML = emp(e.message); }
+  } catch (e) { if (seq === S.matSeq) box.innerHTML = emp(e.message); }
 }
 
 /* Corpo de cada tipo de material. Texto vem do banco: sempre escapado. */
