@@ -362,7 +362,9 @@ async function renderMaterial(tipo) {
   $('matlTitulo').textContent = t.nome; $('matlSub').textContent = t.sub;
   const box = $('matlLista'); box.innerHTML = ld('Carregando...');
   try {
-    const itens = (await api('/materiais?tipo=' + tipo + '&' + filtroQS(CASCATAS[1]))).materiais;
+    // Sem disciplina escolhida, busca por disciplina (a API devolve no máximo 200 itens por consulta).
+    const itens = $(CASCATAS[1].d).value ? (await api('/materiais?tipo=' + tipo + '&' + filtroQS(CASCATAS[1]))).materiais
+      : (await Promise.all(S.est.map((d) => api('/materiais?tipo=' + tipo + '&' + cq() + '&disciplina_id=' + d.id)))).flatMap((r) => r.materiais);
     if (!itens.length) { box.innerHTML = emp(EM_PREPARO, EM_PREPARO_SUB); return; }
     if (tipo === 'flashcard') {
       box.innerHTML = `<div class="res-grid" id="fcGrid">${itens.map((f) => `<div class="fccard" tabindex="0"><span class="badge">${esc(S.ass[f.assunto_id]?.nome || '')}</span><div class="fcfront">${esc(f.conteudo.pergunta || f.titulo)}</div><div class="fcback">${esc(f.conteudo.resposta || '')}</div></div>`).join('')}</div>`;
