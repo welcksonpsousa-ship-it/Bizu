@@ -1,0 +1,476 @@
+{
+ "itens": [
+  {
+   "curso": "gcm-geral",
+   "disciplina": "Direito Processual Penal",
+   "assunto": "Infrações penais de menor potencial ofensivo (Lei nº 9.099/1995, art. 61)",
+   "materiais": [
+    {
+     "tipo": "lei_seca",
+     "titulo": "Lei 9.099/1995 — Art. 60",
+     "subassunto": null,
+     "conteudo": {
+      "lei": "Lei 9.099/1995 (Juizados Especiais)",
+      "artigo": "Art. 60",
+      "texto": "Art. 60. O Juizado Especial Criminal, provido por juízes togados ou togados e leigos, tem competência para a conciliação, o julgamento e a execução das infrações penais de menor potencial ofensivo, respeitadas as regras de conexão e continência.\nParágrafo único. Na reunião de processos, perante o juízo comum ou o tribunal do júri, decorrentes da aplicação das regras de conexão e continência, observar-se-ão os institutos da transação penal e da composição dos danos civis.",
+      "observacao": "Redação dada pela Lei nº 11.313/2006 (texto copiado da publicação oficial da lei alteradora; sem alteração posterior segundo o registro de normas do Senado Federal)."
+     },
+     "fonte_oficial": "https://legis.senado.leg.br/norma/572098/publicacao/15838249"
+    },
+    {
+     "tipo": "lei_seca",
+     "titulo": "Lei 9.099/1995 — Art. 61",
+     "subassunto": null,
+     "conteudo": {
+      "lei": "Lei 9.099/1995 (Juizados Especiais)",
+      "artigo": "Art. 61",
+      "texto": "Art. 61. Consideram-se infrações penais de menor potencial ofensivo, para os efeitos desta Lei, as contravenções penais e os crimes a que a lei comine pena máxima não superior a 2 (dois) anos, cumulada ou não com multa.",
+      "observacao": "Redação dada pela Lei nº 11.313/2006 (texto copiado da publicação oficial da lei alteradora; sem alteração posterior segundo o registro de normas do Senado Federal)."
+     },
+     "fonte_oficial": "https://legis.senado.leg.br/norma/572098/publicacao/15838249"
+    },
+    {
+     "tipo": "lei_seca",
+     "titulo": "Lei 9.099/1995 — Art. 63",
+     "subassunto": null,
+     "conteudo": {
+      "lei": "Lei 9.099/1995 (Juizados Especiais)",
+      "artigo": "Art. 63",
+      "texto": "Art. 63. A competência do Juizado será determinada pelo lugar em que foi praticada a infração penal.",
+      "observacao": "Texto da publicação original (Publicação Original   [Diário Oficial da União  de 27/09/1995] (p. 15033, col. 1)). Este artigo não sofreu alteração posterior segundo o registro de normas do Senado Federal."
+     },
+     "fonte_oficial": "https://legis.senado.leg.br/norma/550975/publicacao/15758055"
+    },
+    {
+     "tipo": "lei_seca",
+     "titulo": "Lei 9.099/1995 — Art. 64",
+     "subassunto": null,
+     "conteudo": {
+      "lei": "Lei 9.099/1995 (Juizados Especiais)",
+      "artigo": "Art. 64",
+      "texto": "Art. 64. Os atos processuais serão públicos e poderão realizar-se em horário noturno e em qualquer dia da semana, conforme dispuserem as normas de organização judiciária.",
+      "observacao": "Texto da publicação original (Publicação Original   [Diário Oficial da União  de 27/09/1995] (p. 15033, col. 1)). Este artigo não sofreu alteração posterior segundo o registro de normas do Senado Federal."
+     },
+     "fonte_oficial": "https://legis.senado.leg.br/norma/550975/publicacao/15758055"
+    },
+    {
+     "tipo": "lei_seca",
+     "titulo": "Lei 9.099/1995 — Art. 65",
+     "subassunto": null,
+     "conteudo": {
+      "lei": "Lei 9.099/1995 (Juizados Especiais)",
+      "artigo": "Art. 65",
+      "texto": "Art. 65. Os atos processuais serão válidos sempre que preencherem as finalidades para as quais foram realizados, atendidos os critérios indicados no art. 62 desta Lei.\n§ 1º Não se pronunciará qualquer nulidade sem que tenha havido prejuízo.\n§ 2º A prática de atos processuais em outras comarcas poderá ser solicitada por qualquer meio hábil de comunicação.\n§ 3º Serão objeto de registro escrito exclusivamente os atos havidos por essenciais. Os atos realizados em audiência de instrução e julgamento poderão ser gravados em fita magnética ou equivalente.",
+      "observacao": "Texto da publicação original (Publicação Original   [Diário Oficial da União  de 27/09/1995] (p. 15033, col. 1)). Este artigo não sofreu alteração posterior segundo o registro de normas do Senado Federal."
+     },
+     "fonte_oficial": "https://legis.senado.leg.br/norma/550975/publicacao/15758055"
+    },
+    {
+     "tipo": "lei_seca",
+     "titulo": "Lei 9.099/1995 — Art. 66",
+     "subassunto": null,
+     "conteudo": {
+      "lei": "Lei 9.099/1995 (Juizados Especiais)",
+      "artigo": "Art. 66",
+      "texto": "Art. 66. A citação será pessoal e far-se-á no próprio Juizado, sempre que possível, ou por mandado.\nParágrafo único. Não encontrado o acusado para ser citado, o Juiz encaminhará as peças existentes ao Juízo comum para adoção do procedimento previsto em lei.",
+      "observacao": "Texto da publicação original (Publicação Original   [Diário Oficial da União  de 27/09/1995] (p. 15033, col. 1)). Este artigo não sofreu alteração posterior segundo o registro de normas do Senado Federal."
+     },
+     "fonte_oficial": "https://legis.senado.leg.br/norma/550975/publicacao/15758055"
+    },
+    {
+     "tipo": "lei_seca",
+     "titulo": "Lei 9.099/1995 — Art. 67",
+     "subassunto": null,
+     "conteudo": {
+      "lei": "Lei 9.099/1995 (Juizados Especiais)",
+      "artigo": "Art. 67",
+      "texto": "Art. 67. A intimação far-se-á por correspondência, com aviso de recebimento pessoal ou, tratando-se de pessoa jurídica ou firma individual, mediante entrega ao encarregado da recepção, que será obrigatoriamente identificado, ou, sendo necessário, por oficial de justiça, independentemente de mandado ou carta precatória, ou ainda por qualquer meio idôneo de comunicação.\nParágrafo único. Dos atos praticados em audiência considerar-se-ão desde logo cientes as partes, os interessados e defensores.",
+      "observacao": "Texto da publicação original (Publicação Original   [Diário Oficial da União  de 27/09/1995] (p. 15033, col. 1)). Este artigo não sofreu alteração posterior segundo o registro de normas do Senado Federal."
+     },
+     "fonte_oficial": "https://legis.senado.leg.br/norma/550975/publicacao/15758055"
+    },
+    {
+     "tipo": "lei_seca",
+     "titulo": "Lei 9.099/1995 — Art. 68",
+     "subassunto": null,
+     "conteudo": {
+      "lei": "Lei 9.099/1995 (Juizados Especiais)",
+      "artigo": "Art. 68",
+      "texto": "Art. 68. Do ato de intimação do autor do fato e do mandado de citação do acusado, constará a necessidade de seu comparecimento acompanhado de advogado, com a advertência de que, na sua falta, ser-lhe-á designado defensor público.",
+      "observacao": "Texto da publicação original (Publicação Original   [Diário Oficial da União  de 27/09/1995] (p. 15033, col. 1)). Este artigo não sofreu alteração posterior segundo o registro de normas do Senado Federal."
+     },
+     "fonte_oficial": "https://legis.senado.leg.br/norma/550975/publicacao/15758055"
+    },
+    {
+     "tipo": "lei_seca",
+     "titulo": "Lei 9.099/1995 — Art. 69",
+     "subassunto": null,
+     "conteudo": {
+      "lei": "Lei 9.099/1995 (Juizados Especiais)",
+      "artigo": "Art. 69",
+      "texto": "Art. 69. A autoridade policial que tomar conhecimento da ocorrência lavrará termo circunstanciado e o encaminhará imediatamente ao Juizado, com o autor do fato e a vítima, providenciando-se as requisições dos exames periciais necessários.\nParágrafo único. Ao autor do fato que, após a lavratura do termo, for imediatamente encaminhado ao juizado ou assumir o compromisso de a ele comparecer, não se imporá prisão em flagrante, nem se exigirá fiança. Em caso de violência doméstica, o juiz poderá determinar, como medida de cautela, seu afastamento do lar, domicílio ou local de convivência com a vítima.",
+      "observacao": "Caput: texto original da Lei 9.099/1995. Parágrafo único: redação dada pela Lei nº 10.455/2002 (texto da publicação oficial da lei alteradora)."
+     },
+     "fonte_oficial": "https://legis.senado.leg.br/norma/552331/publicacao/15678190"
+    },
+    {
+     "tipo": "lei_seca",
+     "titulo": "Lei 9.099/1995 — Art. 70",
+     "subassunto": null,
+     "conteudo": {
+      "lei": "Lei 9.099/1995 (Juizados Especiais)",
+      "artigo": "Art. 70",
+      "texto": "Art. 70. Comparecendo o autor do fato e a vítima, e não sendo possível a realização imediata da audiência preliminar, será designada data próxima, da qual ambos sairão cientes.",
+      "observacao": "Texto da publicação original (Publicação Original   [Diário Oficial da União  de 27/09/1995] (p. 15033, col. 1)). Este artigo não sofreu alteração posterior segundo o registro de normas do Senado Federal."
+     },
+     "fonte_oficial": "https://legis.senado.leg.br/norma/550975/publicacao/15758055"
+    },
+    {
+     "tipo": "lei_seca",
+     "titulo": "Lei 9.099/1995 — Art. 71",
+     "subassunto": null,
+     "conteudo": {
+      "lei": "Lei 9.099/1995 (Juizados Especiais)",
+      "artigo": "Art. 71",
+      "texto": "Art. 71. Na falta do comparecimento de qualquer dos envolvidos, a Secretaria providenciará sua intimação e, se for o caso, a do responsável civil, na forma dos arts. 67 e 68 desta Lei.",
+      "observacao": "Texto da publicação original (Publicação Original   [Diário Oficial da União  de 27/09/1995] (p. 15033, col. 1)). Este artigo não sofreu alteração posterior segundo o registro de normas do Senado Federal."
+     },
+     "fonte_oficial": "https://legis.senado.leg.br/norma/550975/publicacao/15758055"
+    },
+    {
+     "tipo": "lei_seca",
+     "titulo": "Lei 9.099/1995 — Art. 72",
+     "subassunto": null,
+     "conteudo": {
+      "lei": "Lei 9.099/1995 (Juizados Especiais)",
+      "artigo": "Art. 72",
+      "texto": "Art. 72. Na audiência preliminar, presente o representante do Ministério Público, o autor do fato e a vítima e, se possível, o responsável civil, acompanhados por seus advogados, o Juiz esclarecerá sobre a possibilidade da composição dos danos e da aceitação da proposta de aplicação imediata de pena não privativa de liberdade.",
+      "observacao": "Texto da publicação original (Publicação Original   [Diário Oficial da União  de 27/09/1995] (p. 15033, col. 1)). Este artigo não sofreu alteração posterior segundo o registro de normas do Senado Federal."
+     },
+     "fonte_oficial": "https://legis.senado.leg.br/norma/550975/publicacao/15758055"
+    },
+    {
+     "tipo": "lei_seca",
+     "titulo": "Lei 9.099/1995 — Art. 73",
+     "subassunto": null,
+     "conteudo": {
+      "lei": "Lei 9.099/1995 (Juizados Especiais)",
+      "artigo": "Art. 73",
+      "texto": "Art. 73. A conciliação será conduzida pelo Juiz ou por conciliador sob sua orientação.\nParágrafo único. Os conciliadores são auxiliares da Justiça, recrutados, na forma da lei local, preferentemente entre bacharéis em Direito, excluídos os que exerçam funções na administração da Justiça Criminal.",
+      "observacao": "Texto da publicação original (Publicação Original   [Diário Oficial da União  de 27/09/1995] (p. 15033, col. 1)). Este artigo não sofreu alteração posterior segundo o registro de normas do Senado Federal."
+     },
+     "fonte_oficial": "https://legis.senado.leg.br/norma/550975/publicacao/15758055"
+    },
+    {
+     "tipo": "lei_seca",
+     "titulo": "Lei 9.099/1995 — Art. 74",
+     "subassunto": null,
+     "conteudo": {
+      "lei": "Lei 9.099/1995 (Juizados Especiais)",
+      "artigo": "Art. 74",
+      "texto": "Art. 74. A composição dos danos civis será reduzida a escrito e, homologada pelo Juiz mediante sentença irrecorrível, terá eficácia de título a ser executado no juízo civil competente.\nParágrafo único. Tratando-se de ação penal de iniciativa privada ou de ação penal pública condicionada à representação, o acordo homologado acarreta a renúncia ao direito de queixa ou representação.",
+      "observacao": "Texto da publicação original (Publicação Original   [Diário Oficial da União  de 27/09/1995] (p. 15033, col. 1)). Este artigo não sofreu alteração posterior segundo o registro de normas do Senado Federal."
+     },
+     "fonte_oficial": "https://legis.senado.leg.br/norma/550975/publicacao/15758055"
+    },
+    {
+     "tipo": "lei_seca",
+     "titulo": "Lei 9.099/1995 — Art. 75",
+     "subassunto": null,
+     "conteudo": {
+      "lei": "Lei 9.099/1995 (Juizados Especiais)",
+      "artigo": "Art. 75",
+      "texto": "Art. 75. Não obtida a composição dos danos civis, será dada imediatamente ao ofendido a oportunidade de exercer o direito de representação verbal, que será reduzida a termo.\nParágrafo único. O não oferecimento da representação na audiência preliminar não implica decadência do direito, que poderá ser exercido no prazo previsto em lei.",
+      "observacao": "Texto da publicação original (Publicação Original   [Diário Oficial da União  de 27/09/1995] (p. 15033, col. 1)). Este artigo não sofreu alteração posterior segundo o registro de normas do Senado Federal."
+     },
+     "fonte_oficial": "https://legis.senado.leg.br/norma/550975/publicacao/15758055"
+    },
+    {
+     "tipo": "lei_seca",
+     "titulo": "Lei 9.099/1995 — Art. 76",
+     "subassunto": null,
+     "conteudo": {
+      "lei": "Lei 9.099/1995 (Juizados Especiais)",
+      "artigo": "Art. 76",
+      "texto": "Art. 76. Havendo representação ou tratando-se de crime de ação penal pública incondicionada, não sendo caso de arquivamento, o Ministério Público poderá propor a aplicação imediata de pena restritiva de direitos ou multas, a ser especificada na proposta.\n§ 1º Nas hipóteses de ser a pena de multa a única aplicável, o Juiz poderá reduzi-la até a metade.\n§ 2º Não se admitirá a proposta se ficar comprovado:\nI - ter sido o autor da infração condenado, pela prática de crime, à pena privativa de liberdade, por sentença definitiva;\nII - ter sido o agente beneficiado anteriormente, no prazo de cinco anos, pela aplicação de pena restritiva ou multa, nos termos deste artigo;\nIII - não indicarem os antecedentes, a conduta social e a personalidade do agente, bem como os motivos e as circunstâncias, ser necessária e suficiente a adoção da medida.\n§ 3º Aceita a proposta pelo autor da infração e seu defensor, será submetida à apreciação do Juiz.\n§ 4º Acolhendo a proposta do Ministério Público aceita pelo autor da infração, o Juiz aplicará a pena restritiva de direitos ou multa, que não importará em reincidência, sendo registrada apenas para impedir novamente o mesmo benefício no prazo de cinco anos.\n§ 5º Da sentença prevista no parágrafo anterior caberá a apelação referida no art. 82 desta Lei.\n§ 6º A imposição da sanção de que trata o § 4º deste artigo não constará de certidão de antecedentes criminais, salvo para os fins previstos no mesmo dispositivo, e não terá efeitos civis, cabendo aos interessados propor ação cabível no juízo cível.",
+      "observacao": "Texto da publicação original (Publicação Original   [Diário Oficial da União  de 27/09/1995] (p. 15033, col. 1)). Este artigo não sofreu alteração posterior segundo o registro de normas do Senado Federal."
+     },
+     "fonte_oficial": "https://legis.senado.leg.br/norma/550975/publicacao/15758055"
+    }
+   ]
+  },
+  {
+   "curso": "gcm-geral",
+   "disciplina": "Legislação de Proteção a Grupos Vulneráveis",
+   "assunto": "Estatuto da Pessoa com Deficiência (Lei nº 13.146/2015)",
+   "materiais": [
+    {
+     "tipo": "lei_seca",
+     "titulo": "Lei 13.146/2015 — Art. 1",
+     "subassunto": null,
+     "conteudo": {
+      "lei": "Lei 13.146/2015 (Estatuto da Pessoa com Deficiência)",
+      "artigo": "Art. 1",
+      "texto": "Art. 1º É instituída a Lei Brasileira de Inclusão da Pessoa com Deficiência (Estatuto da Pessoa com Deficiência), destinada a assegurar e a promover, em condições de igualdade, o exercício dos direitos e das liberdades fundamentais por pessoa com deficiência, visando à sua inclusão social e cidadania.\nParágrafo único. Esta Lei tem como base a Convenção sobre os Direitos das Pessoas com Deficiência e seu Protocolo Facultativo, ratificados pelo Congresso Nacional por meio do Decreto Legislativo nº 186, de 9 de julho de 2008, em conformidade com o procedimento previsto no § 3º do art. 5º da Constituição da República Federativa do Brasil, em vigor para o Brasil, no plano jurídico externo, desde 31 de agosto de 2008, e promulgados pelo Decreto nº 6.949, de 25 de agosto de 2009, data de início de sua vigência no plano interno.",
+      "observacao": "Texto da publicação original (Publicação Original   [Diário Oficial da União  de 07/07/2015] (p. 2, col. 2)). Este artigo não sofreu alteração posterior segundo o registro de normas do Senado Federal."
+     },
+     "fonte_oficial": "https://legis.senado.leg.br/norma/584958/publicacao/15637494"
+    },
+    {
+     "tipo": "lei_seca",
+     "titulo": "Lei 13.146/2015 — Art. 4",
+     "subassunto": null,
+     "conteudo": {
+      "lei": "Lei 13.146/2015 (Estatuto da Pessoa com Deficiência)",
+      "artigo": "Art. 4",
+      "texto": "Art. 4º Toda pessoa com deficiência tem direito à igualdade de oportunidades com as demais pessoas e não sofrerá nenhuma espécie de discriminação.\n§ 1º Considera-se discriminação em razão da deficiência toda forma de distinção, restrição ou exclusão, por ação ou omissão, que tenha o propósito ou o efeito de prejudicar, impedir ou anular o reconhecimento ou o exercício dos direitos e das liberdades fundamentais de pessoa com deficiência, incluindo a recusa de adaptações razoáveis e de fornecimento de tecnologias assistivas.\n§ 2º A pessoa com deficiência não está obrigada à fruição de benefícios decorrentes de ação afirmativa.",
+      "observacao": "Texto da publicação original (Publicação Original   [Diário Oficial da União  de 07/07/2015] (p. 2, col. 2)). Este artigo não sofreu alteração posterior segundo o registro de normas do Senado Federal."
+     },
+     "fonte_oficial": "https://legis.senado.leg.br/norma/584958/publicacao/15637494"
+    },
+    {
+     "tipo": "lei_seca",
+     "titulo": "Lei 13.146/2015 — Art. 5",
+     "subassunto": null,
+     "conteudo": {
+      "lei": "Lei 13.146/2015 (Estatuto da Pessoa com Deficiência)",
+      "artigo": "Art. 5",
+      "texto": "Art. 5º A pessoa com deficiência será protegida de toda forma de negligência, discriminação, exploração, violência, tortura, crueldade, opressão e tratamento desumano ou degradante.\nParágrafo único. Para os fins da proteção mencionada no caput deste artigo, são considerados especialmente vulneráveis a criança, o adolescente, a mulher e o idoso, com deficiência.",
+      "observacao": "Texto da publicação original (Publicação Original   [Diário Oficial da União  de 07/07/2015] (p. 2, col. 2)). Este artigo não sofreu alteração posterior segundo o registro de normas do Senado Federal."
+     },
+     "fonte_oficial": "https://legis.senado.leg.br/norma/584958/publicacao/15637494"
+    },
+    {
+     "tipo": "lei_seca",
+     "titulo": "Lei 13.146/2015 — Art. 6",
+     "subassunto": null,
+     "conteudo": {
+      "lei": "Lei 13.146/2015 (Estatuto da Pessoa com Deficiência)",
+      "artigo": "Art. 6",
+      "texto": "Art. 6º A deficiência não afeta a plena capacidade civil da pessoa, inclusive para:\nI – casar-se e constituir união estável;\nII – exercer direitos sexuais e reprodutivos;\nIII – exercer o direito de decidir sobre o número de filhos e de ter acesso a informações adequadas sobre reprodução e planejamento familiar;\nIV – conservar sua fertilidade, sendo vedada a esterilização compulsória;\nV – exercer o direito à família e à convivência familiar e comunitária; e\nVI – exercer o direito à guarda, à tutela, à curatela e à adoção, como adotante ou adotando, em igualdade de oportunidades com as demais pessoas.",
+      "observacao": "Texto da publicação original (Publicação Original   [Diário Oficial da União  de 07/07/2015] (p. 2, col. 2)). Este artigo não sofreu alteração posterior segundo o registro de normas do Senado Federal."
+     },
+     "fonte_oficial": "https://legis.senado.leg.br/norma/584958/publicacao/15637494"
+    },
+    {
+     "tipo": "lei_seca",
+     "titulo": "Lei 13.146/2015 — Art. 7",
+     "subassunto": null,
+     "conteudo": {
+      "lei": "Lei 13.146/2015 (Estatuto da Pessoa com Deficiência)",
+      "artigo": "Art. 7",
+      "texto": "Art. 7º É dever de todos comunicar à autoridade competente qualquer forma de ameaça ou de violação aos direitos da pessoa com deficiência.\nParágrafo único. Se, no exercício de suas funções, os juízes e os tribunais tiverem conhecimento de fatos que caracterizem as violações previstas nesta Lei, devem remeter peças ao Ministério Público para as providências cabíveis.",
+      "observacao": "Texto da publicação original (Publicação Original   [Diário Oficial da União  de 07/07/2015] (p. 2, col. 2)). Este artigo não sofreu alteração posterior segundo o registro de normas do Senado Federal."
+     },
+     "fonte_oficial": "https://legis.senado.leg.br/norma/584958/publicacao/15637494"
+    },
+    {
+     "tipo": "lei_seca",
+     "titulo": "Lei 13.146/2015 — Art. 8",
+     "subassunto": null,
+     "conteudo": {
+      "lei": "Lei 13.146/2015 (Estatuto da Pessoa com Deficiência)",
+      "artigo": "Art. 8",
+      "texto": "Art. 8º É dever do Estado, da sociedade e da família assegurar à pessoa com deficiência, com prioridade, a efetivação dos direitos referentes à vida, à saúde, à sexualidade, à paternidade e à maternidade, à alimentação, à habitação, à educação, à profissionalização, ao trabalho, à previdência social, à habilitação e à reabilitação, ao transporte, à acessibilidade, à cultura, ao desporto, ao turismo, ao lazer, à informação, à comunicação, aos avanços científicos e tecnológicos, à dignidade, ao respeito, à liberdade, à convivência familiar e comunitária, entre outros decorrentes da Constituição Federal, da Convenção sobre os Direitos das Pessoas com Deficiência e seu Protocolo Facultativo e das leis e de outras normas que garantam seu bem-estar pessoal, social e econômico.",
+      "observacao": "Texto da publicação original (Publicação Original   [Diário Oficial da União  de 07/07/2015] (p. 2, col. 2)). Este artigo não sofreu alteração posterior segundo o registro de normas do Senado Federal."
+     },
+     "fonte_oficial": "https://legis.senado.leg.br/norma/584958/publicacao/15637494"
+    },
+    {
+     "tipo": "lei_seca",
+     "titulo": "Lei 13.146/2015 — Art. 9",
+     "subassunto": null,
+     "conteudo": {
+      "lei": "Lei 13.146/2015 (Estatuto da Pessoa com Deficiência)",
+      "artigo": "Art. 9",
+      "texto": "Art. 9º A pessoa com deficiência tem direito a receber atendimento prioritário, sobretudo com a finalidade de:\nI – proteção e socorro em quaisquer circunstâncias;\nII – atendimento em todas as instituições e serviços de atendimento ao público;\nIII – disponibilização de recursos, tanto humanos quanto tecnológicos, que garantam atendimento em igualdade de condições com as demais pessoas;\nIV – disponibilização de pontos de parada, estações e terminais acessíveis de transporte coletivo de passageiros e garantia de segurança no embarque e no desembarque;\nV – acesso a informações e disponibilização de recursos de comunicação acessíveis;\nVI – recebimento de restituição de imposto de renda;\nVII – tramitação processual e procedimentos judiciais e administrativos em que for parte ou interessada, em todos os atos e diligências.\n§ 1º Os direitos previstos neste artigo são extensivos ao acompanhante da pessoa com deficiência ou ao seu atendente pessoal, exceto quanto ao disposto nos incisos VI e VII deste artigo.\n§ 2º Nos serviços de emergência públicos e privados, a prioridade conferida por esta Lei é condicionada aos protocolos de atendimento médico.",
+      "observacao": "Texto da publicação original (Publicação Original   [Diário Oficial da União  de 07/07/2015] (p. 2, col. 2)). Este artigo não sofreu alteração posterior segundo o registro de normas do Senado Federal."
+     },
+     "fonte_oficial": "https://legis.senado.leg.br/norma/584958/publicacao/15637494"
+    },
+    {
+     "tipo": "lei_seca",
+     "titulo": "Lei 13.146/2015 — Art. 10",
+     "subassunto": null,
+     "conteudo": {
+      "lei": "Lei 13.146/2015 (Estatuto da Pessoa com Deficiência)",
+      "artigo": "Art. 10",
+      "texto": "Art. 10. Compete ao poder público garantir a dignidade da pessoa com deficiência ao longo de toda a vida.\nParágrafo único. Em situações de risco, emergência ou estado de calamidade pública, a pessoa com deficiência será considerada vulnerável, devendo o poder público adotar medidas para sua proteção e segurança.",
+      "observacao": "Texto da publicação original (Publicação Original   [Diário Oficial da União  de 07/07/2015] (p. 2, col. 2)). Este artigo não sofreu alteração posterior segundo o registro de normas do Senado Federal."
+     },
+     "fonte_oficial": "https://legis.senado.leg.br/norma/584958/publicacao/15637494"
+    },
+    {
+     "tipo": "lei_seca",
+     "titulo": "Lei 13.146/2015 — Art. 88",
+     "subassunto": null,
+     "conteudo": {
+      "lei": "Lei 13.146/2015 (Estatuto da Pessoa com Deficiência)",
+      "artigo": "Art. 88",
+      "texto": "Art. 88. Praticar, induzir ou incitar discriminação de pessoa em razão de sua deficiência:\nPena – reclusão, de 1 (um) a 3 (três) anos, e multa.\n§ 1º Aumenta-se a pena em 1/3 (um terço) se a vítima encontrar-se sob cuidado e responsabilidade do agente.\n§ 2º Se qualquer dos crimes previstos no caput deste artigo é cometido por intermédio de meios de comunicação social ou de publicação de qualquer natureza:\nPena – reclusão, de 2 (dois) a 5 (cinco) anos, e multa.\n§ 3º Na hipótese do § 2º deste artigo, o juiz poderá determinar, ouvido o Ministério Público ou a pedido deste, ainda antes do inquérito policial, sob pena de desobediência:\nI – recolhimento ou busca e apreensão dos exemplares do material discriminatório;\nII – interdição das respectivas mensagens ou páginas de informação na internet.\n§ 4º Na hipótese do § 2º deste artigo, constitui efeito da condenação, após o trânsito em julgado da decisão, a destruição do material apreendido.",
+      "observacao": "Texto da publicação original (Publicação Original   [Diário Oficial da União  de 07/07/2015] (p. 2, col. 2)). Este artigo não sofreu alteração posterior segundo o registro de normas do Senado Federal."
+     },
+     "fonte_oficial": "https://legis.senado.leg.br/norma/584958/publicacao/15637494"
+    },
+    {
+     "tipo": "lei_seca",
+     "titulo": "Lei 13.146/2015 — Art. 89",
+     "subassunto": null,
+     "conteudo": {
+      "lei": "Lei 13.146/2015 (Estatuto da Pessoa com Deficiência)",
+      "artigo": "Art. 89",
+      "texto": "Art. 89. Apropriar-se de ou desviar bens, proventos, pensão, benefícios, remuneração ou qualquer outro rendimento de pessoa com deficiência:\nPena – reclusão, de 1 (um) a 4 (quatro) anos, e multa.\nParágrafo único. Aumenta-se a pena em 1/3 (um terço) se o crime é cometido:\nI – por tutor, curador, síndico, liquidatário, inventariante, testamenteiro ou depositário judicial; ou\nII – por aquele que se apropriou em razão de ofício ou de profissão.",
+      "observacao": "Texto da publicação original (Publicação Original   [Diário Oficial da União  de 07/07/2015] (p. 2, col. 2)). Este artigo não sofreu alteração posterior segundo o registro de normas do Senado Federal."
+     },
+     "fonte_oficial": "https://legis.senado.leg.br/norma/584958/publicacao/15637494"
+    },
+    {
+     "tipo": "lei_seca",
+     "titulo": "Lei 13.146/2015 — Art. 91",
+     "subassunto": null,
+     "conteudo": {
+      "lei": "Lei 13.146/2015 (Estatuto da Pessoa com Deficiência)",
+      "artigo": "Art. 91",
+      "texto": "Art. 91. Reter ou utilizar cartão magnético, qualquer meio eletrônico ou documento de pessoa com deficiência destinados ao recebimento de benefícios, proventos, pensões ou remuneração ou à realização de operações financeiras, com o fim de obter vantagem indevida para si ou para outrem:\nPena – detenção, de 6 (seis) meses a 2 (dois) anos, e multa.\nParágrafo único. Aumenta-se a pena em 1/3 (um terço) se o crime é cometido por tutor ou curador.",
+      "observacao": "Texto da publicação original (Publicação Original   [Diário Oficial da União  de 07/07/2015] (p. 2, col. 2)). Este artigo não sofreu alteração posterior segundo o registro de normas do Senado Federal."
+     },
+     "fonte_oficial": "https://legis.senado.leg.br/norma/584958/publicacao/15637494"
+    }
+   ]
+  },
+  {
+   "curso": "gcm-geral",
+   "disciplina": "Legislação Penal Especial",
+   "assunto": "Lei de Crimes Ambientais (Lei nº 9.605/1998)",
+   "materiais": [
+    {
+     "tipo": "lei_seca",
+     "titulo": "Lei 9.605/1998 — Art. 2",
+     "subassunto": null,
+     "conteudo": {
+      "lei": "Lei 9.605/1998 (Lei de Crimes Ambientais)",
+      "artigo": "Art. 2",
+      "texto": "Art. 2º Quem, de qualquer forma, concorre para a prática dos crimes previstas nesta Lei, incide nas penas a estes cominadas, na medida da sua culpabilidade, bem como o diretor, o administrador, o membro de conselho e de órgão técnico, o auditor, o gerente, o preposto ou mandatário de pessoa jurídica, que, sabendo da conduta criminosa de outrem, deixar de impedir a sua prática, quando podia agir para evitá-la.",
+      "observacao": "Texto da publicação original (Publicação Original   [Diário Oficial da União  de 13/02/1998] (p. 1, col. 1)). Este artigo não sofreu alteração posterior segundo o registro de normas do Senado Federal."
+     },
+     "fonte_oficial": "https://legis.senado.leg.br/norma/551481/publicacao/15635209"
+    },
+    {
+     "tipo": "lei_seca",
+     "titulo": "Lei 9.605/1998 — Art. 3",
+     "subassunto": null,
+     "conteudo": {
+      "lei": "Lei 9.605/1998 (Lei de Crimes Ambientais)",
+      "artigo": "Art. 3",
+      "texto": "Art. 3º As pessoas jurídicas serão responsabilizadas administrativa, civil e penalmente conforme o disposto nesta Lei, nos casos em que a infração seja cometida por decisão de seu representante legal ou contratual, ou de seu órgão colegiado, no interesse ou benefício da sua entidade.\nParágrafo único. A responsabilidade das pessoas jurídicas não exclui a das pessoas físicas, autoras, co-autoras ou partícipes do mesmo fato.",
+      "observacao": "Texto da publicação original (Publicação Original   [Diário Oficial da União  de 13/02/1998] (p. 1, col. 1)). Este artigo não sofreu alteração posterior segundo o registro de normas do Senado Federal."
+     },
+     "fonte_oficial": "https://legis.senado.leg.br/norma/551481/publicacao/15635209"
+    },
+    {
+     "tipo": "lei_seca",
+     "titulo": "Lei 9.605/1998 — Art. 4",
+     "subassunto": null,
+     "conteudo": {
+      "lei": "Lei 9.605/1998 (Lei de Crimes Ambientais)",
+      "artigo": "Art. 4",
+      "texto": "Art. 4º Poderá ser desconsiderada a pessoa jurídica sempre que sua personalidade for obstáculo ao ressarcimento de prejuízos causados à qualidade do meio ambiente.",
+      "observacao": "Texto da publicação original (Publicação Original   [Diário Oficial da União  de 13/02/1998] (p. 1, col. 1)). Este artigo não sofreu alteração posterior segundo o registro de normas do Senado Federal."
+     },
+     "fonte_oficial": "https://legis.senado.leg.br/norma/551481/publicacao/15635209"
+    },
+    {
+     "tipo": "lei_seca",
+     "titulo": "Lei 9.605/1998 — Art. 29",
+     "subassunto": null,
+     "conteudo": {
+      "lei": "Lei 9.605/1998 (Lei de Crimes Ambientais)",
+      "artigo": "Art. 29",
+      "texto": "Art. 29. Matar, perseguir, caçar, apanhar, utilizar espécimes da fauna silvestre, nativos ou em rota migratória, sem a devida permissão, licença ou autorização da autoridade competente, ou em desacordo com a obtida:\nPena - detenção de seis meses a um ano, e multa.\n§ 1º Incorre nas mesmas penas:\nI - quem impede a procriação da fauna, sem licença, autorização ou em desacordo com a obtida;\nII - quem modifica, danifica ou destrói ninho, abrigo ou criadouro natural;\nIII - quem vende, expõe à venda, exporta ou adquire, guarda, tem em cativeiro ou depósito, utiliza ou transporta ovos, larvas ou espécimes da fauna silvestre, nativa ou em rota migratória, bem como produtos e objetos dela oriundos, provenientes de criadouros não autorizadas ou sem a devida permissão, licença ou autorização da autoridade competente.\n§ 2º No caso de guarda doméstica de espécie silvestre não considerada ameaçada de extinção, pode o juiz, considerando as circunstâncias, deixar de aplicar a pena.\n§ 3º São espécimes da fauna silvestre todos aqueles pertencentes às espécies nativas, migratória e quaisquer outras, aquáticas ou terrestres, que tenham todo ou parte de seu ciclo de vida ocorrendo dentro dos limites do território brasileiro, ou águas jurisdicionais brasileiras.\n§ 4º A pena é aumentada de metade, se o crime é praticado:\nI - contra espécie rara ou considerada ameaçada de extinção, ainda que somente no local da infração;\nII - em período proibido à caça;\nIII - durante a noite;\nIV - com abuso de licença;\nV - em unidade de conservação;\nVI - com emprego de métodos ou instrumentos capazes de provocar destruição em massa.\n§ 5º A pena é aumentada até o triplo, se o crime decorre do exercício de caça profissional;\n§ 6º As disposições deste artigo não se aplicam aos atos de pesca.",
+      "observacao": "Texto da publicação original (Publicação Original   [Diário Oficial da União  de 13/02/1998] (p. 1, col. 1)). Este artigo não sofreu alteração posterior segundo o registro de normas do Senado Federal."
+     },
+     "fonte_oficial": "https://legis.senado.leg.br/norma/551481/publicacao/15635209"
+    },
+    {
+     "tipo": "lei_seca",
+     "titulo": "Lei 9.605/1998 — Art. 30",
+     "subassunto": null,
+     "conteudo": {
+      "lei": "Lei 9.605/1998 (Lei de Crimes Ambientais)",
+      "artigo": "Art. 30",
+      "texto": "Art. 30. Exportar para o exterior peles e couros de anfíbios e répteis em bruto, sem a autorização da autoridade ambiental competente:\nPena - reclusão, de um a três anos, e multa.",
+      "observacao": "Texto da publicação original (Publicação Original   [Diário Oficial da União  de 13/02/1998] (p. 1, col. 1)). Este artigo não sofreu alteração posterior segundo o registro de normas do Senado Federal."
+     },
+     "fonte_oficial": "https://legis.senado.leg.br/norma/551481/publicacao/15635209"
+    },
+    {
+     "tipo": "lei_seca",
+     "titulo": "Lei 9.605/1998 — Art. 31",
+     "subassunto": null,
+     "conteudo": {
+      "lei": "Lei 9.605/1998 (Lei de Crimes Ambientais)",
+      "artigo": "Art. 31",
+      "texto": "Art. 31. Introduzir espécime animal no País, sem parecer técnico oficial favorável e licença expedida por autoridade competente:\nPena - detenção, de três meses a um ano, e multa.",
+      "observacao": "Texto da publicação original (Publicação Original   [Diário Oficial da União  de 13/02/1998] (p. 1, col. 1)). Este artigo não sofreu alteração posterior segundo o registro de normas do Senado Federal."
+     },
+     "fonte_oficial": "https://legis.senado.leg.br/norma/551481/publicacao/15635209"
+    },
+    {
+     "tipo": "lei_seca",
+     "titulo": "Lei 9.605/1998 — Art. 38",
+     "subassunto": null,
+     "conteudo": {
+      "lei": "Lei 9.605/1998 (Lei de Crimes Ambientais)",
+      "artigo": "Art. 38",
+      "texto": "Art. 38. Destruir ou danificar floresta considerada de preservação permanente, mesmo que em formação, ou utilizá-la com infringência das normas de proteção:\nPena - detenção, de um a três anos, ou multa, ou ambas as penas cumulativamente.\nParágrafo único. Se o crime for culposo, a pena será reduzida à metade.",
+      "observacao": "Texto da publicação original (Publicação Original   [Diário Oficial da União  de 13/02/1998] (p. 1, col. 1)). Este artigo não sofreu alteração posterior segundo o registro de normas do Senado Federal."
+     },
+     "fonte_oficial": "https://legis.senado.leg.br/norma/551481/publicacao/15635209"
+    }
+   ]
+  },
+  {
+   "curso": "gcm-geral",
+   "disciplina": "Direitos Humanos",
+   "assunto": "Proteção de dados pessoais como direito fundamental",
+   "materiais": [
+    {
+     "tipo": "lei_seca",
+     "titulo": "Lei 13.709/2018 — Art. 2",
+     "subassunto": null,
+     "conteudo": {
+      "lei": "Lei 13.709/2018 (LGPD)",
+      "artigo": "Art. 2",
+      "texto": "Art. 2º A disciplina da proteção de dados pessoais tem como fundamentos:\nI – o respeito à privacidade;\nII – a autodeterminação informativa;\nIII – a liberdade de expressão, de informação, de comunicação e de opinião;\nIV – a inviolabilidade da intimidade, da honra e da imagem;\nV – o desenvolvimento econômico e tecnológico e a inovação;\nVI – a livre iniciativa, a livre concorrência e a defesa do consumidor; e\nVII – os direitos humanos, o livre desenvolvimento da personalidade, a dignidade e o exercício da cidadania pelas pessoas naturais.",
+      "observacao": "Texto da publicação original (Publicação Original   [Diário Oficial da União  de 15/08/2018] (p. 59, col. 2)). Este artigo não sofreu alteração posterior segundo o registro de normas do Senado Federal."
+     },
+     "fonte_oficial": "https://legis.senado.leg.br/norma/27457334/publicacao/27457731"
+    },
+    {
+     "tipo": "lei_seca",
+     "titulo": "Lei 13.709/2018 — Art. 6",
+     "subassunto": null,
+     "conteudo": {
+      "lei": "Lei 13.709/2018 (LGPD)",
+      "artigo": "Art. 6",
+      "texto": "Art. 6º As atividades de tratamento de dados pessoais deverão observar a boa-fé e os seguintes princípios:\nI – finalidade: realização do tratamento para propósitos legítimos, específicos, explícitos e informados ao titular, sem possibilidade de tratamento posterior de forma incompatível com essas finalidades;\nII – adequação: compatibilidade do tratamento com as finalidades informadas ao titular, de acordo com o contexto do tratamento;\nIII – necessidade: limitação do tratamento ao mínimo necessário para a realização de suas finalidades, com abrangência dos dados pertinentes, proporcionais e não excessivos em relação às finalidades do tratamento de dados;\nIV – livre acesso: garantia, aos titulares, de consulta facilitada e gratuita sobre a forma e a duração do tratamento, bem como sobre a integralidade de seus dados pessoais;\nV – qualidade dos dados: garantia, aos titulares, de exatidão, clareza, relevância e atualização dos dados, de acordo com a necessidade e para o cumprimento da finalidade de seu tratamento;\nVI – transparência: garantia, aos titulares, de informações claras, precisas e facilmente acessíveis sobre a realização do tratamento e os respectivos agentes de tratamento, observados os segredos comercial e industrial;\nVII – segurança: utilização de medidas técnicas e administrativas aptas a proteger os dados pessoais de acessos não autorizados e de situações acidentais ou ilícitas de destruição, perda, alteração, comunicação ou difusão;\nVIII – prevenção: adoção de medidas para prevenir a ocorrência de danos em virtude do tratamento de dados pessoais;\nIX – não discriminação: impossibilidade de realização do tratamento para fins discriminatórios ilícitos ou abusivos;\nX – responsabilização e prestação de contas: demonstração, pelo agente, da adoção de medidas eficazes e capazes de comprovar a observância e o cumprimento das normas de proteção de dados pessoais e, inclusive, da eficácia dessas medidas.",
+      "observacao": "Texto da publicação original (Publicação Original   [Diário Oficial da União  de 15/08/2018] (p. 59, col. 2)). Este artigo não sofreu alteração posterior segundo o registro de normas do Senado Federal."
+     },
+     "fonte_oficial": "https://legis.senado.leg.br/norma/27457334/publicacao/27457731"
+    },
+    {
+     "tipo": "lei_seca",
+     "titulo": "Lei 13.709/2018 — Art. 17",
+     "subassunto": null,
+     "conteudo": {
+      "lei": "Lei 13.709/2018 (LGPD)",
+      "artigo": "Art. 17",
+      "texto": "Art. 17. Toda pessoa natural tem assegurada a titularidade de seus dados pessoais e garantidos os direitos fundamentais de liberdade, de intimidade e de privacidade, nos termos desta Lei.",
+      "observacao": "Texto da publicação original (Publicação Original   [Diário Oficial da União  de 15/08/2018] (p. 59, col. 2)). Este artigo não sofreu alteração posterior segundo o registro de normas do Senado Federal."
+     },
+     "fonte_oficial": "https://legis.senado.leg.br/norma/27457334/publicacao/27457731"
+    }
+   ]
+  }
+ ]
+}

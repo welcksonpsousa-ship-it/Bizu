@@ -1,0 +1,1504 @@
+{
+ "itens": [
+  {
+   "curso": "pm-sp-soldado",
+   "disciplina": "Noções Básicas de Informática",
+   "assunto": "MS-Windows 10",
+   "aula": {
+    "titulo": "Windows 10: arquivos, pastas e o dia a dia no sistema",
+    "secoes": [
+     {
+      "titulo": "Arquivos, pastas, diretórios e atalhos",
+      "texto": "No Windows 10, tudo o que você salva é um arquivo: um documento, uma foto, uma planilha. O arquivo tem nome e extensão (ex.: relatorio.docx), e a extensão indica o tipo e o programa que o abre.\nPasta e diretório são a mesma ideia: um local que organiza arquivos e outras pastas (subpastas), formando uma estrutura em árvore. O caminho mostra onde o item está, por exemplo C:\\Users\\Ana\\Documentos\\relatorio.docx.\nAtalho é um arquivo pequeno (extensão .lnk) que apenas aponta para outro item. Ele aparece com uma setinha no ícone. Apagar o atalho NÃO apaga o arquivo original.\n• Nomes de arquivos e pastas não podem conter os caracteres \\ / : * ? \" < > |\n• Dois itens com o mesmo nome e extensão não podem ficar na mesma pasta."
+     },
+     {
+      "titulo": "Área de trabalho e menus",
+      "texto": "A Área de Trabalho é a tela inicial após o login. Nela ficam ícones (como a Lixeira), o papel de parede e a Barra de Tarefas, na parte inferior.\nNa Barra de Tarefas estão o botão Iniciar, a caixa de pesquisa, os programas fixados e abertos e, à direita, a área de notificação com relógio, rede e volume.\nO Menu Iniciar (tecla Windows ou Ctrl+Esc) reúne a lista de aplicativos, os blocos dinâmicos e o acesso a Configurações e ao botão de desligar.\n• Windows+D: mostra a área de trabalho (e volta).\n• Windows+E: abre o Explorador de Arquivos.\n• Windows+I: abre as Configurações.\n• Windows+L: bloqueia o computador.\n• Alt+Tab: alterna entre janelas abertas; Alt+F4: fecha a janela ativa.\n• Ctrl+Shift+Esc: abre o Gerenciador de Tarefas."
+     },
+     {
+      "titulo": "Área de transferência",
+      "texto": "A Área de Transferência é um espaço temporário na memória que guarda o que você copiou ou recortou até colar.\n• Ctrl+C: copiar (o original fica onde está).\n• Ctrl+X: recortar (o item sai do lugar quando é colado em outro).\n• Ctrl+V: colar.\nO conteúdo comum da área de transferência é perdido ao desligar o computador. O Windows 10 também oferece o histórico da área de transferência, aberto com Windows+V, que permite escolher entre itens copiados anteriormente (é preciso ativar o recurso)."
+     },
+     {
+      "titulo": "Manipulação de arquivos e pastas",
+      "texto": "O Explorador de Arquivos é a ferramenta para criar, renomear, copiar, mover e excluir itens.\n• F2: renomeia o item selecionado.\n• Ctrl+Shift+N: cria nova pasta no Explorador.\n• Delete: envia o item para a Lixeira (de onde pode ser restaurado).\n• Shift+Delete: exclui definitivamente, sem passar pela Lixeira.\n• Ctrl+A: seleciona todos os itens (no Windows em português também vale para o Explorador).\n• Ctrl+clique seleciona itens alternados; Shift+clique seleciona um intervalo.\nArrastar com o mouse: dentro da MESMA unidade (ex.: de C: para C:), o item é MOVIDO; para OUTRA unidade (ex.: de C: para um pendrive), o item é COPIADO. Segurando Ctrl ao arrastar, força a cópia; segurando Shift, força a movimentação; segurando Alt, cria um atalho.\nArquivos apagados de pendrive ou de unidade de rede normalmente não vão para a Lixeira."
+     },
+     {
+      "titulo": "Programas, aplicativos e integração com o Office 2016",
+      "texto": "Programas são abertos pelo Menu Iniciar, pela pesquisa da Barra de Tarefas, por atalhos ou com duplo clique em um arquivo associado. A associação entre extensão e programa define quem abre o arquivo: .docx abre no Word, .xlsx no Excel e .pptx no PowerPoint.\nO Windows 10 integra-se ao pacote Office 2016: é possível copiar uma tabela do Excel e colar no Word pela Área de Transferência, fixar os programas do Office na Barra de Tarefas e abrir documentos recentes pela lista de atalhos (clique com o botão direito no ícone do programa na Barra de Tarefas).\nPara desinstalar ou alterar programas, use Configurações > Aplicativos."
+     }
+    ]
+   },
+   "revisao": {
+    "pontos": [
+     "Atalho (.lnk) apenas aponta para o original; apagá-lo não apaga o arquivo.",
+     "Caracteres proibidos em nomes: \\ / : * ? \" < > |",
+     "Delete manda para a Lixeira; Shift+Delete exclui definitivamente.",
+     "Arrastar na mesma unidade = mover; para outra unidade = copiar.",
+     "Ctrl ao arrastar copia; Shift move; Alt cria atalho.",
+     "Ctrl+C copia, Ctrl+X recorta, Ctrl+V cola; Windows+V abre o histórico da área de transferência.",
+     "Windows+E abre o Explorador; Windows+D mostra a área de trabalho; Windows+L bloqueia.",
+     "F2 renomeia; Ctrl+Shift+N cria nova pasta no Explorador.",
+     "Itens excluídos de pendrive não vão para a Lixeira."
+    ]
+   },
+   "mapa": {
+    "no_central": "Windows 10",
+    "ramos": [
+     {
+      "label": "Organização",
+      "filhos": [
+       "Arquivo = nome + extensão",
+       "Pasta = diretório",
+       "Atalho .lnk aponta para o original"
+      ]
+     },
+     {
+      "label": "Área de trabalho",
+      "filhos": [
+       "Barra de Tarefas",
+       "Menu Iniciar",
+       "Área de notificação",
+       "Lixeira"
+      ]
+     },
+     {
+      "label": "Área de transferência",
+      "filhos": [
+       "Ctrl+C copiar",
+       "Ctrl+X recortar",
+       "Ctrl+V colar",
+       "Windows+V histórico"
+      ]
+     },
+     {
+      "label": "Manipulação",
+      "filhos": [
+       "F2 renomear",
+       "Delete: Lixeira",
+       "Shift+Delete: definitivo",
+       "Arrastar: mesma unidade move"
+      ]
+     },
+     {
+      "label": "Atalhos do sistema",
+      "filhos": [
+       "Windows+E Explorador",
+       "Windows+D área de trabalho",
+       "Alt+Tab alternar",
+       "Ctrl+Shift+Esc Gerenciador"
+      ]
+     }
+    ]
+   },
+   "flashcards": [
+    {
+     "pergunta": "O que acontece com o arquivo original quando se exclui seu atalho?",
+     "resposta": "Nada; só o atalho é removido."
+    },
+    {
+     "pergunta": "Qual combinação exclui um arquivo sem enviá-lo à Lixeira?",
+     "resposta": "Shift+Delete."
+    },
+    {
+     "pergunta": "Arrastar um arquivo de C: para um pendrive faz o quê, por padrão?",
+     "resposta": "Copia o arquivo."
+    },
+    {
+     "pergunta": "Qual atalho abre o Explorador de Arquivos?",
+     "resposta": "Windows+E."
+    },
+    {
+     "pergunta": "Qual tecla renomeia o item selecionado?",
+     "resposta": "F2."
+    },
+    {
+     "pergunta": "Qual atalho abre o histórico da área de transferência no Windows 10?",
+     "resposta": "Windows+V."
+    }
+   ],
+   "questoes": [
+    {
+     "subassunto": "Conceito de pastas, diretórios, arquivos e atalhos",
+     "enunciado": "No MS-Windows 10, em sua configuração padrão, um usuário excluiu da Área de Trabalho um atalho que apontava para o arquivo escala.xlsx, armazenado na pasta Documentos. Como consequência,",
+     "opcoes": [
+      "o arquivo escala.xlsx foi enviado para a Lixeira junto com o atalho.",
+      "o arquivo escala.xlsx foi excluído definitivamente, sem passar pela Lixeira.",
+      "apenas o atalho foi removido, e o arquivo escala.xlsx permanece na pasta Documentos.",
+      "o arquivo escala.xlsx foi movido para a Área de Trabalho.",
+      "o arquivo escala.xlsx ficou oculto na pasta Documentos."
+     ],
+     "gabarito": 2,
+     "comentario": "O atalho é só um apontador (.lnk) para o original. Excluí-lo remove apenas o atalho; o arquivo continua intacto na pasta Documentos. As demais alternativas atribuem ao atalho efeitos sobre o original (enviar à Lixeira, excluir, mover ou ocultar) que não ocorrem.",
+     "dificuldade": "facil"
+    },
+    {
+     "subassunto": "Área de transferência",
+     "enunciado": "No MS-Windows 10, em sua configuração padrão, o atalho de teclado que coloca o item selecionado na Área de Transferência, de modo que ele seja retirado do local de origem quando for colado em outro local, é:",
+     "opcoes": [
+      "Ctrl+X",
+      "Ctrl+C",
+      "Ctrl+V",
+      "Ctrl+Z",
+      "Ctrl+A"
+     ],
+     "gabarito": 0,
+     "comentario": "Ctrl+X é recortar: o item vai para a Área de Transferência e sai da origem ao ser colado. Ctrl+C copia (o original permanece), Ctrl+V cola, Ctrl+Z desfaz e Ctrl+A seleciona tudo.",
+     "dificuldade": "facil"
+    },
+    {
+     "subassunto": "Manipulação de arquivos e pastas",
+     "enunciado": "Um usuário do MS-Windows 10, em sua configuração padrão, arrasta com o botão esquerdo do mouse, sem pressionar nenhuma tecla, um arquivo da pasta C:\\Relatorios para a pasta C:\\Arquivo2025. Em seguida, arrasta outro arquivo de C:\\Relatorios para um pendrive identificado como unidade E:. Os resultados das duas operações são, respectivamente:",
+     "opcoes": [
+      "copiar e copiar.",
+      "mover e mover.",
+      "copiar e mover.",
+      "criar atalho e copiar.",
+      "mover e copiar."
+     ],
+     "gabarito": 4,
+     "comentario": "Arrastar dentro da mesma unidade (C: para C:) move o item; arrastar para outra unidade (C: para E:) copia. Por isso, mover e copiar. As outras combinações invertem ou ignoram essa regra; criar atalho exige segurar Alt (ou usar o botão direito).",
+     "dificuldade": "media"
+    },
+    {
+     "subassunto": "Área de trabalho",
+     "enunciado": "No MS-Windows 10, em sua configuração padrão, o atalho de teclado que minimiza as janelas abertas e exibe a Área de Trabalho, restaurando-as ao ser pressionado novamente, é:",
+     "opcoes": [
+      "Windows+E",
+      "Windows+D",
+      "Windows+L",
+      "Alt+F4",
+      "Ctrl+Esc"
+     ],
+     "gabarito": 1,
+     "comentario": "Windows+D mostra a Área de Trabalho e, pressionado de novo, volta às janelas. Windows+E abre o Explorador de Arquivos, Windows+L bloqueia o computador, Alt+F4 fecha a janela ativa e Ctrl+Esc abre o Menu Iniciar.",
+     "dificuldade": "media"
+    },
+    {
+     "subassunto": "Manipulação de arquivos e pastas",
+     "enunciado": "Considere as afirmações sobre o MS-Windows 10, em sua configuração padrão.\nI. Selecionar um arquivo no disco local e pressionar Shift+Delete exclui o arquivo sem enviá-lo à Lixeira.\nII. O nome relatorio:final.docx é válido para um arquivo.\nIII. Arrastar um arquivo mantendo a tecla Ctrl pressionada, dentro da mesma unidade, copia o arquivo.\nIV. Ao pressionar F2 com um arquivo selecionado, é possível renomeá-lo.\nEstá correto o que se afirma em",
+     "opcoes": [
+      "I e II, apenas.",
+      "II e III, apenas.",
+      "I, II e IV, apenas.",
+      "I, III e IV, apenas.",
+      "I, II, III e IV."
+     ],
+     "gabarito": 3,
+     "comentario": "I está correta: Shift+Delete exclui definitivamente. II está errada: o caractere dois-pontos (:) é proibido em nomes de arquivo. III está correta: Ctrl ao arrastar força a cópia. IV está correta: F2 renomeia. Logo, I, III e IV.",
+     "dificuldade": "dificil"
+    }
+   ]
+  },
+  {
+   "curso": "pm-sp-soldado",
+   "disciplina": "Noções Básicas de Informática",
+   "assunto": "MS-Word 2016",
+   "aula": {
+    "titulo": "Word 2016: do texto simples ao documento completo",
+    "secoes": [
+     {
+      "titulo": "Estrutura básica do documento",
+      "texto": "O Word 2016 salva documentos no formato .docx (modelos em .dotx; com macros, .docm). A tela tem a Faixa de Opções dividida em guias: Arquivo, Página Inicial, Inserir, Design, Layout, Referências, Correspondências, Revisão e Exibir.\nNa parte de baixo fica a Barra de Status (número da página, contagem de palavras, zoom e modos de exibição). Os modos principais são Layout de Impressão (o padrão), Modo de Leitura, Layout da Web, Estrutura de Tópicos e Rascunho.\n• Ctrl+O: novo documento. Ctrl+A: abrir. Ctrl+B: salvar. F12: Salvar Como.\n(Atenção: estes são os atalhos do Word em português, os mais cobrados pela VUNESP.)"
+     },
+     {
+      "titulo": "Edição e formatação: fontes e parágrafos",
+      "texto": "A formatação de caractere fica em Página Inicial > grupo Fonte: tipo, tamanho, cor, negrito, itálico, sublinhado, tachado, subscrito e sobrescrito.\n• Ctrl+N: negrito. Ctrl+I: itálico. Ctrl+S: sublinhado.\n• Ctrl+T: selecionar tudo. Ctrl+Z: desfazer.\n• Ctrl+L: localizar. Ctrl+U: substituir.\nA formatação de parágrafo fica no grupo Parágrafo: alinhamento, recuos, espaçamento entre linhas e sombreamento.\n• Ctrl+Q: alinhar à esquerda. Ctrl+E: centralizar. Ctrl+G: alinhar à direita. Ctrl+J: justificar.\nO Pincel de Formatação copia a formatação de um trecho e aplica em outro. F7 inicia a verificação de ortografia e gramática."
+     },
+     {
+      "titulo": "Cabeçalhos, colunas, marcadores e caixas de texto",
+      "texto": "Cabeçalho e rodapé (Inserir > Cabeçalho / Rodapé) repetem conteúdo em todas as páginas da seção, como título ou brasão.\nColunas estilo jornal são criadas em Layout > Colunas. Uma quebra de coluna (Ctrl+Shift+Enter) força o texto a continuar na próxima coluna.\nMarcadores simbólicos (•) e numéricos (1, 2, 3 ou a, b, c) ficam em Página Inicial > Parágrafo; há também a Lista de Vários Níveis.\nCaixa de Texto (Inserir > Caixa de Texto) é um bloco de texto que pode ser posicionado livremente na página."
+     },
+     {
+      "titulo": "Tabelas e inserção de objetos",
+      "texto": "Tabelas são criadas em Inserir > Tabela. Ao selecionar a tabela, surgem as guias contextuais Design e Layout (Ferramentas de Tabela), com opções de estilos, bordas, mesclar e dividir células.\n• Tab: avança para a próxima célula; na última célula, cria uma nova linha.\nPela guia Inserir também se adicionam imagens, formas, ícones, SmartArt, gráficos, WordArt, hiperlinks e símbolos. Em Inserir > Partes Rápidas > Campo, o Word insere campos predefinidos, que se atualizam automaticamente, como data, número de páginas, autor e nome do arquivo."
+     },
+     {
+      "titulo": "Quebras, numeração, legendas, índices e impressão",
+      "texto": "• Ctrl+Enter: quebra de página (também em Inserir > Quebra de Página ou Layout > Quebras).\n• Quebras de seção (Layout > Quebras) permitem orientação, margens ou numeração diferentes em partes do documento.\nNumeração de páginas: Inserir > Número de Página, escolhendo a posição (início ou fim da página, margens).\nLegendas (Referências > Inserir Legenda) numeram figuras e tabelas automaticamente (Figura 1, Tabela 1...). Na mesma guia estão o Sumário, gerado a partir dos estilos de Título, e o Índice remissivo, a partir de entradas marcadas.\nImpressão: Arquivo > Imprimir ou Ctrl+P. Ali se escolhem impressora, número de cópias, intervalo de páginas (ex.: 1-3;5), orientação e visualização prévia."
+     }
+    ]
+   },
+   "revisao": {
+    "pontos": [
+     "Word 2016 em português: Ctrl+N negrito, Ctrl+I itálico, Ctrl+S sublinhado.",
+     "Ctrl+B salva; F12 é Salvar Como; Ctrl+A abre; Ctrl+O cria novo documento.",
+     "Ctrl+T seleciona tudo; Ctrl+L localiza; Ctrl+U substitui.",
+     "Alinhamentos: Ctrl+Q esquerda, Ctrl+E centro, Ctrl+G direita, Ctrl+J justificado.",
+     "Ctrl+Enter quebra página; Ctrl+Shift+Enter quebra coluna.",
+     "Colunas e Quebras ficam na guia Layout.",
+     "Legendas, Sumário e Índice ficam na guia Referências.",
+     "Tab na última célula da tabela cria nova linha.",
+     "Campos (data, páginas, autor) em Inserir > Partes Rápidas > Campo."
+    ]
+   },
+   "mapa": {
+    "no_central": "Word 2016",
+    "ramos": [
+     {
+      "label": "Arquivo",
+      "filhos": [
+       ".docx",
+       "Ctrl+B salvar",
+       "F12 Salvar Como",
+       "Ctrl+P imprimir"
+      ]
+     },
+     {
+      "label": "Página Inicial",
+      "filhos": [
+       "Ctrl+N/I/S",
+       "Alinhamentos Q E G J",
+       "Marcadores e numeração",
+       "Pincel de Formatação"
+      ]
+     },
+     {
+      "label": "Inserir",
+      "filhos": [
+       "Tabela",
+       "Cabeçalho/Rodapé",
+       "Número de Página",
+       "Caixa de Texto",
+       "Partes Rápidas > Campo"
+      ]
+     },
+     {
+      "label": "Layout",
+      "filhos": [
+       "Colunas",
+       "Quebras de página e seção",
+       "Margens e orientação"
+      ]
+     },
+     {
+      "label": "Referências",
+      "filhos": [
+       "Sumário",
+       "Inserir Legenda",
+       "Índice"
+      ]
+     }
+    ]
+   },
+   "flashcards": [
+    {
+     "pergunta": "No Word 2016 em português, qual atalho aplica negrito?",
+     "resposta": "Ctrl+N."
+    },
+    {
+     "pergunta": "Qual atalho insere quebra de página?",
+     "resposta": "Ctrl+Enter."
+    },
+    {
+     "pergunta": "Em qual guia fica o comando Colunas?",
+     "resposta": "Layout."
+    },
+    {
+     "pergunta": "Em qual guia fica Inserir Legenda?",
+     "resposta": "Referências."
+    },
+    {
+     "pergunta": "Qual atalho justifica o parágrafo?",
+     "resposta": "Ctrl+J."
+    },
+    {
+     "pergunta": "O que faz a tecla Tab na última célula de uma tabela?",
+     "resposta": "Cria uma nova linha."
+    }
+   ],
+   "questoes": [
+    {
+     "subassunto": "Edição e formatação de textos",
+     "enunciado": "No MS-Word 2016, em sua configuração padrão e versão em português, um usuário selecionou uma palavra e pressionou Ctrl+N. O efeito dessa ação foi",
+     "opcoes": [
+      "abrir um novo documento em branco.",
+      "aplicar ou remover o negrito da palavra.",
+      "sublinhar a palavra.",
+      "centralizar o parágrafo.",
+      "localizar outras ocorrências da palavra."
+     ],
+     "gabarito": 1,
+     "comentario": "No Word em português, Ctrl+N aplica/remove negrito. Novo documento é Ctrl+O, sublinhado é Ctrl+S, centralizar é Ctrl+E e localizar é Ctrl+L.",
+     "dificuldade": "facil"
+    },
+    {
+     "subassunto": "Controle de quebras e numeração de páginas",
+     "enunciado": "Ao redigir um relatório no MS-Word 2016, em sua configuração padrão, um policial deseja que o próximo tópico comece obrigatoriamente no início de uma nova página. O atalho de teclado adequado é:",
+     "opcoes": [
+      "Shift+Enter",
+      "Ctrl+Shift+Enter",
+      "Alt+Enter",
+      "Ctrl+Enter",
+      "Tab"
+     ],
+     "gabarito": 3,
+     "comentario": "Ctrl+Enter insere quebra de página. Shift+Enter insere quebra de linha (sem novo parágrafo), Ctrl+Shift+Enter insere quebra de coluna, Tab insere tabulação e Alt+Enter não é o comando de quebra de página.",
+     "dificuldade": "facil"
+    },
+    {
+     "subassunto": "Legendas e índices",
+     "enunciado": "No MS-Word 2016, em sua configuração padrão, o comando que permite numerar automaticamente figuras e tabelas, com textos como Figura 1 e Tabela 1, está localizado na guia",
+     "opcoes": [
+      "Inserir.",
+      "Design.",
+      "Revisão.",
+      "Exibir.",
+      "Referências."
+     ],
+     "gabarito": 4,
+     "comentario": "Inserir Legenda fica na guia Referências, junto com Sumário e Índice. A guia Inserir adiciona objetos, Design trata de temas, Revisão de ortografia e comentários, e Exibir de modos de exibição.",
+     "dificuldade": "media"
+    },
+    {
+     "subassunto": "Cabeçalhos, parágrafos, fontes e colunas",
+     "enunciado": "Um usuário do MS-Word 2016, em sua configuração padrão, quer dividir um texto em duas colunas, no estilo de jornal. Ele deve acessar o comando Colunas na guia",
+     "opcoes": [
+      "Layout.",
+      "Página Inicial.",
+      "Inserir.",
+      "Referências.",
+      "Correspondências."
+     ],
+     "gabarito": 0,
+     "comentario": "Colunas fica na guia Layout (grupo Configurar Página), junto com Margens, Orientação e Quebras. As demais guias não contêm esse comando.",
+     "dificuldade": "media"
+    },
+    {
+     "subassunto": "Tabelas",
+     "enunciado": "Considere as afirmações sobre o MS-Word 2016, em sua configuração padrão e versão em português.\nI. Com o cursor na última célula de uma tabela, pressionar Tab cria uma nova linha ao final da tabela.\nII. Ctrl+J justifica o parágrafo e Ctrl+G alinha o parágrafo à direita.\nIII. Ctrl+B abre a caixa de diálogo para localizar texto.\nIV. O número de página pode ser inserido pela guia Inserir, comando Número de Página.\nEstá correto o que se afirma em",
+     "opcoes": [
+      "I e III, apenas.",
+      "II e IV, apenas.",
+      "I, II e IV, apenas.",
+      "I, III e IV, apenas.",
+      "II, III e IV, apenas."
+     ],
+     "gabarito": 2,
+     "comentario": "I correta: Tab na última célula acrescenta linha. II correta: Ctrl+J justifica e Ctrl+G alinha à direita. III errada: no Word em português, Ctrl+B salva; localizar é Ctrl+L. IV correta: Inserir > Número de Página. Logo, I, II e IV.",
+     "dificuldade": "dificil"
+    }
+   ]
+  },
+  {
+   "curso": "pm-sp-soldado",
+   "disciplina": "Noções Básicas de Informática",
+   "assunto": "MS-Excel 2016",
+   "aula": {
+    "titulo": "Excel 2016: planilhas, fórmulas e gráficos",
+    "secoes": [
+     {
+      "titulo": "Estrutura básica: pasta, planilha, célula",
+      "texto": "No Excel 2016, o arquivo é chamado de Pasta de Trabalho (extensão .xlsx; com macros, .xlsm). Cada pasta contém uma ou mais Planilhas (abas na parte inferior).\nA planilha é uma grade de linhas (numeradas: 1, 2, 3...) e colunas (letras: A, B... Z, AA, AB...). No Excel 2016 são 1.048.576 linhas e 16.384 colunas (a última é XFD).\nCélula é o cruzamento de coluna com linha, identificada pelo endereço: B3 = coluna B, linha 3. Intervalo é um conjunto de células, como A1:A10 (de A1 até A10). A Caixa de Nome mostra o endereço da célula ativa, e a Barra de Fórmulas mostra seu conteúdo.\n• F2: edita a célula ativa. Ctrl+; insere a data atual."
+     },
+     {
+      "titulo": "Fórmulas e referências",
+      "texto": "Toda fórmula começa com o sinal de igual (=). Operadores: + soma, - subtração, * multiplicação, / divisão, ^ potência e & concatenação de texto.\nOrdem de cálculo: primeiro parênteses, depois potência, depois multiplicação e divisão, e por último soma e subtração. Ex.: =2+3*4 resulta 14; =(2+3)*4 resulta 20.\nReferências:\n• Relativa (A1): ajusta-se ao copiar a fórmula.\n• Absoluta ($A$1): não muda ao copiar.\n• Mista (A$1 ou $A1): trava só a linha ou só a coluna.\nA tecla F4, ao editar a fórmula, alterna entre esses tipos. Exemplo: =A1*$B$1 em C1, copiada para C3, vira =A3*$B$1."
+     },
+     {
+      "titulo": "Funções mais cobradas",
+      "texto": "• =SOMA(A1:A5): soma o intervalo.\n• =MÉDIA(A1:A5): média aritmética.\n• =MÁXIMO() e =MÍNIMO(): maior e menor valor.\n• =CONT.NÚM(): conta células com números; =CONT.VALORES(): conta células não vazias.\n• =CONT.SE(A1:A10;\">5\"): conta as que atendem ao critério.\n• =SOMASE(): soma as que atendem ao critério.\n• =SE(A1>=7;\"Aprovado\";\"Reprovado\"): testa uma condição.\n• =PROCV(): procura um valor na primeira coluna de uma tabela e retorna dado de outra coluna.\nNa versão em português, os argumentos são separados por ponto e vírgula (;) e dois-pontos (:) indica intervalo.\nErros comuns: #DIV/0! (divisão por zero), #NOME? (nome de função errado), #REF! (referência inválida), #VALOR! (tipo de dado errado), #N/D (valor não encontrado).\nMacros gravam uma sequência de ações para repetir depois (Exibir > Macros; guia Desenvolvedor)."
+     },
+     {
+      "titulo": "Tabelas, gráficos, classificação e dados externos",
+      "texto": "Inserir > Tabela transforma um intervalo em tabela com filtros e estilos. Inserir > Gráficos cria colunas, barras, linhas, pizza e outros. Alt+F1 cria gráfico na própria planilha; F11 cria gráfico em uma planilha separada.\nClassificação: Dados > Classificar (ordem crescente/decrescente, por uma ou várias colunas). Filtro: Dados > Filtro.\nObtenção de dados externos: guia Dados, grupo Obter e Transformar (ou Obter Dados Externos), para importar de arquivos de texto/CSV, Access, páginas da Web e outras fontes.\nObjetos (imagens, formas, SmartArt, caixas de texto) ficam na guia Inserir."
+     },
+     {
+      "titulo": "Impressão, quebras e numeração de páginas",
+      "texto": "Arquivo > Imprimir (Ctrl+P) mostra a visualização e permite escolher planilha ativa, pasta inteira ou seleção, orientação e dimensionamento (ex.: ajustar planilha em uma página).\nNa guia Layout da Página: Área de Impressão, Quebras (inserir quebra de página manual), Margens, Orientação e Imprimir Títulos (repetir linhas em cada página).\nO modo Visualização da Quebra de Página (guia Exibir) mostra onde cada página termina. Números de página entram no cabeçalho ou rodapé (Inserir > Cabeçalho e Rodapé), por meio de campos predefinidos como Número da Página, Número de Páginas, Data e Nome do Arquivo."
+     }
+    ]
+   },
+   "revisao": {
+    "pontos": [
+     "Arquivo do Excel = pasta de trabalho (.xlsx); macros exigem .xlsm.",
+     "Fórmula sempre começa com =.",
+     "Ordem: parênteses, potência, multiplicação/divisão, soma/subtração.",
+     "$ trava a referência; F4 alterna entre relativa, absoluta e mista.",
+     "Argumentos separados por ; e intervalo indicado por : (ex.: A1:A5).",
+     "CONT.NÚM conta números; CONT.VALORES conta células não vazias.",
+     "#DIV/0! = divisão por zero; #NOME? = função escrita errada.",
+     "Classificar e Filtro ficam na guia Dados.",
+     "F11 cria gráfico em nova planilha; Alt+F1 na planilha atual."
+    ]
+   },
+   "mapa": {
+    "no_central": "Excel 2016",
+    "ramos": [
+     {
+      "label": "Estrutura",
+      "filhos": [
+       "Pasta de trabalho .xlsx",
+       "Planilhas (abas)",
+       "Célula = coluna + linha",
+       "1.048.576 linhas x 16.384 colunas"
+      ]
+     },
+     {
+      "label": "Fórmulas",
+      "filhos": [
+       "Começa com =",
+       "Operadores + - * / ^ &",
+       "Referência relativa, absoluta e mista",
+       "F4 alterna $"
+      ]
+     },
+     {
+      "label": "Funções",
+      "filhos": [
+       "SOMA, MÉDIA",
+       "MÁXIMO, MÍNIMO",
+       "SE",
+       "CONT.SE, SOMASE",
+       "PROCV"
+      ]
+     },
+     {
+      "label": "Dados",
+      "filhos": [
+       "Classificar",
+       "Filtro",
+       "Obter dados externos"
+      ]
+     },
+     {
+      "label": "Saída",
+      "filhos": [
+       "Gráficos (F11, Alt+F1)",
+       "Ctrl+P imprimir",
+       "Quebras em Layout da Página",
+       "Número de página no cabeçalho/rodapé"
+      ]
+     }
+    ]
+   },
+   "flashcards": [
+    {
+     "pergunta": "Qual o resultado de =2+3*4 no Excel?",
+     "resposta": "14."
+    },
+    {
+     "pergunta": "O que o símbolo $ faz em $A$1?",
+     "resposta": "Torna a referência absoluta (não muda ao copiar)."
+    },
+    {
+     "pergunta": "Qual erro aparece ao dividir por zero?",
+     "resposta": "#DIV/0!"
+    },
+    {
+     "pergunta": "Qual função conta apenas células com números?",
+     "resposta": "CONT.NÚM."
+    },
+    {
+     "pergunta": "Em qual guia está o comando Classificar?",
+     "resposta": "Dados."
+    },
+    {
+     "pergunta": "Qual extensão salva uma pasta com macros?",
+     "resposta": ".xlsm."
+    }
+   ],
+   "questoes": [
+    {
+     "subassunto": "Uso de fórmulas, funções e macros",
+     "enunciado": "No MS-Excel 2016, em sua configuração padrão, as células A1, A2 e A3 contêm, respectivamente, os valores 2, 3 e 4. O resultado da fórmula =A1+A2*A3 é:",
+     "opcoes": [
+      "20",
+      "9",
+      "14",
+      "24",
+      "10"
+     ],
+     "gabarito": 2,
+     "comentario": "A multiplicação é feita antes da soma: 3*4 = 12; depois 2 + 12 = 14. O valor 20 seria obtido com (2+3)*4; 9 é a simples soma dos três; 24 é o produto dos três; 10 não corresponde à ordem correta de cálculo.",
+     "dificuldade": "facil"
+    },
+    {
+     "subassunto": "Classificação de dados",
+     "enunciado": "No MS-Excel 2016, em sua configuração padrão, para colocar uma lista de nomes em ordem alfabética, o usuário deve utilizar o comando Classificar, localizado na guia",
+     "opcoes": [
+      "Dados.",
+      "Inserir.",
+      "Layout da Página.",
+      "Revisão.",
+      "Exibir."
+     ],
+     "gabarito": 0,
+     "comentario": "Classificar (e Filtro) está na guia Dados, grupo Classificar e Filtrar. As demais guias tratam de objetos (Inserir), configuração de impressão (Layout da Página), revisão de texto e comentários (Revisão) e modos de exibição (Exibir).",
+     "dificuldade": "facil"
+    },
+    {
+     "subassunto": "Uso de fórmulas, funções e macros",
+     "enunciado": "Em uma planilha do MS-Excel 2016, em sua configuração padrão, a célula C1 contém a fórmula =A1*$B$1. Essa célula foi copiada e colada na célula C3. A fórmula resultante em C3 é:",
+     "opcoes": [
+      "=A1*$B$1",
+      "=A3*$B$3",
+      "=C3*$B$1",
+      "=A3*$B$1",
+      "=A1*$B$3"
+     ],
+     "gabarito": 3,
+     "comentario": "A referência relativa A1 acompanha o deslocamento de duas linhas e vira A3; a referência absoluta $B$1 não muda. Resultado: =A3*$B$1. As outras opções mantêm A1 sem ajuste ou alteram indevidamente a referência absoluta.",
+     "dificuldade": "media"
+    },
+    {
+     "subassunto": "Uso de fórmulas, funções e macros",
+     "enunciado": "No MS-Excel 2016, em sua configuração padrão, a célula B2 contém o valor 6,5. A fórmula =SE(B2>=7;\"Apto\";\"Inapto\"), inserida em C2, exibirá:",
+     "opcoes": [
+      "Apto",
+      "6,5",
+      "VERDADEIRO",
+      "#VALOR!",
+      "Inapto"
+     ],
+     "gabarito": 4,
+     "comentario": "O teste B2>=7 é falso (6,5 é menor que 7), então a função SE retorna o terceiro argumento, \"Inapto\". \"Apto\" seria retornado se o teste fosse verdadeiro; a função não exibe o valor de B2 nem o resultado lógico, e não há erro na fórmula.",
+     "dificuldade": "media"
+    },
+    {
+     "subassunto": "Conceitos de células, linhas, colunas, pastas e gráficos",
+     "enunciado": "No MS-Excel 2016, em sua configuração padrão, as células A1 a A5 contêm, respectivamente: 10, o texto PM, 20, uma célula vazia e 30. Os resultados das fórmulas =CONT.NÚM(A1:A5) e =CONT.VALORES(A1:A5) são, respectivamente:",
+     "opcoes": [
+      "3 e 5",
+      "3 e 4",
+      "4 e 4",
+      "5 e 3",
+      "60 e 4"
+     ],
+     "gabarito": 1,
+     "comentario": "CONT.NÚM conta só células com números (10, 20 e 30) = 3. CONT.VALORES conta células não vazias (10, PM, 20 e 30) = 4; a célula vazia não entra. 5 contaria a célula vazia, e 60 é a soma, não a contagem.",
+     "dificuldade": "dificil"
+    }
+   ]
+  },
+  {
+   "curso": "pm-sp-soldado",
+   "disciplina": "Noções Básicas de Informática",
+   "assunto": "MS-PowerPoint 2016",
+   "aula": {
+    "titulo": "PowerPoint 2016: montando e apresentando slides",
+    "secoes": [
+     {
+      "titulo": "Estrutura básica e modos de exibição",
+      "texto": "O PowerPoint 2016 cria apresentações no formato .pptx. O formato .ppsx salva a apresentação para abrir diretamente no modo de apresentação de slides, e .potx é modelo.\nUma apresentação é formada por slides. Cada slide usa um layout (Título, Título e Conteúdo, Em Branco etc.), escolhido em Página Inicial > Layout. Novo slide: Página Inicial > Novo Slide.\nModos de exibição (guia Exibir):\n• Normal: painel de miniaturas, slide em edição e painel de anotações.\n• Classificação de Slides: miniaturas lado a lado, bom para reorganizar.\n• Anotações: mostra o slide com suas anotações.\n• Modo de Exibição de Leitura: apresenta dentro da janela.\nO Slide Mestre (Exibir > Slide Mestre) define a formatação padrão de todos os slides."
+     },
+     {
+      "titulo": "Slides, anotações, régua e guias",
+      "texto": "As anotações são textos de apoio ao apresentador, digitados no painel abaixo do slide; o público não as vê durante a apresentação. No Modo do Apresentador, o apresentador vê as anotações e o próximo slide.\nRégua e guias ajudam a alinhar objetos. Ambas são ativadas na guia Exibir (grupo Mostrar), junto com as Linhas de Grade. As guias são linhas pontilhadas que não aparecem na apresentação nem na impressão."
+     },
+     {
+      "titulo": "Edição, formatação e inserção de objetos",
+      "texto": "A guia Design traz temas (conjunto de cores, fontes e efeitos) e o tamanho do slide (padrão 16:9 no 2016). A guia Página Inicial formata texto e parágrafos, como no Word.\nA guia Inserir adiciona tabelas, imagens, formas, ícones, SmartArt, gráficos, WordArt, caixas de texto, vídeos e áudios, hiperlinks e ações."
+     },
+     {
+      "titulo": "Cabeçalhos, rodapés, numeração e botões de ação",
+      "texto": "Em Inserir > Cabeçalho e Rodapé, na aba Slide, é possível incluir Data e hora, Número do slide e Rodapé, com a opção de não mostrar no slide de título. Cabeçalho propriamente dito só existe na aba Anotações e Folhetos.\nBotões de ação são formas (Inserir > Formas > Botões de Ação) que, clicadas durante a apresentação, executam uma ação: ir para o próximo slide, anterior, primeiro, último, abrir um arquivo ou site. Também se pode atribuir uma ação a qualquer objeto em Inserir > Ação."
+     },
+     {
+      "titulo": "Animação e transição",
+      "texto": "Transição é o efeito na PASSAGEM de um slide para outro (guia Transições): tipo de efeito, duração, som e avanço ao clicar ou após um tempo.\nAnimação é o efeito aplicado a um OBJETO dentro do slide (guia Animações). Tipos: Entrada, Ênfase, Saída e Trajetórias de Animação. O Painel de Animação mostra e reordena os efeitos.\nPara apresentar:\n• F5: inicia do primeiro slide.\n• Shift+F5: inicia do slide atual.\n• Esc: encerra a apresentação.\n• Setas, Enter, espaço ou clique avançam."
+     }
+    ]
+   },
+   "revisao": {
+    "pontos": [
+     "Formato padrão .pptx; .ppsx abre direto na apresentação.",
+     "F5 começa do início; Shift+F5 começa do slide atual; Esc encerra.",
+     "Transição = entre slides; Animação = objetos dentro do slide.",
+     "Animações: Entrada, Ênfase, Saída e Trajetórias.",
+     "Anotações não aparecem para o público.",
+     "Régua, guias e linhas de grade: guia Exibir.",
+     "Classificação de Slides é o modo ideal para reordenar slides.",
+     "Número do slide: Inserir > Cabeçalho e Rodapé (ou Número do Slide).",
+     "Botões de ação: Inserir > Formas > Botões de Ação."
+    ]
+   },
+   "mapa": {
+    "no_central": "PowerPoint 2016",
+    "ramos": [
+     {
+      "label": "Estrutura",
+      "filhos": [
+       ".pptx / .ppsx",
+       "Layouts de slide",
+       "Slide Mestre"
+      ]
+     },
+     {
+      "label": "Modos de exibição",
+      "filhos": [
+       "Normal",
+       "Classificação de Slides",
+       "Anotações",
+       "Leitura"
+      ]
+     },
+     {
+      "label": "Inserir",
+      "filhos": [
+       "Objetos e mídia",
+       "Cabeçalho e Rodapé",
+       "Número do slide",
+       "Botões de ação"
+      ]
+     },
+     {
+      "label": "Efeitos",
+      "filhos": [
+       "Transições: entre slides",
+       "Animações: objetos",
+       "Entrada, Ênfase, Saída, Trajetória"
+      ]
+     },
+     {
+      "label": "Apresentar",
+      "filhos": [
+       "F5 do início",
+       "Shift+F5 do atual",
+       "Esc encerra",
+       "Modo do Apresentador"
+      ]
+     }
+    ]
+   },
+   "flashcards": [
+    {
+     "pergunta": "Qual tecla inicia a apresentação a partir do primeiro slide?",
+     "resposta": "F5."
+    },
+    {
+     "pergunta": "Qual combinação inicia a apresentação a partir do slide atual?",
+     "resposta": "Shift+F5."
+    },
+    {
+     "pergunta": "Qual a diferença entre transição e animação?",
+     "resposta": "Transição é entre slides; animação é em objetos do slide."
+    },
+    {
+     "pergunta": "Quais são os quatro tipos de animação?",
+     "resposta": "Entrada, Ênfase, Saída e Trajetórias de Animação."
+    },
+    {
+     "pergunta": "O público vê as anotações durante a apresentação?",
+     "resposta": "Não."
+    },
+    {
+     "pergunta": "Qual extensão abre o arquivo direto como apresentação?",
+     "resposta": ".ppsx."
+    }
+   ],
+   "questoes": [
+    {
+     "subassunto": "Animação e transição entre slides",
+     "enunciado": "No MS-PowerPoint 2016, em sua configuração padrão, o efeito visual que ocorre no momento da passagem de um slide para o seguinte é configurado na guia",
+     "opcoes": [
+      "Animações.",
+      "Design.",
+      "Transições.",
+      "Inserir.",
+      "Apresentação de Slides."
+     ],
+     "gabarito": 2,
+     "comentario": "Efeitos entre slides são transições, configuradas na guia Transições. A guia Animações cuida de efeitos em objetos dentro do slide; Design trata de temas; Inserir adiciona objetos; Apresentação de Slides controla a exibição.",
+     "dificuldade": "facil"
+    },
+    {
+     "subassunto": "Estrutura básica das apresentações",
+     "enunciado": "Durante uma instrução, um policial está editando o slide 8 de uma apresentação no MS-PowerPoint 2016, em sua configuração padrão, e quer iniciar a exibição exatamente a partir desse slide. Ele deve pressionar:",
+     "opcoes": [
+      "F5",
+      "Ctrl+F5",
+      "Esc",
+      "F7",
+      "Shift+F5"
+     ],
+     "gabarito": 4,
+     "comentario": "Shift+F5 inicia a apresentação a partir do slide atual. F5 começa do primeiro slide, Esc encerra a apresentação, F7 verifica a ortografia e Ctrl+F5 não é o atalho padrão para essa ação.",
+     "dificuldade": "facil"
+    },
+    {
+     "subassunto": "Conceitos de slides, anotações, régua e guias",
+     "enunciado": "No MS-PowerPoint 2016, em sua configuração padrão, o texto digitado no painel de anotações de um slide",
+     "opcoes": [
+      "é exibido para o público no rodapé do slide durante a apresentação.",
+      "pode ser visto pelo apresentador no Modo do Apresentador, mas não é exibido ao público no slide.",
+      "é convertido automaticamente em legenda da apresentação.",
+      "só pode ser digitado no modo Classificação de Slides.",
+      "é excluído quando o arquivo é salvo no formato .pptx."
+     ],
+     "gabarito": 1,
+     "comentario": "As anotações servem de apoio ao apresentador: aparecem no Modo do Apresentador e podem ser impressas, mas não são exibidas ao público no slide. Elas não viram rodapé nem legenda, são digitadas no modo Normal ou Anotações e são mantidas no .pptx.",
+     "dificuldade": "media"
+    },
+    {
+     "subassunto": "Botões de ação",
+     "enunciado": "No MS-PowerPoint 2016, em sua configuração padrão, um usuário deseja inserir no slide uma forma que, ao ser clicada durante a apresentação, leve diretamente ao último slide. O recurso adequado é",
+     "opcoes": [
+      "Botões de Ação, disponíveis em Inserir > Formas.",
+      "Transição, disponível na guia Transições.",
+      "Animação de Ênfase, na guia Animações.",
+      "Slide Mestre, na guia Exibir.",
+      "Comentário, na guia Revisão."
+     ],
+     "gabarito": 0,
+     "comentario": "Botões de ação (Inserir > Formas > Botões de Ação) executam ações ao clique, como ir ao primeiro, anterior, próximo ou último slide. Transição e animação são efeitos visuais; Slide Mestre define o padrão de formatação; Comentário serve para revisão.",
+     "dificuldade": "media"
+    },
+    {
+     "subassunto": "Cabeçalhos e rodapés",
+     "enunciado": "Considere as afirmações sobre o MS-PowerPoint 2016, em sua configuração padrão.\nI. Na caixa Cabeçalho e Rodapé, aba Slide, é possível incluir data e hora, número do slide e texto de rodapé.\nII. A opção de cabeçalho com texto livre está disponível na aba Anotações e Folhetos.\nIII. As animações do tipo Saída são aplicadas na guia Transições.\nIV. Régua e guias podem ser exibidas pela guia Exibir.\nEstá correto o que se afirma em",
+     "opcoes": [
+      "I e III, apenas.",
+      "II e III, apenas.",
+      "I, III e IV, apenas.",
+      "I, II e IV, apenas.",
+      "I, II, III e IV."
+     ],
+     "gabarito": 3,
+     "comentario": "I correta: a aba Slide oferece data e hora, número do slide e rodapé. II correta: o cabeçalho existe em Anotações e Folhetos. III errada: animações de Saída ficam na guia Animações, não em Transições. IV correta: Régua e Guias estão na guia Exibir. Logo, I, II e IV.",
+     "dificuldade": "dificil"
+    }
+   ]
+  },
+  {
+   "curso": "pm-sp-soldado",
+   "disciplina": "Noções Básicas de Informática",
+   "assunto": "Correio eletrônico",
+   "aula": {
+    "titulo": "Correio eletrônico: enviar, responder e anexar",
+    "secoes": [
+     {
+      "titulo": "Como funciona o e-mail",
+      "texto": "O correio eletrônico permite trocar mensagens pela Internet. Todo endereço segue o formato usuario@dominio, como joao.silva@exemplo.com.br: antes do @ fica o nome da caixa postal; depois, o domínio do provedor.\nO e-mail pode ser usado de duas formas:\n• Webmail: pelo navegador, sem instalar nada (ex.: Gmail, Outlook.com).\n• Programa cliente: instalado no computador (ex.: Microsoft Outlook, Mozilla Thunderbird).\nProtocolos: SMTP é usado para ENVIAR mensagens; POP3 e IMAP para RECEBER. O POP3 costuma baixar as mensagens para o computador; o IMAP mantém as mensagens sincronizadas no servidor, permitindo acessar a mesma caixa em vários aparelhos."
+     },
+     {
+      "titulo": "Preparo e envio de mensagens",
+      "texto": "Campos de uma nova mensagem:\n• Para: destinatários principais.\n• Cc (com cópia): destinatários que recebem uma cópia; todos veem esses endereços.\n• Cco (com cópia oculta): destinatários ocultos; os demais não sabem que eles receberam.\n• Assunto: resumo da mensagem.\n• Corpo: o texto em si, que pode ter formatação e assinatura.\nA mensagem só pode ser enviada se houver pelo menos um destinatário em Para, Cc ou Cco. Mensagens não concluídas ficam em Rascunhos; as enviadas vão para Itens Enviados (ou Enviados).\nOutras pastas comuns: Caixa de Entrada (mensagens recebidas), Lixeira (Itens Excluídos) e Spam (Lixo Eletrônico). Boas práticas: assunto claro e objetivo, texto revisado e conferência dos destinatários antes de clicar em Enviar."
+     },
+     {
+      "titulo": "Responder, responder a todos e encaminhar",
+      "texto": "• Responder: a resposta vai só para o remetente.\n• Responder a todos: vai para o remetente e para todos que estavam em Para e Cc (quem estava em Cco não é incluído).\n• Encaminhar: envia a mensagem recebida para outra pessoa, escolhida por você.\nRegra prática: ao encaminhar, os anexos originais seguem junto; ao responder, os anexos originais normalmente NÃO são reenviados."
+     },
+     {
+      "titulo": "Anexação de arquivos",
+      "texto": "Anexo é um arquivo enviado junto com a mensagem (documento, foto, planilha), indicado geralmente por um ícone de clipe. Os provedores limitam o tamanho total dos anexos; arquivos grandes costumam ser compartilhados por link de armazenamento em nuvem.\nCuidados de segurança:\n• Desconfie de anexos inesperados, mesmo de conhecidos, sobretudo executáveis (.exe) e arquivos compactados.\n• Phishing é a mensagem falsa que tenta roubar senhas ou dados, imitando bancos e órgãos públicos.\n• Spam é a mensagem não solicitada enviada em massa."
+     }
+    ]
+   },
+   "revisao": {
+    "pontos": [
+     "Endereço: usuario@dominio.",
+     "SMTP envia; POP3 e IMAP recebem.",
+     "IMAP mantém as mensagens no servidor, sincronizadas entre dispositivos.",
+     "Cc: cópia visível; Cco: cópia oculta.",
+     "Responder a todos não inclui quem estava em Cco.",
+     "Encaminhar leva os anexos; Responder, em regra, não.",
+     "Rascunhos guarda mensagens não enviadas.",
+     "Phishing tenta roubar dados com mensagens falsas."
+    ]
+   },
+   "mapa": {
+    "no_central": "Correio eletrônico",
+    "ramos": [
+     {
+      "label": "Endereço",
+      "filhos": [
+       "usuario@dominio",
+       "Webmail",
+       "Cliente de e-mail"
+      ]
+     },
+     {
+      "label": "Protocolos",
+      "filhos": [
+       "SMTP: envio",
+       "POP3: recebimento",
+       "IMAP: recebimento sincronizado"
+      ]
+     },
+     {
+      "label": "Campos",
+      "filhos": [
+       "Para",
+       "Cc: cópia",
+       "Cco: cópia oculta",
+       "Assunto"
+      ]
+     },
+     {
+      "label": "Ações",
+      "filhos": [
+       "Responder",
+       "Responder a todos",
+       "Encaminhar (com anexos)"
+      ]
+     },
+     {
+      "label": "Anexos e segurança",
+      "filhos": [
+       "Clipe = anexo",
+       "Limite de tamanho",
+       "Phishing",
+       "Spam"
+      ]
+     }
+    ]
+   },
+   "flashcards": [
+    {
+     "pergunta": "Qual protocolo é usado para enviar e-mails?",
+     "resposta": "SMTP."
+    },
+    {
+     "pergunta": "O que significa Cco?",
+     "resposta": "Com cópia oculta."
+    },
+    {
+     "pergunta": "Ao encaminhar uma mensagem, os anexos vão junto?",
+     "resposta": "Sim."
+    },
+    {
+     "pergunta": "Qual protocolo de recebimento mantém as mensagens sincronizadas no servidor?",
+     "resposta": "IMAP."
+    },
+    {
+     "pergunta": "Onde ficam mensagens começadas e não enviadas?",
+     "resposta": "Na pasta Rascunhos."
+    },
+    {
+     "pergunta": "Como se chama o e-mail falso que tenta roubar senhas?",
+     "resposta": "Phishing."
+    }
+   ],
+   "questoes": [
+    {
+     "subassunto": "Preparo e envio de mensagens",
+     "enunciado": "Um policial precisa enviar um e-mail a três colegas, de modo que nenhum deles saiba que os outros também receberam a mensagem. Ele deve colocar os endereços dos colegas no campo",
+     "opcoes": [
+      "Para.",
+      "Cc.",
+      "Assunto.",
+      "Cco.",
+      "Responder a."
+     ],
+     "gabarito": 3,
+     "comentario": "O campo Cco (com cópia oculta) esconde os destinatários uns dos outros. Em Para e Cc os endereços ficam visíveis a todos; Assunto é o título da mensagem; Responder a não é campo de destinatários ocultos.",
+     "dificuldade": "facil"
+    },
+    {
+     "subassunto": "Anexação de arquivos",
+     "enunciado": "Um usuário recebeu uma mensagem com um arquivo anexado e deseja repassar a mensagem, com o mesmo anexo, para outra pessoa que não estava entre os destinatários. A ação adequada é",
+     "opcoes": [
+      "Encaminhar.",
+      "Responder.",
+      "Responder a todos.",
+      "Mover para Rascunhos.",
+      "Marcar como lida."
+     ],
+     "gabarito": 0,
+     "comentario": "Encaminhar envia a mensagem recebida, com seus anexos, a um novo destinatário escolhido. Responder e Responder a todos se dirigem ao remetente e aos destinatários originais e, em regra, não reenviam os anexos; as outras ações não enviam nada.",
+     "dificuldade": "facil"
+    },
+    {
+     "subassunto": "Uso de correio eletrônico",
+     "enunciado": "Sobre protocolos usados no correio eletrônico, assinale a alternativa correta.",
+     "opcoes": [
+      "O POP3 é usado para enviar mensagens ao servidor do destinatário.",
+      "O HTTP é o protocolo específico para recebimento de mensagens em programas clientes.",
+      "O IMAP permite acessar as mensagens mantidas no servidor, sincronizando-as entre vários dispositivos.",
+      "O SMTP é usado exclusivamente para baixar mensagens para o computador.",
+      "O FTP é o protocolo padrão de envio de e-mails."
+     ],
+     "gabarito": 2,
+     "comentario": "O IMAP mantém as mensagens no servidor e sincroniza o estado (lidas, pastas) entre dispositivos. POP3 recebe (não envia); SMTP envia (não baixa); HTTP é protocolo de páginas Web, usado pelo webmail mas não como protocolo específico de recebimento; FTP transfere arquivos.",
+     "dificuldade": "media"
+    },
+    {
+     "subassunto": "Preparo e envio de mensagens",
+     "enunciado": "Ana enviou um e-mail com Bruno no campo Para, Carla no campo Cc e Diego no campo Cco. Bruno clicou em Responder a todos. A resposta de Bruno será entregue a",
+     "opcoes": [
+      "Ana, apenas.",
+      "Ana, Carla e Diego.",
+      "Carla e Diego, apenas.",
+      "Ana e Carla, apenas.",
+      "Ana e Diego, apenas."
+     ],
+     "gabarito": 3,
+     "comentario": "Responder a todos inclui o remetente (Ana) e os destinatários visíveis em Para e Cc (Carla). Diego, em Cco, está oculto para Bruno e não é incluído. Por isso, Ana e Carla.",
+     "dificuldade": "media"
+    },
+    {
+     "subassunto": "Uso de correio eletrônico",
+     "enunciado": "Considere as afirmações sobre correio eletrônico.\nI. No endereço sargento.lima@exemplo.com.br, a parte exemplo.com.br identifica o domínio.\nII. Uma mensagem pode ser enviada tendo destinatários apenas no campo Cco.\nIII. Ao usar Responder, os anexos da mensagem original são sempre reenviados automaticamente ao remetente.\nIV. Mensagens que imitam bancos para obter senhas caracterizam phishing.\nEstá correto o que se afirma em",
+     "opcoes": [
+      "I e III, apenas.",
+      "II e III, apenas.",
+      "I, II e III, apenas.",
+      "III e IV, apenas.",
+      "I, II e IV, apenas."
+     ],
+     "gabarito": 4,
+     "comentario": "I correta: após o @ vem o domínio. II correta: basta haver ao menos um destinatário, em qualquer um dos campos Para, Cc ou Cco. III errada: ao responder, em regra, os anexos originais não são reenviados. IV correta: é a definição de phishing. Logo, I, II e IV.",
+     "dificuldade": "dificil"
+    }
+   ]
+  },
+  {
+   "curso": "pm-sp-soldado",
+   "disciplina": "Noções Básicas de Informática",
+   "assunto": "Internet",
+   "aula": {
+    "titulo": "Internet: navegação, endereços e busca",
+    "secoes": [
+     {
+      "titulo": "Navegação na Internet",
+      "texto": "A Internet é a rede mundial de computadores. A World Wide Web (WWW) é o serviço de páginas acessadas por navegadores (browsers), como Microsoft Edge, Google Chrome e Mozilla Firefox.\nAtalhos comuns nos principais navegadores:\n• Ctrl+T: nova guia. Ctrl+W: fecha a guia atual. Ctrl+Shift+T: reabre a última guia fechada.\n• Ctrl+N: nova janela.\n• F5: recarrega (atualiza) a página.\n• Ctrl+D: adiciona a página aos favoritos.\n• Ctrl+H: histórico. Ctrl+J: downloads.\n• Ctrl+F: localiza uma palavra na página.\nNavegação privativa (anônima/InPrivate) não salva histórico, cookies nem dados de formulários após fechar a janela, mas NÃO esconde a navegação do provedor nem do site visitado. Atalho: Ctrl+Shift+N no Chrome e no Edge; Ctrl+Shift+P no Firefox."
+     },
+     {
+      "titulo": "URL, domínio, links e sites",
+      "texto": "URL é o endereço de um recurso na Internet. Exemplo: https://www.exemplo.sp.gov.br/servicos/index.html\n• https: protocolo.\n• www.exemplo.sp.gov.br: domínio (nome do servidor).\n• /servicos/index.html: caminho até o recurso.\nO domínio é lido da direita para a esquerda: .br indica Brasil; .gov indica governo; .sp indica o estado.\nHTTP transfere páginas; HTTPS é a versão segura, com criptografia, indicada pelo cadeado na barra de endereços.\nSite é um conjunto de páginas sob um mesmo domínio; página inicial (home) é a porta de entrada. Link (hiperlink) é um texto ou imagem que, clicado, leva a outro endereço. O DNS é o serviço que traduz o nome do domínio para o endereço IP do servidor."
+     },
+     {
+      "titulo": "Busca na Internet",
+      "texto": "Buscadores como o Google indexam páginas e mostram resultados por palavras-chave. Operadores úteis no Google:\n• \"frase exata\": busca as palavras exatamente nessa ordem.\n• -palavra: exclui resultados com a palavra.\n• site:gov.br: limita a busca a um site ou domínio.\n• filetype:pdf: busca arquivos de um tipo.\n• OR: resultados com um termo ou outro.\nA busca não diferencia maiúsculas de minúsculas. Os primeiros resultados podem ser anúncios patrocinados, identificados como tal; por isso, confira sempre a fonte, dando preferência a sites oficiais (como os terminados em .gov.br) quando buscar informação de órgãos públicos."
+     },
+     {
+      "titulo": "Impressão de páginas e cuidados",
+      "texto": "Para imprimir uma página, use Ctrl+P ou o menu do navegador (ícone de três pontos ou três barras) > Imprimir. É possível escolher impressora, páginas, orientação e também Salvar como PDF.\nCuidados: verifique o cadeado e o endereço antes de digitar senhas; desconfie de links encurtados ou com erros de digitação no domínio; mantenha o navegador atualizado."
+     }
+    ]
+   },
+   "revisao": {
+    "pontos": [
+     "URL = protocolo + domínio + caminho.",
+     "HTTPS usa criptografia e mostra o cadeado.",
+     "Domínio se lê da direita para a esquerda: .br = Brasil, .gov = governo.",
+     "DNS traduz nomes de domínio em endereços IP.",
+     "Ctrl+T nova guia; Ctrl+W fecha guia; Ctrl+Shift+T reabre guia fechada.",
+     "Ctrl+D favorito; Ctrl+H histórico; Ctrl+J downloads.",
+     "Navegação privativa não esconde nada do provedor.",
+     "Google: aspas = frase exata; - exclui; site: limita ao domínio; filetype: tipo de arquivo.",
+     "Ctrl+P imprime a página e permite salvar em PDF."
+    ]
+   },
+   "mapa": {
+    "no_central": "Internet",
+    "ramos": [
+     {
+      "label": "Navegadores",
+      "filhos": [
+       "Edge, Chrome, Firefox",
+       "Guias e janelas",
+       "Favoritos e histórico",
+       "Navegação privativa"
+      ]
+     },
+     {
+      "label": "URL",
+      "filhos": [
+       "Protocolo (http/https)",
+       "Domínio",
+       "Caminho",
+       "DNS"
+      ]
+     },
+     {
+      "label": "Links e sites",
+      "filhos": [
+       "Hiperlink",
+       "Página inicial",
+       "Cadeado = HTTPS"
+      ]
+     },
+     {
+      "label": "Busca",
+      "filhos": [
+       "\"frase exata\"",
+       "-excluir",
+       "site:",
+       "filetype:"
+      ]
+     },
+     {
+      "label": "Impressão",
+      "filhos": [
+       "Ctrl+P",
+       "Salvar como PDF",
+       "Escolher páginas"
+      ]
+     }
+    ]
+   },
+   "flashcards": [
+    {
+     "pergunta": "Qual protocolo indica conexão segura com criptografia?",
+     "resposta": "HTTPS."
+    },
+    {
+     "pergunta": "Qual serviço converte nomes de domínio em endereços IP?",
+     "resposta": "DNS."
+    },
+    {
+     "pergunta": "Qual atalho reabre a última guia fechada?",
+     "resposta": "Ctrl+Shift+T."
+    },
+    {
+     "pergunta": "Qual operador do Google limita a busca a um domínio?",
+     "resposta": "site:"
+    },
+    {
+     "pergunta": "Qual atalho adiciona a página aos favoritos?",
+     "resposta": "Ctrl+D."
+    },
+    {
+     "pergunta": "A navegação privativa esconde a navegação do provedor?",
+     "resposta": "Não."
+    }
+   ],
+   "questoes": [
+    {
+     "subassunto": "Conceitos de URL, links e sites",
+     "enunciado": "Na URL https://www.exemplo.sp.gov.br/editais/2025.pdf, a parte que indica o protocolo de comunicação é",
+     "opcoes": [
+      "www",
+      "https",
+      "sp.gov.br",
+      "/editais",
+      "2025.pdf"
+     ],
+     "gabarito": 1,
+     "comentario": "O protocolo vem no início da URL, antes de ://, e aqui é https. www e sp.gov.br fazem parte do domínio; /editais é o caminho (pasta) e 2025.pdf é o arquivo.",
+     "dificuldade": "facil"
+    },
+    {
+     "subassunto": "Navegação na Internet",
+     "enunciado": "Nos navegadores Google Chrome e Microsoft Edge, em suas configurações padrão, o atalho de teclado que abre uma nova guia é:",
+     "opcoes": [
+      "Ctrl+N",
+      "Ctrl+W",
+      "Ctrl+H",
+      "Ctrl+D",
+      "Ctrl+T"
+     ],
+     "gabarito": 4,
+     "comentario": "Ctrl+T abre nova guia. Ctrl+N abre nova janela, Ctrl+W fecha a guia atual, Ctrl+H abre o histórico e Ctrl+D adiciona a página aos favoritos.",
+     "dificuldade": "facil"
+    },
+    {
+     "subassunto": "Busca e impressão de páginas",
+     "enunciado": "Um usuário quer pesquisar no Google apenas documentos em PDF sobre o tema policiamento comunitário, publicados em sites do domínio gov.br. A pesquisa mais adequada é:",
+     "opcoes": [
+      "policiamento comunitário site:gov.br filetype:pdf",
+      "policiamento comunitário -gov.br -pdf",
+      "\"site gov.br\" policiamento pdf",
+      "policiamento comunitário OR gov.br OR pdf",
+      "filetype:gov.br site:pdf policiamento"
+     ],
+     "gabarito": 0,
+     "comentario": "site:gov.br limita os resultados ao domínio e filetype:pdf limita ao tipo de arquivo. O sinal de menos exclui termos; aspas buscam frase exata; OR amplia a busca; e a última opção inverte os operadores.",
+     "dificuldade": "media"
+    },
+    {
+     "subassunto": "Navegação na Internet",
+     "enunciado": "Sobre a navegação privativa (anônima ou InPrivate) nos navegadores atuais, assinale a alternativa correta.",
+     "opcoes": [
+      "Impede que o provedor de Internet saiba quais sites foram visitados.",
+      "Criptografa automaticamente sites que usam HTTP.",
+      "Não mantém, após o fechamento da janela privativa, o histórico e os cookies daquela sessão no computador.",
+      "Impede o download de arquivos.",
+      "Bloqueia todos os vírus e golpes de phishing."
+     ],
+     "gabarito": 2,
+     "comentario": "A navegação privativa apenas não guarda localmente histórico, cookies e dados de formulários da sessão após fechar a janela. Ela não esconde a navegação do provedor ou dos sites, não criptografa páginas HTTP, permite downloads e não é antivírus.",
+     "dificuldade": "media"
+    },
+    {
+     "subassunto": "Conceitos de URL, links e sites",
+     "enunciado": "Considere as afirmações sobre Internet.\nI. O DNS traduz nomes de domínio, como www.exemplo.com.br, em endereços IP.\nII. O cadeado exibido na barra de endereços indica que a conexão usa HTTPS.\nIII. Em uma URL, o domínio .br indica que o site é obrigatoriamente um órgão do governo.\nIV. Hiperlink é um elemento que, ao ser clicado, leva a outro endereço ou recurso.\nEstá correto o que se afirma em",
+     "opcoes": [
+      "I e III, apenas.",
+      "II e III, apenas.",
+      "I, II e III, apenas.",
+      "I, II e IV, apenas.",
+      "II, III e IV, apenas."
+     ],
+     "gabarito": 3,
+     "comentario": "I correta: função do DNS. II correta: o cadeado indica HTTPS. III errada: .br indica apenas o país (Brasil); órgãos de governo usam .gov.br. IV correta: definição de hiperlink. Logo, I, II e IV.",
+     "dificuldade": "dificil"
+    }
+   ]
+  },
+  {
+   "curso": "pm-sp-soldado",
+   "disciplina": "Noções Básicas de Informática",
+   "assunto": "Google Workspace",
+   "aula": {
+    "titulo": "Google Workspace: trabalho na nuvem",
+    "secoes": [
+     {
+      "titulo": "O que é o Google Workspace",
+      "texto": "O Google Workspace é o conjunto de aplicativos on-line do Google para comunicação e produtividade: Gmail, Agenda, Meet, Chat, Drive, Documentos, Planilhas, Apresentações e Formulários. Tudo roda no navegador (ou em aplicativos de celular), com os arquivos guardados na nuvem, ou seja, nos servidores do Google.\nVantagens: acesso de qualquer lugar com Internet, salvamento automático, histórico de versões e edição simultânea por várias pessoas."
+     },
+     {
+      "titulo": "Comunicação: Gmail, Agenda, Meet e Chat",
+      "texto": "• Gmail: serviço de e-mail. Em vez de pastas, usa marcadores (labels): uma mesma mensagem pode ter vários marcadores. Tem as ações Arquivar (tira da Caixa de Entrada sem excluir), Estrela, Spam e busca poderosa. Anexos têm limite de 25 MB; arquivos maiores são enviados como link do Drive.\n• Agenda (Calendar): cria eventos com data, hora, local e convidados, que recebem convite e podem confirmar presença. Permite lembretes e compartilhar agendas. Ao criar um evento, é possível gerar um link de videochamada do Meet.\n• Meet: videoconferências acessadas por link ou código, com compartilhamento de tela, chat da reunião e legendas.\n• Chat: mensagens instantâneas entre pessoas ou em grupos e espaços, com compartilhamento de arquivos."
+     },
+     {
+      "titulo": "Drive: armazenamento e compartilhamento",
+      "texto": "O Google Drive guarda arquivos e pastas na nuvem. Nas contas gratuitas, o espaço é compartilhado entre Drive, Gmail e Google Fotos.\nCompartilhamento: pode ser com pessoas específicas (por e-mail) ou por link. Níveis de acesso:\n• Leitor: só visualiza.\n• Comentarista: visualiza e comenta.\n• Editor: altera o conteúdo e pode compartilhar (conforme as configurações).\nO Drive também sincroniza com o computador e abre arquivos do Office."
+     },
+     {
+      "titulo": "Documentos, Planilhas e Apresentações",
+      "texto": "São os editores equivalentes ao Word, Excel e PowerPoint:\n• Documentos: textos, com formatação, comentários, sugestões (modo Sugestão) e histórico de versões.\n• Planilhas: células, fórmulas começando com =, funções, gráficos e filtros, parecidos com o Excel.\n• Apresentações: slides com temas, transições e animações.\nNão há botão Salvar: as alterações são gravadas automaticamente no Drive. Várias pessoas podem editar ao mesmo tempo, vendo o cursor umas das outras. Em Arquivo > Fazer download, é possível exportar para formatos como .docx, .xlsx, .pptx e .pdf."
+     },
+     {
+      "titulo": "Formulários",
+      "texto": "O Google Formulários cria questionários, pesquisas, inscrições e testes. Tipos de pergunta: resposta curta, parágrafo, múltipla escolha, caixas de seleção, lista suspensa, escala linear, data, hora, entre outros.\nO formulário é enviado por link ou e-mail. As respostas aparecem na guia Respostas, com gráficos de resumo, e podem ser enviadas automaticamente para uma planilha do Google Planilhas. Também é possível transformar o formulário em teste, com gabarito e nota."
+     }
+    ]
+   },
+   "revisao": {
+    "pontos": [
+     "Workspace = apps do Google na nuvem, pelo navegador.",
+     "Gmail usa marcadores; uma mensagem pode ter vários.",
+     "Arquivar no Gmail tira da Caixa de Entrada sem excluir.",
+     "Anexo no Gmail: até 25 MB; acima disso, vai link do Drive.",
+     "Drive: níveis Leitor, Comentarista e Editor.",
+     "Documentos, Planilhas e Apresentações salvam automaticamente.",
+     "Edição simultânea e histórico de versões são marcas do Workspace.",
+     "Respostas do Formulários podem ir para uma planilha.",
+     "Evento da Agenda pode gerar link do Meet."
+    ]
+   },
+   "mapa": {
+    "no_central": "Google Workspace",
+    "ramos": [
+     {
+      "label": "Comunicação",
+      "filhos": [
+       "Gmail (marcadores)",
+       "Chat",
+       "Meet (videochamadas)"
+      ]
+     },
+     {
+      "label": "Organização",
+      "filhos": [
+       "Agenda: eventos e convites",
+       "Lembretes",
+       "Link do Meet no evento"
+      ]
+     },
+     {
+      "label": "Drive",
+      "filhos": [
+       "Armazenamento em nuvem",
+       "Leitor",
+       "Comentarista",
+       "Editor"
+      ]
+     },
+     {
+      "label": "Editores",
+      "filhos": [
+       "Documentos",
+       "Planilhas",
+       "Apresentações",
+       "Salvamento automático",
+       "Edição simultânea"
+      ]
+     },
+     {
+      "label": "Formulários",
+      "filhos": [
+       "Tipos de pergunta",
+       "Respostas com gráficos",
+       "Envio para Planilhas",
+       "Modo teste"
+      ]
+     }
+    ]
+   },
+   "flashcards": [
+    {
+     "pergunta": "No Gmail, o que substitui as pastas tradicionais?",
+     "resposta": "Os marcadores."
+    },
+    {
+     "pergunta": "O que faz Arquivar no Gmail?",
+     "resposta": "Tira a mensagem da Caixa de Entrada sem excluí-la."
+    },
+    {
+     "pergunta": "Quais os níveis de acesso ao compartilhar no Drive?",
+     "resposta": "Leitor, Comentarista e Editor."
+    },
+    {
+     "pergunta": "Precisa clicar em Salvar no Google Documentos?",
+     "resposta": "Não; o salvamento é automático."
+    },
+    {
+     "pergunta": "Para onde podem ir as respostas de um Formulário?",
+     "resposta": "Para uma planilha do Google Planilhas."
+    },
+    {
+     "pergunta": "Qual aplicativo do Workspace faz videoconferências?",
+     "resposta": "Google Meet."
+    }
+   ],
+   "questoes": [
+    {
+     "subassunto": "Drive",
+     "enunciado": "Um usuário compartilhou um arquivo no Google Drive e quer que o colega possa apenas visualizar e inserir comentários, sem alterar o conteúdo. O nível de acesso adequado é",
+     "opcoes": [
+      "Editor.",
+      "Proprietário.",
+      "Leitor.",
+      "Comentarista.",
+      "Administrador."
+     ],
+     "gabarito": 3,
+     "comentario": "Comentarista pode visualizar e comentar, mas não editar. Leitor apenas visualiza; Editor altera o conteúdo; Proprietário tem controle total; Administrador não é um nível de compartilhamento de arquivo.",
+     "dificuldade": "facil"
+    },
+    {
+     "subassunto": "Formulários",
+     "enunciado": "Um batalhão criou uma pesquisa no Google Formulários e deseja analisar as respostas em formato de tabela, com linhas e colunas. O recurso nativo para isso é",
+     "opcoes": [
+      "vincular as respostas a uma planilha do Google Planilhas.",
+      "converter o formulário em uma apresentação do Google Apresentações.",
+      "enviar o formulário como anexo pelo Gmail.",
+      "agendar o formulário na Google Agenda.",
+      "abrir o formulário em uma reunião do Google Meet."
+     ],
+     "gabarito": 0,
+     "comentario": "O Formulários permite enviar as respostas para uma planilha do Google Planilhas, organizando cada resposta em uma linha e cada pergunta em uma coluna. As demais opções não geram tabela de respostas.",
+     "dificuldade": "facil"
+    },
+    {
+     "subassunto": "Gmail",
+     "enunciado": "No Gmail, ao selecionar uma mensagem da Caixa de Entrada e clicar em Arquivar, a mensagem",
+     "opcoes": [
+      "é excluída definitivamente.",
+      "é enviada para a pasta Spam.",
+      "é removida da Caixa de Entrada, mas continua disponível em Todos os e-mails e na pesquisa.",
+      "é encaminhada automaticamente ao remetente.",
+      "fica bloqueada para leitura."
+     ],
+     "gabarito": 2,
+     "comentario": "Arquivar apenas tira a mensagem da Caixa de Entrada; ela continua guardada e pode ser encontrada em Todos os e-mails ou pela busca. Não é exclusão, não marca como spam, não encaminha nem bloqueia a mensagem.",
+     "dificuldade": "media"
+    },
+    {
+     "subassunto": "Documentos",
+     "enunciado": "Sobre o Google Documentos, assinale a alternativa correta.",
+     "opcoes": [
+      "Só uma pessoa pode editar o documento por vez.",
+      "É obrigatório clicar em Salvar para não perder as alterações.",
+      "Os arquivos só podem ser abertos no computador em que foram criados.",
+      "Não permite exportar o documento para o formato do Microsoft Word.",
+      "Mantém histórico de versões, permitindo consultar e restaurar versões anteriores."
+     ],
+     "gabarito": 4,
+     "comentario": "O Documentos guarda o histórico de versões, que pode ser consultado e restaurado. Ele permite edição simultânea, salva automaticamente, é acessado de qualquer dispositivo com a conta e exporta para .docx, entre outros formatos.",
+     "dificuldade": "media"
+    },
+    {
+     "subassunto": "Agenda",
+     "enunciado": "Considere as afirmações sobre o Google Workspace.\nI. Na Google Agenda, ao criar um evento, é possível convidar pessoas e incluir um link de videochamada do Google Meet.\nII. No Gmail, uma mesma mensagem pode receber mais de um marcador.\nIII. No Gmail, arquivos maiores que o limite de anexos podem ser enviados como link do Google Drive.\nIV. As alterações feitas no Google Planilhas só são gravadas quando o usuário exporta o arquivo para .xlsx.\nEstá correto o que se afirma em",
+     "opcoes": [
+      "I, II e III, apenas.",
+      "I e IV, apenas.",
+      "II e IV, apenas.",
+      "I, III e IV, apenas.",
+      "I, II, III e IV."
+     ],
+     "gabarito": 0,
+     "comentario": "I correta: eventos aceitam convidados e link do Meet. II correta: marcadores podem ser combinados. III correta: o Gmail oferece enviar arquivos grandes como link do Drive. IV errada: o Planilhas salva automaticamente na nuvem; exportar para .xlsx é opcional. Logo, I, II e III.",
+     "dificuldade": "dificil"
+    }
+   ]
+  },
+  {
+   "curso": "pm-sp-soldado",
+   "disciplina": "Noções Básicas de Informática",
+   "assunto": "Microsoft Teams",
+   "aula": {
+    "titulo": "Microsoft Teams: conversa, reunião e trabalho em equipe",
+    "secoes": [
+     {
+      "titulo": "Visão geral",
+      "texto": "O Microsoft Teams é a plataforma de comunicação e colaboração da Microsoft, integrada ao Microsoft 365. Funciona no navegador, no computador e no celular.\nNa barra lateral esquerda ficam os principais recursos:\n• Atividade: notificações, menções e respostas.\n• Chat: conversas individuais e em grupo.\n• Equipes: grupos de trabalho organizados em canais.\n• Calendário: reuniões agendadas.\n• Chamadas: ligações de áudio e vídeo.\n• Arquivos: documentos recentes e compartilhados."
+     },
+     {
+      "titulo": "Chats",
+      "texto": "O chat serve para conversas diretas, fora de uma equipe:\n• Chat individual (1:1): entre duas pessoas.\n• Chat em grupo: com várias pessoas, ao adicionar mais de um nome no campo Para; o grupo pode receber um nome.\nNo chat é possível enviar texto formatado, emojis, GIFs, arquivos e links. A @menção (digitar @ seguido do nome) chama a atenção de uma pessoa específica, que recebe notificação. Mensagens enviadas podem ser editadas ou excluídas pelo autor.\nArquivos enviados em chats ficam armazenados no OneDrive de quem os compartilhou."
+     },
+     {
+      "titulo": "Chamadas de áudio e vídeo",
+      "texto": "No Teams é possível iniciar chamadas de áudio ou vídeo diretamente de um chat, clicando nos ícones de telefone ou câmera.\nReuniões podem ser feitas na hora (Reunir agora) ou agendadas pelo Calendário, que envia convite aos participantes com o link da reunião.\nDurante a reunião: ligar/desligar câmera e microfone, compartilhar a tela ou uma janela, usar o chat da reunião, levantar a mão, desfocar ou trocar o plano de fundo e, se permitido pela organização, gravar a reunião."
+     },
+     {
+      "titulo": "Criação de grupos: equipes e canais",
+      "texto": "Equipe é um grupo de pessoas reunidas para um trabalho ou setor. Para criar: Equipes > Ingressar ou criar uma equipe > Criar equipe. A equipe pode ser Privada (só entra quem o proprietário adicionar ou aprovar) ou Pública (qualquer pessoa da organização pode entrar).\nQuem cria a equipe é proprietário e gerencia membros e configurações; os demais são membros.\nToda equipe nasce com o canal Geral. Canais organizam os assuntos da equipe (ex.: Escala, Treinamento). Um canal padrão é visível a todos os membros da equipe; um canal privado é visível só a um subconjunto de membros.\nCada canal tem guias, como Postagens (conversas) e Arquivos."
+     },
+     {
+      "titulo": "Trabalho colaborativo com Word, Excel e PowerPoint",
+      "texto": "Arquivos postados em um canal ficam na guia Arquivos do canal, armazenados no SharePoint da equipe.\nDocumentos do Word, Excel e PowerPoint podem ser abertos dentro do próprio Teams, no navegador ou no aplicativo da área de trabalho. Várias pessoas podem editar o mesmo arquivo ao mesmo tempo (coautoria), e as alterações são salvas automaticamente.\nTambém é possível adicionar um arquivo como guia no canal, deixando-o fixado para acesso rápido, e conversar sobre o documento sem sair dele."
+     }
+    ]
+   },
+   "revisao": {
+    "pontos": [
+     "Barra lateral: Atividade, Chat, Equipes, Calendário, Chamadas, Arquivos.",
+     "Chat em grupo: adicione mais de um nome no campo Para.",
+     "@menção notifica a pessoa citada.",
+     "Toda equipe nasce com o canal Geral.",
+     "Equipe privada: entrada controlada pelo proprietário; pública: aberta à organização.",
+     "Canal privado é visto só por parte dos membros.",
+     "Arquivos de canal ficam no SharePoint; de chat, no OneDrive.",
+     "Word, Excel e PowerPoint permitem coautoria dentro do Teams.",
+     "Reuniões: Reunir agora ou agendar pelo Calendário."
+    ]
+   },
+   "mapa": {
+    "no_central": "Microsoft Teams",
+    "ramos": [
+     {
+      "label": "Chats",
+      "filhos": [
+       "Individual 1:1",
+       "Em grupo",
+       "@menção",
+       "Arquivos no OneDrive"
+      ]
+     },
+     {
+      "label": "Chamadas",
+      "filhos": [
+       "Áudio e vídeo",
+       "Reunir agora",
+       "Agendar no Calendário",
+       "Compartilhar tela"
+      ]
+     },
+     {
+      "label": "Equipes",
+      "filhos": [
+       "Privada ou pública",
+       "Proprietário e membros",
+       "Canal Geral",
+       "Canais padrão e privados"
+      ]
+     },
+     {
+      "label": "Colaboração",
+      "filhos": [
+       "Guia Arquivos",
+       "SharePoint",
+       "Coautoria em Word, Excel e PowerPoint",
+       "Salvamento automático"
+      ]
+     }
+    ]
+   },
+   "flashcards": [
+    {
+     "pergunta": "Qual canal é criado automaticamente em toda equipe?",
+     "resposta": "O canal Geral."
+    },
+    {
+     "pergunta": "Como chamar a atenção de uma pessoa específica em uma conversa?",
+     "resposta": "Usando @menção (@nome)."
+    },
+    {
+     "pergunta": "Onde ficam armazenados os arquivos de um canal?",
+     "resposta": "No SharePoint da equipe."
+    },
+    {
+     "pergunta": "Quem gerencia membros e configurações de uma equipe?",
+     "resposta": "O proprietário."
+    },
+    {
+     "pergunta": "Como agendar uma reunião no Teams?",
+     "resposta": "Pelo Calendário, enviando convite."
+    },
+    {
+     "pergunta": "Várias pessoas podem editar o mesmo arquivo do Word no Teams ao mesmo tempo?",
+     "resposta": "Sim, por coautoria."
+    }
+   ],
+   "questoes": [
+    {
+     "subassunto": "Criação de grupos",
+     "enunciado": "No Microsoft Teams, ao criar uma nova equipe, o canal que é criado automaticamente e do qual todos os membros participam é o canal",
+     "opcoes": [
+      "Postagens.",
+      "Geral.",
+      "Privado.",
+      "Atividade.",
+      "Arquivos."
+     ],
+     "gabarito": 1,
+     "comentario": "Toda equipe nasce com o canal Geral. Postagens e Arquivos são guias dentro de um canal; Atividade é um item da barra lateral; canal privado precisa ser criado e é restrito a parte dos membros.",
+     "dificuldade": "facil"
+    },
+    {
+     "subassunto": "Chats",
+     "enunciado": "Em uma conversa de canal no Microsoft Teams, um usuário quer garantir que o colega Carlos receba uma notificação específica sobre sua mensagem. Para isso, ele deve",
+     "opcoes": [
+      "iniciar uma chamada de vídeo com o canal.",
+      "anexar um arquivo à mensagem.",
+      "enviar a mensagem com o assunto em letras maiúsculas.",
+      "criar um novo canal privado.",
+      "mencionar o colega digitando @ seguido do nome dele."
+     ],
+     "gabarito": 4,
+     "comentario": "A @menção notifica diretamente a pessoa citada. Anexar arquivo, usar maiúsculas, criar canal ou iniciar chamada não geram notificação específica para Carlos sobre aquela mensagem.",
+     "dificuldade": "facil"
+    },
+    {
+     "subassunto": "Trabalho colaborativo com Word, Excel e PowerPoint",
+     "enunciado": "Uma planilha do Excel foi publicada na guia Arquivos de um canal do Microsoft Teams. Sobre o trabalho com esse arquivo, é correto afirmar que",
+     "opcoes": [
+      "vários membros podem editá-la ao mesmo tempo, com as alterações salvas automaticamente.",
+      "somente o autor do envio pode abri-la.",
+      "ela precisa ser baixada, editada e reenviada a cada alteração.",
+      "ela só pode ser visualizada, nunca editada, dentro do Teams.",
+      "cada membro recebe uma cópia separada, sem sincronização."
+     ],
+     "gabarito": 0,
+     "comentario": "Arquivos do Office em canais permitem coautoria: vários membros editam simultaneamente e as alterações são salvas automaticamente. Não há restrição ao autor, não é preciso baixar e reenviar, a edição é possível no Teams e não se criam cópias separadas.",
+     "dificuldade": "media"
+    },
+    {
+     "subassunto": "Chamadas de áudio e vídeo",
+     "enunciado": "No Microsoft Teams, um usuário deseja marcar para a próxima semana uma reunião por vídeo com vários colegas, enviando convite com o link de acesso. O recurso adequado é",
+     "opcoes": [
+      "a guia Arquivos do canal.",
+      "o Calendário, para agendar a reunião.",
+      "o item Atividade da barra lateral.",
+      "a opção Levantar a mão.",
+      "a edição do perfil do usuário."
+     ],
+     "gabarito": 1,
+     "comentario": "O Calendário do Teams agenda reuniões e envia convites com o link. Arquivos guarda documentos; Atividade mostra notificações; Levantar a mão é usado durante uma reunião em andamento; editar o perfil não agenda nada.",
+     "dificuldade": "media"
+    },
+    {
+     "subassunto": "Criação de grupos",
+     "enunciado": "Considere as afirmações sobre o Microsoft Teams.\nI. Em uma equipe pública, qualquer pessoa da organização pode entrar.\nII. Um canal privado é visível apenas para os membros da equipe que foram adicionados a ele.\nIII. Arquivos compartilhados em um chat individual ficam armazenados no SharePoint da equipe.\nIV. Um chat em grupo pode ser iniciado adicionando mais de uma pessoa no campo Para de um novo chat.\nEstá correto o que se afirma em",
+     "opcoes": [
+      "I e III, apenas.",
+      "II e III, apenas.",
+      "I, III e IV, apenas.",
+      "II, III e IV, apenas.",
+      "I, II e IV, apenas."
+     ],
+     "gabarito": 4,
+     "comentario": "I correta: equipe pública é aberta à organização. II correta: canal privado é restrito a quem foi adicionado. III errada: arquivos de chat ficam no OneDrive de quem compartilhou; o SharePoint guarda os arquivos de canais. IV correta: é assim que se cria um chat em grupo. Logo, I, II e IV.",
+     "dificuldade": "dificil"
+    }
+   ]
+  }
+ ]
+}

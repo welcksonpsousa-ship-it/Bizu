@@ -1,0 +1,1914 @@
+{
+ "itens": [
+  {
+   "curso": "gcm-geral",
+   "disciplina": "Noções de Informática",
+   "assunto": "Conceitos básicos",
+   "aula": {
+    "titulo": "Conceitos básicos de informática: hardware, software e periféricos",
+    "secoes": [
+     {
+      "titulo": "O que é um computador",
+      "texto": "Um computador é uma máquina que recebe dados (entrada), processa esses dados seguindo instruções e entrega resultados (saída), podendo também guardá-los (armazenamento).\nTudo o que existe em um computador se divide em duas partes:\n• Hardware: a parte física, que você pode tocar (placa-mãe, processador, memória, teclado, monitor).\n• Software: a parte lógica, os programas e instruções que dizem ao hardware o que fazer.\nUm jeito fácil de lembrar: o hardware é aquilo em que você chuta; o software é aquilo que você xinga."
+     },
+     {
+      "titulo": "Hardware: os componentes principais",
+      "texto": "• Processador (CPU): o cérebro do computador. Executa as instruções dos programas. Internamente possui a Unidade de Controle (UC), que coordena as operações, e a Unidade Lógica e Aritmética (ULA), que faz cálculos e comparações. Também possui registradores e memória cache, bem rápidos.\n• Memória RAM: memória principal de trabalho. Guarda os programas e dados em uso no momento. É volátil: perde o conteúdo quando o computador é desligado.\n• Memória ROM: memória somente de leitura, não volátil, onde fica gravado o firmware de inicialização (BIOS ou UEFI).\n• Memória cache: pequena e muito rápida, fica entre o processador e a RAM para acelerar o acesso aos dados mais usados.\n• Armazenamento secundário: HD (disco rígido, com partes mecânicas), SSD (sem partes móveis, mais rápido e resistente), pendrive, cartão de memória. Não é volátil: os dados permanecem após desligar.\n• Placa-mãe: placa principal que interliga todos os componentes."
+     },
+     {
+      "titulo": "Unidades de medida",
+      "texto": "A menor unidade de informação é o bit (0 ou 1). Um conjunto de 8 bits forma 1 byte, que representa, por exemplo, um caractere.\n• 1 KB (quilobyte) = 1024 bytes\n• 1 MB (megabyte) = 1024 KB\n• 1 GB (gigabyte) = 1024 MB\n• 1 TB (terabyte) = 1024 GB\nAtenção: a velocidade de internet costuma ser medida em bits por segundo (Mbps), e o tamanho de arquivos em bytes (MB). Por isso, 100 Mbps não significa baixar 100 MB por segundo."
+     },
+     {
+      "titulo": "Software: tipos e licenças",
+      "texto": "• Software básico (de sistema): o sistema operacional, como Windows, Linux, Android e macOS. Gerencia o hardware e serve de base para os demais programas.\n• Software aplicativo: programas para tarefas do usuário, como Word, Excel, navegadores e aplicativos de mensagens.\n• Software utilitário: ferramentas de manutenção e apoio, como antivírus, compactadores de arquivos e desfragmentadores.\n• Firmware: software gravado no próprio hardware (ex.: BIOS/UEFI).\nQuanto à licença:\n• Software livre: permite usar, estudar, modificar e redistribuir o código (ex.: Linux, LibreOffice). Livre não significa necessariamente gratuito.\n• Proprietário: o uso depende das regras do fabricante (ex.: Windows, Microsoft Office).\n• Freeware: gratuito, mas sem acesso ao código.\n• Shareware/trial: pode ser testado por tempo limitado ou com recursos reduzidos."
+     },
+     {
+      "titulo": "Dispositivos periféricos",
+      "texto": "Periféricos são os equipamentos que se ligam ao computador para comunicação com o usuário ou com outros dispositivos.\n• Entrada: enviam dados ao computador. Ex.: teclado, mouse, scanner, microfone, webcam, leitor de código de barras.\n• Saída: recebem dados do computador e os apresentam. Ex.: monitor comum, impressora, caixa de som, fone de ouvido, projetor.\n• Entrada e saída (mistos): fazem as duas coisas. Ex.: monitor touchscreen, impressora multifuncional (imprime e digitaliza), modem, placa de rede.\n• Armazenamento: HD externo, pendrive, cartão de memória (também considerados de entrada e saída, pois gravam e leem dados).\nAs conexões mais comuns são USB (a mais usada para periféricos), HDMI (vídeo e áudio digital), Bluetooth e Wi-Fi (sem fio)."
+     }
+    ]
+   },
+   "revisao": {
+    "pontos": [
+     "Hardware é a parte física; software é a parte lógica (programas).",
+     "RAM é volátil: perde os dados ao desligar; ROM não é volátil.",
+     "CPU = Unidade de Controle (UC) + Unidade Lógica e Aritmética (ULA) + registradores.",
+     "Cache é a memória mais rápida entre CPU e RAM; fica perto do processador.",
+     "SSD não tem partes móveis e é mais rápido que o HD mecânico.",
+     "1 byte = 8 bits; 1 KB = 1024 bytes.",
+     "Sistema operacional é software básico; Word e navegador são aplicativos; antivírus é utilitário.",
+     "Software livre não é sinônimo de gratuito: o ponto é a liberdade de usar, estudar, modificar e distribuir.",
+     "Impressora multifuncional e tela touchscreen são periféricos de entrada e saída.",
+     "Scanner, microfone e webcam são entrada; monitor, impressora e caixa de som são saída."
+    ]
+   },
+   "mapa": {
+    "no_central": "Conceitos básicos",
+    "ramos": [
+     {
+      "label": "Hardware",
+      "filhos": [
+       "CPU (UC e ULA)",
+       "Memória RAM (volátil)",
+       "ROM (BIOS/UEFI)",
+       "Cache",
+       "HD e SSD"
+      ]
+     },
+     {
+      "label": "Software",
+      "filhos": [
+       "Básico: sistema operacional",
+       "Aplicativo",
+       "Utilitário",
+       "Firmware"
+      ]
+     },
+     {
+      "label": "Licenças",
+      "filhos": [
+       "Livre",
+       "Proprietário",
+       "Freeware",
+       "Shareware/trial"
+      ]
+     },
+     {
+      "label": "Periféricos",
+      "filhos": [
+       "Entrada: teclado, mouse, scanner",
+       "Saída: monitor, impressora",
+       "Mistos: touchscreen, multifuncional"
+      ]
+     },
+     {
+      "label": "Medidas",
+      "filhos": [
+       "bit (0 ou 1)",
+       "byte = 8 bits",
+       "KB, MB, GB, TB (x1024)"
+      ]
+     }
+    ]
+   },
+   "flashcards": [
+    {
+     "pergunta": "Qual memória perde seus dados quando o computador é desligado?",
+     "resposta": "A memória RAM (é volátil)."
+    },
+    {
+     "pergunta": "Quais são as duas principais unidades internas do processador?",
+     "resposta": "Unidade de Controle (UC) e Unidade Lógica e Aritmética (ULA)."
+    },
+    {
+     "pergunta": "Um byte tem quantos bits?",
+     "resposta": "8 bits."
+    },
+    {
+     "pergunta": "Antivírus é software básico, aplicativo ou utilitário?",
+     "resposta": "Utilitário."
+    },
+    {
+     "pergunta": "Impressora multifuncional é periférico de quê?",
+     "resposta": "Entrada e saída (imprime e digitaliza)."
+    },
+    {
+     "pergunta": "Software livre é sempre gratuito?",
+     "resposta": "Não necessariamente; livre se refere à liberdade de usar, estudar, modificar e distribuir."
+    }
+   ],
+   "questoes": [
+    {
+     "subassunto": "Hardware",
+     "enunciado": "A respeito dos componentes de um computador, assinale a alternativa correta.",
+     "opcoes": [
+      "A memória RAM mantém os dados gravados mesmo após o computador ser desligado.",
+      "A memória ROM é volátil e armazena os documentos abertos pelo usuário.",
+      "O SSD é um dispositivo de armazenamento sem partes mecânicas móveis.",
+      "A Unidade Lógica e Aritmética é responsável por exibir as imagens no monitor.",
+      "A memória cache é a mais lenta de todas as memórias do computador."
+     ],
+     "gabarito": 2,
+     "comentario": "Correta a C: o SSD usa memória flash e não possui partes móveis. A RAM é volátil (A errada); a ROM não é volátil e guarda o firmware (B errada); a ULA faz cálculos e comparações, não exibe imagens (D errada); a cache é justamente muito rápida (E errada).",
+     "dificuldade": "facil"
+    },
+    {
+     "subassunto": "Dispositivos periféricos",
+     "enunciado": "Assinale a alternativa que apresenta apenas periféricos de entrada.",
+     "opcoes": [
+      "Monitor, impressora e caixa de som.",
+      "Teclado, scanner e microfone.",
+      "Projetor, fone de ouvido e mouse.",
+      "Impressora multifuncional, monitor e teclado.",
+      "Caixa de som, webcam e impressora."
+     ],
+     "gabarito": 1,
+     "comentario": "Teclado, scanner e microfone enviam dados ao computador: são de entrada. Monitor, impressora, caixa de som, projetor e fone são de saída, e a multifuncional é de entrada e saída, o que invalida as demais.",
+     "dificuldade": "facil"
+    },
+    {
+     "subassunto": "Software",
+     "enunciado": "Um usuário instalou em seu computador um sistema operacional, um editor de textos e um compactador de arquivos. Esses programas são classificados, respectivamente, como software",
+     "opcoes": [
+      "aplicativo, utilitário e básico.",
+      "básico, utilitário e aplicativo.",
+      "utilitário, básico e aplicativo.",
+      "aplicativo, básico e utilitário.",
+      "básico, aplicativo e utilitário."
+     ],
+     "gabarito": 4,
+     "comentario": "O sistema operacional é software básico, o editor de textos é aplicativo (atende a uma tarefa do usuário) e o compactador é utilitário (ferramenta de apoio e manutenção). As demais combinações trocam essas classificações.",
+     "dificuldade": "media"
+    },
+    {
+     "subassunto": "Software",
+     "enunciado": "Sobre licenças de software, é correto afirmar que",
+     "opcoes": [
+      "todo software livre é, obrigatoriamente, distribuído de graça.",
+      "freeware é o programa que permite ao usuário modificar e redistribuir seu código-fonte.",
+      "software livre é aquele que garante ao usuário as liberdades de usar, estudar, modificar e redistribuir o programa.",
+      "software proprietário é aquele cujo código-fonte é público e pode ser alterado livremente.",
+      "shareware é um programa sem nenhuma restrição de uso ou de tempo."
+     ],
+     "gabarito": 2,
+     "comentario": "A C traz a ideia central do software livre. Ele pode ser vendido, então a A erra; freeware é apenas gratuito, sem acesso ao código (B errada); proprietário tem uso controlado pelo fabricante (D errada); shareware costuma ter limite de tempo ou de recursos (E errada).",
+     "dificuldade": "media"
+    },
+    {
+     "subassunto": "Hardware",
+     "enunciado": "Um plano de internet anuncia velocidade de 80 Mbps. Desconsiderando perdas e sabendo que 1 byte equivale a 8 bits, a taxa máxima teórica de download, em megabytes por segundo, é de",
+     "opcoes": [
+      "10 MB/s.",
+      "80 MB/s.",
+      "640 MB/s.",
+      "8 MB/s.",
+      "1 MB/s."
+     ],
+     "gabarito": 0,
+     "comentario": "Mbps é megabit por segundo. Como 1 byte = 8 bits, basta dividir: 80 / 8 = 10 MB/s. Os outros valores não fazem a conversão correta (80 ignora a conversão; 640 multiplica em vez de dividir).",
+     "dificuldade": "dificil"
+    }
+   ]
+  },
+  {
+   "curso": "gcm-geral",
+   "disciplina": "Noções de Informática",
+   "assunto": "Sistema operacional MS-Windows 10 e 11",
+   "aula": {
+    "titulo": "Windows 10 e 11: arquivos, pastas, área de trabalho e configurações",
+    "secoes": [
+     {
+      "titulo": "Arquivos, pastas e atalhos",
+      "texto": "• Arquivo: unidade onde os dados ficam gravados (um texto, uma foto, um programa). Tem nome e extensão, que indica o tipo: .docx (Word), .xlsx (Excel), .pdf, .jpg, .mp3, .exe (executável), .zip (compactado).\n• Pasta (ou diretório): recipiente que organiza arquivos e outras pastas (subpastas), formando uma estrutura em árvore. O caminho mostra onde o arquivo está, por exemplo: C:\\Users\\Ana\\Documentos\\relatorio.docx.\n• Atalho: pequeno arquivo (extensão .lnk) que aponta para outro arquivo, pasta ou programa. Tem uma setinha no canto do ícone. Apagar o atalho NÃO apaga o item original.\nO nome de arquivo ou pasta não pode conter os caracteres \\ / : * ? \" < > |. Dentro de uma mesma pasta não podem existir dois itens com o mesmo nome e extensão."
+     },
+     {
+      "titulo": "Área de trabalho e barra de tarefas",
+      "texto": "A área de trabalho é a tela inicial após o login, com ícones, papel de parede e a barra de tarefas.\n• Barra de tarefas: mostra o botão Iniciar, a pesquisa, os programas fixados e abertos e, à direita, a área de notificação (relógio, rede, volume).\n• No Windows 10 o menu Iniciar fica à esquerda e tem blocos dinâmicos; no Windows 11 o menu Iniciar e os ícones da barra ficam centralizados por padrão (é possível alinhar à esquerda nas configurações).\n• O Windows 11 trouxe os Layouts de Ajuste (Snap Layouts), que organizam janelas lado a lado; o atalho Windows + Z abre essas opções.\n• Áreas de trabalho virtuais: Windows + Tab mostra a Visão de Tarefas, onde se criam várias áreas de trabalho.\nAtalhos úteis: Windows + D (mostra/oculta a área de trabalho), Windows + E (Explorador de Arquivos), Windows + L (bloqueia o computador), Alt + Tab (alterna entre janelas), Ctrl + Shift + Esc (Gerenciador de Tarefas)."
+     },
+     {
+      "titulo": "Área de transferência",
+      "texto": "A área de transferência é um espaço temporário na memória que guarda o que foi copiado ou recortado.\n• Ctrl + C: copiar (o original permanece).\n• Ctrl + X: recortar (o item sai do lugar quando for colado).\n• Ctrl + V: colar.\n• Windows + V: abre o histórico da área de transferência, que guarda vários itens copiados (é preciso ativá-lo na primeira vez).\n• Print Screen: copia uma imagem da tela para a área de transferência; Windows + Shift + S abre a ferramenta de recorte de tela."
+     },
+     {
+      "titulo": "Criar, copiar, mover, renomear, excluir e recuperar",
+      "texto": "O gerenciamento é feito no Explorador de Arquivos (Windows + E).\n• Nova pasta: Ctrl + Shift + N no Explorador, ou botão direito > Novo > Pasta.\n• Renomear: selecione e pressione F2.\n• Arrastar com o mouse para outra pasta da MESMA unidade: move. Para OUTRA unidade (ex.: do C: para um pendrive): copia.\n• Arrastar segurando Ctrl: copia. Segurando Shift: move. Segurando Alt: cria atalho.\n• Delete: envia para a Lixeira. Shift + Delete: exclui definitivamente, sem passar pela Lixeira.\n• Recuperar: abra a Lixeira e use Restaurar; o item volta ao local de origem. Em geral, arquivos excluídos de pendrive ou de pastas de rede não vão para a Lixeira.\n• Organizar e pesquisar: no Explorador é possível mudar o modo de exibição (ícones, lista, detalhes), classificar por nome, data, tipo ou tamanho e usar a caixa de pesquisa, que procura na pasta atual e nas subpastas. Ctrl + A seleciona todos os itens; Ctrl + clique seleciona itens alternados; Shift + clique seleciona um intervalo."
+     },
+     {
+      "titulo": "Configurações básicas e acessibilidade",
+      "texto": "O aplicativo Configurações (Windows + I) reúne ajustes de sistema, dispositivos, rede, personalização (papel de parede, temas, modo escuro), contas, hora e idioma, atualizações e privacidade. O Painel de Controle continua existindo, mas a Microsoft vem migrando as opções para o Configurações.\nRecursos de acessibilidade (Windows + U abre as opções):\n• Lupa: amplia partes da tela (Windows + sinal de mais).\n• Narrador: lê em voz alta o conteúdo da tela (Windows + Ctrl + Enter).\n• Alto contraste / temas de contraste: cores fortes para quem tem baixa visão.\n• Teclado virtual, Teclas de Aderência (permitem usar atalhos pressionando uma tecla por vez), legendas e reconhecimento de voz."
+     }
+    ]
+   },
+   "revisao": {
+    "pontos": [
+     "Excluir um atalho não apaga o arquivo original.",
+     "Nome de arquivo não aceita \\ / : * ? \" < > |.",
+     "Arrastar na mesma unidade move; para outra unidade copia.",
+     "Ctrl + arrastar copia; Shift + arrastar move; Alt + arrastar cria atalho.",
+     "Delete manda para a Lixeira; Shift + Delete apaga direto, sem Lixeira.",
+     "F2 renomeia; Ctrl + Shift + N cria nova pasta no Explorador.",
+     "Windows + V abre o histórico da área de transferência.",
+     "Windows + E abre o Explorador; Windows + D mostra a área de trabalho; Windows + L bloqueia.",
+     "Windows + I abre Configurações; Windows + U abre Acessibilidade.",
+     "No Windows 11 o menu Iniciar fica centralizado por padrão."
+    ]
+   },
+   "mapa": {
+    "no_central": "Windows 10 e 11",
+    "ramos": [
+     {
+      "label": "Arquivos e pastas",
+      "filhos": [
+       "Extensão indica o tipo",
+       "Caminho C:\\pasta\\arquivo",
+       "Atalho .lnk",
+       "Caracteres proibidos"
+      ]
+     },
+     {
+      "label": "Área de trabalho",
+      "filhos": [
+       "Barra de tarefas",
+       "Menu Iniciar",
+       "Snap Layouts (Win + Z)",
+       "Áreas virtuais (Win + Tab)"
+      ]
+     },
+     {
+      "label": "Área de transferência",
+      "filhos": [
+       "Ctrl + C copiar",
+       "Ctrl + X recortar",
+       "Ctrl + V colar",
+       "Win + V histórico"
+      ]
+     },
+     {
+      "label": "Gerenciar arquivos",
+      "filhos": [
+       "F2 renomear",
+       "Delete: Lixeira",
+       "Shift + Delete: definitivo",
+       "Restaurar da Lixeira",
+       "Arrastar: mover x copiar"
+      ]
+     },
+     {
+      "label": "Configurações",
+      "filhos": [
+       "Win + I",
+       "Personalização",
+       "Atualizações",
+       "Acessibilidade: Lupa, Narrador, contraste"
+      ]
+     }
+    ]
+   },
+   "flashcards": [
+    {
+     "pergunta": "Qual atalho exclui um arquivo sem enviá-lo para a Lixeira?",
+     "resposta": "Shift + Delete."
+    },
+    {
+     "pergunta": "Qual tecla renomeia o item selecionado?",
+     "resposta": "F2."
+    },
+    {
+     "pergunta": "Arrastar um arquivo do C: para um pendrive, sem teclas, faz o quê?",
+     "resposta": "Copia o arquivo."
+    },
+    {
+     "pergunta": "O que acontece com o original se eu apagar o atalho?",
+     "resposta": "Nada; o original continua intacto."
+    },
+    {
+     "pergunta": "Qual atalho abre o histórico da área de transferência?",
+     "resposta": "Windows + V."
+    },
+    {
+     "pergunta": "Qual recurso de acessibilidade lê a tela em voz alta?",
+     "resposta": "O Narrador."
+    }
+   ],
+   "questoes": [
+    {
+     "subassunto": "Criação, cópia, movimentação, renomeação, exclusão, recuperação, organização e pesquisa de arquivos e pastas",
+     "enunciado": "No Windows 10, em sua configuração padrão, um usuário selecionou um arquivo em uma pasta do disco C: e pressionou Shift + Delete, confirmando a ação. Nesse caso, o arquivo",
+     "opcoes": [
+      "foi enviado para a Lixeira e pode ser restaurado.",
+      "foi movido para a área de transferência.",
+      "foi excluído definitivamente, sem passar pela Lixeira.",
+      "foi renomeado automaticamente.",
+      "foi copiado para a área de trabalho."
+     ],
+     "gabarito": 2,
+     "comentario": "Shift + Delete exclui o item de forma definitiva, sem enviá-lo à Lixeira. Apenas Delete o mandaria para a Lixeira (A). As demais ações correspondem a outros comandos (Ctrl + X, F2, cópia).",
+     "dificuldade": "facil"
+    },
+    {
+     "subassunto": "Área de transferência",
+     "enunciado": "No Windows 10, o atalho de teclado que permite visualizar o histórico da área de transferência, com vários itens copiados anteriormente, é",
+     "opcoes": [
+      "Ctrl + V.",
+      "Windows + V.",
+      "Ctrl + Shift + V.",
+      "Windows + D.",
+      "Alt + Tab."
+     ],
+     "gabarito": 1,
+     "comentario": "Windows + V abre o histórico da área de transferência. Ctrl + V apenas cola o último item; Windows + D mostra a área de trabalho; Alt + Tab alterna janelas; Ctrl + Shift + V não é o atalho do histórico no Windows.",
+     "dificuldade": "facil"
+    },
+    {
+     "subassunto": "Pastas, diretórios, arquivos e atalhos",
+     "enunciado": "Assinale a alternativa que apresenta um nome de arquivo VÁLIDO no Windows 10.",
+     "opcoes": [
+      "relatorio:final.docx",
+      "orcamento*2026.xlsx",
+      "ata?reuniao.pdf",
+      "escala_plantao-janeiro.xlsx",
+      "fotos|evento.zip"
+     ],
+     "gabarito": 3,
+     "comentario": "Os caracteres \\ / : * ? \" < > | não são permitidos em nomes de arquivos. Somente a alternativa D usa caracteres aceitos (sublinhado e hífen). As demais contêm dois-pontos, asterisco, interrogação ou barra vertical.",
+     "dificuldade": "media"
+    },
+    {
+     "subassunto": "Criação, cópia, movimentação, renomeação, exclusão, recuperação, organização e pesquisa de arquivos e pastas",
+     "enunciado": "No Explorador de Arquivos do Windows 10, um usuário arrasta, com o botão esquerdo do mouse e sem pressionar nenhuma tecla, um arquivo da pasta C:\\Documentos para a unidade E:, que é um pendrive. O resultado dessa ação será",
+     "opcoes": [
+      "a movimentação do arquivo, que deixará de existir em C:\\Documentos.",
+      "a criação de um atalho no pendrive.",
+      "a exclusão do arquivo, que irá para a Lixeira.",
+      "a abertura do arquivo no programa padrão.",
+      "a cópia do arquivo, que permanecerá também em C:\\Documentos."
+     ],
+     "gabarito": 4,
+     "comentario": "Ao arrastar entre unidades diferentes, o comportamento padrão é copiar; o original permanece. Mover seria o padrão dentro da mesma unidade (A). Atalho exige Alt ao arrastar (B). Arrastar não exclui nem abre o arquivo (C e D).",
+     "dificuldade": "media"
+    },
+    {
+     "subassunto": "Configurações básicas e recursos de acessibilidade",
+     "enunciado": "Considere as afirmações sobre o Windows 10 e 11.\nI. Excluir o atalho de um programa da área de trabalho remove também o programa do computador.\nII. O Narrador é um recurso de acessibilidade que lê em voz alta o conteúdo exibido na tela.\nIII. Ao arrastar um arquivo segurando a tecla Ctrl, o Windows faz uma cópia do arquivo no destino.\nIV. No Windows 11, por padrão, o botão Iniciar e os ícones da barra de tarefas aparecem centralizados.\nEstá correto o que se afirma em",
+     "opcoes": [
+      "I e II, apenas.",
+      "II, III e IV, apenas.",
+      "I, III e IV, apenas.",
+      "II e IV, apenas.",
+      "I, II, III e IV."
+     ],
+     "gabarito": 1,
+     "comentario": "I é falsa: o atalho é só um apontador; apagá-lo não desinstala o programa. II, III e IV são verdadeiras: o Narrador lê a tela, Ctrl + arrastar copia e o Windows 11 centraliza o Iniciar por padrão. Logo, B.",
+     "dificuldade": "dificil"
+    }
+   ]
+  },
+  {
+   "curso": "gcm-geral",
+   "disciplina": "Noções de Informática",
+   "assunto": "Editor de textos (MS-Word 2016)",
+   "aula": {
+    "titulo": "Microsoft Word 2016: do documento em branco à impressão",
+    "secoes": [
+     {
+      "titulo": "Estrutura básica do Word 2016",
+      "texto": "O Word é o editor de textos do pacote Microsoft Office. Seu arquivo padrão tem extensão .docx; modelos usam .dotx; e o formato antigo (Word 97-2003) é .doc.\nA tela é organizada assim:\n• Barra de Ferramentas de Acesso Rápido (Salvar, Desfazer, Refazer), no alto.\n• Faixa de Opções, dividida em guias: Arquivo, Página Inicial, Inserir, Design, Layout, Referências, Correspondências, Revisão e Exibir. Cada guia tem grupos de comandos.\n• Área de edição do documento, régua e barra de status (número de páginas, contagem de palavras, zoom e modos de exibição).\n• Modos de exibição: Layout de Impressão (padrão), Modo de Leitura, Layout da Web, Estrutura de Tópicos e Rascunho."
+     },
+     {
+      "titulo": "Edição, formatação e salvamento",
+      "texto": "Atalhos do Word em português que mais caem:\n• Ctrl + O: novo documento; Ctrl + A: abrir; Ctrl + B: salvar; F12: Salvar Como; Ctrl + P: imprimir.\n• Ctrl + N: negrito; Ctrl + I: itálico; Ctrl + S: sublinhado.\n• Ctrl + T: selecionar tudo; Ctrl + Z: desfazer; Ctrl + R: refazer.\n• Ctrl + L: localizar; Ctrl + U: substituir.\n• Ctrl + Q: alinhar à esquerda; Ctrl + E: centralizar; Ctrl + G: alinhar à direita; Ctrl + J: justificar.\n• Shift + F3: alterna entre maiúsculas e minúsculas.\nO Word também pode salvar em PDF pelo Salvar Como (escolhendo o tipo PDF) ou em Arquivo > Exportar. O Pincel de Formatação (guia Página Inicial) copia a formatação de um trecho para outro."
+     },
+     {
+      "titulo": "Revisão e impressão",
+      "texto": "Na guia Revisão estão: Ortografia e Gramática (tecla F7), Dicionário de Sinônimos, Contar Palavras, Novo Comentário e Controlar Alterações, que registra tudo o que for inserido ou apagado para que outra pessoa aceite ou rejeite. Palavras com possível erro de ortografia aparecem sublinhadas em vermelho.\nA impressão fica em Arquivo > Imprimir (Ctrl + P), onde se escolhem a impressora, o número de cópias, o intervalo de páginas (por exemplo 1-3;5), a orientação e o tamanho do papel, com visualização prévia ao lado."
+     },
+     {
+      "titulo": "Fontes, parágrafos, colunas, marcadores e cabeçalhos",
+      "texto": "• Fonte (guia Página Inicial): tipo, tamanho, cor, realce, sobrescrito (x²) e subscrito (H₂O). Ctrl + D abre a caixa Fonte.\n• Parágrafo: alinhamento, espaçamento entre linhas, recuos, marcadores (listas com símbolos) e numeração (listas numeradas).\n• Estilos (Título 1, Título 2...) padronizam a formatação e são a base para o sumário automático.\n• Colunas: guia Layout > Colunas, para textos estilo jornal.\n• Cabeçalho e Rodapé: guia Inserir. O conteúdo se repete em todas as páginas da seção."
+     },
+     {
+      "titulo": "Tabelas",
+      "texto": "Inserir > Tabela permite escolher linhas e colunas. Ao clicar na tabela surgem as guias contextuais de Ferramentas de Tabela (Design e Layout), com opções de estilos, bordas, sombreamento, inserir ou excluir linhas e colunas, mesclar e dividir células e até fórmulas simples. A tecla Tab leva à próxima célula; na última célula, Tab cria uma nova linha."
+     },
+     {
+      "titulo": "Quebras, numeração, legendas, índices e objetos",
+      "texto": "• Quebra de página: Ctrl + Enter ou Layout > Quebras. Quebra de seção permite configurar partes do documento de forma diferente (ex.: uma página em paisagem no meio de páginas em retrato).\n• Número de página: Inserir > Número de Página (topo, fim da página ou margens).\n• Guia Referências: Sumário automático (a partir dos estilos de título), Notas de Rodapé, Inserir Legenda (para figuras e tabelas), Índice e Citações.\n• Guia Inserir: imagens, formas, SmartArt, gráficos, Caixa de Texto, WordArt, símbolos, equações e Partes Rápidas > Campo (campos predefinidos como data, hora, nome do autor e número de páginas, que se atualizam automaticamente)."
+     }
+    ]
+   },
+   "revisao": {
+    "pontos": [
+     "Extensão padrão do Word 2016: .docx; modelo: .dotx.",
+     "Ctrl + N negrito, Ctrl + I itálico, Ctrl + S sublinhado (Word em português).",
+     "Ctrl + B salva; F12 é Salvar Como; Ctrl + O cria novo documento; Ctrl + A abre.",
+     "Ctrl + E centraliza; Ctrl + J justifica; Ctrl + Q esquerda; Ctrl + G direita.",
+     "Ctrl + T seleciona tudo; Ctrl + L localiza; Ctrl + U substitui.",
+     "F7 verifica ortografia e gramática (guia Revisão).",
+     "Ctrl + Enter insere quebra de página.",
+     "Sumário, notas de rodapé e legendas ficam na guia Referências.",
+     "Cabeçalho, rodapé, número de página, tabela e caixa de texto ficam na guia Inserir.",
+     "Colunas e quebras ficam na guia Layout."
+    ]
+   },
+   "mapa": {
+    "no_central": "Word 2016",
+    "ramos": [
+     {
+      "label": "Estrutura",
+      "filhos": [
+       ".docx / .dotx",
+       "Faixa de Opções e guias",
+       "Acesso Rápido",
+       "Modos de exibição"
+      ]
+     },
+     {
+      "label": "Atalhos",
+      "filhos": [
+       "Ctrl + N/I/S: negrito, itálico, sublinhado",
+       "Ctrl + B salvar",
+       "Ctrl + E centralizar",
+       "Ctrl + J justificar",
+       "Ctrl + T selecionar tudo"
+      ]
+     },
+     {
+      "label": "Revisão",
+      "filhos": [
+       "F7 ortografia",
+       "Controlar Alterações",
+       "Comentários",
+       "Contar Palavras"
+      ]
+     },
+     {
+      "label": "Layout",
+      "filhos": [
+       "Colunas",
+       "Quebras (Ctrl + Enter)",
+       "Margens e orientação"
+      ]
+     },
+     {
+      "label": "Inserir e Referências",
+      "filhos": [
+       "Tabela",
+       "Cabeçalho/Rodapé",
+       "Número de página",
+       "Sumário e legendas",
+       "Caixa de texto e campos"
+      ]
+     }
+    ]
+   },
+   "flashcards": [
+    {
+     "pergunta": "No Word 2016 em português, qual atalho aplica negrito?",
+     "resposta": "Ctrl + N."
+    },
+    {
+     "pergunta": "Qual atalho salva o documento?",
+     "resposta": "Ctrl + B."
+    },
+    {
+     "pergunta": "Qual tecla verifica ortografia e gramática?",
+     "resposta": "F7."
+    },
+    {
+     "pergunta": "Como inserir uma quebra de página pelo teclado?",
+     "resposta": "Ctrl + Enter."
+    },
+    {
+     "pergunta": "Em que guia fica o Sumário automático?",
+     "resposta": "Referências."
+    },
+    {
+     "pergunta": "Qual recurso registra alterações para aceitar ou rejeitar depois?",
+     "resposta": "Controlar Alterações (guia Revisão)."
+    }
+   ],
+   "questoes": [
+    {
+     "subassunto": "Edição, formatação, revisão, impressão e salvamento",
+     "enunciado": "No MS-Word 2016, em sua configuração padrão para o idioma português, o atalho de teclado Ctrl + E aplicado a um parágrafo selecionado tem a função de",
+     "opcoes": [
+      "salvar o documento.",
+      "centralizar o parágrafo.",
+      "selecionar todo o texto.",
+      "aplicar estilo de ênfase (itálico).",
+      "justificar o parágrafo."
+     ],
+     "gabarito": 1,
+     "comentario": "No Word em português, Ctrl + E centraliza. Salvar é Ctrl + B, selecionar tudo é Ctrl + T, itálico é Ctrl + I e justificar é Ctrl + J.",
+     "dificuldade": "facil"
+    },
+    {
+     "subassunto": "Quebras e numeração de páginas",
+     "enunciado": "Um usuário do MS-Word 2016 deseja que o texto seguinte ao cursor comece obrigatoriamente em uma nova página. O atalho de teclado adequado é",
+     "opcoes": [
+      "Shift + Enter.",
+      "Ctrl + Shift + N.",
+      "Alt + Enter.",
+      "Ctrl + Enter.",
+      "Ctrl + P."
+     ],
+     "gabarito": 3,
+     "comentario": "Ctrl + Enter insere uma quebra de página. Shift + Enter insere apenas quebra de linha, Ctrl + P abre a impressão e as outras combinações não inserem quebra de página.",
+     "dificuldade": "facil"
+    },
+    {
+     "subassunto": "Legendas, índices, objetos, campos predefinidos e caixas de texto",
+     "enunciado": "No MS-Word 2016, os recursos Sumário, Inserir Nota de Rodapé e Inserir Legenda estão localizados na guia",
+     "opcoes": [
+      "Referências.",
+      "Inserir.",
+      "Layout.",
+      "Revisão.",
+      "Design."
+     ],
+     "gabarito": 0,
+     "comentario": "Sumário, notas de rodapé e legendas ficam todos na guia Referências. A guia Inserir tem tabelas, imagens e cabeçalhos; Layout tem margens, colunas e quebras; Revisão tem ortografia e comentários; Design tem temas.",
+     "dificuldade": "media"
+    },
+    {
+     "subassunto": "Tabelas",
+     "enunciado": "Ao editar uma tabela no MS-Word 2016, com o cursor posicionado na última célula da última linha, o usuário pressiona a tecla Tab. O resultado será",
+     "opcoes": [
+      "a exclusão da última linha.",
+      "a mesclagem de todas as células da linha.",
+      "a inserção de uma tabulação de 1,25 cm dentro da célula.",
+      "o fechamento da tabela e a criação de um novo parágrafo.",
+      "a criação de uma nova linha ao final da tabela."
+     ],
+     "gabarito": 4,
+     "comentario": "Tab avança para a próxima célula; na última célula, cria uma nova linha. Para inserir uma tabulação dentro da célula usa-se Ctrl + Tab. As demais ações não são provocadas pela tecla Tab.",
+     "dificuldade": "media"
+    },
+    {
+     "subassunto": "Cabeçalhos, parágrafos, fontes, colunas e marcadores",
+     "enunciado": "Considere as afirmações sobre o MS-Word 2016, configuração padrão em português.\nI. O recurso Colunas, que divide o texto em estilo de jornal, fica na guia Layout.\nII. O conteúdo inserido no cabeçalho aparece em todas as páginas da seção.\nIII. O atalho Ctrl + S aplica o formato sobrescrito ao texto selecionado.\nIV. O Pincel de Formatação copia a formatação de um trecho e a aplica em outro.\nEstá correto o que se afirma em",
+     "opcoes": [
+      "I e III, apenas.",
+      "II e III, apenas.",
+      "I, II e IV, apenas.",
+      "III e IV, apenas.",
+      "I, II, III e IV."
+     ],
+     "gabarito": 2,
+     "comentario": "I, II e IV são verdadeiras. III é falsa: no Word em português, Ctrl + S aplica sublinhado, não sobrescrito. Portanto, a alternativa C.",
+     "dificuldade": "dificil"
+    }
+   ]
+  },
+  {
+   "curso": "gcm-geral",
+   "disciplina": "Noções de Informática",
+   "assunto": "Planilhas eletrônicas (MS-Excel 2016)",
+   "aula": {
+    "titulo": "Microsoft Excel 2016: células, fórmulas, filtros e gráficos",
+    "secoes": [
+     {
+      "titulo": "Pastas, planilhas, linhas, colunas e células",
+      "texto": "• Pasta de trabalho: é o arquivo do Excel (extensão .xlsx; com macros, .xlsm; modelo, .xltx). No Excel 2016, uma pasta nova começa com uma planilha (Planilha1), e outras podem ser adicionadas.\n• Planilha: cada aba da pasta, formada por linhas (numeradas: 1, 2, 3...) e colunas (letras: A, B, ... Z, AA, AB...). No Excel 2016 são 1.048.576 linhas e 16.384 colunas (a última é XFD).\n• Célula: encontro de uma coluna com uma linha, identificada pelo endereço (ex.: B3). A célula selecionada é a célula ativa; seu endereço aparece na Caixa de Nome e seu conteúdo, na Barra de Fórmulas.\n• Intervalo: conjunto de células, escrito com dois-pontos (A1:A10 = de A1 até A10). O ponto e vírgula separa células avulsas (A1;A10 = só A1 e A10)."
+     },
+     {
+      "titulo": "Fórmulas e referências",
+      "texto": "Toda fórmula começa com o sinal de igual (=). Operadores: + (soma), - (subtração), * (multiplicação), / (divisão), ^ (potência) e & (concatena textos).\nOrdem de cálculo: primeiro parênteses, depois potência, depois multiplicação e divisão, e por último soma e subtração. Ex.: =2+3*2^2 resulta 14 (2^2=4; 3*4=12; 2+12=14).\nReferências:\n• Relativa (A1): muda ao copiar a fórmula. Uma fórmula =A1+B1 copiada uma linha abaixo vira =A2+B2.\n• Absoluta ($A$1): não muda ao copiar.\n• Mista ($A1 ou A$1): trava só a coluna ou só a linha.\nA tecla F4, na edição da fórmula, alterna entre esses tipos.\nErros comuns: #DIV/0! (divisão por zero), #NOME? (nome de função escrito errado), #REF! (referência inválida), #VALOR! (tipo de dado errado), #N/D (valor não disponível, comum no PROCV)."
+     },
+     {
+      "titulo": "Funções básicas e macros",
+      "texto": "• =SOMA(A1:A5): soma os valores.\n• =MÉDIA(A1:A5): média aritmética.\n• =MÁXIMO(...) e =MÍNIMO(...): maior e menor valor.\n• =CONT.NÚM(...): conta células com números; =CONT.VALORES(...): conta células não vazias.\n• =CONT.SE(A1:A10;\">7\"): conta células que atendem a um critério.\n• =SOMASE(intervalo;critério;intervalo_soma): soma com condição.\n• =SE(teste;valor_se_verdadeiro;valor_se_falso): ex.: =SE(B2>=6;\"Aprovado\";\"Reprovado\").\n• =PROCV(valor;tabela;nº_coluna;FALSO): procura um valor na primeira coluna de uma tabela e devolve o dado de outra coluna.\nMacros são sequências de comandos gravadas para automatizar tarefas repetitivas. Ficam na guia Desenvolvedor (oculta por padrão; habilita-se em Arquivo > Opções > Personalizar Faixa de Opções) ou em Exibir > Macros. São escritas em VBA, e a pasta que as contém deve ser salva como .xlsm."
+     },
+     {
+      "titulo": "Classificação e filtros",
+      "texto": "Na guia Dados (e também em Página Inicial > Classificar e Filtrar):\n• Classificar: ordena as linhas de A a Z, de Z a A, do menor para o maior, ou por vários níveis (ex.: por bairro e depois por nome).\n• Filtro: coloca setas nos cabeçalhos para exibir só as linhas que atendem a um critério. As demais linhas ficam ocultas, não são apagadas. Atalho: Ctrl + Shift + L liga ou desliga o filtro."
+     },
+     {
+      "titulo": "Tabelas, gráficos, impressão e dados externos",
+      "texto": "• Tabela (Inserir > Tabela): transforma um intervalo em tabela formatada, com filtros automáticos, linhas zebradas e expansão automática.\n• Gráficos (guia Inserir): colunas, barras, linhas (bom para evolução no tempo), pizza (partes de um todo), dispersão etc. A tecla F11 cria um gráfico em uma nova folha.\n• Impressão: Arquivo > Imprimir (Ctrl + P). Em Layout da Página definem-se a Área de Impressão, orientação, margens, dimensionamento (ajustar a uma página) e Imprimir Títulos (repetir o cabeçalho em todas as páginas).\n• Dados externos: guia Dados, grupo Obter e Transformar / Obter Dados Externos, que importa dados de arquivos de texto (CSV), da Web, do Access e de outras fontes."
+     }
+    ]
+   },
+   "revisao": {
+    "pontos": [
+     "Toda fórmula começa com =.",
+     "Dois-pontos (:) indica intervalo; ponto e vírgula (;) separa argumentos ou células avulsas.",
+     "Ordem: parênteses, potência, multiplicação/divisão, soma/subtração.",
+     "$ trava a referência: $A$1 é absoluta; A1 é relativa.",
+     "F4 alterna entre referência relativa, absoluta e mista.",
+     "#DIV/0! é divisão por zero; #NOME? é função com nome errado.",
+     "CONT.NÚM conta números; CONT.VALORES conta células não vazias.",
+     "Filtro oculta linhas, não apaga (Ctrl + Shift + L).",
+     "Pasta com macros: .xlsm; macros usam VBA.",
+     "Excel 2016: 1.048.576 linhas e 16.384 colunas (até XFD)."
+    ]
+   },
+   "mapa": {
+    "no_central": "Excel 2016",
+    "ramos": [
+     {
+      "label": "Estrutura",
+      "filhos": [
+       "Pasta de trabalho (.xlsx)",
+       "Planilhas (abas)",
+       "Célula = coluna + linha",
+       "Caixa de Nome e Barra de Fórmulas"
+      ]
+     },
+     {
+      "label": "Fórmulas",
+      "filhos": [
+       "Começam com =",
+       "Operadores + - * / ^ &",
+       "Referência relativa, absoluta, mista",
+       "Erros #DIV/0!, #NOME?, #REF!"
+      ]
+     },
+     {
+      "label": "Funções",
+      "filhos": [
+       "SOMA, MÉDIA",
+       "MÁXIMO, MÍNIMO",
+       "CONT.NÚM, CONT.SE",
+       "SE",
+       "PROCV"
+      ]
+     },
+     {
+      "label": "Dados",
+      "filhos": [
+       "Classificar",
+       "Filtro (Ctrl + Shift + L)",
+       "Obter dados externos"
+      ]
+     },
+     {
+      "label": "Saída",
+      "filhos": [
+       "Gráficos (Inserir, F11)",
+       "Área de Impressão",
+       "Imprimir Títulos",
+       "Macros (.xlsm)"
+      ]
+     }
+    ]
+   },
+   "flashcards": [
+    {
+     "pergunta": "Com que sinal toda fórmula do Excel começa?",
+     "resposta": "Com o sinal de igual (=)."
+    },
+    {
+     "pergunta": "Qual o resultado de =10-2*3?",
+     "resposta": "4."
+    },
+    {
+     "pergunta": "O que significa o $ em $B$2?",
+     "resposta": "Referência absoluta: não muda ao copiar."
+    },
+    {
+     "pergunta": "Qual erro aparece ao dividir por zero?",
+     "resposta": "#DIV/0!"
+    },
+    {
+     "pergunta": "Qual atalho liga ou desliga o filtro?",
+     "resposta": "Ctrl + Shift + L."
+    },
+    {
+     "pergunta": "Em que extensão salvar uma pasta com macros?",
+     "resposta": ".xlsm"
+    }
+   ],
+   "questoes": [
+    {
+     "subassunto": "Fórmulas, funções básicas e macros",
+     "enunciado": "No MS-Excel 2016, a fórmula =4+6/2^1 digitada em uma célula retorna o valor",
+     "opcoes": [
+      "5.",
+      "10.",
+      "8.",
+      "7.",
+      "4."
+     ],
+     "gabarito": 3,
+     "comentario": "Primeiro a potência: 2^1 = 2. Depois a divisão: 6/2 = 3. Por fim a soma: 4 + 3 = 7. O valor 5 surgiria somando antes de dividir ((4+6)/2), o que desrespeita a precedência.",
+     "dificuldade": "facil"
+    },
+    {
+     "subassunto": "Células, linhas, colunas e pastas",
+     "enunciado": "No MS-Excel 2016, a expressão =SOMA(B2:B5) soma",
+     "opcoes": [
+      "apenas as células B2 e B5.",
+      "as células B2, B3, B4 e B5.",
+      "as células B2 e C5.",
+      "todas as células da coluna B.",
+      "as células das linhas 2 a 5 de todas as colunas."
+     ],
+     "gabarito": 1,
+     "comentario": "Os dois-pontos indicam intervalo: de B2 até B5, ou seja, B2, B3, B4 e B5. Para somar apenas B2 e B5 seria usado ponto e vírgula: =SOMA(B2;B5).",
+     "dificuldade": "facil"
+    },
+    {
+     "subassunto": "Fórmulas, funções básicas e macros",
+     "enunciado": "Em uma planilha do MS-Excel 2016, a célula C1 contém a fórmula =A1*$B$1. Se essa célula for copiada e colada na célula C3, a fórmula em C3 será",
+     "opcoes": [
+      "=A1*$B$1",
+      "=A3*$B$3",
+      "=A3*$B$1",
+      "=C3*$B$1",
+      "=A1*$B$3"
+     ],
+     "gabarito": 2,
+     "comentario": "A referência A1 é relativa: ao descer duas linhas vira A3. A referência $B$1 é absoluta e não muda. Resultado: =A3*$B$1. As demais alternativas alteram a parte absoluta ou não ajustam a parte relativa.",
+     "dificuldade": "media"
+    },
+    {
+     "subassunto": "Classificação e filtros",
+     "enunciado": "Um guarda municipal usa o MS-Excel 2016 para controlar ocorrências e aplica um filtro na coluna Bairro para exibir apenas o bairro Centro. Sobre as linhas dos demais bairros, é correto afirmar que",
+     "opcoes": [
+      "foram excluídas definitivamente da planilha.",
+      "foram movidas para uma nova planilha.",
+      "ficaram apenas ocultas e voltam a aparecer ao limpar o filtro.",
+      "foram classificadas em ordem alfabética abaixo das linhas do Centro.",
+      "foram copiadas para a área de transferência."
+     ],
+     "gabarito": 2,
+     "comentario": "O filtro apenas oculta as linhas que não atendem ao critério; nada é apagado, movido ou copiado. Ao limpar ou remover o filtro, todas voltam a ser exibidas. Classificar é outro recurso, que reordena as linhas.",
+     "dificuldade": "media"
+    },
+    {
+     "subassunto": "Fórmulas, funções básicas e macros",
+     "enunciado": "Na planilha do MS-Excel 2016, as células A1 a A5 contêm, respectivamente: 8, 5, o texto \"falta\", 10 e uma célula vazia. A fórmula =CONT.NÚM(A1:A5)+CONT.VALORES(A1:A5) retorna",
+     "opcoes": [
+      "9.",
+      "6.",
+      "8.",
+      "5.",
+      "7."
+     ],
+     "gabarito": 4,
+     "comentario": "CONT.NÚM conta só células com números: 8, 5 e 10, total 3. CONT.VALORES conta as células não vazias: 8, 5, \"falta\" e 10, total 4. A soma é 3 + 4 = 7.",
+     "dificuldade": "dificil"
+    }
+   ]
+  },
+  {
+   "curso": "gcm-geral",
+   "disciplina": "Noções de Informática",
+   "assunto": "Apresentações (MS-PowerPoint 2016)",
+   "aula": {
+    "titulo": "Microsoft PowerPoint 2016: slides, objetos, animações e transições",
+    "secoes": [
+     {
+      "titulo": "Estrutura básica, slides e anotações",
+      "texto": "O PowerPoint cria apresentações formadas por slides. Extensões: .pptx (apresentação padrão), .ppsx (abre direto no modo de apresentação), .potx (modelo) e .ppt (formato antigo).\nModos de exibição (guia Exibir):\n• Normal: modo de edição, com miniaturas à esquerda, slide ao centro e painel de Anotações abaixo.\n• Classificação de Slides: mostra miniaturas de todos os slides, ideal para reorganizar a ordem.\n• Anotações: mostra o slide com as anotações do orador, que o público não vê durante a apresentação.\n• Modo de Exibição de Leitura: apresenta os slides dentro da janela.\n• Slide Mestre: define o modelo (fontes, cores, logotipos, posições) aplicado a todos os slides de uma vez.\nIniciar a apresentação: F5 começa do primeiro slide; Shift + F5 começa do slide atual. Esc encerra a apresentação."
+     },
+     {
+      "titulo": "Edição e formatação",
+      "texto": "• Novo Slide (guia Página Inicial) permite escolher o Layout: Slide de Título, Título e Conteúdo, Duas Partes de Conteúdo, Somente Título, Em branco etc.\n• Espaços reservados são as caixas pontilhadas prontas para receber título, texto, imagem ou gráfico.\n• Guia Design: Temas (conjunto de cores, fontes e efeitos), variantes, Tamanho do Slide (16:9 é o padrão no 2016, ou 4:3) e Formatar Plano de Fundo.\n• Formatação de texto (fonte, tamanho, cor, alinhamento, marcadores) funciona como no Word.\n• Ocultar Slide (guia Apresentação de Slides) faz o slide não aparecer durante a exibição, sem excluí-lo."
+     },
+     {
+      "titulo": "Inserção de objetos e botões de ação",
+      "texto": "Pela guia Inserir é possível adicionar: tabelas, imagens, formas, ícones, SmartArt, gráficos, caixa de texto, WordArt, cabeçalho e rodapé, número do slide, vídeo e áudio.\n• Hiperlink: liga um texto ou objeto a um site, arquivo ou outro slide.\n• Botões de ação: formas prontas (avançar, voltar, início, fim, informações) que ficam em Inserir > Formas > Botões de Ação. Ao inseri-los, abre-se a caixa Configurações de Ação, que define o que acontece ao clicar ou ao passar o mouse (ir para um slide, abrir um programa, tocar som)."
+     },
+     {
+      "titulo": "Animação e transição",
+      "texto": "Não confunda:\n• Transição (guia Transições): efeito que ocorre na PASSAGEM de um slide para o outro (Esmaecer, Empurrar, Revelar...). Pode-se definir duração, som e se avança ao clicar ou após um tempo; o botão Aplicar a Todos usa o mesmo efeito em todos os slides.\n• Animação (guia Animações): efeito aplicado a um OBJETO dentro do slide (texto, imagem, forma). Tipos: Entrada (o objeto aparece), Ênfase (chama atenção), Saída (o objeto sai) e Trajetórias de Animação (o objeto se move por um caminho). O Painel de Animação mostra a ordem e o tempo de cada efeito; o Pincel de Animação copia a animação para outro objeto.\nNa guia Apresentação de Slides há ainda Testar Intervalos e Gravar Apresentação de Slides."
+     }
+    ]
+   },
+   "revisao": {
+    "pontos": [
+     "Extensão padrão: .pptx; .ppsx abre direto em modo apresentação.",
+     "F5 inicia do começo; Shift + F5 inicia do slide atual; Esc encerra.",
+     "Classificação de Slides serve para reorganizar a ordem dos slides.",
+     "Anotações do orador não aparecem para a plateia.",
+     "Slide Mestre altera o padrão de todos os slides de uma vez.",
+     "Transição = entre slides; Animação = objeto dentro do slide.",
+     "Tipos de animação: entrada, ênfase, saída e trajetória.",
+     "Botões de ação ficam em Inserir > Formas.",
+     "Ocultar Slide não exclui o slide; só o esconde na exibição."
+    ]
+   },
+   "mapa": {
+    "no_central": "PowerPoint 2016",
+    "ramos": [
+     {
+      "label": "Estrutura",
+      "filhos": [
+       ".pptx / .ppsx / .potx",
+       "Modos: Normal, Classificação, Anotações, Leitura",
+       "Slide Mestre"
+      ]
+     },
+     {
+      "label": "Edição",
+      "filhos": [
+       "Novo Slide e Layout",
+       "Temas (guia Design)",
+       "Tamanho do slide 16:9 ou 4:3",
+       "Ocultar Slide"
+      ]
+     },
+     {
+      "label": "Objetos",
+      "filhos": [
+       "Imagens, tabelas, gráficos",
+       "SmartArt e formas",
+       "Vídeo e áudio",
+       "Hiperlinks e botões de ação"
+      ]
+     },
+     {
+      "label": "Transição",
+      "filhos": [
+       "Entre slides",
+       "Duração e som",
+       "Aplicar a Todos"
+      ]
+     },
+     {
+      "label": "Animação",
+      "filhos": [
+       "Entrada",
+       "Ênfase",
+       "Saída",
+       "Trajetória",
+       "Painel de Animação"
+      ]
+     }
+    ]
+   },
+   "flashcards": [
+    {
+     "pergunta": "Qual tecla inicia a apresentação do primeiro slide?",
+     "resposta": "F5."
+    },
+    {
+     "pergunta": "E para iniciar do slide atual?",
+     "resposta": "Shift + F5."
+    },
+    {
+     "pergunta": "Qual a diferença entre transição e animação?",
+     "resposta": "Transição ocorre entre slides; animação, em objetos dentro do slide."
+    },
+    {
+     "pergunta": "Qual modo facilita reorganizar a ordem dos slides?",
+     "resposta": "Classificação de Slides."
+    },
+    {
+     "pergunta": "O que o Slide Mestre faz?",
+     "resposta": "Define o padrão visual aplicado a todos os slides."
+    },
+    {
+     "pergunta": "Qual extensão abre o arquivo já em modo de apresentação?",
+     "resposta": ".ppsx"
+    }
+   ],
+   "questoes": [
+    {
+     "subassunto": "Estrutura básica, slides e anotações",
+     "enunciado": "No MS-PowerPoint 2016, em sua configuração padrão, a tecla ou combinação de teclas usada para iniciar a apresentação a partir do slide atual é",
+     "opcoes": [
+      "F5.",
+      "Ctrl + F5.",
+      "F7.",
+      "Shift + F5.",
+      "Alt + F5."
+     ],
+     "gabarito": 3,
+     "comentario": "Shift + F5 inicia a apresentação no slide em que o usuário está. F5 começa do primeiro slide; F7 verifica a ortografia; as outras combinações não têm essa função padrão.",
+     "dificuldade": "facil"
+    },
+    {
+     "subassunto": "Animação e transição entre slides",
+     "enunciado": "No MS-PowerPoint 2016, o efeito visual que ocorre no momento em que a apresentação passa de um slide para o seguinte é configurado na guia",
+     "opcoes": [
+      "Transições.",
+      "Animações.",
+      "Design.",
+      "Inserir.",
+      "Exibir."
+     ],
+     "gabarito": 0,
+     "comentario": "Efeitos entre um slide e outro são transições, configuradas na guia Transições. A guia Animações trata de objetos dentro do slide; Design trata de temas; Inserir, de objetos; Exibir, dos modos de exibição.",
+     "dificuldade": "facil"
+    },
+    {
+     "subassunto": "Estrutura básica, slides e anotações",
+     "enunciado": "Um palestrante quer alterar de uma só vez a fonte dos títulos e inserir o brasão do município em todos os slides de uma apresentação do MS-PowerPoint 2016. O recurso mais adequado é",
+     "opcoes": [
+      "o modo Classificação de Slides.",
+      "o painel de Anotações.",
+      "o Pincel de Animação.",
+      "o Slide Mestre.",
+      "o recurso Ocultar Slide."
+     ],
+     "gabarito": 3,
+     "comentario": "O Slide Mestre define o padrão (fontes, cores, logotipos) herdado por todos os slides. Classificação de Slides serve para ordenar; Anotações são notas do orador; Pincel de Animação copia animações; Ocultar Slide esconde um slide na exibição.",
+     "dificuldade": "media"
+    },
+    {
+     "subassunto": "Inserção de objetos e botões de ação",
+     "enunciado": "No MS-PowerPoint 2016, os botões de ação, que permitem, por exemplo, ir para o próximo slide ou para o primeiro slide quando clicados, são inseridos a partir de",
+     "opcoes": [
+      "Página Inicial > Novo Slide.",
+      "Design > Temas.",
+      "Inserir > Formas.",
+      "Animações > Painel de Animação.",
+      "Revisão > Comentários."
+     ],
+     "gabarito": 2,
+     "comentario": "Os botões de ação estão no final da galeria de Formas, na guia Inserir. Ao inseri-los, abre-se a caixa Configurações de Ação. As demais opções não contêm esse recurso.",
+     "dificuldade": "media"
+    },
+    {
+     "subassunto": "Animação e transição entre slides",
+     "enunciado": "Considere as afirmações sobre o MS-PowerPoint 2016.\nI. Um objeto pode receber mais de uma animação, por exemplo, uma de entrada e outra de saída.\nII. A animação do tipo Ênfase faz o objeto surgir no slide pela primeira vez.\nIII. Um slide oculto é excluído automaticamente ao salvar a apresentação.\nIV. As anotações do orador não são exibidas para o público durante a apresentação em tela cheia.\nEstá correto o que se afirma em",
+     "opcoes": [
+      "I e IV, apenas.",
+      "I, II e IV, apenas.",
+      "II e III, apenas.",
+      "I, III e IV, apenas.",
+      "II, III e IV, apenas."
+     ],
+     "gabarito": 0,
+     "comentario": "I é verdadeira: um objeto aceita vários efeitos. II é falsa: quem faz o objeto aparecer é a animação de Entrada; Ênfase destaca um objeto já visível. III é falsa: ocultar não exclui. IV é verdadeira. Logo, I e IV.",
+     "dificuldade": "dificil"
+    }
+   ]
+  },
+  {
+   "curso": "gcm-geral",
+   "disciplina": "Noções de Informática",
+   "assunto": "Correio eletrônico",
+   "aula": {
+    "titulo": "Correio eletrônico: enviar, receber, organizar e anexar",
+    "secoes": [
+     {
+      "titulo": "Como funciona o e-mail",
+      "texto": "O correio eletrônico permite trocar mensagens pela internet. Todo endereço segue o formato usuario@dominio, por exemplo: joao.silva@prefeitura.sp.gov.br. O símbolo @ (arroba) separa o nome do usuário do domínio (o provedor ou a instituição).\nFormas de acesso:\n• Webmail: acessado pelo navegador (ex.: Gmail, Outlook.com), sem instalar nada.\n• Cliente de e-mail: programa instalado (ex.: Microsoft Outlook, Mozilla Thunderbird), que baixa ou sincroniza as mensagens.\nProtocolos:\n• SMTP: usado para ENVIAR mensagens.\n• POP3: usado para RECEBER; em geral baixa as mensagens para o computador.\n• IMAP: usado para RECEBER mantendo as mensagens no servidor, sincronizadas entre vários dispositivos."
+     },
+     {
+      "titulo": "Envio e recebimento",
+      "texto": "Campos de uma mensagem:\n• Para: destinatário principal.\n• Cc (com cópia): recebe uma cópia; todos veem esse endereço.\n• Cco (com cópia oculta): recebe uma cópia, mas os demais destinatários não sabem disso. Útil para envio em massa, protegendo os endereços.\n• Assunto: resumo do tema da mensagem.\nAções com uma mensagem recebida:\n• Responder: responde só ao remetente.\n• Responder a todos: responde ao remetente e a todos que estavam em Para e Cc (quem estava em Cco não recebe).\n• Encaminhar: envia a mensagem, em geral com os anexos, para outra pessoa que não a recebeu."
+     },
+     {
+      "titulo": "Organização de mensagens",
+      "texto": "Pastas comuns: Caixa de Entrada (mensagens recebidas), Itens Enviados, Rascunhos (mensagens iniciadas e não enviadas), Lixo Eletrônico/Spam (mensagens suspeitas ou indesejadas) e Lixeira/Itens Excluídos.\nRecursos de organização:\n• Pastas criadas pelo usuário e, no Gmail, marcadores (uma mensagem pode ter vários marcadores).\n• Regras ou filtros: movem, marcam ou encaminham mensagens automaticamente conforme remetente, assunto ou palavras.\n• Sinalizar ou marcar com estrela, marcar como lida ou não lida, arquivar e pesquisar por palavras, remetente ou data."
+     },
+     {
+      "titulo": "Anexação de arquivos",
+      "texto": "Anexo é um arquivo enviado junto com a mensagem (documentos, fotos, planilhas). É indicado geralmente por um ícone de clipe de papel.\n• Os serviços impõem limite de tamanho para anexos; para arquivos grandes, é comum compactar (.zip) ou compartilhar um link de armazenamento em nuvem.\n• Cuidado: anexos são um dos principais meios de propagação de vírus. Desconfie de arquivos inesperados, principalmente executáveis (.exe, .bat, .scr) ou documentos que pedem para ativar macros, mesmo que pareçam vir de conhecidos.\n• Ao Responder, os anexos originais normalmente não são reenviados; ao Encaminhar, normalmente são."
+     }
+    ]
+   },
+   "revisao": {
+    "pontos": [
+     "Formato do endereço: usuario@dominio.",
+     "SMTP envia; POP3 e IMAP recebem.",
+     "IMAP mantém as mensagens sincronizadas no servidor; POP3 costuma baixá-las.",
+     "Cc: cópia visível; Cco: cópia oculta.",
+     "Responder a todos não alcança quem estava em Cco.",
+     "Encaminhar leva os anexos; Responder normalmente não.",
+     "Rascunhos guardam mensagens não enviadas.",
+     "Webmail funciona no navegador; Outlook e Thunderbird são clientes de e-mail.",
+     "Anexo inesperado é risco: não abra executáveis desconhecidos."
+    ]
+   },
+   "mapa": {
+    "no_central": "Correio eletrônico",
+    "ramos": [
+     {
+      "label": "Endereço",
+      "filhos": [
+       "usuario@dominio",
+       "Webmail",
+       "Cliente de e-mail"
+      ]
+     },
+     {
+      "label": "Protocolos",
+      "filhos": [
+       "SMTP: envio",
+       "POP3: recebimento (baixa)",
+       "IMAP: recebimento (sincroniza)"
+      ]
+     },
+     {
+      "label": "Campos",
+      "filhos": [
+       "Para",
+       "Cc",
+       "Cco (oculta)",
+       "Assunto"
+      ]
+     },
+     {
+      "label": "Ações",
+      "filhos": [
+       "Responder",
+       "Responder a todos",
+       "Encaminhar"
+      ]
+     },
+     {
+      "label": "Organização",
+      "filhos": [
+       "Caixa de Entrada",
+       "Rascunhos e Enviados",
+       "Spam",
+       "Pastas, marcadores e regras"
+      ]
+     },
+     {
+      "label": "Anexos",
+      "filhos": [
+       "Clipe de papel",
+       "Limite de tamanho",
+       "Risco de vírus",
+       "Link de nuvem para arquivos grandes"
+      ]
+     }
+    ]
+   },
+   "flashcards": [
+    {
+     "pergunta": "Qual protocolo é usado para enviar e-mails?",
+     "resposta": "SMTP."
+    },
+    {
+     "pergunta": "Qual a diferença entre Cc e Cco?",
+     "resposta": "No Cco, os demais destinatários não veem o endereço."
+    },
+    {
+     "pergunta": "Qual protocolo de recebimento mantém as mensagens sincronizadas no servidor?",
+     "resposta": "IMAP."
+    },
+    {
+     "pergunta": "Encaminhar ou Responder: qual normalmente leva os anexos?",
+     "resposta": "Encaminhar."
+    },
+    {
+     "pergunta": "Onde ficam as mensagens escritas e ainda não enviadas?",
+     "resposta": "Na pasta Rascunhos."
+    },
+    {
+     "pergunta": "O que separa o usuário do domínio no endereço de e-mail?",
+     "resposta": "O símbolo @ (arroba)."
+    }
+   ],
+   "questoes": [
+    {
+     "subassunto": "Envio e recebimento",
+     "enunciado": "Ao enviar um e-mail, um servidor deseja que um colega receba a mensagem sem que os demais destinatários saibam disso. O endereço desse colega deve ser inserido no campo",
+     "opcoes": [
+      "Para.",
+      "Cc.",
+      "Assunto.",
+      "Cco.",
+      "Responder a."
+     ],
+     "gabarito": 3,
+     "comentario": "O campo Cco (com cópia oculta) esconde o endereço dos demais destinatários. Em Para e Cc os endereços ficam visíveis a todos; Assunto é o tema da mensagem.",
+     "dificuldade": "facil"
+    },
+    {
+     "subassunto": "Envio e recebimento",
+     "enunciado": "O protocolo utilizado para o envio de mensagens de correio eletrônico é o",
+     "opcoes": [
+      "SMTP.",
+      "POP3.",
+      "IMAP.",
+      "HTTP.",
+      "FTP."
+     ],
+     "gabarito": 0,
+     "comentario": "SMTP é o protocolo de envio. POP3 e IMAP são de recebimento; HTTP é usado para páginas web; FTP, para transferência de arquivos.",
+     "dificuldade": "facil"
+    },
+    {
+     "subassunto": "Envio e recebimento",
+     "enunciado": "Uma mensagem foi enviada por Ana para Bruno (campo Para), com Carla em Cc e Daniel em Cco. Se Bruno usar a opção Responder a todos, a resposta será enviada para",
+     "opcoes": [
+      "apenas Ana.",
+      "Ana, Carla e Daniel.",
+      "Ana e Carla, apenas.",
+      "Carla e Daniel, apenas.",
+      "apenas Daniel."
+     ],
+     "gabarito": 2,
+     "comentario": "Responder a todos inclui o remetente (Ana) e os destinatários visíveis em Para e Cc (Carla). Daniel estava em Cco, portanto Bruno nem sabe que ele recebeu e ele não entra na resposta.",
+     "dificuldade": "media"
+    },
+    {
+     "subassunto": "Organização de mensagens",
+     "enunciado": "Um usuário acessa o mesmo e-mail no celular e no computador e quer que as mensagens lidas, apagadas ou movidas para pastas em um aparelho apareçam da mesma forma no outro. O protocolo de recebimento mais adequado é o",
+     "opcoes": [
+      "POP3, porque apaga as mensagens do servidor após o download.",
+      "SMTP, porque sincroniza as pastas entre dispositivos.",
+      "FTP, porque transfere as pastas de um aparelho ao outro.",
+      "HTTPS, porque criptografa as mensagens armazenadas.",
+      "IMAP, porque mantém as mensagens e pastas no servidor, sincronizadas."
+     ],
+     "gabarito": 4,
+     "comentario": "O IMAP trabalha com as mensagens no servidor, sincronizando estado e pastas entre dispositivos. O POP3 tende a baixar as mensagens para um único aparelho; SMTP é de envio; FTP e HTTPS não são protocolos de recebimento de e-mail.",
+     "dificuldade": "media"
+    },
+    {
+     "subassunto": "Anexação de arquivos",
+     "enunciado": "Considere as afirmações sobre correio eletrônico.\nI. Ao encaminhar uma mensagem, os anexos originais normalmente são enviados junto.\nII. Um anexo com extensão .exe recebido de remetente desconhecido deve ser executado para verificar seu conteúdo.\nIII. Para enviar um arquivo que ultrapassa o limite de tamanho do serviço, uma alternativa é compartilhar um link de armazenamento em nuvem.\nIV. O endereço joao.silva@prefeitura.sp.gov.br possui o domínio joao.silva.\nEstá correto o que se afirma em",
+     "opcoes": [
+      "I e III, apenas.",
+      "I, II e III, apenas.",
+      "II e IV, apenas.",
+      "I, III e IV, apenas.",
+      "III e IV, apenas."
+     ],
+     "gabarito": 0,
+     "comentario": "I e III são verdadeiras. II é falsa: executáveis de origem desconhecida são risco de malware e não devem ser abertos. IV é falsa: joao.silva é o nome do usuário; o domínio é o que vem depois da arroba (prefeitura.sp.gov.br).",
+     "dificuldade": "dificil"
+    }
+   ]
+  },
+  {
+   "curso": "gcm-geral",
+   "disciplina": "Noções de Informática",
+   "assunto": "Internet",
+   "aula": {
+    "titulo": "Internet: navegadores, endereços, buscas e downloads",
+    "secoes": [
+     {
+      "titulo": "Navegadores",
+      "texto": "Navegador (browser) é o programa usado para acessar páginas da web. Exemplos: Microsoft Edge (padrão do Windows 10 e 11), Google Chrome, Mozilla Firefox, Safari e Opera. O antigo Internet Explorer foi descontinuado.\nRecursos comuns: guias (abas), favoritos, histórico, downloads, extensões e navegação anônima (InPrivate no Edge, anônima no Chrome, privativa no Firefox). A navegação anônima não salva histórico, cookies nem dados de formulários NO computador, mas não esconde o que você faz do provedor, do empregador ou dos sites visitados.\nAtalhos comuns (Chrome, Edge e Firefox):\n• Ctrl + T: nova guia; Ctrl + W: fecha a guia; Ctrl + Shift + T: reabre a última guia fechada.\n• Ctrl + N: nova janela; Ctrl + Shift + N: janela anônima/InPrivate no Chrome e no Edge (no Firefox, Ctrl + Shift + P).\n• Ctrl + D: adiciona aos favoritos; Ctrl + H: histórico; Ctrl + J: downloads.\n• F5: atualiza a página; Ctrl + F: localiza texto na página; F11: tela cheia; Ctrl + P: imprime."
+     },
+     {
+      "titulo": "URL, endereços eletrônicos e links",
+      "texto": "URL é o endereço de um recurso na internet. Exemplo: https://www.prefeitura.sp.gov.br/servicos/index.html\n• https:// é o protocolo. HTTPS é a versão segura do HTTP: a comunicação é criptografada, e o navegador mostra um cadeado. O cadeado indica conexão criptografada, não garante que o site seja honesto.\n• www.prefeitura.sp.gov.br é o domínio. Termina com o domínio de primeiro nível: .br (Brasil); .gov indica governo; .edu, educação; .org, organizações; .com, comercial.\n• /servicos/index.html é o caminho até a página ou arquivo.\nO DNS é o serviço que traduz nomes de domínio para endereços IP (números que identificam os computadores na rede).\nLink (hiperlink) é um texto ou imagem que, ao ser clicado, leva a outro endereço. Antes de clicar, é possível passar o mouse sobre o link para ver o endereço real no canto da tela."
+     },
+     {
+      "titulo": "Mecanismos de busca",
+      "texto": "Buscadores (Google, Bing, DuckDuckGo) indexam páginas e mostram resultados por relevância. Operadores úteis no Google:\n• \"frase exata\" entre aspas: busca as palavras naquela ordem.\n• sinal de menos (-): exclui um termo. Ex.: guarda civil -concurso.\n• site: restringe a um site ou domínio. Ex.: edital site:gov.br.\n• filetype: procura um tipo de arquivo. Ex.: apostila filetype:pdf.\n• OR (em maiúsculas): um termo ou outro.\n• asterisco (*): coringa para palavra desconhecida na frase."
+     },
+     {
+      "titulo": "Downloads, uploads e impressão de páginas",
+      "texto": "• Download: baixar, ou seja, transferir um arquivo da internet PARA o seu dispositivo. Por padrão, o Windows salva na pasta Downloads.\n• Upload: enviar, transferir um arquivo do seu dispositivo PARA a internet (anexar um documento a um e-mail, enviar uma foto a uma rede social, subir arquivos para a nuvem).\n• Baixe arquivos somente de sites confiáveis e oficiais, e passe o antivírus em executáveis.\nImpressão de páginas: Ctrl + P abre a janela de impressão do navegador, onde se escolhem a impressora (ou Salvar como PDF), as páginas, a orientação, as margens e se os gráficos de fundo serão impressos. É possível imprimir apenas um trecho selecionado da página."
+     }
+    ]
+   },
+   "revisao": {
+    "pontos": [
+     "Edge é o navegador padrão do Windows 10 e 11.",
+     "Ctrl + T abre guia; Ctrl + Shift + T reabre guia fechada.",
+     "Ctrl + Shift + N: janela anônima no Chrome e InPrivate no Edge; no Firefox é Ctrl + Shift + P.",
+     "Ctrl + D favorita; Ctrl + H histórico; Ctrl + J downloads.",
+     "Navegação anônima não esconde sua atividade do provedor nem dos sites.",
+     "HTTPS = conexão criptografada (cadeado), mas não garante que o site seja confiável.",
+     "DNS traduz nome de domínio em endereço IP.",
+     "Aspas buscam frase exata; - exclui termo; site: restringe; filetype: busca tipo de arquivo.",
+     "Download é baixar; upload é enviar."
+    ]
+   },
+   "mapa": {
+    "no_central": "Internet",
+    "ramos": [
+     {
+      "label": "Navegadores",
+      "filhos": [
+       "Edge, Chrome, Firefox",
+       "Guias e favoritos",
+       "Navegação anônima",
+       "Atalhos Ctrl + T, D, H, J"
+      ]
+     },
+     {
+      "label": "URL",
+      "filhos": [
+       "Protocolo (https)",
+       "Domínio (.gov.br)",
+       "Caminho",
+       "DNS e IP"
+      ]
+     },
+     {
+      "label": "Busca",
+      "filhos": [
+       "\"frase exata\"",
+       "- exclui",
+       "site:",
+       "filetype:",
+       "OR"
+      ]
+     },
+     {
+      "label": "Transferências",
+      "filhos": [
+       "Download: baixar",
+       "Upload: enviar",
+       "Pasta Downloads"
+      ]
+     },
+     {
+      "label": "Impressão",
+      "filhos": [
+       "Ctrl + P",
+       "Salvar como PDF",
+       "Intervalo e orientação"
+      ]
+     }
+    ]
+   },
+   "flashcards": [
+    {
+     "pergunta": "Qual atalho reabre a última guia fechada no navegador?",
+     "resposta": "Ctrl + Shift + T."
+    },
+    {
+     "pergunta": "O que o cadeado do HTTPS garante?",
+     "resposta": "Que a conexão é criptografada (não que o site seja confiável)."
+    },
+    {
+     "pergunta": "Qual serviço traduz nomes de domínio em endereços IP?",
+     "resposta": "O DNS."
+    },
+    {
+     "pergunta": "Como buscar apenas arquivos PDF no Google?",
+     "resposta": "Usando filetype:pdf."
+    },
+    {
+     "pergunta": "Enviar uma foto para a nuvem é download ou upload?",
+     "resposta": "Upload."
+    },
+    {
+     "pergunta": "Qual atalho abre o histórico no navegador?",
+     "resposta": "Ctrl + H."
+    }
+   ],
+   "questoes": [
+    {
+     "subassunto": "Downloads e uploads",
+     "enunciado": "Um servidor municipal envia, pelo site da prefeitura, a cópia digitalizada de seu diploma, que estava salva em seu computador. Essa operação é denominada",
+     "opcoes": [
+      "download.",
+      "streaming.",
+      "upload.",
+      "backup.",
+      "login."
+     ],
+     "gabarito": 2,
+     "comentario": "Enviar um arquivo do computador do usuário para um servidor na internet é upload. Download é o caminho inverso; streaming é reprodução contínua de mídia; backup é cópia de segurança; login é a identificação para acesso.",
+     "dificuldade": "facil"
+    },
+    {
+     "subassunto": "Navegadores",
+     "enunciado": "No Google Chrome e no Microsoft Edge, em suas configurações padrão, o atalho Ctrl + Shift + T serve para",
+     "opcoes": [
+      "abrir uma nova janela anônima.",
+      "reabrir a última guia fechada.",
+      "abrir o histórico de navegação.",
+      "adicionar a página aos favoritos.",
+      "abrir a lista de downloads."
+     ],
+     "gabarito": 1,
+     "comentario": "Ctrl + Shift + T reabre a última guia fechada. Janela anônima/InPrivate é Ctrl + Shift + N; histórico é Ctrl + H; favoritos é Ctrl + D; downloads é Ctrl + J.",
+     "dificuldade": "facil"
+    },
+    {
+     "subassunto": "Mecanismos de busca",
+     "enunciado": "Um candidato quer encontrar no Google apenas arquivos em PDF que contenham exatamente a expressão guarda civil municipal, nessa ordem. A pesquisa mais adequada é",
+     "opcoes": [
+      "guarda civil municipal pdf",
+      "guarda OR civil OR municipal filetype:pdf",
+      "\"guarda civil municipal\" site:pdf",
+      "\"guarda civil municipal\" filetype:pdf",
+      "-guarda civil municipal filetype:pdf"
+     ],
+     "gabarito": 3,
+     "comentario": "As aspas buscam a frase exata e filetype:pdf restringe a arquivos PDF. Sem aspas não há frase exata (A); OR busca qualquer um dos termos (B); site: serve para domínios, não tipos de arquivo (C); o sinal de menos excluiria o termo guarda (E).",
+     "dificuldade": "media"
+    },
+    {
+     "subassunto": "URL, endereços eletrônicos e links",
+     "enunciado": "Na URL https://www.exemplo.gov.br/servicos/iptu.html, é correto afirmar que",
+     "opcoes": [
+      "https indica que a comunicação entre o navegador e o site é criptografada.",
+      "www.exemplo.gov.br é o protocolo de comunicação.",
+      "/servicos/iptu.html é o domínio de primeiro nível.",
+      ".br indica que o site pertence a uma empresa comercial.",
+      "o cadeado exibido garante que o conteúdo da página é verdadeiro e confiável."
+     ],
+     "gabarito": 0,
+     "comentario": "HTTPS indica conexão criptografada. www.exemplo.gov.br é o domínio, não o protocolo (B); /servicos/iptu.html é o caminho (C); .br indica Brasil, e .gov, governo (D); o cadeado protege a conexão, mas não atesta a honestidade do conteúdo (E).",
+     "dificuldade": "media"
+    },
+    {
+     "subassunto": "Navegadores",
+     "enunciado": "Considere as afirmações sobre navegação na internet.\nI. No modo de navegação anônima, o provedor de internet deixa de ter acesso aos sites visitados pelo usuário.\nII. O modo anônimo não guarda, no próprio computador, o histórico e os cookies da sessão após o fechamento da janela.\nIII. O DNS converte nomes de domínio em endereços IP.\nIV. Passar o mouse sobre um link, sem clicar, permite ver em muitos navegadores o endereço real para onde ele aponta.\nEstá correto o que se afirma em",
+     "opcoes": [
+      "I e II, apenas.",
+      "I, III e IV, apenas.",
+      "II e III, apenas.",
+      "I, II, III e IV.",
+      "II, III e IV, apenas."
+     ],
+     "gabarito": 4,
+     "comentario": "I é falsa: a navegação anônima apenas evita o registro local; o provedor, a rede e os sites continuam vendo o acesso. II, III e IV são verdadeiras. Portanto, E.",
+     "dificuldade": "dificil"
+    }
+   ]
+  },
+  {
+   "curso": "gcm-geral",
+   "disciplina": "Noções de Informática",
+   "assunto": "Armazenamento e compartilhamento em nuvem",
+   "aula": {
+    "titulo": "Nuvem e arquivos PDF: guardar, sincronizar e compartilhar",
+    "secoes": [
+     {
+      "titulo": "O que é armazenamento em nuvem",
+      "texto": "Armazenar em nuvem é guardar arquivos em servidores de uma empresa, acessados pela internet, em vez de apenas no disco do próprio computador. Exemplos: Microsoft OneDrive (integrado ao Windows 10/11 e ao Office), Google Drive, Dropbox e iCloud.\nVantagens: acesso de qualquer lugar e dispositivo, cópia fora do equipamento (protege contra perda, furto ou pane), facilidade de compartilhamento e edição colaborativa.\nDesvantagens: depende de internet para acessar arquivos que não estejam sincronizados, espaço gratuito limitado e dependência da segurança do fornecedor e da senha do usuário."
+     },
+     {
+      "titulo": "Sincronização",
+      "texto": "Os aplicativos de nuvem criam uma pasta no computador (por exemplo, a pasta OneDrive no Explorador de Arquivos). O que é colocado nela é enviado à nuvem e replicado nos outros dispositivos conectados à mesma conta.\nAtenção: na sincronização, se você APAGAR um arquivo em um aparelho, ele também é apagado nos outros. Por isso, a sincronização sozinha não é um backup completo; os serviços costumam oferecer lixeira e histórico de versões por tempo limitado para recuperar arquivos."
+     },
+     {
+      "titulo": "Compartilhamento seguro",
+      "texto": "É possível compartilhar arquivos ou pastas de duas formas principais:\n• Com pessoas específicas, informando o e-mail delas.\n• Por link. O link pode ser restrito (só quem foi convidado) ou aberto a qualquer pessoa que tiver o link.\nNíveis de permissão comuns: visualizar (leitor), comentar e editar (editor). O dono pode alterar ou retirar a permissão a qualquer momento, definir data de expiração em alguns serviços e impedir download.\nBoa prática: conceda o menor acesso necessário e evite links abertos para documentos com dados pessoais ou sigilosos."
+     },
+     {
+      "titulo": "Arquivos em formato PDF",
+      "texto": "PDF (Portable Document Format) é um formato criado pela Adobe e hoje padronizado internacionalmente, que preserva a aparência do documento (fontes, imagens, diagramação) em qualquer computador, sistema ou impressora. Por isso é o formato usado em editais, boletos, contracheques e documentos oficiais.\n• Leitura: navegadores (Edge, Chrome, Firefox) abrem PDFs; também há leitores como o Adobe Acrobat Reader.\n• Criação: no Word, Excel ou PowerPoint 2016, use Salvar Como > tipo PDF ou Arquivo > Exportar. No Windows 10 e 11, qualquer programa que imprime pode gerar PDF pela impressora virtual Microsoft Print to PDF. Os navegadores oferecem Salvar como PDF na janela de impressão.\n• O PDF pode ser protegido por senha e assinado digitalmente. Editar um PDF exige programas específicos; o Word 2016 consegue abrir um PDF e convertê-lo em documento editável, mas o layout pode mudar."
+     }
+    ]
+   },
+   "revisao": {
+    "pontos": [
+     "Nuvem = arquivos em servidores remotos acessados pela internet.",
+     "OneDrive é o serviço de nuvem da Microsoft integrado ao Windows e ao Office.",
+     "Sincronizar replica alterações e exclusões em todos os dispositivos.",
+     "Sincronização não substitui backup: apagar em um lugar apaga em todos.",
+     "Permissões comuns: visualizar, comentar e editar.",
+     "Link aberto: qualquer pessoa com o link acessa; prefira compartilhar com pessoas específicas.",
+     "PDF preserva a formatação em qualquer dispositivo.",
+     "Word 2016 salva em PDF por Salvar Como ou Exportar.",
+     "Microsoft Print to PDF gera PDF a partir de qualquer programa que imprime."
+    ]
+   },
+   "mapa": {
+    "no_central": "Nuvem e PDF",
+    "ramos": [
+     {
+      "label": "Serviços",
+      "filhos": [
+       "OneDrive",
+       "Google Drive",
+       "Dropbox",
+       "iCloud"
+      ]
+     },
+     {
+      "label": "Vantagens e riscos",
+      "filhos": [
+       "Acesso de qualquer lugar",
+       "Cópia fora do equipamento",
+       "Depende de internet",
+       "Depende de senha forte"
+      ]
+     },
+     {
+      "label": "Sincronização",
+      "filhos": [
+       "Pasta local sincronizada",
+       "Replica exclusões",
+       "Lixeira e histórico de versões"
+      ]
+     },
+     {
+      "label": "Compartilhamento",
+      "filhos": [
+       "Pessoas específicas",
+       "Link",
+       "Ver, comentar, editar",
+       "Revogar acesso"
+      ]
+     },
+     {
+      "label": "PDF",
+      "filhos": [
+       "Preserva a formatação",
+       "Salvar Como PDF",
+       "Microsoft Print to PDF",
+       "Senha e assinatura"
+      ]
+     }
+    ]
+   },
+   "flashcards": [
+    {
+     "pergunta": "Qual o serviço de nuvem da Microsoft integrado ao Windows?",
+     "resposta": "OneDrive."
+    },
+    {
+     "pergunta": "Sincronização é o mesmo que backup?",
+     "resposta": "Não; uma exclusão também é replicada."
+    },
+    {
+     "pergunta": "Quais os níveis comuns de permissão ao compartilhar?",
+     "resposta": "Visualizar, comentar e editar."
+    },
+    {
+     "pergunta": "Por que o PDF é usado em documentos oficiais?",
+     "resposta": "Porque preserva a aparência em qualquer dispositivo."
+    },
+    {
+     "pergunta": "Como gerar PDF no Word 2016?",
+     "resposta": "Salvar Como, escolhendo o tipo PDF, ou Arquivo > Exportar."
+    },
+    {
+     "pergunta": "Qual impressora virtual do Windows gera PDF?",
+     "resposta": "Microsoft Print to PDF."
+    }
+   ],
+   "questoes": [
+    {
+     "subassunto": null,
+     "enunciado": "O serviço de armazenamento em nuvem da Microsoft, integrado ao Windows 10 e ao pacote Office, é o",
+     "opcoes": [
+      "Google Drive.",
+      "Dropbox.",
+      "iCloud.",
+      "Teams.",
+      "OneDrive."
+     ],
+     "gabarito": 4,
+     "comentario": "OneDrive é o serviço de nuvem da Microsoft. Google Drive é do Google; iCloud é da Apple; Dropbox é de outra empresa; Teams é uma ferramenta de comunicação e colaboração.",
+     "dificuldade": "facil"
+    },
+    {
+     "subassunto": "Arquivos em formato PDF",
+     "enunciado": "Sobre o formato PDF, assinale a alternativa correta.",
+     "opcoes": [
+      "Só pode ser aberto com programas pagos da Adobe.",
+      "Preserva a formatação do documento independentemente do computador ou do sistema operacional utilizado.",
+      "Não pode ser gerado a partir do MS-Word 2016.",
+      "É um formato exclusivo de imagens, sem suporte a texto.",
+      "Não permite proteção por senha."
+     ],
+     "gabarito": 1,
+     "comentario": "O PDF foi criado para manter a aparência do documento em qualquer ambiente. Pode ser lido gratuitamente em navegadores, gerado pelo Word 2016, contém texto e imagens e aceita senha.",
+     "dificuldade": "facil"
+    },
+    {
+     "subassunto": null,
+     "enunciado": "Um usuário mantém a pasta do OneDrive sincronizada em seu notebook e em seu computador de mesa. Ele apaga, no notebook, um arquivo que estava nessa pasta. Em regra, o que ocorre com o arquivo no computador de mesa?",
+     "opcoes": [
+      "Permanece intacto, pois a sincronização só copia arquivos novos.",
+      "É convertido em atalho.",
+      "Também é removido, pois a exclusão é sincronizada, podendo ser recuperado pela lixeira do serviço por tempo limitado.",
+      "É automaticamente transformado em PDF.",
+      "É movido para a pasta Downloads."
+     ],
+     "gabarito": 2,
+     "comentario": "A sincronização replica também as exclusões. Por isso ela não substitui o backup; a recuperação, em regra, é feita pela lixeira ou histórico de versões do serviço. As demais alternativas descrevem comportamentos que não existem.",
+     "dificuldade": "media"
+    },
+    {
+     "subassunto": null,
+     "enunciado": "Um guarda precisa enviar a um colega um relatório armazenado na nuvem, permitindo que ele leia o arquivo, mas sem alterá-lo. A forma mais adequada é",
+     "opcoes": [
+      "compartilhar com o e-mail do colega com permissão de visualização (leitor).",
+      "compartilhar um link aberto com permissão de edição.",
+      "tornar o colega proprietário do arquivo.",
+      "compartilhar com permissão de editor e pedir que ele não altere nada.",
+      "publicar o arquivo em rede social."
+     ],
+     "gabarito": 0,
+     "comentario": "Compartilhar com a pessoa específica e com permissão apenas de leitura atende ao pedido com o menor acesso necessário. Link aberto com edição, transferência de propriedade, permissão de editor ou publicação pública dão acesso maior do que o necessário.",
+     "dificuldade": "media"
+    },
+    {
+     "subassunto": "Arquivos em formato PDF",
+     "enunciado": "Considere as afirmações.\nI. No Windows 10, a impressora virtual Microsoft Print to PDF permite gerar um arquivo PDF a partir de programas que possuem a opção de imprimir.\nII. Arquivos colocados em uma pasta sincronizada com a nuvem ficam protegidos contra exclusão acidental, pois a sincronização funciona como backup completo.\nIII. Um link de compartilhamento configurado como aberto a qualquer pessoa pode permitir acesso a quem receber o link, mesmo sem ter sido convidado.\nIV. Os navegadores atuais conseguem exibir arquivos PDF sem necessidade de instalar outro programa.\nEstá correto o que se afirma em",
+     "opcoes": [
+      "I e II, apenas.",
+      "II e III, apenas.",
+      "I, II e IV, apenas.",
+      "I, III e IV, apenas.",
+      "II, III e IV, apenas."
+     ],
+     "gabarito": 3,
+     "comentario": "I, III e IV são verdadeiras. II é falsa: a sincronização replica também as exclusões, então não substitui um backup. Portanto, D.",
+     "dificuldade": "dificil"
+    }
+   ]
+  },
+  {
+   "curso": "gcm-geral",
+   "disciplina": "Noções de Informática",
+   "assunto": "Google Workspace e Microsoft Teams",
+   "aula": {
+    "titulo": "Google Workspace e Microsoft Teams: trabalho colaborativo na nuvem",
+    "secoes": [
+     {
+      "titulo": "Google Workspace: comunicação e organização",
+      "texto": "O Google Workspace é o conjunto de aplicativos on-line do Google, acessados pelo navegador com uma conta Google (há também aplicativos para celular).\n• Gmail: e-mail. Organiza mensagens por marcadores (uma mensagem pode ter vários), tem abas como Principal, Social e Promoções, filtros automáticos, estrela e a opção Arquivar, que tira a mensagem da Caixa de Entrada sem excluí-la.\n• Agenda (Google Calendar): cria eventos com data, hora, local e convidados, envia convites por e-mail e lembretes, e pode gerar automaticamente o link de uma reunião do Meet.\n• Meet: videoconferências acessadas por link, com compartilhamento de tela, chat da reunião, legendas e levantar a mão.\n• Chat: mensagens instantâneas individuais, em grupo e em espaços (salas de conversa por assunto ou equipe).\n• Drive: armazenamento em nuvem. O espaço gratuito da conta é compartilhado entre Drive, Gmail e Google Fotos. Permite compartilhar arquivos e pastas com permissões de Leitor, Comentarista e Editor."
+     },
+     {
+      "titulo": "Documentos, Planilhas, Apresentações e Formulários",
+      "texto": "São os editores on-line do Google, equivalentes ao Word, Excel e PowerPoint:\n• Documentos (Docs): textos.\n• Planilhas (Sheets): planilhas com fórmulas e funções parecidas com as do Excel (em português, =SOMA, =MÉDIA, =SE).\n• Apresentações (Slides): slides, transições e animações.\n• Formulários (Forms): criação de questionários, pesquisas e inscrições; as respostas podem ser vistas em gráficos e enviadas para uma planilha.\nCaracterísticas que mais caem:\n• Salvamento automático no Drive: não existe a necessidade de clicar em salvar.\n• Edição simultânea: várias pessoas editam o mesmo arquivo ao mesmo tempo, vendo os cursores umas das outras.\n• Comentários e modo Sugestão (as alterações ficam como sugestões para o dono aceitar ou rejeitar).\n• Histórico de versões: permite ver quem alterou o quê e restaurar versões anteriores.\n• Importação e exportação de formatos do Office (.docx, .xlsx, .pptx) e PDF (Arquivo > Fazer download)."
+     },
+     {
+      "titulo": "Microsoft Teams",
+      "texto": "O Microsoft Teams é a plataforma de comunicação e colaboração da Microsoft, integrada ao Microsoft 365.\n• Chats: conversas individuais ou em grupo, com envio de arquivos, emojis e reações.\n• Chamadas de áudio e vídeo: diretamente de um chat ou pelo recurso Chamadas; reuniões podem ser agendadas (integradas ao calendário do Outlook) ou iniciadas na hora (Reunir agora), com compartilhamento de tela, gravação, legendas e levantar a mão.\n• Equipes e canais: uma equipe reúne um grupo de pessoas (por exemplo, um setor); dentro dela, canais organizam as conversas por assunto. Qualquer usuário autorizado pode criar uma equipe, que pode ser pública (qualquer um da organização entra) ou privada (o dono aprova).\n• Trabalho colaborativo: a guia Arquivos de cada canal guarda documentos, que ficam armazenados no SharePoint; arquivos de chats ficam no OneDrive de quem os enviou. Vários usuários podem editar ao mesmo tempo documentos do Word, Excel e PowerPoint dentro do próprio Teams.\n• Menções com @nome notificam uma pessoa específica."
+     }
+    ]
+   },
+   "revisao": {
+    "pontos": [
+     "Google Workspace roda no navegador, com conta Google.",
+     "Arquivar no Gmail tira da Caixa de Entrada sem excluir.",
+     "No Gmail, uma mensagem pode ter vários marcadores.",
+     "Docs, Planilhas e Apresentações salvam automaticamente no Drive.",
+     "Histórico de versões permite restaurar versões anteriores.",
+     "Formulários coletam respostas e podem enviá-las para uma planilha.",
+     "Permissões do Drive: Leitor, Comentarista e Editor.",
+     "No Teams, equipes são divididas em canais por assunto.",
+     "Arquivos dos canais do Teams ficam no SharePoint.",
+     "@menção no Teams notifica a pessoa citada."
+    ]
+   },
+   "mapa": {
+    "no_central": "Google Workspace e Teams",
+    "ramos": [
+     {
+      "label": "Comunicação Google",
+      "filhos": [
+       "Gmail (marcadores, arquivar)",
+       "Chat e espaços",
+       "Meet (videoconferência)",
+       "Agenda (eventos e convites)"
+      ]
+     },
+     {
+      "label": "Editores Google",
+      "filhos": [
+       "Documentos",
+       "Planilhas",
+       "Apresentações",
+       "Formulários"
+      ]
+     },
+     {
+      "label": "Colaboração",
+      "filhos": [
+       "Salvamento automático",
+       "Edição simultânea",
+       "Comentários e Sugestões",
+       "Histórico de versões"
+      ]
+     },
+     {
+      "label": "Drive",
+      "filhos": [
+       "Armazenamento em nuvem",
+       "Leitor, Comentarista, Editor",
+       "Espaço compartilhado com Gmail e Fotos"
+      ]
+     },
+     {
+      "label": "Microsoft Teams",
+      "filhos": [
+       "Chats",
+       "Chamadas e reuniões",
+       "Equipes e canais",
+       "Arquivos no SharePoint",
+       "@menções"
+      ]
+     }
+    ]
+   },
+   "flashcards": [
+    {
+     "pergunta": "Qual app do Google cria questionários e pesquisas?",
+     "resposta": "Formulários (Google Forms)."
+    },
+    {
+     "pergunta": "O que faz Arquivar no Gmail?",
+     "resposta": "Tira a mensagem da Caixa de Entrada sem excluí-la."
+    },
+    {
+     "pergunta": "Preciso clicar em Salvar no Google Documentos?",
+     "resposta": "Não; o salvamento é automático no Drive."
+    },
+    {
+     "pergunta": "Como o Teams organiza as conversas dentro de uma equipe?",
+     "resposta": "Em canais."
+    },
+    {
+     "pergunta": "Onde ficam os arquivos compartilhados em canais do Teams?",
+     "resposta": "No SharePoint."
+    },
+    {
+     "pergunta": "Que recurso permite restaurar uma versão antiga de um documento Google?",
+     "resposta": "Histórico de versões."
+    }
+   ],
+   "questoes": [
+    {
+     "subassunto": "Documentos, Planilhas, Apresentações, Formulários",
+     "enunciado": "Um coordenador deseja fazer uma pesquisa de satisfação com os moradores do bairro, coletando as respostas pela internet e organizando-as automaticamente em uma planilha. A ferramenta do Google Workspace mais adequada é",
+     "opcoes": [
+      "Google Meet.",
+      "Google Agenda.",
+      "Google Formulários.",
+      "Google Chat.",
+      "Google Apresentações."
+     ],
+     "gabarito": 2,
+     "comentario": "O Google Formulários cria questionários e pode enviar as respostas a uma planilha. Meet é videoconferência; Agenda organiza eventos; Chat é mensagem instantânea; Apresentações cria slides.",
+     "dificuldade": "facil"
+    },
+    {
+     "subassunto": "Teams: chats, chamadas de áudio e vídeo, criação de grupos, trabalho colaborativo",
+     "enunciado": "No Microsoft Teams, as conversas de uma equipe são organizadas por assunto em",
+     "opcoes": [
+      "marcadores.",
+      "canais.",
+      "pastas de rascunhos.",
+      "espaços reservados.",
+      "slides mestres."
+     ],
+     "gabarito": 1,
+     "comentario": "Cada equipe do Teams é dividida em canais, que organizam as conversas e arquivos por tema. Marcadores são do Gmail; rascunhos são do e-mail; espaços reservados e slides mestres são do PowerPoint.",
+     "dificuldade": "facil"
+    },
+    {
+     "subassunto": "Gmail, Agenda, Meet, Chat, Drive",
+     "enunciado": "No Gmail, ao selecionar uma mensagem da Caixa de Entrada e usar a opção Arquivar, a mensagem",
+     "opcoes": [
+      "é excluída definitivamente.",
+      "é enviada para a pasta Spam.",
+      "é encaminhada ao administrador.",
+      "é convertida em rascunho.",
+      "sai da Caixa de Entrada, mas continua disponível na conta e pode ser encontrada pela pesquisa."
+     ],
+     "gabarito": 4,
+     "comentario": "Arquivar apenas retira a mensagem da Caixa de Entrada; ela continua guardada (em Todos os e-mails) e aparece na pesquisa. Não exclui, não marca como spam e não altera o conteúdo.",
+     "dificuldade": "media"
+    },
+    {
+     "subassunto": "Documentos, Planilhas, Apresentações, Formulários",
+     "enunciado": "Três servidores editam, ao mesmo tempo, um mesmo arquivo no Google Documentos. Um deles percebe que um parágrafo importante foi apagado ontem. O recurso que permite visualizar e restaurar o conteúdo anterior é",
+     "opcoes": [
+      "o Histórico de versões.",
+      "a Lixeira do Windows.",
+      "o comando Desfazer do teclado de outro usuário.",
+      "a opção Imprimir.",
+      "o modo de navegação anônima."
+     ],
+     "gabarito": 0,
+     "comentario": "O Histórico de versões registra as alterações de todos os editores e permite restaurar uma versão anterior. A Lixeira do Windows não guarda trechos de documentos on-line; Desfazer atua só na sessão de quem editou; imprimir e navegação anônima não têm relação.",
+     "dificuldade": "media"
+    },
+    {
+     "subassunto": "Teams: chats, chamadas de áudio e vídeo, criação de grupos, trabalho colaborativo",
+     "enunciado": "Considere as afirmações.\nI. No Google Drive, é possível compartilhar um arquivo com permissão de Comentarista, que pode inserir comentários mas não editar o conteúdo.\nII. No Microsoft Teams, uma reunião só pode ser realizada se tiver sido agendada com antecedência no calendário.\nIII. No Microsoft Teams, os arquivos compartilhados em um canal ficam armazenados no SharePoint.\nIV. O Google Documentos exige que o usuário salve manualmente o arquivo para não perder as alterações.\nEstá correto o que se afirma em",
+     "opcoes": [
+      "I e II, apenas.",
+      "II e IV, apenas.",
+      "III e IV, apenas.",
+      "I e III, apenas.",
+      "I, II e III, apenas."
+     ],
+     "gabarito": 3,
+     "comentario": "I e III são verdadeiras. II é falsa: o Teams permite iniciar reuniões na hora (Reunir agora) e fazer chamadas diretas. IV é falsa: os editores do Google salvam automaticamente. Logo, D.",
+     "dificuldade": "dificil"
+    }
+   ]
+  },
+  {
+   "curso": "gcm-geral",
+   "disciplina": "Noções de Informática",
+   "assunto": "Segurança da informação",
+   "aula": {
+    "titulo": "Segurança da informação: senhas, backup, malware e golpes",
+    "secoes": [
+     {
+      "titulo": "Princípios, senhas e autenticação",
+      "texto": "A segurança da informação busca proteger principalmente:\n• Confidencialidade: só quem tem autorização acessa a informação.\n• Integridade: a informação não é alterada indevidamente.\n• Disponibilidade: a informação está acessível quando necessário.\n• Autenticidade: garante a identidade de quem enviou ou criou a informação.\nSenhas fortes são longas e misturam letras maiúsculas, minúsculas, números e símbolos; não usam dados pessoais (nome, data de nascimento, placa) nem sequências óbvias (123456). Use uma senha diferente para cada serviço; um gerenciador de senhas ajuda a guardá-las.\nFatores de autenticação: algo que você sabe (senha, PIN), algo que você tem (celular, token, cartão) e algo que você é (biometria: digital, rosto). A autenticação de dois fatores (2FA) combina dois tipos diferentes, por exemplo senha mais código enviado ao celular, e dificulta muito a invasão mesmo se a senha vazar."
+     },
+     {
+      "titulo": "Cópias de segurança (backup)",
+      "texto": "Backup é uma cópia dos dados guardada em outro local para recuperação em caso de pane, furto, exclusão acidental ou ransomware.\n• Completo (total): copia todos os dados selecionados. Mais lento para fazer, mais simples para restaurar.\n• Incremental: copia apenas o que mudou desde o último backup de qualquer tipo. É o mais rápido e ocupa menos espaço, mas a restauração exige o último completo e todos os incrementais seguintes.\n• Diferencial: copia tudo o que mudou desde o último backup completo. Cresce a cada dia, mas para restaurar bastam o último completo e o último diferencial.\nBoas práticas: manter cópias em mídias diferentes e ao menos uma fora do local (por exemplo, na nuvem), fazer backups periódicos e testar se a restauração funciona."
+     },
+     {
+      "titulo": "Malware",
+      "texto": "Malware é qualquer programa malicioso. Principais tipos:\n• Vírus: se anexa a arquivos ou programas e precisa ser executado para agir e se espalhar.\n• Worm (verme): se propaga sozinho pela rede, explorando falhas, sem precisar de um arquivo hospedeiro e consumindo recursos.\n• Cavalo de Troia (trojan): parece um programa útil (jogo, cartão virtual), mas executa ações maliciosas escondidas.\n• Ransomware: sequestra os dados criptografando-os e exige resgate, geralmente em criptomoeda.\n• Spyware: espiona o usuário. Keylogger registra o que é digitado; screenlogger captura imagens da tela.\n• Adware: exibe propaganda indesejada.\n• Backdoor: abre uma porta dos fundos para acesso remoto do invasor.\n• Bot: permite controle remoto; muitos computadores infectados formam uma botnet, usada, por exemplo, em ataques de negação de serviço.\n• Rootkit: conjunto de técnicas para esconder a presença do invasor.\nProteção: antivírus atualizado, firewall ativo (filtra conexões de rede), atualizações do sistema e cuidado com anexos e downloads."
+     },
+     {
+      "titulo": "Phishing, engenharia social e fraudes",
+      "texto": "• Engenharia social: manipulação psicológica para enganar a vítima e obter informações ou ações, explorando confiança, medo, urgência ou curiosidade.\n• Phishing: mensagem falsa (e-mail, SMS, rede social) que imita banco, órgão público ou loja para roubar senhas e dados. Variações: smishing (por SMS) e vishing (por ligação de voz).\n• Pharming: redireciona o usuário a um site falso mesmo que ele digite o endereço correto, por alteração do DNS.\n• Fraudes comuns: boleto adulterado, falso atendente de banco, golpe do falso parente pedindo dinheiro por aplicativo de mensagem, falsa central de cartão, lojas falsas com preços muito baixos, clonagem de conta de mensagens por código de verificação.\nSinais de alerta: urgência, ameaças, erros de português, remetente estranho, links encurtados, pedido de senha ou código. Nenhum banco ou órgão sério pede senha por mensagem."
+     },
+     {
+      "titulo": "Privacidade e uso ético e seguro",
+      "texto": "• Compartilhe o mínimo de dados pessoais em redes sociais; cuidado com localização em tempo real e fotos de documentos.\n• Revise permissões de aplicativos (câmera, microfone, localização) e as configurações de privacidade.\n• Em Wi-Fi público, evite acessar bancos ou dados sensíveis; prefira redes confiáveis.\n• Bloqueie a tela ao se afastar do computador (Windows + L) e não compartilhe senhas e crachás.\n• A Lei Geral de Proteção de Dados (LGPD, Lei nº 13.709/2018) regula o tratamento de dados pessoais no Brasil, inclusive pelo poder público.\n• Uso ético dos recursos de TI no serviço público: utilizar equipamentos e sistemas apenas para fins de trabalho autorizados, respeitar direitos autorais (não usar software pirata), acessar somente os dados necessários à função, não divulgar informações sigilosas e comunicar incidentes de segurança ao setor responsável."
+     }
+    ]
+   },
+   "revisao": {
+    "pontos": [
+     "Pilares: confidencialidade, integridade, disponibilidade (e autenticidade).",
+     "2FA combina dois fatores diferentes: sabe + tem, ou tem + é.",
+     "Senha forte: longa, variada, sem dados pessoais e única por serviço.",
+     "Incremental copia o que mudou desde o último backup de qualquer tipo; diferencial, desde o último completo.",
+     "Vírus precisa de hospedeiro e execução; worm se espalha sozinho pela rede.",
+     "Cavalo de Troia se disfarça de programa útil.",
+     "Ransomware criptografa os dados e pede resgate.",
+     "Keylogger captura o que é digitado; screenlogger captura a tela.",
+     "Phishing imita instituições para roubar dados; smishing é por SMS.",
+     "Pharming redireciona para site falso via DNS, mesmo digitando o endereço certo."
+    ]
+   },
+   "mapa": {
+    "no_central": "Segurança da informação",
+    "ramos": [
+     {
+      "label": "Princípios",
+      "filhos": [
+       "Confidencialidade",
+       "Integridade",
+       "Disponibilidade",
+       "Autenticidade"
+      ]
+     },
+     {
+      "label": "Autenticação",
+      "filhos": [
+       "Senha forte e única",
+       "Algo que sabe, tem, é",
+       "2FA",
+       "Gerenciador de senhas"
+      ]
+     },
+     {
+      "label": "Backup",
+      "filhos": [
+       "Completo",
+       "Incremental",
+       "Diferencial",
+       "Cópia fora do local e teste de restauração"
+      ]
+     },
+     {
+      "label": "Malware",
+      "filhos": [
+       "Vírus e worm",
+       "Cavalo de Troia",
+       "Ransomware",
+       "Spyware (keylogger)",
+       "Bot, backdoor, rootkit"
+      ]
+     },
+     {
+      "label": "Golpes",
+      "filhos": [
+       "Engenharia social",
+       "Phishing, smishing, vishing",
+       "Pharming",
+       "Falso atendente, boleto falso"
+      ]
+     },
+     {
+      "label": "Privacidade e ética",
+      "filhos": [
+       "Mínimo de dados expostos",
+       "LGPD",
+       "Bloquear a tela",
+       "Uso só para o trabalho"
+      ]
+     }
+    ]
+   },
+   "flashcards": [
+    {
+     "pergunta": "Qual malware se espalha sozinho pela rede, sem hospedeiro?",
+     "resposta": "Worm."
+    },
+    {
+     "pergunta": "Qual malware criptografa arquivos e pede resgate?",
+     "resposta": "Ransomware."
+    },
+    {
+     "pergunta": "Senha + código no celular é exemplo de quê?",
+     "resposta": "Autenticação de dois fatores (2FA)."
+    },
+    {
+     "pergunta": "Backup que copia tudo o que mudou desde o último completo?",
+     "resposta": "Diferencial."
+    },
+    {
+     "pergunta": "Golpe de mensagem falsa por SMS se chama?",
+     "resposta": "Smishing."
+    },
+    {
+     "pergunta": "Qual pilar garante que a informação não foi alterada indevidamente?",
+     "resposta": "Integridade."
+    }
+   ],
+   "questoes": [
+    {
+     "subassunto": "Malware",
+     "enunciado": "O tipo de código malicioso que torna inacessíveis os dados armazenados em um equipamento, geralmente por meio de criptografia, e exige pagamento de resgate para restabelecer o acesso, é denominado",
+     "opcoes": [
+      "adware.",
+      "worm.",
+      "keylogger.",
+      "ransomware.",
+      "rootkit."
+     ],
+     "gabarito": 3,
+     "comentario": "Ransomware sequestra os dados por criptografia e cobra resgate. Adware exibe propaganda; worm se propaga pela rede; keylogger registra teclas digitadas; rootkit esconde a presença do invasor.",
+     "dificuldade": "facil"
+    },
+    {
+     "subassunto": "Phishing e engenharia social",
+     "enunciado": "Um servidor recebe um e-mail com o logotipo da prefeitura informando que sua conta será bloqueada em 24 horas, a menos que ele clique em um link e informe sua senha. Essa situação caracteriza típica tentativa de",
+     "opcoes": [
+      "backup.",
+      "phishing.",
+      "firewall.",
+      "autenticação de dois fatores.",
+      "criptografia."
+     ],
+     "gabarito": 1,
+     "comentario": "Mensagem que imita uma instituição, cria urgência e pede senha por link é phishing. Backup é cópia de segurança; firewall filtra conexões; 2FA e criptografia são mecanismos de proteção, não golpes.",
+     "dificuldade": "facil"
+    },
+    {
+     "subassunto": "Senhas e autenticação",
+     "enunciado": "Assinale a alternativa que apresenta um exemplo de autenticação com dois fatores de tipos diferentes.",
+     "opcoes": [
+      "Senha e resposta a uma pergunta secreta.",
+      "Duas senhas diferentes digitadas em sequência.",
+      "Senha e código temporário gerado por aplicativo no celular do usuário.",
+      "Número do CPF e data de nascimento.",
+      "PIN e senha alfanumérica."
+     ],
+     "gabarito": 2,
+     "comentario": "A senha é algo que o usuário sabe e o código gerado no celular prova algo que ele tem: são dois fatores diferentes. Nas demais alternativas, todos os elementos são do mesmo tipo (algo que se sabe).",
+     "dificuldade": "media"
+    },
+    {
+     "subassunto": "Cópias de segurança",
+     "enunciado": "Uma empresa faz backup completo aos domingos e backups diários de segunda a sábado, copiando somente os arquivos alterados desde o último backup, seja ele completo ou não. Esse tipo de backup diário é o",
+     "opcoes": [
+      "incremental.",
+      "diferencial.",
+      "completo.",
+      "espelhado.",
+      "sincronizado."
+     ],
+     "gabarito": 0,
+     "comentario": "Copiar só o que mudou desde o último backup de qualquer tipo é o incremental. O diferencial copia o que mudou desde o último backup COMPLETO; o completo copia tudo sempre.",
+     "dificuldade": "media"
+    },
+    {
+     "subassunto": "Malware",
+     "enunciado": "Considere as afirmações sobre segurança da informação.\nI. O worm é capaz de se propagar automaticamente pela rede, sem precisar ser anexado a outro arquivo.\nII. O cavalo de Troia se apresenta como um programa legítimo ou útil, mas realiza funções maliciosas ocultas.\nIII. No pharming, o usuário só é enganado se digitar incorretamente o endereço do site.\nIV. O firewall substitui completamente o antivírus, tornando-o desnecessário.\nEstá correto o que se afirma em",
+     "opcoes": [
+      "I, II e III, apenas.",
+      "II e IV, apenas.",
+      "I e III, apenas.",
+      "III e IV, apenas.",
+      "I e II, apenas."
+     ],
+     "gabarito": 4,
+     "comentario": "I e II são verdadeiras. III é falsa: no pharming a vítima é levada ao site falso mesmo digitando o endereço correto, por manipulação do DNS. IV é falsa: firewall filtra conexões de rede e não substitui o antivírus; os dois se complementam.",
+     "dificuldade": "dificil"
+    }
+   ]
+  }
+ ]
+}

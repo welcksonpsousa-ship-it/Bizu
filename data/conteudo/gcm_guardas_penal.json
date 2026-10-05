@@ -1,0 +1,2450 @@
+{
+ "itens": [
+  {
+   "curso": "gcm-geral",
+   "disciplina": "Legislação Específica das Guardas e Segurança Pública",
+   "assunto": "Estatuto Geral das Guardas Municipais (Lei nº 13.022/2014)",
+   "aula": {
+    "titulo": "Estatuto Geral das Guardas Municipais",
+    "secoes": [
+     {
+      "titulo": "O que é o Estatuto e qual a natureza da guarda",
+      "texto": "A Lei nº 13.022/2014 é a norma geral, válida para todo o país, que organiza as guardas municipais. Ela não cria nenhuma guarda: quem cria é o próprio Município, por meio de lei municipal.\nSegundo o Estatuto, as guardas são instituições de caráter CIVIL, uniformizadas e armadas conforme a lei, com a função de proteção municipal preventiva, respeitadas as competências da União, dos Estados e do Distrito Federal.\nA guarda fica subordinada ao chefe do Poder Executivo municipal (o prefeito). A lei também garante o uso de outras denominações já consagradas, como guarda civil, guarda civil municipal, guarda metropolitana e guarda civil metropolitana."
+     },
+     {
+      "titulo": "Princípios mínimos de atuação",
+      "texto": "O Estatuto lista princípios que toda guarda deve seguir:\n• proteção dos direitos humanos fundamentais, do exercício da cidadania e das liberdades públicas;\n• preservação da vida, redução do sofrimento e diminuição das perdas;\n• patrulhamento preventivo;\n• compromisso com a evolução social da comunidade;\n• uso progressivo da força.\nDica: se a questão falar em princípio de 'uso máximo da força' ou 'patrulhamento repressivo', está errada."
+     },
+     {
+      "titulo": "Competências",
+      "texto": "A competência geral é proteger bens, serviços, logradouros públicos municipais e instalações do Município.\nAs competências específicas incluem, entre outras: zelar pelos bens e serviços municipais; prevenir e inibir infrações penais ou administrativas; colaborar com os demais órgãos de segurança pública; colaborar na pacificação de conflitos; exercer competências de trânsito (conforme o Código de Trânsito ou convênio); proteger o patrimônio ecológico, histórico e cultural; desenvolver ações de prevenção primária à violência; atuar preventivamente na segurança escolar; auxiliar na segurança de grandes eventos e na proteção de autoridades.\nDiante de flagrante delito, a guarda deve encaminhar o autor ao delegado de polícia, preservando o local do crime quando possível e sempre que necessário. Em atuação conjunta com órgão estadual ou federal, deve prestar todo apoio à continuidade do atendimento."
+     },
+     {
+      "titulo": "Criação, efetivo e requisitos de ingresso",
+      "texto": "O efetivo tem limite proporcional à população do Município: 0,4% da população nos Municípios de até 50 mil habitantes; 0,3% nos que têm mais de 50 mil e menos de 500 mil; e 0,2% nos que têm mais de 500 mil, sem ficar abaixo do limite da faixa anterior. Municípios vizinhos podem compartilhar os serviços da guarda por meio de consórcio público.\nA guarda é formada por servidores de carreira única, com plano de cargos e salários. Requisitos básicos de investidura:\n• nacionalidade brasileira;\n• gozo dos direitos políticos;\n• quitação com as obrigações militares e eleitorais;\n• ensino médio completo;\n• idade mínima de 18 anos;\n• aptidão física, mental e psicológica;\n• idoneidade moral comprovada por investigação social e certidões judiciais."
+     },
+     {
+      "titulo": "Controle, conduta e prerrogativas",
+      "texto": "O controle é interno, por corregedoria, e externo, por ouvidoria independente em relação à direção da guarda. A corregedoria é obrigatória nas guardas com efetivo superior a 50 servidores e em todas as que utilizam arma de fogo; a ouvidoria é obrigatória qualquer que seja o número de servidores da guarda. Corregedores e ouvidores têm mandato, cuja perda é decidida pela maioria absoluta da Câmara Municipal.\nA guarda terá código de conduta próprio, conforme lei municipal, e NÃO pode ficar sujeita a regulamento disciplinar de natureza militar. Também não pode usar denominações de postos, graduações, títulos, uniformes, distintivos e condecorações idênticas às das forças militares.\nOs cargos em comissão devem ser ocupados por membros efetivos da carreira; porém, nos primeiros 4 anos de funcionamento, a guarda pode ser dirigida por pessoa de fora dos quadros, de preferência com experiência na área.\nOutras regras: porte de arma conforme a legislação própria, podendo ser suspenso por restrição médica, decisão judicial ou decisão justificada do dirigente; linha telefônica 153 e faixa exclusiva de rádio; uniforme e equipamentos padronizados, preferencialmente na cor azul-marinho; e, se preso antes da condenação definitiva, o guarda tem direito a ficar em cela isolada dos demais presos."
+     }
+    ]
+   },
+   "revisao": {
+    "pontos": [
+     "Guarda municipal é instituição de caráter CIVIL, uniformizada e armada conforme a lei.",
+     "É criada por lei municipal e subordinada ao prefeito.",
+     "Princípios incluem patrulhamento PREVENTIVO e uso PROGRESSIVO da força.",
+     "Flagrante: guarda encaminha o autor ao delegado de polícia e preserva o local.",
+     "Requisitos: brasileiro, 18 anos, ensino médio, aptidão física/mental/psicológica, idoneidade moral.",
+     "Corregedoria obrigatória: efetivo superior a 50 servidores OU uso de arma de fogo; ouvidoria: obrigatória qualquer que seja o efetivo.",
+     "Proibido regulamento disciplinar de natureza militar e nomes de postos militares.",
+     "Dirigente de fora da carreira só nos primeiros 4 anos de funcionamento.",
+     "Número telefônico da guarda: 153; uniforme preferencialmente azul-marinho.",
+     "Preso antes da condenação definitiva: cela isolada dos demais presos."
+    ]
+   },
+   "mapa": {
+    "no_central": "Lei nº 13.022/2014",
+    "ramos": [
+     {
+      "label": "Natureza",
+      "filhos": [
+       "Instituição civil",
+       "Uniformizada e armada conforme a lei",
+       "Proteção municipal preventiva",
+       "Subordinada ao prefeito"
+      ]
+     },
+     {
+      "label": "Princípios",
+      "filhos": [
+       "Direitos humanos e cidadania",
+       "Preservação da vida",
+       "Patrulhamento preventivo",
+       "Uso progressivo da força"
+      ]
+     },
+     {
+      "label": "Competências",
+      "filhos": [
+       "Bens, serviços e logradouros municipais",
+       "Prevenir e inibir infrações",
+       "Trânsito conforme CTB/convênio",
+       "Flagrante: apresentar ao delegado"
+      ]
+     },
+     {
+      "label": "Ingresso",
+      "filhos": [
+       "Brasileiro, 18 anos",
+       "Ensino médio",
+       "Aptidão física, mental e psicológica",
+       "Idoneidade moral"
+      ]
+     },
+     {
+      "label": "Controle e regras",
+      "filhos": [
+       "Corregedoria e ouvidoria",
+       "Sem regulamento militar",
+       "Número 153",
+       "Azul-marinho"
+      ]
+     }
+    ]
+   },
+   "flashcards": [
+    {
+     "pergunta": "Qual a natureza jurídica da guarda municipal segundo o Estatuto?",
+     "resposta": "Instituição de caráter civil, uniformizada e armada conforme a lei."
+    },
+    {
+     "pergunta": "A quem a guarda municipal é subordinada?",
+     "resposta": "Ao chefe do Poder Executivo municipal (prefeito)."
+    },
+    {
+     "pergunta": "Qual a escolaridade mínima exigida para ingresso?",
+     "resposta": "Ensino médio completo."
+    },
+    {
+     "pergunta": "Quando corregedoria e ouvidoria são obrigatórias?",
+     "resposta": "A corregedoria (controle interno), nas guardas com efetivo superior a 50 servidores e em todas que usam arma de fogo; a ouvidoria (controle externo), em todas, qualquer que seja o número de servidores."
+    },
+    {
+     "pergunta": "Por quanto tempo a guarda pode ser dirigida por alguém de fora da carreira?",
+     "resposta": "Nos primeiros 4 anos de funcionamento."
+    },
+    {
+     "pergunta": "O que a guarda faz diante de um flagrante delito?",
+     "resposta": "Encaminha o autor ao delegado de polícia, preservando o local do crime quando possível."
+    }
+   ],
+   "questoes": [
+    {
+     "subassunto": null,
+     "enunciado": "De acordo com a Lei nº 13.022/2014, as guardas municipais são instituições de caráter",
+     "opcoes": [
+      "civil, uniformizadas e armadas conforme previsto em lei, com função de proteção municipal preventiva.",
+      "militar, subordinadas ao comandante-geral da Polícia Militar do Estado.",
+      "civil, desarmadas, com função exclusivamente de fiscalização de posturas municipais.",
+      "militar, auxiliares e reservas do Exército.",
+      "civil, subordinadas ao Poder Judiciário da comarca."
+     ],
+     "gabarito": 0,
+     "comentario": "O Estatuto define as guardas como instituições civis, uniformizadas e armadas conforme a lei, com função de proteção municipal preventiva. Não são militares (B e D), não são necessariamente desarmadas nem restritas a posturas (C) e são subordinadas ao prefeito, não ao Judiciário (E).",
+     "dificuldade": "facil"
+    },
+    {
+     "subassunto": null,
+     "enunciado": "Entre os princípios mínimos de atuação das guardas municipais previstos no Estatuto Geral, está o(a)",
+     "opcoes": [
+      "patrulhamento repressivo.",
+      "uso imediato da arma de fogo.",
+      "hierarquia e disciplina militares.",
+      "uso progressivo da força.",
+      "sigilo absoluto das ações perante a comunidade."
+     ],
+     "gabarito": 3,
+     "comentario": "O uso progressivo da força é princípio expresso, ao lado do patrulhamento preventivo, da preservação da vida e da proteção dos direitos humanos. O patrulhamento é preventivo (A); a arma de fogo não é de uso imediato (B); a lei proíbe regime disciplinar militar (C); e o compromisso é com a comunidade, não com sigilo absoluto (E).",
+     "dificuldade": "facil"
+    },
+    {
+     "subassunto": null,
+     "enunciado": "Um candidato ao cargo de guarda municipal possui 17 anos, ensino médio completo, é brasileiro e está em dia com as obrigações eleitorais. À luz da Lei nº 13.022/2014, é correto afirmar que ele",
+     "opcoes": [
+      "pode tomar posse, pois a lei não fixa idade mínima.",
+      "não preenche o requisito de idade mínima de 18 anos.",
+      "pode tomar posse se tiver autorização dos pais.",
+      "não preenche o requisito de ensino superior completo.",
+      "só pode ingressar se for reservista das Forças Armadas com mais de 2 anos de serviço."
+     ],
+     "gabarito": 1,
+     "comentario": "A lei exige idade mínima de 18 anos, além de nacionalidade brasileira, direitos políticos, quitação militar e eleitoral, ensino médio, aptidões e idoneidade moral. Não há autorização dos pais que supra a idade (C), a escolaridade exigida é o nível médio (D) e não se exige tempo de serviço militar (E).",
+     "dificuldade": "media"
+    },
+    {
+     "subassunto": null,
+     "enunciado": "Sobre o controle das guardas municipais, assinale a alternativa correta.",
+     "opcoes": [
+      "O controle externo é exercido por corregedoria subordinada ao comandante da guarda.",
+      "O controle interno é feito exclusivamente pelo Ministério Público.",
+      "A ouvidoria só é obrigatória em Municípios com mais de 500 mil habitantes.",
+      "As guardas podem adotar regulamento disciplinar de natureza militar, se a lei municipal permitir.",
+      "Guardas que utilizam arma de fogo devem ter corregedoria própria e ouvidoria independente, qualquer que seja o efetivo."
+     ],
+     "gabarito": 4,
+     "comentario": "A corregedoria (controle interno) é obrigatória nas guardas com efetivo superior a 50 servidores e em todas que usam arma de fogo; a ouvidoria (controle externo), independente da direção da guarda, é exigida qualquer que seja o número de servidores (art. 13, I e II, da Lei nº 13.022/2014). Logo, guarda armada deve ter ambas, qualquer que seja o efetivo (E). A corregedoria é controle interno e não é subordinada ao comandante como controle externo (A); o controle interno não é feito pelo Ministério Público (B); a ouvidoria não depende de população de 500 mil habitantes (C); e o regulamento disciplinar militar é vedado (D).",
+     "dificuldade": "media"
+    },
+    {
+     "subassunto": null,
+     "enunciado": "Determinado Município criou sua guarda municipal há 6 anos. O prefeito pretende nomear para o cargo de comandante um delegado aposentado, que nunca integrou a carreira da guarda. Considerando o Estatuto Geral das Guardas Municipais, essa nomeação",
+     "opcoes": [
+      "é válida, pois o cargo de comando é de livre escolha do prefeito, sem restrições.",
+      "é válida, desde que aprovada pela Câmara Municipal.",
+      "não é válida, pois somente nos primeiros 4 anos de funcionamento a guarda pode ser dirigida por profissional estranho aos seus quadros.",
+      "não é válida, pois o comando cabe obrigatoriamente a oficial da Polícia Militar.",
+      "é válida, porque delegados de polícia podem comandar guardas a qualquer tempo."
+     ],
+     "gabarito": 2,
+     "comentario": "Os cargos em comissão da guarda devem ser ocupados por integrantes efetivos da carreira; a exceção é o período dos primeiros 4 anos de funcionamento, quando pode haver dirigente de fora. Passados 6 anos, a nomeação de estranho à carreira contraria a lei. As demais alternativas criam exceções inexistentes ou vinculam a guarda à PM.",
+     "dificuldade": "dificil"
+    }
+   ]
+  },
+  {
+   "curso": "gcm-geral",
+   "disciplina": "Legislação Específica das Guardas e Segurança Pública",
+   "assunto": "Sistema Único de Segurança Pública – SUSP (Lei nº 13.675/2018)",
+   "aula": {
+    "titulo": "SUSP e Política Nacional de Segurança Pública",
+    "secoes": [
+     {
+      "titulo": "Para que serve a Lei nº 13.675/2018",
+      "texto": "A lei faz três coisas principais: disciplina a organização e o funcionamento dos órgãos de segurança pública (regulamentando o § 7º do art. 144 da Constituição), cria a Política Nacional de Segurança Pública e Defesa Social (PNSPDS) e institui o Sistema Único de Segurança Pública (SUSP).\nA ideia central é INTEGRAÇÃO: fazer com que União, Estados, Distrito Federal e Municípios atuem de forma coordenada, trocando informações e planejando juntos, cada um respeitando suas próprias competências."
+     },
+     {
+      "titulo": "Segurança pública como dever e responsabilidade de todos",
+      "texto": "A lei repete a ideia constitucional: segurança pública é dever do Estado e responsabilidade de todos, abrangendo União, Estados, DF e Municípios, no âmbito das competências de cada um.\nSeus objetivos incluem preservar a ordem pública e a incolumidade das pessoas e do patrimônio, por meio de atuação conjunta, coordenada, sistêmica e integrada dos órgãos, em articulação com a sociedade."
+     },
+     {
+      "titulo": "Princípios e diretrizes que mais caem",
+      "texto": "Entre os princípios da PNSPDS estão:\n• respeito ao ordenamento jurídico e aos direitos e garantias individuais e coletivos;\n• proteção, valorização e reconhecimento dos profissionais de segurança pública;\n• proteção dos direitos humanos e respeito à dignidade da pessoa humana;\n• resolução pacífica de conflitos;\n• uso comedido e proporcional da força;\n• eficiência na prevenção e na repressão das infrações penais;\n• participação e controle social;\n• transparência, responsabilização e prestação de contas.\nAs diretrizes reforçam o planejamento com base em dados e diagnósticos, a atuação integrada, o uso de sistemas de informação compartilhados, a formação e capacitação continuada dos profissionais e o atendimento prioritário a grupos vulneráveis."
+     },
+     {
+      "titulo": "Quem integra o SUSP",
+      "texto": "O SUSP tem integrantes estratégicos e operacionais.\n• Estratégicos: União, Estados, DF e Municípios, por meio de seus Poderes Executivos, e os Conselhos de Segurança Pública e Defesa Social dos entes federados.\n• Operacionais: entre outros, Polícia Federal, Polícia Rodoviária Federal, polícias civis, polícias militares, corpos de bombeiros militares, GUARDAS MUNICIPAIS, órgãos do sistema penitenciário, institutos de criminalística, medicina legal e identificação, secretarias de segurança, defesa civil, agentes de trânsito e guarda portuária.\nPonto de prova: a lei coloca expressamente as guardas municipais como integrantes operacionais do SUSP. O órgão central do sistema é o ministério responsável pela segurança pública no governo federal."
+     },
+     {
+      "titulo": "Instrumentos de integração",
+      "texto": "A lei prevê ferramentas para o sistema funcionar:\n• Plano Nacional de Segurança Pública e Defesa Social, elaborado pela União, com duração de 10 anos, e planos correspondentes de Estados, DF e Municípios;\n• Conselhos de Segurança Pública e Defesa Social, órgãos colegiados com participação da sociedade;\n• Sinesp, sistema nacional de informações que reúne dados de segurança pública, prisionais, de armas, de drogas e outros;\n• mecanismos de avaliação e metas de desempenho;\n• operações combinadas, ações conjuntas e compartilhamento de estrutura entre os órgãos;\n• programa de qualidade de vida e valorização dos profissionais de segurança pública."
+     }
+    ]
+   },
+   "revisao": {
+    "pontos": [
+     "Lei nº 13.675/2018 institui o SUSP e cria a PNSPDS.",
+     "Regulamenta o § 7º do art. 144 da Constituição (organização dos órgãos de segurança).",
+     "Segurança pública: dever do Estado e responsabilidade de todos.",
+     "Palavra-chave do SUSP: integração entre União, Estados, DF e Municípios.",
+     "Guardas municipais são integrantes OPERACIONAIS do SUSP.",
+     "Integrantes estratégicos: os entes federados (Executivos) e os Conselhos de Segurança.",
+     "Princípio: uso comedido e proporcional da força.",
+     "Plano Nacional de Segurança Pública e Defesa Social: duração de 10 anos.",
+     "Sinesp: sistema nacional de informações de segurança pública."
+    ]
+   },
+   "mapa": {
+    "no_central": "SUSP – Lei nº 13.675/2018",
+    "ramos": [
+     {
+      "label": "Objeto",
+      "filhos": [
+       "Institui o SUSP",
+       "Cria a PNSPDS",
+       "Organiza os órgãos (art. 144, § 7º, CF)"
+      ]
+     },
+     {
+      "label": "Princípios",
+      "filhos": [
+       "Direitos humanos",
+       "Uso comedido e proporcional da força",
+       "Resolução pacífica de conflitos",
+       "Valorização dos profissionais",
+       "Transparência e controle social"
+      ]
+     },
+     {
+      "label": "Integrantes estratégicos",
+      "filhos": [
+       "União, Estados, DF e Municípios",
+       "Conselhos de Segurança Pública"
+      ]
+     },
+     {
+      "label": "Integrantes operacionais",
+      "filhos": [
+       "Polícias federais, civis e militares",
+       "Bombeiros militares",
+       "Guardas municipais",
+       "Sistema penitenciário",
+       "Agentes de trânsito"
+      ]
+     },
+     {
+      "label": "Instrumentos",
+      "filhos": [
+       "Plano Nacional (10 anos)",
+       "Sinesp",
+       "Metas e avaliação",
+       "Operações integradas"
+      ]
+     }
+    ]
+   },
+   "flashcards": [
+    {
+     "pergunta": "O que a Lei nº 13.675/2018 institui?",
+     "resposta": "O SUSP e a Política Nacional de Segurança Pública e Defesa Social (PNSPDS)."
+    },
+    {
+     "pergunta": "As guardas municipais integram o SUSP?",
+     "resposta": "Sim, como integrantes operacionais."
+    },
+    {
+     "pergunta": "Quem são os integrantes estratégicos do SUSP?",
+     "resposta": "União, Estados, DF e Municípios (Executivos) e os Conselhos de Segurança Pública e Defesa Social."
+    },
+    {
+     "pergunta": "Qual a duração do Plano Nacional de Segurança Pública e Defesa Social?",
+     "resposta": "10 anos."
+    },
+    {
+     "pergunta": "Que dispositivo constitucional a lei regulamenta?",
+     "resposta": "O § 7º do art. 144 da Constituição."
+    },
+    {
+     "pergunta": "Qual princípio da PNSPDS trata da força?",
+     "resposta": "Uso comedido e proporcional da força."
+    }
+   ],
+   "questoes": [
+    {
+     "subassunto": null,
+     "enunciado": "A Lei nº 13.675/2018 tem como uma de suas finalidades",
+     "opcoes": [
+      "extinguir as polícias civis e unificá-las às polícias militares.",
+      "criar a Polícia Municipal em substituição às guardas.",
+      "regulamentar exclusivamente o porte de arma de fogo.",
+      "transferir às Forças Armadas o policiamento ostensivo.",
+      "instituir o Sistema Único de Segurança Pública e criar a Política Nacional de Segurança Pública e Defesa Social."
+     ],
+     "gabarito": 4,
+     "comentario": "A lei institui o SUSP e cria a PNSPDS, buscando integrar os órgãos já existentes. Ela não extingue nem unifica polícias (A), não cria polícia municipal (B), não transfere policiamento às Forças Armadas (D) e não trata exclusivamente de porte de arma (C).",
+     "dificuldade": "facil"
+    },
+    {
+     "subassunto": null,
+     "enunciado": "Segundo a Lei do SUSP, as guardas municipais são",
+     "opcoes": [
+      "órgãos consultivos, sem atuação operacional.",
+      "integrantes operacionais do Sistema Único de Segurança Pública.",
+      "excluídas do sistema, por não estarem no caput do art. 144 da Constituição.",
+      "integrantes estratégicos, ao lado dos Conselhos.",
+      "subordinadas diretamente à Polícia Federal."
+     ],
+     "gabarito": 1,
+     "comentario": "A lei relaciona expressamente as guardas municipais entre os integrantes operacionais do SUSP. Não são meros órgãos consultivos (A), não foram excluídas (C), os estratégicos são os entes federados e os Conselhos (D) e não há subordinação à Polícia Federal (E).",
+     "dificuldade": "facil"
+    },
+    {
+     "subassunto": null,
+     "enunciado": "Entre os princípios da Política Nacional de Segurança Pública e Defesa Social, encontra-se o(a)",
+     "opcoes": [
+      "uso ilimitado da força em situações de risco.",
+      "sigilo de todos os dados de segurança pública.",
+      "centralização de todas as decisões na União, sem participação dos Municípios.",
+      "uso comedido e proporcional da força.",
+      "dispensa de controle social sobre as políticas de segurança."
+     ],
+     "gabarito": 3,
+     "comentario": "O uso comedido e proporcional da força é princípio expresso da PNSPDS. A lei valoriza transparência e controle social (B e E erradas) e a atuação integrada dos entes, inclusive Municípios (C errada); força ilimitada contraria a própria ideia de proporcionalidade (A).",
+     "dificuldade": "media"
+    },
+    {
+     "subassunto": null,
+     "enunciado": "Sobre os integrantes do SUSP, é correto afirmar que",
+     "opcoes": [
+      "os Municípios, por meio de seus Poderes Executivos, figuram entre os integrantes estratégicos.",
+      "os Conselhos de Segurança Pública e Defesa Social são integrantes operacionais.",
+      "os agentes de trânsito não podem integrar o sistema.",
+      "somente os órgãos listados no caput do art. 144 da Constituição integram o sistema.",
+      "o Poder Judiciário é o órgão central do sistema."
+     ],
+     "gabarito": 0,
+     "comentario": "São integrantes estratégicos a União, os Estados, o DF e os Municípios, por meio dos Executivos, e os Conselhos de Segurança Pública (por isso B está errada). A lei amplia o rol além do art. 144, incluindo guardas, sistema penitenciário e agentes de trânsito (C e D erradas). O órgão central é o ministério federal responsável pela segurança pública, não o Judiciário (E).",
+     "dificuldade": "media"
+    },
+    {
+     "subassunto": null,
+     "enunciado": "Considere as afirmações sobre a Lei nº 13.675/2018.\nI. A segurança pública é dever do Estado e responsabilidade de todos.\nII. A União deve instituir Plano Nacional de Segurança Pública e Defesa Social com duração de 10 anos.\nIII. A lei retira dos Municípios qualquer papel na segurança pública.\nEstá correto o que se afirma em",
+     "opcoes": [
+      "I, apenas.",
+      "III, apenas.",
+      "I e II, apenas.",
+      "II e III, apenas.",
+      "I e III, apenas."
+     ],
+     "gabarito": 2,
+     "comentario": "I está correta (repete a ideia do art. 144 da Constituição) e II está correta (o Plano Nacional tem duração de 10 anos). III está errada: os Municípios são integrantes estratégicos, e suas guardas, integrantes operacionais do SUSP.",
+     "dificuldade": "dificil"
+    }
+   ]
+  },
+  {
+   "curso": "gcm-geral",
+   "disciplina": "Legislação Específica das Guardas e Segurança Pública",
+   "assunto": "Uso da força e instrumentos de menor potencial ofensivo",
+   "aula": {
+    "titulo": "Uso da força e instrumentos de menor potencial ofensivo",
+    "secoes": [
+     {
+      "titulo": "A Lei nº 13.060/2014: ideia geral",
+      "texto": "A Lei nº 13.060/2014 disciplina o uso dos instrumentos de menor potencial ofensivo pelos agentes de segurança pública em todo o território nacional.\nA regra principal: os órgãos de segurança pública devem PRIORIZAR esses instrumentos, desde que o uso não coloque em risco a integridade física ou psíquica dos próprios agentes. Ou seja, a lei não obriga o agente a se expor a perigo; ela manda escolher, sempre que possível, o meio menos lesivo."
+     },
+     {
+      "titulo": "Princípios e o que é instrumento de menor potencial ofensivo",
+      "texto": "O uso desses instrumentos deve obedecer a princípios:\n• legalidade (agir conforme a lei e com objetivo legal);\n• necessidade (usar a força só quando outros meios não bastarem);\n• razoabilidade e proporcionalidade (a resposta deve ser compatível com a ameaça).\nInstrumentos de menor potencial ofensivo são os projetados especificamente para, com baixa probabilidade de causar mortes ou lesões permanentes, conter, debilitar ou incapacitar temporariamente pessoas. Exemplos comuns: espargidor de agente químico (spray), arma de condução elétrica, bastão, munição de impacto controlado.\nAtenção: 'menor potencial ofensivo' não significa 'inofensivo'. Mal usados, podem ferir gravemente."
+     },
+     {
+      "titulo": "Quando NÃO é legítimo usar arma de fogo",
+      "texto": "A lei traz duas situações em que o disparo de arma de fogo não é legítimo:\n• contra pessoa em fuga que esteja desarmada ou que não represente risco imediato de morte ou de lesão aos agentes ou a terceiros;\n• contra veículo que desrespeite bloqueio policial em via pública, EXCETO quando o ato represente risco de morte ou lesão aos agentes ou a terceiros.\nOu seja, fugir, por si só, não autoriza atirar. O que pode justificar a arma de fogo é o risco concreto à vida ou à integridade de alguém."
+     },
+     {
+      "titulo": "Deveres do poder público e do agente",
+      "texto": "• O poder público tem o dever de fornecer a todo agente de segurança pública instrumentos de menor potencial ofensivo para o uso racional da força.\n• Os cursos de formação e capacitação devem incluir conteúdo que habilite o agente ao uso desses instrumentos.\n• Sempre que o uso da força causar ferimento em alguém, deve ser garantida a imediata assistência e socorro médico aos feridos e a comunicação do ocorrido à família ou à pessoa indicada.\n• A lei previu regulamento do Poder Executivo para classificar e disciplinar os instrumentos."
+     },
+     {
+      "titulo": "O Decreto nº 12.341/2024",
+      "texto": "Em dezembro de 2024, o Decreto nº 12.341 regulamentou a Lei nº 13.060/2014, disciplinando o uso da força e dos instrumentos de menor potencial ofensivo pelos profissionais de segurança pública.\nPontos centrais do decreto:\n• reforça os princípios da legalidade, necessidade, razoabilidade e proporcionalidade, além de diretrizes de respeito aos direitos humanos e de vedação a práticas discriminatórias;\n• trata a arma de fogo como último recurso;\n• exige uso diferenciado da força, isto é, graduar a resposta conforme o comportamento da pessoa abordada;\n• valoriza técnicas de comunicação e mediação antes da força física;\n• reforça o dever de socorro, o registro das ocorrências com uso da força e a prestação de contas;\n• prevê capacitação periódica dos profissionais;\n• vincula a observância das regras ao recebimento de recursos federais de fundos da área de segurança."
+     }
+    ]
+   },
+   "revisao": {
+    "pontos": [
+     "Lei nº 13.060/2014: prioridade aos instrumentos de menor potencial ofensivo.",
+     "A prioridade vale desde que não coloque em risco a integridade do agente.",
+     "Princípios: legalidade, necessidade, razoabilidade e proporcionalidade.",
+     "Instrumento de menor potencial ofensivo: baixa probabilidade de morte ou lesão permanente.",
+     "Não é legítimo atirar em pessoa em fuga desarmada ou que não represente risco imediato.",
+     "Não é legítimo atirar em veículo que fura bloqueio, salvo risco de morte ou lesão.",
+     "Ferido pelo uso da força: socorro médico imediato e aviso à família ou pessoa indicada.",
+     "Poder público deve fornecer os instrumentos e a capacitação.",
+     "Decreto nº 12.341/2024 regulamenta a Lei nº 13.060/2014; arma de fogo como último recurso."
+    ]
+   },
+   "mapa": {
+    "no_central": "Uso da força",
+    "ramos": [
+     {
+      "label": "Lei nº 13.060/2014",
+      "filhos": [
+       "Prioriza menor potencial ofensivo",
+       "Sem expor o agente a risco",
+       "Vale para todo o país"
+      ]
+     },
+     {
+      "label": "Princípios",
+      "filhos": [
+       "Legalidade",
+       "Necessidade",
+       "Razoabilidade",
+       "Proporcionalidade"
+      ]
+     },
+     {
+      "label": "Arma de fogo ilegítima",
+      "filhos": [
+       "Fugitivo desarmado ou sem risco",
+       "Veículo que fura bloqueio sem risco"
+      ]
+     },
+     {
+      "label": "Deveres",
+      "filhos": [
+       "Fornecer instrumentos",
+       "Capacitar",
+       "Socorro imediato",
+       "Avisar família"
+      ]
+     },
+     {
+      "label": "Decreto nº 12.341/2024",
+      "filhos": [
+       "Regulamenta a lei",
+       "Arma de fogo como último recurso",
+       "Uso diferenciado da força",
+       "Registro e prestação de contas"
+      ]
+     }
+    ]
+   },
+   "flashcards": [
+    {
+     "pergunta": "O que a Lei nº 13.060/2014 manda os órgãos de segurança priorizarem?",
+     "resposta": "O uso de instrumentos de menor potencial ofensivo, sem expor o agente a risco."
+    },
+    {
+     "pergunta": "Quais os princípios da Lei nº 13.060/2014?",
+     "resposta": "Legalidade, necessidade, razoabilidade e proporcionalidade."
+    },
+    {
+     "pergunta": "Pode-se atirar em pessoa em fuga desarmada que não oferece risco?",
+     "resposta": "Não. A lei diz que não é legítimo."
+    },
+    {
+     "pergunta": "Atirar em veículo que furou bloqueio é legítimo?",
+     "resposta": "Só se o ato representar risco de morte ou lesão aos agentes ou a terceiros."
+    },
+    {
+     "pergunta": "O que fazer se o uso da força ferir alguém?",
+     "resposta": "Garantir socorro médico imediato e comunicar a família ou pessoa indicada."
+    },
+    {
+     "pergunta": "Qual norma regulamentou a Lei nº 13.060/2014 em 2024?",
+     "resposta": "O Decreto nº 12.341/2024."
+    }
+   ],
+   "questoes": [
+    {
+     "subassunto": "Lei nº 13.060/2014",
+     "enunciado": "Nos termos da Lei nº 13.060/2014, os órgãos de segurança pública deverão priorizar a utilização dos instrumentos de menor potencial ofensivo,",
+     "opcoes": [
+      "em qualquer situação, ainda que isso coloque em risco a integridade física do agente.",
+      "somente quando houver autorização judicial prévia.",
+      "desde que o seu uso não coloque em risco a integridade física ou psíquica dos agentes.",
+      "apenas em manifestações públicas.",
+      "somente após o disparo de advertência com arma de fogo."
+     ],
+     "gabarito": 2,
+     "comentario": "A prioridade vale desde que não coloque em risco a integridade física ou psíquica do agente, o que torna A errada. A lei não exige autorização judicial (B), não se limita a manifestações (D) nem condiciona o uso a disparo de advertência (E).",
+     "dificuldade": "facil"
+    },
+    {
+     "subassunto": "Lei nº 13.060/2014",
+     "enunciado": "Um guarda municipal vê um homem desarmado, que acabou de furtar uma bolsa, correndo pela praça sem ameaçar ninguém. Segundo a Lei nº 13.060/2014, o disparo de arma de fogo contra ele",
+     "opcoes": [
+      "não é legítimo, por se tratar de pessoa em fuga desarmada e sem risco imediato a agentes ou terceiros.",
+      "é legítimo, se precedido de ordem de parada.",
+      "é legítimo apenas se mirar nas pernas.",
+      "é legítimo somente à noite.",
+      "é legítimo, pois a fuga caracteriza resistência."
+     ],
+     "gabarito": 0,
+     "comentario": "A lei afirma que não é legítimo o uso de arma de fogo contra pessoa em fuga desarmada ou que não represente risco imediato de morte ou lesão aos agentes ou a terceiros. Fuga não equivale a risco, e nem ordem de parada, alvo ou horário mudam essa conclusão.",
+     "dificuldade": "facil"
+    },
+    {
+     "subassunto": "Lei nº 13.060/2014",
+     "enunciado": "Instrumentos de menor potencial ofensivo, conforme a Lei nº 13.060/2014, são aqueles",
+     "opcoes": [
+      "incapazes de causar qualquer lesão.",
+      "de uso exclusivo das Forças Armadas.",
+      "que substituem totalmente a arma de fogo, cujo uso fica proibido.",
+      "que só podem ser usados contra animais.",
+      "projetados especificamente para, com baixa probabilidade de causar mortes ou lesões permanentes, conter, debilitar ou incapacitar temporariamente pessoas."
+     ],
+     "gabarito": 4,
+     "comentario": "É a definição legal: baixa probabilidade (não impossibilidade) de morte ou lesão permanente, com o fim de conter, debilitar ou incapacitar temporariamente. Por isso A está errada. Não são exclusivos das Forças Armadas (B), não se destinam a animais (D) e a lei não proíbe a arma de fogo (C).",
+     "dificuldade": "media"
+    },
+    {
+     "subassunto": "Decreto nº 12.341/2024",
+     "enunciado": "Sobre o Decreto nº 12.341/2024, assinale a alternativa correta.",
+     "opcoes": [
+      "Revogou a Lei nº 13.060/2014.",
+      "Regulamenta a Lei nº 13.060/2014, disciplinando o uso da força e dos instrumentos de menor potencial ofensivo pelos profissionais de segurança pública.",
+      "Proíbe as guardas municipais de usar qualquer instrumento de menor potencial ofensivo.",
+      "Autoriza o uso da arma de fogo como primeira opção em abordagens.",
+      "Dispensa o registro das ocorrências que envolvam uso da força."
+     ],
+     "gabarito": 1,
+     "comentario": "O decreto regulamenta a lei (não a revoga, pois decreto não revoga lei), tratando a arma de fogo como último recurso e exigindo registro e prestação de contas. Não há proibição às guardas de usar esses instrumentos.",
+     "dificuldade": "media"
+    },
+    {
+     "subassunto": "Lei nº 13.060/2014",
+     "enunciado": "Durante uma blitz em via pública, um motorista desobedece à ordem de parada e fura o bloqueio, afastando-se em velocidade normal sem colocar ninguém em risco. Considerando a Lei nº 13.060/2014, é correto afirmar que",
+     "opcoes": [
+      "os agentes podem atirar contra o veículo, pois houve desrespeito ao bloqueio.",
+      "os agentes podem atirar nos pneus, pois isso não é disparo contra o veículo.",
+      "o disparo é legítimo se houver autorização do superior hierárquico no local.",
+      "não é legítimo atirar contra o veículo, porque o ato não representa risco de morte ou lesão aos agentes ou a terceiros.",
+      "o disparo é legítimo se o veículo for roubado, independentemente de risco."
+     ],
+     "gabarito": 3,
+     "comentario": "A lei só admite o disparo contra veículo que desrespeita bloqueio quando o ato representa risco de morte ou lesão aos agentes ou a terceiros. Sem esse risco, não há legitimidade. Atirar nos pneus é atirar contra o veículo (B); ordem superior não torna lícito o que a lei veda (C); e a mera suspeita de roubo, sem risco concreto, não afasta a regra (E).",
+     "dificuldade": "dificil"
+    }
+   ]
+  },
+  {
+   "curso": "gcm-geral",
+   "disciplina": "Legislação Específica das Guardas e Segurança Pública",
+   "assunto": "Uso de algemas (Súmula Vinculante nº 11 do STF)",
+   "aula": {
+    "titulo": "Uso de algemas e a Súmula Vinculante nº 11",
+    "secoes": [
+     {
+      "titulo": "O que é uma súmula vinculante",
+      "texto": "Súmula vinculante é um enunciado aprovado pelo Supremo Tribunal Federal que obriga os demais órgãos do Poder Judiciário e a administração pública direta e indireta, nas esferas federal, estadual e municipal. Por isso, ela vale também para guardas municipais e policiais no dia a dia.\nA Súmula Vinculante nº 11 trata do uso de algemas e foi editada em 2008."
+     },
+     {
+      "titulo": "A regra: algema é exceção",
+      "texto": "Pela súmula, o uso de algemas só é lícito em três situações:\n• resistência à prisão ou à ação do agente;\n• fundado receio de fuga;\n• perigo à integridade física própria ou alheia, causado pelo preso ou por terceiros.\nFora dessas hipóteses, algemar é ilícito. A lógica é proteger a dignidade da pessoa: a algema não pode ser usada para humilhar, expor ou punir, mas apenas como medida de segurança."
+     },
+     {
+      "titulo": "Justificativa por escrito",
+      "texto": "Além de existir uma das hipóteses, o agente ou a autoridade deve JUSTIFICAR POR ESCRITO a excepcionalidade do uso das algemas. Na prática, isso é feito no boletim de ocorrência, no auto de prisão ou em documento próprio, descrevendo concretamente o motivo (por exemplo: o detido tentou fugir; o detido agrediu a equipe).\nJustificativas genéricas, como 'por segurança', são frágeis. O ideal é narrar o fato concreto que gerou o risco."
+     },
+     {
+      "titulo": "Consequências do uso indevido",
+      "texto": "O descumprimento da súmula pode gerar:\n• responsabilidade disciplinar, civil e penal do agente ou da autoridade;\n• nulidade da prisão ou do ato processual em que a algema foi usada;\n• sem prejuízo da responsabilidade civil do Estado (dever de indenizar).\nMemorize: são três responsabilidades do agente (disciplinar, civil e penal), mais a nulidade do ato e a responsabilidade civil do Estado."
+     },
+     {
+      "titulo": "Outras regras sobre algemas",
+      "texto": "• O Código de Processo Penal proíbe o uso de algemas em mulheres grávidas durante os atos médico-hospitalares preparatórios para o parto e durante o trabalho de parto, bem como no período de puerpério imediato.\n• Um decreto federal de 2016, que regulamenta a Lei de Execução Penal, também veda algemas em presas durante o trabalho de parto, no trajeto até o hospital e após o parto, enquanto hospitalizadas.\n• No plenário do Tribunal do Júri, o acusado não deve permanecer algemado, salvo se for absolutamente necessário à ordem dos trabalhos, à segurança das testemunhas ou à garantia da integridade dos presentes.\n• A Lei de Abuso de Autoridade também pune condutas abusivas praticadas contra presos, o que reforça o dever de agir com cautela."
+     }
+    ]
+   },
+   "revisao": {
+    "pontos": [
+     "Súmula vinculante obriga o Judiciário e toda a administração pública, inclusive municipal.",
+     "Algema é exceção, não regra.",
+     "Hipóteses: resistência, fundado receio de fuga ou perigo à integridade física própria ou alheia.",
+     "O perigo pode vir do preso ou de terceiros.",
+     "Justificativa da excepcionalidade: sempre POR ESCRITO.",
+     "Uso indevido: responsabilidade disciplinar, civil e penal do agente ou autoridade.",
+     "Uso indevido pode anular a prisão ou o ato processual.",
+     "Também há responsabilidade civil do Estado.",
+     "Proibido algemar gestante em trabalho de parto e no puerpério imediato."
+    ]
+   },
+   "mapa": {
+    "no_central": "Súmula Vinculante nº 11",
+    "ramos": [
+     {
+      "label": "Hipóteses lícitas",
+      "filhos": [
+       "Resistência",
+       "Fundado receio de fuga",
+       "Perigo à integridade própria ou alheia"
+      ]
+     },
+     {
+      "label": "Forma",
+      "filhos": [
+       "Justificativa por escrito",
+       "Descrever fato concreto"
+      ]
+     },
+     {
+      "label": "Consequências",
+      "filhos": [
+       "Responsabilidade disciplinar",
+       "Responsabilidade civil",
+       "Responsabilidade penal",
+       "Nulidade da prisão ou do ato",
+       "Responsabilidade civil do Estado"
+      ]
+     },
+     {
+      "label": "Vedações especiais",
+      "filhos": [
+       "Gestante no parto",
+       "Puerpério imediato",
+       "Plenário do júri, salvo necessidade"
+      ]
+     }
+    ]
+   },
+   "flashcards": [
+    {
+     "pergunta": "Em quais hipóteses a SV 11 admite algemas?",
+     "resposta": "Resistência, fundado receio de fuga ou perigo à integridade física própria ou alheia."
+    },
+    {
+     "pergunta": "Como deve ser justificada a excepcionalidade do uso de algemas?",
+     "resposta": "Por escrito."
+    },
+    {
+     "pergunta": "Quais responsabilidades do agente decorrem do uso indevido?",
+     "resposta": "Disciplinar, civil e penal."
+    },
+    {
+     "pergunta": "Qual consequência processual do uso indevido de algemas?",
+     "resposta": "Nulidade da prisão ou do ato processual."
+    },
+    {
+     "pergunta": "A SV 11 obriga guardas municipais?",
+     "resposta": "Sim, pois vincula toda a administração pública, inclusive municipal."
+    },
+    {
+     "pergunta": "Pode algemar mulher durante o trabalho de parto?",
+     "resposta": "Não. É vedado por lei."
+    }
+   ],
+   "questoes": [
+    {
+     "subassunto": null,
+     "enunciado": "De acordo com a Súmula Vinculante nº 11 do STF, o uso de algemas é lícito em caso de",
+     "opcoes": [
+      "qualquer prisão em flagrante, como regra geral.",
+      "resistência, fundado receio de fuga ou perigo à integridade física própria ou alheia.",
+      "prisão por crime hediondo, independentemente do comportamento do preso.",
+      "condução de pessoa para prestar depoimento como testemunha.",
+      "determinação verbal do superior hierárquico, sem necessidade de justificativa."
+     ],
+     "gabarito": 1,
+     "comentario": "A súmula limita o uso a três hipóteses: resistência, fundado receio de fuga e perigo à integridade física própria ou alheia, por parte do preso ou de terceiros. Não há regra geral de algemar (A), a gravidade do crime por si só não basta (C), testemunha não é algemada nessas condições (D) e sempre é exigida justificativa escrita (E).",
+     "dificuldade": "facil"
+    },
+    {
+     "subassunto": null,
+     "enunciado": "Segundo a Súmula Vinculante nº 11, a excepcionalidade do uso de algemas deve ser justificada",
+     "opcoes": [
+      "verbalmente, no momento da prisão.",
+      "apenas quando houver filmagem da ocorrência.",
+      "apenas se o preso solicitar.",
+      "somente perante o juiz, na sentença.",
+      "por escrito."
+     ],
+     "gabarito": 4,
+     "comentario": "A súmula exige justificativa por escrito da excepcionalidade. Não basta justificativa verbal (A), ela não depende de pedido do preso (C), não é tarefa exclusiva do juiz na sentença (D) e não depende de filmagem (B).",
+     "dificuldade": "facil"
+    },
+    {
+     "subassunto": null,
+     "enunciado": "Um agente algema, sem qualquer justificativa, pessoa detida que colabora tranquilamente com a condução. Conforme a Súmula Vinculante nº 11, essa conduta pode gerar",
+     "opcoes": [
+      "responsabilidade disciplinar, civil e penal do agente, nulidade da prisão ou do ato processual e responsabilidade civil do Estado.",
+      "apenas advertência verbal, sem outras consequências.",
+      "somente a responsabilidade civil do Estado, ficando o agente isento.",
+      "apenas a nulidade do inquérito policial inteiro.",
+      "nenhuma consequência, pois o uso de algemas é ato discricionário."
+     ],
+     "gabarito": 0,
+     "comentario": "A súmula prevê responsabilidade disciplinar, civil e penal do agente ou da autoridade, nulidade da prisão ou do ato processual e, sem prejuízo, responsabilidade civil do Estado. O agente não fica isento (C), o uso não é livremente discricionário (E) e a consequência não se limita a advertência (B).",
+     "dificuldade": "media"
+    },
+    {
+     "subassunto": null,
+     "enunciado": "A respeito do alcance da Súmula Vinculante nº 11, assinale a alternativa correta.",
+     "opcoes": [
+      "Obriga apenas as polícias federais.",
+      "Obriga apenas os juízes criminais.",
+      "Obriga os órgãos do Poder Judiciário e a administração pública direta e indireta nas esferas federal, estadual e municipal.",
+      "Não se aplica às guardas municipais, por serem órgãos do Município.",
+      "Tem efeito apenas de recomendação, sem força obrigatória."
+     ],
+     "gabarito": 2,
+     "comentario": "Súmula vinculante tem efeito vinculante para o Judiciário e para toda a administração pública, nas três esferas. Assim, alcança também guardas municipais. As demais alternativas restringem indevidamente seu alcance ou negam sua força obrigatória.",
+     "dificuldade": "media"
+    },
+    {
+     "subassunto": null,
+     "enunciado": "Uma presa gestante é levada ao hospital em trabalho de parto. Considerando as normas sobre o uso de algemas, é correto afirmar que",
+     "opcoes": [
+      "ela deve permanecer algemada durante todo o parto, por ser presa.",
+      "as algemas podem ser usadas livremente no trajeto e no hospital.",
+      "as algemas só são proibidas se houver ordem judicial específica.",
+      "é vedado o uso de algemas durante o trabalho de parto e no período de puerpério imediato.",
+      "a vedação só vale para presas condenadas definitivamente."
+     ],
+     "gabarito": 3,
+     "comentario": "O CPP proíbe algemas em gestantes durante os atos preparatórios do parto, durante o trabalho de parto e no puerpério imediato; decreto que regulamenta a LEP traz vedação semelhante, inclusive no trajeto e durante a internação. A vedação decorre da lei, sem depender de ordem judicial (C) ou de condenação definitiva (E).",
+     "dificuldade": "dificil"
+    }
+   ]
+  },
+  {
+   "curso": "gcm-geral",
+   "disciplina": "Direito Penal",
+   "assunto": "Parte Geral",
+   "aula": {
+    "titulo": "Direito Penal – Parte Geral",
+    "secoes": [
+     {
+      "titulo": "Legalidade e lei penal no tempo",
+      "texto": "Princípio da legalidade (e da anterioridade): não há crime sem lei ANTERIOR que o defina, nem pena sem prévia cominação legal. Só lei em sentido estrito pode criar crime e pena.\nLei posterior e o réu:\n• Abolitio criminis: se lei nova deixa de considerar o fato crime, ninguém pode mais ser punido por ele; cessam a execução e os efeitos penais da condenação (os efeitos civis, como indenizar, permanecem).\n• Lei nova mais benéfica retroage, mesmo que já exista condenação transitada em julgado.\n• Lei nova mais severa não retroage.\n• Lei excepcional ou temporária continua aplicável aos fatos praticados durante sua vigência, mesmo depois de encerrado seu período (ultra-atividade)."
+     },
+     {
+      "titulo": "Tempo, lugar e território",
+      "texto": "Tempo do crime: considera-se praticado no momento da ação ou omissão, ainda que o resultado ocorra depois (teoria da ATIVIDADE).\nLugar do crime: tanto onde ocorreu a ação ou omissão, no todo ou em parte, quanto onde se produziu ou deveria produzir-se o resultado (teoria da UBIQUIDADE).\nBizu LUTA: Lugar = Ubiquidade; Tempo = Atividade.\nTerritorialidade: aplica-se a lei brasileira ao crime cometido no território nacional, sem prejuízo de tratados. Consideram-se extensão do território as embarcações e aeronaves públicas ou a serviço do governo brasileiro onde quer que estejam, e as brasileiras mercantes ou privadas que estejam em alto-mar ou no espaço aéreo correspondente."
+     },
+     {
+      "titulo": "Causalidade e omissão",
+      "texto": "Causa é toda ação ou omissão sem a qual o resultado não teria ocorrido. Porém, se uma causa superveniente relativamente independente, por si só, produzir o resultado, o agente responde apenas pelos atos que praticou.\nOmissão penalmente relevante: responde pelo resultado quem devia e podia agir para evitá-lo. O dever de agir existe para quem:\n• tem por lei obrigação de cuidado, proteção ou vigilância;\n• de outra forma assumiu a responsabilidade de impedir o resultado;\n• com seu comportamento anterior criou o risco."
+     },
+     {
+      "titulo": "Consumação, tentativa e figuras próximas",
+      "texto": "• Crime consumado: reúne todos os elementos da definição legal.\n• Tentativa: iniciada a execução, não se consuma por circunstâncias ALHEIAS à vontade do agente. Pena do consumado reduzida de 1 a 2/3, salvo disposição em contrário.\n• Desistência voluntária (o agente para de executar) e arrependimento eficaz (o agente age para impedir o resultado): ele só responde pelos atos já praticados.\n• Arrependimento posterior: em crime sem violência ou grave ameaça à pessoa, reparado o dano ou restituída a coisa, por ato voluntário, até o recebimento da denúncia ou queixa, a pena é reduzida de 1 a 2/3.\n• Crime impossível: por ineficácia absoluta do meio ou absoluta impropriedade do objeto, não se pune a tentativa."
+     },
+     {
+      "titulo": "Dolo, culpa e crime preterdoloso",
+      "texto": "• Dolo direto: o agente quer o resultado. Dolo eventual: assume o risco de produzi-lo.\n• Culpa: o resultado decorre de imprudência (agir sem cautela), negligência (deixar de tomar cuidado) ou imperícia (falta de aptidão técnica).\n• Regra: só se pune a forma culposa quando a lei prevê expressamente.\n• Crime agravado pelo resultado: o agente só responde pelo resultado mais grave se o causou ao menos culposamente."
+     },
+     {
+      "titulo": "Excludentes de ilicitude",
+      "texto": "Não há crime quando o agente pratica o fato em estado de necessidade, legítima defesa, estrito cumprimento de dever legal ou exercício regular de direito. Em qualquer delas, o excesso doloso ou culposo é punido.\n• Estado de necessidade: salvar direito próprio ou alheio de perigo ATUAL, que não provocou por sua vontade nem podia evitar de outro modo, quando o sacrifício do bem não era razoável exigir. Não pode alegá-lo quem tem dever legal de enfrentar o perigo.\n• Legítima defesa: usar moderadamente os meios necessários para repelir injusta agressão, ATUAL ou IMINENTE, a direito seu ou de outrem. Observados os requisitos da legítima defesa, também está em legítima defesa o agente de segurança pública que repele agressão ou risco de agressão a vítima mantida refém durante a prática de crimes.\n• Estrito cumprimento do dever legal: o agente cumpre um dever imposto por lei, dentro dos seus limites (ex.: prender alguém em flagrante)."
+     }
+    ]
+   },
+   "revisao": {
+    "pontos": [
+     "Não há crime sem lei anterior que o defina (legalidade e anterioridade).",
+     "Lei mais benéfica retroage, mesmo após o trânsito em julgado.",
+     "Abolitio criminis apaga os efeitos penais, mas não os civis.",
+     "Tempo do crime: atividade. Lugar do crime: ubiquidade (LUTA).",
+     "Tentativa: pena reduzida de 1 a 2/3.",
+     "Desistência voluntária e arrependimento eficaz: responde só pelos atos já praticados.",
+     "Arrependimento posterior: sem violência ou grave ameaça, até o recebimento da denúncia.",
+     "Crime culposo só existe se a lei prever expressamente.",
+     "Legítima defesa: agressão injusta, atual ou iminente; meios necessários, com moderação.",
+     "Estado de necessidade: perigo atual; não vale para quem tem dever legal de enfrentá-lo."
+    ]
+   },
+   "mapa": {
+    "no_central": "Parte Geral do Código Penal",
+    "ramos": [
+     {
+      "label": "Lei penal",
+      "filhos": [
+       "Legalidade e anterioridade",
+       "Retroatividade benéfica",
+       "Abolitio criminis",
+       "Lei temporária e excepcional"
+      ]
+     },
+     {
+      "label": "Tempo e lugar",
+      "filhos": [
+       "Tempo: atividade",
+       "Lugar: ubiquidade",
+       "Territorialidade"
+      ]
+     },
+     {
+      "label": "Fato típico",
+      "filhos": [
+       "Causalidade",
+       "Omissão relevante",
+       "Dolo direto e eventual",
+       "Culpa: imprudência, negligência, imperícia"
+      ]
+     },
+     {
+      "label": "Iter criminis",
+      "filhos": [
+       "Tentativa (1 a 2/3)",
+       "Desistência e arrependimento eficaz",
+       "Arrependimento posterior",
+       "Crime impossível"
+      ]
+     },
+     {
+      "label": "Excludentes",
+      "filhos": [
+       "Legítima defesa",
+       "Estado de necessidade",
+       "Estrito cumprimento do dever legal",
+       "Exercício regular de direito"
+      ]
+     }
+    ]
+   },
+   "flashcards": [
+    {
+     "pergunta": "Qual teoria o CP adota para o tempo do crime?",
+     "resposta": "Teoria da atividade (momento da ação ou omissão)."
+    },
+    {
+     "pergunta": "Qual teoria o CP adota para o lugar do crime?",
+     "resposta": "Teoria da ubiquidade."
+    },
+    {
+     "pergunta": "Quanto se reduz a pena na tentativa?",
+     "resposta": "De 1 a 2/3."
+    },
+    {
+     "pergunta": "Diferença entre desistência voluntária e tentativa?",
+     "resposta": "Na desistência o agente para por vontade própria; na tentativa, por circunstâncias alheias à sua vontade."
+    },
+    {
+     "pergunta": "Quais os requisitos da legítima defesa?",
+     "resposta": "Injusta agressão, atual ou iminente, a direito próprio ou alheio, repelida com uso moderado dos meios necessários."
+    },
+    {
+     "pergunta": "Quem cria o risco tem dever de agir?",
+     "resposta": "Sim; quem com seu comportamento anterior criou o risco tem dever de evitar o resultado."
+    }
+   ],
+   "questoes": [
+    {
+     "subassunto": "Aplicação da lei penal (arts. 1º a 6º)",
+     "enunciado": "Uma lei nova deixa de considerar crime determinada conduta. Quem já havia sido condenado definitivamente por essa conduta",
+     "opcoes": [
+      "continua cumprindo a pena, pois a coisa julgada é imutável.",
+      "tem a pena reduzida pela metade.",
+      "fica isento também do dever de indenizar a vítima.",
+      "deixa de cumprir a pena, cessando a execução e os efeitos penais da condenação.",
+      "só é beneficiado se não for reincidente."
+     ],
+     "gabarito": 3,
+     "comentario": "É a abolitio criminis: cessam a execução e os efeitos penais da sentença, mesmo transitada em julgado. Os efeitos civis, como o dever de indenizar, permanecem (C errada). Não há mera redução (B), a coisa julgada não impede a retroatividade benéfica (A) e o benefício não depende de primariedade (E).",
+     "dificuldade": "facil"
+    },
+    {
+     "subassunto": "Do crime: relação de causalidade, consumação e tentativa, dolo e culpa (arts. 13 a 19)",
+     "enunciado": "Um agente inicia a execução de um furto, mas é surpreendido por vigilantes e foge sem levar nada. Nesse caso, houve",
+     "opcoes": [
+      "desistência voluntária.",
+      "arrependimento eficaz.",
+      "tentativa.",
+      "crime impossível.",
+      "arrependimento posterior."
+     ],
+     "gabarito": 2,
+     "comentario": "A execução foi iniciada e o crime não se consumou por circunstâncias alheias à vontade do agente (a chegada dos vigilantes): é tentativa. Na desistência voluntária e no arrependimento eficaz a interrupção decorre da vontade do agente; no crime impossível o meio ou o objeto são absolutamente inidôneos; o arrependimento posterior pressupõe crime consumado e reparação do dano.",
+     "dificuldade": "facil"
+    },
+    {
+     "subassunto": "Aplicação da lei penal (arts. 1º a 6º)",
+     "enunciado": "Um disparo é efetuado em uma cidade brasileira próxima à fronteira e a vítima morre no país vizinho. Sobre o lugar do crime, o Código Penal adota a teoria",
+     "opcoes": [
+      "da atividade, considerando apenas o local do disparo.",
+      "do resultado, considerando apenas o local da morte.",
+      "da nacionalidade da vítima.",
+      "da territorialidade absoluta.",
+      "da ubiquidade, considerando tanto o local da ação quanto o do resultado."
+     ],
+     "gabarito": 4,
+     "comentario": "Para o lugar do crime o CP adota a ubiquidade: considera-se praticado o crime onde ocorreu a ação ou omissão, no todo ou em parte, e onde se produziu ou deveria produzir-se o resultado. A teoria da atividade é usada para o TEMPO do crime (A).",
+     "dificuldade": "media"
+    },
+    {
+     "subassunto": "Excludentes de ilicitude: legítima defesa, estado de necessidade, estrito cumprimento do dever legal (arts. 23 a 25)",
+     "enunciado": "Sobre as excludentes de ilicitude, assinale a alternativa correta.",
+     "opcoes": [
+      "Na legítima defesa, a agressão deve ser apenas futura e incerta.",
+      "Considera-se em legítima defesa o agente de segurança pública que repele agressão ou risco de agressão a vítima mantida refém durante a prática de crimes.",
+      "O bombeiro pode alegar estado de necessidade para se recusar a enfrentar o perigo inerente à sua função.",
+      "Nas excludentes, o excesso nunca é punido.",
+      "O estado de necessidade exige que o perigo tenha sido provocado voluntariamente pelo agente."
+     ],
+     "gabarito": 1,
+     "comentario": "A hipótese do agente de segurança pública que protege refém foi incluída expressamente no Código Penal (art. 25, parágrafo único), observados os requisitos do caput. A agressão deve ser atual ou iminente (A); quem tem dever legal de enfrentar o perigo não pode alegar estado de necessidade (C); o excesso doloso ou culposo é punível (D); e o perigo NÃO pode ter sido provocado por vontade do agente (E).",
+     "dificuldade": "media"
+    },
+    {
+     "subassunto": "Do crime: relação de causalidade, consumação e tentativa, dolo e culpa (arts. 13 a 19)",
+     "enunciado": "Ao retornar de viagem, uma mãe, que tem por lei o dever de cuidado do filho de 2 anos, percebe que ele está engasgado e, podendo socorrê-lo, deliberadamente nada faz, desejando sua morte, que ocorre. Considerando a relação de causalidade no Código Penal, a mãe",
+     "opcoes": [
+      "responde pelo resultado morte, pois sua omissão é penalmente relevante, já que devia e podia agir.",
+      "responde apenas por omissão de socorro.",
+      "não responde por nada, pois não praticou ação alguma.",
+      "responde por homicídio culposo, pois omissão nunca gera dolo.",
+      "responde apenas se houver testemunhas."
+     ],
+     "gabarito": 0,
+     "comentario": "Quem tem, por lei, dever de cuidado, proteção ou vigilância e podia agir é garantidor: sua omissão é penalmente relevante e ele responde pelo resultado (crime omissivo impróprio). Como desejava a morte, há dolo. Omissão de socorro (B) é para quem não é garantidor; a omissão pode ser dolosa (D) e testemunhas não são requisito do crime (E).",
+     "dificuldade": "dificil"
+    }
+   ]
+  },
+  {
+   "curso": "gcm-geral",
+   "disciplina": "Direito Penal",
+   "assunto": "Crimes contra a pessoa",
+   "aula": {
+    "titulo": "Crimes contra a pessoa",
+    "secoes": [
+     {
+      "titulo": "Homicídio",
+      "texto": "Homicídio é matar alguém. Pode ser:\n• Simples: a forma básica.\n• Privilegiado: por relevante valor social ou moral, ou sob o domínio de violenta emoção logo em seguida a injusta provocação da vítima. A pena é reduzida de 1/6 a 1/3.\n• Qualificado: por exemplo, motivo torpe ou fútil; emprego de veneno, fogo, explosivo, tortura ou meio cruel; traição, emboscada ou recurso que dificulte a defesa da vítima; para assegurar a execução, ocultação ou impunidade de outro crime; contra integrante dos órgãos de segurança pública no exercício da função ou em razão dela, ou contra parente seu por causa dessa condição.\n• Culposo: quando a morte resulta de imprudência, negligência ou imperícia.\nO homicídio qualificado é crime hediondo. Desde 2024, o feminicídio (matar mulher por razões da condição do sexo feminino) é crime autônomo, com artigo próprio."
+     },
+     {
+      "titulo": "Outros crimes contra a vida",
+      "texto": "• Induzimento, instigação ou auxílio a suicídio ou a automutilação.\n• Infanticídio: a mãe mata o próprio filho, sob a influência do estado puerperal, durante o parto ou logo após.\n• Aborto: provocado pela gestante ou com seu consentimento, ou provocado por terceiro, com ou sem consentimento.\nO Código Penal não pune o aborto praticado por médico quando não há outro meio de salvar a vida da gestante, nem quando a gravidez resulta de estupro e há consentimento da gestante ou, se incapaz, de seu representante legal. O STF também afastou a punição no caso de feto anencéfalo.\nOs crimes dolosos contra a vida são julgados pelo Tribunal do Júri."
+     },
+     {
+      "titulo": "Lesão corporal",
+      "texto": "Lesão corporal é ofender a integridade corporal ou a saúde de outra pessoa.\n• Leve: a forma básica.\n• Grave: incapacidade para as ocupações habituais por mais de 30 dias; perigo de vida; debilidade permanente de membro, sentido ou função; aceleração de parto.\n• Gravíssima (nome dado pela doutrina): incapacidade permanente para o trabalho; enfermidade incurável; perda ou inutilização de membro, sentido ou função; deformidade permanente; aborto.\n• Seguida de morte: o agente quis a lesão, mas a morte veio por culpa (crime preterdoloso).\n• Culposa.\nHá forma específica para violência doméstica. As lesões leves e culposas, em regra, dependem de representação da vítima, mas isso não vale para lesão praticada com violência doméstica contra a mulher, em que a ação é incondicionada."
+     },
+     {
+      "titulo": "Crimes contra a liberdade individual",
+      "texto": "• Constrangimento ilegal: obrigar alguém, com violência ou grave ameaça, a fazer o que a lei não manda ou a não fazer o que ela permite.\n• Ameaça: ameaçar alguém de causar-lhe mal injusto e grave, por palavra, escrito, gesto ou outro meio.\n• Perseguição (stalking): perseguir alguém reiteradamente, ameaçando sua integridade, restringindo sua locomoção ou invadindo sua liberdade ou privacidade.\n• Violência psicológica contra a mulher: causar dano emocional que prejudique seu pleno desenvolvimento ou controle suas ações.\n• Sequestro e cárcere privado: privar alguém de sua liberdade.\n• Redução a condição análoga à de escravo e tráfico de pessoas também estão neste capítulo."
+     },
+     {
+      "titulo": "Violação de domicílio",
+      "texto": "É crime entrar ou permanecer, às escondidas, com astúcia ou contra a vontade de quem de direito, em casa alheia ou em suas dependências.\n'Casa' abrange qualquer compartimento habitado, aposento ocupado de habitação coletiva (ex.: quarto de hotel ocupado) e compartimento não aberto ao público onde alguém exerce profissão (ex.: consultório). Não é 'casa' a hospedaria ou habitação coletiva enquanto aberta, salvo o aposento ocupado, nem bar, casa de jogo e similares.\nNão há crime quando se entra durante o dia, com as formalidades legais, para prender alguém ou fazer outra diligência, nem a qualquer hora quando um crime está sendo praticado ali ou está prestes a ser. Isso se harmoniza com a Constituição, que admite entrar sem consentimento em caso de flagrante, desastre, para prestar socorro ou, durante o dia, por ordem judicial."
+     }
+    ]
+   },
+   "revisao": {
+    "pontos": [
+     "Homicídio privilegiado: redução de 1/6 a 1/3.",
+     "Homicídio qualificado é hediondo.",
+     "Matar agente de segurança pública em razão da função qualifica o homicídio.",
+     "Feminicídio passou a ser crime autônomo em 2024.",
+     "Infanticídio: mãe, estado puerperal, durante o parto ou logo após.",
+     "Aborto legal: risco de vida da gestante ou gravidez resultante de estupro (com consentimento).",
+     "Lesão grave: incapacidade por mais de 30 dias, perigo de vida, debilidade permanente, aceleração de parto.",
+     "Lesão gravíssima: incapacidade permanente, perda de membro, deformidade permanente, aborto.",
+     "Crimes dolosos contra a vida: Tribunal do Júri.",
+     "Violação de domicílio: não há crime se um crime está sendo praticado na casa."
+    ]
+   },
+   "mapa": {
+    "no_central": "Crimes contra a pessoa",
+    "ramos": [
+     {
+      "label": "Homicídio",
+      "filhos": [
+       "Simples",
+       "Privilegiado (1/6 a 1/3)",
+       "Qualificado (hediondo)",
+       "Culposo"
+      ]
+     },
+     {
+      "label": "Outros contra a vida",
+      "filhos": [
+       "Suicídio e automutilação",
+       "Infanticídio",
+       "Aborto",
+       "Júri"
+      ]
+     },
+     {
+      "label": "Lesão corporal",
+      "filhos": [
+       "Leve",
+       "Grave",
+       "Gravíssima",
+       "Seguida de morte",
+       "Culposa"
+      ]
+     },
+     {
+      "label": "Liberdade individual",
+      "filhos": [
+       "Constrangimento ilegal",
+       "Ameaça",
+       "Perseguição",
+       "Sequestro e cárcere privado"
+      ]
+     },
+     {
+      "label": "Domicílio",
+      "filhos": [
+       "Conceito amplo de casa",
+       "Flagrante afasta o crime",
+       "Diligência de dia com formalidades"
+      ]
+     }
+    ]
+   },
+   "flashcards": [
+    {
+     "pergunta": "O que caracteriza o homicídio privilegiado?",
+     "resposta": "Relevante valor social ou moral, ou domínio de violenta emoção logo após injusta provocação da vítima."
+    },
+    {
+     "pergunta": "Quem pode ser autor de infanticídio?",
+     "resposta": "A mãe, sob influência do estado puerperal."
+    },
+    {
+     "pergunta": "Incapacidade para ocupações habituais por mais de 30 dias é lesão de que tipo?",
+     "resposta": "Lesão corporal grave."
+    },
+    {
+     "pergunta": "Deformidade permanente é lesão de que tipo?",
+     "resposta": "Gravíssima (doutrina)."
+    },
+    {
+     "pergunta": "Quarto de hotel ocupado é 'casa' para fins penais?",
+     "resposta": "Sim, aposento ocupado de habitação coletiva."
+    },
+    {
+     "pergunta": "Qual o nome popular do crime de perseguição?",
+     "resposta": "Stalking."
+    }
+   ],
+   "questoes": [
+    {
+     "subassunto": "Crimes contra a vida e lesão corporal (arts. 121 a 129)",
+     "enunciado": "A mãe que, sob a influência do estado puerperal, mata o próprio filho logo após o parto comete",
+     "opcoes": [
+      "infanticídio.",
+      "aborto.",
+      "homicídio qualificado.",
+      "homicídio culposo.",
+      "lesão corporal seguida de morte."
+     ],
+     "gabarito": 0,
+     "comentario": "É a descrição do infanticídio: a mãe, sob influência do estado puerperal, mata o próprio filho durante o parto ou logo após. Aborto (B) pressupõe interrupção da gravidez, antes do parto. As demais figuras não têm os elementos específicos do estado puerperal.",
+     "dificuldade": "facil"
+    },
+    {
+     "subassunto": "Crimes contra a vida e lesão corporal (arts. 121 a 129)",
+     "enunciado": "Após uma agressão, a vítima ficou incapacitada para suas ocupações habituais por 40 dias, recuperando-se totalmente depois. Trata-se de lesão corporal",
+     "opcoes": [
+      "leve.",
+      "seguida de morte.",
+      "gravíssima.",
+      "culposa, necessariamente.",
+      "grave."
+     ],
+     "gabarito": 4,
+     "comentario": "A incapacidade para as ocupações habituais por mais de 30 dias caracteriza lesão grave. Seria gravíssima se houvesse, por exemplo, incapacidade PERMANENTE para o trabalho. Nada indica culpa (D) e não houve morte (B).",
+     "dificuldade": "facil"
+    },
+    {
+     "subassunto": "Crimes contra a liberdade individual (arts. 146 a 150)",
+     "enunciado": "A respeito do crime de violação de domicílio, é correto afirmar que",
+     "opcoes": [
+      "bares e casas de jogo abertos ao público são considerados casa.",
+      "o consultório de um dentista nunca é considerado casa.",
+      "não há crime quando se entra em casa alheia, a qualquer hora, porque um crime está sendo ali praticado.",
+      "o quarto de hotel ocupado não recebe proteção penal.",
+      "o crime exige que o agente entre com violência."
+     ],
+     "gabarito": 2,
+     "comentario": "O Código Penal afasta o crime quando a entrada ocorre, a qualquer hora, porque um crime está sendo praticado na casa ou está prestes a ser. Bares e casas de jogo não são casa (A); o compartimento não aberto ao público onde alguém exerce profissão é casa (B); o aposento ocupado de habitação coletiva é protegido (D); e a violência não é exigida — basta entrar ou permanecer contra a vontade de quem de direito, clandestina ou astuciosamente (E).",
+     "dificuldade": "media"
+    },
+    {
+     "subassunto": "Crimes contra a vida e lesão corporal (arts. 121 a 129)",
+     "enunciado": "Qualifica o homicídio a circunstância de ele ser praticado",
+     "opcoes": [
+      "sob o domínio de violenta emoção, logo após injusta provocação da vítima.",
+      "por relevante valor moral.",
+      "por imprudência.",
+      "contra integrante de órgão de segurança pública, no exercício da função ou em decorrência dela.",
+      "com o consentimento da vítima."
+     ],
+     "gabarito": 3,
+     "comentario": "Matar integrante de órgão de segurança pública no exercício da função ou em razão dela (ou parente seu, por essa condição) qualifica o homicídio. Violenta emoção após injusta provocação e relevante valor moral são hipóteses de PRIVILÉGIO (A e B). Imprudência indica homicídio culposo (C), e o consentimento da vítima não qualifica o crime (E).",
+     "dificuldade": "media"
+    },
+    {
+     "subassunto": "Crimes contra a vida e lesão corporal (arts. 121 a 129)",
+     "enunciado": "João, querendo apenas machucar Pedro, desfere-lhe um soco. Pedro cai, bate a cabeça no meio-fio e morre. Não havia intenção de matar nem aceitação do risco de morte, mas o resultado era previsível. João responde por",
+     "opcoes": [
+      "homicídio doloso simples.",
+      "lesão corporal seguida de morte.",
+      "lesão corporal leve apenas.",
+      "homicídio qualificado por motivo fútil.",
+      "fato atípico, pois não quis matar."
+     ],
+     "gabarito": 1,
+     "comentario": "Há dolo na lesão e culpa no resultado morte: é o crime preterdoloso de lesão corporal seguida de morte. Não houve dolo de matar, direto ou eventual (A e D). Como a morte era previsível, o agente responde por ela ao menos culposamente, e não só pela lesão leve (C). O fato é típico (E).",
+     "dificuldade": "dificil"
+    }
+   ]
+  },
+  {
+   "curso": "gcm-geral",
+   "disciplina": "Direito Penal",
+   "assunto": "Crimes contra o patrimônio",
+   "aula": {
+    "titulo": "Crimes contra o patrimônio",
+    "secoes": [
+     {
+      "titulo": "Furto",
+      "texto": "Furto é subtrair, para si ou para outrem, coisa alheia móvel, SEM violência ou grave ameaça à pessoa. Energia elétrica e outras energias com valor econômico equiparam-se a coisa móvel.\n• Repouso noturno: a pena aumenta de metade (redação da Lei nº 15.397/2026; antes era 1/3).\n• Furto privilegiado: réu primário e coisa de pequeno valor; o juiz pode trocar reclusão por detenção, reduzir a pena de 1 a 2/3 ou aplicar só multa.\n• Furto qualificado: destruição ou rompimento de obstáculo; abuso de confiança, fraude, escalada ou destreza; chave falsa; concurso de duas ou mais pessoas. Há também formas qualificadas por uso de explosivo, por fraude eletrônica e pela subtração de veículo levado a outro Estado ou ao exterior."
+     },
+     {
+      "titulo": "Roubo",
+      "texto": "Roubo é subtrair coisa alheia móvel mediante violência ou grave ameaça à pessoa, ou depois de reduzi-la, por qualquer meio, à impossibilidade de resistência (ex.: drogar a vítima).\n• Roubo próprio: a violência vem antes ou durante a subtração, para conseguir a coisa.\n• Roubo impróprio: a pessoa subtrai a coisa e, LOGO DEPOIS, usa violência ou grave ameaça para garantir a impunidade ou ficar com ela.\n• Causas de aumento: concurso de pessoas, vítima em transporte de valores, veículo levado a outro Estado ou exterior, restrição da liberdade da vítima, arma branca; o emprego de arma de fogo aumenta mais, e a arma de uso restrito ou proibido, mais ainda.\n• Roubo qualificado pela lesão grave ou pela morte. Com morte, é o latrocínio, crime hediondo julgado por juiz singular (não vai a Júri, porque é crime contra o patrimônio)."
+     },
+     {
+      "titulo": "Extorsão e extorsão mediante sequestro",
+      "texto": "• Extorsão: constranger alguém, com violência ou grave ameaça, para obter vantagem econômica indevida, obrigando-o a fazer, tolerar ou deixar de fazer algo. Diferença para o roubo: na extorsão a colaboração da vítima é indispensável (ex.: entregar a senha do cartão). É crime formal, consumando-se com o constrangimento, mesmo sem obter a vantagem.\n• 'Sequestro relâmpago': extorsão cometida com restrição da liberdade da vítima, quando essa restrição é necessária para obter a vantagem; tem pena maior.\n• Extorsão mediante sequestro: sequestrar pessoa para obter qualquer vantagem como condição ou preço do resgate. É crime hediondo. Há forma qualificada se o sequestro dura mais de 24 horas, se a vítima é menor de 18 ou maior de 60 anos, ou se praticado por associação criminosa. O coautor que denuncia o crime à autoridade, facilitando a libertação da vítima, tem pena reduzida de 1 a 2/3 (delação premiada)."
+     },
+     {
+      "titulo": "Dano e apropriação indébita",
+      "texto": "• Dano: destruir, inutilizar ou deteriorar coisa alheia. É qualificado se houver violência ou grave ameaça à pessoa, uso de substância inflamável ou explosiva (se não for crime mais grave), se for contra patrimônio público (União, Estados, DF, Municípios e entidades públicas indicadas na lei) ou por motivo egoístico ou com prejuízo considerável à vítima. No dano simples e no qualificado por motivo egoístico ou prejuízo considerável, a ação penal é privada (só se procede mediante queixa).\n• Apropriação indébita: apropriar-se de coisa alheia móvel de que tem a posse ou a detenção. A posse começa LÍCITA e depois o agente passa a agir como dono (ex.: não devolver carro emprestado). A pena aumenta se o agente recebeu a coisa em razão de ofício, emprego ou profissão, entre outras hipóteses.\n• Apropriação de coisa achada: quem acha coisa perdida e não a devolve ao dono nem a entrega à autoridade em 15 dias comete crime."
+     },
+     {
+      "titulo": "Estelionato, receptação e imunidades",
+      "texto": "• Estelionato: obter vantagem ilícita, em prejuízo alheio, induzindo ou mantendo alguém em erro por meio de artifício, ardil ou outra fraude. A exigência de representação da vítima, criada em 2019 (antigo § 5º do art. 171), foi revogada pela Lei nº 15.397/2026; assim, a ação penal voltou a ser pública incondicionada, regra geral do Código Penal.\n• Receptação: adquirir, receber, transportar, conduzir ou ocultar coisa que sabe ser produto de crime, ou influir para que terceiro de boa-fé a adquira. Existe forma qualificada (atividade comercial ou industrial) e forma culposa. É punível ainda que o autor do crime anterior seja desconhecido ou isento de pena.\n• Imunidades: fica isento de pena quem pratica crime patrimonial contra cônjuge, na constância da sociedade conjugal, ou contra ascendente ou descendente. Em outros casos (cônjuge separado judicialmente, irmão, tio ou sobrinho com quem coabita), a ação depende de representação. As imunidades NÃO se aplicam ao roubo, à extorsão e aos crimes com violência ou grave ameaça, ao estranho que participa do crime, nem quando a vítima tem 60 anos ou mais."
+     }
+    ]
+   },
+   "revisao": {
+    "pontos": [
+     "Furto: sem violência; roubo: com violência ou grave ameaça à pessoa.",
+     "Furto no repouso noturno: aumento de metade (Lei nº 15.397/2026).",
+     "Furto privilegiado: réu primário e coisa de pequeno valor.",
+     "Roubo impróprio: violência logo depois da subtração.",
+     "Latrocínio é hediondo e é julgado por juiz singular, não pelo Júri.",
+     "Extorsão: colaboração da vítima é indispensável; crime formal.",
+     "Extorsão mediante sequestro: vantagem como condição ou preço do resgate; hediondo.",
+     "Dano simples: ação penal privada.",
+     "Apropriação indébita: posse lícita que se converte em domínio.",
+     "Imunidades não valem para roubo, extorsão, violência, terceiro estranho ou vítima com 60 anos ou mais."
+    ]
+   },
+   "mapa": {
+    "no_central": "Crimes contra o patrimônio",
+    "ramos": [
+     {
+      "label": "Furto",
+      "filhos": [
+       "Sem violência",
+       "Repouso noturno (+1/2)",
+       "Privilegiado",
+       "Qualificado"
+      ]
+     },
+     {
+      "label": "Roubo",
+      "filhos": [
+       "Próprio",
+       "Impróprio",
+       "Causas de aumento",
+       "Latrocínio"
+      ]
+     },
+     {
+      "label": "Extorsões",
+      "filhos": [
+       "Extorsão (formal)",
+       "Sequestro relâmpago",
+       "Mediante sequestro (hediondo)"
+      ]
+     },
+     {
+      "label": "Dano e apropriação",
+      "filhos": [
+       "Dano simples: queixa",
+       "Dano qualificado",
+       "Apropriação indébita",
+       "Coisa achada: 15 dias"
+      ]
+     },
+     {
+      "label": "Outros",
+      "filhos": [
+       "Estelionato",
+       "Receptação",
+       "Imunidades (arts. 181 a 183)"
+      ]
+     }
+    ]
+   },
+   "flashcards": [
+    {
+     "pergunta": "Qual a diferença central entre furto e roubo?",
+     "resposta": "No roubo há violência ou grave ameaça à pessoa (ou redução à impossibilidade de resistência)."
+    },
+    {
+     "pergunta": "O que é roubo impróprio?",
+     "resposta": "Violência ou grave ameaça empregada logo depois da subtração, para garantir a impunidade ou a coisa."
+    },
+    {
+     "pergunta": "Latrocínio vai a Júri?",
+     "resposta": "Não. É crime contra o patrimônio, julgado por juiz singular."
+    },
+    {
+     "pergunta": "Na extorsão, a obtenção da vantagem é necessária para consumar?",
+     "resposta": "Não. É crime formal."
+    },
+    {
+     "pergunta": "Qual o prazo para entregar coisa achada?",
+     "resposta": "15 dias."
+    },
+    {
+     "pergunta": "Furto contra o pai gera pena?",
+     "resposta": "O filho fica isento de pena (imunidade), salvo exceções, como vítima com 60 anos ou mais."
+    }
+   ],
+   "questoes": [
+    {
+     "subassunto": "Furto, roubo, extorsão e extorsão mediante sequestro (arts. 155 a 159)",
+     "enunciado": "Um homem subtrai uma bicicleta estacionada em frente a uma loja, sem que ninguém perceba, e vai embora. Ele praticou",
+     "opcoes": [
+      "roubo.",
+      "extorsão.",
+      "furto.",
+      "apropriação indébita.",
+      "estelionato."
+     ],
+     "gabarito": 2,
+     "comentario": "Subtrair coisa alheia móvel sem violência ou grave ameaça é furto. Roubo (A) exige violência ou grave ameaça; extorsão (B) exige constrangimento da vítima; na apropriação indébita (D) o agente já tinha a posse lícita da coisa; no estelionato (E) há fraude para induzir a vítima em erro.",
+     "dificuldade": "facil"
+    },
+    {
+     "subassunto": "Dano e apropriação indébita (arts. 163 a 167)",
+     "enunciado": "Carlos emprestou seu notebook a um colega de trabalho, que, depois de alguns dias, decidiu ficar com o aparelho e passou a negar a devolução. O colega cometeu, em tese,",
+     "opcoes": [
+      "furto simples.",
+      "roubo impróprio.",
+      "dano.",
+      "apropriação indébita.",
+      "receptação."
+     ],
+     "gabarito": 3,
+     "comentario": "Na apropriação indébita o agente recebe a posse ou detenção de forma lícita e depois passa a agir como dono. Não houve subtração (A), nem violência (B), nem destruição do bem (C), nem aquisição de produto de crime alheio (E).",
+     "dificuldade": "facil"
+    },
+    {
+     "subassunto": "Furto, roubo, extorsão e extorsão mediante sequestro (arts. 155 a 159)",
+     "enunciado": "Após subtrair um celular de uma bolsa sem que a vítima percebesse, o agente é abordado por ela logo em seguida e a empurra violentamente para conseguir fugir com o aparelho. Nesse caso, configura-se",
+     "opcoes": [
+      "roubo impróprio.",
+      "furto consumado e lesão corporal, apenas.",
+      "extorsão.",
+      "roubo próprio.",
+      "furto qualificado pela destreza."
+     ],
+     "gabarito": 0,
+     "comentario": "Quando a violência ou grave ameaça é empregada logo depois de subtraída a coisa, para assegurar a impunidade ou a detenção do bem, há roubo impróprio. No roubo próprio a violência é meio para a subtração (D). Não há extorsão porque não se exigiu colaboração da vítima (C).",
+     "dificuldade": "media"
+    },
+    {
+     "subassunto": "Furto, roubo, extorsão e extorsão mediante sequestro (arts. 155 a 159)",
+     "enunciado": "Sobre a extorsão mediante sequestro, é correto afirmar que",
+     "opcoes": [
+      "só se consuma com o pagamento do resgate.",
+      "é qualificada se o sequestro durar mais de 24 horas ou se a vítima for menor de 18 ou maior de 60 anos.",
+      "não é crime hediondo.",
+      "exige que a vantagem pretendida seja exclusivamente em dinheiro.",
+      "é julgada pelo Tribunal do Júri."
+     ],
+     "gabarito": 1,
+     "comentario": "A duração superior a 24 horas e a idade da vítima (menor de 18 ou maior de 60) são qualificadoras. O crime se consuma com o sequestro com a finalidade de obter vantagem, sem necessidade de pagamento (A); é hediondo (C); a lei fala em 'qualquer vantagem' (D); e, por ser crime contra o patrimônio, não vai ao Júri (E).",
+     "dificuldade": "media"
+    },
+    {
+     "subassunto": "Demais crimes contra o patrimônio (até o art. 183)",
+     "enunciado": "Um jovem de 25 anos furta, sem violência, dinheiro da carteira de seu pai, de 65 anos, com quem mora. Considerando as disposições gerais dos crimes contra o patrimônio, é correto afirmar que o filho",
+     "opcoes": [
+      "está isento de pena, por ser descendente da vítima.",
+      "só pode ser processado mediante representação do pai.",
+      "comete fato atípico, porque o dinheiro é da família.",
+      "está isento de pena, pois a imunidade só é afastada em crimes com arma de fogo.",
+      "não se beneficia da imunidade, porque a vítima tem idade igual ou superior a 60 anos."
+     ],
+     "gabarito": 4,
+     "comentario": "Em regra, o descendente que comete crime patrimonial contra ascendente é isento de pena. Porém, a imunidade não se aplica quando o crime é praticado contra pessoa com 60 anos ou mais. Como o pai tem 65 anos, o filho responde normalmente. O fato é típico (C) e a exceção não se limita a arma de fogo (D).",
+     "dificuldade": "dificil"
+    }
+   ]
+  },
+  {
+   "curso": "gcm-geral",
+   "disciplina": "Direito Penal",
+   "assunto": "Crimes contra a dignidade sexual",
+   "aula": {
+    "titulo": "Crimes contra a dignidade sexual",
+    "secoes": [
+     {
+      "titulo": "Visão geral",
+      "texto": "O bem protegido é a dignidade sexual, ou seja, a liberdade de cada pessoa decidir sobre sua vida sexual, e, no caso dos vulneráveis, o seu desenvolvimento sexual saudável.\nPonto importante: desde 2018, a ação penal em TODOS os crimes contra a liberdade sexual e contra vulnerável é pública INCONDICIONADA. O Ministério Público age independentemente da vontade da vítima.\nO estupro e o estupro de vulnerável são crimes hediondos."
+     },
+     {
+      "titulo": "Estupro, violação sexual mediante fraude e importunação sexual",
+      "texto": "• Estupro: constranger alguém, mediante violência ou grave ameaça, a ter conjunção carnal ou a praticar ou permitir que com ele se pratique outro ato libidinoso. Qualquer pessoa pode ser autora ou vítima. Há formas qualificadas quando resulta lesão grave, quando a vítima tem entre 14 e 18 anos, e quando resulta morte.\n• Violação sexual mediante fraude: ter conjunção carnal ou praticar ato libidinoso com alguém por meio de fraude ou outro meio que impeça ou dificulte a livre manifestação de vontade da vítima (sem violência).\n• Importunação sexual: praticar contra alguém, sem sua anuência, ato libidinoso para satisfazer a própria lascívia ou a de terceiro (ex.: tocar partes íntimas de alguém no transporte público). É crime subsidiário: só se aplica se o fato não constituir crime mais grave."
+     },
+     {
+      "titulo": "Assédio sexual e registro não autorizado da intimidade",
+      "texto": "• Assédio sexual: constranger alguém com o intuito de obter vantagem ou favorecimento sexual, prevalecendo-se o agente da sua condição de superior hierárquico ou de ascendência inerente a emprego, cargo ou função. Exige relação de trabalho com hierarquia ou ascendência. A pena aumenta se a vítima é menor de 18 anos.\n• Registro não autorizado da intimidade sexual: produzir, fotografar, filmar ou registrar, por qualquer meio, conteúdo com cena de nudez ou ato sexual de caráter íntimo e privado sem autorização dos participantes. Também responde quem faz montagem para incluir pessoa nessas cenas."
+     },
+     {
+      "titulo": "Crimes contra vulnerável",
+      "texto": "• Estupro de vulnerável: ter conjunção carnal ou praticar outro ato libidinoso com menor de 14 anos. Também é vulnerável quem, por enfermidade ou deficiência mental, não tem o necessário discernimento, ou quem, por qualquer outra causa, não pode oferecer resistência (ex.: pessoa desacordada ou embriagada ao ponto de não reagir). Não importa o consentimento da vítima nem se ela teve relações sexuais antes: o crime existe do mesmo jeito.\n• Corrupção de menores (art. 218): induzir menor de 14 anos a satisfazer a lascívia de outrem.\n• Satisfação de lascívia mediante presença de criança ou adolescente: praticar ato sexual na presença de menor de 14 anos, ou induzi-lo a presenciar, para satisfazer lascívia própria ou alheia.\n• Favorecimento da prostituição ou de outra forma de exploração sexual de criança, adolescente ou vulnerável."
+     },
+     {
+      "titulo": "Divulgação de cena de estupro ou de nudez",
+      "texto": "O art. 218-C pune quem oferece, troca, vende, expõe, transmite, publica ou divulga, por qualquer meio (inclusive internet e aplicativos), fotografia, vídeo ou registro que contenha cena de estupro ou de estupro de vulnerável, ou que faça apologia ou induza a sua prática, ou, sem o consentimento da vítima, cena de sexo, nudez ou pornografia.\nA pena aumenta se o agente mantém ou manteve relação íntima de afeto com a vítima ou se age por vingança ou humilhação (a chamada 'pornografia de vingança').\nNão há crime quando a divulgação é feita em publicação jornalística, científica, cultural ou acadêmica com uso de recurso que impossibilite identificar a vítima, salvo se ela, sendo maior de 18 anos, autorizar."
+     }
+    ]
+   },
+   "revisao": {
+    "pontos": [
+     "Ação penal nos crimes contra a liberdade sexual e contra vulnerável: pública incondicionada.",
+     "Estupro: violência ou grave ameaça; conjunção carnal ou outro ato libidinoso.",
+     "Estupro e estupro de vulnerável são hediondos.",
+     "Importunação sexual: ato libidinoso sem anuência, sem violência ou grave ameaça.",
+     "Assédio sexual exige superioridade hierárquica ou ascendência no emprego, cargo ou função.",
+     "Estupro de vulnerável: menor de 14 anos, ainda que consinta.",
+     "Também é vulnerável quem não pode oferecer resistência (ex.: desacordado).",
+     "Divulgar cena de sexo ou nudez sem consentimento é crime (art. 218-C).",
+     "Pornografia de vingança aumenta a pena do art. 218-C."
+    ]
+   },
+   "mapa": {
+    "no_central": "Dignidade sexual",
+    "ramos": [
+     {
+      "label": "Liberdade sexual",
+      "filhos": [
+       "Estupro",
+       "Violação sexual mediante fraude",
+       "Importunação sexual"
+      ]
+     },
+     {
+      "label": "Assédio e intimidade",
+      "filhos": [
+       "Assédio sexual",
+       "Registro não autorizado da intimidade"
+      ]
+     },
+     {
+      "label": "Vulneráveis",
+      "filhos": [
+       "Estupro de vulnerável",
+       "Corrupção de menores",
+       "Lascívia na presença de menor de 14",
+       "Exploração sexual"
+      ]
+     },
+     {
+      "label": "Divulgação (218-C)",
+      "filhos": [
+       "Cena de estupro",
+       "Nudez sem consentimento",
+       "Aumento por vingança"
+      ]
+     },
+     {
+      "label": "Regras gerais",
+      "filhos": [
+       "Ação pública incondicionada",
+       "Hediondez do estupro"
+      ]
+     }
+    ]
+   },
+   "flashcards": [
+    {
+     "pergunta": "Qual a ação penal nos crimes contra a liberdade sexual?",
+     "resposta": "Pública incondicionada."
+    },
+    {
+     "pergunta": "O consentimento de menor de 14 anos afasta o estupro de vulnerável?",
+     "resposta": "Não. O crime existe independentemente do consentimento."
+    },
+    {
+     "pergunta": "Tocar partes íntimas de passageira no ônibus, sem violência, configura?",
+     "resposta": "Importunação sexual."
+    },
+    {
+     "pergunta": "O que o assédio sexual exige quanto à relação entre autor e vítima?",
+     "resposta": "Superioridade hierárquica ou ascendência inerente a emprego, cargo ou função."
+    },
+    {
+     "pergunta": "Homem pode ser vítima de estupro?",
+     "resposta": "Sim. Qualquer pessoa pode ser vítima."
+    },
+    {
+     "pergunta": "Divulgar vídeo íntimo da ex por vingança: qual crime?",
+     "resposta": "Divulgação de cena de sexo ou nudez (art. 218-C), com pena aumentada."
+    }
+   ],
+   "questoes": [
+    {
+     "subassunto": "Arts. 213-A a 218-C",
+     "enunciado": "Nos crimes contra a liberdade sexual e nos crimes sexuais contra vulnerável, a ação penal é",
+     "opcoes": [
+      "privada.",
+      "pública condicionada à representação, em qualquer caso.",
+      "pública condicionada à requisição do Ministro da Justiça.",
+      "privada subsidiária da pública, obrigatoriamente.",
+      "pública incondicionada."
+     ],
+     "gabarito": 4,
+     "comentario": "Desde 2018, a ação penal nesses crimes é pública incondicionada, sem depender da vontade da vítima. As demais alternativas trazem modalidades que não se aplicam.",
+     "dificuldade": "facil"
+    },
+    {
+     "subassunto": "Arts. 213-A a 218-C",
+     "enunciado": "Em um ônibus lotado, um homem passa a mão nas partes íntimas de uma passageira, sem o consentimento dela, sem usar violência ou grave ameaça. A conduta configura, em tese,",
+     "opcoes": [
+      "importunação sexual.",
+      "estupro.",
+      "assédio sexual.",
+      "violação sexual mediante fraude.",
+      "mera contravenção de perturbação da tranquilidade."
+     ],
+     "gabarito": 0,
+     "comentario": "Praticar ato libidinoso contra alguém sem sua anuência, para satisfazer a própria lascívia, sem violência ou grave ameaça, é importunação sexual. O estupro (B) exige violência ou grave ameaça; o assédio (C) exige relação de hierarquia ou ascendência; na violação mediante fraude (D) há engano da vítima.",
+     "dificuldade": "facil"
+    },
+    {
+     "subassunto": "Arts. 213-A a 218-C",
+     "enunciado": "Um adulto mantém relação sexual com uma adolescente de 13 anos, que afirma ter consentido e já ter tido relações anteriores. Conforme o Código Penal, o adulto",
+     "opcoes": [
+      "não comete crime, pois houve consentimento.",
+      "comete estupro de vulnerável, independentemente do consentimento ou de experiência sexual anterior da vítima.",
+      "comete importunação sexual.",
+      "só comete crime se houver violência.",
+      "comete corrupção de menores apenas."
+     ],
+     "gabarito": 1,
+     "comentario": "Ter conjunção carnal ou praticar ato libidinoso com menor de 14 anos é estupro de vulnerável, e a lei deixa claro que o consentimento da vítima e o fato de ter mantido relações anteriores não afastam o crime. Não se exige violência (D).",
+     "dificuldade": "media"
+    },
+    {
+     "subassunto": "Arts. 213-A a 218-C",
+     "enunciado": "O crime de assédio sexual caracteriza-se quando o agente constrange alguém com o intuito de obter vantagem ou favorecimento sexual,",
+     "opcoes": [
+      "em qualquer situação, mesmo entre desconhecidos na rua.",
+      "somente se a vítima for menor de 14 anos.",
+      "mediante violência física.",
+      "prevalecendo-se de sua condição de superior hierárquico ou de ascendência inerentes ao exercício de emprego, cargo ou função.",
+      "somente se houver conjunção carnal."
+     ],
+     "gabarito": 3,
+     "comentario": "O assédio sexual exige que o agente se valha da superioridade hierárquica ou da ascendência ligada a emprego, cargo ou função. Entre desconhecidos não há essa relação (A); a violência levaria a outro crime (C); a idade da vítima não é elemento do tipo (B) e o crime não exige ato sexual consumado (E).",
+     "dificuldade": "media"
+    },
+    {
+     "subassunto": "Arts. 213-A a 218-C",
+     "enunciado": "Após o fim do namoro, Lucas publica em rede social vídeo íntimo da ex-namorada, gravado com o consentimento dela durante o relacionamento, mas divulgado sem sua autorização, para humilhá-la. Lucas",
+     "opcoes": [
+      "não comete crime, pois a gravação foi consentida.",
+      "comete apenas crime contra a honra, de ação privada.",
+      "comete o crime do art. 218-C do Código Penal, com pena aumentada por ter mantido relação íntima de afeto com a vítima e por agir com fim de humilhação.",
+      "comete estupro de vulnerável.",
+      "comete importunação sexual."
+     ],
+     "gabarito": 2,
+     "comentario": "O art. 218-C pune a divulgação, sem consentimento da vítima, de cena de sexo ou nudez, e prevê aumento de pena se o agente mantém ou manteve relação íntima de afeto com ela ou age por vingança ou humilhação. O consentimento para gravar não autoriza divulgar (A). Não há estupro de vulnerável (D) nem ato libidinoso contra a vítima (E).",
+     "dificuldade": "dificil"
+    }
+   ]
+  },
+  {
+   "curso": "gcm-geral",
+   "disciplina": "Direito Penal",
+   "assunto": "Crimes contra a fé pública",
+   "aula": {
+    "titulo": "Crimes contra a fé pública e o art. 311",
+    "secoes": [
+     {
+      "titulo": "O que é fé pública",
+      "texto": "Fé pública é a confiança que a sociedade deposita em documentos, sinais, moedas e símbolos oficiais. Quando alguém falsifica algo que deveria ser confiável, toda a coletividade é atingida.\nNo Código Penal, esse título reúne, por exemplo: moeda falsa, falsificação de documento público e particular, falsidade ideológica, uso de documento falso, falsa identidade e a adulteração de sinal identificador de veículo, que é o foco do edital."
+     },
+     {
+      "titulo": "Adulteração de sinal identificador de veículo (art. 311)",
+      "texto": "O crime consiste em adulterar, remarcar ou suprimir número de chassi, monobloco, motor, placa de identificação ou qualquer sinal identificador de veículo, bem como de seus componentes ou equipamentos, sem autorização do órgão competente.\nDesde 2023, a lei alcança não só veículos automotores, mas também veículos elétricos, híbridos, reboques, semirreboques e suas combinações.\nPontos-chave:\n• Adulterar = alterar; remarcar = marcar de novo; suprimir = eliminar.\n• É crime de ação múltipla: praticar mais de um verbo no mesmo contexto gera um só crime.\n• O bem jurídico é a fé pública, especialmente a segurança do registro e controle de veículos."
+     },
+     {
+      "titulo": "Quem mais responde",
+      "texto": "• Se o agente for funcionário público e cometer o crime no exercício da função ou em razão dela, a pena aumenta de 1/3.\n• Responde pelas mesmas penas o funcionário público que contribui para o licenciamento ou registro do veículo adulterado, fornecendo indevidamente material ou informação oficial.\n• A lei também pune quem fabrica, fornece, possui ou guarda equipamento especialmente destinado à adulteração, e quem adquire, recebe, transporta, oculta, desmonta, monta, vende ou de qualquer forma utiliza veículo ou peça com sinal identificador que devia saber estar adulterado.\n• Há forma mais grave para quem pratica essas condutas no exercício de atividade comercial."
+     },
+     {
+      "titulo": "Situações comuns na abordagem",
+      "texto": "• Trocar a placa verdadeira de um carro pela placa de outro veículo (a chamada 'placa clonada' ou 'dublê') caracteriza adulteração de sinal identificador.\n• Alterar letras ou números da placa com fita adesiva ou tinta, para enganar a fiscalização, também é tratado pelos tribunais superiores como adulteração, pois o sinal identificador foi alterado.\n• Raspar o número do chassi ou do motor é supressão.\n• Se o agente não participou da adulteração, mas conduz ou utiliza veículo que devia saber estar adulterado, a lei atual também o pune.\nNa prática, o agente de segurança deve preservar o veículo e encaminhar a ocorrência à autoridade policial, pois a perícia é essencial para comprovar a adulteração."
+     },
+     {
+      "titulo": "Outras falsidades que ajudam a diferenciar",
+      "texto": "• Falsificação de documento público: criar documento falso ou alterar documento verdadeiro (ex.: falsificar CNH).\n• Falsidade ideológica: o documento é materialmente verdadeiro, mas nele se insere declaração falsa.\n• Uso de documento falso: fazer uso de qualquer papel falsificado ou alterado.\n• Falsa identidade: atribuir-se ou atribuir a terceiro identidade falsa para obter vantagem ou causar dano. Os tribunais superiores entendem que dar nome falso à autoridade policial para esconder antecedentes configura esse crime, não sendo mera autodefesa."
+     }
+    ]
+   },
+   "revisao": {
+    "pontos": [
+     "Fé pública: confiança coletiva em documentos, sinais e símbolos oficiais.",
+     "Art. 311: adulterar, remarcar ou suprimir sinal identificador de veículo.",
+     "Alcança chassi, monobloco, motor, placa e outros sinais, inclusive de componentes.",
+     "Desde 2023, abrange veículos elétricos, híbridos, reboques e semirreboques.",
+     "Funcionário público no exercício da função: pena aumentada de 1/3.",
+     "Quem utiliza ou conduz veículo que devia saber adulterado também responde.",
+     "Alterar placa com fita adesiva é tratado como adulteração pelos tribunais superiores.",
+     "Falsidade ideológica: documento verdadeiro com conteúdo falso."
+    ]
+   },
+   "mapa": {
+    "no_central": "Fé pública – art. 311",
+    "ramos": [
+     {
+      "label": "Condutas",
+      "filhos": [
+       "Adulterar",
+       "Remarcar",
+       "Suprimir"
+      ]
+     },
+     {
+      "label": "Objetos",
+      "filhos": [
+       "Chassi e monobloco",
+       "Motor",
+       "Placa",
+       "Componentes e equipamentos"
+      ]
+     },
+     {
+      "label": "Quem responde",
+      "filhos": [
+       "Autor da adulteração",
+       "Funcionário (+1/3)",
+       "Quem fornece equipamento",
+       "Quem usa veículo adulterado"
+      ]
+     },
+     {
+      "label": "Casos práticos",
+      "filhos": [
+       "Placa clonada",
+       "Fita adesiva na placa",
+       "Chassi raspado"
+      ]
+     },
+     {
+      "label": "Outras falsidades",
+      "filhos": [
+       "Documento falso",
+       "Falsidade ideológica",
+       "Uso de documento falso",
+       "Falsa identidade"
+      ]
+     }
+    ]
+   },
+   "flashcards": [
+    {
+     "pergunta": "Quais os verbos do art. 311 do CP?",
+     "resposta": "Adulterar, remarcar ou suprimir."
+    },
+    {
+     "pergunta": "Qual o bem jurídico do art. 311?",
+     "resposta": "A fé pública."
+    },
+    {
+     "pergunta": "Funcionário público que adultera sinal de veículo no exercício da função tem pena aumentada em quanto?",
+     "resposta": "1/3."
+    },
+    {
+     "pergunta": "Cobrir número da placa com fita isolante para enganar a fiscalização pode configurar o art. 311?",
+     "resposta": "Sim, segundo os tribunais superiores."
+    },
+    {
+     "pergunta": "O art. 311 alcança veículo elétrico?",
+     "resposta": "Sim, desde a alteração de 2023."
+    },
+    {
+     "pergunta": "Diferença entre falsidade material e ideológica?",
+     "resposta": "Na material o documento é falso na forma; na ideológica é verdadeiro na forma, mas com conteúdo falso."
+    }
+   ],
+   "questoes": [
+    {
+     "subassunto": "Adulteração de sinal identificador de veículo (art. 311)",
+     "enunciado": "O crime de adulteração de sinal identificador de veículo, previsto no art. 311 do Código Penal, está inserido entre os crimes contra",
+     "opcoes": [
+      "o patrimônio.",
+      "a fé pública.",
+      "a administração pública.",
+      "a incolumidade pública.",
+      "a organização do trabalho."
+     ],
+     "gabarito": 1,
+     "comentario": "O art. 311 está no título dos crimes contra a fé pública, pois protege a confiança nos sinais de identificação dos veículos. Não é crime patrimonial (A), ainda que muitas vezes se ligue a furto ou roubo.",
+     "dificuldade": "facil"
+    },
+    {
+     "subassunto": "Adulteração de sinal identificador de veículo (art. 311)",
+     "enunciado": "Constitui conduta prevista no art. 311 do Código Penal",
+     "opcoes": [
+      "dirigir veículo sem habilitação.",
+      "estacionar em local proibido.",
+      "suprimir o número do chassi de veículo, sem autorização do órgão competente.",
+      "transitar com o licenciamento vencido.",
+      "pintar o veículo de outra cor com autorização do órgão de trânsito."
+     ],
+     "gabarito": 2,
+     "comentario": "Suprimir número de chassi é um dos núcleos do art. 311 (adulterar, remarcar ou suprimir). As alternativas A, B e D tratam de infrações de trânsito, e a E é conduta autorizada, sem relação com sinal identificador.",
+     "dificuldade": "facil"
+    },
+    {
+     "subassunto": "Adulteração de sinal identificador de veículo (art. 311)",
+     "enunciado": "Um servidor do órgão de trânsito, no exercício da função, remarca o número do motor de um veículo sem autorização legal. Nesse caso,",
+     "opcoes": [
+      "não há crime, pois o servidor é do próprio órgão competente.",
+      "há apenas infração administrativa.",
+      "há peculato.",
+      "há o crime do art. 311, com pena aumentada de 1/3.",
+      "há o crime do art. 311, com pena reduzida."
+     ],
+     "gabarito": 3,
+     "comentario": "Se o agente comete o crime no exercício da função pública ou em razão dela, a pena é aumentada de 1/3. Ser servidor do órgão não autoriza a remarcação ilegal (A). Não há apropriação de bem público (C).",
+     "dificuldade": "media"
+    },
+    {
+     "subassunto": "Adulteração de sinal identificador de veículo (art. 311)",
+     "enunciado": "Durante patrulhamento, guardas municipais abordam motorista que colocou fita adesiva preta alterando a letra F da placa para E, a fim de escapar de radares. Segundo o entendimento dos tribunais superiores, a conduta",
+     "opcoes": [
+      "é mera infração de trânsito, sem relevância penal.",
+      "é atípica, pois a fita pode ser retirada.",
+      "configura estelionato.",
+      "configura falsa identidade.",
+      "configura, em tese, adulteração de sinal identificador de veículo."
+     ],
+     "gabarito": 4,
+     "comentario": "Os tribunais superiores entendem que a alteração da placa com fita adesiva, para modificar sua leitura, configura o crime do art. 311, pois o sinal identificador foi adulterado. O fato de a fita ser removível não afasta o crime (B). Não se trata de estelionato (C) nem de falsa identidade (D), que se refere a pessoa.",
+     "dificuldade": "media"
+    },
+    {
+     "subassunto": "Adulteração de sinal identificador de veículo (art. 311)",
+     "enunciado": "Considere as afirmações sobre o art. 311 do Código Penal, com a redação vigente.\nI. O tipo abrange veículos elétricos, híbridos, reboques e semirreboques.\nII. Também pode responder quem conduz ou utiliza veículo com sinal identificador que devia saber estar adulterado.\nIII. Só há crime se a adulteração for feita em placa; chassi e motor não estão abrangidos.\nEstá correto o que se afirma em",
+     "opcoes": [
+      "I e II, apenas.",
+      "I, apenas.",
+      "II, apenas.",
+      "II e III, apenas.",
+      "I, II e III."
+     ],
+     "gabarito": 0,
+     "comentario": "I e II estão corretas: a alteração de 2023 ampliou o tipo para elétricos, híbridos, reboques e semirreboques e passou a punir também quem utiliza ou conduz veículo que devia saber adulterado. III está errada, pois chassi, monobloco e motor também são sinais identificadores protegidos.",
+     "dificuldade": "dificil"
+    }
+   ]
+  },
+  {
+   "curso": "gcm-geral",
+   "disciplina": "Direito Penal",
+   "assunto": "Crimes contra a Administração Pública",
+   "aula": {
+    "titulo": "Crimes contra a Administração Pública",
+    "secoes": [
+     {
+      "titulo": "Quem é funcionário público para o Direito Penal",
+      "texto": "Para fins penais, funcionário público é quem, embora transitoriamente ou sem remuneração, exerce cargo, emprego ou função pública. O conceito é amplo: inclui mesário, jurado e servidor temporário.\nEquipara-se a funcionário público quem exerce cargo, emprego ou função em entidade paraestatal e quem trabalha para empresa prestadora de serviço contratada ou conveniada para executar atividade típica da Administração.\nA pena aumenta de 1/3 quando o autor ocupa cargo em comissão ou função de direção ou assessoramento em órgão da administração direta, sociedade de economia mista, empresa pública ou fundação instituída pelo poder público."
+     },
+     {
+      "titulo": "Peculato",
+      "texto": "• Peculato-apropriação: o funcionário se apropria de dinheiro, valor ou bem móvel, público ou particular, de que tem a posse em razão do cargo.\n• Peculato-desvio: dá ao bem destino diverso, em proveito próprio ou alheio.\n• Peculato-furto: mesmo sem ter a posse, subtrai ou ajuda alguém a subtrair, valendo-se da facilidade que o cargo lhe proporciona.\n• Peculato culposo: o funcionário, por descuido, permite que outra pessoa cometa o crime. Nesse caso, a reparação do dano antes da sentença irrecorrível extingue a punibilidade; se feita depois, reduz de metade a pena imposta.\n• Peculato mediante erro de outrem: apropriar-se de dinheiro ou utilidade que recebeu por erro de outra pessoa, no exercício do cargo."
+     },
+     {
+      "titulo": "Concussão, corrupção passiva e prevaricação",
+      "texto": "• Concussão: EXIGIR vantagem indevida, para si ou para outrem, direta ou indiretamente, em razão da função, ainda que fora dela ou antes de assumi-la. A vítima se sente intimidada.\n• Corrupção passiva: SOLICITAR ou RECEBER vantagem indevida, ou ACEITAR promessa dela, em razão da função. A pena aumenta se, por causa da vantagem, o funcionário retarda ou deixa de praticar ato de ofício, ou o pratica infringindo dever. Há forma privilegiada quando o funcionário cede a pedido ou influência de outra pessoa, sem vantagem.\n• Prevaricação: retardar ou deixar de praticar, indevidamente, ato de ofício, ou praticá-lo contra a lei, para satisfazer interesse ou sentimento PESSOAL.\nBizu: exigir = concussão; solicitar/receber/aceitar = corrupção passiva; interesse pessoal sem vantagem = prevaricação."
+     },
+     {
+      "titulo": "Outros crimes de funcionário",
+      "texto": "• Condescendência criminosa: por indulgência, deixar de responsabilizar subordinado que cometeu infração no cargo ou, sem competência para isso, não levar o fato à autoridade competente.\n• Advocacia administrativa: patrocinar interesse privado perante a administração, valendo-se da condição de funcionário.\n• Abandono de função: abandonar cargo público fora dos casos permitidos em lei.\n• Violação de sigilo funcional: revelar fato de que tem ciência em razão do cargo e que deva permanecer em segredo.\n• Excesso de exação: exigir tributo que sabe ou deveria saber indevido, ou empregar meio vexatório na cobrança.\n• Também há crime quando o responsável deixa de cumprir o dever de impedir o acesso do preso a aparelho telefônico ou de rádio."
+     },
+     {
+      "titulo": "Crimes de particular contra a administração",
+      "texto": "• Usurpação de função pública: exercer indevidamente função pública.\n• Resistência: opor-se à execução de ato LEGAL, mediante violência ou ameaça ao funcionário competente ou a quem o auxilia. Se, por causa da resistência, o ato não se executa, a pena é maior. As penas da violência são aplicadas junto.\n• Desobediência: desobedecer a ordem legal de funcionário público (sem violência ou ameaça).\n• Desacato: desacatar (ofender, humilhar) funcionário público no exercício da função ou em razão dela.\n• Tráfico de influência: pedir ou obter vantagem a pretexto de influir em ato de funcionário.\n• Corrupção ativa: OFERECER ou PROMETER vantagem indevida a funcionário para que pratique, omita ou retarde ato de ofício. Atenção: quem apenas paga o que o funcionário exigiu é vítima de concussão, não corruptor.\n• Descaminho: iludir o pagamento de imposto devido na entrada, saída ou consumo de mercadoria. Contrabando: importar ou exportar mercadoria proibida."
+     }
+    ]
+   },
+   "revisao": {
+    "pontos": [
+     "Funcionário público penal: exerce cargo, emprego ou função, mesmo transitório ou sem remuneração.",
+     "Concussão = EXIGIR vantagem indevida.",
+     "Corrupção passiva = SOLICITAR, RECEBER ou ACEITAR promessa.",
+     "Corrupção ativa = OFERECER ou PROMETER vantagem a funcionário.",
+     "Prevaricação: satisfazer interesse ou sentimento pessoal.",
+     "Peculato culposo: reparar o dano antes da sentença irrecorrível extingue a punibilidade.",
+     "Resistência exige violência ou ameaça contra ato legal.",
+     "Desobediência: descumprir ordem legal, sem violência.",
+     "Desacato: ofender funcionário no exercício da função ou em razão dela.",
+     "Descaminho: iludir imposto; contrabando: mercadoria proibida."
+    ]
+   },
+   "mapa": {
+    "no_central": "Crimes contra a Administração Pública",
+    "ramos": [
+     {
+      "label": "Conceito",
+      "filhos": [
+       "Funcionário público amplo",
+       "Equiparados",
+       "Aumento para cargos de direção"
+      ]
+     },
+     {
+      "label": "Peculato",
+      "filhos": [
+       "Apropriação",
+       "Desvio",
+       "Furto",
+       "Culposo"
+      ]
+     },
+     {
+      "label": "Vantagem indevida",
+      "filhos": [
+       "Concussão: exigir",
+       "Corrupção passiva: solicitar/receber",
+       "Corrupção ativa: oferecer/prometer"
+      ]
+     },
+     {
+      "label": "Outros do funcionário",
+      "filhos": [
+       "Prevaricação",
+       "Condescendência criminosa",
+       "Advocacia administrativa",
+       "Violação de sigilo"
+      ]
+     },
+     {
+      "label": "Do particular",
+      "filhos": [
+       "Resistência",
+       "Desobediência",
+       "Desacato",
+       "Contrabando e descaminho"
+      ]
+     }
+    ]
+   },
+   "flashcards": [
+    {
+     "pergunta": "Qual o verbo da concussão?",
+     "resposta": "Exigir."
+    },
+    {
+     "pergunta": "Quais os verbos da corrupção passiva?",
+     "resposta": "Solicitar, receber ou aceitar promessa de vantagem indevida."
+    },
+    {
+     "pergunta": "O que caracteriza a prevaricação?",
+     "resposta": "Retardar, deixar de praticar ou praticar contra a lei ato de ofício para satisfazer interesse ou sentimento pessoal."
+    },
+    {
+     "pergunta": "Efeito da reparação do dano no peculato culposo antes da sentença irrecorrível?",
+     "resposta": "Extingue a punibilidade."
+    },
+    {
+     "pergunta": "Diferença entre resistência e desobediência?",
+     "resposta": "Na resistência há violência ou ameaça; na desobediência, não."
+    },
+    {
+     "pergunta": "Quem paga propina exigida pelo funcionário comete corrupção ativa?",
+     "resposta": "Não; é vítima de concussão."
+    }
+   ],
+   "questoes": [
+    {
+     "subassunto": "Crimes praticados por funcionário público contra a administração em geral (arts. 312 a 327)",
+     "enunciado": "O funcionário público que EXIGE, para si, vantagem indevida em razão da função comete o crime de",
+     "opcoes": [
+      "corrupção passiva.",
+      "peculato.",
+      "prevaricação.",
+      "concussão.",
+      "corrupção ativa."
+     ],
+     "gabarito": 3,
+     "comentario": "O verbo 'exigir' caracteriza a concussão. Na corrupção passiva os verbos são solicitar, receber ou aceitar promessa (A). Prevaricação envolve interesse pessoal na prática do ato (C); peculato envolve apropriação ou desvio de bem (B); corrupção ativa é crime do particular (E).",
+     "dificuldade": "facil"
+    },
+    {
+     "subassunto": "Crimes praticados por particular contra a administração em geral (arts. 328 a 337)",
+     "enunciado": "Um motorista, abordado pela fiscalização, oferece dinheiro ao agente para que ele não lavre a autuação. O motorista cometeu",
+     "opcoes": [
+      "concussão.",
+      "corrupção ativa.",
+      "tráfico de influência.",
+      "desobediência.",
+      "corrupção passiva."
+     ],
+     "gabarito": 1,
+     "comentario": "Oferecer ou prometer vantagem indevida a funcionário público para que pratique, omita ou retarde ato de ofício é corrupção ativa, crime de particular. Concussão e corrupção passiva são crimes do funcionário (A e E). Tráfico de influência envolve vender suposto prestígio junto a funcionário (C).",
+     "dificuldade": "facil"
+    },
+    {
+     "subassunto": "Crimes praticados por particular contra a administração em geral (arts. 328 a 337)",
+     "enunciado": "Um cidadão, ao receber ordem legal de prisão, agride fisicamente o agente para impedir a execução do ato. A conduta caracteriza",
+     "opcoes": [
+      "resistência.",
+      "desobediência.",
+      "desacato, apenas.",
+      "usurpação de função pública.",
+      "fato atípico, por ser direito de autodefesa."
+     ],
+     "gabarito": 0,
+     "comentario": "Opor-se à execução de ato legal mediante violência ou ameaça ao funcionário é resistência, aplicando-se também as penas da violência. Desobediência (B) não envolve violência. Não há direito de agredir o agente em cumprimento de ordem legal (E).",
+     "dificuldade": "media"
+    },
+    {
+     "subassunto": "Crimes praticados por funcionário público contra a administração em geral (arts. 312 a 327)",
+     "enunciado": "Sobre o peculato, assinale a alternativa correta.",
+     "opcoes": [
+      "Só existe se o bem for público, nunca particular.",
+      "O peculato-furto exige que o funcionário tenha a posse do bem.",
+      "No peculato culposo, a reparação do dano antes da sentença irrecorrível extingue a punibilidade.",
+      "Não existe forma culposa de peculato.",
+      "No peculato culposo, a reparação do dano após a sentença irrecorrível extingue a punibilidade."
+     ],
+     "gabarito": 2,
+     "comentario": "No peculato culposo, a reparação do dano antes da sentença irrecorrível extingue a punibilidade; se posterior, reduz de metade a pena imposta (E errada). O bem pode ser público ou particular (A); o peculato-furto ocorre justamente quando o funcionário NÃO tem a posse (B); e existe peculato culposo (D).",
+     "dificuldade": "media"
+    },
+    {
+     "subassunto": "Crimes praticados por funcionário público contra a administração em geral (arts. 312 a 327)",
+     "enunciado": "Um servidor deixa de aplicar multa a um vizinho que cometeu infração, apenas por ser seu amigo, sem receber ou pedir qualquer vantagem. Em tese, o servidor praticou",
+     "opcoes": [
+      "corrupção passiva.",
+      "concussão.",
+      "advocacia administrativa.",
+      "condescendência criminosa.",
+      "prevaricação."
+     ],
+     "gabarito": 4,
+     "comentario": "Deixar de praticar ato de ofício, indevidamente, para satisfazer interesse ou sentimento pessoal (amizade) é prevaricação. Como não houve pedido ou recebimento de vantagem, não há corrupção passiva (A) nem concussão (B). Condescendência criminosa (D) envolve deixar de responsabilizar subordinado; advocacia administrativa (C) é patrocinar interesse privado perante a administração.",
+     "dificuldade": "dificil"
+    }
+   ]
+  },
+  {
+   "curso": "gcm-geral",
+   "disciplina": "Direito Processual Penal",
+   "assunto": "Prisão em flagrante (arts. 301 a 310)",
+   "aula": {
+    "titulo": "Prisão em flagrante",
+    "secoes": [
+     {
+      "titulo": "Quem pode e quem deve prender",
+      "texto": "O CPP diz que QUALQUER DO POVO PODERÁ e as autoridades policiais e seus agentes DEVERÃO prender quem for encontrado em flagrante delito.\n• Flagrante facultativo: o do cidadão comum, que pode prender, mas não é obrigado.\n• Flagrante obrigatório (ou compulsório): o das autoridades policiais e seus agentes, que têm o dever de agir.\nO Estatuto das Guardas Municipais determina que, diante de flagrante, a guarda encaminhe o autor ao delegado de polícia, preservando o local do crime quando possível e sempre que necessário."
+     },
+     {
+      "titulo": "Espécies de flagrante",
+      "texto": "Considera-se em flagrante quem:\n• está cometendo a infração (flagrante próprio);\n• acaba de cometê-la (flagrante próprio);\n• é perseguido, logo após, pela autoridade, pelo ofendido ou por qualquer pessoa, em situação que faça presumir ser autor (flagrante impróprio ou quase flagrante);\n• é encontrado, logo depois, com instrumentos, armas, objetos ou papéis que façam presumir ser ele o autor (flagrante presumido ou ficto).\nNos crimes permanentes (como sequestro, ou manter droga guardada para venda), o agente está em flagrante enquanto não cessar a permanência.\nAtenção: não existe prazo fixo de 24 horas para o flagrante impróprio. O que importa é que a perseguição comece logo após o crime e seja contínua."
+     },
+     {
+      "titulo": "Flagrantes válidos e inválidos",
+      "texto": "• Flagrante esperado: a polícia sabe que o crime vai ocorrer e apenas aguarda para agir. É válido.\n• Flagrante preparado ou provocado: o agente é induzido a praticar o crime por alguém que, ao mesmo tempo, toma providências que tornam a consumação impossível. É inválido; o STF tem entendimento sumulado de que, nesse caso, não há crime.\n• Flagrante forjado: criam-se provas falsas de um crime que não existiu (ex.: 'plantar' droga). É ilegal e pode configurar crime de quem forja.\n• Flagrante diferido ou prorrogado (ação controlada): a autoridade retarda a intervenção para agir no momento mais eficaz, nos casos autorizados em lei, como em investigações de organização criminosa."
+     },
+     {
+      "titulo": "Lavratura do auto de prisão em flagrante",
+      "texto": "Apresentado o preso à autoridade competente:\n• ouve-se o condutor, que assina e recebe cópia do termo e recibo de entrega do preso;\n• ouvem-se as testemunhas que acompanharam e interroga-se o conduzido;\n• se houver fundada suspeita, a autoridade manda recolhê-lo à prisão.\nA falta de testemunhas da infração não impede o auto, mas, nesse caso, além do condutor, pelo menos duas pessoas que presenciaram a apresentação do preso devem assiná-lo.\nSe o preso não quiser, não souber ou não puder assinar, duas testemunhas que tenham ouvido a leitura do auto na presença dele assinam em seu lugar.\nO auto deve registrar se o preso tem filhos, suas idades, se algum tem deficiência e o contato de um responsável por eles.\nSe não houver autoridade no local, o preso é apresentado à do lugar mais próximo."
+     },
+     {
+      "titulo": "Comunicações, nota de culpa e audiência de custódia",
+      "texto": "• A prisão e o local onde o preso está devem ser comunicados IMEDIATAMENTE ao juiz, ao Ministério Público e à família do preso ou à pessoa por ele indicada.\n• Em até 24 horas, o auto de prisão em flagrante vai ao juiz e, se o preso não indicar advogado, cópia integral vai à Defensoria Pública.\n• No mesmo prazo, o preso recebe a nota de culpa, assinada pela autoridade, com o motivo da prisão e os nomes do condutor e das testemunhas.\n• Em até 24 horas após a prisão, o juiz realiza a audiência de custódia, em regra por videoconferência em tempo real (redação da Lei nº 15.358/2026; a forma presencial fica para situações excepcionais de força maior), com o preso, seu advogado ou defensor público e o Ministério Público. Nela, o juiz deve, de forma fundamentada: relaxar a prisão ilegal; OU converter o flagrante em preventiva, se presentes os requisitos legais e se outras cautelares não bastarem; OU conceder liberdade provisória, com ou sem fiança.\n• Se o juiz perceber que o fato foi praticado sob excludente de ilicitude, pode conceder liberdade provisória mediante compromisso de comparecer aos atos do processo.\n• Nas infrações de menor potencial ofensivo, não se impõe prisão em flagrante nem se exige fiança se o autor for encaminhado ao Juizado ou se comprometer a comparecer."
+     }
+    ]
+   },
+   "revisao": {
+    "pontos": [
+     "Qualquer do povo PODE prender em flagrante; autoridades policiais e seus agentes DEVEM.",
+     "Flagrante próprio: está cometendo ou acaba de cometer.",
+     "Flagrante impróprio: perseguido logo após.",
+     "Flagrante presumido: encontrado logo depois com objetos que façam presumir a autoria.",
+     "Crime permanente: flagrante enquanto durar a permanência.",
+     "Flagrante esperado é válido; preparado e forjado são inválidos.",
+     "Sem testemunhas da infração: assinam o condutor e 2 testemunhas da apresentação.",
+     "Auto de prisão ao juiz em até 24 horas; nota de culpa no mesmo prazo.",
+     "Audiência de custódia em até 24 horas: relaxar, converter em preventiva ou conceder liberdade provisória."
+    ]
+   },
+   "mapa": {
+    "no_central": "Prisão em flagrante",
+    "ramos": [
+     {
+      "label": "Sujeitos",
+      "filhos": [
+       "Qualquer do povo: pode",
+       "Autoridades e agentes: devem",
+       "Guarda: apresenta ao delegado"
+      ]
+     },
+     {
+      "label": "Espécies",
+      "filhos": [
+       "Próprio",
+       "Impróprio",
+       "Presumido",
+       "Crime permanente"
+      ]
+     },
+     {
+      "label": "Validade",
+      "filhos": [
+       "Esperado: válido",
+       "Preparado: inválido",
+       "Forjado: ilegal",
+       "Diferido: ação controlada"
+      ]
+     },
+     {
+      "label": "Auto de prisão",
+      "filhos": [
+       "Condutor, testemunhas, interrogatório",
+       "2 testemunhas da apresentação",
+       "Informação sobre filhos"
+      ]
+     },
+     {
+      "label": "Após a prisão",
+      "filhos": [
+       "Comunicação imediata",
+       "24 h: auto ao juiz e nota de culpa",
+       "Audiência de custódia"
+      ]
+     }
+    ]
+   },
+   "flashcards": [
+    {
+     "pergunta": "O cidadão comum é obrigado a prender em flagrante?",
+     "resposta": "Não. Qualquer do povo pode; as autoridades e seus agentes devem."
+    },
+    {
+     "pergunta": "O que é flagrante impróprio?",
+     "resposta": "Quando o agente é perseguido, logo após o crime, em situação que faça presumir ser o autor."
+    },
+    {
+     "pergunta": "Flagrante preparado é válido?",
+     "resposta": "Não. Se a preparação torna a consumação impossível, não há crime."
+    },
+    {
+     "pergunta": "Prazo para entregar a nota de culpa?",
+     "resposta": "24 horas."
+    },
+    {
+     "pergunta": "Quais as decisões possíveis na audiência de custódia?",
+     "resposta": "Relaxar a prisão ilegal, converter em preventiva ou conceder liberdade provisória."
+    },
+    {
+     "pergunta": "Até quando há flagrante em crime permanente?",
+     "resposta": "Enquanto não cessar a permanência."
+    }
+   ],
+   "questoes": [
+    {
+     "subassunto": null,
+     "enunciado": "De acordo com o Código de Processo Penal, em relação à prisão em flagrante,",
+     "opcoes": [
+      "somente as autoridades policiais podem prender.",
+      "qualquer do povo deverá prender, sob pena de responder por omissão.",
+      "qualquer do povo poderá e as autoridades policiais e seus agentes deverão prender quem quer que seja encontrado em flagrante delito.",
+      "apenas o juiz pode determinar a prisão em flagrante.",
+      "os agentes policiais podem escolher se prendem ou não o autor do flagrante."
+     ],
+     "gabarito": 2,
+     "comentario": "O CPP prevê o flagrante facultativo (qualquer do povo PODE) e o obrigatório (autoridades policiais e seus agentes DEVEM). O particular não é obrigado (B), a prisão em flagrante independe de ordem judicial (D) e os agentes têm o dever, não a faculdade, de prender (E).",
+     "dificuldade": "facil"
+    },
+    {
+     "subassunto": null,
+     "enunciado": "Um homem é encontrado, logo depois de um roubo, com a bolsa da vítima e a arma usada no crime. Trata-se de flagrante",
+     "opcoes": [
+      "próprio.",
+      "impróprio.",
+      "forjado.",
+      "preparado.",
+      "presumido (ficto)."
+     ],
+     "gabarito": 4,
+     "comentario": "Ser encontrado logo depois com instrumentos, armas ou objetos que façam presumir a autoria caracteriza o flagrante presumido ou ficto. No impróprio (B) há perseguição logo após; no próprio (A) o agente está cometendo ou acabou de cometer o crime. Preparado e forjado são hipóteses ilegais.",
+     "dificuldade": "facil"
+    },
+    {
+     "subassunto": null,
+     "enunciado": "Sobre a lavratura do auto de prisão em flagrante, é correto afirmar que",
+     "opcoes": [
+      "a falta de testemunhas da infração impede a lavratura do auto.",
+      "a falta de testemunhas da infração não impede o auto, mas, com o condutor, devem assiná-lo pelo menos duas pessoas que tenham testemunhado a apresentação do preso à autoridade.",
+      "o condutor não precisa ser ouvido.",
+      "o preso deve obrigatoriamente assinar o auto, sob pena de nulidade.",
+      "o auto só pode ser lavrado pelo juiz."
+     ],
+     "gabarito": 1,
+     "comentario": "É o que prevê o CPP: ausentes testemunhas do fato, duas pessoas que presenciaram a apresentação assinam com o condutor. O condutor é ouvido primeiro (C). Se o preso não quiser, não souber ou não puder assinar, duas testemunhas da leitura assinam por ele (D). A lavratura cabe à autoridade policial (E).",
+     "dificuldade": "media"
+    },
+    {
+     "subassunto": null,
+     "enunciado": "Após a prisão em flagrante, o prazo para entregar ao preso a nota de culpa e para encaminhar o auto de prisão em flagrante ao juiz é de",
+     "opcoes": [
+      "até 24 horas.",
+      "até 48 horas.",
+      "até 72 horas.",
+      "até 5 dias.",
+      "até 10 dias."
+     ],
+     "gabarito": 0,
+     "comentario": "O CPP fixa o prazo de até 24 horas após a prisão para encaminhar o auto ao juiz (e cópia à Defensoria, se não houver advogado) e para entregar a nota de culpa ao preso. A audiência de custódia também deve ocorrer em até 24 horas.",
+     "dificuldade": "media"
+    },
+    {
+     "subassunto": null,
+     "enunciado": "Um policial disfarçado convence uma pessoa, que não tinha intenção de delinquir, a lhe vender um objeto furtado, e já posiciona uma equipe no local para prendê-la no momento da entrega, tornando impossível a consumação. Esse flagrante é considerado",
+     "opcoes": [
+      "esperado e válido.",
+      "presumido e válido.",
+      "diferido e válido.",
+      "preparado, não havendo crime quando a preparação torna impossível a consumação.",
+      "impróprio e válido."
+     ],
+     "gabarito": 3,
+     "comentario": "No flagrante preparado ou provocado, o agente é induzido a praticar o crime por quem, ao mesmo tempo, impede a consumação. O STF tem entendimento sumulado de que, nessa situação, não há crime. No flagrante esperado (A) não há induzimento: a polícia apenas aguarda o crime que já ia acontecer.",
+     "dificuldade": "dificil"
+    }
+   ]
+  },
+  {
+   "curso": "gcm-geral",
+   "disciplina": "Direito Processual Penal",
+   "assunto": "Busca e apreensão (arts. 240 a 250)",
+   "aula": {
+    "titulo": "Busca e apreensão",
+    "secoes": [
+     {
+      "titulo": "Conceito e espécies",
+      "texto": "Busca é a procura de pessoas ou coisas; apreensão é a retirada e guarda do que foi encontrado. O CPP prevê duas espécies:\n• Busca domiciliar: realizada em casa, quando fundadas razões a autorizarem, para, entre outros fins, prender criminosos, apreender coisas achadas ou obtidas por meios criminosos, apreender armas, munições e instrumentos do crime, descobrir objetos necessários à prova, apreender cartas destinadas ao acusado quando o conteúdo puder ajudar a esclarecer o fato, apreender pessoas vítimas de crime e colher qualquer elemento de convicção.\n• Busca pessoal: realizada na pessoa (corpo, roupas, bolsas, mochilas e, segundo a jurisprudência, também no veículo em uso), quando houver fundada suspeita de que alguém oculte arma proibida ou objetos ligados ao crime."
+     },
+     {
+      "titulo": "Busca domiciliar e a Constituição",
+      "texto": "A Constituição diz que a casa é asilo inviolável: ninguém pode entrar sem consentimento do morador, salvo em caso de flagrante delito ou desastre, para prestar socorro, ou, durante o dia, por determinação judicial.\nPor isso, fora do flagrante, desastre, socorro ou consentimento, a busca domiciliar depende de mandado judicial, a ser cumprido de dia.\nO mandado deve indicar, o mais precisamente possível, a casa e o nome do proprietário ou morador, mencionar o motivo e os fins da diligência e ser assinado pela autoridade que o expediu.\nNão se permite apreender documento em poder do defensor do acusado, salvo quando for elemento do corpo de delito.\nO STF entende que a entrada forçada sem mandado só é lícita quando amparada em fundadas razões, justificadas depois, de que há flagrante dentro da casa. A mera intuição ou denúncia anônima isolada não basta."
+     },
+     {
+      "titulo": "Como se cumpre a busca domiciliar",
+      "texto": "• A busca é feita de dia, salvo se o morador consentir que seja à noite. A Lei de Abuso de Autoridade pune quem cumpre mandado de busca domiciliar após as 21h ou antes das 5h.\n• Antes de entrar, os executores mostram e leem o mandado ao morador e o intimam a abrir a porta.\n• Se houver desobediência, a porta pode ser arrombada e a entrada forçada; se o morador continuar resistindo, pode-se usar força contra coisas dentro da casa para achar o que se procura.\n• Se os moradores estiverem ausentes, intima-se um vizinho, se houver e estiver presente, para assistir.\n• Se a coisa ou pessoa procurada for determinada, o morador é intimado a mostrá-la.\n• Ao final, lavra-se auto circunstanciado, assinado por duas testemunhas presenciais.\n• A busca deve incomodar os moradores o mínimo indispensável."
+     },
+     {
+      "titulo": "Busca pessoal",
+      "texto": "A busca pessoal independe de mandado:\n• no caso de prisão;\n• quando houver fundada suspeita de que a pessoa esteja na posse de arma proibida ou de objetos ou papéis que constituam corpo de delito;\n• quando determinada no curso de busca domiciliar.\nA fundada suspeita deve se basear em elementos objetivos e concretos, que possam ser descritos depois. Os tribunais superiores não aceitam como justificativa apenas a aparência, a cor da pele, o nervosismo ou uma 'atitude suspeita' genérica.\nA busca em mulher será feita por outra mulher, se isso não atrasar ou prejudicar a diligência."
+     },
+     {
+      "titulo": "Outras regras",
+      "texto": "• A busca pode ser determinada de ofício ou a pedido das partes.\n• As regras de busca domiciliar também valem para compartimento não aberto ao público onde alguém exerce profissão ou atividade (ex.: escritório, consultório).\n• A autoridade ou seus agentes podem entrar em território de outra jurisdição, até de outro Estado, quando estiverem seguindo pessoa ou coisa para apreendê-la, devendo apresentar-se à autoridade local antes ou depois da diligência, conforme a urgência."
+     }
+    ]
+   },
+   "revisao": {
+    "pontos": [
+     "Busca pode ser domiciliar ou pessoal.",
+     "Domiciliar exige fundadas razões e, em regra, mandado judicial.",
+     "Sem mandado, só com consentimento, flagrante, desastre ou para prestar socorro.",
+     "Busca domiciliar por mandado: durante o dia (salvo consentimento do morador para a noite).",
+     "Abuso de autoridade: cumprir mandado de busca domiciliar após 21h ou antes das 5h.",
+     "Busca pessoal dispensa mandado em prisão, fundada suspeita ou durante busca domiciliar.",
+     "Fundada suspeita precisa de elementos objetivos, não mera aparência.",
+     "Busca em mulher: por outra mulher, se não atrasar a diligência.",
+     "Auto circunstanciado assinado por duas testemunhas presenciais."
+    ]
+   },
+   "mapa": {
+    "no_central": "Busca e apreensão",
+    "ramos": [
+     {
+      "label": "Domiciliar",
+      "filhos": [
+       "Fundadas razões",
+       "Mandado judicial",
+       "Durante o dia",
+       "Exceções constitucionais"
+      ]
+     },
+     {
+      "label": "Cumprimento",
+      "filhos": [
+       "Ler o mandado ao morador",
+       "Arrombamento se desobedecer",
+       "Vizinho se ausente",
+       "Auto com 2 testemunhas"
+      ]
+     },
+     {
+      "label": "Pessoal",
+      "filhos": [
+       "Sem mandado na prisão",
+       "Fundada suspeita objetiva",
+       "Durante busca domiciliar",
+       "Mulher por mulher"
+      ]
+     },
+     {
+      "label": "Outras regras",
+      "filhos": [
+       "De ofício ou a pedido",
+       "Escritórios e consultórios",
+       "Perseguição em outra jurisdição"
+      ]
+     }
+    ]
+   },
+   "flashcards": [
+    {
+     "pergunta": "Em quais casos se pode entrar na casa sem consentimento do morador?",
+     "resposta": "Flagrante delito, desastre, para prestar socorro ou, durante o dia, por ordem judicial."
+    },
+    {
+     "pergunta": "A busca pessoal precisa de mandado quando há fundada suspeita?",
+     "resposta": "Não."
+    },
+    {
+     "pergunta": "Quem deve fazer a busca pessoal em mulher?",
+     "resposta": "Outra mulher, se não houver retardamento ou prejuízo da diligência."
+    },
+    {
+     "pergunta": "Quantas testemunhas assinam o auto de busca domiciliar?",
+     "resposta": "Duas testemunhas presenciais."
+    },
+    {
+     "pergunta": "Moradores ausentes: quem é intimado a assistir à busca?",
+     "resposta": "Um vizinho, se houver e estiver presente."
+    },
+    {
+     "pergunta": "Nervosismo, sozinho, é fundada suspeita?",
+     "resposta": "Não, segundo os tribunais superiores; exigem-se elementos objetivos."
+    }
+   ],
+   "questoes": [
+    {
+     "subassunto": null,
+     "enunciado": "Segundo o CPP, a busca pessoal independerá de mandado",
+     "opcoes": [
+      "no caso de prisão ou quando houver fundada suspeita de que a pessoa esteja na posse de arma proibida ou de objetos que constituam corpo de delito.",
+      "apenas quando autorizada verbalmente pelo delegado.",
+      "em nenhuma hipótese.",
+      "somente em pessoas com antecedentes criminais.",
+      "apenas durante a noite."
+     ],
+     "gabarito": 0,
+     "comentario": "O CPP dispensa o mandado na busca pessoal no caso de prisão, de fundada suspeita de posse de arma proibida ou de objetos que constituam corpo de delito, ou quando determinada no curso de busca domiciliar. Antecedentes (D) e horário (E) não são critérios legais.",
+     "dificuldade": "facil"
+    },
+    {
+     "subassunto": null,
+     "enunciado": "Conforme o Código de Processo Penal, a busca pessoal em mulher",
+     "opcoes": [
+      "é proibida em qualquer situação.",
+      "será feita por outra mulher, se não importar retardamento ou prejuízo da diligência.",
+      "deve ser feita somente por policial feminina, mesmo que isso atrase a diligência.",
+      "depende sempre de mandado judicial.",
+      "só pode ser feita em delegacia."
+     ],
+     "gabarito": 1,
+     "comentario": "A regra é a busca por outra mulher, mas ela cede se causar retardamento ou prejuízo à diligência. Não há proibição (A), a regra não é absoluta (C), não exige mandado quando presentes as hipóteses legais (D) nem precisa ser feita em delegacia (E).",
+     "dificuldade": "facil"
+    },
+    {
+     "subassunto": null,
+     "enunciado": "Sobre o cumprimento de mandado de busca domiciliar, é correto afirmar que",
+     "opcoes": [
+      "deve ser cumprido preferencialmente à noite, para surpreender o investigado.",
+      "dispensa a lavratura de auto circunstanciado.",
+      "não é necessário mostrar o mandado ao morador.",
+      "ausentes os moradores, a busca não pode ser realizada.",
+      "se o morador desobedecer à intimação para abrir a porta, esta poderá ser arrombada e forçada a entrada."
+     ],
+     "gabarito": 4,
+     "comentario": "O CPP autoriza o arrombamento da porta em caso de desobediência. A busca deve ser feita de dia (A); o mandado deve ser mostrado e lido ao morador (C); na ausência dos moradores, a busca ocorre, intimando-se vizinho para assistir, se houver e estiver presente (D); e ao final lavra-se auto circunstanciado com duas testemunhas (B).",
+     "dificuldade": "media"
+    },
+    {
+     "subassunto": null,
+     "enunciado": "Com base na Constituição Federal, é possível ingressar em domicílio sem o consentimento do morador",
+     "opcoes": [
+      "a qualquer hora, por determinação judicial.",
+      "apenas com autorização do delegado de polícia.",
+      "em caso de flagrante delito, a qualquer hora.",
+      "somente durante o dia, em qualquer hipótese.",
+      "quando o morador tiver antecedentes criminais."
+     ],
+     "gabarito": 2,
+     "comentario": "A Constituição admite o ingresso sem consentimento em caso de flagrante delito, desastre ou para prestar socorro, a qualquer hora, e, durante o dia, por determinação judicial (art. 5º, XI). A ordem judicial não autoriza cumprimento à noite (A); autorização do delegado não substitui ordem judicial (B); não é verdade que o ingresso só possa ocorrer de dia em qualquer hipótese, pois no flagrante, no desastre e no socorro ele é possível a qualquer hora (D); antecedentes não autorizam o ingresso (E).",
+     "dificuldade": "media"
+    },
+    {
+     "subassunto": null,
+     "enunciado": "Guardas municipais abordam um homem apenas porque ele parecia nervoso ao ver a viatura, sem nenhum outro elemento concreto, e realizam busca pessoal. Considerando o CPP e o entendimento dos tribunais superiores, é correto afirmar que",
+     "opcoes": [
+      "a busca é válida, pois o nervosismo, por si só, caracteriza fundada suspeita.",
+      "a busca é válida, porque a busca pessoal nunca exige qualquer justificativa.",
+      "a busca só seria válida com mandado de busca domiciliar.",
+      "a fundada suspeita exige elementos objetivos e concretos, e o nervosismo isolado não é suficiente para justificá-la.",
+      "a busca é válida se o homem tiver mais de 18 anos."
+     ],
+     "gabarito": 3,
+     "comentario": "A busca pessoal sem mandado exige fundada suspeita, que os tribunais superiores entendem precisar de elementos objetivos e concretos, devidamente justificados; impressões subjetivas, como nervosismo isolado, não bastam. A busca pessoal não depende de mandado domiciliar (C), e idade não é critério (E).",
+     "dificuldade": "dificil"
+    }
+   ]
+  },
+  {
+   "curso": "gcm-geral",
+   "disciplina": "Direito Processual Penal",
+   "assunto": "Infrações penais de menor potencial ofensivo (Lei nº 9.099/1995, art. 61)",
+   "aula": {
+    "titulo": "Infrações de menor potencial ofensivo e Juizado Especial Criminal",
+    "secoes": [
+     {
+      "titulo": "Conceito (art. 61)",
+      "texto": "Pela Lei nº 9.099/1995, são infrações penais de menor potencial ofensivo:\n• TODAS as contravenções penais; e\n• os crimes a que a lei comine pena máxima NÃO SUPERIOR a 2 anos, cumulada ou não com multa.\nCuidado com a leitura: pena máxima de exatamente 2 anos entra; pena máxima de 2 anos e 1 mês, não. O que conta é a pena MÁXIMA prevista em abstrato, não a mínima e não a pena aplicada.\nExemplos comuns: ameaça, desacato, desobediência, lesão corporal leve (fora do contexto de violência doméstica), vias de fato (contravenção)."
+     },
+     {
+      "titulo": "O Juizado Especial Criminal",
+      "texto": "O Juizado Especial Criminal (JECrim) tem competência para a conciliação, o julgamento e a execução dessas infrações, respeitadas as regras de conexão e continência.\nO processo é orientado pelos critérios da oralidade, simplicidade, informalidade, economia processual e celeridade, buscando, sempre que possível, a reparação dos danos à vítima e a aplicação de pena não privativa de liberdade.\nA competência do Juizado é definida pelo lugar em que foi praticada a infração.\nSe o autor não for encontrado para ser citado pessoalmente, ou se o caso for complexo, o processo vai para o juízo comum."
+     },
+     {
+      "titulo": "Termo circunstanciado e a regra do 'não flagrante'",
+      "texto": "Em vez de inquérito policial, a autoridade que toma conhecimento da ocorrência lavra um TERMO CIRCUNSTANCIADO (TC ou TCO) e o encaminha imediatamente ao Juizado, com o autor do fato e a vítima, providenciando as requisições de exames periciais necessários.\nSe, após a lavratura do termo, o autor for imediatamente encaminhado ao Juizado ou assumir o compromisso de comparecer a ele, NÃO se imporá prisão em flagrante nem se exigirá fiança.\nOu seja: a captura e a condução do autor podem ocorrer, mas o auto de prisão em flagrante não é lavrado se ele assumir o compromisso. Se ele se recusar a assumir, a prisão em flagrante pode ser formalizada.\nEm caso de violência doméstica, o juiz pode determinar o afastamento do autor do lar como medida de cautela."
+     },
+     {
+      "titulo": "Institutos despenalizadores",
+      "texto": "• Composição civil dos danos: acordo entre autor e vítima sobre a reparação. Homologado, nas ações penais privadas e públicas condicionadas à representação, acarreta renúncia ao direito de queixa ou de representação, encerrando o caso.\n• Transação penal: o Ministério Público propõe a aplicação imediata de pena restritiva de direitos ou multa, sem processo e sem gerar reincidência. Não cabe, por exemplo, se o autor já foi condenado definitivamente a pena privativa de liberdade por crime, ou se já foi beneficiado por transação nos 5 anos anteriores.\n• Representação: nas lesões corporais leves e nas lesões culposas, a ação depende de representação da vítima.\n• Suspensão condicional do processo: cabe nos crimes com pena MÍNIMA igual ou inferior a 1 ano, estejam ou não abrangidos pela lei; o processo fica suspenso por um período de prova de 2 a 4 anos, com condições."
+     },
+     {
+      "titulo": "Quando a Lei nº 9.099/1995 não se aplica",
+      "texto": "• Crimes praticados com violência doméstica e familiar contra a mulher: a Lei Maria da Penha afasta a aplicação da Lei nº 9.099/1995, independentemente da pena prevista. Assim, não cabem transação penal nem composição civil nesses casos.\n• Justiça Militar: a lei expressamente não se aplica no âmbito da Justiça Militar.\nBizu final: para saber se é menor potencial ofensivo, olhe a pena MÁXIMA (até 2 anos) ou se é contravenção; para a suspensão condicional do processo, olhe a pena MÍNIMA (até 1 ano)."
+     }
+    ]
+   },
+   "revisao": {
+    "pontos": [
+     "IMPO: todas as contravenções e crimes com pena máxima não superior a 2 anos.",
+     "Pena máxima de exatamente 2 anos ainda é menor potencial ofensivo.",
+     "Critérios: oralidade, simplicidade, informalidade, economia processual e celeridade.",
+     "No lugar do inquérito, lavra-se termo circunstanciado.",
+     "Compromisso de comparecer ao Juizado: sem prisão em flagrante e sem fiança.",
+     "Composição civil homologada: renúncia à queixa ou à representação.",
+     "Transação penal: pena restritiva de direitos ou multa, proposta pelo MP.",
+     "Lesão leve e lesão culposa dependem de representação.",
+     "Suspensão condicional do processo: pena mínima até 1 ano; prova de 2 a 4 anos.",
+     "Violência doméstica contra a mulher: não se aplica a Lei nº 9.099/1995."
+    ]
+   },
+   "mapa": {
+    "no_central": "Lei nº 9.099/1995 – IMPO",
+    "ramos": [
+     {
+      "label": "Conceito",
+      "filhos": [
+       "Todas as contravenções",
+       "Crimes com pena máxima até 2 anos",
+       "Com ou sem multa"
+      ]
+     },
+     {
+      "label": "JECrim",
+      "filhos": [
+       "Conciliação, julgamento e execução",
+       "Oralidade e informalidade",
+       "Celeridade",
+       "Local da infração"
+      ]
+     },
+     {
+      "label": "Fase policial",
+      "filhos": [
+       "Termo circunstanciado",
+       "Sem flagrante se assumir compromisso",
+       "Sem fiança"
+      ]
+     },
+     {
+      "label": "Despenalizadores",
+      "filhos": [
+       "Composição civil",
+       "Transação penal",
+       "Representação",
+       "Suspensão condicional do processo"
+      ]
+     },
+     {
+      "label": "Não se aplica",
+      "filhos": [
+       "Violência doméstica contra a mulher",
+       "Justiça Militar"
+      ]
+     }
+    ]
+   },
+   "flashcards": [
+    {
+     "pergunta": "O que são infrações de menor potencial ofensivo?",
+     "resposta": "Todas as contravenções e crimes com pena máxima não superior a 2 anos, com ou sem multa."
+    },
+    {
+     "pergunta": "Qual documento substitui o inquérito nas IMPO?",
+     "resposta": "O termo circunstanciado."
+    },
+    {
+     "pergunta": "Autor que assume compromisso de comparecer ao Juizado pode ser autuado em flagrante?",
+     "resposta": "Não, nem se exige fiança."
+    },
+    {
+     "pergunta": "O que é transação penal?",
+     "resposta": "Proposta do MP de aplicação imediata de pena restritiva de direitos ou multa."
+    },
+    {
+     "pergunta": "A Lei nº 9.099/1995 se aplica à violência doméstica contra a mulher?",
+     "resposta": "Não."
+    },
+    {
+     "pergunta": "Qual a pena considerada para a suspensão condicional do processo?",
+     "resposta": "Pena mínima igual ou inferior a 1 ano."
+    }
+   ],
+   "questoes": [
+    {
+     "subassunto": null,
+     "enunciado": "Nos termos do art. 61 da Lei nº 9.099/1995, consideram-se infrações penais de menor potencial ofensivo",
+     "opcoes": [
+      "apenas as contravenções penais.",
+      "os crimes com pena mínima não superior a 2 anos.",
+      "todos os crimes punidos com detenção.",
+      "os crimes com pena máxima não superior a 4 anos.",
+      "as contravenções penais e os crimes a que a lei comine pena máxima não superior a 2 anos, cumulada ou não com multa."
+     ],
+     "gabarito": 4,
+     "comentario": "É o conceito legal: todas as contravenções e os crimes com pena máxima não superior a 2 anos, com ou sem multa. O critério é a pena máxima, não a mínima (B); o limite é 2, não 4 anos (D); e a espécie de pena (detenção) não é critério (C).",
+     "dificuldade": "facil"
+    },
+    {
+     "subassunto": null,
+     "enunciado": "Um crime tem pena prevista de detenção de 6 meses a 2 anos e multa. De acordo com a Lei nº 9.099/1995, esse crime",
+     "opcoes": [
+      "não é de menor potencial ofensivo, pois tem multa.",
+      "só é de menor potencial ofensivo se o réu for primário.",
+      "não é de menor potencial ofensivo, pois a pena máxima é igual a 2 anos.",
+      "é de menor potencial ofensivo, pois a pena máxima não é superior a 2 anos.",
+      "é de competência do Tribunal do Júri."
+     ],
+     "gabarito": 3,
+     "comentario": "A pena máxima de 2 anos está dentro do limite ('não superior a 2 anos'), e a multa cumulada não altera o enquadramento. A primariedade não integra o conceito (B) e nada indica crime doloso contra a vida (E).",
+     "dificuldade": "facil"
+    },
+    {
+     "subassunto": null,
+     "enunciado": "Após a lavratura do termo circunstanciado, o autor de infração de menor potencial ofensivo que assumir o compromisso de comparecer ao Juizado",
+     "opcoes": [
+      "será preso em flagrante e liberado mediante fiança.",
+      "deverá pagar fiança para ser liberado.",
+      "não terá prisão em flagrante imposta nem se exigirá fiança.",
+      "ficará preso até a audiência preliminar.",
+      "terá prisão preventiva decretada automaticamente."
+     ],
+     "gabarito": 2,
+     "comentario": "A Lei nº 9.099/1995 determina que não se imponha prisão em flagrante nem se exija fiança ao autor que for imediatamente encaminhado ao Juizado ou assumir o compromisso de comparecer. As demais alternativas contrariam essa regra.",
+     "dificuldade": "media"
+    },
+    {
+     "subassunto": null,
+     "enunciado": "Sobre os institutos da Lei nº 9.099/1995, assinale a alternativa correta.",
+     "opcoes": [
+      "A suspensão condicional do processo cabe nos crimes com pena mínima igual ou inferior a 1 ano.",
+      "A transação penal é proposta pela vítima.",
+      "A composição civil dos danos nunca extingue o caso.",
+      "Lesão corporal leve é crime de ação penal pública incondicionada, em qualquer situação.",
+      "A transação penal gera reincidência."
+     ],
+     "gabarito": 0,
+     "comentario": "A suspensão condicional do processo alcança crimes com pena mínima igual ou inferior a 1 ano. A transação é proposta pelo Ministério Público (B) e não gera reincidência (E); a composição homologada, nas ações privadas e públicas condicionadas, gera renúncia ao direito de queixa ou representação (C); e a lesão leve, em regra, depende de representação (D).",
+     "dificuldade": "media"
+    },
+    {
+     "subassunto": null,
+     "enunciado": "Durante patrulhamento, guardas municipais são chamados a uma residência onde um homem ameaçou de morte sua companheira, no contexto de violência doméstica. O crime de ameaça tem pena máxima inferior a 2 anos. Considerando a legislação, é correto afirmar que",
+     "opcoes": [
+      "o caso é de menor potencial ofensivo e cabe transação penal.",
+      "não se aplica a Lei nº 9.099/1995, por se tratar de violência doméstica e familiar contra a mulher, independentemente da pena.",
+      "cabe composição civil dos danos, que encerra o caso.",
+      "o autor não pode ser conduzido à delegacia.",
+      "o caso deve ser encaminhado à Justiça Militar."
+     ],
+     "gabarito": 1,
+     "comentario": "A Lei Maria da Penha afasta a aplicação da Lei nº 9.099/1995 aos crimes praticados com violência doméstica e familiar contra a mulher, qualquer que seja a pena. Por isso, não cabem transação penal (A) nem composição civil (C). O autor pode ser conduzido normalmente (D), e não há competência da Justiça Militar (E).",
+     "dificuldade": "dificil"
+    }
+   ]
+  }
+ ]
+}

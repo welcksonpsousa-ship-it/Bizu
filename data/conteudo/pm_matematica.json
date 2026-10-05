@@ -1,0 +1,2565 @@
+{
+ "itens": [
+  {
+   "curso": "pm-sp-soldado",
+   "disciplina": "Matemática",
+   "assunto": "Números inteiros",
+   "aula": {
+    "titulo": "Números inteiros: sinais, operações e propriedades",
+    "secoes": [
+     {
+      "titulo": "O que são os números inteiros",
+      "texto": "O conjunto dos números inteiros (Z) reúne os naturais (0, 1, 2, 3...) e seus opostos negativos (-1, -2, -3...). Assim, Z = {..., -3, -2, -1, 0, 1, 2, 3, ...}.\nEles aparecem em situações do dia a dia: temperatura abaixo de zero, saldo bancário negativo, andares de subsolo, altitude abaixo do nível do mar.\n• Oposto (ou simétrico): o oposto de 5 é -5; o oposto de -8 é 8. A soma de um número com seu oposto é sempre zero.\n• Módulo (valor absoluto): é a distância do número até o zero na reta. |−6| = 6 e |6| = 6.\n• Comparação: na reta numérica, quem está mais à direita é maior. Entre negativos, o maior é o de menor módulo: -2 > -9."
+     },
+     {
+      "titulo": "Adição e subtração",
+      "texto": "Regra prática para somar inteiros:\n• Sinais iguais: soma os módulos e conserva o sinal. Ex.: (-4) + (-6) = -10.\n• Sinais diferentes: subtrai os módulos e fica o sinal do número de maior módulo. Ex.: (-9) + 4 = -5; 12 + (-3) = 9.\nSubtrair é somar o oposto: 5 - (-3) = 5 + 3 = 8; -2 - 7 = -2 + (-7) = -9.\nEliminação de parênteses: sinal de menos antes dos parênteses troca o sinal de tudo que está dentro. Ex.: -(4 - 9) = -4 + 9 = 5.\nDica de prova: pense em dinheiro. Positivo é o que você tem, negativo é o que você deve. Se você deve 9 e recebe 4, continua devendo 5."
+     },
+     {
+      "titulo": "Multiplicação, divisão e potência",
+      "texto": "Regra dos sinais (vale para multiplicação e divisão):\n• Sinais iguais: resultado positivo. (-3) x (-5) = 15; (-20) : (-4) = 5.\n• Sinais diferentes: resultado negativo. (-3) x 5 = -15; 20 : (-4) = -5.\nCom vários fatores, conte os negativos: quantidade par dá resultado positivo; ímpar dá negativo. (-1) x (-2) x (-3) = -6.\nPotências:\n• Base negativa com expoente par dá positivo: (-2)^4 = 16.\n• Base negativa com expoente ímpar dá negativo: (-2)^3 = -8.\n• Cuidado: -2^2 = -(2^2) = -4, porque o sinal não está dentro dos parênteses. Já (-2)^2 = 4.\nDivisão por zero não existe; zero dividido por qualquer número diferente de zero dá zero."
+     },
+     {
+      "titulo": "Ordem das operações (expressões numéricas)",
+      "texto": "Resolva sempre nesta ordem:\n1. Parênteses ( ), depois colchetes [ ], depois chaves { }.\n2. Potências e raízes.\n3. Multiplicações e divisões, na ordem em que aparecem (da esquerda para a direita).\n4. Adições e subtrações, na ordem em que aparecem.\nExemplo: 10 - 2 x (-3) + (-8) : 4 = 10 + 6 - 2 = 14.\nErro comum: fazer 10 - 2 = 8 primeiro. Multiplicação vem antes da subtração."
+     },
+     {
+      "titulo": "Propriedades",
+      "texto": "Na adição e na multiplicação de inteiros valem:\n• Comutativa: a ordem não altera o resultado. (-3) + 7 = 7 + (-3); 4 x (-2) = (-2) x 4.\n• Associativa: agrupar de formas diferentes não altera o resultado. [(-2) + 5] + 1 = (-2) + [5 + 1].\n• Elemento neutro: 0 na adição (a + 0 = a) e 1 na multiplicação (a x 1 = a).\n• Elemento oposto: a + (-a) = 0.\n• Distributiva: a x (b + c) = a x b + a x c. Ex.: -3 x (4 - 2) = -12 + 6 = -6.\nAtenção: subtração e divisão NÃO são comutativas nem associativas. 5 - 3 é diferente de 3 - 5, e 12 : 4 é diferente de 4 : 12.\nO conjunto Z é fechado para adição, subtração e multiplicação (o resultado é sempre inteiro), mas não para a divisão: 7 : 2 = 3,5, que não é inteiro."
+     }
+    ]
+   },
+   "revisao": {
+    "pontos": [
+     "Sinais iguais na soma: soma os módulos e mantém o sinal.",
+     "Sinais diferentes na soma: subtrai os módulos e fica o sinal do maior módulo.",
+     "Subtrair é somar o oposto: a - (-b) = a + b.",
+     "Multiplicação e divisão: sinais iguais dão +, sinais diferentes dão -.",
+     "Base negativa com expoente par dá positivo; com expoente ímpar dá negativo.",
+     "-2^2 = -4, mas (-2)^2 = 4.",
+     "Entre dois negativos, é maior o que está mais perto do zero.",
+     "Ordem: parênteses, potências, multiplicação/divisão, adição/subtração.",
+     "Subtração e divisão não são comutativas."
+    ]
+   },
+   "mapa": {
+    "no_central": "Números inteiros (Z)",
+    "ramos": [
+     {
+      "label": "Conceitos",
+      "filhos": [
+       "Positivos, negativos e zero",
+       "Oposto ou simétrico",
+       "Módulo",
+       "Reta numérica"
+      ]
+     },
+     {
+      "label": "Adição e subtração",
+      "filhos": [
+       "Sinais iguais: soma e conserva",
+       "Sinais diferentes: subtrai e fica o do maior",
+       "Subtrair = somar o oposto"
+      ]
+     },
+     {
+      "label": "Multiplicação e divisão",
+      "filhos": [
+       "Sinais iguais: +",
+       "Sinais diferentes: -",
+       "Não existe divisão por zero"
+      ]
+     },
+     {
+      "label": "Potências",
+      "filhos": [
+       "Expoente par: +",
+       "Expoente ímpar: mantém o sinal",
+       "-2^2 diferente de (-2)^2"
+      ]
+     },
+     {
+      "label": "Propriedades",
+      "filhos": [
+       "Comutativa",
+       "Associativa",
+       "Elemento neutro",
+       "Distributiva"
+      ]
+     }
+    ]
+   },
+   "flashcards": [
+    {
+     "pergunta": "Quanto é (-8) + 3?",
+     "resposta": "-5 (sinais diferentes: 8 - 3 = 5, fica o sinal do 8)."
+    },
+    {
+     "pergunta": "Quanto é 4 - (-6)?",
+     "resposta": "10 (subtrair -6 é somar 6)."
+    },
+    {
+     "pergunta": "Qual o sinal de (-2) x (-3) x (-4)?",
+     "resposta": "Negativo: três fatores negativos (quantidade ímpar). Resultado -24."
+    },
+    {
+     "pergunta": "Quanto vale (-3)^2 e -3^2?",
+     "resposta": "(-3)^2 = 9 e -3^2 = -9."
+    },
+    {
+     "pergunta": "Qual é maior: -4 ou -11?",
+     "resposta": "-4, pois está mais próximo do zero."
+    },
+    {
+     "pergunta": "Qual o elemento neutro da multiplicação?",
+     "resposta": "O número 1."
+    }
+   ],
+   "questoes": [
+    {
+     "subassunto": "Operações",
+     "enunciado": "Às 5h da manhã, a temperatura em uma cidade era de -7 °C. Até o meio-dia, a temperatura subiu 12 °C. A temperatura ao meio-dia era de",
+     "opcoes": [
+      "5 °C",
+      "-5 °C",
+      "19 °C",
+      "-19 °C",
+      "4 °C"
+     ],
+     "gabarito": 0,
+     "comentario": "Subir 12 °C a partir de -7 °C: -7 + 12 = 5 °C. -5 °C trocaria o sinal; 19 °C e -19 °C somam os módulos como se os sinais fossem iguais; 4 °C é erro de conta.",
+     "dificuldade": "facil"
+    },
+    {
+     "subassunto": "Propriedades",
+     "enunciado": "Assinale a alternativa que apresenta uma igualdade verdadeira.",
+     "opcoes": [
+      "(-8) + (+3) = +5",
+      "(-2)^2 = -4",
+      "(-3) x (-4) = 12",
+      "(-15) : (+3) = 5",
+      "(-6) - (-6) = -12"
+     ],
+     "gabarito": 2,
+     "comentario": "(-3) x (-4) = 12, pois sinais iguais dão resultado positivo. As demais erram: (-8) + 3 = -5; (-2)^2 = 4 (expoente par); (-15) : 3 = -5 (sinais diferentes); (-6) - (-6) = -6 + 6 = 0.",
+     "dificuldade": "facil"
+    },
+    {
+     "subassunto": "Operações",
+     "enunciado": "O valor da expressão -2 + 3 x (-4) - (-10) : 2 é",
+     "opcoes": [
+      "-19",
+      "-5",
+      "9",
+      "-9",
+      "-15"
+     ],
+     "gabarito": 3,
+     "comentario": "Primeiro multiplicação e divisão: 3 x (-4) = -12 e (-10) : 2 = -5. Então: -2 + (-12) - (-5) = -2 - 12 + 5 = -9. -19 surge de somar o -5 em vez de subtraí-lo; -5 e 9 vêm de resolver da esquerda para a direita sem respeitar a prioridade; -15 é erro de sinal.",
+     "dificuldade": "media"
+    },
+    {
+     "subassunto": "Operações",
+     "enunciado": "Uma pessoa tinha saldo de R$ 350,00 na conta. Fez dois saques, de R$ 420,00 e de R$ 180,00, e depois recebeu um depósito de R$ 200,00. Após essas operações, o saldo ficou",
+     "opcoes": [
+      "positivo em R$ 50,00",
+      "negativo em R$ 50,00",
+      "negativo em R$ 250,00",
+      "positivo em R$ 150,00",
+      "negativo em R$ 450,00"
+     ],
+     "gabarito": 1,
+     "comentario": "350 - 420 - 180 + 200 = -50, ou seja, saldo negativo de R$ 50,00. R$ 250,00 negativos seria esquecer o depósito; R$ 450,00 negativos seria subtrair o depósito; as opções positivas erram o sinal.",
+     "dificuldade": "media"
+    },
+    {
+     "subassunto": "Operações",
+     "enunciado": "Em um prédio, os andares vão do 3º subsolo (andar -3) ao 12º andar. Um elevador parte do 5º andar, desce 7 andares, depois sobe 11 andares e, por fim, desce 6 andares. O andar em que o elevador parou e o total de andares percorridos por ele são, respectivamente,",
+     "opcoes": [
+      "9º andar e 24 andares",
+      "3º andar e 10 andares",
+      "andar -3 e 24 andares",
+      "3º andar e 18 andares",
+      "3º andar e 24 andares"
+     ],
+     "gabarito": 4,
+     "comentario": "Posição: 5 - 7 = -2; -2 + 11 = 9; 9 - 6 = 3, logo 3º andar. Percurso total é a soma dos deslocamentos sem sinal: 7 + 11 + 6 = 24 andares. 10 andares seria somar com sinal (-7 + 11 + 6); 9º andar ignora a última descida; andar -3 troca o sinal; 18 andares esquece um trecho.",
+     "dificuldade": "dificil"
+    }
+   ]
+  },
+  {
+   "curso": "pm-sp-soldado",
+   "disciplina": "Matemática",
+   "assunto": "Números racionais",
+   "aula": {
+    "titulo": "Números racionais: frações e decimais",
+    "secoes": [
+     {
+      "titulo": "O que é um número racional",
+      "texto": "Número racional (conjunto Q) é todo número que pode ser escrito como fração a/b, com a e b inteiros e b diferente de zero. Todos os inteiros são racionais (5 = 5/1), assim como os decimais exatos (0,75 = 3/4) e as dízimas periódicas (0,333... = 1/3).\nNão são racionais os números com infinitas casas decimais sem período, como a raiz quadrada de 2 e o número pi. Esses são irracionais."
+     },
+     {
+      "titulo": "Representação fracionária",
+      "texto": "Na fração a/b, b (denominador) indica em quantas partes iguais o inteiro foi dividido e a (numerador) quantas partes foram tomadas.\n• Frações equivalentes: multiplique ou divida numerador e denominador pelo mesmo número. 2/3 = 4/6 = 10/15.\n• Simplificar: dividir ambos pelo mesmo divisor até chegar à fração irredutível. 18/24 = 3/4 (dividindo por 6).\n• Fração imprópria e número misto: 7/4 = 1 inteiro e 3/4.\n• Comparação: com denominadores iguais, é maior quem tem maior numerador. Com denominadores diferentes, reduza ao mesmo denominador ou transforme em decimal."
+     },
+     {
+      "titulo": "Representação decimal",
+      "texto": "Para passar de fração para decimal, divida o numerador pelo denominador: 3/8 = 0,375; 2/5 = 0,4.\nPara passar de decimal exato para fração, escreva o número sem vírgula sobre 10, 100, 1000... (uma casa decimal, 10; duas casas, 100) e simplifique: 0,45 = 45/100 = 9/20.\nDízima periódica simples: o período vai no numerador e, no denominador, um 9 para cada algarismo do período. 0,777... = 7/9; 0,2323... = 23/99.\nFrações que valem a pena decorar: 1/2 = 0,5; 1/4 = 0,25; 3/4 = 0,75; 1/5 = 0,2; 1/8 = 0,125; 1/3 = 0,333..."
+     },
+     {
+      "titulo": "Operações",
+      "texto": "• Adição e subtração de frações: reduza ao mesmo denominador (use o mmc). 1/4 + 2/3 = 3/12 + 8/12 = 11/12.\n• Multiplicação: numerador vezes numerador e denominador vezes denominador. 2/3 x 5/7 = 10/21.\n• Divisão: conserva a primeira e multiplica pelo inverso da segunda. 3/4 : 2/5 = 3/4 x 5/2 = 15/8.\n• Fração de um número: 3/5 de 200 = 200 : 5 x 3 = 120.\n• Decimais: na soma e subtração, alinhe as vírgulas. Na multiplicação, multiplique sem vírgula e depois conte as casas decimais dos fatores: 1,2 x 0,3 = 0,36. Na divisão, iguale as casas e elimine a vírgula: 4,5 : 0,15 = 450 : 15 = 30.\nProblema típico: gastou 1/3 e depois 1/4 do total; sobrou 1 - 1/3 - 1/4 = 5/12 do total."
+     },
+     {
+      "titulo": "Propriedades",
+      "texto": "Em Q valem as propriedades comutativa, associativa e distributiva, além dos elementos neutros (0 na adição e 1 na multiplicação).\n• Inverso multiplicativo: todo racional diferente de zero tem um inverso cujo produto dá 1. O inverso de 3/7 é 7/3; o inverso de 0,5 é 2.\n• Densidade: entre dois racionais quaisquer sempre existe outro racional (por exemplo, a média deles). Por isso não se fala em sucessor de um racional.\n• Q é fechado para adição, subtração, multiplicação e divisão (exceto por zero)."
+     }
+    ]
+   },
+   "revisao": {
+    "pontos": [
+     "Racional é todo número que pode ser escrito como a/b, com b diferente de zero.",
+     "Decimal exato vira fração sobre 10, 100, 1000 e depois simplifica.",
+     "Dízima periódica simples: período sobre tantos 9 quantos forem os algarismos do período.",
+     "Soma de frações exige denominador comum (mmc).",
+     "Divisão de frações: conserva a primeira e multiplica pelo inverso da segunda.",
+     "Na multiplicação de decimais, o total de casas do resultado é a soma das casas dos fatores.",
+     "Para comparar frações, transforme em decimal ou use o mesmo denominador.",
+     "Se gastou 1/3 e 1/4, sobrou 5/12 do total."
+    ]
+   },
+   "mapa": {
+    "no_central": "Números racionais (Q)",
+    "ramos": [
+     {
+      "label": "Fração",
+      "filhos": [
+       "Numerador e denominador",
+       "Equivalência",
+       "Simplificação",
+       "Número misto"
+      ]
+     },
+     {
+      "label": "Decimal",
+      "filhos": [
+       "Decimal exato",
+       "Dízima periódica",
+       "Conversão fração-decimal"
+      ]
+     },
+     {
+      "label": "Operações com frações",
+      "filhos": [
+       "Soma: mmc",
+       "Produto: direto",
+       "Divisão: inverte a segunda",
+       "Fração de um número"
+      ]
+     },
+     {
+      "label": "Operações com decimais",
+      "filhos": [
+       "Alinhar vírgulas",
+       "Contar casas na multiplicação",
+       "Igualar casas na divisão"
+      ]
+     },
+     {
+      "label": "Propriedades",
+      "filhos": [
+       "Inverso multiplicativo",
+       "Densidade",
+       "Fechamento"
+      ]
+     }
+    ]
+   },
+   "flashcards": [
+    {
+     "pergunta": "Como escrever 0,45 como fração irredutível?",
+     "resposta": "45/100 = 9/20."
+    },
+    {
+     "pergunta": "Qual fração gera 0,777...?",
+     "resposta": "7/9."
+    },
+    {
+     "pergunta": "Quanto é 3/4 : 2/5?",
+     "resposta": "3/4 x 5/2 = 15/8."
+    },
+    {
+     "pergunta": "Quanto é 3/5 de 200?",
+     "resposta": "120."
+    },
+    {
+     "pergunta": "Qual o inverso de 0,25?",
+     "resposta": "4, pois 0,25 = 1/4."
+    },
+    {
+     "pergunta": "Quanto é 1,2 x 0,3?",
+     "resposta": "0,36."
+    }
+   ],
+   "questoes": [
+    {
+     "subassunto": "Representação decimal",
+     "enunciado": "A fração 3/8, escrita na forma decimal, corresponde a",
+     "opcoes": [
+      "0,38",
+      "0,375",
+      "2,6",
+      "0,83",
+      "0,0375"
+     ],
+     "gabarito": 1,
+     "comentario": "Dividindo 3 por 8 obtém-se 0,375. 0,38 é arredondamento; 2,6 e 0,83 vêm de dividir na ordem errada ou de juntar os algarismos; 0,0375 tem uma casa a mais.",
+     "dificuldade": "facil"
+    },
+    {
+     "subassunto": "Representação fracionária",
+     "enunciado": "O número decimal 0,45 é equivalente à fração irredutível",
+     "opcoes": [
+      "45/10",
+      "4/5",
+      "9/20",
+      "9/2",
+      "45/1000"
+     ],
+     "gabarito": 2,
+     "comentario": "0,45 = 45/100; dividindo numerador e denominador por 5, obtém-se 9/20, que não pode mais ser simplificada. 45/10 = 4,5 e 9/2 = 4,5; 4/5 = 0,8; 45/1000 = 0,045.",
+     "dificuldade": "facil"
+    },
+    {
+     "subassunto": "Operações",
+     "enunciado": "Carlos gastou 1/3 do seu salário com aluguel e 1/4 com alimentação, restando-lhe R$ 1.500,00. O salário de Carlos é",
+     "opcoes": [
+      "R$ 2.000,00",
+      "R$ 2.400,00",
+      "R$ 4.500,00",
+      "R$ 3.600,00",
+      "R$ 6.000,00"
+     ],
+     "gabarito": 3,
+     "comentario": "Gastou 1/3 + 1/4 = 4/12 + 3/12 = 7/12; sobrou 5/12 do salário. Se 5/12 valem 1.500, então 1/12 vale 300 e o salário é 12 x 300 = R$ 3.600,00. As outras opções vêm de usar frações erradas para a sobra.",
+     "dificuldade": "media"
+    },
+    {
+     "subassunto": "Propriedades",
+     "enunciado": "Dentre os números 2/3, 0,6, 5/8, 0,66 e 7/11, o maior é",
+     "opcoes": [
+      "0,6",
+      "5/8",
+      "0,66",
+      "7/11",
+      "2/3"
+     ],
+     "gabarito": 4,
+     "comentario": "Em decimal: 2/3 = 0,666...; 0,6; 5/8 = 0,625; 0,66; 7/11 = 0,6363... O maior é 2/3, pois 0,666... supera 0,66 a partir da terceira casa decimal.",
+     "dificuldade": "media"
+    },
+    {
+     "subassunto": "Operações",
+     "enunciado": "Uma caixa-d'água estava com 2/5 de sua capacidade ocupados. Após receber mais 180 litros, passou a ter 7/10 da capacidade ocupados. A capacidade total dessa caixa-d'água é de",
+     "opcoes": [
+      "600 litros",
+      "450 litros",
+      "300 litros",
+      "1.800 litros",
+      "257 litros"
+     ],
+     "gabarito": 0,
+     "comentario": "Os 180 litros correspondem a 7/10 - 2/5 = 7/10 - 4/10 = 3/10 da capacidade. Se 3/10 valem 180, 1/10 vale 60, e a capacidade é 600 litros. 450 L usaria 2/5 no lugar da diferença; 1.800 L seria 180 x 10; 257 L vem de dividir 180 por 7/10; 300 L é metade da resposta.",
+     "dificuldade": "dificil"
+    }
+   ]
+  },
+  {
+   "curso": "pm-sp-soldado",
+   "disciplina": "Matemática",
+   "assunto": "Mínimo múltiplo comum",
+   "aula": {
+    "titulo": "Mínimo múltiplo comum (mmc)",
+    "secoes": [
+     {
+      "titulo": "Múltiplos e o conceito de mmc",
+      "texto": "Os múltiplos de um número são obtidos multiplicando-o por 0, 1, 2, 3... Múltiplos de 6: 0, 6, 12, 18, 24, 30, 36... Múltiplos de 8: 0, 8, 16, 24, 32, 40, 48...\nO mínimo múltiplo comum (mmc) de dois ou mais números é o MENOR número positivo que é múltiplo de todos eles ao mesmo tempo. No exemplo, os múltiplos comuns positivos de 6 e 8 são 24, 48, 72... Logo, mmc(6, 8) = 24.\nPara números pequenos, listar os múltiplos funciona. Para números maiores, use a decomposição."
+     },
+     {
+      "titulo": "Como calcular: decomposição simultânea",
+      "texto": "Coloque os números lado a lado e divida pelos primos (2, 3, 5, 7...) enquanto algum deles for divisível. Quem não for divisível desce igual. Quando todos virarem 1, multiplique os primos usados.\nExemplo: mmc(12, 18)\n12, 18 | 2\n6, 9 | 2\n3, 9 | 3\n1, 3 | 3\n1, 1 | mmc = 2 x 2 x 3 x 3 = 36\nOutra forma: fatore cada número e pegue todos os primos com o MAIOR expoente. 12 = 2^2 x 3 e 18 = 2 x 3^2, logo mmc = 2^2 x 3^2 = 36."
+     },
+     {
+      "titulo": "Propriedades úteis",
+      "texto": "• Se um número é múltiplo do outro, o mmc é o maior deles: mmc(5, 20) = 20.\n• Se os números são primos entre si (não têm divisor comum além de 1), o mmc é o produto: mmc(4, 9) = 36.\n• Para dois números: mmc x mdc = produto dos números. Ex.: mmc(12, 18) x mdc(12, 18) = 36 x 6 = 216 = 12 x 18.\n• Não confunda: mmc responde \"quando coincidem de novo\" (tempo, ciclos, repetição); mdc responde \"qual o maior tamanho para dividir em partes iguais\" (cortar, repartir)."
+     },
+     {
+      "titulo": "Problemas clássicos de prova",
+      "texto": "1. Eventos periódicos: dois ônibus saem juntos às 7h, um a cada 15 min e outro a cada 20 min. Voltam a sair juntos após mmc(15, 20) = 60 min, ou seja, às 8h.\n2. Luzes que piscam, remédios tomados em intervalos diferentes, plantões em escalas diferentes: sempre mmc dos intervalos.\n3. Soma de frações: o mmc dos denominadores é o menor denominador comum. 5/6 + 3/8: mmc(6, 8) = 24, então 20/24 + 9/24 = 29/24.\n4. Restos iguais: o menor número (maior que o resto) que dividido por 6, 8 e 9 deixa resto 2 é mmc + 2 = 72 + 2 = 74. Os seguintes com a mesma propriedade são 146, 218... (somando 72 a cada vez).\nAtenção ao que a questão pede: horário, quantidade de vezes, ou o próprio número."
+     }
+    ]
+   },
+   "revisao": {
+    "pontos": [
+     "mmc é o menor múltiplo positivo comum a todos os números.",
+     "Decomposição simultânea: divida pelos primos até todos virarem 1 e multiplique os divisores.",
+     "Pela fatoração: todos os primos com o maior expoente.",
+     "Se um número é múltiplo do outro, o mmc é o maior.",
+     "Números primos entre si: mmc é o produto.",
+     "mmc x mdc = produto dos dois números.",
+     "Coincidência de eventos periódicos: use mmc.",
+     "Resto igual r em várias divisões: número = múltiplo do mmc + r."
+    ]
+   },
+   "mapa": {
+    "no_central": "Mínimo múltiplo comum",
+    "ramos": [
+     {
+      "label": "Conceito",
+      "filhos": [
+       "Múltiplos de um número",
+       "Menor múltiplo comum positivo"
+      ]
+     },
+     {
+      "label": "Cálculo",
+      "filhos": [
+       "Listar múltiplos",
+       "Decomposição simultânea",
+       "Fatoração: maior expoente"
+      ]
+     },
+     {
+      "label": "Propriedades",
+      "filhos": [
+       "Múltiplo do outro: o maior",
+       "Primos entre si: produto",
+       "mmc x mdc = produto"
+      ]
+     },
+     {
+      "label": "Aplicações",
+      "filhos": [
+       "Eventos que se repetem",
+       "Soma de frações",
+       "Problemas de resto igual"
+      ]
+     },
+     {
+      "label": "Cuidado",
+      "filhos": [
+       "mmc: quando coincidem",
+       "mdc: dividir em partes iguais"
+      ]
+     }
+    ]
+   },
+   "flashcards": [
+    {
+     "pergunta": "Quanto é mmc(12, 18)?",
+     "resposta": "36."
+    },
+    {
+     "pergunta": "Quanto é mmc(4, 9)?",
+     "resposta": "36, pois 4 e 9 são primos entre si."
+    },
+    {
+     "pergunta": "Quanto é mmc(5, 20)?",
+     "resposta": "20, pois 20 é múltiplo de 5."
+    },
+    {
+     "pergunta": "Qual a relação entre mmc e mdc de dois números?",
+     "resposta": "mmc x mdc = produto dos números."
+    },
+    {
+     "pergunta": "Quando usar mmc em problemas?",
+     "resposta": "Quando eventos periódicos voltam a coincidir."
+    },
+    {
+     "pergunta": "Na fatoração, como se obtém o mmc?",
+     "resposta": "Produto de todos os primos, cada um com o maior expoente."
+    }
+   ],
+   "questoes": [
+    {
+     "subassunto": null,
+     "enunciado": "O mínimo múltiplo comum entre 12 e 18 é",
+     "opcoes": [
+      "6",
+      "216",
+      "36",
+      "72",
+      "30"
+     ],
+     "gabarito": 2,
+     "comentario": "12 = 2^2 x 3 e 18 = 2 x 3^2; mmc = 2^2 x 3^2 = 36. 6 é o mdc; 216 é o produto; 72 é múltiplo comum, mas não o menor; 30 é a soma.",
+     "dificuldade": "facil"
+    },
+    {
+     "subassunto": null,
+     "enunciado": "Dois ônibus partem juntos de um terminal às 7h. O primeiro parte a cada 15 minutos e o segundo, a cada 20 minutos. Eles voltarão a partir juntos, pela primeira vez, às",
+     "opcoes": [
+      "7h35",
+      "7h45",
+      "8h30",
+      "7h20",
+      "8h"
+     ],
+     "gabarito": 4,
+     "comentario": "mmc(15, 20) = 60 minutos. Assim, voltam a partir juntos 60 minutos depois das 7h, isto é, às 8h. 7h35 soma os intervalos; 7h20 e 7h45 são horários de apenas um dos ônibus; 8h30 não é múltiplo comum a partir das 7h.",
+     "dificuldade": "facil"
+    },
+    {
+     "subassunto": null,
+     "enunciado": "Três luzes piscam, respectivamente, a cada 4, 6 e 10 segundos. Em certo instante, as três piscam juntas. Nos 5 minutos seguintes, o número de vezes em que as três voltarão a piscar juntas é",
+     "opcoes": [
+      "5",
+      "4",
+      "6",
+      "12",
+      "30"
+     ],
+     "gabarito": 0,
+     "comentario": "mmc(4, 6, 10) = 60 s. Em 5 minutos = 300 s, elas coincidem aos 60, 120, 180, 240 e 300 s: 5 vezes. 4 esquece o instante 300 s; 6 conta o instante inicial; 12 e 30 usam intervalos errados.",
+     "dificuldade": "media"
+    },
+    {
+     "subassunto": null,
+     "enunciado": "O resultado de 5/6 + 3/8 - 1/4 é",
+     "opcoes": [
+      "7/10",
+      "23/24",
+      "29/24",
+      "7/24",
+      "1"
+     ],
+     "gabarito": 1,
+     "comentario": "mmc(6, 8, 4) = 24. 5/6 = 20/24; 3/8 = 9/24; 1/4 = 6/24. Então 20 + 9 - 6 = 23, e o resultado é 23/24. 7/10 opera numeradores e denominadores separadamente; 29/24 esquece a subtração; 7/24 e 1 são erros de conversão.",
+     "dificuldade": "media"
+    },
+    {
+     "subassunto": null,
+     "enunciado": "O menor número natural de três algarismos que, dividido por 6, por 8 ou por 9, deixa sempre resto 2 é",
+     "opcoes": [
+      "74",
+      "144",
+      "148",
+      "146",
+      "218"
+     ],
+     "gabarito": 3,
+     "comentario": "Números que deixam resto 2 nas três divisões têm a forma mmc(6, 8, 9) x k + 2 = 72k + 2. Para k = 1 temos 74 (dois algarismos); para k = 2, 146, que é o menor com três algarismos. 144 deixa resto 0; 148 deixa resto 4 na divisão por 6 e por 9; 218 também serve, mas não é o menor.",
+     "dificuldade": "dificil"
+    }
+   ]
+  },
+  {
+   "curso": "pm-sp-soldado",
+   "disciplina": "Matemática",
+   "assunto": "Razão e proporção",
+   "aula": {
+    "titulo": "Razão e proporção",
+    "secoes": [
+     {
+      "titulo": "Razão",
+      "texto": "Razão entre dois números a e b (b diferente de zero) é o quociente a/b. Lê-se \"a está para b\". O primeiro é o antecedente e o segundo, o consequente.\nA ordem importa: a razão entre homens e mulheres de uma turma com 12 homens e 18 mulheres é 12/18 = 2/3; já a razão entre mulheres e homens é 3/2.\nRazões especiais:\n• Escala = medida no desenho / medida real (mesma unidade). Escala 1:50.000 significa que 1 cm no mapa vale 50.000 cm (500 m) no real.\n• Velocidade média = distância / tempo.\n• Densidade demográfica = habitantes / área.\n• Porcentagem é uma razão com consequente 100."
+     },
+     {
+      "titulo": "Proporção e propriedade fundamental",
+      "texto": "Proporção é a igualdade entre duas razões: a/b = c/d. Os termos a e d são os extremos; b e c, os meios.\nPropriedade fundamental: o produto dos meios é igual ao produto dos extremos: a x d = b x c. É a famosa \"multiplicação cruzada\".\nExemplo: x/15 = 4/6 então 6x = 60, e x = 10.\nOutra propriedade muito cobrada: numa proporção, a soma dos antecedentes está para a soma dos consequentes assim como cada antecedente está para seu consequente. Se a/b = 3/5 e a + b = 64, então a/3 = b/5 = (a + b)/8 = 64/8 = 8. Logo a = 24 e b = 40."
+     },
+     {
+      "titulo": "Divisão em partes diretamente proporcionais",
+      "texto": "Dividir um total em partes diretamente proporcionais a certos números significa que cada parte é o número multiplicado por uma mesma constante k.\nPasso a passo: some os números de referência, divida o total por essa soma para achar k e multiplique.\nExemplo: dividir R$ 1.200 em partes proporcionais a 2, 3 e 5. Soma: 10. k = 1.200 / 10 = 120. Partes: 240, 360 e 600.\nEsse raciocínio aparece em divisão de lucros proporcional ao capital investido ou ao tempo trabalhado."
+     },
+     {
+      "titulo": "Divisão em partes inversamente proporcionais",
+      "texto": "Inversamente proporcional quer dizer: quem tem número MAIOR recebe MENOS. Cada parte é k dividido pelo número de referência, ou seja, é diretamente proporcional aos inversos.\nExemplo: dividir 780 em partes inversamente proporcionais a 2, 3 e 4. Partes: k/2, k/3 e k/4. Somando: k x (1/2 + 1/3 + 1/4) = k x 13/12 = 780, então k = 720. Partes: 360, 240 e 180.\nDica: para evitar frações, multiplique os inversos pelo mmc dos denominadores. 1/2, 1/3, 1/4 viram 6, 4, 3 (multiplicando por 12). Divida 780 em partes proporcionais a 6, 4 e 3: soma 13, k = 60, partes 360, 240 e 180."
+     },
+     {
+      "titulo": "Grandezas proporcionais",
+      "texto": "Duas grandezas são diretamente proporcionais quando, dobrando uma, a outra também dobra (a razão entre elas é constante). Ex.: quantidade comprada e valor pago.\nSão inversamente proporcionais quando, dobrando uma, a outra cai pela metade (o produto é constante). Ex.: número de trabalhadores e tempo para terminar uma obra, velocidade e tempo de viagem.\nIdentificar o tipo de relação é o primeiro passo da regra de três."
+     }
+    ]
+   },
+   "revisao": {
+    "pontos": [
+     "Razão é a divisão a/b, e a ordem dos termos importa.",
+     "Em uma proporção, produto dos meios = produto dos extremos.",
+     "Escala = desenho / real, na mesma unidade.",
+     "1 km = 100.000 cm: útil em questões de escala.",
+     "Partes diretamente proporcionais: total dividido pela soma dos pesos dá a constante.",
+     "Partes inversamente proporcionais: use os inversos (ou os inversos multiplicados pelo mmc).",
+     "Em divisão inversa, quem tem maior número recebe menos.",
+     "Diretamente proporcionais: razão constante; inversamente: produto constante."
+    ]
+   },
+   "mapa": {
+    "no_central": "Razão e proporção",
+    "ramos": [
+     {
+      "label": "Razão",
+      "filhos": [
+       "a/b com b diferente de 0",
+       "Antecedente e consequente",
+       "Ordem importa"
+      ]
+     },
+     {
+      "label": "Razões especiais",
+      "filhos": [
+       "Escala",
+       "Velocidade média",
+       "Densidade",
+       "Porcentagem"
+      ]
+     },
+     {
+      "label": "Proporção",
+      "filhos": [
+       "a/b = c/d",
+       "Meios e extremos",
+       "Multiplicação cruzada",
+       "Soma dos antecedentes"
+      ]
+     },
+     {
+      "label": "Divisão proporcional",
+      "filhos": [
+       "Direta: parte = k x peso",
+       "Inversa: parte = k / peso",
+       "Truque do mmc"
+      ]
+     },
+     {
+      "label": "Grandezas",
+      "filhos": [
+       "Diretamente proporcionais",
+       "Inversamente proporcionais"
+      ]
+     }
+    ]
+   },
+   "flashcards": [
+    {
+     "pergunta": "O que diz a propriedade fundamental das proporções?",
+     "resposta": "Produto dos meios = produto dos extremos."
+    },
+    {
+     "pergunta": "Na escala 1:100.000, 3 cm no mapa correspondem a quanto no real?",
+     "resposta": "300.000 cm = 3 km."
+    },
+    {
+     "pergunta": "Dividir 90 em partes diretamente proporcionais a 1, 2 e 3 dá quanto?",
+     "resposta": "15, 30 e 45."
+    },
+    {
+     "pergunta": "Se x/4 = 15/6, quanto vale x?",
+     "resposta": "10."
+    },
+    {
+     "pergunta": "Em partes inversamente proporcionais, quem recebe mais?",
+     "resposta": "Quem tem o menor número de referência."
+    },
+    {
+     "pergunta": "Velocidade e tempo de um percurso fixo são grandezas de que tipo?",
+     "resposta": "Inversamente proporcionais."
+    }
+   ],
+   "questoes": [
+    {
+     "subassunto": null,
+     "enunciado": "Em uma turma há 12 homens e 18 mulheres. A razão entre o número de homens e o número total de pessoas da turma é",
+     "opcoes": [
+      "2/3",
+      "3/2",
+      "2/5",
+      "3/5",
+      "5/2"
+     ],
+     "gabarito": 2,
+     "comentario": "Total = 12 + 18 = 30. Razão homens/total = 12/30 = 2/5. 2/3 é homens/mulheres; 3/2 é mulheres/homens; 3/5 é mulheres/total; 5/2 é total/homens.",
+     "dificuldade": "facil"
+    },
+    {
+     "subassunto": null,
+     "enunciado": "Em um mapa feito na escala 1:50.000, a distância entre dois batalhões é de 4 cm. A distância real entre eles é de",
+     "opcoes": [
+      "2 km",
+      "20 km",
+      "200 m",
+      "12,5 km",
+      "500 m"
+     ],
+     "gabarito": 0,
+     "comentario": "4 cm x 50.000 = 200.000 cm. Como 1 km = 100.000 cm, a distância real é 2 km. 20 km e 200 m erram na conversão; 500 m corresponde a apenas 1 cm; 12,5 km divide em vez de multiplicar.",
+     "dificuldade": "facil"
+    },
+    {
+     "subassunto": null,
+     "enunciado": "Três sócios vão dividir um prêmio de R$ 1.200,00 em partes diretamente proporcionais a 2, 3 e 5. A maior parte será de",
+     "opcoes": [
+      "R$ 400,00",
+      "R$ 360,00",
+      "R$ 500,00",
+      "R$ 240,00",
+      "R$ 600,00"
+     ],
+     "gabarito": 4,
+     "comentario": "Soma dos pesos: 2 + 3 + 5 = 10. Constante: 1.200 / 10 = 120. Partes: 240, 360 e 600. A maior é R$ 600,00. R$ 400,00 seria divisão igual; R$ 240,00 e R$ 360,00 são as outras partes; R$ 500,00 não corresponde a nenhum cálculo correto.",
+     "dificuldade": "media"
+    },
+    {
+     "subassunto": null,
+     "enunciado": "Dois números positivos a e b são tais que a/b = 3/5 e a + b = 64. O valor de b - a é",
+     "opcoes": [
+      "8",
+      "16",
+      "24",
+      "40",
+      "12"
+     ],
+     "gabarito": 1,
+     "comentario": "a/3 = b/5 = (a + b)/8 = 64/8 = 8. Assim, a = 24 e b = 40, e b - a = 16. 24 e 40 são os próprios números; 8 é a constante; 12 não resulta de nenhuma etapa correta.",
+     "dificuldade": "media"
+    },
+    {
+     "subassunto": null,
+     "enunciado": "Uma gratificação de R$ 780,00 será dividida entre três policiais em partes inversamente proporcionais ao número de faltas de cada um no semestre, que foram 2, 3 e 4. O policial que recebeu a menor parte ganhou",
+     "opcoes": [
+      "R$ 156,00",
+      "R$ 240,00",
+      "R$ 260,00",
+      "R$ 180,00",
+      "R$ 360,00"
+     ],
+     "gabarito": 3,
+     "comentario": "Partes inversamente proporcionais a 2, 3 e 4 são proporcionais a 1/2, 1/3 e 1/4, ou, multiplicando por 12, a 6, 4 e 3. Soma 13; constante 780 / 13 = 60. Partes: 360, 240 e 180. A menor (quem faltou 4 vezes) é R$ 180,00. R$ 260,00 seria a divisão em partes iguais; R$ 240,00 é a parte intermediária; R$ 360,00 é a maior parte (quem faltou menos); R$ 156,00 não corresponde a nenhuma parte.",
+     "dificuldade": "dificil"
+    }
+   ]
+  },
+  {
+   "curso": "pm-sp-soldado",
+   "disciplina": "Matemática",
+   "assunto": "Porcentagem",
+   "aula": {
+    "titulo": "Porcentagem",
+    "secoes": [
+     {
+      "titulo": "O que é porcentagem",
+      "texto": "Porcentagem (%) é uma razão de denominador 100. Dizer 30% é o mesmo que 30/100 = 0,30.\nConversões rápidas:\n• 50% = 1/2 = 0,5\n• 25% = 1/4 = 0,25\n• 20% = 1/5 = 0,2\n• 10% = 1/10 = 0,1\n• 75% = 3/4 = 0,75\n• 1% = 1/100 = 0,01\nPara calcular x% de um valor, multiplique o valor por x/100. Ex.: 15% de 240 = 0,15 x 240 = 36.\nAtalho mental: 10% é só \"andar a vírgula\" uma casa para a esquerda. 10% de 240 = 24; 5% é metade disso (12); então 15% = 24 + 12 = 36."
+     },
+     {
+      "titulo": "Qual porcentagem representa?",
+      "texto": "Para saber quanto por cento uma parte representa do todo, divida a parte pelo todo e multiplique por 100.\nExemplo: de 40 candidatos, 14 foram aprovados. 14/40 = 0,35 = 35%.\nPara achar o todo quando se conhece a parte e a porcentagem, use regra de três: se 30% de um número é 72, então 1% é 72 / 30 = 2,4 e 100% é 240."
+     },
+     {
+      "titulo": "Aumentos e descontos: o fator multiplicativo",
+      "texto": "É a ferramenta mais importante do tema.\n• Aumento de x%: multiplique por (1 + x/100). Aumento de 20%: fator 1,20.\n• Desconto de x%: multiplique por (1 - x/100). Desconto de 25%: fator 0,75.\nExemplo: produto de R$ 80,00 com 25% de desconto: 80 x 0,75 = R$ 60,00.\nPara voltar ao preço original, divida pelo fator. Se após aumento de 25% o preço é R$ 150,00, o original era 150 / 1,25 = R$ 120,00. Erro clássico: tirar 25% de 150 (daria 112,50, errado)."
+     },
+     {
+      "titulo": "Aumentos e descontos sucessivos",
+      "texto": "Porcentagens sucessivas NÃO se somam: multiplicam-se os fatores.\nExemplo: aumento de 20% seguido de desconto de 20%. Fator final: 1,20 x 0,80 = 0,96. O preço final é 96% do inicial, ou seja, houve redução de 4% (e não \"ficou igual\").\nDois descontos de 10%: 0,90 x 0,90 = 0,81, desconto total de 19% (e não 20%).\nDois aumentos de 10%: 1,10 x 1,10 = 1,21, aumento total de 21%."
+     },
+     {
+      "titulo": "Variação percentual",
+      "texto": "Variação percentual = (valor final - valor inicial) / valor inicial x 100.\nA base é sempre o valor INICIAL (o \"de onde se partiu\").\nExemplo: as ocorrências passaram de 250 para 300. Variação: 50 / 250 = 0,20 = aumento de 20%. Se voltarem de 300 para 250, a queda é 50 / 300, aproximadamente 16,7%, e não 20%.\nPor isso, para desfazer um aumento de 25% é preciso um desconto de 20%: a base mudou."
+     }
+    ]
+   },
+   "revisao": {
+    "pontos": [
+     "x% = x/100.",
+     "10% de um valor: basta andar uma casa decimal para a esquerda.",
+     "Parte / todo x 100 = percentual.",
+     "Aumento de x%: multiplique por (1 + x/100).",
+     "Desconto de x%: multiplique por (1 - x/100).",
+     "Porcentagens sucessivas se multiplicam, não se somam.",
+     "Aumento de 20% seguido de desconto de 20% resulta em perda de 4%.",
+     "Variação percentual usa sempre o valor inicial como base.",
+     "Para achar o preço antes do aumento, divida pelo fator."
+    ]
+   },
+   "mapa": {
+    "no_central": "Porcentagem",
+    "ramos": [
+     {
+      "label": "Conceito",
+      "filhos": [
+       "Razão sobre 100",
+       "Fração e decimal equivalentes"
+      ]
+     },
+     {
+      "label": "Cálculos básicos",
+      "filhos": [
+       "x% de um valor",
+       "Parte sobre todo",
+       "Achar o todo"
+      ]
+     },
+     {
+      "label": "Fator multiplicativo",
+      "filhos": [
+       "Aumento: 1 + taxa",
+       "Desconto: 1 - taxa",
+       "Voltar ao original: dividir"
+      ]
+     },
+     {
+      "label": "Sucessivos",
+      "filhos": [
+       "Multiplicar fatores",
+       "+20% e -20% = -4%",
+       "-10% e -10% = -19%"
+      ]
+     },
+     {
+      "label": "Variação percentual",
+      "filhos": [
+       "(final - inicial) / inicial",
+       "Base é o valor inicial"
+      ]
+     }
+    ]
+   },
+   "flashcards": [
+    {
+     "pergunta": "Quanto é 15% de 240?",
+     "resposta": "36."
+    },
+    {
+     "pergunta": "Qual o fator de um aumento de 35%?",
+     "resposta": "1,35."
+    },
+    {
+     "pergunta": "Qual o fator de um desconto de 12%?",
+     "resposta": "0,88."
+    },
+    {
+     "pergunta": "Dois descontos sucessivos de 10% equivalem a um desconto único de quanto?",
+     "resposta": "19%."
+    },
+    {
+     "pergunta": "Um preço subiu de 50 para 60. Qual o aumento percentual?",
+     "resposta": "20%."
+    },
+    {
+     "pergunta": "Após aumento de 25%, um produto custa R$ 150. Qual era o preço?",
+     "resposta": "R$ 120 (150 / 1,25)."
+    }
+   ],
+   "questoes": [
+    {
+     "subassunto": null,
+     "enunciado": "Em um concurso, 15% dos 240 inscritos de uma sala faltaram à prova. O número de faltosos nessa sala foi",
+     "opcoes": [
+      "24",
+      "36",
+      "15",
+      "48",
+      "204"
+     ],
+     "gabarito": 1,
+     "comentario": "15% de 240 = 0,15 x 240 = 36. 24 corresponde a 10%; 48 a 20%; 204 é o número de presentes; 15 confunde a taxa com a quantidade.",
+     "dificuldade": "facil"
+    },
+    {
+     "subassunto": null,
+     "enunciado": "Um produto que custava R$ 80,00 foi vendido com 25% de desconto. O valor pago foi",
+     "opcoes": [
+      "R$ 55,00",
+      "R$ 20,00",
+      "R$ 100,00",
+      "R$ 60,00",
+      "R$ 75,00"
+     ],
+     "gabarito": 3,
+     "comentario": "Desconto de 25% equivale a pagar 75% do preço: 0,75 x 80 = R$ 60,00. R$ 20,00 é o valor do desconto; R$ 100,00 seria aumento; R$ 55,00 subtrai 25 reais; R$ 75,00 confunde percentual com valor.",
+     "dificuldade": "facil"
+    },
+    {
+     "subassunto": null,
+     "enunciado": "O preço de uma mercadoria sofreu um aumento de 20% e, em seguida, um desconto de 20% sobre o novo valor. Em relação ao preço inicial, o preço final",
+     "opcoes": [
+      "diminuiu 4%",
+      "não se alterou",
+      "aumentou 4%",
+      "diminuiu 40%",
+      "diminuiu 2%"
+     ],
+     "gabarito": 0,
+     "comentario": "Fatores: 1,20 x 0,80 = 0,96. O preço final é 96% do inicial, uma redução de 4%. Não se altera apenas se as porcentagens fossem somadas, o que é incorreto; aumento de 4% e reduções de 40% e 2% não resultam do cálculo.",
+     "dificuldade": "media"
+    },
+    {
+     "subassunto": null,
+     "enunciado": "Dos 40 candidatos de uma turma de treinamento, 14 foram aprovados no teste físico. A porcentagem de aprovados foi de",
+     "opcoes": [
+      "14%",
+      "28%",
+      "35%",
+      "40%",
+      "65%"
+     ],
+     "gabarito": 2,
+     "comentario": "14 / 40 = 0,35 = 35%. 65% é a porcentagem de reprovados; 14% confunde quantidade com percentual; 28% e 40% são erros de divisão.",
+     "dificuldade": "media"
+    },
+    {
+     "subassunto": null,
+     "enunciado": "Após um aumento de 25%, o preço de um equipamento passou a ser R$ 150,00. Para que ele volte ao preço original, o desconto a ser aplicado sobre o novo preço deve ser de",
+     "opcoes": [
+      "25%",
+      "30%",
+      "15%",
+      "12,5%",
+      "20%"
+     ],
+     "gabarito": 4,
+     "comentario": "Preço original: 150 / 1,25 = R$ 120,00. Desconto necessário: 30 reais sobre 150, ou seja, 30 / 150 = 20%. 25% é o erro clássico de achar que a mesma taxa desfaz o aumento (daria R$ 112,50); 30% confunde o valor em reais com a taxa; 15% e 12,5% não resultam do cálculo.",
+     "dificuldade": "dificil"
+    }
+   ]
+  },
+  {
+   "curso": "pm-sp-soldado",
+   "disciplina": "Matemática",
+   "assunto": "Regra de três simples",
+   "aula": {
+    "titulo": "Regra de três simples",
+    "secoes": [
+     {
+      "titulo": "Para que serve",
+      "texto": "A regra de três simples resolve problemas com DUAS grandezas relacionadas, em que se conhecem três valores e se procura o quarto.\nAntes de fazer qualquer conta, é preciso descobrir se as grandezas são diretamente ou inversamente proporcionais. É aí que a maioria erra.\nPergunta-chave: \"se uma grandeza aumenta, a outra aumenta ou diminui na mesma proporção?\""
+     },
+     {
+      "titulo": "Regra de três direta",
+      "texto": "Grandezas diretamente proporcionais: aumentando uma, a outra aumenta na mesma proporção.\nExemplos: quantidade de produto e preço; distância percorrida e combustível gasto; tempo de funcionamento e peças produzidas.\nMontagem:\n3 kg ---- R$ 27\n5 kg ---- x\nComo é direta, multiplica cruzado: 3x = 5 x 27, então 3x = 135 e x = 45.\nAtalho: calcule o valor unitário. 1 kg custa 27 / 3 = 9 reais; 5 kg custam 45 reais."
+     },
+     {
+      "titulo": "Regra de três inversa",
+      "texto": "Grandezas inversamente proporcionais: aumentando uma, a outra diminui na mesma proporção.\nExemplos: número de trabalhadores e tempo de obra; velocidade e tempo de viagem; número de torneiras e tempo para encher um tanque.\nMontagem:\n6 pedreiros ---- 10 dias\n4 pedreiros ---- x\nComo é inversa, inverta uma das colunas antes de multiplicar cruzado, ou, de forma mais simples, multiplique em linha: 6 x 10 = 4 x x, então x = 60 / 4 = 15 dias.\nCheque o bom senso: menos pedreiros, mais dias. Faz sentido."
+     },
+     {
+      "titulo": "Unidades e cuidados",
+      "texto": "• Coloque cada grandeza na mesma unidade. Se aparecem 2h15min e 3h30min, transforme em minutos: 135 min e 210 min.\n• 2h30min NÃO é 2,30 h. É 2,5 h (30 min = meia hora).\n• Frações de tarefa também funcionam: se 3/5 do tanque enchem em 12 min, o restante (2/5) enche em 12 x (2/5) / (3/5) = 8 min.\n• Confira sempre o resultado com a lógica do problema: se o resultado \"andou\" na direção errada, você trocou direta por inversa."
+     },
+     {
+      "titulo": "Exemplo resolvido completo",
+      "texto": "Um carro a 60 km/h faz um percurso em 2h30min. Quanto tempo levaria a 75 km/h?\n1. Grandezas: velocidade e tempo. Aumentando a velocidade, o tempo diminui: inversa.\n2. Tempo em horas: 2h30min = 2,5 h.\n3. Multiplica em linha: 60 x 2,5 = 75 x t, então 150 = 75t e t = 2 h.\nOutra forma: a distância é 60 x 2,5 = 150 km; a 75 km/h, gasta 150 / 75 = 2 h."
+     }
+    ]
+   },
+   "revisao": {
+    "pontos": [
+     "Primeiro passo: decidir se a relação é direta ou inversa.",
+     "Direta: uma aumenta, a outra aumenta na mesma proporção; multiplica cruzado.",
+     "Inversa: uma aumenta, a outra diminui; multiplica em linha (ou inverte uma coluna).",
+     "Mais trabalhadores, menos dias: inversa.",
+     "Mais velocidade, menos tempo: inversa.",
+     "Mais produto, mais preço: direta.",
+     "Coloque tudo na mesma unidade antes de calcular.",
+     "2h30min = 2,5 h, e não 2,3 h."
+    ]
+   },
+   "mapa": {
+    "no_central": "Regra de três simples",
+    "ramos": [
+     {
+      "label": "Identificar",
+      "filhos": [
+       "Duas grandezas",
+       "Três valores conhecidos",
+       "Uma incógnita"
+      ]
+     },
+     {
+      "label": "Direta",
+      "filhos": [
+       "Aumenta e aumenta",
+       "Multiplica cruzado",
+       "Preço x quantidade"
+      ]
+     },
+     {
+      "label": "Inversa",
+      "filhos": [
+       "Aumenta e diminui",
+       "Multiplica em linha",
+       "Operários x dias",
+       "Velocidade x tempo"
+      ]
+     },
+     {
+      "label": "Cuidados",
+      "filhos": [
+       "Mesmas unidades",
+       "Horas e minutos",
+       "Conferir o bom senso"
+      ]
+     }
+    ]
+   },
+   "flashcards": [
+    {
+     "pergunta": "Operários e dias de obra são grandezas de que tipo?",
+     "resposta": "Inversamente proporcionais."
+    },
+    {
+     "pergunta": "Como resolver uma regra de três inversa rapidamente?",
+     "resposta": "Multiplicando em linha: a x b = c x x."
+    },
+    {
+     "pergunta": "Se 4 canetas custam R$ 10, quanto custam 6?",
+     "resposta": "R$ 15."
+    },
+    {
+     "pergunta": "Quanto vale 1h45min em horas decimais?",
+     "resposta": "1,75 h."
+    },
+    {
+     "pergunta": "5 máquinas fazem um serviço em 12 h. Em quanto tempo 3 máquinas fazem?",
+     "resposta": "20 h."
+    },
+    {
+     "pergunta": "Qual o primeiro passo da regra de três?",
+     "resposta": "Identificar se a relação é direta ou inversa."
+    }
+   ],
+   "questoes": [
+    {
+     "subassunto": null,
+     "enunciado": "Se 3 kg de carne custam R$ 27,00, então 5 kg da mesma carne custam",
+     "opcoes": [
+      "R$ 35,00",
+      "R$ 40,00",
+      "R$ 45,00",
+      "R$ 16,20",
+      "R$ 54,00"
+     ],
+     "gabarito": 2,
+     "comentario": "Regra de três direta: 1 kg custa 27 / 3 = R$ 9,00; 5 kg custam 5 x 9 = R$ 45,00. R$ 16,20 aplica regra inversa; R$ 54,00 dobra o preço; R$ 35,00 e R$ 40,00 não resultam de cálculo correto.",
+     "dificuldade": "facil"
+    },
+    {
+     "subassunto": null,
+     "enunciado": "Seis pedreiros constroem um muro em 10 dias. Mantendo o mesmo ritmo de trabalho, 4 pedreiros construiriam o mesmo muro em",
+     "opcoes": [
+      "15 dias",
+      "6,7 dias",
+      "12 dias",
+      "8 dias",
+      "24 dias"
+     ],
+     "gabarito": 0,
+     "comentario": "Menos pedreiros exigem mais dias: regra de três inversa. 6 x 10 = 4 x d, então d = 60 / 4 = 15 dias. 6,7 dias resulta de usar regra direta; 8 e 12 dias são menores ou próximos sem cálculo; 24 dias exagera.",
+     "dificuldade": "facil"
+    },
+    {
+     "subassunto": null,
+     "enunciado": "Uma viatura, a 60 km/h, faz um percurso em 2 horas e 30 minutos. Se a velocidade média fosse de 75 km/h, o mesmo percurso seria feito em",
+     "opcoes": [
+      "3 horas e 7 minutos",
+      "1 hora e 50 minutos",
+      "2 horas e 10 minutos",
+      "2 horas e 24 minutos",
+      "2 horas"
+     ],
+     "gabarito": 4,
+     "comentario": "Velocidade e tempo são inversamente proporcionais. 2h30min = 2,5 h. 60 x 2,5 = 75 x t, então t = 150 / 75 = 2 horas. 3h07min resulta de usar regra direta (2,5 x 75 / 60 = 3,125 h); 1h50min resulta de tratar 2h30min como 2,30 h; 2h10min e 2h24min não resultam do cálculo.",
+     "dificuldade": "media"
+    },
+    {
+     "subassunto": null,
+     "enunciado": "Uma torneira, com vazão constante, enche 3/5 de um tanque em 12 minutos. O tempo necessário para essa torneira encher a parte que falta do tanque é de",
+     "opcoes": [
+      "6 minutos",
+      "8 minutos",
+      "18 minutos",
+      "20 minutos",
+      "4 minutos"
+     ],
+     "gabarito": 1,
+     "comentario": "Falta 1 - 3/5 = 2/5 do tanque. Se 3/5 levam 12 min, 1/5 leva 4 min; logo 2/5 levam 8 minutos. 20 minutos é o tempo para encher o tanque inteiro; 18 minutos inverte a proporção; 4 minutos corresponde a só 1/5; 6 minutos é metade de 12.",
+     "dificuldade": "media"
+    },
+    {
+     "subassunto": null,
+     "enunciado": "Uma máquina produz 450 peças em 2 horas e 15 minutos. Mantendo o mesmo ritmo, em 3 horas e 30 minutos ela produzirá",
+     "opcoes": [
+      "650 peças",
+      "525 peças",
+      "680 peças",
+      "700 peças",
+      "735 peças"
+     ],
+     "gabarito": 3,
+     "comentario": "Transformando em minutos: 2h15min = 135 min e 3h30min = 210 min. Regra de três direta: 450 / 135 = x / 210, então x = 450 x 210 / 135 = 700 peças. As demais alternativas não correspondem ao cálculo. Cuidado: 2h15min não é 2,15 h, e sim 2,25 h.",
+     "dificuldade": "dificil"
+    }
+   ]
+  },
+  {
+   "curso": "pm-sp-soldado",
+   "disciplina": "Matemática",
+   "assunto": "Média aritmética simples",
+   "aula": {
+    "titulo": "Média aritmética simples",
+    "secoes": [
+     {
+      "titulo": "Definição",
+      "texto": "A média aritmética simples de um conjunto de valores é a soma de todos os valores dividida pela quantidade de valores.\nMédia = (soma dos valores) / (quantidade de valores)\nExemplo: notas 6; 7,5; 8 e 8,5. Soma = 30. Quantidade = 4. Média = 30 / 4 = 7,5.\nA média representa o valor que cada elemento teria se tudo fosse distribuído igualmente."
+     },
+     {
+      "titulo": "A fórmula invertida: soma = média x quantidade",
+      "texto": "Muitas questões dão a média e pedem a soma ou um valor que falta. Use:\nSoma = média x quantidade\nExemplo: a média de 5 números é 12. Então a soma deles é 5 x 12 = 60.\nExemplo de nota que falta: um aluno tem média 7 em 4 provas e quer média 7,4 com 5 provas. Soma atual: 4 x 7 = 28. Soma necessária: 5 x 7,4 = 37. Nota da quinta prova: 37 - 28 = 9."
+     },
+     {
+      "titulo": "Entrada e saída de elementos",
+      "texto": "Quando alguém entra ou sai de um grupo, NÃO tente ajustar a média diretamente. Recalcule a soma.\nPasso a passo:\n1. Calcule a soma inicial (média x quantidade).\n2. Some os valores que entram e subtraia os que saem.\n3. Divida pela nova quantidade.\nExemplo: 9 alunos têm média 7 (soma 63). Entra um aluno com nota 10. Nova soma: 73. Nova quantidade: 10. Nova média: 7,3.\nObservação: se entra um valor maior que a média, ela sobe; se entra um valor menor, ela desce; se entra um valor igual à média, ela não muda."
+     },
+     {
+      "titulo": "Propriedades importantes",
+      "texto": "• Somar uma constante a todos os valores soma essa constante à média. Se todos ganham 1 ponto, a média sobe 1 ponto.\n• Multiplicar todos os valores por uma constante multiplica a média por ela.\n• A média fica sempre entre o menor e o maior valor do conjunto.\n• A soma das diferenças de cada valor em relação à média é zero. Isso ajuda a conferir contas.\n• A média é sensível a valores extremos: um único valor muito alto ou muito baixo puxa a média.\nCuidado: a média de duas médias só é a média geral quando os grupos têm o mesmo tamanho. Se forem grupos de tamanhos diferentes, trabalhe com as somas."
+     }
+    ]
+   },
+   "revisao": {
+    "pontos": [
+     "Média = soma / quantidade.",
+     "Soma = média x quantidade: fórmula mais usada nas questões.",
+     "Entrou ou saiu alguém? Recalcule a soma e divida pela nova quantidade.",
+     "Valor que entra acima da média faz a média subir.",
+     "Somar k a todos os valores soma k à média.",
+     "Multiplicar todos os valores por k multiplica a média por k.",
+     "A média está sempre entre o menor e o maior valor.",
+     "Média de médias só vale com grupos do mesmo tamanho."
+    ]
+   },
+   "mapa": {
+    "no_central": "Média aritmética simples",
+    "ramos": [
+     {
+      "label": "Fórmula",
+      "filhos": [
+       "Soma / quantidade",
+       "Soma = média x quantidade"
+      ]
+     },
+     {
+      "label": "Valor que falta",
+      "filhos": [
+       "Soma desejada",
+       "Menos soma atual"
+      ]
+     },
+     {
+      "label": "Entrada e saída",
+      "filhos": [
+       "Recalcular a soma",
+       "Nova quantidade",
+       "Efeito na média"
+      ]
+     },
+     {
+      "label": "Propriedades",
+      "filhos": [
+       "Somar constante",
+       "Multiplicar por constante",
+       "Entre o menor e o maior",
+       "Sensível a extremos"
+      ]
+     }
+    ]
+   },
+   "flashcards": [
+    {
+     "pergunta": "A média de 6 números é 15. Qual é a soma?",
+     "resposta": "90."
+    },
+    {
+     "pergunta": "Qual a média de 4, 7, 9 e 12?",
+     "resposta": "8."
+    },
+    {
+     "pergunta": "Se todos os valores aumentam 2, o que acontece com a média?",
+     "resposta": "Aumenta 2."
+    },
+    {
+     "pergunta": "Entra no grupo um valor igual à média. A média muda?",
+     "resposta": "Não."
+    },
+    {
+     "pergunta": "Média 6 em 3 provas; qual nota na 4ª para média 7?",
+     "resposta": "10 (28 - 18)."
+    },
+    {
+     "pergunta": "Pode-se tirar a média de duas médias de grupos de tamanhos diferentes?",
+     "resposta": "Não diretamente; é preciso usar as somas."
+    }
+   ],
+   "questoes": [
+    {
+     "subassunto": null,
+     "enunciado": "Um candidato obteve as notas 6,0; 7,5; 8,0 e 8,5 em quatro simulados. A média aritmética simples dessas notas é",
+     "opcoes": [
+      "7,0",
+      "7,5",
+      "7,75",
+      "8,0",
+      "30,0"
+     ],
+     "gabarito": 1,
+     "comentario": "Soma: 6 + 7,5 + 8 + 8,5 = 30. Média: 30 / 4 = 7,5. 30,0 é a soma; 8,0 e 7,75 são valores próximos sem cálculo correto; 7,0 dividiria por um número errado.",
+     "dificuldade": "facil"
+    },
+    {
+     "subassunto": null,
+     "enunciado": "A média aritmética de cinco números é 12. A soma desses cinco números é",
+     "opcoes": [
+      "17",
+      "12",
+      "24",
+      "2,4",
+      "60"
+     ],
+     "gabarito": 4,
+     "comentario": "Soma = média x quantidade = 12 x 5 = 60. 17 soma 12 + 5; 2,4 divide 12 por 5; 12 e 24 não correspondem à relação.",
+     "dificuldade": "facil"
+    },
+    {
+     "subassunto": null,
+     "enunciado": "Um aluno obteve média 7,0 nas quatro primeiras provas do ano. Para que sua média nas cinco provas seja 7,4, a nota da quinta prova deve ser",
+     "opcoes": [
+      "9,0",
+      "7,4",
+      "8,0",
+      "9,6",
+      "10,0"
+     ],
+     "gabarito": 0,
+     "comentario": "Soma atual: 4 x 7 = 28. Soma necessária: 5 x 7,4 = 37. Nota da quinta prova: 37 - 28 = 9,0. 7,4 é a média desejada, não a nota necessária; 8,0, 9,6 e 10,0 não resultam do cálculo.",
+     "dificuldade": "media"
+    },
+    {
+     "subassunto": null,
+     "enunciado": "Em um grupo de 9 alunos, a média das notas é 7,0. Um novo aluno, com nota 10,0, entrou no grupo. A nova média do grupo passou a ser",
+     "opcoes": [
+      "8,5",
+      "7,5",
+      "7,3",
+      "7,1",
+      "8,0"
+     ],
+     "gabarito": 2,
+     "comentario": "Soma inicial: 9 x 7 = 63. Nova soma: 63 + 10 = 73. Nova média: 73 / 10 = 7,3. 8,5 é a média entre 7 e 10, que ignora o tamanho do grupo; as outras não saem do cálculo.",
+     "dificuldade": "media"
+    },
+    {
+     "subassunto": null,
+     "enunciado": "A média das idades de 8 pessoas de uma equipe é 25 anos. Duas pessoas, de 20 e 24 anos, deixaram a equipe, e uma nova pessoa foi incorporada, fazendo com que a média das idades passasse a ser 27 anos. A idade da nova pessoa é",
+     "opcoes": [
+      "27 anos",
+      "29 anos",
+      "31 anos",
+      "33 anos",
+      "35 anos"
+     ],
+     "gabarito": 3,
+     "comentario": "Soma inicial: 8 x 25 = 200. Após as saídas: 200 - 20 - 24 = 156, com 6 pessoas. Com a entrada, são 7 pessoas e soma 7 x 27 = 189. Idade da nova pessoa: 189 - 156 = 33 anos. As demais alternativas vêm de usar quantidade errada de pessoas ou de supor que a nova pessoa tem a própria média.",
+     "dificuldade": "dificil"
+    }
+   ]
+  },
+  {
+   "curso": "pm-sp-soldado",
+   "disciplina": "Matemática",
+   "assunto": "Equação do 1º grau",
+   "aula": {
+    "titulo": "Equação do 1º grau",
+    "secoes": [
+     {
+      "titulo": "O que é uma equação do 1º grau",
+      "texto": "Equação é uma igualdade com um valor desconhecido (a incógnita, geralmente x). É do 1º grau quando a incógnita aparece com expoente 1. Forma geral: ax + b = 0, com a diferente de zero.\nResolver a equação é encontrar o valor de x que torna a igualdade verdadeira (a raiz ou solução).\nExemplo: 2x + 9 = 35 tem solução x = 13, pois 2 x 13 + 9 = 35."
+     },
+     {
+      "titulo": "Como resolver",
+      "texto": "A ideia é isolar x, fazendo a mesma operação dos dois lados (é como uma balança em equilíbrio). Na prática:\n• O que está somando passa para o outro lado subtraindo, e vice-versa.\n• O que está multiplicando passa dividindo, e vice-versa.\nExemplo: 3x - 7 = 2x + 5\n3x - 2x = 5 + 7\nx = 12\nCom parênteses, aplique a distributiva primeiro: 2(x - 3) = x + 1 vira 2x - 6 = x + 1, então x = 7.\nSempre dá para conferir: substitua o valor encontrado na equação original."
+     },
+     {
+      "titulo": "Equações com frações",
+      "texto": "Multiplique todos os termos pelo mmc dos denominadores para eliminar as frações.\nExemplo: x/2 + x/3 = 20. O mmc(2, 3) = 6. Multiplicando tudo por 6: 3x + 2x = 120, então 5x = 120 e x = 24.\nCuidado com o sinal de menos antes de uma fração com vários termos: - (x + 4)/2 multiplicado por 2 vira - x - 4 (o menos afeta os dois termos)."
+     },
+     {
+      "titulo": "Montando a equação a partir do texto",
+      "texto": "A parte mais cobrada é traduzir o enunciado:\n• o dobro de um número: 2x; o triplo: 3x; a metade: x/2; a terça parte: x/3\n• um número aumentado de 5: x + 5; diminuído de 5: x - 5\n• números consecutivos: x, x + 1, x + 2\n• daqui a 10 anos: idade + 10; há 5 anos: idade - 5\nExemplo: Pedro tem o triplo da idade de João. Daqui a 10 anos, terá o dobro. Com João = j: 3j + 10 = 2(j + 10), então 3j + 10 = 2j + 20 e j = 10. Pedro tem 30 anos.\nDica: se a questão dá alternativas numéricas, testar as alternativas no enunciado é uma forma rápida de conferir."
+     },
+     {
+      "titulo": "Problemas com frações do restante",
+      "texto": "Atenção à expressão \"do restante\". Exemplo: uma pessoa gastou 1/4 do dinheiro e depois 2/5 do que sobrou, ficando com R$ 180.\nApós gastar 1/4, sobram 3/4 de x. Gastando 2/5 disso, sobram 3/5 de 3/4 de x = 9/20 de x.\n9x/20 = 180, então x = 400.\nErro comum: somar 1/4 + 2/5 como se as duas frações se referissem ao total."
+     }
+    ]
+   },
+   "revisao": {
+    "pontos": [
+     "Forma geral: ax + b = 0, com a diferente de zero.",
+     "Mudou de lado, troca a operação: soma vira subtração, produto vira divisão.",
+     "Aplique a distributiva antes de isolar x.",
+     "Frações: multiplique tudo pelo mmc dos denominadores.",
+     "Sinal de menos antes de fração atinge todos os termos do numerador.",
+     "Dobro 2x, triplo 3x, metade x/2, consecutivos x e x + 1.",
+     "Fração do restante: multiplique as frações que sobram.",
+     "Confira a resposta substituindo na equação original."
+    ]
+   },
+   "mapa": {
+    "no_central": "Equação do 1º grau",
+    "ramos": [
+     {
+      "label": "Conceito",
+      "filhos": [
+       "ax + b = 0",
+       "Incógnita",
+       "Raiz ou solução"
+      ]
+     },
+     {
+      "label": "Resolução",
+      "filhos": [
+       "Isolar x",
+       "Operação inversa",
+       "Distributiva primeiro"
+      ]
+     },
+     {
+      "label": "Frações",
+      "filhos": [
+       "mmc dos denominadores",
+       "Cuidado com o sinal"
+      ]
+     },
+     {
+      "label": "Tradução do texto",
+      "filhos": [
+       "Dobro, triplo, metade",
+       "Consecutivos",
+       "Idades"
+      ]
+     },
+     {
+      "label": "Restante",
+      "filhos": [
+       "Fração do que sobrou",
+       "Multiplicar frações restantes"
+      ]
+     }
+    ]
+   },
+   "flashcards": [
+    {
+     "pergunta": "Resolva 5x - 3 = 2x + 9.",
+     "resposta": "x = 4."
+    },
+    {
+     "pergunta": "Resolva x/3 + 4 = 10.",
+     "resposta": "x = 18."
+    },
+    {
+     "pergunta": "Como escrever três números consecutivos?",
+     "resposta": "x, x + 1 e x + 2."
+    },
+    {
+     "pergunta": "Resolva 2(x - 3) = x + 1.",
+     "resposta": "x = 7."
+    },
+    {
+     "pergunta": "Gastou 1/2 e depois 1/3 do restante. Que fração do total sobrou?",
+     "resposta": "1/3 (2/3 de 1/2)."
+    },
+    {
+     "pergunta": "A soma de um número com sua metade é 30. Qual é o número?",
+     "resposta": "20."
+    }
+   ],
+   "questoes": [
+    {
+     "subassunto": null,
+     "enunciado": "O valor de x que satisfaz a equação 3x - 7 = 2x + 5 é",
+     "opcoes": [
+      "2",
+      "-2",
+      "12",
+      "-12",
+      "5/12"
+     ],
+     "gabarito": 2,
+     "comentario": "3x - 2x = 5 + 7, logo x = 12. Conferindo: 3 x 12 - 7 = 29 e 2 x 12 + 5 = 29. -2 e 2 surgem de errar a troca de sinal (5 - 7); -12 troca o sinal da resposta; 5/12 não tem relação com a resolução.",
+     "dificuldade": "facil"
+    },
+    {
+     "subassunto": null,
+     "enunciado": "O dobro de um número, aumentado de 9, é igual a 35. Esse número é",
+     "opcoes": [
+      "13",
+      "22",
+      "17",
+      "26",
+      "8"
+     ],
+     "gabarito": 0,
+     "comentario": "2x + 9 = 35, então 2x = 26 e x = 13. 26 é o dobro, não o número; 22 viria de 2x = 44 (somar 9 em vez de subtrair); 17 e 8 não satisfazem a equação.",
+     "dificuldade": "facil"
+    },
+    {
+     "subassunto": null,
+     "enunciado": "A soma da metade com a terça parte de um número é 20. Esse número é",
+     "opcoes": [
+      "12",
+      "40",
+      "30",
+      "20",
+      "24"
+     ],
+     "gabarito": 4,
+     "comentario": "x/2 + x/3 = 20. Multiplicando por 6: 3x + 2x = 120, então x = 24. Conferindo: 12 + 8 = 20. 40 considera só a metade (x/2 = 20); 12 é a metade de 24; 30 e 20 não satisfazem a equação (30: 15 + 10 = 25; 20: 10 + 6,67).",
+     "dificuldade": "media"
+    },
+    {
+     "subassunto": null,
+     "enunciado": "Pedro tem hoje o triplo da idade de João. Daqui a 10 anos, a idade de Pedro será o dobro da idade de João. Hoje, Pedro tem",
+     "opcoes": [
+      "20 anos",
+      "30 anos",
+      "40 anos",
+      "15 anos",
+      "10 anos"
+     ],
+     "gabarito": 1,
+     "comentario": "Com João = j e Pedro = 3j: 3j + 10 = 2(j + 10), então 3j + 10 = 2j + 20 e j = 10. Pedro tem 30 anos. Conferindo: daqui a 10 anos, 40 e 20. 10 anos é a idade de João; 40 anos é a idade futura de Pedro; 20 e 15 não satisfazem as condições.",
+     "dificuldade": "media"
+    },
+    {
+     "subassunto": null,
+     "enunciado": "Uma pessoa gastou 1/4 do dinheiro que tinha em uma farmácia e, em seguida, 2/5 do restante em um supermercado, ficando com R$ 180,00. Inicialmente, essa pessoa tinha",
+     "opcoes": [
+      "R$ 300,00",
+      "R$ 360,00",
+      "R$ 450,00",
+      "R$ 400,00",
+      "R$ 520,00"
+     ],
+     "gabarito": 3,
+     "comentario": "Após a farmácia sobraram 3/4 do total. No supermercado gastou 2/5 desse restante, sobrando 3/5 de 3/4 = 9/20 do total. 9x/20 = 180, então x = 400. Conferindo: gasta 100, sobram 300; gasta 120, sobram 180. R$ 514,29 (que não aparece) viria de somar 1/4 + 2/5 como frações do total; R$ 300,00 é o valor após a farmácia; as demais não resultam do cálculo.",
+     "dificuldade": "dificil"
+    }
+   ]
+  },
+  {
+   "curso": "pm-sp-soldado",
+   "disciplina": "Matemática",
+   "assunto": "Sistema de equações do 1º grau",
+   "aula": {
+    "titulo": "Sistemas de equações do 1º grau com duas incógnitas",
+    "secoes": [
+     {
+      "titulo": "O que é um sistema",
+      "texto": "Um sistema de equações do 1º grau reúne duas (ou mais) equações que devem ser satisfeitas AO MESMO TEMPO. Nos concursos de nível médio, o comum é um sistema com duas incógnitas (x e y) e duas equações.\nExemplo:\nx + y = 10\nx - y = 4\nA solução é o par (x, y) que funciona nas duas equações: x = 7 e y = 3.\nRegra prática: para achar duas incógnitas, você precisa de duas informações independentes no enunciado."
+     },
+     {
+      "titulo": "Método da adição",
+      "texto": "Some (ou subtraia) as equações para eliminar uma incógnita. Se necessário, multiplique uma equação por um número para que os coeficientes de uma das letras fiquem opostos.\nExemplo:\nx + y = 10\nx - y = 4\nSomando: 2x = 14, então x = 7. Substituindo na primeira: 7 + y = 10, então y = 3.\nExemplo com ajuste: 2x + 3y = 12 e x - y = 1. Multiplique a segunda por 3: 3x - 3y = 3. Somando com a primeira: 5x = 15, x = 3 e, então, y = 2."
+     },
+     {
+      "titulo": "Método da substituição",
+      "texto": "Isole uma incógnita em uma das equações e substitua na outra.\nExemplo: x - y = 1 dá x = 1 + y. Substituindo em 2x + 3y = 12: 2(1 + y) + 3y = 12, então 2 + 5y = 12, y = 2 e x = 3.\nEsse método é prático quando alguma letra já aparece com coeficiente 1.\nDepois de achar os valores, confira nas DUAS equações."
+     },
+     {
+      "titulo": "Problemas clássicos",
+      "texto": "• Carros e motos (ou galinhas e coelhos): 20 veículos e 56 rodas. c + m = 20 e 4c + 2m = 56. Da primeira, m = 20 - c. Substituindo: 4c + 40 - 2c = 56, então c = 8 e m = 12.\n• Ingressos inteiros e meias: quantidade total e valor arrecadado.\n• Provas com pontuação por acerto e desconto por erro: a + e = total de questões; (pontos por acerto) x a - (desconto) x e = nota.\n• Soma e diferença de dois números: some as equações e divida por 2.\nDica rápida de conferência: teste a alternativa nas duas condições do enunciado."
+     },
+     {
+      "titulo": "Tipos de solução",
+      "texto": "Um sistema de duas equações do 1º grau pode ter:\n• uma única solução (sistema possível e determinado) - o caso das provas;\n• infinitas soluções, quando uma equação é múltipla da outra, como x + y = 3 e 2x + 2y = 6 (possível e indeterminado);\n• nenhuma solução, quando as equações se contradizem, como x + y = 3 e x + y = 5 (impossível)."
+     }
+    ]
+   },
+   "revisao": {
+    "pontos": [
+     "Duas incógnitas exigem duas equações independentes.",
+     "Adição: some as equações para eliminar uma letra.",
+     "Multiplique uma equação para deixar coeficientes opostos.",
+     "Substituição: isole uma letra e troque na outra equação.",
+     "Carros e motos: c + m = veículos; 4c + 2m = rodas.",
+     "Soma S e diferença D: maior = (S + D)/2; menor = (S - D)/2.",
+     "Confira a solução nas duas equações.",
+     "Equações proporcionais: infinitas soluções; contraditórias: nenhuma."
+    ]
+   },
+   "mapa": {
+    "no_central": "Sistema de equações do 1º grau",
+    "ramos": [
+     {
+      "label": "Conceito",
+      "filhos": [
+       "Duas equações",
+       "Duas incógnitas",
+       "Solução em par (x, y)"
+      ]
+     },
+     {
+      "label": "Método da adição",
+      "filhos": [
+       "Eliminar uma letra",
+       "Multiplicar para ajustar"
+      ]
+     },
+     {
+      "label": "Método da substituição",
+      "filhos": [
+       "Isolar uma letra",
+       "Substituir na outra"
+      ]
+     },
+     {
+      "label": "Problemas típicos",
+      "filhos": [
+       "Carros e motos",
+       "Ingressos",
+       "Acertos e erros",
+       "Soma e diferença"
+      ]
+     },
+     {
+      "label": "Classificação",
+      "filhos": [
+       "Determinado",
+       "Indeterminado",
+       "Impossível"
+      ]
+     }
+    ]
+   },
+   "flashcards": [
+    {
+     "pergunta": "Resolva x + y = 10 e x - y = 4.",
+     "resposta": "x = 7 e y = 3."
+    },
+    {
+     "pergunta": "Dois números somam 30 e diferem de 6. Quais são?",
+     "resposta": "18 e 12."
+    },
+    {
+     "pergunta": "Qual a ideia do método da adição?",
+     "resposta": "Somar as equações para eliminar uma incógnita."
+    },
+    {
+     "pergunta": "Qual a ideia do método da substituição?",
+     "resposta": "Isolar uma incógnita e substituir na outra equação."
+    },
+    {
+     "pergunta": "10 veículos (carros e motos) e 28 rodas: quantos carros?",
+     "resposta": "4 carros e 6 motos."
+    },
+    {
+     "pergunta": "x + y = 3 e x + y = 5 têm solução?",
+     "resposta": "Não; o sistema é impossível."
+    }
+   ],
+   "questoes": [
+    {
+     "subassunto": null,
+     "enunciado": "Considere o sistema: x + y = 10 e x - y = 4. O valor de x é",
+     "opcoes": [
+      "3",
+      "5",
+      "4",
+      "7",
+      "14"
+     ],
+     "gabarito": 3,
+     "comentario": "Somando as equações: 2x = 14, logo x = 7 (e y = 3). 3 é o valor de y; 14 é 2x; 5 e 4 não satisfazem as duas equações.",
+     "dificuldade": "facil"
+    },
+    {
+     "subassunto": null,
+     "enunciado": "Em um estacionamento há apenas carros e motos, num total de 20 veículos e 56 rodas. O número de motos é",
+     "opcoes": [
+      "8",
+      "12",
+      "10",
+      "14",
+      "6"
+     ],
+     "gabarito": 1,
+     "comentario": "c + m = 20 e 4c + 2m = 56. Com m = 20 - c: 4c + 40 - 2c = 56, então c = 8 e m = 12. Conferindo: 8 x 4 + 12 x 2 = 32 + 24 = 56. 8 é o número de carros; as demais não fecham as duas condições.",
+     "dificuldade": "facil"
+    },
+    {
+     "subassunto": null,
+     "enunciado": "Se 2x + 3y = 12 e x - y = 1, então x + y é igual a",
+     "opcoes": [
+      "5",
+      "6",
+      "1",
+      "4",
+      "7"
+     ],
+     "gabarito": 0,
+     "comentario": "De x - y = 1, x = 1 + y. Substituindo: 2(1 + y) + 3y = 12, então 5y = 10, y = 2 e x = 3. Logo x + y = 5. 1 é x - y; 6 seria x vezes y; 4 e 7 não resultam do sistema.",
+     "dificuldade": "media"
+    },
+    {
+     "subassunto": null,
+     "enunciado": "Em um evento, o ingresso inteiro custava R$ 30,00 e a meia-entrada, R$ 15,00. Foram vendidos 50 ingressos, arrecadando-se R$ 1.050,00. O número de meias-entradas vendidas foi",
+     "opcoes": [
+      "20",
+      "25",
+      "30",
+      "35",
+      "15"
+     ],
+     "gabarito": 2,
+     "comentario": "i + m = 50 e 30i + 15m = 1.050. Dividindo a segunda por 15: 2i + m = 70. Subtraindo a primeira: i = 20; logo m = 30. Conferindo: 20 x 30 + 30 x 15 = 600 + 450 = 1.050. 20 é o número de inteiras; as demais não satisfazem as duas equações.",
+     "dificuldade": "media"
+    },
+    {
+     "subassunto": null,
+     "enunciado": "Em um teste com 30 questões, cada acerto vale 5 pontos e cada erro desconta 2 pontos. Um candidato respondeu a todas as questões e obteve 94 pontos. O número de questões que ele acertou foi",
+     "opcoes": [
+      "18",
+      "19",
+      "20",
+      "21",
+      "22"
+     ],
+     "gabarito": 4,
+     "comentario": "a + e = 30 e 5a - 2e = 94. Com e = 30 - a: 5a - 60 + 2a = 94, então 7a = 154 e a = 22 (e 8 erros). Conferindo: 22 x 5 - 8 x 2 = 110 - 16 = 94. Com 21 acertos, a nota seria 105 - 18 = 87; com 20, 100 - 20 = 80.",
+     "dificuldade": "dificil"
+    }
+   ]
+  },
+  {
+   "curso": "pm-sp-soldado",
+   "disciplina": "Matemática",
+   "assunto": "Sistema métrico",
+   "aula": {
+    "titulo": "Sistema métrico: tempo, comprimento, superfície e capacidade",
+    "secoes": [
+     {
+      "titulo": "Medidas de comprimento",
+      "texto": "A unidade padrão é o metro (m). Múltiplos e submúltiplos, em ordem:\nkm - hm - dam - m - dm - cm - mm\nCada degrau vale 10 vezes o seguinte. Para ir para a direita (unidade menor), multiplique por 10 a cada casa; para a esquerda, divida por 10.\nExemplos: 2,5 km = 2.500 m; 350 cm = 3,5 m; 1 km = 100.000 cm.\nDica: \"ande com a vírgula\" uma casa para cada degrau."
+     },
+     {
+      "titulo": "Medidas de superfície (área)",
+      "texto": "Unidade padrão: metro quadrado (m²). Mesma escada: km², hm², dam², m², dm², cm², mm².\nAqui cada degrau vale 100 (duas casas decimais por degrau), porque a área tem duas dimensões.\nExemplos: 1 m² = 10.000 cm²; 1 km² = 1.000.000 m².\nMedidas agrárias muito cobradas:\n• 1 hectare (ha) = 1 hm² = 10.000 m² (um quadrado de 100 m x 100 m)\n• 1 are (a) = 1 dam² = 100 m²\nExemplo: 3,2 ha = 32.000 m²."
+     },
+     {
+      "titulo": "Medidas de volume e de capacidade",
+      "texto": "Volume: unidade padrão metro cúbico (m³). Cada degrau vale 1.000 (três casas), pois são três dimensões. 1 m³ = 1.000 dm³ = 1.000.000 cm³.\nCapacidade: unidade padrão litro (L). kL - hL - daL - L - dL - cL - mL, com fator 10 entre os degraus. 1 L = 1.000 mL.\nPonte entre volume e capacidade (decore!):\n• 1 dm³ = 1 L\n• 1 m³ = 1.000 L\n• 1 cm³ = 1 mL\nExemplo: reservatório de 2 m x 1,5 m x 0,8 m tem 2,4 m³ = 2.400 L."
+     },
+     {
+      "titulo": "Medidas de tempo",
+      "texto": "O tempo NÃO é decimal. As relações são:\n• 1 minuto = 60 segundos; 1 hora = 60 minutos = 3.600 segundos\n• 1 dia = 24 horas; 1 semana = 7 dias\nConversões perigosas:\n• 2,4 h = 2 h + 0,4 x 60 min = 2 h 24 min (e não 2 h 40 min)\n• 1 h 30 min = 1,5 h\n• 45 min = 0,75 h\nSoma de horários: some horas com horas e minutos com minutos; a cada 60 minutos, some 1 hora. Ex.: 19h40 + 12h45 = 31h85 = 32h25, ou seja, 8h25 do dia seguinte."
+     },
+     {
+      "titulo": "Estratégia de prova",
+      "texto": "1. Coloque todas as medidas na mesma unidade antes de operar.\n2. Identifique o tipo: comprimento (fator 10), área (fator 100), volume (fator 1.000), capacidade (fator 10).\n3. Em problemas de reservatórios, calcule o volume em m³, converta para litros e só então use a vazão (L/min ou L/h).\n4. Em tempo, trabalhe em minutos para evitar erros com decimais."
+     }
+    ]
+   },
+   "revisao": {
+    "pontos": [
+     "Comprimento: km, hm, dam, m, dm, cm, mm, com fator 10.",
+     "Superfície: fator 100 entre as unidades; 1 m² = 10.000 cm².",
+     "Volume: fator 1.000; 1 m³ = 1.000.000 cm³.",
+     "1 dm³ = 1 L e 1 m³ = 1.000 L.",
+     "1 cm³ = 1 mL.",
+     "1 hectare = 10.000 m².",
+     "0,4 h = 24 min: tempo não é decimal.",
+     "Soma de horários: cada 60 min vira 1 hora."
+    ]
+   },
+   "mapa": {
+    "no_central": "Sistema métrico",
+    "ramos": [
+     {
+      "label": "Comprimento",
+      "filhos": [
+       "Metro",
+       "Fator 10",
+       "1 km = 1.000 m"
+      ]
+     },
+     {
+      "label": "Superfície",
+      "filhos": [
+       "Metro quadrado",
+       "Fator 100",
+       "Hectare = 10.000 m²"
+      ]
+     },
+     {
+      "label": "Volume e capacidade",
+      "filhos": [
+       "m³: fator 1.000",
+       "Litro: fator 10",
+       "1 dm³ = 1 L",
+       "1 m³ = 1.000 L"
+      ]
+     },
+     {
+      "label": "Tempo",
+      "filhos": [
+       "Base 60",
+       "1 h = 3.600 s",
+       "Decimal de hora x 60"
+      ]
+     },
+     {
+      "label": "Estratégia",
+      "filhos": [
+       "Mesma unidade",
+       "Reservatório: m³ para litros"
+      ]
+     }
+    ]
+   },
+   "flashcards": [
+    {
+     "pergunta": "Quantos metros há em 2,5 km?",
+     "resposta": "2.500 m."
+    },
+    {
+     "pergunta": "Quantos cm² há em 1 m²?",
+     "resposta": "10.000 cm²."
+    },
+    {
+     "pergunta": "1 m³ equivale a quantos litros?",
+     "resposta": "1.000 litros."
+    },
+    {
+     "pergunta": "Quanto é 1 hectare em m²?",
+     "resposta": "10.000 m²."
+    },
+    {
+     "pergunta": "Quanto é 2,4 horas em horas e minutos?",
+     "resposta": "2 h 24 min."
+    },
+    {
+     "pergunta": "1 cm³ equivale a quanto em capacidade?",
+     "resposta": "1 mL."
+    }
+   ],
+   "questoes": [
+    {
+     "subassunto": "Medidas de comprimento",
+     "enunciado": "Em um treinamento, um soldado correu 2,5 km e depois mais 350 m. A distância total percorrida por ele foi de",
+     "opcoes": [
+      "2.850 m",
+      "2.535 m",
+      "285 m",
+      "6.000 m",
+      "28.500 m"
+     ],
+     "gabarito": 0,
+     "comentario": "2,5 km = 2.500 m. Somando 350 m: 2.850 m. 2.535 m soma 2,5 + 35 de forma errada; 285 m e 28.500 m erram a posição da vírgula; 6.000 m soma 2,5 com 3,5 como se fossem a mesma unidade.",
+     "dificuldade": "facil"
+    },
+    {
+     "subassunto": "Medidas de capacidade",
+     "enunciado": "Com uma garrafa de 1,5 litro de água, é possível encher completamente quantos copos de 250 mL?",
+     "opcoes": [
+      "4",
+      "5",
+      "8",
+      "6",
+      "10"
+     ],
+     "gabarito": 3,
+     "comentario": "1,5 L = 1.500 mL. 1.500 / 250 = 6 copos. 4 copos dariam 1 L; 5 copos, 1,25 L; 8 e 10 copos exigiriam 2 L e 2,5 L.",
+     "dificuldade": "facil"
+    },
+    {
+     "subassunto": "Medidas de tempo",
+     "enunciado": "Uma operação durou 2,4 horas. Esse tempo corresponde a",
+     "opcoes": [
+      "2 horas e 40 minutos",
+      "2 horas e 24 minutos",
+      "2 horas e 4 minutos",
+      "2 horas e 14 minutos",
+      "2 horas e 30 minutos"
+     ],
+     "gabarito": 1,
+     "comentario": "0,4 h x 60 min = 24 min. Logo, 2,4 h = 2 h 24 min. O erro clássico é ler 0,4 h como 40 minutos; 2h30 corresponderia a 2,5 h; as demais não resultam da conversão.",
+     "dificuldade": "media"
+    },
+    {
+     "subassunto": "Medidas de superfície",
+     "enunciado": "Um terreno rural tem área de 3,2 hectares. Essa área, em metros quadrados, corresponde a",
+     "opcoes": [
+      "320 m²",
+      "3.200 m²",
+      "32.000 m²",
+      "320.000 m²",
+      "3.200.000 m²"
+     ],
+     "gabarito": 2,
+     "comentario": "1 hectare = 10.000 m². Então 3,2 ha = 3,2 x 10.000 = 32.000 m². As demais usam fatores errados (100, 1.000, 100.000 ou 1.000.000).",
+     "dificuldade": "media"
+    },
+    {
+     "subassunto": "Medidas de capacidade",
+     "enunciado": "Um reservatório vazio, em forma de bloco retangular, tem dimensões internas de 2 m de comprimento, 1,5 m de largura e 0,8 m de altura. Uma torneira despeja nele 20 litros por minuto. O tempo necessário para enchê-lo completamente é de",
+     "opcoes": [
+      "12 minutos",
+      "1 hora e 12 minutos",
+      "24 minutos",
+      "4 horas",
+      "2 horas"
+     ],
+     "gabarito": 4,
+     "comentario": "Volume: 2 x 1,5 x 0,8 = 2,4 m³ = 2.400 L. Tempo: 2.400 / 20 = 120 min = 2 horas. 12 minutos usa 240 L (conversão errada); 1h12min confunde 120 min com 1,2 h; 24 minutos e 4 horas vêm de erros de conversão entre m³ e litros.",
+     "dificuldade": "dificil"
+    }
+   ]
+  },
+  {
+   "curso": "pm-sp-soldado",
+   "disciplina": "Matemática",
+   "assunto": "Relação entre grandezas",
+   "aula": {
+    "titulo": "Relação entre grandezas: tabelas e gráficos",
+    "secoes": [
+     {
+      "titulo": "Grandezas e suas relações",
+      "texto": "Grandeza é tudo o que pode ser medido ou contado: tempo, preço, distância, quantidade de pessoas. Duas grandezas podem ser:\n• Diretamente proporcionais: a razão y/x é constante. Dobrou x, dobra y. Ex.: litros de combustível e valor pago.\n• Inversamente proporcionais: o produto x . y é constante. Dobrou x, y cai pela metade. Ex.: velocidade e tempo de um mesmo percurso.\n• Não proporcionais: variam juntas, mas sem razão ou produto constante. Ex.: idade e altura de uma pessoa.\nPara testar numa tabela, calcule y/x e x . y em cada linha e veja qual se mantém."
+     },
+     {
+      "titulo": "Lendo tabelas",
+      "texto": "Tabelas organizam dados em linhas e colunas. Antes de calcular:\n• Leia o título e as unidades (milhares? percentuais? reais?).\n• Veja se há linha ou coluna de total.\n• Identifique exatamente o que a questão pergunta: um valor, uma diferença, uma soma ou uma porcentagem.\nTabelas de dupla entrada cruzam duas características (ex.: sexo e situação no concurso). Cuidado com a base da porcentagem: \"das mulheres, quantas foram aprovadas\" usa o total de mulheres; \"dos aprovados, quantas são mulheres\" usa o total de aprovados."
+     },
+     {
+      "titulo": "Tipos de gráficos",
+      "texto": "• Gráfico de colunas ou barras: compara quantidades entre categorias ou períodos. A altura (ou comprimento) representa o valor.\n• Gráfico de linhas: mostra evolução ao longo do tempo. Subidas indicam crescimento; descidas, queda; trecho horizontal, estabilidade.\n• Gráfico de setores (pizza): mostra partes de um todo. O círculo inteiro (360°) corresponde a 100%. Cada 1% equivale a 3,6°. Um setor de 25% tem 90°; um de 50%, 180°.\n• Pictograma: usa figuras, e cada figura vale uma quantidade indicada na legenda.\nSempre confira a escala do eixo: um eixo que não começa no zero pode exagerar diferenças visualmente."
+     },
+     {
+      "titulo": "Cálculos que mais caem",
+      "texto": "• Diferença entre maior e menor valor (amplitude).\n• Total e média de uma série.\n• Variação percentual entre dois períodos: (final - inicial) / inicial. Ex.: de 250 para 300 é aumento de 50 / 250 = 20%.\n• Participação percentual de uma parte no total.\n• Ângulo de um setor: percentual x 3,6°.\n• Completar tabela de grandezas proporcionais usando a constante (razão ou produto).\nExemplo: se x e y são inversamente proporcionais e x = 2 corresponde a y = 30, a constante é 60; para x = 5, y = 60 / 5 = 12."
+     }
+    ]
+   },
+   "revisao": {
+    "pontos": [
+     "Diretamente proporcionais: razão y/x constante.",
+     "Inversamente proporcionais: produto x . y constante.",
+     "Leia título, unidades e legenda antes de calcular.",
+     "Gráfico de setores: 360° = 100%, e 1% = 3,6°.",
+     "Gráfico de linhas mostra evolução no tempo.",
+     "Variação percentual usa o valor inicial como base.",
+     "Em tabelas de dupla entrada, atenção à base da porcentagem.",
+     "Eixo que não começa no zero pode exagerar diferenças."
+    ]
+   },
+   "mapa": {
+    "no_central": "Relação entre grandezas",
+    "ramos": [
+     {
+      "label": "Tipos de relação",
+      "filhos": [
+       "Diretamente proporcional",
+       "Inversamente proporcional",
+       "Não proporcional"
+      ]
+     },
+     {
+      "label": "Tabelas",
+      "filhos": [
+       "Título e unidades",
+       "Linha de total",
+       "Dupla entrada",
+       "Base da porcentagem"
+      ]
+     },
+     {
+      "label": "Gráficos",
+      "filhos": [
+       "Colunas e barras",
+       "Linhas",
+       "Setores",
+       "Pictograma"
+      ]
+     },
+     {
+      "label": "Cálculos",
+      "filhos": [
+       "Diferença e total",
+       "Média",
+       "Variação percentual",
+       "Ângulo do setor"
+      ]
+     }
+    ]
+   },
+   "flashcards": [
+    {
+     "pergunta": "Como saber se duas grandezas de uma tabela são inversamente proporcionais?",
+     "resposta": "O produto x . y é constante em todas as linhas."
+    },
+    {
+     "pergunta": "Quantos graus tem um setor que representa 25%?",
+     "resposta": "90°."
+    },
+    {
+     "pergunta": "Quanto vale 1% em um gráfico de setores?",
+     "resposta": "3,6°."
+    },
+    {
+     "pergunta": "Qual gráfico é mais indicado para mostrar evolução no tempo?",
+     "resposta": "O gráfico de linhas."
+    },
+    {
+     "pergunta": "Vendas passaram de 200 para 250. Qual a variação?",
+     "resposta": "Aumento de 25%."
+    },
+    {
+     "pergunta": "Dos aprovados, qual a porcentagem de mulheres: qual é a base?",
+     "resposta": "O total de aprovados."
+    }
+   ],
+   "questoes": [
+    {
+     "subassunto": "Tabelas",
+     "enunciado": "A tabela a seguir mostra o número de ocorrências atendidas por uma companhia em quatro meses:\nJaneiro: 120 | Fevereiro: 95 | Março: 140 | Abril: 105\nA diferença entre o maior e o menor número mensal de ocorrências é",
+     "opcoes": [
+      "35",
+      "15",
+      "45",
+      "20",
+      "25"
+     ],
+     "gabarito": 2,
+     "comentario": "Maior valor: 140 (março). Menor: 95 (fevereiro). Diferença: 140 - 95 = 45. 35 = 140 - 105; 15 = 120 - 105; 20 = 140 - 120; 25 = 120 - 95.",
+     "dificuldade": "facil"
+    },
+    {
+     "subassunto": "Gráficos",
+     "enunciado": "Em um gráfico de setores, uma categoria que representa 25% do total deve ser representada por um setor com ângulo central de",
+     "opcoes": [
+      "90°",
+      "25°",
+      "45°",
+      "120°",
+      "180°"
+     ],
+     "gabarito": 0,
+     "comentario": "O círculo inteiro tem 360°, que correspondem a 100%. 25% de 360° = 90°. 25° confunde percentual com grau; 45° seria 12,5%; 120° seria um terço; 180° seria 50%.",
+     "dificuldade": "facil"
+    },
+    {
+     "subassunto": "Tabelas",
+     "enunciado": "A tabela relaciona duas grandezas, x e y:\nx = 2, y = 30 | x = 3, y = 20 | x = 4, y = 15 | x = 6, y = 10\nSobre essas grandezas, é correto afirmar que são",
+     "opcoes": [
+      "diretamente proporcionais, e para x = 5 tem-se y = 25",
+      "não proporcionais, pois y diminui de forma irregular",
+      "inversamente proporcionais, e para x = 5 tem-se y = 13",
+      "diretamente proporcionais, e para x = 5 tem-se y = 12",
+      "inversamente proporcionais, e para x = 5 tem-se y = 12"
+     ],
+     "gabarito": 4,
+     "comentario": "Em todas as linhas o produto x . y vale 60 (2 x 30, 3 x 20, 4 x 15, 6 x 10), então as grandezas são inversamente proporcionais. Para x = 5: y = 60 / 5 = 12. Não são diretamente proporcionais (a razão y/x muda); y = 13 é erro de cálculo; e há regularidade, sim: produto constante.",
+     "dificuldade": "media"
+    },
+    {
+     "subassunto": "Gráficos",
+     "enunciado": "Um gráfico de colunas mostra o número de atendimentos de um posto nos anos de 2021 a 2024: 200, 250, 300 e 270, respectivamente. O aumento percentual do número de atendimentos de 2022 para 2023 foi de",
+     "opcoes": [
+      "50%",
+      "20%",
+      "25%",
+      "16,7%",
+      "10%"
+     ],
+     "gabarito": 1,
+     "comentario": "De 250 para 300 houve aumento de 50 atendimentos. Em relação ao valor inicial: 50 / 250 = 0,20 = 20%. 25% é a variação de 2021 para 2022; 16,7% usa 300 como base; 50% confunde a quantidade com o percentual; 10% é a queda de 2023 para 2024.",
+     "dificuldade": "media"
+    },
+    {
+     "subassunto": "Tabelas",
+     "enunciado": "A tabela mostra o resultado de uma etapa de um concurso:\nHomens: 45 aprovados e 105 reprovados | Mulheres: 30 aprovadas e 70 reprovadas\nEntre os candidatos aprovados, a porcentagem de mulheres é de",
+     "opcoes": [
+      "30%",
+      "12%",
+      "60%",
+      "40%",
+      "43%"
+     ],
+     "gabarito": 3,
+     "comentario": "Total de aprovados: 45 + 30 = 75. Mulheres aprovadas: 30. Porcentagem: 30 / 75 = 0,40 = 40%. 30% é a taxa de aprovação entre as mulheres (30 / 100) e também no geral (75 / 250); 12% usa o total geral de candidatos (30 / 250); 60% é a porcentagem de homens entre os aprovados; 43% não resulta do cálculo.",
+     "dificuldade": "dificil"
+    }
+   ]
+  },
+  {
+   "curso": "pm-sp-soldado",
+   "disciplina": "Matemática",
+   "assunto": "Noções de geometria",
+   "aula": {
+    "titulo": "Noções de geometria: formas, perímetro, área, volume e Pitágoras",
+    "secoes": [
+     {
+      "titulo": "Formas",
+      "texto": "Figuras planas (duas dimensões):\n• Triângulo: 3 lados; a soma dos ângulos internos é 180°. Classificação por lados: equilátero (3 iguais), isósceles (2 iguais), escaleno (todos diferentes). Triângulo retângulo tem um ângulo de 90°.\n• Quadriláteros: 4 lados; soma dos ângulos internos 360°. Quadrado (4 lados iguais e 4 ângulos retos), retângulo (4 ângulos retos), losango (4 lados iguais), paralelogramo e trapézio (só um par de lados paralelos).\n• Círculo: todos os pontos a mesma distância (raio) do centro. Diâmetro = 2 x raio.\nSólidos (três dimensões): cubo, paralelepípedo (bloco retangular), prisma, pirâmide, cilindro, cone e esfera."
+     },
+     {
+      "titulo": "Perímetro",
+      "texto": "Perímetro é o comprimento do contorno: a soma de todos os lados. É medido em unidade de comprimento (m, cm).\n• Quadrado de lado L: P = 4L.\n• Retângulo de lados a e b: P = 2(a + b). Ex.: 12 m x 7 m tem P = 38 m.\n• Triângulo: soma dos três lados.\n• Circunferência de raio r: C = 2 x pi x r (use pi aproximadamente 3,14 ou o valor dado na questão).\nAplicações: cercas, rodapés, voltas em uma pista, arame para contornar um terreno."
+     },
+     {
+      "titulo": "Área",
+      "texto": "Área mede a superfície ocupada, em unidade quadrada (m², cm²).\n• Quadrado: A = L x L.\n• Retângulo: A = base x altura.\n• Triângulo: A = (base x altura) / 2. No triângulo retângulo, os catetos são base e altura.\n• Paralelogramo: A = base x altura.\n• Trapézio: A = (base maior + base menor) x altura / 2.\n• Losango: A = (diagonal maior x diagonal menor) / 2.\n• Círculo: A = pi x r².\nÁreas compostas: divida a figura em partes conhecidas e some, ou calcule a área total e subtraia a parte retirada. Ex.: terreno 20 m x 30 m (600 m²) com construção quadrada de 10 m de lado (100 m²) deixa 500 m² livres.\nAtenção: dobrando o lado de um quadrado, a área fica 4 vezes maior."
+     },
+     {
+      "titulo": "Volume",
+      "texto": "Volume mede o espaço ocupado, em unidade cúbica (m³, cm³).\n• Cubo de aresta a: V = a³. Ex.: aresta 40 cm: V = 64.000 cm³ = 64 dm³ = 64 L.\n• Paralelepípedo: V = comprimento x largura x altura.\n• Prisma e cilindro: V = área da base x altura. Cilindro: V = pi x r² x h.\nLembre: 1 dm³ = 1 L e 1 m³ = 1.000 L. Dobrando a aresta de um cubo, o volume fica 8 vezes maior."
+     },
+     {
+      "titulo": "Teorema de Pitágoras",
+      "texto": "Vale apenas para triângulos retângulos. O lado oposto ao ângulo reto é a hipotenusa (o maior lado); os outros dois são os catetos.\nhipotenusa² = cateto² + cateto²\nExemplo: catetos 6 e 8: h² = 36 + 64 = 100, então h = 10.\nPara achar um cateto: cateto² = hipotenusa² - outro cateto². Ex.: hipotenusa 13 e cateto 5: c² = 169 - 25 = 144, c = 12.\nTernas pitagóricas que aparecem muito: 3, 4, 5; 5, 12, 13; 8, 15, 17 e seus múltiplos (6, 8, 10; 9, 12, 15).\nAplicações: escada apoiada no muro, diagonal de um retângulo, distância em linha reta."
+     }
+    ]
+   },
+   "revisao": {
+    "pontos": [
+     "Perímetro é soma dos lados; área é superfície; volume é espaço.",
+     "Retângulo: P = 2(a + b) e A = a x b.",
+     "Triângulo: A = base x altura / 2.",
+     "Círculo: C = 2 pi r e A = pi r².",
+     "Paralelepípedo: V = comprimento x largura x altura.",
+     "1 dm³ = 1 L; 1 m³ = 1.000 L.",
+     "Pitágoras: hipotenusa² = soma dos quadrados dos catetos.",
+     "Ternas: 3-4-5, 5-12-13, 8-15-17.",
+     "Soma dos ângulos internos: triângulo 180°, quadrilátero 360°."
+    ]
+   },
+   "mapa": {
+    "no_central": "Noções de geometria",
+    "ramos": [
+     {
+      "label": "Forma",
+      "filhos": [
+       "Triângulos",
+       "Quadriláteros",
+       "Círculo",
+       "Sólidos"
+      ]
+     },
+     {
+      "label": "Perímetro",
+      "filhos": [
+       "Soma dos lados",
+       "Retângulo 2(a + b)",
+       "Circunferência 2 pi r"
+      ]
+     },
+     {
+      "label": "Área",
+      "filhos": [
+       "Retângulo b x h",
+       "Triângulo b x h / 2",
+       "Trapézio",
+       "Círculo pi r²"
+      ]
+     },
+     {
+      "label": "Volume",
+      "filhos": [
+       "Cubo a³",
+       "Paralelepípedo",
+       "Cilindro",
+       "1 dm³ = 1 L"
+      ]
+     },
+     {
+      "label": "Pitágoras",
+      "filhos": [
+       "Triângulo retângulo",
+       "h² = a² + b²",
+       "Ternas pitagóricas"
+      ]
+     }
+    ]
+   },
+   "flashcards": [
+    {
+     "pergunta": "Qual o perímetro de um retângulo de 12 m por 7 m?",
+     "resposta": "38 m."
+    },
+    {
+     "pergunta": "Qual a área de um triângulo com base 10 cm e altura 6 cm?",
+     "resposta": "30 cm²."
+    },
+    {
+     "pergunta": "Catetos 6 e 8: qual a hipotenusa?",
+     "resposta": "10."
+    },
+    {
+     "pergunta": "Quantos litros cabem em um cubo de 1 m de aresta?",
+     "resposta": "1.000 litros."
+    },
+    {
+     "pergunta": "Dobrando o lado de um quadrado, o que acontece com a área?",
+     "resposta": "Fica 4 vezes maior."
+    },
+    {
+     "pergunta": "Qual a soma dos ângulos internos de um triângulo?",
+     "resposta": "180°."
+    }
+   ],
+   "questoes": [
+    {
+     "subassunto": "Perímetro",
+     "enunciado": "Um terreno retangular mede 12 m de frente por 7 m de fundo. Para cercá-lo completamente com uma volta de arame, serão necessários",
+     "opcoes": [
+      "19 m",
+      "38 m",
+      "84 m",
+      "24 m",
+      "168 m"
+     ],
+     "gabarito": 1,
+     "comentario": "Perímetro do retângulo: 2 x (12 + 7) = 38 m. 19 m é a soma de apenas dois lados; 84 é a área (em m²); 24 m dobra só a frente; 168 é o dobro da área.",
+     "dificuldade": "facil"
+    },
+    {
+     "subassunto": "Teorema de Pitágoras",
+     "enunciado": "Em um triângulo retângulo, os catetos medem 6 cm e 8 cm. A hipotenusa mede",
+     "opcoes": [
+      "14 cm",
+      "12 cm",
+      "7 cm",
+      "10 cm",
+      "100 cm"
+     ],
+     "gabarito": 3,
+     "comentario": "Pelo Teorema de Pitágoras: h² = 6² + 8² = 36 + 64 = 100, logo h = 10 cm. 14 cm soma os catetos; 100 é h² (falta extrair a raiz); 7 cm é a média dos catetos; 12 cm não resulta do cálculo.",
+     "dificuldade": "facil"
+    },
+    {
+     "subassunto": "Área",
+     "enunciado": "Em um terreno retangular de 20 m por 30 m foi construída uma edificação de base quadrada com 10 m de lado. A área do terreno que não foi ocupada pela edificação é de",
+     "opcoes": [
+      "500 m²",
+      "560 m²",
+      "100 m²",
+      "60 m²",
+      "590 m²"
+     ],
+     "gabarito": 0,
+     "comentario": "Área do terreno: 20 x 30 = 600 m². Área da edificação: 10 x 10 = 100 m². Área livre: 600 - 100 = 500 m². 560 m² subtrai o perímetro da edificação (40 m); 590 m² subtrai apenas 10; 100 m² é a área construída; 60 m² não resulta do cálculo.",
+     "dificuldade": "media"
+    },
+    {
+     "subassunto": "Volume",
+     "enunciado": "Uma caixa em forma de cubo tem aresta interna de 40 cm. A capacidade dessa caixa é de",
+     "opcoes": [
+      "1,6 litro",
+      "16 litros",
+      "64 litros",
+      "160 litros",
+      "640 litros"
+     ],
+     "gabarito": 2,
+     "comentario": "Volume: 40 x 40 x 40 = 64.000 cm³. Como 1.000 cm³ = 1 dm³ = 1 L, a capacidade é 64 litros. 1,6 L e 16 L usam a área de uma face (1.600 cm²); 640 L e 160 L erram a conversão.",
+     "dificuldade": "media"
+    },
+    {
+     "subassunto": "Área",
+     "enunciado": "Um triângulo retângulo tem hipotenusa de 13 cm e um dos catetos medindo 5 cm. A área desse triângulo é de",
+     "opcoes": [
+      "32,5 cm²",
+      "65 cm²",
+      "60 cm²",
+      "39 cm²",
+      "30 cm²"
+     ],
+     "gabarito": 4,
+     "comentario": "Pelo Teorema de Pitágoras, o outro cateto é c² = 13² - 5² = 169 - 25 = 144, então c = 12 cm. No triângulo retângulo, os catetos são base e altura: área = 12 x 5 / 2 = 30 cm². 60 cm² esquece de dividir por 2; 32,5 cm² e 65 cm² usam a hipotenusa como base; 39 cm² não resulta de cálculo correto.",
+     "dificuldade": "dificil"
+    }
+   ]
+  },
+  {
+   "curso": "pm-sp-soldado",
+   "disciplina": "Matemática",
+   "assunto": "Raciocínio lógico",
+   "aula": {
+    "titulo": "Raciocínio lógico: sequências, proposições e problemas de lógica",
+    "secoes": [
+     {
+      "titulo": "Sequências e padrões",
+      "texto": "Muitas questões pedem o próximo termo de uma sequência. Procure o padrão:\n• Diferenças constantes: 3, 7, 11, 15... (soma 4).\n• Diferenças que crescem: 2, 5, 10, 17, 26... (soma 3, 5, 7, 9, então o próximo é 26 + 11 = 37).\n• Multiplicações: 3, 6, 12, 24... (dobra).\n• Duas sequências intercaladas: 1, 10, 2, 20, 3, 30...\n• Letras: use a posição no alfabeto (A = 1, B = 2...).\n• Figuras: observe rotação, quantidade de elementos e alternância de cores.\nDica: calcule a diferença entre termos seguidos; se não aparecer padrão, teste a razão."
+     },
+     {
+      "titulo": "Proposições e conectivos",
+      "texto": "Proposição é uma frase declarativa que pode ser julgada como verdadeira (V) ou falsa (F), nunca as duas. Perguntas, ordens e exclamações não são proposições.\nConectivos:\n• Conjunção (e): só é V se as duas partes forem V.\n• Disjunção (ou): só é F se as duas partes forem F.\n• Condicional (se... então): só é F quando a primeira é V e a segunda é F.\n• Bicondicional (se e somente se): é V quando as duas partes têm o mesmo valor.\n• Negação (não): inverte o valor."
+     },
+     {
+      "titulo": "Negações e equivalências",
+      "texto": "As mais cobradas:\n• Negação de \"A e B\": \"não A ou não B\". Ex.: negar \"João estuda e Maria trabalha\" dá \"João não estuda ou Maria não trabalha\".\n• Negação de \"A ou B\": \"não A e não B\".\n• Negação de \"Se A, então B\": \"A e não B\". Ex.: negar \"Se chove, então fico em casa\" dá \"Chove e não fico em casa\".\n• Equivalências de \"Se A, então B\": \"Se não B, então não A\" (contrapositiva) e \"não A ou B\".\n• Cuidado: \"Se B, então A\" NÃO é equivalente a \"Se A, então B\".\nQuantificadores:\n• Negação de \"Todo X é Y\": \"Algum X não é Y\".\n• Negação de \"Algum X é Y\": \"Nenhum X é Y\".\n• Negação de \"Nenhum X é Y\": \"Algum X é Y\"."
+     },
+     {
+      "titulo": "Problemas de associação e de verdade/mentira",
+      "texto": "Associação: pessoas, profissões, cores, cidades. Monte uma tabela cruzando as informações e marque com X o que é impossível. Quando uma linha fica com uma só opção, ela é a certa, e essa opção sai das outras linhas.\nVerdade e mentira: suponha uma hipótese (por exemplo, \"o culpado é A\") e verifique quantas afirmações ficam verdadeiras. A hipótese correta é a que respeita a regra do enunciado (por exemplo, \"apenas um diz a verdade\"). Teste todas as hipóteses; normalmente só uma funciona.\nDica: comece pelas informações mais restritivas (\"Bia não é advogada nem médica\" já define Bia)."
+     }
+    ]
+   },
+   "revisao": {
+    "pontos": [
+     "Em sequências, calcule primeiro as diferenças entre termos seguidos.",
+     "Conjunção (e) só é verdadeira se tudo for verdadeiro.",
+     "Disjunção (ou) só é falsa se tudo for falso.",
+     "Condicional só é falsa em V então F.",
+     "Negação de A e B: não A ou não B.",
+     "Negação de Se A então B: A e não B.",
+     "Se A então B equivale a Se não B então não A.",
+     "Negação de Todo é Algum... não.",
+     "Verdade/mentira: teste cada hipótese e conte as frases verdadeiras."
+    ]
+   },
+   "mapa": {
+    "no_central": "Raciocínio lógico",
+    "ramos": [
+     {
+      "label": "Sequências",
+      "filhos": [
+       "Diferenças",
+       "Razões",
+       "Intercaladas",
+       "Letras e figuras"
+      ]
+     },
+     {
+      "label": "Conectivos",
+      "filhos": [
+       "e",
+       "ou",
+       "se... então",
+       "se e somente se",
+       "não"
+      ]
+     },
+     {
+      "label": "Negações",
+      "filhos": [
+       "e vira ou (negando as partes)",
+       "ou vira e (negando as partes)",
+       "se-então vira A e não B"
+      ]
+     },
+     {
+      "label": "Quantificadores",
+      "filhos": [
+       "Todo -> algum não",
+       "Algum -> nenhum",
+       "Nenhum -> algum"
+      ]
+     },
+     {
+      "label": "Problemas",
+      "filhos": [
+       "Tabela de associação",
+       "Hipóteses de verdade/mentira"
+      ]
+     }
+    ]
+   },
+   "flashcards": [
+    {
+     "pergunta": "Qual a negação de \"Todos os soldados são pontuais\"?",
+     "resposta": "Algum soldado não é pontual."
+    },
+    {
+     "pergunta": "Qual a negação de \"Se estudo, então passo\"?",
+     "resposta": "Estudo e não passo."
+    },
+    {
+     "pergunta": "Quando a condicional \"Se A, então B\" é falsa?",
+     "resposta": "Quando A é verdadeira e B é falsa."
+    },
+    {
+     "pergunta": "Qual a contrapositiva de \"Se chove, a rua molha\"?",
+     "resposta": "Se a rua não molha, então não chove."
+    },
+    {
+     "pergunta": "Próximo termo de 3, 6, 12, 24?",
+     "resposta": "48."
+    },
+    {
+     "pergunta": "Qual a negação de \"Algum policial é médico\"?",
+     "resposta": "Nenhum policial é médico."
+    }
+   ],
+   "questoes": [
+    {
+     "subassunto": null,
+     "enunciado": "Observe a sequência numérica: 2, 5, 10, 17, 26, ... O próximo termo é",
+     "opcoes": [
+      "35",
+      "36",
+      "37",
+      "39",
+      "52"
+     ],
+     "gabarito": 2,
+     "comentario": "As diferenças entre termos consecutivos são 3, 5, 7, 9 (ímpares crescentes). A próxima diferença é 11: 26 + 11 = 37. 35 soma 9 de novo; 36 soma 10; 39 soma 13; 52 dobra o último termo.",
+     "dificuldade": "facil"
+    },
+    {
+     "subassunto": null,
+     "enunciado": "A negação lógica da afirmação \"Todos os soldados são pontuais\" é",
+     "opcoes": [
+      "Algum soldado não é pontual.",
+      "Nenhum soldado é pontual.",
+      "Todos os soldados não são pontuais.",
+      "Algum soldado é pontual.",
+      "Nenhum soldado deixa de ser pontual."
+     ],
+     "gabarito": 0,
+     "comentario": "Para negar \"todo X é Y\", basta existir ao menos um X que não seja Y: \"Algum soldado não é pontual\". \"Nenhum soldado é pontual\" e \"Todos não são\" afirmam demais (é o contrário, não a negação); \"Algum soldado é pontual\" é compatível com a frase original; a última alternativa é equivalente à frase original.",
+     "dificuldade": "facil"
+    },
+    {
+     "subassunto": null,
+     "enunciado": "Uma afirmação logicamente equivalente a \"Se chove, então a rua fica molhada\" é",
+     "opcoes": [
+      "Se a rua fica molhada, então chove.",
+      "Se não chove, então a rua não fica molhada.",
+      "Chove e a rua não fica molhada.",
+      "Se a rua não fica molhada, então não chove.",
+      "Não chove e a rua fica molhada."
+     ],
+     "gabarito": 3,
+     "comentario": "\"Se A, então B\" equivale à contrapositiva \"Se não B, então não A\": \"Se a rua não fica molhada, então não chove\". Inverter (\"Se B, então A\") ou negar os dois lados sem inverter (\"Se não A, então não B\") não produz equivalência; \"Chove e a rua não fica molhada\" é a negação; a última alternativa não é equivalente.",
+     "dificuldade": "media"
+    },
+    {
+     "subassunto": null,
+     "enunciado": "Ana, Bia e Carla têm profissões diferentes: uma é médica, outra é advogada e a outra é engenheira. Sabe-se que Bia não é advogada nem médica e que Ana não é médica. Assim, é correto afirmar que",
+     "opcoes": [
+      "Ana é engenheira.",
+      "Carla é médica.",
+      "Bia é advogada.",
+      "Carla é advogada.",
+      "Ana é médica."
+     ],
+     "gabarito": 1,
+     "comentario": "Bia não é advogada nem médica, logo é engenheira. Ana não é médica e a engenharia já é de Bia, então Ana é advogada. Sobra medicina para Carla. As demais alternativas contrariam essas conclusões.",
+     "dificuldade": "media"
+    },
+    {
+     "subassunto": null,
+     "enunciado": "Um objeto sumiu e há três suspeitos: A, B e C. Sabe-se que apenas um deles é culpado e que apenas um deles diz a verdade. A disse: \"B é o culpado\". B disse: \"Eu não sou o culpado\". C disse: \"Eu não sou o culpado\". Com base nessas informações, conclui-se que",
+     "opcoes": [
+      "A é o culpado e B diz a verdade.",
+      "B é o culpado e A diz a verdade.",
+      "C é o culpado e C diz a verdade.",
+      "A é o culpado e C diz a verdade.",
+      "C é o culpado e B diz a verdade."
+     ],
+     "gabarito": 4,
+     "comentario": "Teste as hipóteses. Se A fosse culpado, B e C diriam a verdade (dois verdadeiros): não serve. Se B fosse culpado, A e C diriam a verdade: não serve. Se C é culpado, A mente (B não é culpado), B diz a verdade e C mente: exatamente um verdadeiro. Logo C é o culpado e B diz a verdade. As outras combinações violam a regra de apenas um verdadeiro.",
+     "dificuldade": "dificil"
+    }
+   ]
+  },
+  {
+   "curso": "pm-sp-soldado",
+   "disciplina": "Matemática",
+   "assunto": "Resolução de situações-problema",
+   "aula": {
+    "titulo": "Resolução de situações-problema",
+    "secoes": [
+     {
+      "titulo": "Um método em quatro passos",
+      "texto": "Situações-problema misturam vários conteúdos (operações, frações, porcentagem, regra de três, equações). O segredo é ter método:\n1. Entender: leia o enunciado inteiro e sublinhe o que se pede. Separe os dados úteis dos que só enfeitam o texto.\n2. Planejar: escolha a ferramenta. Tem proporção? Regra de três. Tem valor desconhecido com relação entre quantidades? Equação ou sistema. Tem \"por cento\"? Fator multiplicativo.\n3. Executar: faça as contas com calma, mantendo as unidades.\n4. Conferir: o resultado faz sentido? Substitua no enunciado. Veja se respondeu exatamente o que foi pedido (o troco, e não o total; o número de motos, e não de carros)."
+     },
+     {
+      "titulo": "Problemas de compras, troco e consumo",
+      "texto": "• Troco = valor pago - valor da compra. Some tudo o que foi comprado antes.\n• Consumo de combustível: litros = distância / rendimento (km por litro). Custo = litros x preço do litro.\n• Exemplo: viatura que faz 12 km/L percorre 180 km. Gasta 180 / 12 = 15 L. Com o litro a R$ 6,00, o custo é R$ 90,00.\n• Preço unitário ajuda a comparar ofertas: divida o preço pela quantidade."
+     },
+     {
+      "titulo": "Problemas de tempo e horários",
+      "texto": "Some horas com horas e minutos com minutos, trocando cada 60 minutos por 1 hora. Se passar de 24h, o horário cai no dia seguinte (subtraia 24).\nExemplo: um plantão começa às 19h40 e dura 12h45min. 19h40 + 12h45 = 31h85 = 32h25. Tirando 24h: 8h25 do dia seguinte.\nPara diferenças de horário, é mais seguro transformar tudo em minutos."
+     },
+     {
+      "titulo": "Divisão de valores e testes de alternativas",
+      "texto": "• Divisão proporcional: lucro dividido conforme o capital investido. Sócios com R$ 3.000 e R$ 5.000 repartindo R$ 2.400: proporção 3 : 5, soma 8, constante 300; recebem R$ 900 e R$ 1.500.\n• Conta dividida igualmente: se o número de pessoas muda, o valor por pessoa muda de forma inversa.\nEstratégia valiosa: quando a equação ficar difícil, teste as alternativas. Ex.: uma conta de R$ 360 é dividida igualmente; se fossem 2 pessoas a menos, cada uma pagaria R$ 15 a mais. Testando 8 pessoas: 360 / 8 = 45 e 360 / 6 = 60, diferença 15. Confere!"
+     },
+     {
+      "titulo": "Armadilhas mais comuns",
+      "texto": "• Responder um valor intermediário (a questão pede o troco e você marca o total).\n• Misturar unidades (minutos com horas, metros com quilômetros).\n• Somar porcentagens sucessivas em vez de multiplicar os fatores.\n• Tratar como diretamente proporcionais grandezas que são inversas (operários e dias).\n• Ignorar palavras como \"restante\", \"a mais\", \"cada\", \"no total\".\nSempre releia a pergunta antes de marcar a alternativa."
+     }
+    ]
+   },
+   "revisao": {
+    "pontos": [
+     "Leia a pergunta primeiro e sublinhe o que se pede.",
+     "Escolha a ferramenta: regra de três, equação, sistema ou porcentagem.",
+     "Consumo: litros = distância / km por litro.",
+     "Horários: cada 60 minutos vira 1 hora; passou de 24h, é o dia seguinte.",
+     "Divisão de lucro: proporcional ao capital investido.",
+     "Testar alternativas é uma estratégia válida e rápida.",
+     "Cuidado com valores intermediários entre as alternativas.",
+     "Confira o resultado substituindo no enunciado."
+    ]
+   },
+   "mapa": {
+    "no_central": "Situações-problema",
+    "ramos": [
+     {
+      "label": "Método",
+      "filhos": [
+       "Entender",
+       "Planejar",
+       "Executar",
+       "Conferir"
+      ]
+     },
+     {
+      "label": "Dinheiro",
+      "filhos": [
+       "Troco",
+       "Consumo e custo",
+       "Preço unitário"
+      ]
+     },
+     {
+      "label": "Tempo",
+      "filhos": [
+       "Somar horários",
+       "Virada do dia",
+       "Trabalhar em minutos"
+      ]
+     },
+     {
+      "label": "Divisões",
+      "filhos": [
+       "Proporcional ao capital",
+       "Conta dividida igualmente",
+       "Testar alternativas"
+      ]
+     },
+     {
+      "label": "Armadilhas",
+      "filhos": [
+       "Valor intermediário",
+       "Unidades misturadas",
+       "Palavra restante"
+      ]
+     }
+    ]
+   },
+   "flashcards": [
+    {
+     "pergunta": "Quais os 4 passos para resolver um problema?",
+     "resposta": "Entender, planejar, executar e conferir."
+    },
+    {
+     "pergunta": "Um carro faz 10 km/L. Quantos litros gasta em 250 km?",
+     "resposta": "25 litros."
+    },
+    {
+     "pergunta": "Quanto é 22h50 + 3h20?",
+     "resposta": "2h10 do dia seguinte."
+    },
+    {
+     "pergunta": "Sócios com capitais 1 e 3 dividem R$ 800 de lucro. Quanto recebe cada um?",
+     "resposta": "R$ 200 e R$ 600."
+    },
+    {
+     "pergunta": "Qual a armadilha mais comum nas alternativas?",
+     "resposta": "Valores intermediários do cálculo."
+    },
+    {
+     "pergunta": "Quando a equação fica complicada, o que fazer?",
+     "resposta": "Testar as alternativas no enunciado."
+    }
+   ],
+   "questoes": [
+    {
+     "subassunto": null,
+     "enunciado": "Uma pessoa comprou 3 camisetas de R$ 35,00 cada e 2 bermudas de R$ 48,00 cada. Pagou com R$ 250,00. O troco recebido foi de",
+     "opcoes": [
+      "R$ 167,00",
+      "R$ 49,00",
+      "R$ 201,00",
+      "R$ 59,00",
+      "R$ 83,00"
+     ],
+     "gabarito": 1,
+     "comentario": "Camisetas: 3 x 35 = 105. Bermudas: 2 x 48 = 96. Total: 201. Troco: 250 - 201 = R$ 49,00. R$ 201,00 é o total da compra; R$ 167,00 considera uma unidade de cada peça (250 - 35 - 48); R$ 59,00 e R$ 83,00 vêm de erros de soma.",
+     "dificuldade": "facil"
+    },
+    {
+     "subassunto": null,
+     "enunciado": "Uma viatura percorre, em média, 12 km com 1 litro de combustível. Em um patrulhamento de 180 km, com o litro custando R$ 6,00, o gasto com combustível será de",
+     "opcoes": [
+      "R$ 15,00",
+      "R$ 72,00",
+      "R$ 108,00",
+      "R$ 180,00",
+      "R$ 90,00"
+     ],
+     "gabarito": 4,
+     "comentario": "Litros: 180 / 12 = 15 L. Custo: 15 x 6 = R$ 90,00. R$ 15,00 é a quantidade de litros tratada como valor; R$ 72,00 é 12 x 6; R$ 108,00 e R$ 180,00 não resultam do cálculo correto.",
+     "dificuldade": "facil"
+    },
+    {
+     "subassunto": null,
+     "enunciado": "Um plantão começou às 19h40 de uma segunda-feira e teve duração de 12 horas e 45 minutos. O plantão terminou na terça-feira às",
+     "opcoes": [
+      "8h25",
+      "7h25",
+      "8h85",
+      "9h25",
+      "7h85"
+     ],
+     "gabarito": 0,
+     "comentario": "19h40 + 12h45 = 31h85. Como 85 min = 1h25, temos 32h25. Tirando 24 horas: 8h25 de terça-feira. 8h85 e 7h85 não são horários válidos; 7h25 e 9h25 erram a conversão dos minutos.",
+     "dificuldade": "media"
+    },
+    {
+     "subassunto": null,
+     "enunciado": "Dois amigos abriram um negócio: um investiu R$ 3.000,00 e o outro, R$ 5.000,00. O lucro de R$ 2.400,00 será dividido em partes diretamente proporcionais aos valores investidos. O amigo que investiu mais receberá",
+     "opcoes": [
+      "R$ 1.200,00",
+      "R$ 900,00",
+      "R$ 1.500,00",
+      "R$ 1.600,00",
+      "R$ 1.440,00"
+     ],
+     "gabarito": 2,
+     "comentario": "Proporção 3 : 5, soma 8. Constante: 2.400 / 8 = 300. Quem investiu R$ 5.000,00 recebe 5 x 300 = R$ 1.500,00 (e o outro, R$ 900,00). R$ 1.200,00 é a divisão em partes iguais; R$ 900,00 é a parte do outro sócio; R$ 1.600,00 e R$ 1.440,00 não resultam da divisão proporcional.",
+     "dificuldade": "media"
+    },
+    {
+     "subassunto": null,
+     "enunciado": "Um grupo de amigos dividiu igualmente uma conta de R$ 360,00. Se o grupo tivesse 2 pessoas a menos, cada uma pagaria R$ 15,00 a mais. O valor pago por pessoa foi de",
+     "opcoes": [
+      "R$ 60,00",
+      "R$ 30,00",
+      "R$ 40,00",
+      "R$ 45,00",
+      "R$ 36,00"
+     ],
+     "gabarito": 3,
+     "comentario": "Testando: com 8 pessoas, cada uma paga 360 / 8 = R$ 45,00; com 6 pessoas, pagaria 360 / 6 = R$ 60,00, exatamente R$ 15,00 a mais. Confere. R$ 60,00 é o valor com 2 pessoas a menos; com R$ 40,00 (9 pessoas), 7 pessoas pagariam cerca de R$ 51,43; com R$ 36,00 (10 pessoas), 8 pagariam R$ 45,00 (só R$ 9,00 a mais); com R$ 30,00 (12 pessoas), 10 pagariam R$ 36,00 (só R$ 6,00 a mais).",
+     "dificuldade": "dificil"
+    }
+   ]
+  }
+ ]
+}

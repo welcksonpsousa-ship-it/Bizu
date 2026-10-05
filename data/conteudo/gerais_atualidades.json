@@ -1,0 +1,1714 @@
+{
+ "itens": [
+  {
+   "curso": "pm-sp-soldado",
+   "disciplina": "Conhecimentos Gerais",
+   "assunto": "História Geral",
+   "aula": {
+    "titulo": "História Geral: das guerras mundiais à globalização",
+    "secoes": [
+     {
+      "titulo": "Primeira Guerra Mundial (1914-1918)",
+      "texto": "A Primeira Guerra nasceu de tensões acumuladas no fim do século XIX: disputa imperialista por mercados e colônias, nacionalismos exaltados (pan-eslavismo, pangermanismo, revanchismo francês pela perda da Alsácia-Lorena) e uma corrida armamentista conhecida como Paz Armada.\nA Europa se dividiu em dois blocos:\n• Tríplice Entente: Inglaterra, França e Rússia.\n• Tríplice Aliança: Alemanha, Áustria-Hungria e Itália (a Itália mudou de lado em 1915).\nO estopim foi o assassinato do arquiduque Francisco Ferdinando, herdeiro do trono austro-húngaro, em Sarajevo (1914). A guerra teve uma fase de movimento e depois a longa guerra de trincheiras. Em 1917, dois fatos mudaram o conflito: a Rússia saiu da guerra após a Revolução Russa e os Estados Unidos entraram ao lado da Entente.\nO Tratado de Versalhes (1919) culpou a Alemanha, impôs pesadas indenizações, perda de territórios e limitação do exército. Esse tratado humilhante é apontado como uma das causas da Segunda Guerra. Também foi criada a Liga das Nações, que fracassou em manter a paz."
+     },
+     {
+      "titulo": "Entreguerras e nazifascismo",
+      "texto": "A crise de 1929 (quebra da Bolsa de Nova York) espalhou desemprego e descrédito na democracia liberal. Nesse ambiente cresceram regimes totalitários:\n• Fascismo na Itália, com Benito Mussolini (Marcha sobre Roma, 1922).\n• Nazismo na Alemanha, com Adolf Hitler, que chegou ao poder em 1933.\nCaracterísticas comuns: partido único, culto ao líder, nacionalismo extremo, militarismo, anticomunismo, antiliberalismo, propaganda e censura. O nazismo acrescentou o racismo e o antissemitismo, que levaram ao Holocausto, o extermínio de cerca de 6 milhões de judeus, além de ciganos, pessoas com deficiência e opositores."
+     },
+     {
+      "titulo": "Segunda Guerra Mundial (1939-1945)",
+      "texto": "A guerra começou com a invasão da Polônia pela Alemanha em 1939. Os blocos foram o Eixo (Alemanha, Itália e Japão) e os Aliados (Inglaterra, França, depois União Soviética e Estados Unidos). A URSS entrou após ser invadida em 1941, e os EUA após o ataque japonês a Pearl Harbor, também em 1941.\nMarcos: a Batalha de Stalingrado virou o jogo a favor dos soviéticos; o Dia D (1944) abriu a frente ocidental; a Alemanha se rendeu em maio de 1945; o Japão se rendeu após as bombas atômicas em Hiroshima e Nagasaki (agosto de 1945). O Brasil participou enviando a Força Expedicionária Brasileira (FEB) à Itália. Ao final, foi criada a ONU (1945)."
+     },
+     {
+      "titulo": "Guerra Fria (1947-1991)",
+      "texto": "Disputa entre EUA (capitalismo) e URSS (socialismo) sem confronto militar direto entre as duas potências, mas com corrida armamentista, corrida espacial e guerras indiretas (Coreia, Vietnã, Afeganistão).\n• Doutrina Truman e Plano Marshall (ajuda econômica à Europa Ocidental).\n• OTAN (1949) contra Pacto de Varsóvia (1955).\n• Muro de Berlim (1961-1989), símbolo da divisão.\n• Revolução Cubana (1959) e Crise dos Mísseis (1962), o momento mais tenso.\nO fim veio com as reformas de Gorbachev (Perestroika e Glasnost), a queda do Muro (1989), a reunificação alemã (1990) e o fim da URSS (1991)."
+     },
+     {
+      "titulo": "Globalização e neoliberalismo",
+      "texto": "Com o fim da Guerra Fria, intensificou-se a globalização: integração de mercados, fluxos financeiros instantâneos, empresas transnacionais e revolução nas comunicações (internet).\nO neoliberalismo, aplicado por Margaret Thatcher (Reino Unido) e Ronald Reagan (EUA) nos anos 1980, defende Estado mínimo, privatizações, abertura comercial, desregulamentação e controle de gastos públicos. Na América Latina essas ideias se espalharam nos anos 1990, associadas ao chamado Consenso de Washington. Críticos apontam aumento da desigualdade e da vulnerabilidade a crises."
+     }
+    ]
+   },
+   "revisao": {
+    "pontos": [
+     "Estopim da 1ª Guerra: assassinato de Francisco Ferdinando em Sarajevo (1914).",
+     "1917: Rússia sai da guerra e EUA entram.",
+     "Tratado de Versalhes (1919) humilhou a Alemanha e alimentou o revanchismo.",
+     "Crise de 1929 favoreceu a ascensão de regimes totalitários.",
+     "Nazifascismo: partido único, culto ao líder, nacionalismo, anticomunismo e antiliberalismo.",
+     "2ª Guerra começa com a invasão da Polônia (1939) e termina em 1945; ONU criada em 1945.",
+     "Guerra Fria: EUA x URSS, sem guerra direta; OTAN (1949) x Pacto de Varsóvia (1955).",
+     "Queda do Muro de Berlim: 1989; fim da URSS: 1991.",
+     "Neoliberalismo: Thatcher e Reagan; privatizações, abertura e Estado mínimo."
+    ]
+   },
+   "mapa": {
+    "no_central": "História Geral (séc. XX)",
+    "ramos": [
+     {
+      "label": "1ª Guerra",
+      "filhos": [
+       "Imperialismo e nacionalismo",
+       "Entente x Aliança",
+       "Sarajevo 1914",
+       "Versalhes 1919"
+      ]
+     },
+     {
+      "label": "Nazifascismo",
+      "filhos": [
+       "Crise de 1929",
+       "Mussolini e Hitler",
+       "Totalitarismo",
+       "Holocausto"
+      ]
+     },
+     {
+      "label": "2ª Guerra",
+      "filhos": [
+       "Eixo x Aliados",
+       "Stalingrado e Dia D",
+       "Hiroshima e Nagasaki",
+       "FEB e criação da ONU"
+      ]
+     },
+     {
+      "label": "Guerra Fria",
+      "filhos": [
+       "EUA x URSS",
+       "OTAN x Varsóvia",
+       "Crise dos Mísseis 1962",
+       "Queda do Muro 1989"
+      ]
+     },
+     {
+      "label": "Globalização",
+      "filhos": [
+       "Transnacionais",
+       "Internet",
+       "Neoliberalismo",
+       "Consenso de Washington"
+      ]
+     }
+    ]
+   },
+   "flashcards": [
+    {
+     "pergunta": "Quais países formavam a Tríplice Entente?",
+     "resposta": "Inglaterra, França e Rússia."
+    },
+    {
+     "pergunta": "Que tratado encerrou a 1ª Guerra e puniu a Alemanha?",
+     "resposta": "Tratado de Versalhes (1919)."
+    },
+    {
+     "pergunta": "Que evento levou os EUA à 2ª Guerra?",
+     "resposta": "O ataque japonês a Pearl Harbor (1941)."
+    },
+    {
+     "pergunta": "Qual foi a participação militar do Brasil na 2ª Guerra?",
+     "resposta": "A FEB, que lutou na Itália."
+    },
+    {
+     "pergunta": "O que foi o Plano Marshall?",
+     "resposta": "Ajuda econômica dos EUA para reconstruir a Europa Ocidental."
+    },
+    {
+     "pergunta": "Cite três medidas neoliberais.",
+     "resposta": "Privatizações, abertura comercial e redução de gastos do Estado."
+    }
+   ],
+   "questoes": [
+    {
+     "subassunto": "Primeira Guerra Mundial",
+     "enunciado": "O evento considerado o estopim imediato da Primeira Guerra Mundial foi",
+     "opcoes": [
+      "a invasão da Polônia pelas tropas alemãs.",
+      "a Revolução Russa de 1917.",
+      "o assassinato do arquiduque Francisco Ferdinando em Sarajevo.",
+      "o afundamento de navios norte-americanos no Atlântico.",
+      "a assinatura do Tratado de Versalhes."
+     ],
+     "gabarito": 2,
+     "comentario": "O atentado de Sarajevo (1914), que matou o herdeiro do trono austro-húngaro, foi o estopim. A invasão da Polônia (1939) iniciou a 2ª Guerra; a Revolução Russa e a entrada dos EUA ocorreram em 1917, com a guerra em andamento; Versalhes é de 1919, após o conflito.",
+     "dificuldade": "facil"
+    },
+    {
+     "subassunto": "Primeira Guerra Mundial",
+     "enunciado": "Entre as determinações do Tratado de Versalhes (1919) impostas à Alemanha, está",
+     "opcoes": [
+      "o pagamento de indenizações e a limitação de suas forças armadas.",
+      "a anexação da Áustria ao território alemão.",
+      "a entrega do controle da Liga das Nações ao governo alemão.",
+      "a divisão do país em quatro zonas de ocupação.",
+      "a construção do Muro de Berlim."
+     ],
+     "gabarito": 0,
+     "comentario": "Versalhes impôs à Alemanha culpa pela guerra, indenizações, perdas territoriais e limitação militar. A anexação da Áustria foi feita por Hitler em 1938; a divisão em zonas de ocupação e o Muro de Berlim são do pós-1945; a Alemanha nem integrou a Liga das Nações de início.",
+     "dificuldade": "facil"
+    },
+    {
+     "subassunto": "O nazifascismo e a Segunda Guerra Mundial",
+     "enunciado": "São características comuns ao fascismo italiano e ao nazismo alemão:",
+     "opcoes": [
+      "pluripartidarismo e defesa das liberdades individuais.",
+      "internacionalismo e apoio aos partidos comunistas.",
+      "descentralização do poder e fortalecimento do Parlamento.",
+      "liberalismo econômico e redução do papel do Estado.",
+      "partido único, culto ao líder, nacionalismo exacerbado e anticomunismo."
+     ],
+     "gabarito": 4,
+     "comentario": "Os regimes nazifascistas eram totalitários: partido único, líder carismático, nacionalismo extremo, anticomunismo e antiliberalismo. As demais alternativas descrevem o oposto (democracia liberal, internacionalismo, poder descentralizado, Estado mínimo).",
+     "dificuldade": "media"
+    },
+    {
+     "subassunto": "A Guerra Fria",
+     "enunciado": "Sobre a Guerra Fria, é correto afirmar que",
+     "opcoes": [
+      "terminou com a vitória militar soviética na Crise dos Mísseis.",
+      "foi marcada por confrontos militares diretos e contínuos entre EUA e URSS.",
+      "a OTAN foi criada pela URSS para unir os países socialistas.",
+      "teve na Crise dos Mísseis de Cuba (1962) um de seus momentos de maior tensão.",
+      "começou com a queda do Muro de Berlim."
+     ],
+     "gabarito": 3,
+     "comentario": "A Crise dos Mísseis (1962) quase levou a uma guerra nuclear. As superpotências não se enfrentaram diretamente; a OTAN é a aliança liderada pelos EUA (o bloco soviético era o Pacto de Varsóvia); a queda do Muro (1989) marca o fim, e não o início, da Guerra Fria.",
+     "dificuldade": "media"
+    },
+    {
+     "subassunto": "Globalização e as políticas neoliberais",
+     "enunciado": "As políticas adotadas por Margaret Thatcher e Ronald Reagan nos anos 1980, depois difundidas na América Latina nos anos 1990, caracterizavam-se por",
+     "opcoes": [
+      "estatização de bancos e controle rígido do comércio exterior.",
+      "privatização de empresas estatais, abertura comercial e redução do papel do Estado na economia.",
+      "ampliação do Estado de bem-estar social e aumento de gastos públicos.",
+      "planificação central da economia inspirada no modelo soviético.",
+      "substituição de importações por meio de altas tarifas alfandegárias."
+     ],
+     "gabarito": 1,
+     "comentario": "O neoliberalismo defende Estado mínimo, privatizações, desregulamentação e abertura comercial. Estatizações, planificação, expansão do bem-estar social e protecionismo por substituição de importações são opostos a essa linha.",
+     "dificuldade": "dificil"
+    }
+   ]
+  },
+  {
+   "curso": "pm-sp-soldado",
+   "disciplina": "Conhecimentos Gerais",
+   "assunto": "História do Brasil",
+   "aula": {
+    "titulo": "História do Brasil: de Vargas à redemocratização",
+    "secoes": [
+     {
+      "titulo": "A Revolução de 1930",
+      "texto": "A Primeira República (1889-1930) foi dominada pelas oligarquias de São Paulo e Minas Gerais (política do café com leite). Em 1929, o paulista Washington Luís indicou outro paulista, Júlio Prestes, rompendo o acordo com Minas. Formou-se a Aliança Liberal (MG, RS e PB), com Getúlio Vargas candidato. Júlio Prestes venceu, mas o assassinato de João Pessoa (vice de Vargas) serviu de pretexto para o movimento armado de outubro de 1930, que depôs Washington Luís e levou Vargas ao poder. Somava-se a isso a crise do café causada pela quebra da Bolsa de 1929."
+     },
+     {
+      "titulo": "A Era Vargas (1930-1945)",
+      "texto": "• Governo Provisório (1930-1934): centralização, nomeação de interventores nos estados. Em São Paulo eclodiu a Revolução Constitucionalista de 1932 (9 de julho), derrotada militarmente, mas que pressionou pela convocação da Constituinte.\n• Governo Constitucional (1934-1937): Constituição de 1934, voto secreto e voto feminino constitucionalizados, direitos trabalhistas. Polarização entre a Ação Integralista Brasileira (inspiração fascista) e a Aliança Nacional Libertadora (esquerda). Após a Intentona Comunista (1935) e o falso Plano Cohen, Vargas deu o golpe de 1937.\n• Estado Novo (1937-1945): ditadura, Congresso fechado, censura pelo DIP, propaganda e culto ao líder. Ao mesmo tempo, criação da CLT (1943), salário mínimo e bases da indústria de base, como a Companhia Siderúrgica Nacional (Volta Redonda). Com a vitória aliada na 2ª Guerra, a contradição de lutar contra ditaduras fora e mantê-la dentro enfraqueceu o regime, e Vargas foi deposto em 1945."
+     },
+     {
+      "titulo": "As Constituições republicanas",
+      "texto": "• 1891: primeira da República; presidencialismo, federalismo, separação Igreja-Estado, voto aberto e sem mulheres e analfabetos.\n• 1934: voto secreto e feminino, Justiça Eleitoral e Justiça do Trabalho, direitos trabalhistas.\n• 1937 (Polaca): outorgada no Estado Novo, autoritária, inspirada na Constituição polonesa.\n• 1946: redemocratização, restabelece direitos e independência dos Poderes.\n• 1967: do regime militar, fortalece o Executivo; a Emenda nº 1 de 1969 endureceu ainda mais o texto.\n• 1988 (Cidadã): promulgada, amplia direitos sociais, voto facultativo para analfabetos e jovens de 16 e 17 anos, tortura e racismo como crimes inafiançáveis."
+     },
+     {
+      "titulo": "O período militar (1964-1985)",
+      "texto": "O golpe de 1964 derrubou João Goulart, cujas reformas de base assustavam setores conservadores, em pleno contexto de Guerra Fria. O regime governou por Atos Institucionais: o AI-2 extinguiu os partidos e criou o bipartidarismo (ARENA e MDB); o AI-5 (1968) fechou o Congresso, suspendeu o habeas corpus para crimes políticos e intensificou censura e repressão.\nNa economia, o Milagre Econômico (1968-1973) trouxe alto crescimento, mas com concentração de renda e endividamento externo. Movimentos sociais resistiram: movimento estudantil (Passeata dos Cem Mil, 1968), guerrilhas, setores da Igreja, e, no fim dos anos 1970, as greves operárias do ABC paulista."
+     },
+     {
+      "titulo": "Abertura e redemocratização",
+      "texto": "A abertura foi lenta, gradual e segura, iniciada por Geisel e continuada por Figueiredo. Marcos:\n• Lei da Anistia (1979) e volta dos exilados.\n• Fim do bipartidarismo (1979) e novos partidos.\n• Diretas Já (1983-1984): grande campanha popular; a Emenda Dante de Oliveira foi rejeitada.\n• Eleição indireta de Tancredo Neves (1985), que morreu antes da posse; assumiu José Sarney.\n• Constituição de 1988 e primeira eleição direta para presidente após o regime, em 1989 (Fernando Collor)."
+     }
+    ]
+   },
+   "revisao": {
+    "pontos": [
+     "Revolução de 1930 encerrou a política do café com leite e levou Vargas ao poder.",
+     "Revolução Constitucionalista de 1932 foi o levante paulista contra Vargas.",
+     "Constituição de 1934: voto secreto e feminino, Justiça do Trabalho e Eleitoral.",
+     "Estado Novo (1937-1945): ditadura, DIP, CLT (1943) e CSN.",
+     "Constituições outorgadas: 1937 e 1967 (e a Emenda de 1969); promulgadas: 1891, 1934, 1946 e 1988.",
+     "AI-5 (1968): fechamento do Congresso e suspensão do habeas corpus para crimes políticos.",
+     "Bipartidarismo: ARENA (governo) e MDB (oposição consentida).",
+     "Lei da Anistia: 1979; Diretas Já: 1984, com a Emenda Dante de Oliveira rejeitada.",
+     "Tancredo foi eleito indiretamente em 1985; Sarney assumiu."
+    ]
+   },
+   "mapa": {
+    "no_central": "Brasil República (1930-1988)",
+    "ramos": [
+     {
+      "label": "Revolução de 1930",
+      "filhos": [
+       "Fim do café com leite",
+       "Aliança Liberal",
+       "Crise de 1929"
+      ]
+     },
+     {
+      "label": "Era Vargas",
+      "filhos": [
+       "Governo Provisório",
+       "Revolução de 1932",
+       "Governo Constitucional",
+       "Estado Novo",
+       "CLT 1943"
+      ]
+     },
+     {
+      "label": "Constituições",
+      "filhos": [
+       "1891 e 1934",
+       "1937 Polaca",
+       "1946",
+       "1967/1969",
+       "1988 Cidadã"
+      ]
+     },
+     {
+      "label": "Regime militar",
+      "filhos": [
+       "Golpe de 1964",
+       "Atos Institucionais",
+       "AI-5",
+       "Milagre Econômico",
+       "Resistência"
+      ]
+     },
+     {
+      "label": "Redemocratização",
+      "filhos": [
+       "Anistia 1979",
+       "Diretas Já",
+       "Tancredo e Sarney",
+       "Eleição direta 1989"
+      ]
+     }
+    ]
+   },
+   "flashcards": [
+    {
+     "pergunta": "O que foi a política do café com leite?",
+     "resposta": "Alternância de poder entre as oligarquias de SP e MG na Primeira República."
+    },
+    {
+     "pergunta": "Em que data começou a Revolução Constitucionalista?",
+     "resposta": "9 de julho de 1932."
+    },
+    {
+     "pergunta": "Qual órgão fazia censura e propaganda no Estado Novo?",
+     "resposta": "O DIP (Departamento de Imprensa e Propaganda)."
+    },
+    {
+     "pergunta": "Qual Constituição ficou conhecida como Polaca?",
+     "resposta": "A de 1937."
+    },
+    {
+     "pergunta": "Quais partidos existiam no bipartidarismo militar?",
+     "resposta": "ARENA e MDB."
+    },
+    {
+     "pergunta": "O que propunha a Emenda Dante de Oliveira?",
+     "resposta": "Eleições diretas para presidente (foi rejeitada em 1984)."
+    }
+   ],
+   "questoes": [
+    {
+     "subassunto": "A Revolução de 1930 e a Era Vargas",
+     "enunciado": "A Consolidação das Leis do Trabalho (CLT) foi instituída durante",
+     "opcoes": [
+      "o governo de Juscelino Kubitschek.",
+      "a Primeira República.",
+      "o regime militar.",
+      "o Estado Novo, sob Getúlio Vargas.",
+      "o governo de José Sarney."
+     ],
+     "gabarito": 3,
+     "comentario": "A CLT é de 1943, durante o Estado Novo (1937-1945). As demais alternativas indicam períodos diferentes.",
+     "dificuldade": "facil"
+    },
+    {
+     "subassunto": "A abertura política e a redemocratização do Brasil",
+     "enunciado": "A campanha das Diretas Já (1983-1984) tinha como principal objetivo",
+     "opcoes": [
+      "a aprovação de eleições diretas para presidente da República.",
+      "a convocação de um plebiscito sobre a monarquia.",
+      "a volta do bipartidarismo.",
+      "a decretação de um novo Ato Institucional.",
+      "a ampliação do mandato do presidente Figueiredo."
+     ],
+     "gabarito": 0,
+     "comentario": "O movimento defendia a Emenda Dante de Oliveira, que restabelecia eleições diretas para presidente; a emenda foi rejeitada no Congresso. As outras opções não correspondem ao movimento.",
+     "dificuldade": "facil"
+    },
+    {
+     "subassunto": "As Constituições Republicanas",
+     "enunciado": "Assinale a alternativa que associa corretamente a Constituição à sua característica.",
+     "opcoes": [
+      "1891 – instituiu o voto feminino e a Justiça do Trabalho.",
+      "1937 – promulgada por Assembleia Constituinte eleita democraticamente.",
+      "1934 – incorporou o voto secreto e o voto feminino e criou a Justiça Eleitoral no texto constitucional.",
+      "1946 – instituiu o bipartidarismo.",
+      "1988 – foi outorgada pelos militares."
+     ],
+     "gabarito": 2,
+     "comentario": "A Constituição de 1934 trouxe voto secreto, voto feminino e Justiça Eleitoral e do Trabalho. A de 1891 não previa voto feminino; a de 1937 foi outorgada; o bipartidarismo veio com o AI-2 (1965); a de 1988 foi promulgada por Constituinte.",
+     "dificuldade": "media"
+    },
+    {
+     "subassunto": "A estrutura política e os movimentos sociais no período militar",
+     "enunciado": "O Ato Institucional nº 5 (AI-5), de 1968, é lembrado por ter",
+     "opcoes": [
+      "restabelecido as eleições diretas para governador.",
+      "concedido anistia aos presos políticos.",
+      "criado a Justiça Eleitoral.",
+      "extinguido o regime militar.",
+      "permitido o fechamento do Congresso e suspendido o habeas corpus para crimes políticos."
+     ],
+     "gabarito": 4,
+     "comentario": "O AI-5 foi o ato mais duro do regime: fechamento do Congresso, cassações e suspensão do habeas corpus em crimes políticos. Anistia foi em 1979; a Justiça Eleitoral é da década de 1930; o regime acabou em 1985.",
+     "dificuldade": "media"
+    },
+    {
+     "subassunto": "A Revolução de 1930 e a Era Vargas",
+     "enunciado": "A respeito do período 1930-1937, é correto afirmar que",
+     "opcoes": [
+      "a Revolução Constitucionalista de 1932 saiu vitoriosa militarmente e derrubou Vargas.",
+      "a Intentona Comunista (1935) e o Plano Cohen foram usados para justificar o endurecimento que levou ao golpe do Estado Novo.",
+      "a Ação Integralista Brasileira era um movimento de esquerda aliado à ANL.",
+      "Vargas chegou ao poder após vencer a eleição de 1930 pelo voto direto.",
+      "a Constituição de 1934 foi outorgada por Vargas."
+     ],
+     "gabarito": 1,
+     "comentario": "O levante comunista de 1935 e o falso Plano Cohen (1937) serviram de pretexto para o golpe. A revolta de 1932 foi derrotada; os integralistas eram de inspiração fascista e rivais da ANL; Vargas perdeu a eleição de 1930 e chegou pelo movimento armado; a Constituição de 1934 foi promulgada.",
+     "dificuldade": "dificil"
+    }
+   ]
+  },
+  {
+   "curso": "pm-sp-soldado",
+   "disciplina": "Conhecimentos Gerais",
+   "assunto": "Geografia Geral",
+   "aula": {
+    "titulo": "Geografia Geral: ordem mundial, globalização e meio ambiente",
+    "secoes": [
+     {
+      "titulo": "Da ordem bipolar à nova ordem mundial",
+      "texto": "Durante a Guerra Fria, o mundo era bipolar: EUA e URSS dividiam áreas de influência, e se falava em Primeiro, Segundo e Terceiro Mundo. Com o fim da URSS (1991), surgiu a chamada nova ordem mundial.\nNos primeiros anos, os EUA ficaram como única superpotência militar (unipolaridade). Hoje muitos autores descrevem uma ordem multipolar ou uni-multipolar: os EUA seguem com o maior poder militar, mas a economia se distribui entre vários polos, como União Europeia, China, Japão e países emergentes. A ascensão da China é o fato geopolítico mais marcante das últimas décadas.\nA classificação mais usada passou a ser Norte (países desenvolvidos) e Sul (países em desenvolvimento), critério socioeconômico e não apenas geográfico."
+     },
+     {
+      "titulo": "Globalização",
+      "texto": "Globalização é a integração econômica, cultural e política em escala mundial, acelerada pela revolução técnico-científico-informacional (informática, telecomunicações, internet, transportes mais rápidos).\n• Empresas transnacionais espalham a produção por vários países em busca de mão de obra barata, incentivos fiscais e mercados.\n• O capital financeiro circula instantaneamente, o que também espalha crises rapidamente (como a de 2008).\n• A cultura se padroniza em parte, mas também surgem reações de valorização das identidades locais.\nA globalização é desigual: concentra riqueza e tecnologia e pode excluir regiões e pessoas."
+     },
+     {
+      "titulo": "Blocos econômicos e organizações",
+      "texto": "Blocos regionais reduzem barreiras comerciais entre vizinhos. Níveis de integração: zona de livre comércio, união aduaneira (tarifa externa comum), mercado comum e união econômica e monetária.\n• União Europeia: o bloco mais integrado, com moeda comum (euro) em parte dos membros.\n• Mercosul: criado em 1991 pelo Tratado de Assunção (Brasil, Argentina, Uruguai e Paraguai); funciona como união aduaneira imperfeita.\n• APEC, ASEAN e o acordo entre EUA, México e Canadá (sucessor do NAFTA).\n• BRICS: grupo de cooperação de economias emergentes formado originalmente por Brasil, Rússia, Índia, China e África do Sul, depois ampliado. Não é bloco econômico com tarifa comum.\nOrganizações globais: ONU (1945), OMC (1995), FMI e Banco Mundial."
+     },
+     {
+      "titulo": "Principais problemas ambientais",
+      "texto": "• Aquecimento global: intensificação do efeito estufa pela emissão de gases como CO2 e metano (queima de combustíveis fósseis, desmatamento, pecuária). Consequências: elevação do nível do mar, eventos extremos, degelo.\n• Destruição da camada de ozônio: causada pelos CFCs; o Protocolo de Montreal (1987) é considerado um caso de sucesso.\n• Chuva ácida: óxidos de enxofre e nitrogênio emitidos por indústrias e veículos.\n• Desmatamento, perda de biodiversidade, desertificação, escassez e poluição da água, lixo e poluição dos oceanos por plástico.\n• Ilhas de calor e inversão térmica nas grandes cidades."
+     },
+     {
+      "titulo": "Conferências e acordos ambientais",
+      "texto": "• Estocolmo (1972): primeira grande conferência da ONU sobre meio ambiente.\n• Rio-92 (Eco-92): consagrou o desenvolvimento sustentável, a Agenda 21 e a Convenção do Clima.\n• Protocolo de Kyoto (1997): metas de redução de emissões para países desenvolvidos.\n• Acordo de Paris (2015): todos os países apresentam metas próprias (NDCs) para limitar o aquecimento bem abaixo de 2 °C.\n• As COPs são as conferências anuais do clima; a COP30 foi realizada em Belém (PA), em 2025.\nDesenvolvimento sustentável: atender às necessidades do presente sem comprometer as das gerações futuras."
+     }
+    ]
+   },
+   "revisao": {
+    "pontos": [
+     "Fim da URSS (1991) encerra a ordem bipolar.",
+     "Ordem atual: poder militar concentrado nos EUA, economia multipolar e ascensão da China.",
+     "Norte x Sul: critério socioeconômico, não só geográfico.",
+     "Globalização é impulsionada pela revolução técnico-científico-informacional.",
+     "Mercosul: Tratado de Assunção (1991), união aduaneira imperfeita.",
+     "União Europeia é o bloco mais integrado (moeda comum).",
+     "CFCs destroem a camada de ozônio; Protocolo de Montreal (1987).",
+     "Kyoto (1997) fixou metas para países ricos; Paris (2015) envolve todos com metas próprias.",
+     "Rio-92 consagrou o desenvolvimento sustentável e a Agenda 21."
+    ]
+   },
+   "mapa": {
+    "no_central": "Geografia Geral",
+    "ramos": [
+     {
+      "label": "Ordem mundial",
+      "filhos": [
+       "Bipolar (Guerra Fria)",
+       "Unipolar pós-1991",
+       "Multipolar",
+       "Ascensão da China"
+      ]
+     },
+     {
+      "label": "Globalização",
+      "filhos": [
+       "Revolução técnico-científica",
+       "Transnacionais",
+       "Fluxo financeiro",
+       "Desigualdade"
+      ]
+     },
+     {
+      "label": "Blocos e organizações",
+      "filhos": [
+       "União Europeia",
+       "Mercosul",
+       "BRICS",
+       "ONU e OMC"
+      ]
+     },
+     {
+      "label": "Problemas ambientais",
+      "filhos": [
+       "Aquecimento global",
+       "Camada de ozônio",
+       "Chuva ácida",
+       "Desmatamento",
+       "Ilhas de calor"
+      ]
+     },
+     {
+      "label": "Acordos",
+      "filhos": [
+       "Estocolmo 1972",
+       "Rio-92",
+       "Kyoto 1997",
+       "Paris 2015"
+      ]
+     }
+    ]
+   },
+   "flashcards": [
+    {
+     "pergunta": "O que caracteriza a ordem bipolar?",
+     "resposta": "A divisão do mundo entre EUA e URSS na Guerra Fria."
+    },
+    {
+     "pergunta": "Qual tratado criou o Mercosul?",
+     "resposta": "Tratado de Assunção (1991)."
+    },
+    {
+     "pergunta": "O que é união aduaneira?",
+     "resposta": "Livre comércio entre os membros mais tarifa externa comum."
+    },
+    {
+     "pergunta": "Que substâncias destroem a camada de ozônio?",
+     "resposta": "Os CFCs (clorofluorcarbonos)."
+    },
+    {
+     "pergunta": "Qual a principal diferença entre Kyoto e Paris?",
+     "resposta": "Kyoto obrigava só países desenvolvidos; Paris envolve todos com metas próprias."
+    },
+    {
+     "pergunta": "O que é desenvolvimento sustentável?",
+     "resposta": "Atender ao presente sem comprometer as gerações futuras."
+    }
+   ],
+   "questoes": [
+    {
+     "subassunto": "Os principais problemas ambientais",
+     "enunciado": "A destruição da camada de ozônio está associada principalmente à emissão de",
+     "opcoes": [
+      "clorofluorcarbonos (CFCs).",
+      "vapor d'água pelos oceanos.",
+      "oxigênio pelas florestas.",
+      "nitrogênio pelos vulcões.",
+      "gás hélio pela indústria."
+     ],
+     "gabarito": 0,
+     "comentario": "Os CFCs, antes usados em aerossóis e refrigeração, reagem com o ozônio da estratosfera. As demais substâncias não são as responsáveis por esse problema.",
+     "dificuldade": "facil"
+    },
+    {
+     "subassunto": "A nova ordem mundial, o espaço geopolítico e a globalização",
+     "enunciado": "O Mercosul, criado em 1991 pelo Tratado de Assunção, teve como membros fundadores",
+     "opcoes": [
+      "Brasil, Chile, Bolívia e Peru.",
+      "Brasil, Argentina, México e Colômbia.",
+      "Brasil, Argentina, Uruguai e Paraguai.",
+      "Brasil, Venezuela, Uruguai e Equador.",
+      "Argentina, Chile, Uruguai e Bolívia."
+     ],
+     "gabarito": 2,
+     "comentario": "Os fundadores foram Brasil, Argentina, Uruguai e Paraguai. Os outros países listados não participaram da fundação.",
+     "dificuldade": "facil"
+    },
+    {
+     "subassunto": "A nova ordem mundial, o espaço geopolítico e a globalização",
+     "enunciado": "Com o fim da União Soviética, em 1991, a ordem geopolítica mundial passou a ser caracterizada",
+     "opcoes": [
+      "pelo retorno à disputa bipolar entre EUA e Rússia.",
+      "pela dissolução de todos os blocos econômicos regionais.",
+      "pelo fim das empresas transnacionais.",
+      "pela liderança militar dos EUA combinada com vários polos econômicos, como União Europeia, China e Japão.",
+      "pela divisão rígida entre Primeiro, Segundo e Terceiro Mundo."
+     ],
+     "gabarito": 3,
+     "comentario": "A nova ordem combina supremacia militar norte-americana com multipolaridade econômica. Não houve volta à bipolaridade; os blocos se fortaleceram; as transnacionais cresceram; a divisão em três mundos era típica da Guerra Fria.",
+     "dificuldade": "media"
+    },
+    {
+     "subassunto": "Os principais problemas ambientais",
+     "enunciado": "Sobre acordos internacionais ambientais, assinale a alternativa correta.",
+     "opcoes": [
+      "O Protocolo de Kyoto obrigava todos os países, ricos e pobres, a reduzir emissões nas mesmas proporções.",
+      "O Acordo de Paris proibiu totalmente o uso de combustíveis fósseis.",
+      "A Conferência de Estocolmo ocorreu depois da Rio-92.",
+      "O Protocolo de Montreal trata do desmatamento da Amazônia.",
+      "No Acordo de Paris, cada país apresenta suas próprias metas de redução de emissões."
+     ],
+     "gabarito": 4,
+     "comentario": "Em Paris (2015), cada país define sua NDC. Kyoto fixava metas apenas para países desenvolvidos; Paris não proibiu combustíveis fósseis; Estocolmo (1972) é anterior à Rio-92; Montreal trata da camada de ozônio.",
+     "dificuldade": "media"
+    },
+    {
+     "subassunto": "A nova ordem mundial, o espaço geopolítico e a globalização",
+     "enunciado": "Um bloco em que há livre circulação de mercadorias entre os membros e adoção de uma tarifa externa comum para produtos de fora do bloco, sem ainda haver moeda única, corresponde a",
+     "opcoes": [
+      "uma zona de livre comércio.",
+      "uma união aduaneira.",
+      "uma união econômica e monetária.",
+      "uma área de preferências tarifárias apenas.",
+      "uma organização militar de defesa."
+     ],
+     "gabarito": 1,
+     "comentario": "A tarifa externa comum é o traço da união aduaneira (caso do Mercosul, ainda que imperfeita). A zona de livre comércio não tem tarifa comum; a união monetária exige moeda única; preferência tarifária é nível inferior; organização militar não é bloco econômico.",
+     "dificuldade": "dificil"
+    }
+   ]
+  },
+  {
+   "curso": "pm-sp-soldado",
+   "disciplina": "Conhecimentos Gerais",
+   "assunto": "Geografia do Brasil",
+   "aula": {
+    "titulo": "Geografia do Brasil: natureza, população, economia e ambiente",
+    "secoes": [
+     {
+      "titulo": "Relevo e hidrografia",
+      "texto": "O território brasileiro tem estrutura geológica antiga, formada por escudos cristalinos (ricos em minérios) e bacias sedimentares (onde há petróleo, gás e carvão). Não temos dobramentos modernos, como os Andes; por isso predominam altitudes modestas. As classificações mais cobradas dividem o relevo em planaltos, planícies e depressões (proposta de Jurandyr Ross).\nNa hidrografia, predominam rios de planalto, com grande potencial hidrelétrico, e rios perenes alimentados pela chuva (exceção: rios intermitentes do Sertão). Destaques:\n• Bacia Amazônica: a maior do mundo em volume de água; rios de planície muito usados para navegação.\n• Rio São Francisco: o rio da integração nacional, atravessa o Sertão.\n• Bacia do Paraná: maior aproveitamento hidrelétrico do país (Itaipu, binacional com o Paraguai). O Tietê, afluente do Paraná, corre para o interior porque nasce perto do litoral, mas a Serra do Mar o impede de ir para o oceano."
+     },
+     {
+      "titulo": "Clima e vegetação",
+      "texto": "Climas principais:\n• Equatorial: Amazônia; quente e úmido o ano todo.\n• Tropical: Brasil central; verão chuvoso e inverno seco.\n• Semiárido: Sertão nordestino; chuvas escassas e irregulares.\n• Tropical litorâneo (atlântico): faixa costeira; muita umidade.\n• Tropical de altitude: planaltos do Sudeste; temperaturas mais amenas.\n• Subtropical: Sul; estações bem definidas, invernos frios, geadas.\nBiomas: Amazônia (maior floresta tropical), Mata Atlântica (o mais devastado, onde vive a maior parte da população), Cerrado (savana, chamado de berço das águas, muito ocupado pela soja), Caatinga (único bioma exclusivamente brasileiro, vegetação adaptada à seca), Pantanal (maior planície alagável) e Pampa (campos do Sul)."
+     },
+     {
+      "titulo": "População",
+      "texto": "O Brasil está entre os países mais populosos do mundo, com mais de 200 milhões de habitantes (Censo 2022). A população é mal distribuída: mais concentrada no litoral e no Sudeste, região mais populosa, e rarefeita no Norte e no Centro-Oeste.\nPassamos pela transição demográfica: a natalidade e a fecundidade caíram muito (hoje abaixo do nível de reposição, de cerca de 2,1 filhos por mulher), a expectativa de vida aumentou e a população envelhece. Isso pressiona a Previdência e a saúde.\nMovimentos: êxodo rural intenso a partir de 1950; migração de nordestinos para o Sudeste (sobretudo São Paulo); ocupação da fronteira agrícola no Centro-Oeste e Norte; migração de retorno; e, mais recentemente, chegada de imigrantes como haitianos e venezuelanos. No Censo 2022, os pardos passaram a ser o maior grupo de cor ou raça."
+     },
+     {
+      "titulo": "Industrialização, urbanização, energia e agropecuária",
+      "texto": "A industrialização foi tardia: a indústria de base ganhou força na Era Vargas (CSN, Petrobras em 1953) e os bens de consumo duráveis, com a indústria automobilística, no governo JK (Plano de Metas). A indústria concentrou-se no Sudeste e depois se desconcentrou em parte, com a guerra fiscal entre estados.\nA urbanização foi rápida e desordenada: hoje a grande maioria vive em cidades. Resultados: metrópoles, conurbação, periferias com moradia precária, favelas e problemas de transporte.\nEnergia: a matriz elétrica é majoritariamente renovável, com predomínio da hidreletricidade e forte crescimento de eólica (principalmente no Nordeste) e solar. O petróleo ganhou peso com o pré-sal, e o etanol ganhou força com o Proálcool (1975).\nAgropecuária: o agronegócio é moderno e exportador (o Brasil lidera a produção e exportação mundial de soja e é grande produtor de café, cana, laranja e carne), mas convive com concentração fundiária e conflitos no campo."
+     },
+     {
+      "titulo": "Impactos ambientais",
+      "texto": "• Desmatamento e queimadas na Amazônia (arco do desmatamento) e no Cerrado, ligados à pecuária, à soja, à grilagem e à exploração ilegal de madeira.\n• Mineração: os rompimentos de barragens de rejeitos em Mariana (2015) e Brumadinho (2019), em Minas Gerais, foram grandes desastres.\n• Poluição de rios urbanos, como o Tietê, por esgoto e resíduos.\n• Enchentes, deslizamentos em encostas e ilhas de calor nas cidades.\n• Desertificação em áreas do semiárido e erosão e assoreamento de rios."
+     }
+    ]
+   },
+   "revisao": {
+    "pontos": [
+     "Brasil não tem dobramentos modernos; relevo antigo e de altitudes modestas.",
+     "Predominam rios de planalto, com alto potencial hidrelétrico.",
+     "Tietê corre para o interior; é afluente do Paraná.",
+     "Caatinga é o único bioma exclusivamente brasileiro; Mata Atlântica é o mais devastado.",
+     "Semiárido: Sertão nordestino, chuvas escassas e irregulares.",
+     "Fecundidade abaixo da reposição e envelhecimento da população.",
+     "Sudeste é a região mais populosa; Norte e Centro-Oeste, as de menor densidade.",
+     "Matriz elétrica: predomínio hidrelétrico, com eólica e solar em alta.",
+     "Mariana (2015) e Brumadinho (2019): desastres de barragens de mineração em MG."
+    ]
+   },
+   "mapa": {
+    "no_central": "Geografia do Brasil",
+    "ramos": [
+     {
+      "label": "Natureza",
+      "filhos": [
+       "Planaltos, planícies e depressões",
+       "Rios de planalto",
+       "Seis climas principais",
+       "Biomas"
+      ]
+     },
+     {
+      "label": "População",
+      "filhos": [
+       "Transição demográfica",
+       "Envelhecimento",
+       "Concentração no litoral",
+       "Migrações internas"
+      ]
+     },
+     {
+      "label": "Economia",
+      "filhos": [
+       "Industrialização tardia",
+       "Urbanização acelerada",
+       "Agronegócio exportador",
+       "Concentração fundiária"
+      ]
+     },
+     {
+      "label": "Energia",
+      "filhos": [
+       "Hidreletricidade",
+       "Eólica e solar",
+       "Pré-sal",
+       "Etanol (Proálcool)"
+      ]
+     },
+     {
+      "label": "Impactos",
+      "filhos": [
+       "Desmatamento e queimadas",
+       "Barragens de mineração",
+       "Poluição de rios",
+       "Enchentes e deslizamentos"
+      ]
+     }
+    ]
+   },
+   "flashcards": [
+    {
+     "pergunta": "Qual bioma é exclusivamente brasileiro?",
+     "resposta": "A Caatinga."
+    },
+    {
+     "pergunta": "Por que o Tietê corre para o interior?",
+     "resposta": "A Serra do Mar bloqueia o caminho para o litoral."
+    },
+    {
+     "pergunta": "Qual é a maior planície alagável do Brasil?",
+     "resposta": "O Pantanal."
+    },
+    {
+     "pergunta": "Qual foi a principal corrente migratória interna do século XX?",
+     "resposta": "Nordestinos rumo ao Sudeste."
+    },
+    {
+     "pergunta": "Qual fonte predomina na matriz elétrica brasileira?",
+     "resposta": "A hidrelétrica."
+    },
+    {
+     "pergunta": "Qual programa incentivou o etanol em 1975?",
+     "resposta": "O Proálcool."
+    }
+   ],
+   "questoes": [
+    {
+     "subassunto": "A natureza brasileira: relevo, hidrografia, clima e vegetação",
+     "enunciado": "O único bioma que ocorre exclusivamente em território brasileiro é",
+     "opcoes": [
+      "a Amazônia.",
+      "a Caatinga.",
+      "o Pampa.",
+      "o Pantanal.",
+      "a Mata Atlântica."
+     ],
+     "gabarito": 1,
+     "comentario": "A Caatinga só existe no Brasil. Amazônia, Pampa, Pantanal e Mata Atlântica se estendem também a países vizinhos.",
+     "dificuldade": "facil"
+    },
+    {
+     "subassunto": "A natureza brasileira: relevo, hidrografia, clima e vegetação",
+     "enunciado": "O clima marcado por chuvas escassas e irregulares, com longos períodos de estiagem, predomina",
+     "opcoes": [
+      "na Amazônia ocidental.",
+      "no litoral do Sul.",
+      "nos planaltos do Sudeste.",
+      "no Pantanal.",
+      "no Sertão nordestino."
+     ],
+     "gabarito": 4,
+     "comentario": "É o clima semiárido, típico do Sertão nordestino. A Amazônia tem clima equatorial úmido; o Sul, subtropical; os planaltos do Sudeste, tropical de altitude; o Pantanal, tropical com cheias sazonais.",
+     "dificuldade": "facil"
+    },
+    {
+     "subassunto": "A população: crescimento, distribuição, estrutura e movimentos",
+     "enunciado": "Uma tendência demográfica atual do Brasil é",
+     "opcoes": [
+      "a queda da fecundidade e o envelhecimento da população.",
+      "o aumento contínuo da taxa de natalidade.",
+      "a redução da expectativa de vida.",
+      "o predomínio da população rural sobre a urbana.",
+      "o crescimento da proporção de crianças na população."
+     ],
+     "gabarito": 0,
+     "comentario": "O país vive a transição demográfica: menos filhos por mulher e mais idosos. A natalidade cai, a expectativa de vida sobe, a população é majoritariamente urbana e a proporção de crianças diminui.",
+     "dificuldade": "media"
+    },
+    {
+     "subassunto": "As atividades econômicas: industrialização e urbanização, fontes de energia e agropecuária",
+     "enunciado": "Sobre as fontes de energia no Brasil, é correto afirmar que",
+     "opcoes": [
+      "a matriz elétrica brasileira depende principalmente do carvão mineral.",
+      "a energia nuclear é a principal fonte de eletricidade do país.",
+      "a hidreletricidade predomina na matriz elétrica, e as fontes eólica e solar vêm crescendo.",
+      "o país não possui reservas de petróleo em águas profundas.",
+      "o etanol deixou de ser produzido após o fim do Proálcool."
+     ],
+     "gabarito": 2,
+     "comentario": "A eletricidade brasileira vem sobretudo de hidrelétricas, com expansão de eólica e solar. Carvão e nuclear têm peso pequeno; o pré-sal é petróleo em águas profundas; o etanol continua relevante.",
+     "dificuldade": "media"
+    },
+    {
+     "subassunto": "A natureza brasileira: relevo, hidrografia, clima e vegetação",
+     "enunciado": "Considere as afirmações sobre a hidrografia brasileira.\nI. Predominam rios de planalto, o que favorece a geração de energia elétrica.\nII. O rio Tietê deságua diretamente no Oceano Atlântico, próximo a Santos.\nIII. A bacia do Paraná concentra o maior aproveitamento hidrelétrico do país.\nEstá correto o que se afirma em",
+     "opcoes": [
+      "I, apenas.",
+      "II, apenas.",
+      "I e II, apenas.",
+      "I e III, apenas.",
+      "I, II e III."
+     ],
+     "gabarito": 3,
+     "comentario": "I e III estão corretas. A II está errada: o Tietê nasce perto do litoral, mas corre para o interior e deságua no rio Paraná, pois a Serra do Mar bloqueia o caminho até o oceano.",
+     "dificuldade": "dificil"
+    }
+   ]
+  },
+  {
+   "curso": "pm-sp-soldado",
+   "disciplina": "Conhecimentos Gerais",
+   "assunto": "Atualidades",
+   "aula": {
+    "titulo": "Atualidades: método de estudo e temas estruturais",
+    "secoes": [
+     {
+      "titulo": "Como estudar Atualidades",
+      "texto": "O edital cobra fatos dos 6 meses anteriores à sua publicação. Este material NÃO substitui o noticiário: ele dá a base para você entender as notícias. Complemente com leitura regular de fontes jornalísticas confiáveis, cobrindo exatamente esse recorte.\nMétodo prático:\n• Leia manchetes de política, economia, internacional, ciência e meio ambiente todos os dias (15 a 20 minutos bastam).\n• Anote em uma linha: o quê, quem, onde, quando e por que importa.\n• Revise por tema no fim de cada semana.\n• Desconfie de conteúdo sem fonte; a banca cobra fatos amplamente noticiados, não boatos.\nA VUNESP costuma perguntar sobre eventos de grande repercussão: eleições, decisões de governo, conflitos internacionais, desastres ambientais, grandes eventos esportivos e culturais e avanços tecnológicos."
+     },
+     {
+      "titulo": "Instituições e política",
+      "texto": "O Brasil é uma república federativa presidencialista, com três Poderes independentes e harmônicos: Executivo, Legislativo (Congresso Nacional: Câmara e Senado) e Judiciário (com o STF como guardião da Constituição).\nAs eleições gerais (presidente, governadores, senadores e deputados) ocorrem a cada 4 anos, alternando com as municipais (prefeitos e vereadores). O voto é obrigatório dos 18 aos 70 anos e facultativo para jovens de 16 e 17, maiores de 70 e analfabetos. A Justiça Eleitoral organiza o processo com urnas eletrônicas.\nAo ler notícias políticas, pergunte: qual Poder decidiu? É lei, medida provisória, emenda constitucional ou decisão judicial?"
+     },
+     {
+      "titulo": "Economia",
+      "texto": "Conceitos que ajudam a ler qualquer notícia econômica:\n• Inflação: alta generalizada de preços; o índice oficial é o IPCA, do IBGE.\n• Taxa Selic: juros básicos da economia, definidos pelo Copom do Banco Central; subir a Selic tende a frear a inflação, mas desacelera a economia.\n• PIB: soma dos bens e serviços produzidos; queda por dois trimestres seguidos costuma ser chamada de recessão técnica.\n• Reforma tributária do consumo (Emenda Constitucional 132/2023): cria um IVA dual, com a CBS (federal) e o IBS (estados e municípios), em transição gradual ao longo de vários anos.\n• Pix: sistema de pagamentos instantâneos criado pelo Banco Central, em funcionamento desde 2020."
+     },
+     {
+      "titulo": "Meio ambiente, tecnologia e sociedade",
+      "texto": "Meio ambiente: mudanças climáticas e eventos extremos (secas na Amazônia, enchentes como as do Rio Grande do Sul em 2024), desmatamento e queimadas. O Brasil sediou a COP30, conferência do clima da ONU, em Belém (PA), em 2025.\nTecnologia: inteligência artificial, desinformação (fake news), golpes digitais e proteção de dados. Leis-chave: Marco Civil da Internet (Lei 12.965/2014) e Lei Geral de Proteção de Dados, a LGPD (Lei 13.709/2018).\nSociedade: envelhecimento da população, desigualdade, saúde pública pelo SUS, educação e inclusão."
+     },
+     {
+      "titulo": "Segurança pública e cenário internacional",
+      "texto": "Segurança pública: avanço do crime organizado, golpes digitais, violência contra a mulher (Lei Maria da Penha) e integração entre as forças. A Lei 13.675/2018 criou o Sistema Único de Segurança Pública (SUSP), para integrar União, estados e municípios.\nInternacional: a guerra entre Rússia e Ucrânia (invasão em larga escala iniciada em 2022), o conflito no Oriente Médio após os ataques do Hamas a Israel em outubro de 2023, a rivalidade EUA-China e a ampliação do BRICS. Verifique no noticiário o estágio atual desses temas no período do edital."
+     }
+    ]
+   },
+   "revisao": {
+    "pontos": [
+     "Recorte do edital: fatos dos 6 meses anteriores à publicação; complemente com o noticiário.",
+     "Três Poderes: Executivo, Legislativo e Judiciário; STF é o guardião da Constituição.",
+     "Voto obrigatório dos 18 aos 70; facultativo aos 16-17, acima de 70 e para analfabetos.",
+     "Selic é definida pelo Copom (Banco Central); juros altos freiam a inflação.",
+     "IPCA (IBGE) é o índice oficial de inflação.",
+     "Reforma tributária do consumo: EC 132/2023, CBS federal e IBS de estados e municípios.",
+     "LGPD: Lei 13.709/2018; Marco Civil da Internet: Lei 12.965/2014.",
+     "COP30 foi realizada em Belém (PA), em 2025.",
+     "SUSP: Lei 13.675/2018, integração da segurança pública."
+    ]
+   },
+   "mapa": {
+    "no_central": "Atualidades",
+    "ramos": [
+     {
+      "label": "Método",
+      "filhos": [
+       "Recorte de 6 meses",
+       "Leitura diária",
+       "Resumo de uma linha",
+       "Fontes confiáveis"
+      ]
+     },
+     {
+      "label": "Política",
+      "filhos": [
+       "Três Poderes",
+       "Eleições a cada 4 anos",
+       "Leis, MPs e emendas"
+      ]
+     },
+     {
+      "label": "Economia",
+      "filhos": [
+       "Inflação e IPCA",
+       "Selic e Copom",
+       "PIB",
+       "Reforma tributária",
+       "Pix"
+      ]
+     },
+     {
+      "label": "Meio ambiente e tecnologia",
+      "filhos": [
+       "Eventos extremos",
+       "COP30 em Belém",
+       "IA e desinformação",
+       "LGPD"
+      ]
+     },
+     {
+      "label": "Segurança e mundo",
+      "filhos": [
+       "SUSP",
+       "Crime organizado",
+       "Rússia x Ucrânia",
+       "Oriente Médio"
+      ]
+     }
+    ]
+   },
+   "flashcards": [
+    {
+     "pergunta": "Qual o recorte temporal de Atualidades no edital PM-SP?",
+     "resposta": "Os 6 meses anteriores à publicação do edital."
+    },
+    {
+     "pergunta": "Quem define a taxa Selic?",
+     "resposta": "O Copom, do Banco Central."
+    },
+    {
+     "pergunta": "Qual o índice oficial de inflação no Brasil?",
+     "resposta": "O IPCA, calculado pelo IBGE."
+    },
+    {
+     "pergunta": "Que tributos formam o IVA dual da reforma tributária?",
+     "resposta": "CBS (federal) e IBS (estados e municípios)."
+    },
+    {
+     "pergunta": "O que regula a LGPD?",
+     "resposta": "O tratamento e a proteção de dados pessoais."
+    },
+    {
+     "pergunta": "Onde foi realizada a COP30?",
+     "resposta": "Em Belém (PA), em 2025."
+    }
+   ],
+   "questoes": [
+    {
+     "subassunto": "Fatos políticos, econômicos, sociais e culturais, nacionais e internacionais, dos 6 meses anteriores à publicação do edital",
+     "enunciado": "O Pix, sistema de pagamentos instantâneos amplamente usado no Brasil, foi criado e é gerido pelo(a)",
+     "opcoes": [
+      "Ministério da Fazenda.",
+      "Receita Federal.",
+      "Caixa Econômica Federal.",
+      "Banco Central do Brasil.",
+      "Comissão de Valores Mobiliários."
+     ],
+     "gabarito": 3,
+     "comentario": "O Pix foi desenvolvido pelo Banco Central, que o regula e gere desde 2020. Os demais órgãos não são responsáveis pelo sistema.",
+     "dificuldade": "facil"
+    },
+    {
+     "subassunto": "Fatos políticos, econômicos, sociais e culturais, nacionais e internacionais, dos 6 meses anteriores à publicação do edital",
+     "enunciado": "A Lei Geral de Proteção de Dados (LGPD) tem como objeto principal",
+     "opcoes": [
+      "o tratamento de dados pessoais, inclusive nos meios digitais.",
+      "a regulação do comércio exterior.",
+      "a proteção de florestas nativas.",
+      "a fixação do salário mínimo.",
+      "a organização das eleições municipais."
+     ],
+     "gabarito": 0,
+     "comentario": "A LGPD (Lei 13.709/2018) disciplina o tratamento de dados pessoais por empresas e pelo poder público. Os demais temas são tratados por outras normas.",
+     "dificuldade": "facil"
+    },
+    {
+     "subassunto": "Fatos políticos, econômicos, sociais e culturais, nacionais e internacionais, dos 6 meses anteriores à publicação do edital",
+     "enunciado": "Em 2025, o Brasil sediou a 30ª Conferência das Partes da Convenção-Quadro da ONU sobre Mudança do Clima (COP30). A cidade-sede foi",
+     "opcoes": [
+      "Rio de Janeiro (RJ).",
+      "Brasília (DF).",
+      "Manaus (AM).",
+      "São Paulo (SP).",
+      "Belém (PA)."
+     ],
+     "gabarito": 4,
+     "comentario": "A COP30 ocorreu em Belém, capital do Pará, na Amazônia. As demais cidades não sediaram o evento.",
+     "dificuldade": "media"
+    },
+    {
+     "subassunto": "Fatos políticos, econômicos, sociais e culturais, nacionais e internacionais, dos 6 meses anteriores à publicação do edital",
+     "enunciado": "Quando o Comitê de Política Monetária (Copom) eleva a taxa Selic, o efeito esperado é",
+     "opcoes": [
+      "o aumento imediato do salário mínimo.",
+      "o encarecimento do crédito e a contenção da inflação.",
+      "a redução automática dos impostos federais.",
+      "o estímulo ao consumo por meio de crédito mais barato.",
+      "a desvalorização obrigatória do real frente ao dólar."
+     ],
+     "gabarito": 1,
+     "comentario": "Juros mais altos encarecem empréstimos, reduzem o consumo e ajudam a conter a inflação. A Selic não define salário mínimo nem impostos; crédito mais barato ocorre quando os juros caem; o câmbio não se move de forma obrigatória.",
+     "dificuldade": "media"
+    },
+    {
+     "subassunto": "Fatos políticos, econômicos, sociais e culturais, nacionais e internacionais, dos 6 meses anteriores à publicação do edital",
+     "enunciado": "A reforma tributária sobre o consumo, aprovada pela Emenda Constitucional nº 132/2023, adotou um modelo de IVA dual, composto por",
+     "opcoes": [
+      "ICMS e ISS, que passam a ser cobrados pela União.",
+      "Imposto de Renda e IPTU unificados.",
+      "Contribuição sobre Bens e Serviços (CBS), federal, e Imposto sobre Bens e Serviços (IBS), de estados e municípios.",
+      "um único imposto federal que extingue a autonomia tributária dos municípios.",
+      "IPVA e ITBI, geridos por um conselho estadual."
+     ],
+     "gabarito": 2,
+     "comentario": "O IVA dual é formado pela CBS (União) e pelo IBS (compartilhado por estados e municípios), com transição gradual. Imposto de Renda, IPTU, IPVA e ITBI não integram esse modelo; ICMS e ISS serão substituídos pelo IBS, e não transferidos à União.",
+     "dificuldade": "dificil"
+    }
+   ]
+  },
+  {
+   "curso": "gcm-geral",
+   "disciplina": "Atualidades e Realidades Municipais",
+   "assunto": "Atualidades",
+   "aula": {
+    "titulo": "Atualidades para Guarda Municipal: método e temas que sempre voltam",
+    "secoes": [
+     {
+      "titulo": "Primeiro passo: leia o recorte do edital",
+      "texto": "Em concursos de Guarda Civil Municipal, a banca cobra fatos divulgados na mídia local e nacional dentro de um período definido no edital (em geral, alguns meses antes da prova). Este material não traz notícias: ele ensina o método e os temas de fundo. Complemente, obrigatoriamente, com o noticiário do período indicado no seu edital.\nMétodo em 4 passos:\n• Confira no edital o recorte temporal e se há ênfase no município.\n• Siga diariamente o noticiário nacional e o da sua cidade (site da prefeitura, da Câmara Municipal e jornais locais confiáveis).\n• Faça fichas curtas: fato, data, local, quem decidiu e consequência.\n• Revise semanalmente por tema: política, economia, cidade, meio ambiente, segurança, cultura e esportes."
+     },
+     {
+      "titulo": "Como ler uma notícia municipal",
+      "texto": "Para cada notícia, identifique o ente (União, estado ou município) e o Poder envolvido. No município:\n• Prefeito e secretarias: Poder Executivo (executa políticas, sanciona ou veta leis).\n• Câmara Municipal: Poder Legislativo (vereadores votam leis e fiscalizam o prefeito).\n• Município não tem Poder Judiciário próprio; as causas vão à Justiça estadual ou federal.\nAs eleições municipais escolhem prefeito, vice e vereadores para mandatos de 4 anos. As mais recentes foram em 2024, e as próximas estão previstas para 2028."
+     },
+     {
+      "titulo": "Temas estruturais que a banca adora",
+      "texto": "• Segurança pública: o art. 144, §8º, da Constituição permite aos municípios criar guardas municipais para proteção de seus bens, serviços e instalações; a Lei 13.022/2014 é o Estatuto Geral das Guardas Municipais. A Lei 13.675/2018 criou o SUSP, que busca integrar as forças de segurança.\n• Mobilidade e trânsito: transporte coletivo, faixas exclusivas, ciclovias e segurança viária.\n• Meio ambiente urbano: enchentes, ondas de calor, qualidade do ar, lixo e reciclagem, arborização.\n• Saúde e educação: a atenção básica (UBS) e a educação infantil e fundamental têm forte atuação municipal.\n• Tecnologia: serviços digitais da prefeitura, videomonitoramento, proteção de dados (LGPD) e golpes digitais.\n• Inclusão social: população em situação de rua, acessibilidade, violência contra a mulher."
+     },
+     {
+      "titulo": "Temas nacionais e internacionais de fundo",
+      "texto": "Mesmo com foco municipal, costuma haver questões nacionais e mundiais. Tenha noção de: inflação e juros (IPCA e Selic), reforma tributária do consumo (EC 132/2023), mudanças climáticas (a COP30 foi em Belém, em 2025), guerra entre Rússia e Ucrânia e conflitos no Oriente Médio. Sempre confira no noticiário como esses temas estavam no período do edital."
+     }
+    ]
+   },
+   "revisao": {
+    "pontos": [
+     "Recorte temporal: definido no edital; complemente com o noticiário desse período.",
+     "Acompanhe fontes locais: prefeitura, Câmara Municipal e jornais da cidade.",
+     "Prefeito = Executivo; Câmara Municipal = Legislativo; município não tem Judiciário próprio.",
+     "Eleições municipais a cada 4 anos: últimas em 2024, próximas previstas para 2028.",
+     "Guardas municipais: art. 144, §8º, da CF e Lei 13.022/2014.",
+     "SUSP: Lei 13.675/2018, integração da segurança pública.",
+     "Temas quentes: mobilidade, enchentes, calor, lixo, saúde básica, população de rua.",
+     "Não decore boatos: a banca cobra fatos de grande repercussão."
+    ]
+   },
+   "mapa": {
+    "no_central": "Atualidades municipais",
+    "ramos": [
+     {
+      "label": "Método",
+      "filhos": [
+       "Recorte do edital",
+       "Fontes locais e nacionais",
+       "Fichas curtas",
+       "Revisão semanal"
+      ]
+     },
+     {
+      "label": "Leitura da notícia",
+      "filhos": [
+       "Qual ente?",
+       "Qual Poder?",
+       "Lei, decreto ou decisão?"
+      ]
+     },
+     {
+      "label": "Temas locais",
+      "filhos": [
+       "Segurança e GCM",
+       "Mobilidade",
+       "Meio ambiente urbano",
+       "Saúde e educação",
+       "Inclusão social"
+      ]
+     },
+     {
+      "label": "Temas de fundo",
+      "filhos": [
+       "Inflação e juros",
+       "Reforma tributária",
+       "Clima",
+       "Conflitos internacionais"
+      ]
+     }
+    ]
+   },
+   "flashcards": [
+    {
+     "pergunta": "Onde está o recorte temporal de Atualidades?",
+     "resposta": "No próprio edital do concurso."
+    },
+    {
+     "pergunta": "Quem representa o Legislativo municipal?",
+     "resposta": "A Câmara Municipal (vereadores)."
+    },
+    {
+     "pergunta": "Qual lei é o Estatuto Geral das Guardas Municipais?",
+     "resposta": "Lei 13.022/2014."
+    },
+    {
+     "pergunta": "Qual dispositivo constitucional prevê as guardas municipais?",
+     "resposta": "Art. 144, §8º, da Constituição."
+    },
+    {
+     "pergunta": "Qual a duração do mandato de prefeito e vereador?",
+     "resposta": "4 anos."
+    },
+    {
+     "pergunta": "O município tem Poder Judiciário próprio?",
+     "resposta": "Não."
+    }
+   ],
+   "questoes": [
+    {
+     "subassunto": "Fatos políticos, econômicos, sociais e culturais divulgados na mídia local e/ou nacional (recorte temporal definido no edital)",
+     "enunciado": "Nas eleições municipais, o eleitor escolhe",
+     "opcoes": [
+      "governador e deputados estaduais.",
+      "presidente e senadores.",
+      "prefeito, vice-prefeito e vereadores.",
+      "prefeito e juízes municipais.",
+      "vereadores e deputados federais."
+     ],
+     "gabarito": 2,
+     "comentario": "O pleito municipal elege prefeito, vice e vereadores. Governador, deputados, presidente e senadores são escolhidos nas eleições gerais; juízes não são eleitos no Brasil.",
+     "dificuldade": "facil"
+    },
+    {
+     "subassunto": "Fatos políticos, econômicos, sociais e culturais divulgados na mídia local e/ou nacional (recorte temporal definido no edital)",
+     "enunciado": "Um candidato a guarda municipal quer se preparar para a matéria de Atualidades. A estratégia mais adequada é",
+     "opcoes": [
+      "decorar notícias de dez anos atrás.",
+      "estudar apenas acontecimentos internacionais.",
+      "confiar em mensagens de redes sociais sem indicação de fonte.",
+      "ignorar o noticiário local, pois nunca é cobrado.",
+      "acompanhar notícias locais e nacionais de fontes confiáveis dentro do período indicado no edital."
+     ],
+     "gabarito": 4,
+     "comentario": "O edital define o recorte temporal e costuma incluir a mídia local e nacional; fontes confiáveis evitam desinformação. As demais estratégias fogem do recorte ou usam fontes inseguras.",
+     "dificuldade": "facil"
+    },
+    {
+     "subassunto": "Fatos políticos, econômicos, sociais e culturais divulgados na mídia local e/ou nacional (recorte temporal definido no edital)",
+     "enunciado": "A norma que estabelece o Estatuto Geral das Guardas Municipais é a",
+     "opcoes": [
+      "Lei 13.022/2014.",
+      "Lei 13.709/2018.",
+      "Lei 10.257/2001.",
+      "Lei 12.587/2012.",
+      "Lei 12.965/2014."
+     ],
+     "gabarito": 0,
+     "comentario": "A Lei 13.022/2014 é o Estatuto Geral das Guardas Municipais. A 13.709/2018 é a LGPD; a 10.257/2001, o Estatuto da Cidade; a 12.587/2012, a Política Nacional de Mobilidade Urbana; a 12.965/2014, o Marco Civil da Internet.",
+     "dificuldade": "media"
+    },
+    {
+     "subassunto": "Fatos políticos, econômicos, sociais e culturais divulgados na mídia local e/ou nacional (recorte temporal definido no edital)",
+     "enunciado": "Uma reportagem trata da reorganização das linhas de ônibus que circulam apenas dentro de uma cidade. Pela Constituição, a organização desse serviço é, em regra, competência",
+     "opcoes": [
+      "da União.",
+      "do estado.",
+      "do Poder Judiciário.",
+      "do município.",
+      "do Senado Federal."
+     ],
+     "gabarito": 3,
+     "comentario": "Cabe ao município organizar e prestar os serviços públicos de interesse local, incluindo o transporte coletivo (art. 30 da CF). Transporte entre municípios de uma região metropolitana, por exemplo, costuma ser estadual.",
+     "dificuldade": "media"
+    },
+    {
+     "subassunto": "Fatos políticos, econômicos, sociais e culturais divulgados na mídia local e/ou nacional (recorte temporal definido no edital)",
+     "enunciado": "Uma notícia informa: a Câmara Municipal aprovou um projeto que altera regras de uso do solo, e o prefeito sancionou o texto, que foi publicado como lei. Analisando o fato, é correto concluir que",
+     "opcoes": [
+      "a lei foi criada exclusivamente pelo Poder Judiciário local.",
+      "houve participação do Legislativo municipal, que aprovou o projeto, e do Executivo municipal, que o sancionou.",
+      "a sanção é ato privativo dos vereadores.",
+      "o prefeito atuou como integrante do Poder Legislativo.",
+      "como a lei é municipal, não precisou de votação."
+     ],
+     "gabarito": 1,
+     "comentario": "O processo legislativo municipal envolve a Câmara (aprovação) e o prefeito (sanção ou veto). Município não tem Judiciário próprio; a sanção é ato do chefe do Executivo; o prefeito integra o Executivo; leis municipais exigem votação na Câmara.",
+     "dificuldade": "dificil"
+    }
+   ]
+  },
+  {
+   "curso": "gcm-geral",
+   "disciplina": "Atualidades e Realidades Municipais",
+   "assunto": "História e Geografia do município",
+   "aula": {
+    "titulo": "História e Geografia do município: o método, com São Paulo como exemplo",
+    "secoes": [
+     {
+      "titulo": "Como estudar a sua cidade",
+      "texto": "Cada edital de GCM cobra a cidade do concurso. O roteiro é sempre o mesmo: aspectos físicos, fundação, economia e crescimento, meio ambiente e cultura. Use fontes oficiais: site da prefeitura (seção de história da cidade), da Câmara Municipal e dados do IBGE. Abaixo, o roteiro aplicado à cidade de São Paulo, o exemplo mais cobrado."
+     },
+     {
+      "titulo": "Aspectos físicos",
+      "texto": "• Relevo: a cidade está sobre o Planalto Atlântico (Planalto Paulista), a cerca de 700 a 800 metros de altitude, com colinas, várzeas e serras nas bordas (Serra da Cantareira ao norte; ao sul, áreas próximas à Serra do Mar).\n• Hidrografia: rio Tietê (principal), rio Pinheiros e rio Tamanduateí, além de muitos córregos canalizados. O Tietê nasce perto do litoral, mas corre para o interior, porque a Serra do Mar bloqueia o caminho ao oceano. No extremo sul ficam as represas Billings e Guarapiranga, importantes mananciais.\n• Clima: tropical de altitude, com verão quente e chuvoso e inverno mais seco e ameno.\n• Vegetação: originalmente Mata Atlântica, com campos; restam áreas na Cantareira e no extremo sul."
+     },
+     {
+      "titulo": "Fundação e desenvolvimento",
+      "texto": "São Paulo foi fundada em 25 de janeiro de 1554 pelos jesuítas, entre eles Manuel da Nóbrega e José de Anchieta, com o Colégio de São Paulo de Piratininga, numa colina entre os rios Tamanduateí e Anhangabaú (atual Pátio do Colégio). Durante séculos foi um núcleo modesto, ponto de partida das bandeiras rumo ao interior.\nNo século XIX ganhou importância com a Academia de Direito (1827) e, sobretudo, com o café. A ferrovia São Paulo Railway, ligando Santos a Jundiaí, passou pela cidade, que se tornou o grande entroncamento do café paulista."
+     },
+     {
+      "titulo": "Aspectos humanos e econômicos",
+      "texto": "• Imigração: italianos, portugueses, espanhóis, japoneses (a partir de 1908), sírio-libaneses e outros, recebidos pela Hospedaria dos Imigrantes, no Brás.\n• Industrialização: o capital do café financiou fábricas no início do século XX (Brás, Mooca, Ipiranga); depois a indústria automobilística se concentrou no ABC.\n• Migração interna: a partir de 1950, milhões de migrantes, sobretudo nordestinos, chegaram à cidade.\n• Formação da metrópole: o crescimento gerou conurbação com cidades vizinhas e a Região Metropolitana de São Paulo, com 39 municípios. Hoje a capital tem mais de 11 milhões de habitantes e economia voltada aos serviços, finanças e comércio (Avenida Paulista, Faria Lima)."
+     },
+     {
+      "titulo": "Questões ambientais",
+      "texto": "• Poluição dos rios Tietê e Pinheiros por esgoto.\n• Enchentes causadas pela impermeabilização do solo e ocupação de várzeas.\n• Poluição do ar de origem principalmente veicular e ilhas de calor.\n• Ocupação irregular de áreas de mananciais no extremo sul e na Cantareira.\n• A crise hídrica de 2014-2015, que atingiu fortemente o Sistema Cantareira, mostrou a vulnerabilidade do abastecimento."
+     },
+     {
+      "titulo": "Arte, cultura e turismo",
+      "texto": "A Semana de Arte Moderna de 1922, no Theatro Municipal, marcou o modernismo brasileiro. Destaques: MASP, Pinacoteca, Museu do Ipiranga, Parque Ibirapuera (inaugurado no IV Centenário, em 1954), Mercado Municipal, bairro da Liberdade, Catedral da Sé, Bienal de Arte, Virada Cultural, Carnaval no Anhembi e Fórmula 1 em Interlagos. A cidade é forte no turismo de negócios e eventos e na gastronomia."
+     }
+    ]
+   },
+   "revisao": {
+    "pontos": [
+     "Estude sua cidade pelo roteiro: físico, fundação, economia, ambiente e cultura.",
+     "São Paulo foi fundada em 25/01/1554 pelos jesuítas (Nóbrega e Anchieta).",
+     "Local da fundação: colina entre Tamanduateí e Anhangabaú (Pátio do Colégio).",
+     "Tietê corre para o interior; Billings e Guarapiranga são mananciais do extremo sul.",
+     "Clima tropical de altitude; vegetação original de Mata Atlântica.",
+     "Café e ferrovia (Santos-Jundiaí) impulsionaram o crescimento e a indústria.",
+     "Imigração europeia e japonesa; depois migração nordestina a partir de 1950.",
+     "Região Metropolitana de São Paulo: 39 municípios.",
+     "Semana de Arte Moderna de 1922, no Theatro Municipal; Ibirapuera inaugurado em 1954."
+    ]
+   },
+   "mapa": {
+    "no_central": "Município (exemplo: São Paulo)",
+    "ramos": [
+     {
+      "label": "Aspectos físicos",
+      "filhos": [
+       "Planalto Atlântico",
+       "Tietê, Pinheiros, Tamanduateí",
+       "Tropical de altitude",
+       "Mata Atlântica"
+      ]
+     },
+     {
+      "label": "Fundação",
+      "filhos": [
+       "25/01/1554",
+       "Jesuítas",
+       "Pátio do Colégio",
+       "Bandeiras"
+      ]
+     },
+     {
+      "label": "Economia e população",
+      "filhos": [
+       "Café e ferrovia",
+       "Imigração",
+       "Indústria",
+       "Migração nordestina",
+       "Metrópole"
+      ]
+     },
+     {
+      "label": "Ambiente",
+      "filhos": [
+       "Rios poluídos",
+       "Enchentes",
+       "Ar e ilhas de calor",
+       "Mananciais"
+      ]
+     },
+     {
+      "label": "Cultura e turismo",
+      "filhos": [
+       "Semana de 1922",
+       "Museus",
+       "Ibirapuera",
+       "Eventos e negócios"
+      ]
+     }
+    ]
+   },
+   "flashcards": [
+    {
+     "pergunta": "Quando São Paulo foi fundada?",
+     "resposta": "Em 25 de janeiro de 1554."
+    },
+    {
+     "pergunta": "Quais rios cercavam a colina da fundação?",
+     "resposta": "Tamanduateí e Anhangabaú."
+    },
+    {
+     "pergunta": "Quais represas são mananciais do extremo sul paulistano?",
+     "resposta": "Billings e Guarapiranga."
+    },
+    {
+     "pergunta": "Qual atividade financiou a industrialização paulistana?",
+     "resposta": "A cafeicultura."
+    },
+    {
+     "pergunta": "Quantos municípios formam a Região Metropolitana de São Paulo?",
+     "resposta": "39."
+    },
+    {
+     "pergunta": "Onde ocorreu a Semana de Arte Moderna de 1922?",
+     "resposta": "No Theatro Municipal de São Paulo."
+    }
+   ],
+   "questoes": [
+    {
+     "subassunto": "Fundação e desenvolvimento",
+     "enunciado": "A cidade de São Paulo foi fundada em 25 de janeiro de 1554 por",
+     "opcoes": [
+      "padres jesuítas, entre eles Manuel da Nóbrega e José de Anchieta.",
+      "bandeirantes vindos de Minas Gerais.",
+      "imigrantes italianos ligados ao café.",
+      "militares enviados por D. Pedro I.",
+      "comerciantes holandeses."
+     ],
+     "gabarito": 0,
+     "comentario": "A fundação está ligada ao Colégio dos jesuítas em Piratininga. Os bandeirantes partiram depois de São Paulo; a imigração italiana é do fim do século XIX; D. Pedro I é do século XIX; os holandeses atuaram no Nordeste.",
+     "dificuldade": "facil"
+    },
+    {
+     "subassunto": "Aspectos artísticos, culturais e turísticos",
+     "enunciado": "A Semana de Arte Moderna de 1922, marco do modernismo brasileiro, foi realizada em São Paulo no(a)",
+     "opcoes": [
+      "Museu de Arte de São Paulo (MASP).",
+      "Parque Ibirapuera.",
+      "Pinacoteca do Estado.",
+      "Theatro Municipal.",
+      "Mercado Municipal."
+     ],
+     "gabarito": 3,
+     "comentario": "O evento ocorreu no Theatro Municipal, em fevereiro de 1922. O MASP e o Parque Ibirapuera são posteriores; a Pinacoteca e o Mercado Municipal não sediaram a Semana.",
+     "dificuldade": "facil"
+    },
+    {
+     "subassunto": "Aspectos humanos e econômicos: crescimento da população, ciclos econômicos, industrialização, expansão urbana e formação da metrópole",
+     "enunciado": "No final do século XIX e início do século XX, o crescimento da cidade de São Paulo esteve ligado principalmente",
+     "opcoes": [
+      "à mineração de ouro no próprio município.",
+      "à produção de borracha.",
+      "ao cultivo de cana-de-açúcar no centro da cidade.",
+      "à pecuária extensiva nos pampas.",
+      "à economia cafeeira, às ferrovias e à chegada de imigrantes."
+     ],
+     "gabarito": 4,
+     "comentario": "O café, escoado por ferrovias até Santos, gerou capital e atraiu imigrantes, o que impulsionou a urbanização e a indústria. Ouro, borracha, cana e pecuária nos pampas não explicam esse crescimento.",
+     "dificuldade": "media"
+    },
+    {
+     "subassunto": "Questões ambientais",
+     "enunciado": "As represas Billings e Guarapiranga, localizadas na zona sul da cidade de São Paulo, são importantes principalmente por",
+     "opcoes": [
+      "concentrarem o polo industrial automobilístico.",
+      "abrigarem o centro financeiro da cidade.",
+      "funcionarem como mananciais de abastecimento de água, ameaçados por ocupação irregular.",
+      "serem os pontos de nascente do rio Tietê.",
+      "estarem localizadas no centro histórico."
+     ],
+     "gabarito": 2,
+     "comentario": "São mananciais que abastecem parte da metrópole, pressionados pela ocupação irregular. O polo automobilístico fica no ABC; o centro financeiro, na Paulista e Faria Lima; o Tietê nasce fora da capital, a leste; as represas ficam no extremo sul, e não no centro.",
+     "dificuldade": "media"
+    },
+    {
+     "subassunto": "Aspectos físicos: relevo, hidrografia, clima e vegetação",
+     "enunciado": "Considere as afirmações sobre a geografia física da cidade de São Paulo.\nI. A cidade está situada em área de planalto.\nII. O rio Tietê corre em direção ao interior do estado.\nIII. A vegetação original predominante era a Caatinga.\nEstá correto o que se afirma em",
+     "opcoes": [
+      "I, apenas.",
+      "I e II, apenas.",
+      "II e III, apenas.",
+      "III, apenas.",
+      "I, II e III."
+     ],
+     "gabarito": 1,
+     "comentario": "I e II estão corretas: a cidade fica no Planalto Atlântico e o Tietê corre para o interior. A III está errada: a vegetação original era a Mata Atlântica; a Caatinga é típica do semiárido nordestino.",
+     "dificuldade": "dificil"
+    }
+   ]
+  },
+  {
+   "curso": "gcm-geral",
+   "disciplina": "Atualidades e Realidades Municipais",
+   "assunto": "Organização político-administrativa do município",
+   "aula": {
+    "titulo": "Como o município se organiza: Poderes, regiões, distritos e subprefeituras",
+    "secoes": [
+     {
+      "titulo": "O município na Constituição",
+      "texto": "Desde 1988, o município é ente federativo autônomo, ao lado da União, dos estados e do Distrito Federal. Ele se rege por uma Lei Orgânica, votada em dois turnos, com intervalo mínimo de dez dias, e aprovada por dois terços dos membros da Câmara Municipal.\nAutonomia municipal significa: auto-organização (Lei Orgânica), autogoverno (eleição de prefeito e vereadores), autoadministração e autonomia financeira (tributos próprios, como IPTU, ISS e ITBI)."
+     },
+     {
+      "titulo": "Poderes municipais",
+      "texto": "• Executivo: prefeito e vice-prefeito, eleitos diretamente para 4 anos, com uma reeleição consecutiva permitida. O prefeito administra por meio de secretarias.\n• Legislativo: Câmara Municipal, formada por vereadores eleitos para 4 anos. O número de vereadores depende da população, com máximo de 55 nas cidades com mais de 8 milhões de habitantes, caso de São Paulo.\n• Controle: a Câmara fiscaliza as contas do prefeito com auxílio do Tribunal de Contas. A cidade de São Paulo possui Tribunal de Contas do Município próprio (situação rara, pois a Constituição proíbe a criação de novos).\n• Não há Judiciário municipal.\nCompetências típicas (art. 30 da CF): assuntos de interesse local, transporte coletivo, educação infantil e ensino fundamental, atenção básica à saúde (em cooperação), ordenamento do uso do solo e proteção do patrimônio histórico local. O município também pode criar guarda municipal (art. 144, §8º)."
+     },
+     {
+      "titulo": "Divisão interna: regiões, subprefeituras e distritos",
+      "texto": "Cidades grandes dividem o território para administrar melhor. Em São Paulo:\n• Regiões: a cidade é costumeiramente dividida em Centro e zonas Norte, Sul, Leste e Oeste.\n• Subprefeituras: criadas a partir de 2002 para descentralizar a gestão; hoje são 32. Cuidam de zeladoria, manutenção de vias, fiscalização e serviços locais. O subprefeito é nomeado pelo prefeito, não eleito.\n• Distritos: são 96 distritos, agrupados dentro das subprefeituras. Exemplo: a Subprefeitura da Sé reúne distritos como Sé, República, Bela Vista, Consolação, Liberdade, Cambuci, Bom Retiro e Santa Cecília.\n• Bairros: referência popular, sem limites oficiais tão precisos quanto os distritos.\nO distrito de Marsilac, no extremo sul, é o de maior área e tem características rurais e de proteção ambiental."
+     },
+     {
+      "titulo": "Como estudar a sua cidade",
+      "texto": "Na cidade do seu concurso, descubra: quantos vereadores há, como se divide o território (regiões, distritos, administrações regionais ou subprefeituras), quais secretarias existem, onde fica a sede da prefeitura e da Câmara e onde a Guarda Civil está vinculada. Use o site da prefeitura e a Lei Orgânica do município."
+     }
+    ]
+   },
+   "revisao": {
+    "pontos": [
+     "Município é ente federativo autônomo desde a Constituição de 1988.",
+     "Lei Orgânica: dois turnos, intervalo mínimo de 10 dias, aprovação por 2/3 da Câmara.",
+     "Prefeito e vereadores: mandato de 4 anos, eleição direta.",
+     "Máximo de 55 vereadores para cidades com mais de 8 milhões de habitantes (caso de SP).",
+     "Tributos municipais: IPTU, ISS e ITBI.",
+     "Município não tem Poder Judiciário.",
+     "São Paulo: 32 subprefeituras e 96 distritos.",
+     "Subprefeito é nomeado pelo prefeito, não eleito.",
+     "Subprefeituras agrupam distritos; bairro não é divisão oficial rígida."
+    ]
+   },
+   "mapa": {
+    "no_central": "Organização do município",
+    "ramos": [
+     {
+      "label": "Autonomia",
+      "filhos": [
+       "Lei Orgânica",
+       "Autogoverno",
+       "Autoadministração",
+       "Tributos próprios"
+      ]
+     },
+     {
+      "label": "Executivo",
+      "filhos": [
+       "Prefeito e vice",
+       "Secretarias",
+       "Mandato de 4 anos"
+      ]
+     },
+     {
+      "label": "Legislativo",
+      "filhos": [
+       "Câmara Municipal",
+       "Vereadores",
+       "Fiscalização",
+       "Tribunal de Contas"
+      ]
+     },
+     {
+      "label": "Divisão territorial (SP)",
+      "filhos": [
+       "Regiões",
+       "32 subprefeituras",
+       "96 distritos",
+       "Bairros"
+      ]
+     },
+     {
+      "label": "Competências",
+      "filhos": [
+       "Interesse local",
+       "Transporte coletivo",
+       "Uso do solo",
+       "Guarda municipal"
+      ]
+     }
+    ]
+   },
+   "flashcards": [
+    {
+     "pergunta": "Qual lei rege o município?",
+     "resposta": "A Lei Orgânica Municipal."
+    },
+    {
+     "pergunta": "Qual o quórum de aprovação da Lei Orgânica?",
+     "resposta": "Dois terços dos membros da Câmara, em dois turnos."
+    },
+    {
+     "pergunta": "Quantas subprefeituras tem São Paulo?",
+     "resposta": "32."
+    },
+    {
+     "pergunta": "Quantos distritos tem São Paulo?",
+     "resposta": "96."
+    },
+    {
+     "pergunta": "Como o subprefeito chega ao cargo?",
+     "resposta": "É nomeado pelo prefeito."
+    },
+    {
+     "pergunta": "Cite três impostos municipais.",
+     "resposta": "IPTU, ISS e ITBI."
+    }
+   ],
+   "questoes": [
+    {
+     "subassunto": null,
+     "enunciado": "O prefeito e os vereadores são escolhidos",
+     "opcoes": [
+      "por nomeação do governador, para mandato de 2 anos.",
+      "por eleição direta, para mandato de 4 anos.",
+      "pela Assembleia Legislativa, para mandato de 5 anos.",
+      "por concurso público.",
+      "por eleição indireta na Câmara Municipal, para mandato de 6 anos."
+     ],
+     "gabarito": 1,
+     "comentario": "Prefeito e vereadores são eleitos pelo voto direto para 4 anos. Não há nomeação pelo governador, escolha pela Assembleia, concurso ou eleição indireta.",
+     "dificuldade": "facil"
+    },
+    {
+     "subassunto": "Principais regiões, distritos e subprefeituras",
+     "enunciado": "Atualmente, o número de subprefeituras da cidade de São Paulo é",
+     "opcoes": [
+      "5.",
+      "12.",
+      "96.",
+      "32.",
+      "39."
+     ],
+     "gabarito": 3,
+     "comentario": "São 32 subprefeituras. 96 é o número de distritos; 39 é o de municípios da Região Metropolitana; 5 remete às grandes regiões (Centro, Norte, Sul, Leste e Oeste).",
+     "dificuldade": "facil"
+    },
+    {
+     "subassunto": null,
+     "enunciado": "De acordo com a Constituição Federal, a Lei Orgânica do município deve ser",
+     "opcoes": [
+      "votada em dois turnos, com intervalo mínimo de dez dias, e aprovada por dois terços dos membros da Câmara Municipal.",
+      "aprovada pela Assembleia Legislativa do estado.",
+      "editada por decreto do prefeito.",
+      "aprovada por maioria simples em turno único.",
+      "promulgada pelo Tribunal de Justiça do estado."
+     ],
+     "gabarito": 0,
+     "comentario": "O art. 29 da Constituição exige dois turnos, interstício mínimo de dez dias e aprovação por 2/3 da Câmara. Não depende da Assembleia, de decreto, de maioria simples nem do Judiciário.",
+     "dificuldade": "media"
+    },
+    {
+     "subassunto": null,
+     "enunciado": "São tributos de competência municipal:",
+     "opcoes": [
+      "ICMS e IPVA.",
+      "Imposto de Renda e IPI.",
+      "ITCMD e ICMS.",
+      "IOF e ITR.",
+      "IPTU e ISS."
+     ],
+     "gabarito": 4,
+     "comentario": "IPTU e ISS (além do ITBI) são municipais. ICMS, IPVA e ITCMD são estaduais; Imposto de Renda, IPI, IOF e ITR são federais.",
+     "dificuldade": "media"
+    },
+    {
+     "subassunto": "Principais regiões, distritos e subprefeituras",
+     "enunciado": "Sobre a divisão administrativa da cidade de São Paulo, é correto afirmar que",
+     "opcoes": [
+      "cada distrito agrupa várias subprefeituras.",
+      "os subprefeitos são eleitos pelos moradores da região.",
+      "as subprefeituras agrupam distritos e têm à frente subprefeitos nomeados pelo prefeito.",
+      "os bairros são as unidades oficiais de divisão, com limites fixados em lei, e substituíram os distritos.",
+      "a cidade não possui divisão administrativa interna."
+     ],
+     "gabarito": 2,
+     "comentario": "Cada subprefeitura reúne distritos e é dirigida por subprefeito nomeado pelo prefeito. A relação é inversa à da alternativa A; subprefeitos não são eleitos; distritos, e não bairros, são as unidades oficiais; a cidade tem 32 subprefeituras e 96 distritos.",
+     "dificuldade": "dificil"
+    }
+   ]
+  },
+  {
+   "curso": "gcm-geral",
+   "disciplina": "Atualidades e Realidades Municipais",
+   "assunto": "Dinâmica urbana e territorial",
+   "aula": {
+    "titulo": "Dinâmica urbana: centro, periferia, mobilidade e uso do solo",
+    "secoes": [
+     {
+      "titulo": "Centro e periferias",
+      "texto": "As grandes cidades brasileiras cresceram no modelo centro-periferia: o centro e os bairros próximos concentraram empregos, infraestrutura e serviços; a população de baixa renda foi empurrada para as bordas, muitas vezes em loteamentos irregulares e autoconstrução. Isso gera segregação socioespacial e o movimento pendular: o deslocamento diário de casa (periferia ou cidade vizinha) para o trabalho (centro) e de volta.\nEm São Paulo, o centro histórico (Sé e República) perdeu moradores e empresas ao longo do século XX, enquanto surgiram novas centralidades, como a Avenida Paulista, a Faria Lima e a região da Berrini. Ao mesmo tempo, as periferias se consolidaram, com comércio e serviços próprios. A valorização de áreas antes populares, que expulsa moradores de menor renda, é chamada de gentrificação."
+     },
+     {
+      "titulo": "Mobilidade urbana",
+      "texto": "A Política Nacional de Mobilidade Urbana (Lei 12.587/2012) dá prioridade aos modos não motorizados (a pé e bicicleta) sobre os motorizados, e ao transporte público coletivo sobre o individual.\nExemplos em São Paulo:\n• Metrô (primeira linha em operação comercial em 1974) e trens da CPTM, de gestão estadual.\n• Ônibus municipais geridos pela SPTrans, com corredores e faixas exclusivas.\n• Bilhete Único (2004), que permite integração tarifária.\n• Rodízio municipal de veículos (desde 1997), que restringe carros conforme o final da placa em horários de pico, no centro expandido.\n• Ciclovias e ciclofaixas.\nProblemas: congestionamentos, longas viagens das periferias, poluição e acidentes de trânsito."
+     },
+     {
+      "titulo": "Uso do solo",
+      "texto": "A Constituição (art. 182) trata da política urbana e exige plano diretor para cidades com mais de 20 mil habitantes. O Estatuto da Cidade (Lei 10.257/2001) regulamenta essa política e reforça a função social da propriedade.\nImóvel urbano ocioso pode sofrer, em sequência: parcelamento ou edificação compulsórios, IPTU progressivo no tempo e desapropriação paga com títulos da dívida pública.\nEm São Paulo, o Plano Diretor Estratégico de 2014 (revisado em 2023) incentiva adensar a cidade perto dos eixos de transporte coletivo. A lei de zoneamento define o que pode ser construído em cada área (residencial, comercial, industrial, ambiental) e prevê as ZEIS, Zonas Especiais de Interesse Social, destinadas à moradia popular."
+     },
+     {
+      "titulo": "Equipamentos públicos e espaços urbanos",
+      "texto": "Equipamentos públicos são estruturas que prestam serviços à população: escolas, UBS e hospitais, creches, bibliotecas, centros esportivos, terminais de ônibus, parques e praças. Em São Paulo, os CEUs (Centros Educacionais Unificados) reúnem educação, cultura e esporte nas periferias. Parques como Ibirapuera, Carmo e Villa-Lobos, e espaços como a Avenida Paulista aberta a pedestres aos domingos e o Minhocão, são áreas de lazer. A Guarda Civil Municipal atua na proteção desses bens, serviços e instalações."
+     },
+     {
+      "titulo": "Desafios urbanos",
+      "texto": "• Habitação: déficit habitacional, cortiços, favelas e ocupação de áreas de risco e de mananciais.\n• Mobilidade: tempo de deslocamento e acessibilidade.\n• Meio ambiente: enchentes, ilhas de calor, lixo, poluição do ar e dos rios.\n• Segurança: prevenção, iluminação, ocupação dos espaços públicos e integração entre GCM e polícias.\n• Inclusão social: população em situação de rua, pessoas com deficiência, idosos e desigualdade entre bairros."
+     }
+    ]
+   },
+   "revisao": {
+    "pontos": [
+     "Modelo centro-periferia gera segregação socioespacial e movimento pendular.",
+     "Novas centralidades em SP: Paulista, Faria Lima e Berrini.",
+     "Gentrificação: valorização que expulsa moradores de menor renda.",
+     "Lei 12.587/2012: prioridade ao não motorizado e ao transporte coletivo.",
+     "Plano diretor obrigatório para cidades com mais de 20 mil habitantes (art. 182 da CF).",
+     "Estatuto da Cidade: Lei 10.257/2001; função social da propriedade.",
+     "Imóvel ocioso: edificação compulsória, IPTU progressivo no tempo e desapropriação.",
+     "ZEIS: zonas reservadas para moradia popular.",
+     "CEUs: equipamentos que integram educação, cultura e esporte nas periferias."
+    ]
+   },
+   "mapa": {
+    "no_central": "Dinâmica urbana",
+    "ramos": [
+     {
+      "label": "Centro e periferia",
+      "filhos": [
+       "Segregação socioespacial",
+       "Movimento pendular",
+       "Novas centralidades",
+       "Gentrificação"
+      ]
+     },
+     {
+      "label": "Mobilidade",
+      "filhos": [
+       "Lei 12.587/2012",
+       "Metrô e trens",
+       "Ônibus e faixas",
+       "Rodízio",
+       "Ciclovias"
+      ]
+     },
+     {
+      "label": "Uso do solo",
+      "filhos": [
+       "Plano diretor",
+       "Estatuto da Cidade",
+       "Zoneamento",
+       "ZEIS",
+       "IPTU progressivo"
+      ]
+     },
+     {
+      "label": "Equipamentos",
+      "filhos": [
+       "Escolas e UBS",
+       "CEUs",
+       "Parques e praças",
+       "Proteção pela GCM"
+      ]
+     },
+     {
+      "label": "Desafios",
+      "filhos": [
+       "Habitação",
+       "Meio ambiente",
+       "Segurança",
+       "Inclusão social"
+      ]
+     }
+    ]
+   },
+   "flashcards": [
+    {
+     "pergunta": "O que é movimento pendular?",
+     "resposta": "Ida e volta diária entre moradia e trabalho ou estudo."
+    },
+    {
+     "pergunta": "Quando o plano diretor é obrigatório?",
+     "resposta": "Em cidades com mais de 20 mil habitantes."
+    },
+    {
+     "pergunta": "O que prioriza a Lei 12.587/2012?",
+     "resposta": "Modos não motorizados e transporte coletivo."
+    },
+    {
+     "pergunta": "O que são ZEIS?",
+     "resposta": "Zonas Especiais de Interesse Social, voltadas à moradia popular."
+    },
+    {
+     "pergunta": "Qual lei é o Estatuto da Cidade?",
+     "resposta": "Lei 10.257/2001."
+    },
+    {
+     "pergunta": "O que é gentrificação?",
+     "resposta": "Valorização de uma área que expulsa moradores de menor renda."
+    }
+   ],
+   "questoes": [
+    {
+     "subassunto": "Centro e periferias",
+     "enunciado": "O deslocamento diário de trabalhadores que moram na periferia ou em cidades vizinhas e trabalham nas áreas centrais, retornando no fim do dia, é chamado de",
+     "opcoes": [
+      "êxodo rural.",
+      "transumância.",
+      "movimento pendular.",
+      "migração de retorno.",
+      "diáspora."
+     ],
+     "gabarito": 2,
+     "comentario": "Movimento pendular é a ida e volta diária entre moradia e trabalho. Êxodo rural é a saída do campo para a cidade; transumância envolve deslocamento sazonal; migração de retorno é a volta à região de origem; diáspora é a dispersão de um povo.",
+     "dificuldade": "facil"
+    },
+    {
+     "subassunto": "Uso do solo",
+     "enunciado": "Segundo a Constituição Federal, o plano diretor é obrigatório para cidades com mais de",
+     "opcoes": [
+      "20 mil habitantes.",
+      "5 mil habitantes.",
+      "50 mil habitantes.",
+      "100 mil habitantes.",
+      "1 milhão de habitantes."
+     ],
+     "gabarito": 0,
+     "comentario": "O art. 182, §1º, da Constituição exige plano diretor para cidades com mais de 20 mil habitantes. Os demais números não correspondem ao texto constitucional.",
+     "dificuldade": "facil"
+    },
+    {
+     "subassunto": "Mobilidade urbana",
+     "enunciado": "A Política Nacional de Mobilidade Urbana (Lei 12.587/2012) estabelece como diretriz",
+     "opcoes": [
+      "a prioridade do automóvel particular sobre o ônibus.",
+      "a proibição de ciclovias em vias arteriais.",
+      "a extinção do transporte público coletivo.",
+      "o fim das calçadas em áreas centrais.",
+      "a prioridade dos modos não motorizados sobre os motorizados e do transporte coletivo sobre o individual."
+     ],
+     "gabarito": 4,
+     "comentario": "A lei prioriza pedestres e ciclistas e o transporte coletivo. As demais alternativas contrariam essa diretriz.",
+     "dificuldade": "media"
+    },
+    {
+     "subassunto": "Uso do solo",
+     "enunciado": "No planejamento urbano, as áreas demarcadas pela lei municipal para destinação prioritária à moradia de população de baixa renda são as",
+     "opcoes": [
+      "Áreas de Preservação Permanente (APP).",
+      "Zonas Especiais de Interesse Social (ZEIS).",
+      "Zonas Industriais Exclusivas.",
+      "Unidades de Conservação de Proteção Integral.",
+      "Zonas Exclusivamente Corporativas."
+     ],
+     "gabarito": 1,
+     "comentario": "As ZEIS reservam áreas para habitação de interesse social. APPs e unidades de conservação têm finalidade ambiental; zonas industriais e corporativas têm outros usos.",
+     "dificuldade": "media"
+    },
+    {
+     "subassunto": "Uso do solo",
+     "enunciado": "Um imóvel urbano permanece vazio e sem uso por muitos anos em área com infraestrutura, descumprindo sua função social. Pela Constituição, o município, mediante lei específica e em área incluída no plano diretor, pode aplicar ao proprietário, sucessivamente,",
+     "opcoes": [
+      "desapropriação imediata sem indenização, multa e prisão.",
+      "IPTU progressivo no tempo, confisco e leilão.",
+      "multa diária, interdição e demolição.",
+      "parcelamento ou edificação compulsórios, IPTU progressivo no tempo e desapropriação com pagamento em títulos da dívida pública.",
+      "isenção de IPTU, doação a terceiros e tombamento."
+     ],
+     "gabarito": 3,
+     "comentario": "O art. 182, §4º, da CF prevê essa sequência: parcelamento ou edificação compulsórios, IPTU progressivo no tempo e desapropriação paga com títulos da dívida pública. Não há confisco, prisão ou desapropriação sem indenização nessa hipótese; as demais medidas não constam do dispositivo.",
+     "dificuldade": "dificil"
+    }
+   ]
+  }
+ ]
+}

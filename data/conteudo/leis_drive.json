@@ -1,0 +1,2496 @@
+{
+ "itens": [
+  {
+   "curso": "pm-sp-soldado",
+   "disciplina": "Noções de Administração Pública",
+   "assunto": "Lei de Acesso à Informação",
+   "materiais": [
+    {
+     "tipo": "lei_seca",
+     "titulo": "Lei 12.527/2011 — Art. 1",
+     "subassunto": null,
+     "conteudo": {
+      "lei": "Lei 12.527/2011 (Lei de Acesso à Informação)",
+      "artigo": "Art. 1",
+      "texto": "Art. 1o Esta Lei dispõe sobre os procedimentos a serem observados pela União, Estados, Distrito Federal e Municípios, com o fim de garantir o acesso a informações previsto no inciso XXXIII do art. 5o, no inciso II do § 3º do art. 37 e no § 2º do art. 216 da Constituição Federal.\nParágrafo único. Subordinam-se ao regime desta Lei:\nI - os órgãos públicos integrantes da administração direta dos Poderes Executivo, Legislativo, incluindo as Cortes de Contas, e Judiciário e do Ministério Público;\nII - as autarquias, as fundações públicas, as empresas públicas, as sociedades de economia mista e demais entidades controladas direta ou indiretamente pela União, Estados, Distrito Federal e Municípios.",
+      "observacao": "Texto compilado do Planalto (anotações de redação preservadas), conferido dispositivo a dispositivo com a publicação original no Senado Federal."
+     },
+     "fonte_oficial": "https://www.planalto.gov.br/ccivil_03/_ato2011-2014/2011/lei/l12527.htm"
+    },
+    {
+     "tipo": "lei_seca",
+     "titulo": "Lei 12.527/2011 — Art. 2",
+     "subassunto": null,
+     "conteudo": {
+      "lei": "Lei 12.527/2011 (Lei de Acesso à Informação)",
+      "artigo": "Art. 2",
+      "texto": "Art. 2o Aplicam-se as disposições desta Lei, no que couber, às entidades privadas sem fins lucrativos que recebam, para realização de ações de interesse público, recursos públicos diretamente do orçamento ou mediante subvenções sociais, contrato de gestão, termo de parceria, convênios, acordo, ajustes ou outros instrumentos congêneres.\nParágrafo único. A publicidade a que estão submetidas as entidades citadas no caput refere-se à parcela dos recursos públicos recebidos e à sua destinação, sem prejuízo das prestações de contas a que estejam legalmente obrigadas.",
+      "observacao": "Texto compilado do Planalto (anotações de redação preservadas), conferido dispositivo a dispositivo com a publicação original no Senado Federal."
+     },
+     "fonte_oficial": "https://www.planalto.gov.br/ccivil_03/_ato2011-2014/2011/lei/l12527.htm"
+    },
+    {
+     "tipo": "lei_seca",
+     "titulo": "Lei 12.527/2011 — Art. 3",
+     "subassunto": null,
+     "conteudo": {
+      "lei": "Lei 12.527/2011 (Lei de Acesso à Informação)",
+      "artigo": "Art. 3",
+      "texto": "Art. 3o Os procedimentos previstos nesta Lei destinam-se a assegurar o direito fundamental de acesso à informação e devem ser executados em conformidade com os princípios básicos da administração pública e com as seguintes diretrizes:\nI - observância da publicidade como preceito geral e do sigilo como exceção;\nII - divulgação de informações de interesse público, independentemente de solicitações;\nIII - utilização de meios de comunicação viabilizados pela tecnologia da informação;\nIV - fomento ao desenvolvimento da cultura de transparência na administração pública;\nV - desenvolvimento do controle social da administração pública.",
+      "observacao": "Texto compilado do Planalto (anotações de redação preservadas), conferido dispositivo a dispositivo com a publicação original no Senado Federal."
+     },
+     "fonte_oficial": "https://www.planalto.gov.br/ccivil_03/_ato2011-2014/2011/lei/l12527.htm"
+    },
+    {
+     "tipo": "lei_seca",
+     "titulo": "Lei 12.527/2011 — Art. 4",
+     "subassunto": null,
+     "conteudo": {
+      "lei": "Lei 12.527/2011 (Lei de Acesso à Informação)",
+      "artigo": "Art. 4",
+      "texto": "Art. 4o Para os efeitos desta Lei, considera-se:\nI - informação: dados, processados ou não, que podem ser utilizados para produção e transmissão de conhecimento, contidos em qualquer meio, suporte ou formato;\nII - documento: unidade de registro de informações, qualquer que seja o suporte ou formato;\nIII - informação sigilosa: aquela submetida temporariamente à restrição de acesso público em razão de sua imprescindibilidade para a segurança da sociedade e do Estado;\nIV - informação pessoal: aquela relacionada à pessoa natural identificada ou identificável;\nV - tratamento da informação: conjunto de ações referentes à produção, recepção, classificação, utilização, acesso, reprodução, transporte, transmissão, distribuição, arquivamento, armazenamento, eliminação, avaliação, destinação ou controle da informação;\nVI - disponibilidade: qualidade da informação que pode ser conhecida e utilizada por indivíduos, equipamentos ou sistemas autorizados;\nVII - autenticidade: qualidade da informação que tenha sido produzida, expedida, recebida ou modificada por determinado indivíduo, equipamento ou sistema;\nVIII - integridade: qualidade da informação não modificada, inclusive quanto à origem, trânsito e destino;\nIX - primariedade: qualidade da informação coletada na fonte, com o máximo de detalhamento possível, sem modificações.",
+      "observacao": "Texto compilado do Planalto (anotações de redação preservadas), conferido dispositivo a dispositivo com a publicação original no Senado Federal."
+     },
+     "fonte_oficial": "https://www.planalto.gov.br/ccivil_03/_ato2011-2014/2011/lei/l12527.htm"
+    },
+    {
+     "tipo": "lei_seca",
+     "titulo": "Lei 12.527/2011 — Art. 5",
+     "subassunto": null,
+     "conteudo": {
+      "lei": "Lei 12.527/2011 (Lei de Acesso à Informação)",
+      "artigo": "Art. 5",
+      "texto": "Art. 5o É dever do Estado garantir o direito de acesso à informação, que será franqueada, mediante procedimentos objetivos e ágeis, de forma transparente, clara e em linguagem de fácil compreensão.",
+      "observacao": "Texto compilado do Planalto (anotações de redação preservadas), conferido dispositivo a dispositivo com a publicação original no Senado Federal."
+     },
+     "fonte_oficial": "https://www.planalto.gov.br/ccivil_03/_ato2011-2014/2011/lei/l12527.htm"
+    },
+    {
+     "tipo": "lei_seca",
+     "titulo": "Lei 12.527/2011 — Art. 6",
+     "subassunto": null,
+     "conteudo": {
+      "lei": "Lei 12.527/2011 (Lei de Acesso à Informação)",
+      "artigo": "Art. 6",
+      "texto": "Art. 6o Cabe aos órgãos e entidades do poder público, observadas as normas e procedimentos específicos aplicáveis, assegurar a:\nI - gestão transparente da informação, propiciando amplo acesso a ela e sua divulgação;\nII - proteção da informação, garantindo-se sua disponibilidade, autenticidade e integridade; e\nIII - proteção da informação sigilosa e da informação pessoal, observada a sua disponibilidade, autenticidade, integridade e eventual restrição de acesso.",
+      "observacao": "Texto compilado do Planalto (anotações de redação preservadas), conferido dispositivo a dispositivo com a publicação original no Senado Federal."
+     },
+     "fonte_oficial": "https://www.planalto.gov.br/ccivil_03/_ato2011-2014/2011/lei/l12527.htm"
+    },
+    {
+     "tipo": "lei_seca",
+     "titulo": "Lei 12.527/2011 — Art. 8",
+     "subassunto": null,
+     "conteudo": {
+      "lei": "Lei 12.527/2011 (Lei de Acesso à Informação)",
+      "artigo": "Art. 8",
+      "texto": "Art. 8o É dever dos órgãos e entidades públicas promover, independentemente de requerimentos, a divulgação em local de fácil acesso, no âmbito de suas competências, de informações de interesse coletivo ou geral por eles produzidas ou custodiadas.\n§ 1o Na divulgação das informações a que se refere o caput, deverão constar, no mínimo:\nI - registro das competências e estrutura organizacional, endereços e telefones das respectivas unidades e horários de atendimento ao público;\nII - registros de quaisquer repasses ou transferências de recursos financeiros;\nIII - registros das despesas;\nIV - informações concernentes a procedimentos licitatórios, inclusive os respectivos editais e resultados, bem como a todos os contratos celebrados;\nV - dados gerais para o acompanhamento de programas, ações, projetos e obras de órgãos e entidades; e\nVI - respostas a perguntas mais frequentes da sociedade.\n§ 2o Para cumprimento do disposto no caput, os órgãos e entidades públicas deverão utilizar todos os meios e instrumentos legítimos de que dispuserem, sendo obrigatória a divulgação em sítios oficiais da rede mundial de computadores (internet).\n§ 3o Os sítios de que trata o § 2o deverão, na forma de regulamento, atender, entre outros, aos seguintes requisitos:\nI - conter ferramenta de pesquisa de conteúdo que permita o acesso à informação de forma objetiva, transparente, clara e em linguagem de fácil compreensão;\nII - possibilitar a gravação de relatórios em diversos formatos eletrônicos, inclusive abertos e não proprietários, tais como planilhas e texto, de modo a facilitar a análise das informações;\nIII - possibilitar o acesso automatizado por sistemas externos em formatos abertos, estruturados e legíveis por máquina;\nIV - divulgar em detalhes os formatos utilizados para estruturação da informação;\nV - garantir a autenticidade e a integridade das informações disponíveis para acesso;\nVI - manter atualizadas as informações disponíveis para acesso;\nVII - indicar local e instruções que permitam ao interessado comunicar-se, por via eletrônica ou telefônica, com o órgão ou entidade detentora do sítio; e\nVIII - adotar as medidas necessárias para garantir a acessibilidade de conteúdo para pessoas com deficiência, nos termos do art. 17 da Lei no 10.098, de 19 de dezembro de 2000, e do art. 9o da Convenção sobre os Direitos das Pessoas com Deficiência, aprovada pelo Decreto Legislativo no 186, de 9 de julho de 2008.\n§ 4o Os Municípios com população de até 10.000 (dez mil) habitantes ficam dispensados da divulgação obrigatória na internet a que se refere o § 2o, mantida a obrigatoriedade de divulgação, em tempo real, de informações relativas à execução orçamentária e financeira, nos critérios e prazos previstos no art. 73-B da Lei Complementar no 101, de 4 de maio de 2000 (Lei de Responsabilidade Fiscal).",
+      "observacao": "Texto compilado do Planalto (anotações de redação preservadas), conferido dispositivo a dispositivo com a publicação original no Senado Federal."
+     },
+     "fonte_oficial": "https://www.planalto.gov.br/ccivil_03/_ato2011-2014/2011/lei/l12527.htm"
+    },
+    {
+     "tipo": "lei_seca",
+     "titulo": "Lei 12.527/2011 — Art. 10",
+     "subassunto": null,
+     "conteudo": {
+      "lei": "Lei 12.527/2011 (Lei de Acesso à Informação)",
+      "artigo": "Art. 10",
+      "texto": "Art. 10. Qualquer interessado poderá apresentar pedido de acesso a informações aos órgãos e entidades referidos no art. 1o desta Lei, por qualquer meio legítimo, devendo o pedido conter a identificação do requerente e a especificação da informação requerida.\n§ 1o Para o acesso a informações de interesse público, a identificação do requerente não pode conter exigências que inviabilizem a solicitação.\n§ 2o Os órgãos e entidades do poder público devem viabilizar alternativa de encaminhamento de pedidos de acesso por meio de seus sítios oficiais na internet.\n§ 3o São vedadas quaisquer exigências relativas aos motivos determinantes da solicitação de informações de interesse público.",
+      "observacao": "Texto compilado do Planalto (anotações de redação preservadas), conferido dispositivo a dispositivo com a publicação original no Senado Federal."
+     },
+     "fonte_oficial": "https://www.planalto.gov.br/ccivil_03/_ato2011-2014/2011/lei/l12527.htm"
+    },
+    {
+     "tipo": "lei_seca",
+     "titulo": "Lei 12.527/2011 — Art. 11",
+     "subassunto": null,
+     "conteudo": {
+      "lei": "Lei 12.527/2011 (Lei de Acesso à Informação)",
+      "artigo": "Art. 11",
+      "texto": "Art. 11. O órgão ou entidade pública deverá autorizar ou conceder o acesso imediato à informação disponível.\n§ 1o Não sendo possível conceder o acesso imediato, na forma disposta no caput, o órgão ou entidade que receber o pedido deverá, em prazo não superior a 20 (vinte) dias:\nI - comunicar a data, local e modo para se realizar a consulta, efetuar a reprodução ou obter a certidão;\nII - indicar as razões de fato ou de direito da recusa, total ou parcial, do acesso pretendido; ou\nIII - comunicar que não possui a informação, indicar, se for do seu conhecimento, o órgão ou a entidade que a detém, ou, ainda, remeter o requerimento a esse órgão ou entidade, cientificando o interessado da remessa de seu pedido de informação.\n§ 2o O prazo referido no § 1o poderá ser prorrogado por mais 10 (dez) dias, mediante justificativa expressa, da qual será cientificado o requerente.\n§ 3o Sem prejuízo da segurança e da proteção das informações e do cumprimento da legislação aplicável, o órgão ou entidade poderá oferecer meios para que o próprio requerente possa pesquisar a informação de que necessitar.\n§ 4o Quando não for autorizado o acesso por se tratar de informação total ou parcialmente sigilosa, o requerente deverá ser informado sobre a possibilidade de recurso, prazos e condições para sua interposição, devendo, ainda, ser-lhe indicada a autoridade competente para sua apreciação.\n§ 5o A informação armazenada em formato digital será fornecida nesse formato, caso haja anuência do requerente.\n§ 6o Caso a informação solicitada esteja disponível ao público em formato impresso, eletrônico ou em qualquer outro meio de acesso universal, serão informados ao requerente, por escrito, o lugar e a forma pela qual se poderá consultar, obter ou reproduzir a referida informação, procedimento esse que desonerará o órgão ou entidade pública da obrigação de seu fornecimento direto, salvo se o requerente declarar não dispor de meios para realizar por si mesmo tais procedimentos.",
+      "observacao": "Texto compilado do Planalto (anotações de redação preservadas), conferido dispositivo a dispositivo com a publicação original no Senado Federal."
+     },
+     "fonte_oficial": "https://www.planalto.gov.br/ccivil_03/_ato2011-2014/2011/lei/l12527.htm"
+    },
+    {
+     "tipo": "lei_seca",
+     "titulo": "Lei 12.527/2011 — Art. 21",
+     "subassunto": null,
+     "conteudo": {
+      "lei": "Lei 12.527/2011 (Lei de Acesso à Informação)",
+      "artigo": "Art. 21",
+      "texto": "Art. 21. Não poderá ser negado acesso à informação necessária à tutela judicial ou administrativa de direitos fundamentais.\nParágrafo único. As informações ou documentos que versem sobre condutas que impliquem violação dos direitos humanos praticada por agentes públicos ou a mando de autoridades públicas não poderão ser objeto de restrição de acesso.",
+      "observacao": "Texto compilado do Planalto (anotações de redação preservadas), conferido dispositivo a dispositivo com a publicação original no Senado Federal."
+     },
+     "fonte_oficial": "https://www.planalto.gov.br/ccivil_03/_ato2011-2014/2011/lei/l12527.htm"
+    },
+    {
+     "tipo": "lei_seca",
+     "titulo": "Lei 12.527/2011 — Art. 22",
+     "subassunto": null,
+     "conteudo": {
+      "lei": "Lei 12.527/2011 (Lei de Acesso à Informação)",
+      "artigo": "Art. 22",
+      "texto": "Art. 22. O disposto nesta Lei não exclui as demais hipóteses legais de sigilo e de segredo de justiça nem as hipóteses de segredo industrial decorrentes da exploração direta de atividade econômica pelo Estado ou por pessoa física ou entidade privada que tenha qualquer vínculo com o poder público.",
+      "observacao": "Texto compilado do Planalto (anotações de redação preservadas), conferido dispositivo a dispositivo com a publicação original no Senado Federal."
+     },
+     "fonte_oficial": "https://www.planalto.gov.br/ccivil_03/_ato2011-2014/2011/lei/l12527.htm"
+    },
+    {
+     "tipo": "lei_seca",
+     "titulo": "Lei 12.527/2011 — Art. 23",
+     "subassunto": null,
+     "conteudo": {
+      "lei": "Lei 12.527/2011 (Lei de Acesso à Informação)",
+      "artigo": "Art. 23",
+      "texto": "Art. 23. São consideradas imprescindíveis à segurança da sociedade ou do Estado e, portanto, passíveis de classificação as informações cuja divulgação ou acesso irrestrito possam:\nI - pôr em risco a defesa e a soberania nacionais ou a integridade do território nacional;\nII - prejudicar ou pôr em risco a condução de negociações ou as relações internacionais do País, ou as que tenham sido fornecidas em caráter sigiloso por outros Estados e organismos internacionais;\nIII - pôr em risco a vida, a segurança ou a saúde da população;\nIV - oferecer elevado risco à estabilidade financeira, econômica ou monetária do País;\nV - prejudicar ou causar risco a planos ou operações estratégicos das Forças Armadas;\nVI - prejudicar ou causar risco a projetos de pesquisa e desenvolvimento científico ou tecnológico, assim como a sistemas, bens, instalações ou áreas de interesse estratégico nacional;\nVII - pôr em risco a segurança de instituições ou de altas autoridades nacionais ou estrangeiras e seus familiares; ou\nVIII - comprometer atividades de inteligência, bem como de investigação ou fiscalização em andamento, relacionadas com a prevenção ou repressão de infrações.",
+      "observacao": "Texto compilado do Planalto (anotações de redação preservadas), conferido dispositivo a dispositivo com a publicação original no Senado Federal."
+     },
+     "fonte_oficial": "https://www.planalto.gov.br/ccivil_03/_ato2011-2014/2011/lei/l12527.htm"
+    },
+    {
+     "tipo": "lei_seca",
+     "titulo": "Lei 12.527/2011 — Art. 24",
+     "subassunto": null,
+     "conteudo": {
+      "lei": "Lei 12.527/2011 (Lei de Acesso à Informação)",
+      "artigo": "Art. 24",
+      "texto": "Art. 24. A informação em poder dos órgãos e entidades públicas, observado o seu teor e em razão de sua imprescindibilidade à segurança da sociedade ou do Estado, poderá ser classificada como ultrassecreta, secreta ou reservada.\n§ 1o Os prazos máximos de restrição de acesso à informação, conforme a classificação prevista no caput, vigoram a partir da data de sua produção e são os seguintes:\nI - ultrassecreta: 25 (vinte e cinco) anos;\nII - secreta: 15 (quinze) anos; e\nIII - reservada: 5 (cinco) anos.\n§ 2o As informações que puderem colocar em risco a segurança do Presidente e Vice-Presidente da República e respectivos cônjuges e filhos(as) serão classificadas como reservadas e ficarão sob sigilo até o término do mandato em exercício ou do último mandato, em caso de reeleição.\n§ 3o Alternativamente aos prazos previstos no § 1o, poderá ser estabelecida como termo final de restrição de acesso a ocorrência de determinado evento, desde que este ocorra antes do transcurso do prazo máximo de classificação.\n§ 4o Transcorrido o prazo de classificação ou consumado o evento que defina o seu termo final, a informação tornar-se-á, automaticamente, de acesso público.\n§ 5o Para a classificação da informação em determinado grau de sigilo, deverá ser observado o interesse público da informação e utilizado o critério menos restritivo possível, considerados:\nI - a gravidade do risco ou dano à segurança da sociedade e do Estado; e\nII - o prazo máximo de restrição de acesso ou o evento que defina seu termo final.",
+      "observacao": "Texto compilado do Planalto (anotações de redação preservadas), conferido dispositivo a dispositivo com a publicação original no Senado Federal."
+     },
+     "fonte_oficial": "https://www.planalto.gov.br/ccivil_03/_ato2011-2014/2011/lei/l12527.htm"
+    },
+    {
+     "tipo": "lei_seca",
+     "titulo": "Lei 12.527/2011 — Art. 31",
+     "subassunto": null,
+     "conteudo": {
+      "lei": "Lei 12.527/2011 (Lei de Acesso à Informação)",
+      "artigo": "Art. 31",
+      "texto": "Art. 31. O tratamento das informações pessoais deve ser feito de forma transparente e com respeito à intimidade, vida privada, honra e imagem das pessoas, bem como às liberdades e garantias individuais.\n§ 1o As informações pessoais, a que se refere este artigo, relativas à intimidade, vida privada, honra e imagem:\nI - terão seu acesso restrito, independentemente de classificação de sigilo e pelo prazo máximo de 100 (cem) anos a contar da sua data de produção, a agentes públicos legalmente autorizados e à pessoa a que elas se referirem; e\nII - poderão ter autorizada sua divulgação ou acesso por terceiros diante de previsão legal ou consentimento expresso da pessoa a que elas se referirem.\n§ 2o Aquele que obtiver acesso às informações de que trata este artigo será responsabilizado por seu uso indevido.\n§ 3o O consentimento referido no inciso II do § 1o não será exigido quando as informações forem necessárias:\nI - à prevenção e diagnóstico médico, quando a pessoa estiver física ou legalmente incapaz, e para utilização única e exclusivamente para o tratamento médico;\nII - à realização de estatísticas e pesquisas científicas de evidente interesse público ou geral, previstos em lei, sendo vedada a identificação da pessoa a que as informações se referirem;\nIII - ao cumprimento de ordem judicial;\nIV - à defesa de direitos humanos; ou\nV - à proteção do interesse público e geral preponderante.\n§ 4o A restrição de acesso à informação relativa à vida privada, honra e imagem de pessoa não poderá ser invocada com o intuito de prejudicar processo de apuração de irregularidades em que o titular das informações estiver envolvido, bem como em ações voltadas para a recuperação de fatos históricos de maior relevância.\n§ 5o Regulamento disporá sobre os procedimentos para tratamento de informação pessoal.",
+      "observacao": "Texto compilado do Planalto (anotações de redação preservadas), conferido dispositivo a dispositivo com a publicação original no Senado Federal."
+     },
+     "fonte_oficial": "https://www.planalto.gov.br/ccivil_03/_ato2011-2014/2011/lei/l12527.htm"
+    },
+    {
+     "tipo": "lei_seca",
+     "titulo": "Lei 12.527/2011 — Art. 32",
+     "subassunto": null,
+     "conteudo": {
+      "lei": "Lei 12.527/2011 (Lei de Acesso à Informação)",
+      "artigo": "Art. 32",
+      "texto": "Art. 32. Constituem condutas ilícitas que ensejam responsabilidade do agente público ou militar:\nI - recusar-se a fornecer informação requerida nos termos desta Lei, retardar deliberadamente o seu fornecimento ou fornecê-la intencionalmente de forma incorreta, incompleta ou imprecisa;\nII - utilizar indevidamente, bem como subtrair, destruir, inutilizar, desfigurar, alterar ou ocultar, total ou parcialmente, informação que se encontre sob sua guarda ou a que tenha acesso ou conhecimento em razão do exercício das atribuições de cargo, emprego ou função pública;\nIII - agir com dolo ou má-fé na análise das solicitações de acesso à informação;\nIV - divulgar ou permitir a divulgação ou acessar ou permitir acesso indevido à informação sigilosa ou informação pessoal;\nV - impor sigilo à informação para obter proveito pessoal ou de terceiro, ou para fins de ocultação de ato ilegal cometido por si ou por outrem;\nVI - ocultar da revisão de autoridade superior competente informação sigilosa para beneficiar a si ou a outrem, ou em prejuízo de terceiros; e\nVII - destruir ou subtrair, por qualquer meio, documentos concernentes a possíveis violações de direitos humanos por parte de agentes do Estado.\n§ 1o Atendido o princípio do contraditório, da ampla defesa e do devido processo legal, as condutas descritas no caput serão consideradas:\nI - para fins dos regulamentos disciplinares das Forças Armadas, transgressões militares médias ou graves, segundo os critérios neles estabelecidos, desde que não tipificadas em lei como crime ou contravenção penal; ou\nII - para fins do disposto na Lei no 8.112, de 11 de dezembro de 1990, e suas alterações, infrações administrativas, que deverão ser apenadas, no mínimo, com suspensão, segundo os critérios nela estabelecidos.\n§ 2o Pelas condutas descritas no caput, poderá o militar ou agente público responder, também, por improbidade administrativa, conforme o disposto nas Leis nos 1.079, de 10 de abril de 1950, e 8.429, de 2 de junho de 1992.",
+      "observacao": "Texto compilado do Planalto (anotações de redação preservadas), conferido dispositivo a dispositivo com a publicação original no Senado Federal."
+     },
+     "fonte_oficial": "https://www.planalto.gov.br/ccivil_03/_ato2011-2014/2011/lei/l12527.htm"
+    }
+   ]
+  },
+  {
+   "curso": "gcm-geral",
+   "disciplina": "Código de Trânsito Brasileiro",
+   "assunto": "Sinalização de trânsito (arts. 80 a 88)",
+   "materiais": [
+    {
+     "tipo": "lei_seca",
+     "titulo": "Lei 9.503/1997 — Art. 80",
+     "subassunto": null,
+     "conteudo": {
+      "lei": "Lei 9.503/1997 (Código de Trânsito Brasileiro)",
+      "artigo": "Art. 80",
+      "texto": "Art. 80. Sempre que necessário, será colocada ao longo da via, sinalização prevista neste Código e em legislação complementar, destinada a condutores e pedestres, vedada a utilização de qualquer outra.\n§ 1º A sinalização será colocada em posição e condições que a tornem perfeitamente visível e legível durante o dia e a noite, em distância compatível com a segurança do trânsito, conforme normas e especificações do CONTRAN.\n§ 2º O órgão máximo executivo de trânsito da União poderá autorizar, em caráter experimental e por período prefixado, a utilização de sinalização e equipamentos não previstos neste Código.(Redação dada pela Lei nº 14.599, de 2023)\n§ 3 A responsabilidade pela instalação da sinalização nas vias internas pertencentes aos condomínios constituídos por unidades autônomas e nas vias e áreas de estacionamento de estabelecimentos privados de uso coletivo é de seu proprietário. (Incluído pela Lei nº 13.281, de 2016)",
+      "observacao": "Texto compilado do Planalto (anotações de redação preservadas), conferido dispositivo a dispositivo com a publicação original no Senado Federal."
+     },
+     "fonte_oficial": "https://www.planalto.gov.br/ccivil_03/leis/l9503compilado.htm"
+    },
+    {
+     "tipo": "lei_seca",
+     "titulo": "Lei 9.503/1997 — Art. 81",
+     "subassunto": null,
+     "conteudo": {
+      "lei": "Lei 9.503/1997 (Código de Trânsito Brasileiro)",
+      "artigo": "Art. 81",
+      "texto": "Art. 81. Nas vias públicas e nos imóveis é proibido colocar luzes, publicidade, inscrições, vegetação e mobiliário que possam gerar confusão, interferir na visibilidade da sinalização e comprometer a segurança do trânsito.",
+      "observacao": "Texto compilado do Planalto (anotações de redação preservadas), conferido dispositivo a dispositivo com a publicação original no Senado Federal."
+     },
+     "fonte_oficial": "https://www.planalto.gov.br/ccivil_03/leis/l9503compilado.htm"
+    },
+    {
+     "tipo": "lei_seca",
+     "titulo": "Lei 9.503/1997 — Art. 82",
+     "subassunto": null,
+     "conteudo": {
+      "lei": "Lei 9.503/1997 (Código de Trânsito Brasileiro)",
+      "artigo": "Art. 82",
+      "texto": "Art. 82. É proibido afixar sobre a sinalização de trânsito e respectivos suportes, ou junto a ambos, qualquer tipo de publicidade, inscrições, legendas e símbolos que não se relacionem com a mensagem da sinalização.",
+      "observacao": "Texto compilado do Planalto (anotações de redação preservadas), conferido dispositivo a dispositivo com a publicação original no Senado Federal."
+     },
+     "fonte_oficial": "https://www.planalto.gov.br/ccivil_03/leis/l9503compilado.htm"
+    },
+    {
+     "tipo": "lei_seca",
+     "titulo": "Lei 9.503/1997 — Art. 83",
+     "subassunto": null,
+     "conteudo": {
+      "lei": "Lei 9.503/1997 (Código de Trânsito Brasileiro)",
+      "artigo": "Art. 83",
+      "texto": "Art. 83. A afixação de publicidade ou de quaisquer legendas ou símbolos ao longo das vias condiciona-se à prévia aprovação do órgão ou entidade com circunscrição sobre a via.",
+      "observacao": "Texto compilado do Planalto (anotações de redação preservadas), conferido dispositivo a dispositivo com a publicação original no Senado Federal."
+     },
+     "fonte_oficial": "https://www.planalto.gov.br/ccivil_03/leis/l9503compilado.htm"
+    },
+    {
+     "tipo": "lei_seca",
+     "titulo": "Lei 9.503/1997 — Art. 84",
+     "subassunto": null,
+     "conteudo": {
+      "lei": "Lei 9.503/1997 (Código de Trânsito Brasileiro)",
+      "artigo": "Art. 84",
+      "texto": "Art. 84. O órgão ou entidade de trânsito com circunscrição sobre a via poderá retirar ou determinar a imediata retirada de qualquer elemento que prejudique a visibilidade da sinalização viária e a segurança do trânsito, com ônus para quem o tenha colocado.",
+      "observacao": "Texto compilado do Planalto (anotações de redação preservadas), conferido dispositivo a dispositivo com a publicação original no Senado Federal."
+     },
+     "fonte_oficial": "https://www.planalto.gov.br/ccivil_03/leis/l9503compilado.htm"
+    },
+    {
+     "tipo": "lei_seca",
+     "titulo": "Lei 9.503/1997 — Art. 85",
+     "subassunto": null,
+     "conteudo": {
+      "lei": "Lei 9.503/1997 (Código de Trânsito Brasileiro)",
+      "artigo": "Art. 85",
+      "texto": "Art. 85. Os locais destinados pelo órgão ou entidade de trânsito com circunscrição sobre a via à travessia de pedestres deverão ser sinalizados com faixas pintadas ou demarcadas no leito da via.",
+      "observacao": "Texto compilado do Planalto (anotações de redação preservadas), conferido dispositivo a dispositivo com a publicação original no Senado Federal."
+     },
+     "fonte_oficial": "https://www.planalto.gov.br/ccivil_03/leis/l9503compilado.htm"
+    },
+    {
+     "tipo": "lei_seca",
+     "titulo": "Lei 9.503/1997 — Art. 86",
+     "subassunto": null,
+     "conteudo": {
+      "lei": "Lei 9.503/1997 (Código de Trânsito Brasileiro)",
+      "artigo": "Art. 86",
+      "texto": "Art. 86. Os locais destinados a postos de gasolina, oficinas, estacionamentos ou garagens de uso coletivo deverão ter suas entradas e saídas devidamente identificadas, na forma regulamentada pelo CONTRAN.",
+      "observacao": "Texto compilado do Planalto (anotações de redação preservadas), conferido dispositivo a dispositivo com a publicação original no Senado Federal."
+     },
+     "fonte_oficial": "https://www.planalto.gov.br/ccivil_03/leis/l9503compilado.htm"
+    },
+    {
+     "tipo": "lei_seca",
+     "titulo": "Lei 9.503/1997 — Art. 87",
+     "subassunto": null,
+     "conteudo": {
+      "lei": "Lei 9.503/1997 (Código de Trânsito Brasileiro)",
+      "artigo": "Art. 87",
+      "texto": "Art. 87. Os sinais de trânsito classificam-se em:\nI - verticais;\nII - horizontais;\nIII - dispositivos de sinalização auxiliar;\nIV - luminosos;\nV - sonoros;\nVI - gestos do agente de trânsito e do condutor.",
+      "observacao": "Texto compilado do Planalto (anotações de redação preservadas), conferido dispositivo a dispositivo com a publicação original no Senado Federal."
+     },
+     "fonte_oficial": "https://www.planalto.gov.br/ccivil_03/leis/l9503compilado.htm"
+    },
+    {
+     "tipo": "lei_seca",
+     "titulo": "Lei 9.503/1997 — Art. 88",
+     "subassunto": null,
+     "conteudo": {
+      "lei": "Lei 9.503/1997 (Código de Trânsito Brasileiro)",
+      "artigo": "Art. 88",
+      "texto": "Art. 88. Nenhuma via pavimentada poderá ser entregue após sua construção, ou reaberta ao trânsito após a realização de obras ou de manutenção, enquanto não estiver devidamente sinalizada, vertical e horizontalmente, de forma a garantir as condições adequadas de segurança na circulação.\nParágrafo único. Nas vias ou trechos de vias em obras deverá ser afixada sinalização específica e adequada.",
+      "observacao": "Texto compilado do Planalto (anotações de redação preservadas), conferido dispositivo a dispositivo com a publicação original no Senado Federal."
+     },
+     "fonte_oficial": "https://www.planalto.gov.br/ccivil_03/leis/l9503compilado.htm"
+    },
+    {
+     "tipo": "lei_seca",
+     "titulo": "Lei 9.503/1997 — Art. 89",
+     "subassunto": null,
+     "conteudo": {
+      "lei": "Lei 9.503/1997 (Código de Trânsito Brasileiro)",
+      "artigo": "Art. 89",
+      "texto": "Art. 89. A sinalização terá a seguinte ordem de prevalência:\nI - as ordens do agente de trânsito sobre as normas de circulação e outros sinais;\nII - as indicações do semáforo sobre os demais sinais;\nIII - as indicações dos sinais sobre as demais normas de trânsito.",
+      "observacao": "Texto compilado do Planalto (anotações de redação preservadas), conferido dispositivo a dispositivo com a publicação original no Senado Federal."
+     },
+     "fonte_oficial": "https://www.planalto.gov.br/ccivil_03/leis/l9503compilado.htm"
+    },
+    {
+     "tipo": "lei_seca",
+     "titulo": "Lei 9.503/1997 — Art. 90",
+     "subassunto": null,
+     "conteudo": {
+      "lei": "Lei 9.503/1997 (Código de Trânsito Brasileiro)",
+      "artigo": "Art. 90",
+      "texto": "Art. 90. Não serão aplicadas as sanções previstas neste Código por inobservância à sinalização quando esta for insuficiente ou incorreta.\n§ 1º O órgão ou entidade de trânsito com circunscrição sobre a via é responsável pela implantação da sinalização, respondendo pela sua falta, insuficiência ou incorreta colocação.\n§ 2º O CONTRAN editará normas complementares no que se refere à interpretação, colocação e uso da sinalização.",
+      "observacao": "Texto compilado do Planalto (anotações de redação preservadas), conferido dispositivo a dispositivo com a publicação original no Senado Federal."
+     },
+     "fonte_oficial": "https://www.planalto.gov.br/ccivil_03/leis/l9503compilado.htm"
+    }
+   ]
+  },
+  {
+   "curso": "gcm-geral",
+   "disciplina": "Código de Trânsito Brasileiro",
+   "assunto": "Infrações (arts. 161 a 255)",
+   "materiais": [
+    {
+     "tipo": "lei_seca",
+     "titulo": "Lei 9.503/1997 — Art. 161",
+     "subassunto": null,
+     "conteudo": {
+      "lei": "Lei 9.503/1997 (Código de Trânsito Brasileiro)",
+      "artigo": "Art. 161",
+      "texto": "Art. 161. Constitui infração de trânsito a inobservância de qualquer preceito deste Código ou da legislação complementar, e o infrator sujeita-se às penalidades e às medidas administrativas indicadas em cada artigo deste Capítulo e às punições previstas no Capítulo XIX deste Código. (Redação dada pela Lei nº 14.071, de 2020)\nParágrafo único. (Revogado). (Redação dada pela Lei nº 14.071, de 2020)",
+      "observacao": "Texto compilado do Planalto (anotações de redação preservadas), conferido dispositivo a dispositivo com a publicação original no Senado Federal."
+     },
+     "fonte_oficial": "https://www.planalto.gov.br/ccivil_03/leis/l9503compilado.htm"
+    },
+    {
+     "tipo": "lei_seca",
+     "titulo": "Lei 9.503/1997 — Art. 163",
+     "subassunto": null,
+     "conteudo": {
+      "lei": "Lei 9.503/1997 (Código de Trânsito Brasileiro)",
+      "artigo": "Art. 163",
+      "texto": "Art. 163. Entregar a direção do veículo a pessoa nas condições previstas no artigo anterior:\nInfração - as mesmas previstas no artigo anterior;\nPenalidade - as mesmas previstas no artigo anterior;\nMedida administrativa - a mesma prevista no inciso III do artigo anterior.",
+      "observacao": "Texto compilado do Planalto (anotações de redação preservadas), conferido dispositivo a dispositivo com a publicação original no Senado Federal."
+     },
+     "fonte_oficial": "https://www.planalto.gov.br/ccivil_03/leis/l9503compilado.htm"
+    },
+    {
+     "tipo": "lei_seca",
+     "titulo": "Lei 9.503/1997 — Art. 164",
+     "subassunto": null,
+     "conteudo": {
+      "lei": "Lei 9.503/1997 (Código de Trânsito Brasileiro)",
+      "artigo": "Art. 164",
+      "texto": "Art. 164. Permitir que pessoa nas condições referidas nos incisos do art. 162 tome posse do veículo automotor e passe a conduzi-lo na via:\nInfração - as mesmas previstas nos incisos do art. 162;\nPenalidade - as mesmas previstas no art. 162;\nMedida administrativa - a mesma prevista no inciso III do art. 162.",
+      "observacao": "Texto compilado do Planalto (anotações de redação preservadas), conferido dispositivo a dispositivo com a publicação original no Senado Federal."
+     },
+     "fonte_oficial": "https://www.planalto.gov.br/ccivil_03/leis/l9503compilado.htm"
+    },
+    {
+     "tipo": "lei_seca",
+     "titulo": "Lei 9.503/1997 — Art. 165",
+     "subassunto": null,
+     "conteudo": {
+      "lei": "Lei 9.503/1997 (Código de Trânsito Brasileiro)",
+      "artigo": "Art. 165",
+      "texto": "Art. 165. Dirigir sob a influência de álcool ou de qualquer outra substância psicoativa que determine dependência: (Redação dada pela Lei nº 11.705, de 2008)\nInfração - gravíssima; (Redação dada pela Lei nº 11.705, de 2008)\nPenalidade - multa (dez vezes) e suspensão do direito de dirigir por 12 (doze) meses. (Redação dada pela Lei nº 12.760, de 2012)\nMedida administrativa - recolhimento do documento de habilitação e retenção do veículo, observado o disposto no § 4o do art. 270 da Lei no 9.503, de 23 de setembro de 1997 - do Código de Trânsito Brasileiro. (Redação dada pela Lei nº 12.760, de 2012)\nParágrafo único. Aplica-se em dobro a multa prevista no caput em caso de reincidência no período de até 12 (doze) meses. (Redação dada pela Lei nº 12.760, de 2012)",
+      "observacao": "Texto compilado do Planalto (anotações de redação preservadas), conferido dispositivo a dispositivo com a publicação original no Senado Federal."
+     },
+     "fonte_oficial": "https://www.planalto.gov.br/ccivil_03/leis/l9503compilado.htm"
+    },
+    {
+     "tipo": "lei_seca",
+     "titulo": "Lei 9.503/1997 — Art. 165-C",
+     "subassunto": null,
+     "conteudo": {
+      "lei": "Lei 9.503/1997 (Código de Trânsito Brasileiro)",
+      "artigo": "Art. 165-C",
+      "texto": "Art. 165-C. Dirigir veículo tendo obtido resultado positivo no exame toxicológico previsto no caput do art. 148-A deste Código: (Incluído pela Lei nº 14.599, de 2023)\nInfração - gravíssima; (Incluído pela Lei nº 14.599, de 2023)\nPenalidade - multa (cinco vezes) e, em caso de reincidência no período de até 12 (doze) meses, multa (dez vezes) e suspensão do direito de dirigir. (Incluído pela Lei nº 14.599, de 2023)",
+      "observacao": "Texto compilado do Planalto (anotações de redação preservadas), conferido dispositivo a dispositivo com a publicação original no Senado Federal."
+     },
+     "fonte_oficial": "https://www.planalto.gov.br/ccivil_03/leis/l9503compilado.htm"
+    },
+    {
+     "tipo": "lei_seca",
+     "titulo": "Lei 9.503/1997 — Art. 165-D",
+     "subassunto": null,
+     "conteudo": {
+      "lei": "Lei 9.503/1997 (Código de Trânsito Brasileiro)",
+      "artigo": "Art. 165-D",
+      "texto": "Art. 165-D. (VETADO). (Incluído pela Lei nº 14.599, de 2023)",
+      "observacao": "Texto compilado do Planalto (anotações de redação preservadas), conferido dispositivo a dispositivo com a publicação original no Senado Federal."
+     },
+     "fonte_oficial": "https://www.planalto.gov.br/ccivil_03/leis/l9503compilado.htm"
+    },
+    {
+     "tipo": "lei_seca",
+     "titulo": "Lei 9.503/1997 — Art. 166",
+     "subassunto": null,
+     "conteudo": {
+      "lei": "Lei 9.503/1997 (Código de Trânsito Brasileiro)",
+      "artigo": "Art. 166",
+      "texto": "Art. 166. Confiar ou entregar a direção de veículo a pessoa que, mesmo habilitada, por seu estado físico ou psíquico, não estiver em condições de dirigi-lo com segurança:\nInfração - gravíssima;\nPenalidade - multa.",
+      "observacao": "Texto compilado do Planalto (anotações de redação preservadas), conferido dispositivo a dispositivo com a publicação original no Senado Federal."
+     },
+     "fonte_oficial": "https://www.planalto.gov.br/ccivil_03/leis/l9503compilado.htm"
+    },
+    {
+     "tipo": "lei_seca",
+     "titulo": "Lei 9.503/1997 — Art. 167",
+     "subassunto": null,
+     "conteudo": {
+      "lei": "Lei 9.503/1997 (Código de Trânsito Brasileiro)",
+      "artigo": "Art. 167",
+      "texto": "Art. 167. Deixar o condutor ou passageiro de usar o cinto de segurança, conforme previsto no art. 65:\nInfração - grave;\nPenalidade - multa;\nMedida administrativa - retenção do veículo até colocação do cinto pelo infrator.",
+      "observacao": "Texto compilado do Planalto (anotações de redação preservadas), conferido dispositivo a dispositivo com a publicação original no Senado Federal."
+     },
+     "fonte_oficial": "https://www.planalto.gov.br/ccivil_03/leis/l9503compilado.htm"
+    },
+    {
+     "tipo": "lei_seca",
+     "titulo": "Lei 9.503/1997 — Art. 168",
+     "subassunto": null,
+     "conteudo": {
+      "lei": "Lei 9.503/1997 (Código de Trânsito Brasileiro)",
+      "artigo": "Art. 168",
+      "texto": "Art. 168. Transportar crianças em veículo automotor sem observância das normas de segurança especiais estabelecidas neste Código:\nInfração - gravíssima;\nPenalidade - multa;\nMedida administrativa - retenção do veículo até que a irregularidade seja sanada.",
+      "observacao": "Texto compilado do Planalto (anotações de redação preservadas), conferido dispositivo a dispositivo com a publicação original no Senado Federal."
+     },
+     "fonte_oficial": "https://www.planalto.gov.br/ccivil_03/leis/l9503compilado.htm"
+    },
+    {
+     "tipo": "lei_seca",
+     "titulo": "Lei 9.503/1997 — Art. 169",
+     "subassunto": null,
+     "conteudo": {
+      "lei": "Lei 9.503/1997 (Código de Trânsito Brasileiro)",
+      "artigo": "Art. 169",
+      "texto": "Art. 169. Dirigir sem atenção ou sem os cuidados indispensáveis à segurança:\nInfração - leve;\nPenalidade - multa.",
+      "observacao": "Texto compilado do Planalto (anotações de redação preservadas), conferido dispositivo a dispositivo com a publicação original no Senado Federal."
+     },
+     "fonte_oficial": "https://www.planalto.gov.br/ccivil_03/leis/l9503compilado.htm"
+    },
+    {
+     "tipo": "lei_seca",
+     "titulo": "Lei 9.503/1997 — Art. 170",
+     "subassunto": null,
+     "conteudo": {
+      "lei": "Lei 9.503/1997 (Código de Trânsito Brasileiro)",
+      "artigo": "Art. 170",
+      "texto": "Art. 170. Dirigir ameaçando os pedestres que estejam atravessando a via pública, ou os demais veículos:\nInfração - gravíssima;\nPenalidade - multa e suspensão do direito de dirigir;\nMedida administrativa - retenção do veículo e recolhimento do documento de habilitação.",
+      "observacao": "Texto compilado do Planalto (anotações de redação preservadas), conferido dispositivo a dispositivo com a publicação original no Senado Federal."
+     },
+     "fonte_oficial": "https://www.planalto.gov.br/ccivil_03/leis/l9503compilado.htm"
+    },
+    {
+     "tipo": "lei_seca",
+     "titulo": "Lei 9.503/1997 — Art. 171",
+     "subassunto": null,
+     "conteudo": {
+      "lei": "Lei 9.503/1997 (Código de Trânsito Brasileiro)",
+      "artigo": "Art. 171",
+      "texto": "Art. 171. Usar o veículo para arremessar, sobre os pedestres ou veículos, água ou detritos:\nInfração - média;\nPenalidade - multa.",
+      "observacao": "Texto compilado do Planalto (anotações de redação preservadas), conferido dispositivo a dispositivo com a publicação original no Senado Federal."
+     },
+     "fonte_oficial": "https://www.planalto.gov.br/ccivil_03/leis/l9503compilado.htm"
+    },
+    {
+     "tipo": "lei_seca",
+     "titulo": "Lei 9.503/1997 — Art. 172",
+     "subassunto": null,
+     "conteudo": {
+      "lei": "Lei 9.503/1997 (Código de Trânsito Brasileiro)",
+      "artigo": "Art. 172",
+      "texto": "Art. 172. Atirar do veículo ou abandonar na via objetos ou substâncias:\nInfração - média;\nPenalidade - multa.",
+      "observacao": "Texto compilado do Planalto (anotações de redação preservadas), conferido dispositivo a dispositivo com a publicação original no Senado Federal."
+     },
+     "fonte_oficial": "https://www.planalto.gov.br/ccivil_03/leis/l9503compilado.htm"
+    },
+    {
+     "tipo": "lei_seca",
+     "titulo": "Lei 9.503/1997 — Art. 173",
+     "subassunto": null,
+     "conteudo": {
+      "lei": "Lei 9.503/1997 (Código de Trânsito Brasileiro)",
+      "artigo": "Art. 173",
+      "texto": "Art. 173. Disputar corrida: (Redação dada pela Lei nº 12.971, de 2014)\nInfração - gravíssima;\nPenalidade - multa (dez vezes), suspensão do direito de dirigir e apreensão do veículo; (Redação dada pela Lei nº 12.971, de 2014)\nMedida administrativa - recolhimento do documento de habilitação e remoção do veículo.\nParágrafo único. Aplica-se em dobro a multa prevista no caput em caso de reincidência no período de 12 (doze) meses da infração anterior. (Incluído pela Lei nº 12.971, de 2014)",
+      "observacao": "Texto compilado do Planalto (anotações de redação preservadas), conferido dispositivo a dispositivo com a publicação original no Senado Federal."
+     },
+     "fonte_oficial": "https://www.planalto.gov.br/ccivil_03/leis/l9503compilado.htm"
+    },
+    {
+     "tipo": "lei_seca",
+     "titulo": "Lei 9.503/1997 — Art. 174",
+     "subassunto": null,
+     "conteudo": {
+      "lei": "Lei 9.503/1997 (Código de Trânsito Brasileiro)",
+      "artigo": "Art. 174",
+      "texto": "Art. 174. Promover, na via, competição, eventos organizados, exibição e demonstração de perícia em manobra de veículo, ou deles participar, como condutor, sem permissão da autoridade de trânsito com circunscrição sobre a via: (Redação dada pela Lei nº 12.971, de 2014)\nInfração - gravíssima;\nPenalidade - multa (dez vezes), suspensão do direito de dirigir e apreensão do veículo; (Redação dada pela Lei nº 12.971, de 2014)\nMedida administrativa - recolhimento do documento de habilitação e remoção do veículo.\n§ 1o As penalidades são aplicáveis aos promotores e aos condutores participantes. (Incluído pela Lei nº 12.971, de 2014)\n§ 2o Aplica-se em dobro a multa prevista no caput em caso de reincidência no período de 12 (doze) meses da infração anterior. (Incluído pela Lei nº 12.971, de 2014)",
+      "observacao": "Texto compilado do Planalto (anotações de redação preservadas), conferido dispositivo a dispositivo com a publicação original no Senado Federal."
+     },
+     "fonte_oficial": "https://www.planalto.gov.br/ccivil_03/leis/l9503compilado.htm"
+    },
+    {
+     "tipo": "lei_seca",
+     "titulo": "Lei 9.503/1997 — Art. 175",
+     "subassunto": null,
+     "conteudo": {
+      "lei": "Lei 9.503/1997 (Código de Trânsito Brasileiro)",
+      "artigo": "Art. 175",
+      "texto": "Art. 175. Utilizar-se de veículo para demonstrar ou exibir manobra perigosa, mediante arrancada brusca, derrapagem ou frenagem com deslizamento ou arrastamento de pneus: (Redação dada pela Lei nº 12.971, de 2014)\nInfração - gravíssima;\nPenalidade - multa (dez vezes), suspensão do direito de dirigir e apreensão do veículo; (Redação dada pela Lei nº 12.971, de 2014)\nMedida administrativa - recolhimento do documento de habilitação e remoção do veículo.\nParágrafo único. Aplica-se em dobro a multa prevista no caput em caso de reincidência no período de 12 (doze) meses da infração anterior. (Incluído pela Lei nº 12.971, de 2014)",
+      "observacao": "Texto compilado do Planalto (anotações de redação preservadas), conferido dispositivo a dispositivo com a publicação original no Senado Federal."
+     },
+     "fonte_oficial": "https://www.planalto.gov.br/ccivil_03/leis/l9503compilado.htm"
+    },
+    {
+     "tipo": "lei_seca",
+     "titulo": "Lei 9.503/1997 — Art. 176",
+     "subassunto": null,
+     "conteudo": {
+      "lei": "Lei 9.503/1997 (Código de Trânsito Brasileiro)",
+      "artigo": "Art. 176",
+      "texto": "Art. 176. Deixar o condutor envolvido em acidente com vítima:\nI - de prestar ou providenciar socorro à vítima, podendo fazê-lo;\nII - de adotar providências, podendo fazê-lo, no sentido de evitar perigo para o trânsito no local;\nIII - de preservar o local, de forma a facilitar os trabalhos da polícia e da perícia;\nIV - de adotar providências para remover o veículo do local, quando determinadas por policial ou agente da autoridade de trânsito;\nV - de identificar-se ao policial e de lhe prestar informações necessárias à confecção do boletim de ocorrência:\nInfração - gravíssima;\nPenalidade - multa (cinco vezes) e suspensão do direito de dirigir;\nMedida administrativa - recolhimento do documento de habilitação.",
+      "observacao": "Texto compilado do Planalto (anotações de redação preservadas), conferido dispositivo a dispositivo com a publicação original no Senado Federal."
+     },
+     "fonte_oficial": "https://www.planalto.gov.br/ccivil_03/leis/l9503compilado.htm"
+    },
+    {
+     "tipo": "lei_seca",
+     "titulo": "Lei 9.503/1997 — Art. 177",
+     "subassunto": null,
+     "conteudo": {
+      "lei": "Lei 9.503/1997 (Código de Trânsito Brasileiro)",
+      "artigo": "Art. 177",
+      "texto": "Art. 177. Deixar o condutor de prestar socorro à vítima de sinistro de trânsito quando solicitado pela autoridade e seus agentes: (Redação dada pela Lei nº 14.599, de 2023)\nInfração - grave;\nPenalidade - multa.",
+      "observacao": "Texto compilado do Planalto (anotações de redação preservadas), conferido dispositivo a dispositivo com a publicação original no Senado Federal."
+     },
+     "fonte_oficial": "https://www.planalto.gov.br/ccivil_03/leis/l9503compilado.htm"
+    },
+    {
+     "tipo": "lei_seca",
+     "titulo": "Lei 9.503/1997 — Art. 178",
+     "subassunto": null,
+     "conteudo": {
+      "lei": "Lei 9.503/1997 (Código de Trânsito Brasileiro)",
+      "artigo": "Art. 178",
+      "texto": "Art. 178. Deixar o condutor envolvido em sinistro sem vítima de adotar providências para remover o veículo do local, quando necessária tal medida para assegurar a segurança e a fluidez do trânsito: (Redação dada pela Lei nº 14.599, de 2023)\nInfração - média;\nPenalidade - multa.",
+      "observacao": "Texto compilado do Planalto (anotações de redação preservadas), conferido dispositivo a dispositivo com a publicação original no Senado Federal."
+     },
+     "fonte_oficial": "https://www.planalto.gov.br/ccivil_03/leis/l9503compilado.htm"
+    },
+    {
+     "tipo": "lei_seca",
+     "titulo": "Lei 9.503/1997 — Art. 180",
+     "subassunto": null,
+     "conteudo": {
+      "lei": "Lei 9.503/1997 (Código de Trânsito Brasileiro)",
+      "artigo": "Art. 180",
+      "texto": "Art. 180. Ter seu veículo imobilizado na via por falta de combustível:\nInfração - média;\nPenalidade - multa;\nMedida administrativa - remoção do veículo.",
+      "observacao": "Texto compilado do Planalto (anotações de redação preservadas), conferido dispositivo a dispositivo com a publicação original no Senado Federal."
+     },
+     "fonte_oficial": "https://www.planalto.gov.br/ccivil_03/leis/l9503compilado.htm"
+    },
+    {
+     "tipo": "lei_seca",
+     "titulo": "Lei 9.503/1997 — Art. 183",
+     "subassunto": null,
+     "conteudo": {
+      "lei": "Lei 9.503/1997 (Código de Trânsito Brasileiro)",
+      "artigo": "Art. 183",
+      "texto": "Art. 183. Parar o veículo sobre a faixa de pedestres na mudança de sinal luminoso:\nInfração - média;\nPenalidade - multa.",
+      "observacao": "Texto compilado do Planalto (anotações de redação preservadas), conferido dispositivo a dispositivo com a publicação original no Senado Federal."
+     },
+     "fonte_oficial": "https://www.planalto.gov.br/ccivil_03/leis/l9503compilado.htm"
+    },
+    {
+     "tipo": "lei_seca",
+     "titulo": "Lei 9.503/1997 — Art. 185",
+     "subassunto": null,
+     "conteudo": {
+      "lei": "Lei 9.503/1997 (Código de Trânsito Brasileiro)",
+      "artigo": "Art. 185",
+      "texto": "Art. 185. Quando o veículo estiver em movimento, deixar de conservá-lo:\nI - na faixa a ele destinada pela sinalização de regulamentação, exceto em situações de emergência;\nII - nas faixas da direita, os veículos lentos e de maior porte:\nInfração - média;\nPenalidade - multa.",
+      "observacao": "Texto compilado do Planalto (anotações de redação preservadas), conferido dispositivo a dispositivo com a publicação original no Senado Federal."
+     },
+     "fonte_oficial": "https://www.planalto.gov.br/ccivil_03/leis/l9503compilado.htm"
+    },
+    {
+     "tipo": "lei_seca",
+     "titulo": "Lei 9.503/1997 — Art. 188",
+     "subassunto": null,
+     "conteudo": {
+      "lei": "Lei 9.503/1997 (Código de Trânsito Brasileiro)",
+      "artigo": "Art. 188",
+      "texto": "Art. 188. Transitar ao lado de outro veículo, interrompendo ou perturbando o trânsito:\nInfração - média;\nPenalidade - multa.",
+      "observacao": "Texto compilado do Planalto (anotações de redação preservadas), conferido dispositivo a dispositivo com a publicação original no Senado Federal."
+     },
+     "fonte_oficial": "https://www.planalto.gov.br/ccivil_03/leis/l9503compilado.htm"
+    },
+    {
+     "tipo": "lei_seca",
+     "titulo": "Lei 9.503/1997 — Art. 189",
+     "subassunto": null,
+     "conteudo": {
+      "lei": "Lei 9.503/1997 (Código de Trânsito Brasileiro)",
+      "artigo": "Art. 189",
+      "texto": "Art. 189. Deixar de dar passagem aos veículos precedidos de batedores, de socorro de incêndio e salvamento, de polícia, de operação e fiscalização de trânsito e às ambulâncias, quando em serviço de urgência e devidamente identificados por dispositivos regulamentados de alarme sonoro e iluminação intermitente: (Redação dada pela Lei nº 14.440, de 2022)\nInfração - gravíssima;\nPenalidade - multa.",
+      "observacao": "Texto compilado do Planalto (anotações de redação preservadas), conferido dispositivo a dispositivo com a publicação original no Senado Federal."
+     },
+     "fonte_oficial": "https://www.planalto.gov.br/ccivil_03/leis/l9503compilado.htm"
+    },
+    {
+     "tipo": "lei_seca",
+     "titulo": "Lei 9.503/1997 — Art. 190",
+     "subassunto": null,
+     "conteudo": {
+      "lei": "Lei 9.503/1997 (Código de Trânsito Brasileiro)",
+      "artigo": "Art. 190",
+      "texto": "Art. 190. Seguir veículo em serviço de urgência, estando este com prioridade de passagem devidamente identificada por dispositivos regulamentares de alarme sonoro e iluminação intermitente: (Redação dada pela Lei nº 14.440, de 2022)\nInfração - grave;\nPenalidade - multa.",
+      "observacao": "Texto compilado do Planalto (anotações de redação preservadas), conferido dispositivo a dispositivo com a publicação original no Senado Federal."
+     },
+     "fonte_oficial": "https://www.planalto.gov.br/ccivil_03/leis/l9503compilado.htm"
+    },
+    {
+     "tipo": "lei_seca",
+     "titulo": "Lei 9.503/1997 — Art. 191",
+     "subassunto": null,
+     "conteudo": {
+      "lei": "Lei 9.503/1997 (Código de Trânsito Brasileiro)",
+      "artigo": "Art. 191",
+      "texto": "Art. 191. Forçar passagem entre veículos que, transitando em sentidos opostos, estejam na iminência de passar um pelo outro ao realizar operação de ultrapassagem:\nInfração - gravíssima;\nPenalidade - multa (dez vezes) e suspensão do direito de dirigir. (Redação dada pela Lei nº 12.971, de 2014)\nParágrafo único. Aplica-se em dobro a multa prevista no caput em caso de reincidência no período de até 12 (doze) meses da infração anterior. (Incluído pela Lei nº 12.971, de 2014)",
+      "observacao": "Texto compilado do Planalto (anotações de redação preservadas), conferido dispositivo a dispositivo com a publicação original no Senado Federal."
+     },
+     "fonte_oficial": "https://www.planalto.gov.br/ccivil_03/leis/l9503compilado.htm"
+    },
+    {
+     "tipo": "lei_seca",
+     "titulo": "Lei 9.503/1997 — Art. 192",
+     "subassunto": null,
+     "conteudo": {
+      "lei": "Lei 9.503/1997 (Código de Trânsito Brasileiro)",
+      "artigo": "Art. 192",
+      "texto": "Art. 192. Deixar de guardar distância de segurança lateral e frontal entre o seu veículo e os demais, bem como em relação ao bordo da pista, considerando-se, no momento, a velocidade, as condições climáticas do local da circulação e do veículo:\nInfração - grave;\nPenalidade - multa.",
+      "observacao": "Texto compilado do Planalto (anotações de redação preservadas), conferido dispositivo a dispositivo com a publicação original no Senado Federal."
+     },
+     "fonte_oficial": "https://www.planalto.gov.br/ccivil_03/leis/l9503compilado.htm"
+    },
+    {
+     "tipo": "lei_seca",
+     "titulo": "Lei 9.503/1997 — Art. 193",
+     "subassunto": null,
+     "conteudo": {
+      "lei": "Lei 9.503/1997 (Código de Trânsito Brasileiro)",
+      "artigo": "Art. 193",
+      "texto": "Art. 193. Transitar com o veículo em calçadas, passeios, passarelas, ciclovias, ciclofaixas, ilhas, refúgios, ajardinamentos, canteiros centrais e divisores de pista de rolamento, acostamentos, marcas de canalização, gramados e jardins públicos:\nInfração - gravíssima;\nPenalidade - multa (três vezes).",
+      "observacao": "Texto compilado do Planalto (anotações de redação preservadas), conferido dispositivo a dispositivo com a publicação original no Senado Federal."
+     },
+     "fonte_oficial": "https://www.planalto.gov.br/ccivil_03/leis/l9503compilado.htm"
+    },
+    {
+     "tipo": "lei_seca",
+     "titulo": "Lei 9.503/1997 — Art. 194",
+     "subassunto": null,
+     "conteudo": {
+      "lei": "Lei 9.503/1997 (Código de Trânsito Brasileiro)",
+      "artigo": "Art. 194",
+      "texto": "Art. 194. Transitar em marcha à ré, salvo na distância necessária a pequenas manobras e de forma a não causar riscos à segurança:\nInfração - grave;\nPenalidade - multa.",
+      "observacao": "Texto compilado do Planalto (anotações de redação preservadas), conferido dispositivo a dispositivo com a publicação original no Senado Federal."
+     },
+     "fonte_oficial": "https://www.planalto.gov.br/ccivil_03/leis/l9503compilado.htm"
+    },
+    {
+     "tipo": "lei_seca",
+     "titulo": "Lei 9.503/1997 — Art. 195",
+     "subassunto": null,
+     "conteudo": {
+      "lei": "Lei 9.503/1997 (Código de Trânsito Brasileiro)",
+      "artigo": "Art. 195",
+      "texto": "Art. 195. Desobedecer às ordens emanadas da autoridade competente de trânsito ou de seus agentes:\nInfração - grave;\nPenalidade - multa.",
+      "observacao": "Texto compilado do Planalto (anotações de redação preservadas), conferido dispositivo a dispositivo com a publicação original no Senado Federal."
+     },
+     "fonte_oficial": "https://www.planalto.gov.br/ccivil_03/leis/l9503compilado.htm"
+    },
+    {
+     "tipo": "lei_seca",
+     "titulo": "Lei 9.503/1997 — Art. 196",
+     "subassunto": null,
+     "conteudo": {
+      "lei": "Lei 9.503/1997 (Código de Trânsito Brasileiro)",
+      "artigo": "Art. 196",
+      "texto": "Art. 196. Deixar de indicar com antecedência, mediante gesto regulamentar de braço ou luz indicadora de direção do veículo, o início da marcha, a realização da manobra de parar o veículo, a mudança de direção ou de faixa de circulação:\nInfração - grave;\nPenalidade - multa.",
+      "observacao": "Texto compilado do Planalto (anotações de redação preservadas), conferido dispositivo a dispositivo com a publicação original no Senado Federal."
+     },
+     "fonte_oficial": "https://www.planalto.gov.br/ccivil_03/leis/l9503compilado.htm"
+    },
+    {
+     "tipo": "lei_seca",
+     "titulo": "Lei 9.503/1997 — Art. 197",
+     "subassunto": null,
+     "conteudo": {
+      "lei": "Lei 9.503/1997 (Código de Trânsito Brasileiro)",
+      "artigo": "Art. 197",
+      "texto": "Art. 197. Deixar de deslocar, com antecedência, o veículo para a faixa mais à esquerda ou mais à direita, dentro da respectiva mão de direção, quando for manobrar para um desses lados:\nInfração - média;\nPenalidade - multa.",
+      "observacao": "Texto compilado do Planalto (anotações de redação preservadas), conferido dispositivo a dispositivo com a publicação original no Senado Federal."
+     },
+     "fonte_oficial": "https://www.planalto.gov.br/ccivil_03/leis/l9503compilado.htm"
+    },
+    {
+     "tipo": "lei_seca",
+     "titulo": "Lei 9.503/1997 — Art. 198",
+     "subassunto": null,
+     "conteudo": {
+      "lei": "Lei 9.503/1997 (Código de Trânsito Brasileiro)",
+      "artigo": "Art. 198",
+      "texto": "Art. 198. Deixar de dar passagem pela esquerda, quando solicitado:\nInfração - média;\nPenalidade - multa.",
+      "observacao": "Texto compilado do Planalto (anotações de redação preservadas), conferido dispositivo a dispositivo com a publicação original no Senado Federal."
+     },
+     "fonte_oficial": "https://www.planalto.gov.br/ccivil_03/leis/l9503compilado.htm"
+    },
+    {
+     "tipo": "lei_seca",
+     "titulo": "Lei 9.503/1997 — Art. 199",
+     "subassunto": null,
+     "conteudo": {
+      "lei": "Lei 9.503/1997 (Código de Trânsito Brasileiro)",
+      "artigo": "Art. 199",
+      "texto": "Art. 199. Ultrapassar pela direita, salvo quando o veículo da frente estiver colocado na faixa apropriada e der sinal de que vai entrar à esquerda:\nInfração - média;\nPenalidade - multa.",
+      "observacao": "Texto compilado do Planalto (anotações de redação preservadas), conferido dispositivo a dispositivo com a publicação original no Senado Federal."
+     },
+     "fonte_oficial": "https://www.planalto.gov.br/ccivil_03/leis/l9503compilado.htm"
+    },
+    {
+     "tipo": "lei_seca",
+     "titulo": "Lei 9.503/1997 — Art. 200",
+     "subassunto": null,
+     "conteudo": {
+      "lei": "Lei 9.503/1997 (Código de Trânsito Brasileiro)",
+      "artigo": "Art. 200",
+      "texto": "Art. 200. Ultrapassar pela direita veículo de transporte coletivo ou de escolares, parado para embarque ou desembarque de passageiros, salvo quando houver refúgio de segurança para o pedestre:\nInfração - gravíssima;\nPenalidade - multa.",
+      "observacao": "Texto compilado do Planalto (anotações de redação preservadas), conferido dispositivo a dispositivo com a publicação original no Senado Federal."
+     },
+     "fonte_oficial": "https://www.planalto.gov.br/ccivil_03/leis/l9503compilado.htm"
+    },
+    {
+     "tipo": "lei_seca",
+     "titulo": "Lei 9.503/1997 — Art. 201",
+     "subassunto": null,
+     "conteudo": {
+      "lei": "Lei 9.503/1997 (Código de Trânsito Brasileiro)",
+      "artigo": "Art. 201",
+      "texto": "Art. 201. Deixar de guardar a distância lateral de um metro e cinqüenta centímetros ao passar ou ultrapassar bicicleta:\nInfração - média;\nPenalidade - multa.",
+      "observacao": "Texto compilado do Planalto (anotações de redação preservadas), conferido dispositivo a dispositivo com a publicação original no Senado Federal."
+     },
+     "fonte_oficial": "https://www.planalto.gov.br/ccivil_03/leis/l9503compilado.htm"
+    },
+    {
+     "tipo": "lei_seca",
+     "titulo": "Lei 9.503/1997 — Art. 202",
+     "subassunto": null,
+     "conteudo": {
+      "lei": "Lei 9.503/1997 (Código de Trânsito Brasileiro)",
+      "artigo": "Art. 202",
+      "texto": "Art. 202. Ultrapassar outro veículo:\nI - pelo acostamento;\nII - em interseções e passagens de nível;\nInfração - gravíssima; (Redação dada pela Lei nº 12.971, de 2014)\nPenalidade - multa (cinco vezes). (Redação dada pela Lei nº 12.971, de 2014)",
+      "observacao": "Texto compilado do Planalto (anotações de redação preservadas), conferido dispositivo a dispositivo com a publicação original no Senado Federal."
+     },
+     "fonte_oficial": "https://www.planalto.gov.br/ccivil_03/leis/l9503compilado.htm"
+    },
+    {
+     "tipo": "lei_seca",
+     "titulo": "Lei 9.503/1997 — Art. 203",
+     "subassunto": null,
+     "conteudo": {
+      "lei": "Lei 9.503/1997 (Código de Trânsito Brasileiro)",
+      "artigo": "Art. 203",
+      "texto": "Art. 203. Ultrapassar pela contramão outro veículo:\nI - nas curvas, aclives e declives, sem visibilidade suficiente;\nII - nas faixas de pedestre;\nIII - nas pontes, viadutos ou túneis;\nIV - parado em fila junto a sinais luminosos, porteiras, cancelas, cruzamentos ou qualquer outro impedimento à livre circulação;\nV - onde houver marcação viária longitudinal de divisão de fluxos opostos do tipo linha dupla contínua ou simples contínua amarela:\nInfração - gravíssima; (Redação dada pela Lei nº 12.971, de 2014)\nPenalidade - multa (cinco vezes). (Redação dada pela Lei nº 12.971, de 2014)\nParágrafo único. Aplica-se em dobro a multa prevista no caput em caso de reincidência no período de até 12 (doze) meses da infração anterior. (Incluído pela Lei nº 12.971, de 2014)",
+      "observacao": "Texto compilado do Planalto (anotações de redação preservadas), conferido dispositivo a dispositivo com a publicação original no Senado Federal."
+     },
+     "fonte_oficial": "https://www.planalto.gov.br/ccivil_03/leis/l9503compilado.htm"
+    },
+    {
+     "tipo": "lei_seca",
+     "titulo": "Lei 9.503/1997 — Art. 204",
+     "subassunto": null,
+     "conteudo": {
+      "lei": "Lei 9.503/1997 (Código de Trânsito Brasileiro)",
+      "artigo": "Art. 204",
+      "texto": "Art. 204. Deixar de parar o veículo no acostamento à direita, para aguardar a oportunidade de cruzar a pista ou entrar à esquerda, onde não houver local apropriado para operação de retorno:\nInfração - grave;\nPenalidade - multa.",
+      "observacao": "Texto compilado do Planalto (anotações de redação preservadas), conferido dispositivo a dispositivo com a publicação original no Senado Federal."
+     },
+     "fonte_oficial": "https://www.planalto.gov.br/ccivil_03/leis/l9503compilado.htm"
+    },
+    {
+     "tipo": "lei_seca",
+     "titulo": "Lei 9.503/1997 — Art. 205",
+     "subassunto": null,
+     "conteudo": {
+      "lei": "Lei 9.503/1997 (Código de Trânsito Brasileiro)",
+      "artigo": "Art. 205",
+      "texto": "Art. 205. Ultrapassar veículo em movimento que integre cortejo, préstito, desfile e formações militares, salvo com autorização da autoridade de trânsito ou de seus agentes:\nInfração - leve;\nPenalidade - multa.",
+      "observacao": "Texto compilado do Planalto (anotações de redação preservadas), conferido dispositivo a dispositivo com a publicação original no Senado Federal."
+     },
+     "fonte_oficial": "https://www.planalto.gov.br/ccivil_03/leis/l9503compilado.htm"
+    },
+    {
+     "tipo": "lei_seca",
+     "titulo": "Lei 9.503/1997 — Art. 206",
+     "subassunto": null,
+     "conteudo": {
+      "lei": "Lei 9.503/1997 (Código de Trânsito Brasileiro)",
+      "artigo": "Art. 206",
+      "texto": "Art. 206. Executar operação de retorno:\nI - em locais proibidos pela sinalização;\nII - nas curvas, aclives, declives, pontes, viadutos e túneis;\nIII - passando por cima de calçada, passeio, ilhas, ajardinamento ou canteiros de divisões de pista de rolamento, refúgios e faixas de pedestres e nas de veículos não motorizados;\nIV - nas interseções, entrando na contramão de direção da via transversal;\nV - com prejuízo da livre circulação ou da segurança, ainda que em locais permitidos:\nInfração - gravíssima;\nPenalidade - multa.",
+      "observacao": "Texto compilado do Planalto (anotações de redação preservadas), conferido dispositivo a dispositivo com a publicação original no Senado Federal."
+     },
+     "fonte_oficial": "https://www.planalto.gov.br/ccivil_03/leis/l9503compilado.htm"
+    },
+    {
+     "tipo": "lei_seca",
+     "titulo": "Lei 9.503/1997 — Art. 207",
+     "subassunto": null,
+     "conteudo": {
+      "lei": "Lei 9.503/1997 (Código de Trânsito Brasileiro)",
+      "artigo": "Art. 207",
+      "texto": "Art. 207. Executar operação de conversão à direita ou à esquerda em locais proibidos pela sinalização:\nInfração - grave;\nPenalidade - multa.",
+      "observacao": "Texto compilado do Planalto (anotações de redação preservadas), conferido dispositivo a dispositivo com a publicação original no Senado Federal."
+     },
+     "fonte_oficial": "https://www.planalto.gov.br/ccivil_03/leis/l9503compilado.htm"
+    },
+    {
+     "tipo": "lei_seca",
+     "titulo": "Lei 9.503/1997 — Art. 208",
+     "subassunto": null,
+     "conteudo": {
+      "lei": "Lei 9.503/1997 (Código de Trânsito Brasileiro)",
+      "artigo": "Art. 208",
+      "texto": "Art. 208. Avançar o sinal vermelho do semáforo ou o de parada obrigatória, exceto onde houver sinalização que permita a livre conversão à direita prevista no art. 44-A deste Código: (Redação dada pela Lei nº 14.071, de 2020)\nInfração - gravíssima;\nPenalidade - multa.",
+      "observacao": "Texto compilado do Planalto (anotações de redação preservadas), conferido dispositivo a dispositivo com a publicação original no Senado Federal."
+     },
+     "fonte_oficial": "https://www.planalto.gov.br/ccivil_03/leis/l9503compilado.htm"
+    },
+    {
+     "tipo": "lei_seca",
+     "titulo": "Lei 9.503/1997 — Art. 209",
+     "subassunto": null,
+     "conteudo": {
+      "lei": "Lei 9.503/1997 (Código de Trânsito Brasileiro)",
+      "artigo": "Art. 209",
+      "texto": "Art. 209. Transpor, sem autorização, bloqueio viário com ou sem sinalização ou dispositivos auxiliares, ou deixar de adentrar as áreas destinadas à pesagem de veículos: (Redação dada pela Lei nº 14.157, de 2021)\nInfração - grave;\nPenalidade - multa.",
+      "observacao": "Texto compilado do Planalto (anotações de redação preservadas), conferido dispositivo a dispositivo com a publicação original no Senado Federal."
+     },
+     "fonte_oficial": "https://www.planalto.gov.br/ccivil_03/leis/l9503compilado.htm"
+    },
+    {
+     "tipo": "lei_seca",
+     "titulo": "Lei 9.503/1997 — Art. 210",
+     "subassunto": null,
+     "conteudo": {
+      "lei": "Lei 9.503/1997 (Código de Trânsito Brasileiro)",
+      "artigo": "Art. 210",
+      "texto": "Art. 210. Transpor, sem autorização, bloqueio viário policial:\nInfração - gravíssima;\nPenalidade - multa, apreensão do veículo e suspensão do direito de dirigir;\nMedida administrativa - remoção do veículo e recolhimento do documento de habilitação.",
+      "observacao": "Texto compilado do Planalto (anotações de redação preservadas), conferido dispositivo a dispositivo com a publicação original no Senado Federal."
+     },
+     "fonte_oficial": "https://www.planalto.gov.br/ccivil_03/leis/l9503compilado.htm"
+    },
+    {
+     "tipo": "lei_seca",
+     "titulo": "Lei 9.503/1997 — Art. 211",
+     "subassunto": null,
+     "conteudo": {
+      "lei": "Lei 9.503/1997 (Código de Trânsito Brasileiro)",
+      "artigo": "Art. 211",
+      "texto": "Art. 211. Ultrapassar veículos em fila, parados em razão de sinal luminoso, cancela, bloqueio viário parcial ou qualquer outro obstáculo, com exceção dos veículos não motorizados:\nInfração - grave;\nPenalidade - multa.\nParágrafo único. (VETADO). (Incluído pela Lei nº 14.071, de 2020)",
+      "observacao": "Texto compilado do Planalto (anotações de redação preservadas), conferido dispositivo a dispositivo com a publicação original no Senado Federal."
+     },
+     "fonte_oficial": "https://www.planalto.gov.br/ccivil_03/leis/l9503compilado.htm"
+    },
+    {
+     "tipo": "lei_seca",
+     "titulo": "Lei 9.503/1997 — Art. 212",
+     "subassunto": null,
+     "conteudo": {
+      "lei": "Lei 9.503/1997 (Código de Trânsito Brasileiro)",
+      "artigo": "Art. 212",
+      "texto": "Art. 212. Deixar de parar o veículo antes de transpor linha férrea:\nInfração - gravíssima;\nPenalidade - multa.",
+      "observacao": "Texto compilado do Planalto (anotações de redação preservadas), conferido dispositivo a dispositivo com a publicação original no Senado Federal."
+     },
+     "fonte_oficial": "https://www.planalto.gov.br/ccivil_03/leis/l9503compilado.htm"
+    },
+    {
+     "tipo": "lei_seca",
+     "titulo": "Lei 9.503/1997 — Art. 216",
+     "subassunto": null,
+     "conteudo": {
+      "lei": "Lei 9.503/1997 (Código de Trânsito Brasileiro)",
+      "artigo": "Art. 216",
+      "texto": "Art. 216. Entrar ou sair de áreas lindeiras sem estar adequadamente posicionado para ingresso na via e sem as precauções com a segurança de pedestres e de outros veículos:\nInfração - média;\nPenalidade - multa.",
+      "observacao": "Texto compilado do Planalto (anotações de redação preservadas), conferido dispositivo a dispositivo com a publicação original no Senado Federal."
+     },
+     "fonte_oficial": "https://www.planalto.gov.br/ccivil_03/leis/l9503compilado.htm"
+    },
+    {
+     "tipo": "lei_seca",
+     "titulo": "Lei 9.503/1997 — Art. 217",
+     "subassunto": null,
+     "conteudo": {
+      "lei": "Lei 9.503/1997 (Código de Trânsito Brasileiro)",
+      "artigo": "Art. 217",
+      "texto": "Art. 217. Entrar ou sair de fila de veículos estacionados sem dar preferência de passagem a pedestres e a outros veículos:\nInfração - média;\nPenalidade - multa.",
+      "observacao": "Texto compilado do Planalto (anotações de redação preservadas), conferido dispositivo a dispositivo com a publicação original no Senado Federal."
+     },
+     "fonte_oficial": "https://www.planalto.gov.br/ccivil_03/leis/l9503compilado.htm"
+    },
+    {
+     "tipo": "lei_seca",
+     "titulo": "Lei 9.503/1997 — Art. 219",
+     "subassunto": null,
+     "conteudo": {
+      "lei": "Lei 9.503/1997 (Código de Trânsito Brasileiro)",
+      "artigo": "Art. 219",
+      "texto": "Art. 219. Transitar com o veículo em velocidade inferior à metade da velocidade máxima estabelecida para a via, retardando ou obstruindo o trânsito, a menos que as condições de tráfego e meteorológicas não o permitam, salvo se estiver na faixa da direita:\nInfração - média;\nPenalidade - multa.",
+      "observacao": "Texto compilado do Planalto (anotações de redação preservadas), conferido dispositivo a dispositivo com a publicação original no Senado Federal."
+     },
+     "fonte_oficial": "https://www.planalto.gov.br/ccivil_03/leis/l9503compilado.htm"
+    },
+    {
+     "tipo": "lei_seca",
+     "titulo": "Lei 9.503/1997 — Art. 221",
+     "subassunto": null,
+     "conteudo": {
+      "lei": "Lei 9.503/1997 (Código de Trânsito Brasileiro)",
+      "artigo": "Art. 221",
+      "texto": "Art. 221. Portar no veículo placas de identificação em desacordo com as especificações e modelos estabelecidos pelo CONTRAN:\nInfração - média;\nPenalidade - multa;\nMedida administrativa - retenção do veículo para regularização e apreensão das placas irregulares.\nParágrafo único. Incide na mesma penalidade aquele que confecciona, distribui ou coloca, em veículo próprio ou de terceiros, placas de identificação não autorizadas pela regulamentação.",
+      "observacao": "Texto compilado do Planalto (anotações de redação preservadas), conferido dispositivo a dispositivo com a publicação original no Senado Federal."
+     },
+     "fonte_oficial": "https://www.planalto.gov.br/ccivil_03/leis/l9503compilado.htm"
+    },
+    {
+     "tipo": "lei_seca",
+     "titulo": "Lei 9.503/1997 — Art. 222",
+     "subassunto": null,
+     "conteudo": {
+      "lei": "Lei 9.503/1997 (Código de Trânsito Brasileiro)",
+      "artigo": "Art. 222",
+      "texto": "Art. 222. Deixar de manter ligado, nas situações de atendimento de emergência, o sistema de iluminação intermitente dos veículos de polícia, de socorro de incêndio e salvamento, de fiscalização de trânsito e das ambulâncias, ainda que parados: (Redação dada pela Lei nº 14.440, de 2022)\nInfração - média;\nPenalidade - multa.",
+      "observacao": "Texto compilado do Planalto (anotações de redação preservadas), conferido dispositivo a dispositivo com a publicação original no Senado Federal."
+     },
+     "fonte_oficial": "https://www.planalto.gov.br/ccivil_03/leis/l9503compilado.htm"
+    },
+    {
+     "tipo": "lei_seca",
+     "titulo": "Lei 9.503/1997 — Art. 223",
+     "subassunto": null,
+     "conteudo": {
+      "lei": "Lei 9.503/1997 (Código de Trânsito Brasileiro)",
+      "artigo": "Art. 223",
+      "texto": "Art. 223. Transitar com o farol desregulado ou com o facho de luz alta de forma a perturbar a visão de outro condutor:\nInfração - grave;\nPenalidade - multa;\nMedida administrativa - retenção do veículo para regularização.",
+      "observacao": "Texto compilado do Planalto (anotações de redação preservadas), conferido dispositivo a dispositivo com a publicação original no Senado Federal."
+     },
+     "fonte_oficial": "https://www.planalto.gov.br/ccivil_03/leis/l9503compilado.htm"
+    },
+    {
+     "tipo": "lei_seca",
+     "titulo": "Lei 9.503/1997 — Art. 224",
+     "subassunto": null,
+     "conteudo": {
+      "lei": "Lei 9.503/1997 (Código de Trânsito Brasileiro)",
+      "artigo": "Art. 224",
+      "texto": "Art. 224. Fazer uso do facho de luz alta dos faróis em vias providas de iluminação pública:\nInfração - leve;\nPenalidade - multa.",
+      "observacao": "Texto compilado do Planalto (anotações de redação preservadas), conferido dispositivo a dispositivo com a publicação original no Senado Federal."
+     },
+     "fonte_oficial": "https://www.planalto.gov.br/ccivil_03/leis/l9503compilado.htm"
+    },
+    {
+     "tipo": "lei_seca",
+     "titulo": "Lei 9.503/1997 — Art. 225",
+     "subassunto": null,
+     "conteudo": {
+      "lei": "Lei 9.503/1997 (Código de Trânsito Brasileiro)",
+      "artigo": "Art. 225",
+      "texto": "Art. 225. Deixar de sinalizar a via, de forma a prevenir os demais condutores e, à noite, não manter acesas as luzes externas ou omitir-se quanto a providências necessárias para tornar visível o local, quando:\nI - tiver de remover o veículo da pista de rolamento ou permanecer no acostamento;\nII - a carga for derramada sobre a via e não puder ser retirada imediatamente:\nInfração - grave;\nPenalidade - multa.",
+      "observacao": "Texto compilado do Planalto (anotações de redação preservadas), conferido dispositivo a dispositivo com a publicação original no Senado Federal."
+     },
+     "fonte_oficial": "https://www.planalto.gov.br/ccivil_03/leis/l9503compilado.htm"
+    },
+    {
+     "tipo": "lei_seca",
+     "titulo": "Lei 9.503/1997 — Art. 226",
+     "subassunto": null,
+     "conteudo": {
+      "lei": "Lei 9.503/1997 (Código de Trânsito Brasileiro)",
+      "artigo": "Art. 226",
+      "texto": "Art. 226. Deixar de retirar todo e qualquer objeto que tenha sido utilizado para sinalização temporária da via:\nInfração - média;\nPenalidade - multa.",
+      "observacao": "Texto compilado do Planalto (anotações de redação preservadas), conferido dispositivo a dispositivo com a publicação original no Senado Federal."
+     },
+     "fonte_oficial": "https://www.planalto.gov.br/ccivil_03/leis/l9503compilado.htm"
+    },
+    {
+     "tipo": "lei_seca",
+     "titulo": "Lei 9.503/1997 — Art. 227",
+     "subassunto": null,
+     "conteudo": {
+      "lei": "Lei 9.503/1997 (Código de Trânsito Brasileiro)",
+      "artigo": "Art. 227",
+      "texto": "Art. 227. Usar buzina:\nI - em situação que não a de simples toque breve como advertência ao pedestre ou a condutores de outros veículos;\nII - prolongada e sucessivamente a qualquer pretexto;\nIII - entre as vinte e duas e as seis horas;\nIV - em locais e horários proibidos pela sinalização;\nV - em desacordo com os padrões e freqüências estabelecidas pelo CONTRAN:\nInfração - leve;\nPenalidade - multa.",
+      "observacao": "Texto compilado do Planalto (anotações de redação preservadas), conferido dispositivo a dispositivo com a publicação original no Senado Federal."
+     },
+     "fonte_oficial": "https://www.planalto.gov.br/ccivil_03/leis/l9503compilado.htm"
+    },
+    {
+     "tipo": "lei_seca",
+     "titulo": "Lei 9.503/1997 — Art. 228",
+     "subassunto": null,
+     "conteudo": {
+      "lei": "Lei 9.503/1997 (Código de Trânsito Brasileiro)",
+      "artigo": "Art. 228",
+      "texto": "Art. 228. Usar no veículo equipamento com som em volume ou freqüência que não sejam autorizados pelo CONTRAN:\nInfração - grave;\nPenalidade - multa;\nMedida administrativa - retenção do veículo para regularização.",
+      "observacao": "Texto compilado do Planalto (anotações de redação preservadas), conferido dispositivo a dispositivo com a publicação original no Senado Federal."
+     },
+     "fonte_oficial": "https://www.planalto.gov.br/ccivil_03/leis/l9503compilado.htm"
+    },
+    {
+     "tipo": "lei_seca",
+     "titulo": "Lei 9.503/1997 — Art. 229",
+     "subassunto": null,
+     "conteudo": {
+      "lei": "Lei 9.503/1997 (Código de Trânsito Brasileiro)",
+      "artigo": "Art. 229",
+      "texto": "Art. 229. Usar indevidamente no veículo aparelho de alarme ou que produza sons e ruído que perturbem o sossego público, em desacordo com normas fixadas pelo CONTRAN:\nInfração - média;\nPenalidade - multa e apreensão do veículo;\nMedida administrativa - remoção do veículo.",
+      "observacao": "Texto compilado do Planalto (anotações de redação preservadas), conferido dispositivo a dispositivo com a publicação original no Senado Federal."
+     },
+     "fonte_oficial": "https://www.planalto.gov.br/ccivil_03/leis/l9503compilado.htm"
+    },
+    {
+     "tipo": "lei_seca",
+     "titulo": "Lei 9.503/1997 — Art. 232",
+     "subassunto": null,
+     "conteudo": {
+      "lei": "Lei 9.503/1997 (Código de Trânsito Brasileiro)",
+      "artigo": "Art. 232",
+      "texto": "Art. 232. Conduzir veículo sem os documentos de porte obrigatório referidos neste Código:\nInfração - leve;\nPenalidade - multa;\nMedida administrativa - retenção do veículo até a apresentação do documento.",
+      "observacao": "Texto compilado do Planalto (anotações de redação preservadas), conferido dispositivo a dispositivo com a publicação original no Senado Federal."
+     },
+     "fonte_oficial": "https://www.planalto.gov.br/ccivil_03/leis/l9503compilado.htm"
+    },
+    {
+     "tipo": "lei_seca",
+     "titulo": "Lei 9.503/1997 — Art. 233",
+     "subassunto": null,
+     "conteudo": {
+      "lei": "Lei 9.503/1997 (Código de Trânsito Brasileiro)",
+      "artigo": "Art. 233",
+      "texto": "Art. 233. Deixar de efetuar o registro de veículo no prazo de trinta dias, junto ao órgão executivo de trânsito, ocorridas as hipóteses previstas no art. 123:\nInfração - média; (Redação dada pela Lei nº 14.071, de 2020)\nPenalidade - multa; (Redação dada pela Lei nº 14.071, de 2020)\nMedida administrativa - remoção do veículo. (Redação dada pela Lei nº 14.071, de 2020)",
+      "observacao": "Texto compilado do Planalto (anotações de redação preservadas), conferido dispositivo a dispositivo com a publicação original no Senado Federal."
+     },
+     "fonte_oficial": "https://www.planalto.gov.br/ccivil_03/leis/l9503compilado.htm"
+    },
+    {
+     "tipo": "lei_seca",
+     "titulo": "Lei 9.503/1997 — Art. 234",
+     "subassunto": null,
+     "conteudo": {
+      "lei": "Lei 9.503/1997 (Código de Trânsito Brasileiro)",
+      "artigo": "Art. 234",
+      "texto": "Art. 234. Falsificar ou adulterar documento de habilitação e de identificação do veículo:\nInfração - gravíssima;\nPenalidade - multa e apreensão do veículo;\nMedida administrativa - remoção do veículo.",
+      "observacao": "Texto compilado do Planalto (anotações de redação preservadas), conferido dispositivo a dispositivo com a publicação original no Senado Federal."
+     },
+     "fonte_oficial": "https://www.planalto.gov.br/ccivil_03/leis/l9503compilado.htm"
+    },
+    {
+     "tipo": "lei_seca",
+     "titulo": "Lei 9.503/1997 — Art. 235",
+     "subassunto": null,
+     "conteudo": {
+      "lei": "Lei 9.503/1997 (Código de Trânsito Brasileiro)",
+      "artigo": "Art. 235",
+      "texto": "Art. 235. Conduzir pessoas, animais ou carga nas partes externas do veículo, salvo nos casos devidamente autorizados:\nInfração - grave;\nPenalidade - multa;\nMedida administrativa - retenção do veículo para transbordo.",
+      "observacao": "Texto compilado do Planalto (anotações de redação preservadas), conferido dispositivo a dispositivo com a publicação original no Senado Federal."
+     },
+     "fonte_oficial": "https://www.planalto.gov.br/ccivil_03/leis/l9503compilado.htm"
+    },
+    {
+     "tipo": "lei_seca",
+     "titulo": "Lei 9.503/1997 — Art. 236",
+     "subassunto": null,
+     "conteudo": {
+      "lei": "Lei 9.503/1997 (Código de Trânsito Brasileiro)",
+      "artigo": "Art. 236",
+      "texto": "Art. 236. Rebocar outro veículo com cabo flexível ou corda, salvo em casos de emergência:\nInfração - média;\nPenalidade - multa.",
+      "observacao": "Texto compilado do Planalto (anotações de redação preservadas), conferido dispositivo a dispositivo com a publicação original no Senado Federal."
+     },
+     "fonte_oficial": "https://www.planalto.gov.br/ccivil_03/leis/l9503compilado.htm"
+    },
+    {
+     "tipo": "lei_seca",
+     "titulo": "Lei 9.503/1997 — Art. 237",
+     "subassunto": null,
+     "conteudo": {
+      "lei": "Lei 9.503/1997 (Código de Trânsito Brasileiro)",
+      "artigo": "Art. 237",
+      "texto": "Art. 237. Transitar com o veículo em desacordo com as especificações, e com falta de inscrição e simbologia necessárias à sua identificação, quando exigidas pela legislação:\nInfração - grave;\nPenalidade - multa;\nMedida administrativa - retenção do veículo para regularização.",
+      "observacao": "Texto compilado do Planalto (anotações de redação preservadas), conferido dispositivo a dispositivo com a publicação original no Senado Federal."
+     },
+     "fonte_oficial": "https://www.planalto.gov.br/ccivil_03/leis/l9503compilado.htm"
+    },
+    {
+     "tipo": "lei_seca",
+     "titulo": "Lei 9.503/1997 — Art. 238",
+     "subassunto": null,
+     "conteudo": {
+      "lei": "Lei 9.503/1997 (Código de Trânsito Brasileiro)",
+      "artigo": "Art. 238",
+      "texto": "Art. 238. Recusar-se a entregar à autoridade de trânsito ou a seus agentes, mediante recibo, os documentos de habilitação, de registro, de licenciamento de veículo e outros exigidos por lei, para averiguação de sua autenticidade:\nInfração - gravíssima;\nPenalidade - multa e apreensão do veículo;\nMedida administrativa - remoção do veículo.",
+      "observacao": "Texto compilado do Planalto (anotações de redação preservadas), conferido dispositivo a dispositivo com a publicação original no Senado Federal."
+     },
+     "fonte_oficial": "https://www.planalto.gov.br/ccivil_03/leis/l9503compilado.htm"
+    },
+    {
+     "tipo": "lei_seca",
+     "titulo": "Lei 9.503/1997 — Art. 239",
+     "subassunto": null,
+     "conteudo": {
+      "lei": "Lei 9.503/1997 (Código de Trânsito Brasileiro)",
+      "artigo": "Art. 239",
+      "texto": "Art. 239. Retirar do local veículo legalmente retido para regularização, sem permissão da autoridade competente ou de seus agentes:\nInfração - gravíssima;\nPenalidade - multa e apreensão do veículo;\nMedida administrativa - remoção do veículo.",
+      "observacao": "Texto compilado do Planalto (anotações de redação preservadas), conferido dispositivo a dispositivo com a publicação original no Senado Federal."
+     },
+     "fonte_oficial": "https://www.planalto.gov.br/ccivil_03/leis/l9503compilado.htm"
+    },
+    {
+     "tipo": "lei_seca",
+     "titulo": "Lei 9.503/1997 — Art. 240",
+     "subassunto": null,
+     "conteudo": {
+      "lei": "Lei 9.503/1997 (Código de Trânsito Brasileiro)",
+      "artigo": "Art. 240",
+      "texto": "Art. 240. Deixar o responsável de promover a baixa do registro de veículo irrecuperável ou definitivamente desmontado:\nInfração - grave;\nPenalidade - multa;\nMedida administrativa - Recolhimento do Certificado de Registro e do Certificado de Licenciamento Anual.",
+      "observacao": "Texto compilado do Planalto (anotações de redação preservadas), conferido dispositivo a dispositivo com a publicação original no Senado Federal."
+     },
+     "fonte_oficial": "https://www.planalto.gov.br/ccivil_03/leis/l9503compilado.htm"
+    },
+    {
+     "tipo": "lei_seca",
+     "titulo": "Lei 9.503/1997 — Art. 241",
+     "subassunto": null,
+     "conteudo": {
+      "lei": "Lei 9.503/1997 (Código de Trânsito Brasileiro)",
+      "artigo": "Art. 241",
+      "texto": "Art. 241. Deixar de atualizar o cadastro de registro do veículo ou de habilitação do condutor:\nInfração - leve;\nPenalidade - multa.",
+      "observacao": "Texto compilado do Planalto (anotações de redação preservadas), conferido dispositivo a dispositivo com a publicação original no Senado Federal."
+     },
+     "fonte_oficial": "https://www.planalto.gov.br/ccivil_03/leis/l9503compilado.htm"
+    },
+    {
+     "tipo": "lei_seca",
+     "titulo": "Lei 9.503/1997 — Art. 242",
+     "subassunto": null,
+     "conteudo": {
+      "lei": "Lei 9.503/1997 (Código de Trânsito Brasileiro)",
+      "artigo": "Art. 242",
+      "texto": "Art. 242. Fazer falsa declaração de domicílio para fins de registro, licenciamento ou habilitação:\nInfração - gravíssima;\nPenalidade - multa.",
+      "observacao": "Texto compilado do Planalto (anotações de redação preservadas), conferido dispositivo a dispositivo com a publicação original no Senado Federal."
+     },
+     "fonte_oficial": "https://www.planalto.gov.br/ccivil_03/leis/l9503compilado.htm"
+    },
+    {
+     "tipo": "lei_seca",
+     "titulo": "Lei 9.503/1997 — Art. 243",
+     "subassunto": null,
+     "conteudo": {
+      "lei": "Lei 9.503/1997 (Código de Trânsito Brasileiro)",
+      "artigo": "Art. 243",
+      "texto": "Art. 243. Deixar a empresa seguradora de comunicar ao órgão executivo de trânsito competente a ocorrência de perda total do veículo e de lhe devolver as respectivas placas e documentos:\nInfração - grave;\nPenalidade - multa;\nMedida administrativa - Recolhimento das placas e dos documentos.",
+      "observacao": "Texto compilado do Planalto (anotações de redação preservadas), conferido dispositivo a dispositivo com a publicação original no Senado Federal."
+     },
+     "fonte_oficial": "https://www.planalto.gov.br/ccivil_03/leis/l9503compilado.htm"
+    },
+    {
+     "tipo": "lei_seca",
+     "titulo": "Lei 9.503/1997 — Art. 245",
+     "subassunto": null,
+     "conteudo": {
+      "lei": "Lei 9.503/1997 (Código de Trânsito Brasileiro)",
+      "artigo": "Art. 245",
+      "texto": "Art. 245. Utilizar a via para depósito de mercadorias, materiais ou equipamentos, sem autorização do órgão ou entidade de trânsito com circunscrição sobre a via:\nInfração - grave;\nPenalidade - multa;\nMedida administrativa - remoção da mercadoria ou do material.\nParágrafo único. A penalidade e a medida administrativa incidirão sobre a pessoa física ou jurídica responsável.",
+      "observacao": "Texto compilado do Planalto (anotações de redação preservadas), conferido dispositivo a dispositivo com a publicação original no Senado Federal."
+     },
+     "fonte_oficial": "https://www.planalto.gov.br/ccivil_03/leis/l9503compilado.htm"
+    },
+    {
+     "tipo": "lei_seca",
+     "titulo": "Lei 9.503/1997 — Art. 246",
+     "subassunto": null,
+     "conteudo": {
+      "lei": "Lei 9.503/1997 (Código de Trânsito Brasileiro)",
+      "artigo": "Art. 246",
+      "texto": "Art. 246. Deixar de sinalizar qualquer obstáculo à livre circulação, à segurança de veículo e pedestres, tanto no leito da via terrestre como na calçada, ou obstaculizar a via indevidamente:\nInfração - gravíssima;\nPenalidade - multa, agravada em até cinco vezes, a critério da autoridade de trânsito, conforme o risco à segurança.\nParágrafo único. A penalidade será aplicada à pessoa física ou jurídica responsável pela obstrução, devendo a autoridade com circunscrição sobre a via providenciar a sinalização de emergência, às expensas do responsável, ou, se possível, promover a desobstrução.",
+      "observacao": "Texto compilado do Planalto (anotações de redação preservadas), conferido dispositivo a dispositivo com a publicação original no Senado Federal."
+     },
+     "fonte_oficial": "https://www.planalto.gov.br/ccivil_03/leis/l9503compilado.htm"
+    },
+    {
+     "tipo": "lei_seca",
+     "titulo": "Lei 9.503/1997 — Art. 247",
+     "subassunto": null,
+     "conteudo": {
+      "lei": "Lei 9.503/1997 (Código de Trânsito Brasileiro)",
+      "artigo": "Art. 247",
+      "texto": "Art. 247. Deixar de conduzir pelo bordo da pista de rolamento, em fila única, os veículos de tração ou propulsão humana e os de tração animal, sempre que não houver acostamento ou faixa a eles destinados:\nInfração - média;\nPenalidade - multa.",
+      "observacao": "Texto compilado do Planalto (anotações de redação preservadas), conferido dispositivo a dispositivo com a publicação original no Senado Federal."
+     },
+     "fonte_oficial": "https://www.planalto.gov.br/ccivil_03/leis/l9503compilado.htm"
+    },
+    {
+     "tipo": "lei_seca",
+     "titulo": "Lei 9.503/1997 — Art. 248",
+     "subassunto": null,
+     "conteudo": {
+      "lei": "Lei 9.503/1997 (Código de Trânsito Brasileiro)",
+      "artigo": "Art. 248",
+      "texto": "Art. 248. Transportar em veículo destinado ao transporte de passageiros carga excedente em desacordo com o estabelecido no art. 109:\nInfração - grave;\nPenalidade - multa;\nMedida administrativa - retenção para o transbordo.",
+      "observacao": "Texto compilado do Planalto (anotações de redação preservadas), conferido dispositivo a dispositivo com a publicação original no Senado Federal."
+     },
+     "fonte_oficial": "https://www.planalto.gov.br/ccivil_03/leis/l9503compilado.htm"
+    },
+    {
+     "tipo": "lei_seca",
+     "titulo": "Lei 9.503/1997 — Art. 249",
+     "subassunto": null,
+     "conteudo": {
+      "lei": "Lei 9.503/1997 (Código de Trânsito Brasileiro)",
+      "artigo": "Art. 249",
+      "texto": "Art. 249. Deixar de manter acesas, à noite, as luzes de posição, quando o veículo estiver parado, para fins de embarque ou desembarque de passageiros e carga ou descarga de mercadorias:\nInfração - média;\nPenalidade - multa.",
+      "observacao": "Texto compilado do Planalto (anotações de redação preservadas), conferido dispositivo a dispositivo com a publicação original no Senado Federal."
+     },
+     "fonte_oficial": "https://www.planalto.gov.br/ccivil_03/leis/l9503compilado.htm"
+    },
+    {
+     "tipo": "lei_seca",
+     "titulo": "Lei 9.503/1997 — Art. 253",
+     "subassunto": null,
+     "conteudo": {
+      "lei": "Lei 9.503/1997 (Código de Trânsito Brasileiro)",
+      "artigo": "Art. 253",
+      "texto": "Art. 253. Bloquear a via com veículo:\nInfração - gravíssima;\nPenalidade - multa e apreensão do veículo;\nMedida administrativa - remoção do veículo.",
+      "observacao": "Texto compilado do Planalto (anotações de redação preservadas), conferido dispositivo a dispositivo com a publicação original no Senado Federal."
+     },
+     "fonte_oficial": "https://www.planalto.gov.br/ccivil_03/leis/l9503compilado.htm"
+    },
+    {
+     "tipo": "lei_seca",
+     "titulo": "Lei 9.503/1997 — Art. 254",
+     "subassunto": null,
+     "conteudo": {
+      "lei": "Lei 9.503/1997 (Código de Trânsito Brasileiro)",
+      "artigo": "Art. 254",
+      "texto": "Art. 254. É proibido ao pedestre:\nI - permanecer ou andar nas pistas de rolamento, exceto para cruzá-las onde for permitido;\nII - cruzar pistas de rolamento nos viadutos, pontes, ou túneis, salvo onde exista permissão;\nIII - atravessar a via dentro das áreas de cruzamento, salvo quando houver sinalização para esse fim;\nIV - utilizar-se da via em agrupamentos capazes de perturbar o trânsito, ou para a prática de qualquer folguedo, esporte, desfiles e similares, salvo em casos especiais e com a devida licença da autoridade competente;\nV - andar fora da faixa própria, passarela, passagem aérea ou subterrânea;\nVI - desobedecer à sinalização de trânsito específica;\nInfração - leve;\nPenalidade - multa, em 50% (cinqüenta por cento) do valor da infração de natureza leve.\nVII - (VETADO). (Incluído pela Lei nº 13.281, de 2016)\n§ 1 (VETADO). (Incluído pela Lei nº 13.281, de 2016)\n§ 2 (VETADO). (Incluído pela Lei nº 13.281, de 2016)\n§ 3 (VETADO). (Incluído pela Lei nº 13.281, de 2016)",
+      "observacao": "Texto compilado do Planalto (anotações de redação preservadas), conferido dispositivo a dispositivo com a publicação original no Senado Federal."
+     },
+     "fonte_oficial": "https://www.planalto.gov.br/ccivil_03/leis/l9503compilado.htm"
+    },
+    {
+     "tipo": "lei_seca",
+     "titulo": "Lei 9.503/1997 — Art. 255",
+     "subassunto": null,
+     "conteudo": {
+      "lei": "Lei 9.503/1997 (Código de Trânsito Brasileiro)",
+      "artigo": "Art. 255",
+      "texto": "Art. 255. Conduzir bicicleta em passeios onde não seja permitida a circulação desta, ou de forma agressiva, em desacordo com o disposto no parágrafo único do art. 59:\nInfração - média;\nPenalidade - multa;\nMedida administrativa - remoção da bicicleta, mediante recibo para o pagamento da multa.",
+      "observacao": "Texto compilado do Planalto (anotações de redação preservadas), conferido dispositivo a dispositivo com a publicação original no Senado Federal."
+     },
+     "fonte_oficial": "https://www.planalto.gov.br/ccivil_03/leis/l9503compilado.htm"
+    }
+   ]
+  },
+  {
+   "curso": "gcm-geral",
+   "disciplina": "Legislação de Proteção a Grupos Vulneráveis",
+   "assunto": "Estatuto da Criança e do Adolescente (Lei nº 8.069/1990)",
+   "materiais": [
+    {
+     "tipo": "lei_seca",
+     "titulo": "Lei 8.069/1990 — Art. 1",
+     "subassunto": null,
+     "conteudo": {
+      "lei": "Lei 8.069/1990 (ECA)",
+      "artigo": "Art. 1",
+      "texto": "Art. 1º Esta Lei dispõe sobre a proteção integral à criança e ao adolescente.",
+      "observacao": "Texto compilado do Planalto (anotações de redação preservadas), conferido dispositivo a dispositivo com a publicação original no Senado Federal."
+     },
+     "fonte_oficial": "https://www.planalto.gov.br/ccivil_03/leis/l8069.htm"
+    },
+    {
+     "tipo": "lei_seca",
+     "titulo": "Lei 8.069/1990 — Art. 2",
+     "subassunto": null,
+     "conteudo": {
+      "lei": "Lei 8.069/1990 (ECA)",
+      "artigo": "Art. 2",
+      "texto": "Art. 2º Considera-se criança, para os efeitos desta Lei, a pessoa até doze anos de idade incompletos, e adolescente aquela entre doze e dezoito anos de idade.\nParágrafo único. Nos casos expressos em lei, aplica-se excepcionalmente este Estatuto às pessoas entre dezoito e vinte e um anos de idade.",
+      "observacao": "Texto compilado do Planalto (anotações de redação preservadas), conferido dispositivo a dispositivo com a publicação original no Senado Federal."
+     },
+     "fonte_oficial": "https://www.planalto.gov.br/ccivil_03/leis/l8069.htm"
+    },
+    {
+     "tipo": "lei_seca",
+     "titulo": "Lei 8.069/1990 — Art. 3",
+     "subassunto": null,
+     "conteudo": {
+      "lei": "Lei 8.069/1990 (ECA)",
+      "artigo": "Art. 3",
+      "texto": "Art. 3º. A criança e o adolescente gozam de todos os direitos fundamentais inerentes à pessoa humana, sem prejuízo da proteção integral de que trata esta Lei, assegurando-se-lhes, por lei ou por outros meios, todas as oportunidades e facilidades, a fim de lhes facultar o desenvolvimento físico, mental, moral, espiritual e social, em condições de liberdade e de dignidade.\nParágrafo único. Os direitos enunciados nesta Lei aplicam-se a todas as crianças e adolescentes, sem discriminação de nascimento, situação familiar, idade, sexo, raça, etnia ou cor, religião ou crença, deficiência, condição pessoal de desenvolvimento e aprendizagem, condição econômica, ambiente social, região e local de moradia ou outra condição que diferencie as pessoas, as famílias ou a comunidade em que vivem. (incluído pela Lei nº 13.257, de 2016)",
+      "observacao": "Texto compilado do Planalto (anotações de redação preservadas), conferido dispositivo a dispositivo com a publicação original no Senado Federal."
+     },
+     "fonte_oficial": "https://www.planalto.gov.br/ccivil_03/leis/l8069.htm"
+    },
+    {
+     "tipo": "lei_seca",
+     "titulo": "Lei 8.069/1990 — Art. 5",
+     "subassunto": null,
+     "conteudo": {
+      "lei": "Lei 8.069/1990 (ECA)",
+      "artigo": "Art. 5",
+      "texto": "Art. 5º Nenhuma criança ou adolescente será objeto de qualquer forma de negligência, discriminação, exploração, violência, crueldade e opressão, punido na forma da lei qualquer atentado, por ação ou omissão, aos seus direitos fundamentais.\nParágrafo único. Considera-se conduta ilícita, sujeita a reparação de danos, sem prejuízo de outras sanções cabíveis, a ação ou a omissão que ofenda direito fundamental de criança ou de adolescente previsto nesta Lei, incluídos os casos de abandono afetivo. (Incluído pela Lei nº 15.240, de 2025)",
+      "observacao": "Texto compilado do Planalto (anotações de redação preservadas), conferido dispositivo a dispositivo com a publicação original no Senado Federal."
+     },
+     "fonte_oficial": "https://www.planalto.gov.br/ccivil_03/leis/l8069.htm"
+    },
+    {
+     "tipo": "lei_seca",
+     "titulo": "Lei 8.069/1990 — Art. 6",
+     "subassunto": null,
+     "conteudo": {
+      "lei": "Lei 8.069/1990 (ECA)",
+      "artigo": "Art. 6",
+      "texto": "Art. 6º Na interpretação desta Lei levar-se-ão em conta os fins sociais a que ela se dirige, as exigências do bem comum, os direitos e deveres individuais e coletivos, e a condição peculiar da criança e do adolescente como pessoas em desenvolvimento.",
+      "observacao": "Texto compilado do Planalto (anotações de redação preservadas), conferido dispositivo a dispositivo com a publicação original no Senado Federal."
+     },
+     "fonte_oficial": "https://www.planalto.gov.br/ccivil_03/leis/l8069.htm"
+    },
+    {
+     "tipo": "lei_seca",
+     "titulo": "Lei 8.069/1990 — Art. 13",
+     "subassunto": null,
+     "conteudo": {
+      "lei": "Lei 8.069/1990 (ECA)",
+      "artigo": "Art. 13",
+      "texto": "Art. 13. Os casos de suspeita ou confirmação de castigo físico, de tratamento cruel ou degradante e de maus-tratos contra criança ou adolescente serão obrigatoriamente comunicados ao Conselho Tutelar da respectiva localidade, sem prejuízo de outras providências legais. (Redação dada pela Lei nº 13.010, de 2014)\n§ 1o As gestantes ou mães que manifestem interesse em entregar seus filhos para adoção serão obrigatoriamente encaminhadas, sem constrangimento, à Justiça da Infância e da Juventude. (Incluído pela Lei nº 13.257, de 2016)\n§ 2o Os serviços de saúde em suas diferentes portas de entrada, os serviços de assistência social em seu componente especializado, o Centro de Referência Especializado de Assistência Social (Creas) e os demais órgãos do Sistema de Garantia de Direitos da Criança e do Adolescente deverão conferir máxima prioridade ao atendimento das crianças na faixa etária da primeira infância com suspeita ou confirmação de violência de qualquer natureza, formulando projeto terapêutico singular que inclua intervenção em rede e, se necessário, acompanhamento domiciliar. (Incluído pela Lei nº 13.257, de 2016)",
+      "observacao": "Texto compilado do Planalto (anotações de redação preservadas), conferido dispositivo a dispositivo com a publicação original no Senado Federal."
+     },
+     "fonte_oficial": "https://www.planalto.gov.br/ccivil_03/leis/l8069.htm"
+    },
+    {
+     "tipo": "lei_seca",
+     "titulo": "Lei 8.069/1990 — Art. 15",
+     "subassunto": null,
+     "conteudo": {
+      "lei": "Lei 8.069/1990 (ECA)",
+      "artigo": "Art. 15",
+      "texto": "Art. 15. A criança e o adolescente têm direito à liberdade, ao respeito e à dignidade como pessoas humanas em processo de desenvolvimento e como sujeitos de direitos civis, humanos e sociais garantidos na Constituição e nas leis.",
+      "observacao": "Texto compilado do Planalto (anotações de redação preservadas), conferido dispositivo a dispositivo com a publicação original no Senado Federal."
+     },
+     "fonte_oficial": "https://www.planalto.gov.br/ccivil_03/leis/l8069.htm"
+    },
+    {
+     "tipo": "lei_seca",
+     "titulo": "Lei 8.069/1990 — Art. 16",
+     "subassunto": null,
+     "conteudo": {
+      "lei": "Lei 8.069/1990 (ECA)",
+      "artigo": "Art. 16",
+      "texto": "Art. 16. O direito à liberdade compreende os seguintes aspectos:\nI - ir, vir e estar nos logradouros públicos e espaços comunitários, ressalvadas as restrições legais;\nII - opinião e expressão;\nIII - crença e culto religioso;\nIV - brincar, praticar esportes e divertir-se;\nV - participar da vida familiar e comunitária, sem discriminação;\nVI - participar da vida política, na forma da lei;\nVII - buscar refúgio, auxílio e orientação.",
+      "observacao": "Texto compilado do Planalto (anotações de redação preservadas), conferido dispositivo a dispositivo com a publicação original no Senado Federal."
+     },
+     "fonte_oficial": "https://www.planalto.gov.br/ccivil_03/leis/l8069.htm"
+    },
+    {
+     "tipo": "lei_seca",
+     "titulo": "Lei 8.069/1990 — Art. 17",
+     "subassunto": null,
+     "conteudo": {
+      "lei": "Lei 8.069/1990 (ECA)",
+      "artigo": "Art. 17",
+      "texto": "Art. 17. O direito ao respeito consiste na inviolabilidade da integridade física, psíquica e moral da criança e do adolescente, abrangendo a preservação da imagem, da identidade, da autonomia, dos valores, ideias e crenças, dos espaços e objetos pessoais.",
+      "observacao": "Texto compilado do Planalto (anotações de redação preservadas), conferido dispositivo a dispositivo com a publicação original no Senado Federal."
+     },
+     "fonte_oficial": "https://www.planalto.gov.br/ccivil_03/leis/l8069.htm"
+    },
+    {
+     "tipo": "lei_seca",
+     "titulo": "Lei 8.069/1990 — Art. 18",
+     "subassunto": null,
+     "conteudo": {
+      "lei": "Lei 8.069/1990 (ECA)",
+      "artigo": "Art. 18",
+      "texto": "Art. 18. É dever de todos velar pela dignidade da criança e do adolescente, pondo-os a salvo de qualquer tratamento desumano, violento, aterrorizante, vexatório ou constrangedor.",
+      "observacao": "Texto compilado do Planalto (anotações de redação preservadas), conferido dispositivo a dispositivo com a publicação original no Senado Federal."
+     },
+     "fonte_oficial": "https://www.planalto.gov.br/ccivil_03/leis/l8069.htm"
+    },
+    {
+     "tipo": "lei_seca",
+     "titulo": "Lei 8.069/1990 — Art. 18-B",
+     "subassunto": null,
+     "conteudo": {
+      "lei": "Lei 8.069/1990 (ECA)",
+      "artigo": "Art. 18-B",
+      "texto": "Art. 18-B. Os pais, os integrantes da família ampliada, os responsáveis, os agentes públicos executores de medidas socioeducativas ou qualquer pessoa encarregada de cuidar de crianças e de adolescentes, tratá-los, educá-los ou protegê-los que utilizarem castigo físico ou tratamento cruel ou degradante como formas de correção, disciplina, educação ou qualquer outro pretexto estarão sujeitos, sem prejuízo de outras sanções cabíveis, às seguintes medidas, que serão aplicadas de acordo com a gravidade do caso: (Incluído pela Lei nº 13.010, de 2014)\nI - encaminhamento a programa oficial ou comunitário de proteção à família; (Incluído pela Lei nº 13.010, de 2014)\nII - encaminhamento a tratamento psicológico ou psiquiátrico; (Incluído pela Lei nº 13.010, de 2014)\nIII - encaminhamento a cursos ou programas de orientação; (Incluído pela Lei nº 13.010, de 2014)\nIV - obrigação de encaminhar a criança a tratamento especializado; (Incluído pela Lei nº 13.010, de 2014)\nV - advertência. (Incluído pela Lei nº 13.010, de 2014)\nVI - garantia de tratamento de saúde especializado à vítima. (Incluído pela Lei nº 14.344, de 2022)\nParágrafo único. As medidas previstas neste artigo serão aplicadas pelo Conselho Tutelar, sem prejuízo de outras providências legais. (Incluído pela Lei nº 13.010, de 2014)",
+      "observacao": "Texto compilado do Planalto (anotações de redação preservadas), conferido dispositivo a dispositivo com a publicação original no Senado Federal."
+     },
+     "fonte_oficial": "https://www.planalto.gov.br/ccivil_03/leis/l8069.htm"
+    },
+    {
+     "tipo": "lei_seca",
+     "titulo": "Lei 8.069/1990 — Art. 98",
+     "subassunto": null,
+     "conteudo": {
+      "lei": "Lei 8.069/1990 (ECA)",
+      "artigo": "Art. 98",
+      "texto": "Art. 98. As medidas de proteção à criança e ao adolescente são aplicáveis sempre que os direitos reconhecidos nesta Lei forem ameaçados ou violados:\nI - por ação ou omissão da sociedade ou do Estado;\nII - por falta, omissão ou abuso dos pais ou responsável;\nIII - em razão de sua conduta.",
+      "observacao": "Texto compilado do Planalto (anotações de redação preservadas), conferido dispositivo a dispositivo com a publicação original no Senado Federal."
+     },
+     "fonte_oficial": "https://www.planalto.gov.br/ccivil_03/leis/l8069.htm"
+    },
+    {
+     "tipo": "lei_seca",
+     "titulo": "Lei 8.069/1990 — Art. 103",
+     "subassunto": null,
+     "conteudo": {
+      "lei": "Lei 8.069/1990 (ECA)",
+      "artigo": "Art. 103",
+      "texto": "Art. 103. Considera-se ato infracional a conduta descrita como crime ou contravenção penal.",
+      "observacao": "Texto compilado do Planalto (anotações de redação preservadas), conferido dispositivo a dispositivo com a publicação original no Senado Federal."
+     },
+     "fonte_oficial": "https://www.planalto.gov.br/ccivil_03/leis/l8069.htm"
+    },
+    {
+     "tipo": "lei_seca",
+     "titulo": "Lei 8.069/1990 — Art. 104",
+     "subassunto": null,
+     "conteudo": {
+      "lei": "Lei 8.069/1990 (ECA)",
+      "artigo": "Art. 104",
+      "texto": "Art. 104. São penalmente inimputáveis os menores de dezoito anos, sujeitos às medidas previstas nesta Lei.\nParágrafo único. Para os efeitos desta Lei, deve ser considerada a idade do adolescente à data do fato.",
+      "observacao": "Texto compilado do Planalto (anotações de redação preservadas), conferido dispositivo a dispositivo com a publicação original no Senado Federal."
+     },
+     "fonte_oficial": "https://www.planalto.gov.br/ccivil_03/leis/l8069.htm"
+    },
+    {
+     "tipo": "lei_seca",
+     "titulo": "Lei 8.069/1990 — Art. 105",
+     "subassunto": null,
+     "conteudo": {
+      "lei": "Lei 8.069/1990 (ECA)",
+      "artigo": "Art. 105",
+      "texto": "Art. 105. Ao ato infracional praticado por criança corresponderão as medidas previstas no art. 101.",
+      "observacao": "Texto compilado do Planalto (anotações de redação preservadas), conferido dispositivo a dispositivo com a publicação original no Senado Federal."
+     },
+     "fonte_oficial": "https://www.planalto.gov.br/ccivil_03/leis/l8069.htm"
+    },
+    {
+     "tipo": "lei_seca",
+     "titulo": "Lei 8.069/1990 — Art. 106",
+     "subassunto": null,
+     "conteudo": {
+      "lei": "Lei 8.069/1990 (ECA)",
+      "artigo": "Art. 106",
+      "texto": "Art. 106. Nenhum adolescente será privado de sua liberdade senão em flagrante de ato infracional ou por ordem escrita e fundamentada da autoridade judiciária competente.\nParágrafo único. O adolescente tem direito à identificação dos responsáveis pela sua apreensão, devendo ser informado acerca de seus direitos.",
+      "observacao": "Texto compilado do Planalto (anotações de redação preservadas), conferido dispositivo a dispositivo com a publicação original no Senado Federal."
+     },
+     "fonte_oficial": "https://www.planalto.gov.br/ccivil_03/leis/l8069.htm"
+    },
+    {
+     "tipo": "lei_seca",
+     "titulo": "Lei 8.069/1990 — Art. 107",
+     "subassunto": null,
+     "conteudo": {
+      "lei": "Lei 8.069/1990 (ECA)",
+      "artigo": "Art. 107",
+      "texto": "Art. 107. A apreensão de qualquer adolescente e o local onde se encontra recolhido serão incontinenti comunicados à autoridade judiciária competente e à família do apreendido ou à pessoa por ele indicada.\nParágrafo único. Examinar-se-á, desde logo e sob pena de responsabilidade, a possibilidade de liberação imediata.",
+      "observacao": "Texto compilado do Planalto (anotações de redação preservadas), conferido dispositivo a dispositivo com a publicação original no Senado Federal."
+     },
+     "fonte_oficial": "https://www.planalto.gov.br/ccivil_03/leis/l8069.htm"
+    },
+    {
+     "tipo": "lei_seca",
+     "titulo": "Lei 8.069/1990 — Art. 108",
+     "subassunto": null,
+     "conteudo": {
+      "lei": "Lei 8.069/1990 (ECA)",
+      "artigo": "Art. 108",
+      "texto": "Art. 108. A internação, antes da sentença, pode ser determinada pelo prazo máximo de quarenta e cinco dias.\nParágrafo único. A decisão deverá ser fundamentada e basear-se em indícios suficientes de autoria e materialidade, demonstrada a necessidade imperiosa da medida.",
+      "observacao": "Texto compilado do Planalto (anotações de redação preservadas), conferido dispositivo a dispositivo com a publicação original no Senado Federal."
+     },
+     "fonte_oficial": "https://www.planalto.gov.br/ccivil_03/leis/l8069.htm"
+    },
+    {
+     "tipo": "lei_seca",
+     "titulo": "Lei 8.069/1990 — Art. 109",
+     "subassunto": null,
+     "conteudo": {
+      "lei": "Lei 8.069/1990 (ECA)",
+      "artigo": "Art. 109",
+      "texto": "Art. 109. O adolescente civilmente identificado não será submetido a identificação compulsória pelos órgãos policiais, de proteção e judiciais, salvo para efeito de confrontação, havendo dúvida fundada.",
+      "observacao": "Texto compilado do Planalto (anotações de redação preservadas), conferido dispositivo a dispositivo com a publicação original no Senado Federal."
+     },
+     "fonte_oficial": "https://www.planalto.gov.br/ccivil_03/leis/l8069.htm"
+    },
+    {
+     "tipo": "lei_seca",
+     "titulo": "Lei 8.069/1990 — Art. 115",
+     "subassunto": null,
+     "conteudo": {
+      "lei": "Lei 8.069/1990 (ECA)",
+      "artigo": "Art. 115",
+      "texto": "Art. 115. A advertência consistirá em admoestação verbal, que será reduzida a termo e assinada.",
+      "observacao": "Texto compilado do Planalto (anotações de redação preservadas), conferido dispositivo a dispositivo com a publicação original no Senado Federal."
+     },
+     "fonte_oficial": "https://www.planalto.gov.br/ccivil_03/leis/l8069.htm"
+    },
+    {
+     "tipo": "lei_seca",
+     "titulo": "Lei 8.069/1990 — Art. 116",
+     "subassunto": null,
+     "conteudo": {
+      "lei": "Lei 8.069/1990 (ECA)",
+      "artigo": "Art. 116",
+      "texto": "Art. 116. Em se tratando de ato infracional com reflexos patrimoniais, a autoridade poderá determinar, se for o caso, que o adolescente restitua a coisa, promova o ressarcimento do dano, ou, por outra forma, compense o prejuízo da vítima.\nParágrafo único. Havendo manifesta impossibilidade, a medida poderá ser substituída por outra adequada.",
+      "observacao": "Texto compilado do Planalto (anotações de redação preservadas), conferido dispositivo a dispositivo com a publicação original no Senado Federal."
+     },
+     "fonte_oficial": "https://www.planalto.gov.br/ccivil_03/leis/l8069.htm"
+    },
+    {
+     "tipo": "lei_seca",
+     "titulo": "Lei 8.069/1990 — Art. 117",
+     "subassunto": null,
+     "conteudo": {
+      "lei": "Lei 8.069/1990 (ECA)",
+      "artigo": "Art. 117",
+      "texto": "Art. 117. A prestação de serviços comunitários consiste na realização de tarefas gratuitas de interesse geral, por período não excedente a seis meses, junto a entidades assistenciais, hospitais, escolas e outros estabelecimentos congêneres, bem como em programas comunitários ou governamentais.\nParágrafo único. As tarefas serão atribuídas conforme as aptidões do adolescente, devendo ser cumpridas durante jornada máxima de oito horas semanais, aos sábados, domingos e feriados ou em dias úteis, de modo a não prejudicar a frequência à escola ou à jornada normal de trabalho.",
+      "observacao": "Texto compilado do Planalto (anotações de redação preservadas), conferido dispositivo a dispositivo com a publicação original no Senado Federal."
+     },
+     "fonte_oficial": "https://www.planalto.gov.br/ccivil_03/leis/l8069.htm"
+    },
+    {
+     "tipo": "lei_seca",
+     "titulo": "Lei 8.069/1990 — Art. 118",
+     "subassunto": null,
+     "conteudo": {
+      "lei": "Lei 8.069/1990 (ECA)",
+      "artigo": "Art. 118",
+      "texto": "Art. 118. A liberdade assistida será adotada sempre que se afigurar a medida mais adequada para o fim de acompanhar, auxiliar e orientar o adolescente.\n§ 1º A autoridade designará pessoa capacitada para acompanhar o caso, a qual poderá ser recomendada por entidade ou programa de atendimento.\n§ 2º A liberdade assistida será fixada pelo prazo mínimo de seis meses, podendo a qualquer tempo ser prorrogada, revogada ou substituída por outra medida, ouvido o orientador, o Ministério Público e o defensor.",
+      "observacao": "Texto compilado do Planalto (anotações de redação preservadas), conferido dispositivo a dispositivo com a publicação original no Senado Federal."
+     },
+     "fonte_oficial": "https://www.planalto.gov.br/ccivil_03/leis/l8069.htm"
+    },
+    {
+     "tipo": "lei_seca",
+     "titulo": "Lei 8.069/1990 — Art. 119",
+     "subassunto": null,
+     "conteudo": {
+      "lei": "Lei 8.069/1990 (ECA)",
+      "artigo": "Art. 119",
+      "texto": "Art. 119. Incumbe ao orientador, com o apoio e a supervisão da autoridade competente, a realização dos seguintes encargos, entre outros:\nI - promover socialmente o adolescente e sua família, fornecendo-lhes orientação e inserindo-os, se necessário, em programa oficial ou comunitário de auxílio e assistência social;\nII - supervisionar a frequência e o aproveitamento escolar do adolescente, promovendo, inclusive, sua matrícula;\nIII - diligenciar no sentido da profissionalização do adolescente e de sua inserção no mercado de trabalho;\nIV - apresentar relatório do caso.",
+      "observacao": "Texto compilado do Planalto (anotações de redação preservadas), conferido dispositivo a dispositivo com a publicação original no Senado Federal."
+     },
+     "fonte_oficial": "https://www.planalto.gov.br/ccivil_03/leis/l8069.htm"
+    },
+    {
+     "tipo": "lei_seca",
+     "titulo": "Lei 8.069/1990 — Art. 120",
+     "subassunto": null,
+     "conteudo": {
+      "lei": "Lei 8.069/1990 (ECA)",
+      "artigo": "Art. 120",
+      "texto": "Art. 120. O regime de semi-liberdade pode ser determinado desde o início, ou como forma de transição para o meio aberto, possibilitada a realização de atividades externas, independentemente de autorização judicial.\n§ 1º São obrigatórias a escolarização e a profissionalização, devendo, sempre que possível, ser utilizados os recursos existentes na comunidade.\n§ 2º A medida não comporta prazo determinado aplicando-se, no que couber, as disposições relativas à internação.",
+      "observacao": "Texto compilado do Planalto (anotações de redação preservadas), conferido dispositivo a dispositivo com a publicação original no Senado Federal."
+     },
+     "fonte_oficial": "https://www.planalto.gov.br/ccivil_03/leis/l8069.htm"
+    },
+    {
+     "tipo": "lei_seca",
+     "titulo": "Lei 8.069/1990 — Art. 121",
+     "subassunto": null,
+     "conteudo": {
+      "lei": "Lei 8.069/1990 (ECA)",
+      "artigo": "Art. 121",
+      "texto": "Art. 121. A internação constitui medida privativa da liberdade, sujeita aos princípios de brevidade, excepcionalidade e respeito à condição peculiar de pessoa em desenvolvimento.\n§ 1º Será permitida a realização de atividades externas, a critério da equipe técnica da entidade, salvo expressa determinação judicial em contrário.\n§ 2º A medida não comporta prazo determinado, devendo sua manutenção ser reavaliada, mediante decisão fundamentada, no máximo a cada seis meses.\n§ 3º Em nenhuma hipótese o período máximo de internação excederá a três anos.\n§ 4º Atingido o limite estabelecido no parágrafo anterior, o adolescente deverá ser liberado, colocado em regime de semiliberdade ou de liberdade assistida.\n§ 5º A liberação será compulsória aos vinte e um anos de idade.\n§ 6º. Em qualquer hipótese a desinternação será precedida de autorização judicial, ouvido o Ministério Público.\n§ 7o. A determinação judicial mencionada no § 1o poderá ser revista a qualquer tempo pela autoridade judiciária. (Incluído pela Lei nº 12.594, de 2012)",
+      "observacao": "Texto compilado do Planalto (anotações de redação preservadas), conferido dispositivo a dispositivo com a publicação original no Senado Federal."
+     },
+     "fonte_oficial": "https://www.planalto.gov.br/ccivil_03/leis/l8069.htm"
+    },
+    {
+     "tipo": "lei_seca",
+     "titulo": "Lei 8.069/1990 — Art. 122",
+     "subassunto": null,
+     "conteudo": {
+      "lei": "Lei 8.069/1990 (ECA)",
+      "artigo": "Art. 122",
+      "texto": "Art. 122. A medida de internação só poderá ser aplicada quando:\nI - tratar-se de ato infracional cometido mediante grave ameaça ou violência a pessoa;\nII - por reiteração no cometimento de outras infrações graves;\nIII - por descumprimento reiterado e injustificável da medida anteriormente imposta.\n§ 1o O prazo de internação na hipótese do inciso III deste artigo não poderá ser superior a 3 (três) meses, devendo ser decretada judicialmente após o devido processo legal. (Redação dada pela Lei nº 12.594, de 2012)\n§ 2º. Em nenhuma hipótese será aplicada a internação, havendo outra medida adequada.",
+      "observacao": "Texto compilado do Planalto (anotações de redação preservadas), conferido dispositivo a dispositivo com a publicação original no Senado Federal."
+     },
+     "fonte_oficial": "https://www.planalto.gov.br/ccivil_03/leis/l8069.htm"
+    },
+    {
+     "tipo": "lei_seca",
+     "titulo": "Lei 8.069/1990 — Art. 123",
+     "subassunto": null,
+     "conteudo": {
+      "lei": "Lei 8.069/1990 (ECA)",
+      "artigo": "Art. 123",
+      "texto": "Art. 123. A internação deverá ser cumprida em entidade exclusiva para adolescentes, em local distinto daquele destinado ao abrigo, obedecida rigorosa separação por critérios de idade, compleição física e gravidade da infração.\nParágrafo único. Durante o período de internação, inclusive provisória, serão obrigatórias atividades pedagógicas.",
+      "observacao": "Texto compilado do Planalto (anotações de redação preservadas), conferido dispositivo a dispositivo com a publicação original no Senado Federal."
+     },
+     "fonte_oficial": "https://www.planalto.gov.br/ccivil_03/leis/l8069.htm"
+    },
+    {
+     "tipo": "lei_seca",
+     "titulo": "Lei 8.069/1990 — Art. 124",
+     "subassunto": null,
+     "conteudo": {
+      "lei": "Lei 8.069/1990 (ECA)",
+      "artigo": "Art. 124",
+      "texto": "Art. 124. São direitos do adolescente privado de liberdade, entre outros, os seguintes:\nI - entrevistar-se pessoalmente com o representante do Ministério Público;\nII - peticionar diretamente a qualquer autoridade;\nIII - avistar-se reservadamente com seu defensor;\nIV - ser informado de sua situação processual, sempre que solicitada;\nV - ser tratado com respeito e dignidade;\nVI - permanecer internado na mesma localidade ou naquela mais próxima ao domicílio de seus pais ou responsável;\nVII - receber visitas, ao menos, semanalmente;\nVIII - corresponder-se com seus familiares e amigos;\nIX - ter acesso aos objetos necessários à higiene e asseio pessoal;\nX - habitar alojamento em condições adequadas de higiene e salubridade;\nXI - receber escolarização e profissionalização;\nXII - realizar atividades culturais, esportivas e de lazer:\nXIII - ter acesso aos meios de comunicação social;\nXIV - receber assistência religiosa, segundo a sua crença, e desde que assim o deseje;\nXV - manter a posse de seus objetos pessoais e dispor de local seguro para guardá-los, recebendo comprovante daqueles porventura depositados em poder da entidade;\nXVI - receber, quando de sua desinternação, os documentos pessoais indispensáveis à vida em sociedade.\n§ 1º Em nenhum caso haverá incomunicabilidade.\n§ 2º A autoridade judiciária poderá suspender temporariamente a visita, inclusive de pais ou responsável, se existirem motivos sérios e fundados de sua prejudicialidade aos interesses do adolescente.",
+      "observacao": "Texto compilado do Planalto (anotações de redação preservadas), conferido dispositivo a dispositivo com a publicação original no Senado Federal."
+     },
+     "fonte_oficial": "https://www.planalto.gov.br/ccivil_03/leis/l8069.htm"
+    },
+    {
+     "tipo": "lei_seca",
+     "titulo": "Lei 8.069/1990 — Art. 125",
+     "subassunto": null,
+     "conteudo": {
+      "lei": "Lei 8.069/1990 (ECA)",
+      "artigo": "Art. 125",
+      "texto": "Art. 125. É dever do Estado zelar pela integridade física e mental dos internos, cabendo-lhe adotar as medidas adequadas de contenção e segurança.",
+      "observacao": "Texto compilado do Planalto (anotações de redação preservadas), conferido dispositivo a dispositivo com a publicação original no Senado Federal."
+     },
+     "fonte_oficial": "https://www.planalto.gov.br/ccivil_03/leis/l8069.htm"
+    },
+    {
+     "tipo": "lei_seca",
+     "titulo": "Lei 8.069/1990 — Art. 171",
+     "subassunto": null,
+     "conteudo": {
+      "lei": "Lei 8.069/1990 (ECA)",
+      "artigo": "Art. 171",
+      "texto": "Art. 171. O adolescente apreendido por força de ordem judicial será, desde logo, encaminhado à autoridade judiciária.",
+      "observacao": "Texto compilado do Planalto (anotações de redação preservadas), conferido dispositivo a dispositivo com a publicação original no Senado Federal."
+     },
+     "fonte_oficial": "https://www.planalto.gov.br/ccivil_03/leis/l8069.htm"
+    },
+    {
+     "tipo": "lei_seca",
+     "titulo": "Lei 8.069/1990 — Art. 173",
+     "subassunto": null,
+     "conteudo": {
+      "lei": "Lei 8.069/1990 (ECA)",
+      "artigo": "Art. 173",
+      "texto": "Art. 173. Em caso de flagrante de ato infracional cometido mediante violência ou grave ameaça a pessoa, a autoridade policial, sem prejuízo do disposto nos arts. 106, parágrafo único, e 107, deverá:\nI - lavrar auto de apreensão, ouvidos as testemunhas e o adolescente;\nII - apreender o produto e os instrumentos da infração;\nIII - requisitar os exames ou perícias necessários à comprovação da materialidade e autoria da infração.\nParágrafo único. Nas demais hipóteses de flagrante, a lavratura do auto poderá ser substituída por boletim de ocorrência circunstanciada.",
+      "observacao": "Texto compilado do Planalto (anotações de redação preservadas), conferido dispositivo a dispositivo com a publicação original no Senado Federal."
+     },
+     "fonte_oficial": "https://www.planalto.gov.br/ccivil_03/leis/l8069.htm"
+    },
+    {
+     "tipo": "lei_seca",
+     "titulo": "Lei 8.069/1990 — Art. 174",
+     "subassunto": null,
+     "conteudo": {
+      "lei": "Lei 8.069/1990 (ECA)",
+      "artigo": "Art. 174",
+      "texto": "Art. 174. Comparecendo qualquer dos pais ou responsável, o adolescente será prontamente liberado pela autoridade policial, sob termo de compromisso e responsabilidade de sua apresentação ao representante do Ministério Público, no mesmo dia ou, sendo impossível, no primeiro dia útil imediato, exceto quando, pela gravidade do ato infracional e sua repercussão social, deva o adolescente permanecer sob internação para garantia de sua segurança pessoal ou manutenção da ordem pública.",
+      "observacao": "Texto compilado do Planalto (anotações de redação preservadas), conferido dispositivo a dispositivo com a publicação original no Senado Federal."
+     },
+     "fonte_oficial": "https://www.planalto.gov.br/ccivil_03/leis/l8069.htm"
+    },
+    {
+     "tipo": "lei_seca",
+     "titulo": "Lei 8.069/1990 — Art. 175",
+     "subassunto": null,
+     "conteudo": {
+      "lei": "Lei 8.069/1990 (ECA)",
+      "artigo": "Art. 175",
+      "texto": "Art. 175. Em caso de não liberação, a autoridade policial encaminhará, desde logo, o adolescente ao representante do Ministério Público, juntamente com cópia do auto de apreensão ou boletim de ocorrência.\n§ 1º Sendo impossível a apresentação imediata, a autoridade policial encaminhará o adolescente à entidade de atendimento, que fará a apresentação ao representante do Ministério Público no prazo de vinte e quatro horas.\n§ 2º Nas localidades onde não houver entidade de atendimento, a apresentação far-se-á pela autoridade policial. À falta de repartição policial especializada, o adolescente aguardará a apresentação em dependência separada da destinada a maiores, não podendo, em qualquer hipótese, exceder o prazo referido no parágrafo anterior.",
+      "observacao": "Texto compilado do Planalto (anotações de redação preservadas), conferido dispositivo a dispositivo com a publicação original no Senado Federal."
+     },
+     "fonte_oficial": "https://www.planalto.gov.br/ccivil_03/leis/l8069.htm"
+    },
+    {
+     "tipo": "lei_seca",
+     "titulo": "Lei 8.069/1990 — Art. 176",
+     "subassunto": null,
+     "conteudo": {
+      "lei": "Lei 8.069/1990 (ECA)",
+      "artigo": "Art. 176",
+      "texto": "Art. 176. Sendo o adolescente liberado, a autoridade policial encaminhará imediatamente ao representante do Ministério Público cópia do auto de apreensão ou boletim de ocorrência.",
+      "observacao": "Texto compilado do Planalto (anotações de redação preservadas), conferido dispositivo a dispositivo com a publicação original no Senado Federal."
+     },
+     "fonte_oficial": "https://www.planalto.gov.br/ccivil_03/leis/l8069.htm"
+    },
+    {
+     "tipo": "lei_seca",
+     "titulo": "Lei 8.069/1990 — Art. 177",
+     "subassunto": null,
+     "conteudo": {
+      "lei": "Lei 8.069/1990 (ECA)",
+      "artigo": "Art. 177",
+      "texto": "Art. 177. Se, afastada a hipótese de flagrante, houver indícios de participação de adolescente na prática de ato infracional, a autoridade policial encaminhará ao representante do Ministério Público relatório das investigações e demais documentos.",
+      "observacao": "Texto compilado do Planalto (anotações de redação preservadas), conferido dispositivo a dispositivo com a publicação original no Senado Federal."
+     },
+     "fonte_oficial": "https://www.planalto.gov.br/ccivil_03/leis/l8069.htm"
+    },
+    {
+     "tipo": "lei_seca",
+     "titulo": "Lei 8.069/1990 — Art. 178",
+     "subassunto": null,
+     "conteudo": {
+      "lei": "Lei 8.069/1990 (ECA)",
+      "artigo": "Art. 178",
+      "texto": "Art. 178. O adolescente a quem se atribua autoria de ato infracional não poderá ser conduzido ou transportado em compartimento fechado de veículo policial, em condições atentatórias à sua dignidade, ou que impliquem risco à sua integridade física ou mental, sob pena de responsabilidade.",
+      "observacao": "Texto compilado do Planalto (anotações de redação preservadas), conferido dispositivo a dispositivo com a publicação original no Senado Federal."
+     },
+     "fonte_oficial": "https://www.planalto.gov.br/ccivil_03/leis/l8069.htm"
+    }
+   ]
+  },
+  {
+   "curso": "gcm-geral",
+   "disciplina": "Legislação de Proteção a Grupos Vulneráveis",
+   "assunto": "Estatuto da Pessoa Idosa (Lei nº 10.741/2003)",
+   "materiais": [
+    {
+     "tipo": "lei_seca",
+     "titulo": "Lei 10.741/2003 — Art. 1",
+     "subassunto": null,
+     "conteudo": {
+      "lei": "Lei 10.741/2003 (Estatuto da Pessoa Idosa)",
+      "artigo": "Art. 1",
+      "texto": "Art. 1o É instituído o Estatuto da Pessoa Idosa, destinado a regular os direitos assegurados às pessoas com idade igual ou superior a 60 (sessenta) anos. (Redação dada pela Lei nº 14.423, de 2022)",
+      "observacao": "Texto compilado do Planalto (anotações de redação preservadas), conferido dispositivo a dispositivo com a publicação original no Senado Federal."
+     },
+     "fonte_oficial": "https://www.planalto.gov.br/ccivil_03/leis/2003/l10.741.htm"
+    },
+    {
+     "tipo": "lei_seca",
+     "titulo": "Lei 10.741/2003 — Art. 2",
+     "subassunto": null,
+     "conteudo": {
+      "lei": "Lei 10.741/2003 (Estatuto da Pessoa Idosa)",
+      "artigo": "Art. 2",
+      "texto": "Art. 2o A pessoa idosa goza de todos os direitos fundamentais inerentes à pessoa humana, sem prejuízo da proteção integral de que trata esta Lei, assegurando-se-lhe, por lei ou por outros meios, todas as oportunidades e facilidades, para preservação de sua saúde física e mental e seu aperfeiçoamento moral, intelectual, espiritual e social, em condições de liberdade e dignidade. (Redação dada pela Lei nº 14.423, de 2022)",
+      "observacao": "Texto compilado do Planalto (anotações de redação preservadas), conferido dispositivo a dispositivo com a publicação original no Senado Federal."
+     },
+     "fonte_oficial": "https://www.planalto.gov.br/ccivil_03/leis/2003/l10.741.htm"
+    },
+    {
+     "tipo": "lei_seca",
+     "titulo": "Lei 10.741/2003 — Art. 3",
+     "subassunto": null,
+     "conteudo": {
+      "lei": "Lei 10.741/2003 (Estatuto da Pessoa Idosa)",
+      "artigo": "Art. 3",
+      "texto": "Art. 3o É obrigação da família, da comunidade, da sociedade e do Poder Público assegurar à pessoa idosa, com absoluta prioridade, a efetivação do direito à vida, à saúde, à alimentação, à educação, à cultura, ao esporte, ao lazer, ao trabalho, à cidadania, à liberdade, à dignidade, ao respeito e à convivência familiar e comunitária. (Redação dada pela Lei nº 14.423, de 2022)\n§ 1º A garantia de prioridade compreende:\nI – atendimento preferencial imediato e individualizado junto aos órgãos públicos e privados prestadores de serviços à população;\nII – preferência na formulação e na execução de políticas sociais públicas específicas;\nIII – destinação privilegiada de recursos públicos nas áreas relacionadas com a proteção à pessoa idosa; (Redação dada pela Lei nº 14.423, de 2022)\nIV – viabilização de formas alternativas de participação, ocupação e convívio da pessoa idosa com as demais gerações; (Redação dada pela Lei nº 14.423, de 2022)\nV – priorização do atendimento da pessoa idosa por sua própria família, em detrimento do atendimento asilar, exceto dos que não a possuam ou careçam de condições de manutenção da própria sobrevivência; (Redação dada pela Lei nº 14.423, de 2022)\nVI – capacitação e reciclagem dos recursos humanos nas áreas de geriatria e gerontologia e na prestação de serviços às pessoas idosas; (Redação dada pela Lei nº 14.423, de 2022)\nVII – estabelecimento de mecanismos que favoreçam a divulgação de informações de caráter educativo sobre os aspectos biopsicossociais de envelhecimento;\nVIII – garantia de acesso à rede de serviços de saúde e de assistência social locais.\nIX – prioridade no recebimento da restituição do Imposto de Renda. (Incluído pela Lei nº 11.765, de 2008)\n§ 2º Entre as pessoas idosas, é assegurada prioridade especial aos maiores de 80 (oitenta) anos, atendendo-se suas necessidades sempre preferencialmente em relação às demais pessoas idosas. (Redação dada pela Lei nº 14.423, de 2022)",
+      "observacao": "Texto compilado do Planalto (anotações de redação preservadas), conferido dispositivo a dispositivo com a publicação original no Senado Federal."
+     },
+     "fonte_oficial": "https://www.planalto.gov.br/ccivil_03/leis/2003/l10.741.htm"
+    },
+    {
+     "tipo": "lei_seca",
+     "titulo": "Lei 10.741/2003 — Art. 4",
+     "subassunto": null,
+     "conteudo": {
+      "lei": "Lei 10.741/2003 (Estatuto da Pessoa Idosa)",
+      "artigo": "Art. 4",
+      "texto": "Art. 4o Nenhuma pessoa idosa será objeto de qualquer tipo de negligência, discriminação, violência, crueldade ou opressão, e todo atentado aos seus direitos, por ação ou omissão, será punido na forma da lei. (Redação dada pela Lei nº 14.423, de 2022)\n§ 1o É dever de todos prevenir a ameaça ou violação aos direitos da pessoa idosa. (Redação dada pela Lei nº 14.423, de 2022)\n§ 2o As obrigações previstas nesta Lei não excluem da prevenção outras decorrentes dos princípios por ela adotados.",
+      "observacao": "Texto compilado do Planalto (anotações de redação preservadas), conferido dispositivo a dispositivo com a publicação original no Senado Federal."
+     },
+     "fonte_oficial": "https://www.planalto.gov.br/ccivil_03/leis/2003/l10.741.htm"
+    },
+    {
+     "tipo": "lei_seca",
+     "titulo": "Lei 10.741/2003 — Art. 5",
+     "subassunto": null,
+     "conteudo": {
+      "lei": "Lei 10.741/2003 (Estatuto da Pessoa Idosa)",
+      "artigo": "Art. 5",
+      "texto": "Art. 5o A inobservância das normas de prevenção importará em responsabilidade à pessoa física ou jurídica nos termos da lei.",
+      "observacao": "Texto compilado do Planalto (anotações de redação preservadas), conferido dispositivo a dispositivo com a publicação original no Senado Federal."
+     },
+     "fonte_oficial": "https://www.planalto.gov.br/ccivil_03/leis/2003/l10.741.htm"
+    },
+    {
+     "tipo": "lei_seca",
+     "titulo": "Lei 10.741/2003 — Art. 6",
+     "subassunto": null,
+     "conteudo": {
+      "lei": "Lei 10.741/2003 (Estatuto da Pessoa Idosa)",
+      "artigo": "Art. 6",
+      "texto": "Art. 6o Todo cidadão tem o dever de comunicar à autoridade competente qualquer forma de violação a esta Lei que tenha testemunhado ou de que tenha conhecimento.",
+      "observacao": "Texto compilado do Planalto (anotações de redação preservadas), conferido dispositivo a dispositivo com a publicação original no Senado Federal."
+     },
+     "fonte_oficial": "https://www.planalto.gov.br/ccivil_03/leis/2003/l10.741.htm"
+    },
+    {
+     "tipo": "lei_seca",
+     "titulo": "Lei 10.741/2003 — Art. 7",
+     "subassunto": null,
+     "conteudo": {
+      "lei": "Lei 10.741/2003 (Estatuto da Pessoa Idosa)",
+      "artigo": "Art. 7",
+      "texto": "Art. 7o Os Conselhos Nacional, Estaduais, do Distrito Federal e Municipais da Pessoa Idosa, previstos na Lei nº 8.842, de 4 de janeiro de 1994, zelarão pelo cumprimento dos direitos da pessoa idosa, definidos nesta Lei. (Redação dada pela Lei nº 14.423, de 2022)",
+      "observacao": "Texto compilado do Planalto (anotações de redação preservadas), conferido dispositivo a dispositivo com a publicação original no Senado Federal."
+     },
+     "fonte_oficial": "https://www.planalto.gov.br/ccivil_03/leis/2003/l10.741.htm"
+    },
+    {
+     "tipo": "lei_seca",
+     "titulo": "Lei 10.741/2003 — Art. 8",
+     "subassunto": null,
+     "conteudo": {
+      "lei": "Lei 10.741/2003 (Estatuto da Pessoa Idosa)",
+      "artigo": "Art. 8",
+      "texto": "Art. 8o O envelhecimento é um direito personalíssimo e a sua proteção um direito social, nos termos desta Lei e da legislação vigente.",
+      "observacao": "Texto compilado do Planalto (anotações de redação preservadas), conferido dispositivo a dispositivo com a publicação original no Senado Federal."
+     },
+     "fonte_oficial": "https://www.planalto.gov.br/ccivil_03/leis/2003/l10.741.htm"
+    },
+    {
+     "tipo": "lei_seca",
+     "titulo": "Lei 10.741/2003 — Art. 9",
+     "subassunto": null,
+     "conteudo": {
+      "lei": "Lei 10.741/2003 (Estatuto da Pessoa Idosa)",
+      "artigo": "Art. 9",
+      "texto": "Art. 9o É obrigação do Estado, garantir à pessoa idosa a proteção à vida e à saúde, mediante efetivação de políticas sociais públicas que permitam um envelhecimento saudável e em condições de dignidade.",
+      "observacao": "Texto compilado do Planalto (anotações de redação preservadas), conferido dispositivo a dispositivo com a publicação original no Senado Federal."
+     },
+     "fonte_oficial": "https://www.planalto.gov.br/ccivil_03/leis/2003/l10.741.htm"
+    },
+    {
+     "tipo": "lei_seca",
+     "titulo": "Lei 10.741/2003 — Art. 10",
+     "subassunto": null,
+     "conteudo": {
+      "lei": "Lei 10.741/2003 (Estatuto da Pessoa Idosa)",
+      "artigo": "Art. 10",
+      "texto": "Art. 10. É obrigação do Estado e da sociedade assegurar à pessoa idosa a liberdade, o respeito e a dignidade, como pessoa humana e sujeito de direitos civis, políticos, individuais e sociais, garantidos na Constituição e nas leis. (Redação dada pela Lei nº 14.423, de 2022)\n§ 1o O direito à liberdade compreende, entre outros, os seguintes aspectos:\nI – faculdade de ir, vir e estar nos logradouros públicos e espaços comunitários, ressalvadas as restrições legais;\nII – opinião e expressão;\nIII – crença e culto religioso;\nIV – prática de esportes e de diversões;\nV – participação na vida familiar e comunitária;\nVI – participação na vida política, na forma da lei;\nVII – faculdade de buscar refúgio, auxílio e orientação.\n§ 2o O direito ao respeito consiste na inviolabilidade da integridade física, psíquica e moral, abrangendo a preservação da imagem, da identidade, da autonomia, de valores, ideias e crenças, dos espaços e dos objetos pessoais.\n§ 3o É dever de todos zelar pela dignidade da pessoa idosa, colocando-a a salvo de qualquer tratamento desumano, violento, aterrorizante, vexatório ou constrangedor. (Redação dada pela Lei nº 14.423, de 2022)",
+      "observacao": "Texto compilado do Planalto (anotações de redação preservadas), conferido dispositivo a dispositivo com a publicação original no Senado Federal."
+     },
+     "fonte_oficial": "https://www.planalto.gov.br/ccivil_03/leis/2003/l10.741.htm"
+    },
+    {
+     "tipo": "lei_seca",
+     "titulo": "Lei 10.741/2003 — Art. 93",
+     "subassunto": null,
+     "conteudo": {
+      "lei": "Lei 10.741/2003 (Estatuto da Pessoa Idosa)",
+      "artigo": "Art. 93",
+      "texto": "Art. 93. Aplicam-se subsidiariamente, no que couber, as disposições da Lei no 7.347, de 24 de julho de 1985.",
+      "observacao": "Texto compilado do Planalto (anotações de redação preservadas), conferido dispositivo a dispositivo com a publicação original no Senado Federal."
+     },
+     "fonte_oficial": "https://www.planalto.gov.br/ccivil_03/leis/2003/l10.741.htm"
+    },
+    {
+     "tipo": "lei_seca",
+     "titulo": "Lei 10.741/2003 — Art. 94",
+     "subassunto": null,
+     "conteudo": {
+      "lei": "Lei 10.741/2003 (Estatuto da Pessoa Idosa)",
+      "artigo": "Art. 94",
+      "texto": "Art. 94. Aos crimes previstos nesta Lei aplicam-se, no que couber, as disposições do Decreto-Lei nº 2.848, de 7 de dezembro de 1940 (Código Penal), e do Decreto-Lei nº 3.689, de 3 de outubro de 1941 (Código de Processo Penal). (Redação dada pela Lei nº 15.163, de 2025)\nParágrafo único. Aos crimes previstos nesta Lei e aos crimes praticados com violência contra a pessoa idosa, independentemente da pena prevista, não se aplica a Lei nº 9.099, de 26 de setembro de 1995. (Incluído pela Lei nº 15.163, de 2025)",
+      "observacao": "Texto compilado do Planalto (anotações de redação preservadas), conferido dispositivo a dispositivo com a publicação original no Senado Federal."
+     },
+     "fonte_oficial": "https://www.planalto.gov.br/ccivil_03/leis/2003/l10.741.htm"
+    },
+    {
+     "tipo": "lei_seca",
+     "titulo": "Lei 10.741/2003 — Art. 95",
+     "subassunto": null,
+     "conteudo": {
+      "lei": "Lei 10.741/2003 (Estatuto da Pessoa Idosa)",
+      "artigo": "Art. 95",
+      "texto": "Art. 95. Os crimes definidos nesta Lei são de ação penal pública incondicionada, não se lhes aplicando os arts. 181 e 182 do Código Penal.",
+      "observacao": "Texto compilado do Planalto (anotações de redação preservadas), conferido dispositivo a dispositivo com a publicação original no Senado Federal."
+     },
+     "fonte_oficial": "https://www.planalto.gov.br/ccivil_03/leis/2003/l10.741.htm"
+    },
+    {
+     "tipo": "lei_seca",
+     "titulo": "Lei 10.741/2003 — Art. 96",
+     "subassunto": null,
+     "conteudo": {
+      "lei": "Lei 10.741/2003 (Estatuto da Pessoa Idosa)",
+      "artigo": "Art. 96",
+      "texto": "Art. 96. Discriminar pessoa idosa, impedindo ou dificultando seu acesso a operações bancárias, aos meios de transporte, ao direito de contratar ou por qualquer outro meio ou instrumento necessário ao exercício da cidadania, por motivo de idade:\nPena – reclusão de 6 (seis) meses a 1 (um) ano e multa.\n§ 1o Na mesma pena incorre quem desdenhar, humilhar, menosprezar ou discriminar pessoa idosa, por qualquer motivo.\n§ 2o A pena será aumentada de 1/3 (um terço) se a vítima se encontrar sob os cuidados ou responsabilidade do agente.\n§ 3º Não constitui crime a negativa de crédito motivada por superendividamento da pessoa idosa. (Redação dada pela Lei nº 14.423, de 2022)",
+      "observacao": "Texto compilado do Planalto (anotações de redação preservadas), conferido dispositivo a dispositivo com a publicação original no Senado Federal."
+     },
+     "fonte_oficial": "https://www.planalto.gov.br/ccivil_03/leis/2003/l10.741.htm"
+    },
+    {
+     "tipo": "lei_seca",
+     "titulo": "Lei 10.741/2003 — Art. 97",
+     "subassunto": null,
+     "conteudo": {
+      "lei": "Lei 10.741/2003 (Estatuto da Pessoa Idosa)",
+      "artigo": "Art. 97",
+      "texto": "Art. 97. Deixar de prestar assistência à pessoa idosa, quando possível fazê-lo sem risco pessoal, em situação de iminente perigo, ou recusar, retardar ou dificultar sua assistência à saúde, sem justa causa, ou não pedir, nesses casos, o socorro de autoridade pública: (Redação dada pela Lei nº 14.423, de 2022)\nPena – detenção de 6 (seis) meses a 1 (um) ano e multa.\nParágrafo único. A pena é aumentada de metade, se da omissão resulta lesão corporal de natureza grave, e triplicada, se resulta a morte.",
+      "observacao": "Texto compilado do Planalto (anotações de redação preservadas), conferido dispositivo a dispositivo com a publicação original no Senado Federal."
+     },
+     "fonte_oficial": "https://www.planalto.gov.br/ccivil_03/leis/2003/l10.741.htm"
+    },
+    {
+     "tipo": "lei_seca",
+     "titulo": "Lei 10.741/2003 — Art. 98",
+     "subassunto": null,
+     "conteudo": {
+      "lei": "Lei 10.741/2003 (Estatuto da Pessoa Idosa)",
+      "artigo": "Art. 98",
+      "texto": "Art. 98. Abandonar a pessoa idosa em hospitais, casas de saúde, entidades de longa permanência, ou congêneres, ou não prover suas necessidades básicas, quando obrigado por lei ou mandado: (Redação dada pela Lei nº 14.423, de 2022)\nPena – detenção de 6 (seis) meses a 3 (três) anos e multa.",
+      "observacao": "Texto compilado do Planalto (anotações de redação preservadas), conferido dispositivo a dispositivo com a publicação original no Senado Federal."
+     },
+     "fonte_oficial": "https://www.planalto.gov.br/ccivil_03/leis/2003/l10.741.htm"
+    },
+    {
+     "tipo": "lei_seca",
+     "titulo": "Lei 10.741/2003 — Art. 99",
+     "subassunto": null,
+     "conteudo": {
+      "lei": "Lei 10.741/2003 (Estatuto da Pessoa Idosa)",
+      "artigo": "Art. 99",
+      "texto": "Art. 99. Expor a perigo a integridade e a saúde, física ou psíquica, da pessoa idosa, submetendo-a a condições desumanas ou degradantes ou privando-a de alimentos e cuidados indispensáveis, quando obrigado a fazê-lo, ou sujeitando-a a trabalho excessivo ou inadequado: (Redação dada pela Lei nº 14.423, de 2022)\nPena - reclusão, de 2 (dois) a 5 (cinco) anos. (Redação dada pela Lei nº 15.163, de 2025)\n§ 1o Se do fato resulta lesão corporal de natureza grave:\nPena - reclusão, de 3 (três) a 7 (sete) anos. (Redação dada pela Lei nº 15.163, de 2025)\n§ 2o Se resulta a morte:\nPena - reclusão, de 8 (oito) a 14 (quatorze) anos. (Redação dada pela Lei nº 15.163, de 2025)",
+      "observacao": "Texto compilado do Planalto (anotações de redação preservadas), conferido dispositivo a dispositivo com a publicação original no Senado Federal."
+     },
+     "fonte_oficial": "https://www.planalto.gov.br/ccivil_03/leis/2003/l10.741.htm"
+    },
+    {
+     "tipo": "lei_seca",
+     "titulo": "Lei 10.741/2003 — Art. 100",
+     "subassunto": null,
+     "conteudo": {
+      "lei": "Lei 10.741/2003 (Estatuto da Pessoa Idosa)",
+      "artigo": "Art. 100",
+      "texto": "Art. 100. Constitui crime punível com reclusão de 6 (seis) meses a 1 (um) ano e multa:\nI – obstar o acesso de alguém a qualquer cargo público por motivo de idade;\nII – negar a alguém, por motivo de idade, emprego ou trabalho;\nIII – recusar, retardar ou dificultar atendimento ou deixar de prestar assistência à saúde, sem justa causa, a pessoa idosa;\nIV – deixar de cumprir, retardar ou frustrar, sem justo motivo, a execução de ordem judicial expedida na ação civil a que alude esta Lei;\nV – recusar, retardar ou omitir dados técnicos indispensáveis à propositura da ação civil objeto desta Lei, quando requisitados pelo Ministério Público.",
+      "observacao": "Texto compilado do Planalto (anotações de redação preservadas), conferido dispositivo a dispositivo com a publicação original no Senado Federal."
+     },
+     "fonte_oficial": "https://www.planalto.gov.br/ccivil_03/leis/2003/l10.741.htm"
+    },
+    {
+     "tipo": "lei_seca",
+     "titulo": "Lei 10.741/2003 — Art. 101",
+     "subassunto": null,
+     "conteudo": {
+      "lei": "Lei 10.741/2003 (Estatuto da Pessoa Idosa)",
+      "artigo": "Art. 101",
+      "texto": "Art. 101. Deixar de cumprir, retardar ou frustrar, sem justo motivo, a execução de ordem judicial expedida nas ações em que for parte ou interveniente a pessoa idosa: (Redação dada pela Lei nº 14.423, de 2022)\nPena – detenção de 6 (seis) meses a 1 (um) ano e multa.",
+      "observacao": "Texto compilado do Planalto (anotações de redação preservadas), conferido dispositivo a dispositivo com a publicação original no Senado Federal."
+     },
+     "fonte_oficial": "https://www.planalto.gov.br/ccivil_03/leis/2003/l10.741.htm"
+    },
+    {
+     "tipo": "lei_seca",
+     "titulo": "Lei 10.741/2003 — Art. 102",
+     "subassunto": null,
+     "conteudo": {
+      "lei": "Lei 10.741/2003 (Estatuto da Pessoa Idosa)",
+      "artigo": "Art. 102",
+      "texto": "Art. 102. Apropriar-se de ou desviar bens, proventos, pensão ou qualquer outro rendimento da pessoa idosa, dando-lhes aplicação diversa da de sua finalidade: (Redação dada pela Lei nº 14.423, de 2022)\nPena – reclusão de 1 (um) a 4 (quatro) anos e multa.",
+      "observacao": "Texto compilado do Planalto (anotações de redação preservadas), conferido dispositivo a dispositivo com a publicação original no Senado Federal."
+     },
+     "fonte_oficial": "https://www.planalto.gov.br/ccivil_03/leis/2003/l10.741.htm"
+    },
+    {
+     "tipo": "lei_seca",
+     "titulo": "Lei 10.741/2003 — Art. 103",
+     "subassunto": null,
+     "conteudo": {
+      "lei": "Lei 10.741/2003 (Estatuto da Pessoa Idosa)",
+      "artigo": "Art. 103",
+      "texto": "Art. 103. Negar o acolhimento ou a permanência da pessoa idosa, como abrigada, por recusa desta em outorgar procuração à entidade de atendimento: (Redação dada pela Lei nº 14.423, de 2022)\nPena – detenção de 6 (seis) meses a 1 (um) ano e multa.",
+      "observacao": "Texto compilado do Planalto (anotações de redação preservadas), conferido dispositivo a dispositivo com a publicação original no Senado Federal."
+     },
+     "fonte_oficial": "https://www.planalto.gov.br/ccivil_03/leis/2003/l10.741.htm"
+    },
+    {
+     "tipo": "lei_seca",
+     "titulo": "Lei 10.741/2003 — Art. 104",
+     "subassunto": null,
+     "conteudo": {
+      "lei": "Lei 10.741/2003 (Estatuto da Pessoa Idosa)",
+      "artigo": "Art. 104",
+      "texto": "Art. 104. Reter o cartão magnético de conta bancária relativa a benefícios, proventos ou pensão da pessoa idosa, bem como qualquer outro documento com objetivo de assegurar recebimento ou ressarcimento de dívida: (Redação dada pela Lei nº 14.423, de 2022)\nPena – detenção de 6 (seis) meses a 2 (dois) anos e multa.",
+      "observacao": "Texto compilado do Planalto (anotações de redação preservadas), conferido dispositivo a dispositivo com a publicação original no Senado Federal."
+     },
+     "fonte_oficial": "https://www.planalto.gov.br/ccivil_03/leis/2003/l10.741.htm"
+    },
+    {
+     "tipo": "lei_seca",
+     "titulo": "Lei 10.741/2003 — Art. 105",
+     "subassunto": null,
+     "conteudo": {
+      "lei": "Lei 10.741/2003 (Estatuto da Pessoa Idosa)",
+      "artigo": "Art. 105",
+      "texto": "Art. 105. Exibir ou veicular, por qualquer meio de comunicação, informações ou imagens depreciativas ou injuriosas à pessoa idosa: (Redação dada pela Lei nº 14.423, de 2022)\nPena – detenção de 1 (um) a 3 (três) anos e multa.",
+      "observacao": "Texto compilado do Planalto (anotações de redação preservadas), conferido dispositivo a dispositivo com a publicação original no Senado Federal."
+     },
+     "fonte_oficial": "https://www.planalto.gov.br/ccivil_03/leis/2003/l10.741.htm"
+    },
+    {
+     "tipo": "lei_seca",
+     "titulo": "Lei 10.741/2003 — Art. 106",
+     "subassunto": null,
+     "conteudo": {
+      "lei": "Lei 10.741/2003 (Estatuto da Pessoa Idosa)",
+      "artigo": "Art. 106",
+      "texto": "Art. 106. Induzir pessoa idosa sem discernimento de seus atos a outorgar procuração para fins de administração de bens ou deles dispor livremente:\nPena – reclusão de 2 (dois) a 4 (quatro) anos.",
+      "observacao": "Texto compilado do Planalto (anotações de redação preservadas), conferido dispositivo a dispositivo com a publicação original no Senado Federal."
+     },
+     "fonte_oficial": "https://www.planalto.gov.br/ccivil_03/leis/2003/l10.741.htm"
+    },
+    {
+     "tipo": "lei_seca",
+     "titulo": "Lei 10.741/2003 — Art. 107",
+     "subassunto": null,
+     "conteudo": {
+      "lei": "Lei 10.741/2003 (Estatuto da Pessoa Idosa)",
+      "artigo": "Art. 107",
+      "texto": "Art. 107. Coagir, de qualquer modo, a pessoa idosa a doar, contratar, testar ou outorgar procuração: (Redação dada pela Lei nº 14.423, de 2022)\nPena – reclusão de 2 (dois) a 5 (cinco) anos.",
+      "observacao": "Texto compilado do Planalto (anotações de redação preservadas), conferido dispositivo a dispositivo com a publicação original no Senado Federal."
+     },
+     "fonte_oficial": "https://www.planalto.gov.br/ccivil_03/leis/2003/l10.741.htm"
+    },
+    {
+     "tipo": "lei_seca",
+     "titulo": "Lei 10.741/2003 — Art. 108",
+     "subassunto": null,
+     "conteudo": {
+      "lei": "Lei 10.741/2003 (Estatuto da Pessoa Idosa)",
+      "artigo": "Art. 108",
+      "texto": "Art. 108. Lavrar ato notarial que envolva pessoa idosa sem discernimento de seus atos, sem a devida representação legal:\nPena – reclusão de 2 (dois) a 4 (quatro) anos.",
+      "observacao": "Texto compilado do Planalto (anotações de redação preservadas), conferido dispositivo a dispositivo com a publicação original no Senado Federal."
+     },
+     "fonte_oficial": "https://www.planalto.gov.br/ccivil_03/leis/2003/l10.741.htm"
+    }
+   ]
+  },
+  {
+   "curso": "gcm-geral",
+   "disciplina": "Legislação de Proteção a Grupos Vulneráveis",
+   "assunto": "Estatuto da Pessoa com Deficiência (Lei nº 13.146/2015)",
+   "materiais": [
+    {
+     "tipo": "lei_seca",
+     "titulo": "Lei 13.146/2015 — Art. 1",
+     "subassunto": null,
+     "conteudo": {
+      "lei": "Lei 13.146/2015 (Estatuto da Pessoa com Deficiência)",
+      "artigo": "Art. 1",
+      "texto": "Art. 1o É instituída a Lei Brasileira de Inclusão da Pessoa com Deficiência (Estatuto da Pessoa com Deficiência), destinada a assegurar e a promover, em condições de igualdade, o exercício dos direitos e das liberdades fundamentais por pessoa com deficiência, visando à sua inclusão social e cidadania.\nParágrafo único. Esta Lei tem como base a Convenção sobre os Direitos das Pessoas com Deficiência e seu Protocolo Facultativo, ratificados pelo Congresso Nacional por meio do Decreto Legislativo no 186, de 9 de julho de 2008, em conformidade com o procedimento previsto no § 3o do art. 5o da Constituição da República Federativa do Brasil, em vigor para o Brasil, no plano jurídico externo, desde 31 de agosto de 2008, e promulgados pelo Decreto no 6.949, de 25 de agosto de 2009, data de início de sua vigência no plano interno.",
+      "observacao": "Texto compilado do Planalto (anotações de redação preservadas), conferido dispositivo a dispositivo com a publicação original no Senado Federal."
+     },
+     "fonte_oficial": "https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2015/lei/l13146.htm"
+    },
+    {
+     "tipo": "lei_seca",
+     "titulo": "Lei 13.146/2015 — Art. 4",
+     "subassunto": null,
+     "conteudo": {
+      "lei": "Lei 13.146/2015 (Estatuto da Pessoa com Deficiência)",
+      "artigo": "Art. 4",
+      "texto": "Art. 4o Toda pessoa com deficiência tem direito à igualdade de oportunidades com as demais pessoas e não sofrerá nenhuma espécie de discriminação.\n§ 1o Considera-se discriminação em razão da deficiência toda forma de distinção, restrição ou exclusão, por ação ou omissão, que tenha o propósito ou o efeito de prejudicar, impedir ou anular o reconhecimento ou o exercício dos direitos e das liberdades fundamentais de pessoa com deficiência, incluindo a recusa de adaptações razoáveis e de fornecimento de tecnologias assistivas.\n§ 2o A pessoa com deficiência não está obrigada à fruição de benefícios decorrentes de ação afirmativa.",
+      "observacao": "Texto compilado do Planalto (anotações de redação preservadas), conferido dispositivo a dispositivo com a publicação original no Senado Federal."
+     },
+     "fonte_oficial": "https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2015/lei/l13146.htm"
+    },
+    {
+     "tipo": "lei_seca",
+     "titulo": "Lei 13.146/2015 — Art. 5",
+     "subassunto": null,
+     "conteudo": {
+      "lei": "Lei 13.146/2015 (Estatuto da Pessoa com Deficiência)",
+      "artigo": "Art. 5",
+      "texto": "Art. 5o A pessoa com deficiência será protegida de toda forma de negligência, discriminação, exploração, violência, tortura, crueldade, opressão e tratamento desumano ou degradante.\nParágrafo único. Para os fins da proteção mencionada no caput deste artigo, são considerados especialmente vulneráveis a criança, o adolescente, a mulher e o idoso, com deficiência.",
+      "observacao": "Texto compilado do Planalto (anotações de redação preservadas), conferido dispositivo a dispositivo com a publicação original no Senado Federal."
+     },
+     "fonte_oficial": "https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2015/lei/l13146.htm"
+    },
+    {
+     "tipo": "lei_seca",
+     "titulo": "Lei 13.146/2015 — Art. 6",
+     "subassunto": null,
+     "conteudo": {
+      "lei": "Lei 13.146/2015 (Estatuto da Pessoa com Deficiência)",
+      "artigo": "Art. 6",
+      "texto": "Art. 6o A deficiência não afeta a plena capacidade civil da pessoa, inclusive para:\nI - casar-se e constituir união estável;\nII - exercer direitos sexuais e reprodutivos;\nIII - exercer o direito de decidir sobre o número de filhos e de ter acesso a informações adequadas sobre reprodução e planejamento familiar;\nIV - conservar sua fertilidade, sendo vedada a esterilização compulsória;\nV - exercer o direito à família e à convivência familiar e comunitária; e\nVI - exercer o direito à guarda, à tutela, à curatela e à adoção, como adotante ou adotando, em igualdade de oportunidades com as demais pessoas.",
+      "observacao": "Texto compilado do Planalto (anotações de redação preservadas), conferido dispositivo a dispositivo com a publicação original no Senado Federal."
+     },
+     "fonte_oficial": "https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2015/lei/l13146.htm"
+    },
+    {
+     "tipo": "lei_seca",
+     "titulo": "Lei 13.146/2015 — Art. 8",
+     "subassunto": null,
+     "conteudo": {
+      "lei": "Lei 13.146/2015 (Estatuto da Pessoa com Deficiência)",
+      "artigo": "Art. 8",
+      "texto": "Art. 8o É dever do Estado, da sociedade e da família assegurar à pessoa com deficiência, com prioridade, a efetivação dos direitos referentes à vida, à saúde, à sexualidade, à paternidade e à maternidade, à alimentação, à habitação, à educação, à profissionalização, ao trabalho, à previdência social, à habilitação e à reabilitação, ao transporte, à acessibilidade, à cultura, ao desporto, ao turismo, ao lazer, à informação, à comunicação, aos avanços científicos e tecnológicos, à dignidade, ao respeito, à liberdade, à convivência familiar e comunitária, entre outros decorrentes da Constituição Federal, da Convenção sobre os Direitos das Pessoas com Deficiência e seu Protocolo Facultativo e das leis e de outras normas que garantam seu bem-estar pessoal, social e econômico. (DPEPR-20240",
+      "observacao": "Texto compilado do Planalto (anotações de redação preservadas), conferido dispositivo a dispositivo com a publicação original no Senado Federal."
+     },
+     "fonte_oficial": "https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2015/lei/l13146.htm"
+    },
+    {
+     "tipo": "lei_seca",
+     "titulo": "Lei 13.146/2015 — Art. 9",
+     "subassunto": null,
+     "conteudo": {
+      "lei": "Lei 13.146/2015 (Estatuto da Pessoa com Deficiência)",
+      "artigo": "Art. 9",
+      "texto": "Art. 9o A pessoa com deficiência tem direito a receber atendimento prioritário, sobretudo com a finalidade de:\nI - proteção e socorro em quaisquer circunstâncias;\nII - atendimento em todas as instituições e serviços de atendimento ao público;\nIII - disponibilização de recursos, tanto humanos quanto tecnológicos, que garantam atendimento em igualdade de condições com as demais pessoas;\nIV - disponibilização de pontos de parada, estações e terminais acessíveis de transporte coletivo de passageiros e garantia de segurança no embarque e no desembarque;\nV - acesso a informações e disponibilização de recursos de comunicação acessíveis;\nVI - recebimento de restituição de imposto de renda;\nVII - tramitação processual e procedimentos judiciais e administrativos em que for parte ou interessada, em todos os atos e diligências.\n§ 1o Os direitos previstos neste artigo são extensivos ao acompanhante da pessoa com deficiência ou ao seu atendente pessoal, exceto quanto ao disposto nos incisos VI e VII deste artigo.\n§ 2o Nos serviços de emergência públicos e privados, a prioridade conferida por esta Lei é condicionada aos protocolos de atendimento médico.",
+      "observacao": "Texto compilado do Planalto (anotações de redação preservadas), conferido dispositivo a dispositivo com a publicação original no Senado Federal."
+     },
+     "fonte_oficial": "https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2015/lei/l13146.htm"
+    },
+    {
+     "tipo": "lei_seca",
+     "titulo": "Lei 13.146/2015 — Art. 10",
+     "subassunto": null,
+     "conteudo": {
+      "lei": "Lei 13.146/2015 (Estatuto da Pessoa com Deficiência)",
+      "artigo": "Art. 10",
+      "texto": "Art. 10. Compete ao poder público garantir a dignidade da pessoa com deficiência ao longo de toda a vida.\nParágrafo único. Em situações de risco, emergência ou estado de calamidade pública, a pessoa com deficiência será considerada vulnerável, devendo o poder público adotar medidas para sua proteção e segurança.",
+      "observacao": "Texto compilado do Planalto (anotações de redação preservadas), conferido dispositivo a dispositivo com a publicação original no Senado Federal."
+     },
+     "fonte_oficial": "https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2015/lei/l13146.htm"
+    },
+    {
+     "tipo": "lei_seca",
+     "titulo": "Lei 13.146/2015 — Art. 88",
+     "subassunto": null,
+     "conteudo": {
+      "lei": "Lei 13.146/2015 (Estatuto da Pessoa com Deficiência)",
+      "artigo": "Art. 88",
+      "texto": "Art. 88. Praticar, induzir ou incitar discriminação de pessoa em razão de sua deficiência:\nPena - reclusão, de 1 (um) a 3 (três) anos, e multa.\n§ 1o Aumenta-se a pena em 1/3 (um terço) se a vítima encontrar-se sob cuidado e responsabilidade do agente.\n§ 2o Se qualquer dos crimes previstos no caput deste artigo é cometido por intermédio de meios de comunicação social ou de publicação de qualquer natureza:\nPena - reclusão, de 2 (dois) a 5 (cinco) anos, e multa.\n§ 3o Na hipótese do § 2o deste artigo, o juiz poderá determinar, ouvido o Ministério Público ou a pedido deste, ainda antes do inquérito policial, sob pena de desobediência:\nI - recolhimento ou busca e apreensão dos exemplares do material discriminatório;\nII - interdição das respectivas mensagens ou páginas de informação na internet.\n§ 4o Na hipótese do § 2o deste artigo, constitui efeito da condenação, após o trânsito em julgado da decisão, a destruição do material apreendido.",
+      "observacao": "Texto compilado do Planalto (anotações de redação preservadas), conferido dispositivo a dispositivo com a publicação original no Senado Federal."
+     },
+     "fonte_oficial": "https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2015/lei/l13146.htm"
+    },
+    {
+     "tipo": "lei_seca",
+     "titulo": "Lei 13.146/2015 — Art. 89",
+     "subassunto": null,
+     "conteudo": {
+      "lei": "Lei 13.146/2015 (Estatuto da Pessoa com Deficiência)",
+      "artigo": "Art. 89",
+      "texto": "Art. 89. Apropriar-se de ou desviar bens, proventos, pensão, benefícios, remuneração ou qualquer outro rendimento de pessoa com deficiência:\nPena - reclusão, de 1 (um) a 4 (quatro) anos, e multa.\nParágrafo único. Aumenta-se a pena em 1/3 (um terço) se o crime é cometido:\nI - por tutor, curador, síndico, liquidatário, inventariante, testamenteiro ou depositário judicial; ou\nII - por aquele que se apropriou em razão de ofício ou de profissão.",
+      "observacao": "Texto compilado do Planalto (anotações de redação preservadas), conferido dispositivo a dispositivo com a publicação original no Senado Federal."
+     },
+     "fonte_oficial": "https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2015/lei/l13146.htm"
+    },
+    {
+     "tipo": "lei_seca",
+     "titulo": "Lei 13.146/2015 — Art. 90",
+     "subassunto": null,
+     "conteudo": {
+      "lei": "Lei 13.146/2015 (Estatuto da Pessoa com Deficiência)",
+      "artigo": "Art. 90",
+      "texto": "Art. 90. Abandonar pessoa com deficiência em hospitais, casas de saúde, entidades de abrigamento ou congêneres:\nPena - reclusão, de 2 (dois) a 5 (cinco) anos, e multa. (Redação dada pela Lei nº 15.163, de 2025)\nParágrafo único. (Revogado). (Redação dada pela Lei nº 15.163, de 2025)\n§ 1º Se do abandono resulta lesão corporal de natureza grave: (Incluído pela Lei nº 15.163, de 2025)\nPena - reclusão, de 3 (três) a 7 (sete) anos, e multa. (Incluído pela Lei nº 15.163, de 2025)\n§ 2º Se do abandono resulta morte: (Incluído pela Lei nº 15.163, de 2025)\nPena - reclusão, de 8 (oito) a 14 (quatorze) anos, e multa. (Incluído pela Lei nº 15.163, de 2025)",
+      "observacao": "Texto compilado do Planalto (anotações de redação preservadas), conferido dispositivo a dispositivo com a publicação original no Senado Federal."
+     },
+     "fonte_oficial": "https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2015/lei/l13146.htm"
+    },
+    {
+     "tipo": "lei_seca",
+     "titulo": "Lei 13.146/2015 — Art. 91",
+     "subassunto": null,
+     "conteudo": {
+      "lei": "Lei 13.146/2015 (Estatuto da Pessoa com Deficiência)",
+      "artigo": "Art. 91",
+      "texto": "Art. 91. Reter ou utilizar cartão magnético, qualquer meio eletrônico ou documento de pessoa com deficiência destinados ao recebimento de benefícios, proventos, pensões ou remuneração ou à realização de operações financeiras, com o fim de obter vantagem indevida para si ou para outrem:\nPena - detenção, de 6 (seis) meses a 2 (dois) anos, e multa.\nParágrafo único. Aumenta-se a pena em 1/3 (um terço) se o crime é cometido por tutor ou curador.",
+      "observacao": "Texto compilado do Planalto (anotações de redação preservadas), conferido dispositivo a dispositivo com a publicação original no Senado Federal."
+     },
+     "fonte_oficial": "https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2015/lei/l13146.htm"
+    }
+   ]
+  },
+  {
+   "curso": "gcm-geral",
+   "disciplina": "Direito Processual Penal",
+   "assunto": "Infrações penais de menor potencial ofensivo (Lei nº 9.099/1995, art. 61)",
+   "materiais": [
+    {
+     "tipo": "lei_seca",
+     "titulo": "Lei 9.099/1995 — Art. 60",
+     "subassunto": null,
+     "conteudo": {
+      "lei": "Lei 9.099/1995 (Juizados Especiais)",
+      "artigo": "Art. 60",
+      "texto": "Art. 60. O Juizado Especial Criminal, provido por juízes togados ou togados e leigos, tem competência para a conciliação, o julgamento e a execução das infrações penais de menor potencial ofensivo, respeitadas as regras de conexão e continência. (Redação dada pela Lei nº 11.313, de 2006)\nParágrafo único. Na reunião de processos, perante o juízo comum ou o tribunal do júri, decorrentes da aplicação das regras de conexão e continência, observar-se-ão os institutos da transação penal e da composição dos danos civis. (Incluído pela Lei nº 11.313, de 2006)",
+      "observacao": "Texto compilado do Planalto (anotações de redação preservadas), conferido dispositivo a dispositivo com a publicação original no Senado Federal."
+     },
+     "fonte_oficial": "https://www.planalto.gov.br/ccivil_03/leis/l9099.htm"
+    },
+    {
+     "tipo": "lei_seca",
+     "titulo": "Lei 9.099/1995 — Art. 61",
+     "subassunto": null,
+     "conteudo": {
+      "lei": "Lei 9.099/1995 (Juizados Especiais)",
+      "artigo": "Art. 61",
+      "texto": "Art. 61. Consideram-se infrações penais de menor potencial ofensivo, para os efeitos desta Lei, as contravenções penais e os crimes a que a lei comine pena máxima não superior a 2 (dois) anos, cumulada ou não com multa. (Redação dada pela Lei nº 11.313, de 2006)",
+      "observacao": "Texto compilado do Planalto (anotações de redação preservadas), conferido dispositivo a dispositivo com a publicação original no Senado Federal."
+     },
+     "fonte_oficial": "https://www.planalto.gov.br/ccivil_03/leis/l9099.htm"
+    },
+    {
+     "tipo": "lei_seca",
+     "titulo": "Lei 9.099/1995 — Art. 62",
+     "subassunto": null,
+     "conteudo": {
+      "lei": "Lei 9.099/1995 (Juizados Especiais)",
+      "artigo": "Art. 62",
+      "texto": "Art. 62. O processo perante o Juizado Especial orientar-se-á pelos critérios da oralidade, simplicidade, informalidade, economia processual e celeridade, objetivando, sempre que possível, a reparação dos danos sofridos pela vítima e a aplicação de pena não privativa de liberdade. (Redação dada pela Lei nº 13.603, de 2018)",
+      "observacao": "Texto compilado do Planalto (anotações de redação preservadas), conferido dispositivo a dispositivo com a publicação original no Senado Federal."
+     },
+     "fonte_oficial": "https://www.planalto.gov.br/ccivil_03/leis/l9099.htm"
+    },
+    {
+     "tipo": "lei_seca",
+     "titulo": "Lei 9.099/1995 — Art. 63",
+     "subassunto": null,
+     "conteudo": {
+      "lei": "Lei 9.099/1995 (Juizados Especiais)",
+      "artigo": "Art. 63",
+      "texto": "Art. 63. A competência do Juizado será determinada pelo lugar em que foi praticada a infração penal.",
+      "observacao": "Texto compilado do Planalto (anotações de redação preservadas), conferido dispositivo a dispositivo com a publicação original no Senado Federal."
+     },
+     "fonte_oficial": "https://www.planalto.gov.br/ccivil_03/leis/l9099.htm"
+    },
+    {
+     "tipo": "lei_seca",
+     "titulo": "Lei 9.099/1995 — Art. 64",
+     "subassunto": null,
+     "conteudo": {
+      "lei": "Lei 9.099/1995 (Juizados Especiais)",
+      "artigo": "Art. 64",
+      "texto": "Art. 64. Os atos processuais serão públicos e poderão realizar-se em horário noturno e em qualquer dia da semana, conforme dispuserem as normas de organização judiciária.",
+      "observacao": "Texto compilado do Planalto (anotações de redação preservadas), conferido dispositivo a dispositivo com a publicação original no Senado Federal."
+     },
+     "fonte_oficial": "https://www.planalto.gov.br/ccivil_03/leis/l9099.htm"
+    },
+    {
+     "tipo": "lei_seca",
+     "titulo": "Lei 9.099/1995 — Art. 65",
+     "subassunto": null,
+     "conteudo": {
+      "lei": "Lei 9.099/1995 (Juizados Especiais)",
+      "artigo": "Art. 65",
+      "texto": "Art. 65. Os atos processuais serão válidos sempre que preencherem as finalidades para as quais foram realizados, atendidos os critérios indicados no art. 62 desta Lei.\n§ 1º Não se pronunciará qualquer nulidade sem que tenha havido prejuízo.\n§ 2º A prática de atos processuais em outras comarcas poderá ser solicitada por qualquer meio hábil de comunicação.\n§ 3º Serão objeto de registro escrito exclusivamente os atos havidos por essenciais. Os atos realizados em audiência de instrução e julgamento poderão ser gravados em fita magnética ou equivalente.",
+      "observacao": "Texto compilado do Planalto (anotações de redação preservadas), conferido dispositivo a dispositivo com a publicação original no Senado Federal."
+     },
+     "fonte_oficial": "https://www.planalto.gov.br/ccivil_03/leis/l9099.htm"
+    },
+    {
+     "tipo": "lei_seca",
+     "titulo": "Lei 9.099/1995 — Art. 66",
+     "subassunto": null,
+     "conteudo": {
+      "lei": "Lei 9.099/1995 (Juizados Especiais)",
+      "artigo": "Art. 66",
+      "texto": "Art. 66. A citação será pessoal e far-se-á no próprio Juizado, sempre que possível, ou por mandado.\nParágrafo único. Não encontrado o acusado para ser citado, o Juiz encaminhará as peças existentes ao Juízo comum para adoção do procedimento previsto em lei.",
+      "observacao": "Texto compilado do Planalto (anotações de redação preservadas), conferido dispositivo a dispositivo com a publicação original no Senado Federal."
+     },
+     "fonte_oficial": "https://www.planalto.gov.br/ccivil_03/leis/l9099.htm"
+    },
+    {
+     "tipo": "lei_seca",
+     "titulo": "Lei 9.099/1995 — Art. 67",
+     "subassunto": null,
+     "conteudo": {
+      "lei": "Lei 9.099/1995 (Juizados Especiais)",
+      "artigo": "Art. 67",
+      "texto": "Art. 67. A intimação far-se-á por correspondência, com aviso de recebimento pessoal ou, tratando-se de pessoa jurídica ou firma individual, mediante entrega ao encarregado da recepção, que será obrigatoriamente identificado, ou, sendo necessário, por oficial de justiça, independentemente de mandado ou carta precatória, ou ainda por qualquer meio idôneo de comunicação.\nParágrafo único. Dos atos praticados em audiência considerar-se-ão desde logo cientes as partes, os interessados e defensores.",
+      "observacao": "Texto compilado do Planalto (anotações de redação preservadas), conferido dispositivo a dispositivo com a publicação original no Senado Federal."
+     },
+     "fonte_oficial": "https://www.planalto.gov.br/ccivil_03/leis/l9099.htm"
+    },
+    {
+     "tipo": "lei_seca",
+     "titulo": "Lei 9.099/1995 — Art. 68",
+     "subassunto": null,
+     "conteudo": {
+      "lei": "Lei 9.099/1995 (Juizados Especiais)",
+      "artigo": "Art. 68",
+      "texto": "Art. 68. Do ato de intimação do autor do fato e do mandado de citação do acusado, constará a necessidade de seu comparecimento acompanhado de advogado, com a advertência de que, na sua falta, ser-lhe-á designado defensor público.",
+      "observacao": "Texto compilado do Planalto (anotações de redação preservadas), conferido dispositivo a dispositivo com a publicação original no Senado Federal."
+     },
+     "fonte_oficial": "https://www.planalto.gov.br/ccivil_03/leis/l9099.htm"
+    },
+    {
+     "tipo": "lei_seca",
+     "titulo": "Lei 9.099/1995 — Art. 69",
+     "subassunto": null,
+     "conteudo": {
+      "lei": "Lei 9.099/1995 (Juizados Especiais)",
+      "artigo": "Art. 69",
+      "texto": "Art. 69. A autoridade policial que tomar conhecimento da ocorrência lavrará termo circunstanciado e o encaminhará imediatamente ao Juizado, com o autor do fato e a vítima, providenciando-se as requisições dos exames periciais necessários.\nParágrafo único. Ao autor do fato que, após a lavratura do termo, for imediatamente encaminhado ao juizado ou assumir o compromisso de a ele comparecer, não se imporá prisão em flagrante, nem se exigirá fiança. Em caso de violência doméstica, o juiz poderá determinar, como medida de cautela, seu afastamento do lar, domicílio ou local de convivência com a vítima. (Redação dada pela Lei nº 10.455, de 13.5.2002)",
+      "observacao": "Texto compilado do Planalto (anotações de redação preservadas), conferido dispositivo a dispositivo com a publicação original no Senado Federal."
+     },
+     "fonte_oficial": "https://www.planalto.gov.br/ccivil_03/leis/l9099.htm"
+    },
+    {
+     "tipo": "lei_seca",
+     "titulo": "Lei 9.099/1995 — Art. 70",
+     "subassunto": null,
+     "conteudo": {
+      "lei": "Lei 9.099/1995 (Juizados Especiais)",
+      "artigo": "Art. 70",
+      "texto": "Art. 70. Comparecendo o autor do fato e a vítima, e não sendo possível a realização imediata da audiência preliminar, será designada data próxima, da qual ambos sairão cientes.",
+      "observacao": "Texto compilado do Planalto (anotações de redação preservadas), conferido dispositivo a dispositivo com a publicação original no Senado Federal."
+     },
+     "fonte_oficial": "https://www.planalto.gov.br/ccivil_03/leis/l9099.htm"
+    },
+    {
+     "tipo": "lei_seca",
+     "titulo": "Lei 9.099/1995 — Art. 72",
+     "subassunto": null,
+     "conteudo": {
+      "lei": "Lei 9.099/1995 (Juizados Especiais)",
+      "artigo": "Art. 72",
+      "texto": "Art. 72. Na audiência preliminar, presente o representante do Ministério Público, o autor do fato e a vítima e, se possível, o responsável civil, acompanhados por seus advogados, o Juiz esclarecerá sobre a possibilidade da composição dos danos e da aceitação da proposta de aplicação imediata de pena não privativa de liberdade.",
+      "observacao": "Texto compilado do Planalto (anotações de redação preservadas), conferido dispositivo a dispositivo com a publicação original no Senado Federal."
+     },
+     "fonte_oficial": "https://www.planalto.gov.br/ccivil_03/leis/l9099.htm"
+    },
+    {
+     "tipo": "lei_seca",
+     "titulo": "Lei 9.099/1995 — Art. 73",
+     "subassunto": null,
+     "conteudo": {
+      "lei": "Lei 9.099/1995 (Juizados Especiais)",
+      "artigo": "Art. 73",
+      "texto": "Art. 73. A conciliação será conduzida pelo Juiz ou por conciliador sob sua orientação.\nParágrafo único. Os conciliadores são auxiliares da Justiça, recrutados, na forma da lei local, preferentemente entre bacharéis em Direito, excluídos os que exerçam funções na administração da Justiça Criminal.",
+      "observacao": "Texto compilado do Planalto (anotações de redação preservadas), conferido dispositivo a dispositivo com a publicação original no Senado Federal."
+     },
+     "fonte_oficial": "https://www.planalto.gov.br/ccivil_03/leis/l9099.htm"
+    },
+    {
+     "tipo": "lei_seca",
+     "titulo": "Lei 9.099/1995 — Art. 74",
+     "subassunto": null,
+     "conteudo": {
+      "lei": "Lei 9.099/1995 (Juizados Especiais)",
+      "artigo": "Art. 74",
+      "texto": "Art. 74. A composição dos danos civis será reduzida a escrito e, homologada pelo Juiz mediante sentença irrecorrível, terá eficácia de título a ser executado no juízo civil competente.\nParágrafo único. Tratando-se de ação penal de iniciativa privada ou de ação penal pública condicionada à representação, o acordo homologado acarreta a renúncia ao direito de queixa ou representação.",
+      "observacao": "Texto compilado do Planalto (anotações de redação preservadas), conferido dispositivo a dispositivo com a publicação original no Senado Federal."
+     },
+     "fonte_oficial": "https://www.planalto.gov.br/ccivil_03/leis/l9099.htm"
+    },
+    {
+     "tipo": "lei_seca",
+     "titulo": "Lei 9.099/1995 — Art. 75",
+     "subassunto": null,
+     "conteudo": {
+      "lei": "Lei 9.099/1995 (Juizados Especiais)",
+      "artigo": "Art. 75",
+      "texto": "Art. 75. Não obtida a composição dos danos civis, será dada imediatamente ao ofendido a oportunidade de exercer o direito de representação verbal, que será reduzida a termo.\nParágrafo único. O não oferecimento da representação na audiência preliminar não implica decadência do direito, que poderá ser exercido no prazo previsto em lei.",
+      "observacao": "Texto compilado do Planalto (anotações de redação preservadas), conferido dispositivo a dispositivo com a publicação original no Senado Federal."
+     },
+     "fonte_oficial": "https://www.planalto.gov.br/ccivil_03/leis/l9099.htm"
+    },
+    {
+     "tipo": "lei_seca",
+     "titulo": "Lei 9.099/1995 — Art. 76",
+     "subassunto": null,
+     "conteudo": {
+      "lei": "Lei 9.099/1995 (Juizados Especiais)",
+      "artigo": "Art. 76",
+      "texto": "Art. 76. Havendo representação ou tratando-se de crime de ação penal pública incondicionada, não sendo caso de arquivamento, o Ministério Público poderá propor a aplicação imediata de pena restritiva de direitos ou multas, a ser especificada na proposta.\n§ 1º Nas hipóteses de ser a pena de multa a única aplicável, o Juiz poderá reduzi-la até a metade.\n§ 2º Não se admitirá a proposta se ficar comprovado:\nI - ter sido o autor da infração condenado, pela prática de crime, à pena privativa de liberdade, por sentença definitiva;\nII - ter sido o agente beneficiado anteriormente, no prazo de cinco anos, pela aplicação de pena restritiva ou multa, nos termos deste artigo;\nIII - não indicarem os antecedentes, a conduta social e a personalidade do agente, bem como os motivos e as circunstâncias, ser necessária e suficiente a adoção da medida.\n§ 3º Aceita a proposta pelo autor da infração e seu defensor, será submetida à apreciação do Juiz.\n§ 4º Acolhendo a proposta do Ministério Público aceita pelo autor da infração, o Juiz aplicará a pena restritiva de direitos ou multa, que não importará em reincidência, sendo registrada apenas para impedir novamente o mesmo benefício no prazo de cinco anos.\n§ 5º Da sentença prevista no parágrafo anterior caberá a apelação referida no art. 82 desta Lei.\n§ 6º A imposição da sanção de que trata o § 4º deste artigo não constará de certidão de antecedentes criminais, salvo para os fins previstos no mesmo dispositivo, e não terá efeitos civis, cabendo aos interessados propor ação cabível no juízo cível.",
+      "observacao": "Texto compilado do Planalto (anotações de redação preservadas), conferido dispositivo a dispositivo com a publicação original no Senado Federal."
+     },
+     "fonte_oficial": "https://www.planalto.gov.br/ccivil_03/leis/l9099.htm"
+    }
+   ]
+  },
+  {
+   "curso": "gcm-geral",
+   "disciplina": "Legislação Penal Especial",
+   "assunto": "Lei de Crimes Ambientais (Lei nº 9.605/1998)",
+   "materiais": [
+    {
+     "tipo": "lei_seca",
+     "titulo": "Lei 9.605/1998 — Art. 2",
+     "subassunto": null,
+     "conteudo": {
+      "lei": "Lei 9.605/1998 (Lei de Crimes Ambientais)",
+      "artigo": "Art. 2",
+      "texto": "Art. 2º Quem, de qualquer forma, concorre para a prática dos crimes previstos nesta Lei, incide nas penas a estes cominadas, na medida da sua culpabilidade,, bem como o diretor, o administrador, o membro de conselho e de órgão técnico, o auditor, o gerente, o preposto ou mandatário de pessoa jurídica, que, sabendo da conduta criminosa de outrem, deixar de impedir a sua prática, quando podia agir para evitá-la.",
+      "observacao": "Texto compilado do Planalto (anotações de redação preservadas), conferido dispositivo a dispositivo com a publicação original no Senado Federal."
+     },
+     "fonte_oficial": "https://www.planalto.gov.br/ccivil_03/leis/l9605.htm"
+    },
+    {
+     "tipo": "lei_seca",
+     "titulo": "Lei 9.605/1998 — Art. 3",
+     "subassunto": null,
+     "conteudo": {
+      "lei": "Lei 9.605/1998 (Lei de Crimes Ambientais)",
+      "artigo": "Art. 3",
+      "texto": "Art. 3º As pessoas jurídicas serão responsabilizadas administrativa, civil e penalmente conforme o disposto nesta Lei, nos casos em que a infração seja cometida por decisão de seu representante legal ou contratual, ou de seu órgão colegiado, no interesse ou benefício da sua entidade.\nParágrafo único. A responsabilidade das pessoas jurídicas não exclui a das pessoas físicas, autoras, co-autoras ou partícipes do mesmo fato.",
+      "observacao": "Texto compilado do Planalto (anotações de redação preservadas), conferido dispositivo a dispositivo com a publicação original no Senado Federal."
+     },
+     "fonte_oficial": "https://www.planalto.gov.br/ccivil_03/leis/l9605.htm"
+    },
+    {
+     "tipo": "lei_seca",
+     "titulo": "Lei 9.605/1998 — Art. 4",
+     "subassunto": null,
+     "conteudo": {
+      "lei": "Lei 9.605/1998 (Lei de Crimes Ambientais)",
+      "artigo": "Art. 4",
+      "texto": "Art. 4º Poderá ser desconsiderada a pessoa jurídica sempre que sua personalidade for obstáculo ao ressarcimento de prejuízos causados à qualidade do meio ambiente.",
+      "observacao": "Texto compilado do Planalto (anotações de redação preservadas), conferido dispositivo a dispositivo com a publicação original no Senado Federal."
+     },
+     "fonte_oficial": "https://www.planalto.gov.br/ccivil_03/leis/l9605.htm"
+    },
+    {
+     "tipo": "lei_seca",
+     "titulo": "Lei 9.605/1998 — Art. 29",
+     "subassunto": null,
+     "conteudo": {
+      "lei": "Lei 9.605/1998 (Lei de Crimes Ambientais)",
+      "artigo": "Art. 29",
+      "texto": "Art. 29. Matar, perseguir, caçar, apanhar, utilizar espécimes da fauna silvestre, nativos ou em rota migratória, sem a devida permissão, licença ou autorização da autoridade competente, ou em desacordo com a obtida:\nPena - detenção de seis meses a um ano, e multa.\n§ 1º Incorre nas mesmas penas:\nI - quem impede a procriação da fauna, sem licença, autorização ou em desacordo com a obtida;\nII - quem modifica, danifica ou destrói ninho, abrigo ou criadouro natural;\nIII - quem vende, expõe à venda, exporta ou adquire, guarda, tem em cativeiro ou depósito, utiliza ou transporta ovos, larvas ou espécimes da fauna silvestre, nativa ou em rota migratória, bem como produtos e objetos dela oriundos, provenientes de criadouros não autorizados ou sem a devida permissão, licença ou autorização da autoridade competente.\n§ 2º No caso de guarda doméstica de espécie silvestre não considerada ameaçada de extinção, pode o juiz, considerando as circunstâncias, deixar de aplicar a pena.\n§ 3° São espécimes da fauna silvestre todos aqueles pertencentes às espécies nativas, migratórias e quaisquer outras, aquáticas ou terrestres, que tenham todo ou parte de seu ciclo de vida ocorrendo dentro dos limites do território brasileiro, ou águas jurisdicionais brasileiras.\n§ 4º A pena é aumentada de metade, se o crime é praticado:\nI - contra espécie rara ou considerada ameaçada de extinção, ainda que somente no local da infração;\nII - em período proibido à caça;\nIII - durante a noite;\nIV - com abuso de licença;\nV - em unidade de conservação;\nVI - com emprego de métodos ou instrumentos capazes de provocar destruição em massa.\n§ 5º A pena é aumentada até o triplo, se o crime decorre do exercício de caça profissional.\n§ 6º As disposições deste artigo não se aplicam aos atos de pesca.",
+      "observacao": "Texto compilado do Planalto (anotações de redação preservadas), conferido dispositivo a dispositivo com a publicação original no Senado Federal."
+     },
+     "fonte_oficial": "https://www.planalto.gov.br/ccivil_03/leis/l9605.htm"
+    },
+    {
+     "tipo": "lei_seca",
+     "titulo": "Lei 9.605/1998 — Art. 30",
+     "subassunto": null,
+     "conteudo": {
+      "lei": "Lei 9.605/1998 (Lei de Crimes Ambientais)",
+      "artigo": "Art. 30",
+      "texto": "Art. 30. Exportar para o exterior peles e couros de anfíbios e répteis em bruto, sem a autorização da autoridade ambiental competente:\nPena - reclusão, de um a três anos, e multa.",
+      "observacao": "Texto compilado do Planalto (anotações de redação preservadas), conferido dispositivo a dispositivo com a publicação original no Senado Federal."
+     },
+     "fonte_oficial": "https://www.planalto.gov.br/ccivil_03/leis/l9605.htm"
+    },
+    {
+     "tipo": "lei_seca",
+     "titulo": "Lei 9.605/1998 — Art. 31",
+     "subassunto": null,
+     "conteudo": {
+      "lei": "Lei 9.605/1998 (Lei de Crimes Ambientais)",
+      "artigo": "Art. 31",
+      "texto": "Art. 31. Introduzir espécime animal no País, sem parecer técnico oficial favorável e licença expedida por autoridade competente:\nPena - detenção, de três meses a um ano, e multa.",
+      "observacao": "Texto compilado do Planalto (anotações de redação preservadas), conferido dispositivo a dispositivo com a publicação original no Senado Federal."
+     },
+     "fonte_oficial": "https://www.planalto.gov.br/ccivil_03/leis/l9605.htm"
+    },
+    {
+     "tipo": "lei_seca",
+     "titulo": "Lei 9.605/1998 — Art. 32",
+     "subassunto": null,
+     "conteudo": {
+      "lei": "Lei 9.605/1998 (Lei de Crimes Ambientais)",
+      "artigo": "Art. 32",
+      "texto": "Art. 32. Praticar ato de abuso, maus-tratos, ferir ou mutilar animais silvestres, domésticos ou domesticados, nativos ou exóticos:\nPena - detenção, de três meses a um ano, e multa.\n§ 1º Incorre nas mesmas penas quem realiza experiência dolorosa ou cruel em animal vivo, ainda que para fins didáticos ou científicos, quando existirem recursos alternativos.\n§ 1º-A Quando se tratar de cão ou gato, a pena para as condutas descritas no caput deste artigo será de reclusão, de 2 (dois) a 5 (cinco) anos, multa e proibição da guarda. (Incluído pela Lei nº 14.064, de 2020)\n§ 1º-B. Incorre nas mesmas penas quem realiza ou permite a realização de tatuagens e a colocação de piercings em cães e gatos, com fins estéticos. (Incluído pela Lei nº 15.150, de 2025)\n§ 1º-C. Incorre nas mesmas penas quem provoca desastre ambiental que prejudique a vida, a integridade física ou o bem-estar de animais silvestres ou domésticos. (Incluído pela Lei nº 15.355, de 2026)\n§ 2º A pena é aumentada de um sexto a um terço, se ocorre morte do animal.",
+      "observacao": "Texto compilado do Planalto (anotações de redação preservadas), conferido dispositivo a dispositivo com a publicação original no Senado Federal."
+     },
+     "fonte_oficial": "https://www.planalto.gov.br/ccivil_03/leis/l9605.htm"
+    },
+    {
+     "tipo": "lei_seca",
+     "titulo": "Lei 9.605/1998 — Art. 38",
+     "subassunto": null,
+     "conteudo": {
+      "lei": "Lei 9.605/1998 (Lei de Crimes Ambientais)",
+      "artigo": "Art. 38",
+      "texto": "Art. 38. Destruir ou danificar floresta considerada de preservação permanente, mesmo que em formação, ou utilizá-la com infringência das normas de proteção:\nPena - detenção, de um a três anos, ou multa, ou ambas as penas cumulativamente.\nParágrafo único. Se o crime for culposo, a pena será reduzida à metade.",
+      "observacao": "Texto compilado do Planalto (anotações de redação preservadas), conferido dispositivo a dispositivo com a publicação original no Senado Federal."
+     },
+     "fonte_oficial": "https://www.planalto.gov.br/ccivil_03/leis/l9605.htm"
+    }
+   ]
+  }
+ ]
+}
