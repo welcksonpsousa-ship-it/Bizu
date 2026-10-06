@@ -46,3 +46,10 @@ cada assunto tem uma lacuna (não estudado = 1; sobe com erros, desce com acerto
   sobra de tempo = questões e revisão 24h/7 dias. Sábado: simulado + correção. Domingo: redação + revisão geral.
 
 Testes do motor: `node scripts/test-plano.js`.
+
+## Banco de questões (reais, autorais e simulados)
+- Cada questão tem tipo (`real`/`autoral`), banca, concurso, ano, cargo, nível (+ compatibilidade), fonte, origem, status (`publicada`, `revisao`, `desatualizada`, `anulada`, `duplicada`) e hash anti-duplicata. O aluno só vê `publicada` e compatível com o nível; o resto fica na fila do Admin → Banco de questões.
+- Questões reais entram por `/admin/importar-lote` (idempotente por hash); autorais substituídas em cadernos revisados entram como autorais.
+- Simulados seguem o modelo do Delta X: links do Drive (prova, gabarito, gabarito comentado), cadastrados em Admin → Simulados; não viram questões.
+- Treino adaptativo, "O que estudar" e Cronograma usam `/banco/insights` (incidência na banca, peso do edital, desempenho, tempo sem revisar).
+- Relatório de auditoria: `AUDITORIA-BANCO-QUESTOES-BIZU.md`.

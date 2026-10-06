@@ -205,8 +205,8 @@ async function coberturaBanco(curso: string) {
     if (curTemReais && s.reais_alvo === 0) f.push('sem_banca_alvo');
     if (curTemReais && s.reais > 0 && s.recentes === 0) f.push('sem_recente');
     if (s.total === 0 && s.nao_compat > 0) f.push('sem_nivel_adequado');
-    if (s.total < 12 || (curTemReais && s.reais < 3)) f.push('precisa_complemento_autoral');
-    const faixa = s.total < 6 ? 'vermelho' : (s.total >= 12 && (!curTemReais || s.reais_alvo >= 3)) ? 'verde' : 'amarelo';
+    if (s.total < 10 || (curTemReais && s.reais < 3 && s.total < 14)) f.push('precisa_complemento_autoral');
+    const faixa = s.total < 6 ? 'vermelho' : (s.total >= 10 && (!curTemReais || s.reais_alvo >= 3 || s.total >= 14)) ? 'verde' : 'amarelo';
     return { ...s, flags: f, faixa };
   });
   return { banca_alvo: alvo, tem_reais: curTemReais, linhas };
@@ -817,12 +817,12 @@ async function handle(req: Request, ck: Ck): Promise<Response> {
         const todas: any[] = [];
         for (const c of cursos) {
           if (!(await cursoValido(c))) continue;
-          const qs = await todos((a, b) => porCurso(db.from('cx_questoes').select('id,tipo,status,publicado,banca_ref,banca,ano,nivel,nivel_compat,enunciado,assunto_id,concurso,arquivo_id' + JOIN_CURSO), c).order('id').range(a, b));
+          const qs = await todos((a, b) => porCurso(db.from('cx_questoes').select('id,tipo,status,publicado,banca_ref,banca,ano,nivel,nivel_compat,enunciado,opcoes,assunto_id,concurso,arquivo_id' + JOIN_CURSO), c).order('id').range(a, b));
           const est = await carregarEstrutura(c, true); const cob = await coberturaBanco(c);
           const cnt = (f: (x: any) => any, arr = qs) => { const m: Record<string, number> = {}; arr.forEach((x: any) => { const v = f(x); if (v !== null && v !== undefined && v !== '') m[String(v)] = (m[String(v)] ?? 0) + 1; }); return m; };
           const porDisc: Record<string, any> = {}; const dMap: Record<string, string> = {}; est.forEach((d: any) => d.assuntos.forEach((a: any) => dMap[a.id] = d.nome));
           qs.forEach((x: any) => { const d = dMap[x.assunto_id] ?? '?'; const o = (porDisc[d] ??= { total: 0, reais: 0, autorais: 0 }); o.total++; if (x.tipo === 'real') o.reais++; else o.autorais++; });
-          const norm: Record<string, number> = {}; qs.forEach((x: any) => { const k = normTxt(x.enunciado).slice(0, 220); norm[k] = (norm[k] ?? 0) + 1; });
+          const norm: Record<string, number> = {}; qs.forEach((x: any) => { const e = String(x.enunciado ?? ''); const k = normTxt(e.includes('\n\n— — —\n') ? e.split('\n\n— — —\n').pop()! : e).slice(0, 200) + '|' + (x.opcoes ?? []).map(normTxt).sort().join('|').slice(0, 200); norm[k] = (norm[k] ?? 0) + 1; });
           const duplicadas = Object.values(norm).filter((n) => n > 1).reduce((a, n) => a + n, 0);
           out.cursos[c] = {
             total: qs.length, reais: qs.filter((x: any) => x.tipo === 'real').length, autorais: qs.filter((x: any) => x.tipo === 'autoral').length,
