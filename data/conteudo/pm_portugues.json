@@ -1,1707 +1,1727 @@
 {
- "itens": [
-  {
-   "curso": "pm-sp-soldado",
-   "disciplina": "Língua Portuguesa e Interpretação de Texto",
-   "assunto": "Leitura e interpretação de textos",
-   "aula": {
-    "titulo": "Leitura e interpretação de textos: como a VUNESP cobra",
-    "secoes": [
-     {
-      "titulo": "Compreender x interpretar",
-      "texto": "Compreender é localizar o que o texto diz de forma explícita: quem fez o quê, quando, onde, por quê. Interpretar é tirar conclusões autorizadas pelo texto, ou seja, entender o que está implícito (pressupostos e subentendidos).\nNas duas situações, a regra de ouro é a mesma: a resposta precisa estar apoiada no texto. Sua opinião, seu conhecimento de mundo ou o que \"seria lógico\" não servem de prova se o texto não autorizar."
-     },
-     {
-      "titulo": "Textos não literários",
-      "texto": "São textos com finalidade prática: informar, explicar, convencer ou orientar. Predomina a linguagem denotativa (sentido literal) e objetiva.\n• Notícia e reportagem: relatam fatos; atenção a quem, o quê, quando, onde, como e por quê.\n• Artigo de opinião e editorial: defendem um ponto de vista (tese) com argumentos. Procure a tese, os argumentos e a conclusão.\n• Textos instrucionais (manuais, receitas, normas): orientam uma ação, com verbos no imperativo ou no infinitivo.\n• Textos de divulgação científica: explicam um tema de forma acessível.\nPergunta-chave: qual é o objetivo do autor?"
-     },
-     {
-      "titulo": "Textos literários",
-      "texto": "São textos com finalidade artística: contos, crônicas, romances, poemas. Predomina a linguagem conotativa (sentido figurado), com metáforas, comparações e outras figuras. O sentido costuma ser mais aberto, mas continua limitado pelo que o texto sugere.\n• Na narrativa, observe o narrador: em 1ª pessoa (narrador-personagem, participa dos fatos) ou em 3ª pessoa (observador ou onisciente, que conhece pensamentos das personagens).\n• Identifique personagens, tempo, espaço e conflito.\n• No poema, quem fala é o eu lírico, que não se confunde com o autor. Verso é cada linha; estrofe é o conjunto de versos.\n• A crônica parte de fatos do cotidiano, com linguagem leve e, muitas vezes, humor ou reflexão."
-     },
-     {
-      "titulo": "As três armadilhas das alternativas",
-      "texto": "As alternativas erradas costumam cair em três tipos:\n• Extrapolação: vai além do texto, afirma algo que ele não disse (\"sempre\", \"todos\", \"nunca\", \"prova que\").\n• Redução: pega só uma parte do texto e apresenta como se fosse a ideia principal.\n• Contradição: diz o contrário do que o texto afirma.\nDesconfie de palavras absolutas e de alternativas que trocam \"pode\" por \"deve\" ou \"indica\" por \"comprova\"."
-     },
-     {
-      "titulo": "Método prático de leitura",
-      "texto": "1. Leia o enunciado antes do texto para saber o que procurar.\n2. Leia o texto inteiro uma vez, sem pressa, marcando a ideia central de cada parágrafo.\n3. Observe os conectivos (mas, porém, portanto, pois, embora): eles mostram a relação entre as ideias e, muitas vezes, onde está a tese.\n4. Volte ao trecho citado na questão e analise o contexto, não a palavra isolada.\n5. Elimine alternativas com extrapolação, redução ou contradição e confirme a correta no texto."
-     }
-    ]
-   },
-   "revisao": {
-    "pontos": [
-     "Resposta certa é a que o texto autoriza, não a que você acha verdadeira.",
-     "Compreensão = informação explícita; interpretação = conclusão implícita autorizada.",
-     "Texto não literário: linguagem denotativa e finalidade prática.",
-     "Texto literário: linguagem conotativa e finalidade artística.",
-     "Narrador em 1ª pessoa participa dos fatos; em 3ª pessoa, observa ou tudo sabe.",
-     "No poema, quem fala é o eu lírico, não o autor.",
-     "Palavras absolutas (sempre, nunca, todos) costumam indicar extrapolação.",
-     "Conectivos como porém e portanto apontam oposição e conclusão.",
-     "Tese é a opinião central que o autor defende em textos argumentativos."
-    ]
-   },
-   "mapa": {
-    "no_central": "Leitura e interpretação",
-    "ramos": [
-     {
-      "label": "Compreensão x interpretação",
-      "filhos": [
-       "Explícito",
-       "Implícito",
-       "Pressupostos",
-       "Subentendidos"
-      ]
-     },
-     {
-      "label": "Textos não literários",
-      "filhos": [
-       "Notícia",
-       "Artigo de opinião",
-       "Editorial",
-       "Instrucional"
-      ]
-     },
-     {
-      "label": "Textos literários",
-      "filhos": [
-       "Conto e crônica",
-       "Poema e eu lírico",
-       "Tipos de narrador",
-       "Linguagem conotativa"
-      ]
-     },
-     {
-      "label": "Armadilhas",
-      "filhos": [
-       "Extrapolação",
-       "Redução",
-       "Contradição"
-      ]
-     },
-     {
-      "label": "Método",
-      "filhos": [
-       "Ler o enunciado",
-       "Ideia de cada parágrafo",
-       "Conectivos",
-       "Voltar ao contexto"
-      ]
-     }
-    ]
-   },
-   "flashcards": [
+  "itens": [
     {
-     "pergunta": "Qual a diferença entre compreender e interpretar um texto?",
-     "resposta": "Compreender é captar o que está explícito; interpretar é concluir o que está implícito, com base no texto."
+      "curso": "pm-sp-soldado",
+      "disciplina": "Língua Portuguesa e Interpretação de Texto",
+      "assunto": "Leitura e interpretação de textos",
+      "aula": {
+        "titulo": "Leitura e interpretação de textos: como a VUNESP cobra",
+        "secoes": [
+          {
+            "titulo": "Compreender x interpretar",
+            "texto": "Compreender é localizar o que o texto diz de forma explícita: quem fez o quê, quando, onde, por quê. Interpretar é tirar conclusões autorizadas pelo texto, ou seja, entender o que está implícito, nas entrelinhas. Exemplo: em \"O soldado voltou a treinar\", está implícito que ele tinha parado de treinar.\nNas duas situações, a regra de ouro é a mesma: a resposta precisa estar apoiada no texto. Sua opinião, seu conhecimento de mundo ou o que \"seria lógico\" não servem de prova se o texto não autorizar."
+          },
+          {
+            "titulo": "Textos não literários",
+            "texto": "São textos com finalidade prática: informar, explicar, convencer ou orientar. Predomina a linguagem denotativa (sentido literal) e objetiva.\n• Notícia e reportagem: relatam fatos; atenção a quem, o quê, quando, onde, como e por quê.\n• Artigo de opinião e editorial: defendem um ponto de vista (tese) com argumentos. Procure a tese, os argumentos e a conclusão.\n• Textos instrucionais (manuais, receitas, normas): orientam uma ação, com verbos no imperativo ou no infinitivo.\n• Textos de divulgação científica: explicam um tema de forma acessível.\nPergunta-chave: qual é o objetivo do autor?"
+          },
+          {
+            "titulo": "Textos literários",
+            "texto": "São textos com finalidade artística: contos, crônicas, romances, poemas. Predomina a linguagem conotativa (sentido figurado), com metáforas, comparações e outras figuras. O sentido costuma ser mais aberto, mas continua limitado pelo que o texto sugere.\n• Na narrativa, observe o narrador: em 1ª pessoa (narrador-personagem, participa dos fatos) ou em 3ª pessoa (observador ou onisciente, que conhece pensamentos das personagens).\n• Identifique personagens, tempo, espaço e conflito.\n• No poema, quem fala é o eu lírico, que não se confunde com o autor. Verso é cada linha; estrofe é o conjunto de versos.\n• A crônica parte de fatos do cotidiano, com linguagem leve e, muitas vezes, humor ou reflexão."
+          },
+          {
+            "titulo": "As três armadilhas das alternativas",
+            "texto": "As alternativas erradas costumam cair em três tipos:\n• Extrapolação: vai além do texto, afirma algo que ele não disse (\"sempre\", \"todos\", \"nunca\", \"prova que\").\n• Redução: pega só uma parte do texto e apresenta como se fosse a ideia principal.\n• Contradição: diz o contrário do que o texto afirma.\nDesconfie de palavras absolutas e de alternativas que trocam \"pode\" por \"deve\" ou \"indica\" por \"comprova\"."
+          },
+          {
+            "titulo": "Método prático de leitura",
+            "texto": "• Leia o enunciado antes do texto para saber o que procurar.\n• Leia o texto inteiro uma vez, sem pressa, marcando a ideia central de cada parágrafo.\n• Observe os conectivos (mas, porém, portanto, pois, embora): eles mostram a relação entre as ideias e, muitas vezes, onde está a tese.\n• Volte ao trecho citado na questão e analise o contexto, não a palavra isolada.\n• Elimine alternativas com extrapolação, redução ou contradição e confirme a correta no texto."
+          },
+          {
+            "titulo": "Bizu de prova",
+            "texto": "• \"Segundo o texto\" pede o que está escrito; \"infere-se\" ou \"conclui-se\" pede o que está nas entrelinhas.\n• A alternativa certa costuma repetir a ideia do texto com outras palavras.\n• Desconfie de \"sempre\", \"nunca\", \"todos\", \"apenas\": quase sempre indicam extrapolação."
+          }
+        ]
+      },
+      "revisao": {
+        "pontos": [
+          "Resposta certa é a que o texto autoriza, não a que você acha verdadeira.",
+          "Compreensão = informação explícita; interpretação = conclusão implícita autorizada.",
+          "Texto não literário: linguagem denotativa e finalidade prática.",
+          "Texto literário: linguagem conotativa e finalidade artística.",
+          "Narrador em 1ª pessoa participa dos fatos; em 3ª pessoa, observa ou tudo sabe.",
+          "No poema, quem fala é o eu lírico, não o autor.",
+          "Palavras absolutas (sempre, nunca, todos) costumam indicar extrapolação.",
+          "Conectivos como porém e portanto apontam oposição e conclusão.",
+          "Tese é a opinião central que o autor defende em textos argumentativos."
+        ]
+      },
+      "mapa": {
+        "no_central": "Leitura e interpretação",
+        "ramos": [
+          {
+            "label": "Compreensão x interpretação",
+            "filhos": [
+              "Explícito",
+              "Implícito",
+              "Pressupostos",
+              "Subentendidos"
+            ]
+          },
+          {
+            "label": "Textos não literários",
+            "filhos": [
+              "Notícia",
+              "Artigo de opinião",
+              "Editorial",
+              "Instrucional"
+            ]
+          },
+          {
+            "label": "Textos literários",
+            "filhos": [
+              "Conto e crônica",
+              "Poema e eu lírico",
+              "Tipos de narrador",
+              "Linguagem conotativa"
+            ]
+          },
+          {
+            "label": "Armadilhas",
+            "filhos": [
+              "Extrapolação",
+              "Redução",
+              "Contradição"
+            ]
+          },
+          {
+            "label": "Método",
+            "filhos": [
+              "Ler o enunciado",
+              "Ideia de cada parágrafo",
+              "Conectivos",
+              "Voltar ao contexto"
+            ]
+          }
+        ]
+      },
+      "flashcards": [
+        {
+          "pergunta": "Qual a diferença entre compreender e interpretar um texto?",
+          "resposta": "Compreender é captar o que está explícito; interpretar é concluir o que está implícito, com base no texto."
+        },
+        {
+          "pergunta": "O que é extrapolação em uma alternativa?",
+          "resposta": "Afirmar algo que vai além do que o texto diz."
+        },
+        {
+          "pergunta": "Que tipo de linguagem predomina no texto literário?",
+          "resposta": "A conotativa (sentido figurado)."
+        },
+        {
+          "pergunta": "Quem é o narrador-personagem?",
+          "resposta": "O narrador em 1ª pessoa que participa da história."
+        },
+        {
+          "pergunta": "O que é o eu lírico?",
+          "resposta": "A voz que fala no poema; não se confunde com o autor."
+        },
+        {
+          "pergunta": "O que é a tese de um texto argumentativo?",
+          "resposta": "O ponto de vista principal defendido pelo autor."
+        }
+      ],
+      "questoes": [
+        {
+          "subassunto": "Textos não literários",
+          "enunciado": "Leia o texto.\n\"A prefeitura anunciou que, a partir do próximo mês, a coleta seletiva passará a ocorrer duas vezes por semana nos bairros da zona norte. Segundo a secretaria responsável, a mudança busca reduzir o acúmulo de recicláveis nas calçadas e ampliar a renda das cooperativas de catadores, que reclamavam da irregularidade do serviço.\"\nDe acordo com o texto, a mudança na coleta seletiva tem como objetivo",
+          "opcoes": [
+            "substituir as cooperativas de catadores por empresas particulares.",
+            "reduzir o acúmulo de recicláveis nas calçadas e beneficiar as cooperativas.",
+            "diminuir a frequência da coleta nos bairros da zona norte.",
+            "atender a uma exigência feita pelos moradores da zona sul.",
+            "encerrar a coleta seletiva nos demais bairros da cidade."
+          ],
+          "gabarito": 1,
+          "comentario": "O texto afirma expressamente que a mudança busca reduzir o acúmulo de recicláveis e ampliar a renda das cooperativas (B). A frequência aumenta, não diminui (C); o texto não fala em empresas particulares (A), em zona sul (D) nem em encerrar a coleta em outros bairros (E): são extrapolações.",
+          "dificuldade": "facil"
+        },
+        {
+          "subassunto": "Textos não literários",
+          "enunciado": "Leia o texto.\n\"Pesquisas indicam que dormir menos de seis horas por noite, de forma frequente, está associado a queda de atenção e de memória. Por isso, especialistas recomendam horários regulares para deitar e acordar, inclusive nos fins de semana.\"\nÉ compatível com o texto a seguinte afirmação:",
+          "opcoes": [
+            "Dormir pouco em uma única noite causa perda permanente de memória.",
+            "Os especialistas desaconselham qualquer atividade nos fins de semana.",
+            "A regularidade dos horários de sono é apresentada como recomendação.",
+            "O texto garante que dormir mais de dez horas melhora a memória.",
+            "As pesquisas provam que a atenção não depende do sono."
+          ],
+          "gabarito": 2,
+          "comentario": "O texto diz que especialistas recomendam horários regulares para dormir e acordar (C). A fala em privação frequente, não em uma noite, nem em perda permanente; B distorce a recomendação; D extrapola (o texto não fala em dez horas); E contradiz o texto, que associa sono e atenção.",
+          "dificuldade": "facil"
+        },
+        {
+          "subassunto": "Textos literários",
+          "enunciado": "Leia o trecho.\n\"Seu Almeida abria a venda antes do sol. Varria a calçada com a mesma vassoura de sempre, cumprimentava o padeiro pelo nome e anotava num caderno de capa gasta o fiado dos vizinhos. Nunca cobrou juros. Dizia que a conta mais difícil de fechar era a da confiança.\"\nNo contexto, a frase final sugere que Seu Almeida",
+          "opcoes": [
+            "considerava a matemática um obstáculo para o comércio.",
+            "desconfiava dos vizinhos que compravam fiado.",
+            "pretendia fechar a venda por causa das dívidas.",
+            "valorizava a confiança com os fregueses acima do lucro.",
+            "cobrava juros apenas dos clientes desconhecidos."
+          ],
+          "gabarito": 3,
+          "comentario": "A palavra \"conta\" é usada em sentido figurado: a confiança é algo difícil de construir e de manter, e o fato de ele nunca cobrar juros reforça que valorizava a relação com os fregueses (D). A e C tomam \"conta\" e \"fechar\" em sentido literal; B contradiz o texto; E contradiz a afirmação de que ele nunca cobrou juros.",
+          "dificuldade": "media"
+        },
+        {
+          "subassunto": "Textos literários",
+          "enunciado": "Leia o trecho.\n\"Eu tinha nove anos quando vi o mar pela primeira vez. Meu pai estacionou a caminhonete, tirou os sapatos e disse apenas: vai. Corri até a água como quem corre para um segredo, e o frio nos tornozelos foi a primeira notícia que o mundo me deu de que era maior do que a minha rua.\"\nConsiderando o trecho, é correto afirmar que",
+          "opcoes": [
+            "o narrador é apenas observador e não participa dos fatos narrados.",
+            "o texto é predominantemente dissertativo, pois defende uma tese.",
+            "o pai demonstra medo de que o filho entre na água.",
+            "a expressão \"como quem corre para um segredo\" está empregada em sentido literal.",
+            "o narrador participa dos fatos e relata uma experiência marcante da infância."
+          ],
+          "gabarito": 4,
+          "comentario": "O uso da 1ª pessoa (eu, meu pai, corri) mostra um narrador-personagem que relata uma descoberta marcante (E). Não é observador (A); o texto é narrativo, não dissertativo (B); o pai incentiva o filho com \"vai\" (C); a comparação \"como quem corre para um segredo\" tem sentido figurado (D).",
+          "dificuldade": "media"
+        },
+        {
+          "subassunto": "Textos não literários",
+          "enunciado": "Leia o texto.\n\"Há quem diga que a tecnologia isola as pessoas. O argumento, porém, ignora que o mesmo celular que distrai à mesa de jantar é o que permite a uma avó ver o neto que mora em outro país. O problema, portanto, não está no aparelho, mas no uso que se faz dele.\"\nA tese defendida pelo autor e o sentido do termo \"portanto\" são, respectivamente:",
+          "opcoes": [
+            "os efeitos da tecnologia dependem do uso que se faz dela; conclusão.",
+            "a tecnologia isola as pessoas; oposição.",
+            "os celulares devem ser proibidos durante as refeições; causa.",
+            "os efeitos da tecnologia dependem do uso que se faz dela; concessão.",
+            "a distância prejudica os laços familiares; conclusão."
+          ],
+          "gabarito": 0,
+          "comentario": "O autor apresenta uma opinião alheia (a tecnologia isola), refuta-a com \"porém\" e conclui, com \"portanto\", que o problema está no uso (A). B traz a opinião que o autor contesta; C e E não são defendidas no texto; D acerta a tese, mas \"portanto\" indica conclusão, não concessão.",
+          "dificuldade": "dificil"
+        }
+      ]
     },
     {
-     "pergunta": "O que é extrapolação em uma alternativa?",
-     "resposta": "Afirmar algo que vai além do que o texto diz."
+      "curso": "pm-sp-soldado",
+      "disciplina": "Língua Portuguesa e Interpretação de Texto",
+      "assunto": "Sinônimos e antônimos",
+      "aula": {
+        "titulo": "Sinônimos e antônimos: o sentido depende do contexto",
+        "secoes": [
+          {
+            "titulo": "Sinônimos",
+            "texto": "Sinônimos são palavras de sentido igual ou muito parecido, que podem substituir uma à outra em determinado contexto. Exemplos: esclarecer / elucidar; rápido / veloz; findar / terminar.\nNa prática, quase não existem sinônimos perfeitos. A troca só é válida se mantiver o sentido da frase. Por isso, a banca pergunta: \"a palavra X pode ser substituída, sem alteração de sentido, por...\". Sempre teste a substituição dentro da frase."
+          },
+          {
+            "titulo": "Antônimos",
+            "texto": "Antônimos são palavras de sentido contrário: honesto / desonesto; ágil / lento; diligente / negligente; ativo / passivo.\nMuitos antônimos são formados por prefixos de negação:\n• des-: fazer / desfazer; leal / desleal.\n• in- (im-, i-): capaz / incapaz; possível / impossível; legal / ilegal.\n• a- (an-): típico / atípico."
+          },
+          {
+            "titulo": "Contexto e polissemia",
+            "texto": "Uma mesma palavra pode ter vários sentidos (polissemia), e o sinônimo muda conforme o contexto.\n• \"O policial pegou o ônibus\" = tomou.\n• \"O policial pegou o suspeito\" = prendeu, capturou.\n• \"A gripe pegou a turma toda\" = contaminou.\nConclusão: nunca escolha o sinônimo pela palavra isolada; leia a frase inteira."
+          },
+          {
+            "titulo": "Parônimos e homônimos: pegadinhas comuns",
+            "texto": "Parônimos são palavras parecidas na escrita e na pronúncia, mas de sentidos diferentes:\n• cumprimento (saudação, execução) / comprimento (medida)\n• eminente (importante) / iminente (prestes a acontecer)\n• ratificar (confirmar) / retificar (corrigir)\n• descrição (ato de descrever) / discrição (reserva, prudência)\n• tráfego (trânsito) / tráfico (comércio ilegal)\n• infligir (aplicar pena) / infringir (violar regra)\nHomônimos têm a mesma pronúncia ou escrita, mas sentidos diferentes: cela (prisão) / sela (arreio); concerto (apresentação musical) / conserto (reparo); sessão (reunião) / seção (divisão) / cessão (ato de ceder)."
+          },
+          {
+            "titulo": "Vocabulário que costuma aparecer",
+            "texto": "• exíguo: pequeno, escasso\n• prolixo: que se estende demais / conciso: breve, objetivo\n• reticente: reservado, que evita falar / loquaz: que fala muito\n• apreensivo: preocupado\n• taxativo: categórico, que não admite contestação\n• lícito: permitido por lei / ilícito: proibido\n• efêmero: passageiro / perene: duradouro"
+          },
+          {
+            "titulo": "Bizu de prova",
+            "texto": "As questões costumam aparecer de três formas:\n• \"O termo X pode ser substituído, sem prejuízo de sentido, por...\": procure o sinônimo que funciona naquela frase.\n• \"O antônimo de X, no contexto, é...\": pense no sentido oposto ao que a palavra tem ali, e não em qualquer sentido do dicionário.\n• \"A substituição que altera o sentido é...\": teste cada troca; a errada costuma trazer um antônimo ou um parônimo.\nSe não conhecer a palavra, use o contexto: as frases vizinhas quase sempre dão pistas do sentido."
+          }
+        ]
+      },
+      "revisao": {
+        "pontos": [
+          "Sinônimo só vale se a troca mantiver o sentido da frase.",
+          "Teste sempre a substituição dentro do contexto.",
+          "Prefixos des- e in- formam muitos antônimos.",
+          "Ratificar confirma; retificar corrige.",
+          "Iminente = prestes a acontecer; eminente = importante.",
+          "Tráfego é trânsito; tráfico é comércio ilegal.",
+          "Infringir é violar; infligir é aplicar (pena, castigo).",
+          "Descrição é descrever; discrição é reserva.",
+          "Efêmero é o contrário de perene; prolixo é o contrário de conciso."
+        ]
+      },
+      "mapa": {
+        "no_central": "Relações de sentido entre palavras",
+        "ramos": [
+          {
+            "label": "Sinônimos",
+            "filhos": [
+              "Sentido semelhante",
+              "Dependem do contexto",
+              "Teste da substituição"
+            ]
+          },
+          {
+            "label": "Antônimos",
+            "filhos": [
+              "Sentido oposto",
+              "Prefixo des-",
+              "Prefixo in-/im-/i-"
+            ]
+          },
+          {
+            "label": "Polissemia",
+            "filhos": [
+              "Vários sentidos",
+              "Contexto define o sinônimo"
+            ]
+          },
+          {
+            "label": "Parônimos",
+            "filhos": [
+              "Ratificar x retificar",
+              "Eminente x iminente",
+              "Tráfego x tráfico",
+              "Infringir x infligir"
+            ]
+          },
+          {
+            "label": "Homônimos",
+            "filhos": [
+              "Cela x sela",
+              "Concerto x conserto",
+              "Sessão x seção x cessão"
+            ]
+          }
+        ]
+      },
+      "flashcards": [
+        {
+          "pergunta": "Qual o sentido de \"elucidar\"?",
+          "resposta": "Esclarecer, explicar."
+        },
+        {
+          "pergunta": "Qual o antônimo de \"diligente\"?",
+          "resposta": "Negligente."
+        },
+        {
+          "pergunta": "Ratificar ou retificar: qual significa corrigir?",
+          "resposta": "Retificar."
+        },
+        {
+          "pergunta": "O que significa \"iminente\"?",
+          "resposta": "Prestes a acontecer."
+        },
+        {
+          "pergunta": "Qual a diferença entre infringir e infligir?",
+          "resposta": "Infringir é violar uma regra; infligir é aplicar pena ou castigo."
+        },
+        {
+          "pergunta": "Qual o antônimo de \"efêmero\"?",
+          "resposta": "Duradouro, perene."
+        }
+      ],
+      "questoes": [
+        {
+          "subassunto": null,
+          "enunciado": "Na frase \"O depoimento da testemunha foi fundamental para elucidar o caso\", o termo destacado \"elucidar\" pode ser substituído, sem alteração de sentido, por",
+          "opcoes": [
+            "complicar.",
+            "esclarecer.",
+            "arquivar.",
+            "adiar.",
+            "ocultar."
+          ],
+          "gabarito": 1,
+          "comentario": "Elucidar significa esclarecer, tornar claro (B). Complicar e ocultar têm sentido oposto; arquivar e adiar não têm relação de sinonímia com elucidar.",
+          "dificuldade": "facil"
+        },
+        {
+          "subassunto": null,
+          "enunciado": "Na frase \"A equipe mostrou-se diligente durante toda a operação\", o antônimo de \"diligente\" é",
+          "opcoes": [
+            "cuidadosa.",
+            "atenta.",
+            "negligente.",
+            "eficiente.",
+            "dedicada."
+          ],
+          "gabarito": 2,
+          "comentario": "Diligente é quem age com cuidado e empenho; o contrário é negligente (C). As demais alternativas são sinônimos ou palavras de sentido próximo a diligente.",
+          "dificuldade": "facil"
+        },
+        {
+          "subassunto": null,
+          "enunciado": "Assinale a alternativa em que a palavra destacada está empregada corretamente, de acordo com seu sentido.",
+          "opcoes": [
+            "O perigo era iminente, por isso a área foi isolada imediatamente.",
+            "O juiz vai retificar a sentença, confirmando-a sem nenhuma alteração.",
+            "O cumprimento da rua foi medido pelos técnicos da prefeitura.",
+            "A polícia intensificou o combate ao tráfego de drogas na região.",
+            "O agente agiu com descrição, sem chamar a atenção de ninguém."
+          ],
+          "gabarito": 0,
+          "comentario": "Iminente significa prestes a acontecer, o que justifica o isolamento (A). Em B, confirmar é ratificar; em C, a medida é comprimento; em D, o comércio ilegal é tráfico; em E, a reserva é discrição.",
+          "dificuldade": "media"
+        },
+        {
+          "subassunto": null,
+          "enunciado": "Na frase \"O comandante foi taxativo: ninguém sairia do quartel antes do fim da vistoria\", a palavra \"taxativo\" tem sentido equivalente a",
+          "opcoes": [
+            "hesitante.",
+            "indiferente.",
+            "bem-humorado.",
+            "evasivo.",
+            "categórico."
+          ],
+          "gabarito": 4,
+          "comentario": "Taxativo é quem fala de forma firme, sem admitir contestação: categórico (E). Hesitante e evasivo sugerem dúvida ou fuga do assunto; indiferente e bem-humorado não correspondem ao tom da ordem dada.",
+          "dificuldade": "media"
+        },
+        {
+          "subassunto": null,
+          "enunciado": "Assinale a alternativa em que a substituição do termo destacado ALTERA o sentido original da frase.",
+          "opcoes": [
+            "\"O suspeito ficou apreensivo com a chegada da viatura\" por preocupado.",
+            "\"O discurso do vereador foi prolixo\" por longo e cheio de rodeios.",
+            "\"O reajuste concedido foi exíguo\" por pequeno.",
+            "\"A testemunha mostrou-se reticente\" por loquaz.",
+            "\"O acordo firmado entre as partes era lícito\" por legal."
+          ],
+          "gabarito": 3,
+          "comentario": "Reticente é quem se mostra reservado e evita falar; loquaz é quem fala muito. A troca inverte o sentido (D). Nas demais, os termos são equivalentes: apreensivo/preocupado, prolixo/longo e cheio de rodeios, exíguo/pequeno, lícito/legal.",
+          "dificuldade": "dificil"
+        }
+      ]
     },
     {
-     "pergunta": "Que tipo de linguagem predomina no texto literário?",
-     "resposta": "A conotativa (sentido figurado)."
+      "curso": "pm-sp-soldado",
+      "disciplina": "Língua Portuguesa e Interpretação de Texto",
+      "assunto": "Sentido próprio e figurado das palavras",
+      "aula": {
+        "titulo": "Sentido próprio (denotação) e figurado (conotação)",
+        "secoes": [
+          {
+            "titulo": "Denotação e conotação",
+            "texto": "Sentido próprio (denotativo) é o sentido literal, do dicionário, objetivo. Sentido figurado (conotativo) é o sentido ampliado, simbólico, que depende do contexto.\n• \"A pedra rolou pelo barranco.\" (sentido próprio: pedra é mineral)\n• \"Ele tem um coração de pedra.\" (sentido figurado: insensível)\nTextos técnicos, notícias e documentos preferem a denotação. Textos literários, publicidade, músicas e a fala do dia a dia usam muito a conotação."
+          },
+          {
+            "titulo": "Como identificar o sentido figurado",
+            "texto": "Pergunte: a palavra está sendo usada com o significado básico dela? Se o sentido só funciona como imagem ou comparação, é figurado.\n• \"A ficha caiu\" = ele finalmente entendeu.\n• \"Ela é o braço direito do chefe\" = principal auxiliar.\n• \"O preço subiu\" também é um uso ampliado, mas já tão comum que muitos nem percebem (é o que acontece com a catacrese, vista adiante).\nO contexto é sempre o juiz final."
+          },
+          {
+            "titulo": "Figuras de palavra mais cobradas",
+            "texto": "• Metáfora: comparação implícita, sem conectivo. \"Aquele soldado é uma rocha.\"\n• Comparação: comparação explícita, com conectivo (como, feito, tal qual). \"Forte como uma rocha.\"\n• Metonímia: troca de um termo por outro com relação próxima: autor pela obra (\"Li Machado de Assis\"), continente pelo conteúdo (\"Bebeu dois copos\"), marca pelo produto, parte pelo todo.\n• Catacrese: uso figurado que já virou comum por falta de palavra própria: pé da mesa, braço da cadeira, céu da boca.\n• Personificação: dar características humanas a seres não humanos. \"O vento sussurrava na janela.\""
+          },
+          {
+            "titulo": "Figuras de pensamento",
+            "texto": "• Hipérbole: exagero intencional. \"Já falei isso mil vezes.\"\n• Eufemismo: suavização de ideia desagradável. \"Ele nos deixou\" (morreu).\n• Ironia: dizer o contrário do que se pensa, com intenção crítica ou de humor. \"Que belo serviço: quebrou tudo!\"\n• Antítese: aproximação de ideias opostas. \"Entre o riso e o choro.\"\n• Paradoxo: ideias opostas que parecem se contradizer na mesma afirmação. \"Estar sozinho no meio da multidão.\""
+          },
+          {
+            "titulo": "Bizu de prova",
+            "texto": "A VUNESP costuma perguntar: \"a expressão X foi empregada em sentido figurado em...\" ou \"a frase que traz o termo em sentido próprio é...\". Leia cada alternativa imaginando a cena ao pé da letra. Se a cena literal for absurda ou impossível, o sentido é figurado.\nOutra forma comum é pedir o sentido de uma expressão figurada no contexto, como \"quebrar o gelo\" (iniciar uma conversa, desfazer o constrangimento) ou \"pôr lenha na fogueira\" (agravar uma situação). Nesses casos, a resposta é o sentido figurado, nunca a leitura literal."
+          }
+        ]
+      },
+      "revisao": {
+        "pontos": [
+          "Denotação = sentido literal; conotação = sentido figurado.",
+          "O contexto decide se o sentido é próprio ou figurado.",
+          "Metáfora compara sem conectivo; comparação usa como, tal qual.",
+          "Metonímia: autor pela obra, continente pelo conteúdo, parte pelo todo.",
+          "Catacrese: pé da mesa, braço da cadeira, céu da boca.",
+          "Hipérbole é exagero; eufemismo é suavização.",
+          "Ironia diz o contrário do que se pensa.",
+          "Personificação dá traços humanos a seres inanimados.",
+          "Imagine a cena ao pé da letra: se for absurda, é figurado."
+        ]
+      },
+      "mapa": {
+        "no_central": "Sentido das palavras",
+        "ramos": [
+          {
+            "label": "Sentido próprio",
+            "filhos": [
+              "Denotação",
+              "Literal",
+              "Textos técnicos e notícias"
+            ]
+          },
+          {
+            "label": "Sentido figurado",
+            "filhos": [
+              "Conotação",
+              "Depende do contexto",
+              "Literatura e publicidade"
+            ]
+          },
+          {
+            "label": "Figuras de palavra",
+            "filhos": [
+              "Metáfora",
+              "Comparação",
+              "Metonímia",
+              "Catacrese",
+              "Personificação"
+            ]
+          },
+          {
+            "label": "Figuras de pensamento",
+            "filhos": [
+              "Hipérbole",
+              "Eufemismo",
+              "Ironia",
+              "Antítese",
+              "Paradoxo"
+            ]
+          }
+        ]
+      },
+      "flashcards": [
+        {
+          "pergunta": "O que é denotação?",
+          "resposta": "O uso da palavra em seu sentido próprio, literal."
+        },
+        {
+          "pergunta": "Qual a diferença entre metáfora e comparação?",
+          "resposta": "A comparação usa conectivo (como); a metáfora, não."
+        },
+        {
+          "pergunta": "\"Li Machado de Assis\" contém qual figura?",
+          "resposta": "Metonímia (autor pela obra)."
+        },
+        {
+          "pergunta": "\"Chorei rios de lágrimas\" contém qual figura?",
+          "resposta": "Hipérbole."
+        },
+        {
+          "pergunta": "\"Pé da mesa\" é exemplo de qual figura?",
+          "resposta": "Catacrese."
+        },
+        {
+          "pergunta": "O que é eufemismo?",
+          "resposta": "Suavizar uma ideia desagradável ou chocante."
+        }
+      ],
+      "questoes": [
+        {
+          "subassunto": null,
+          "enunciado": "Assinale a alternativa em que a palavra \"pedra\" está empregada em sentido figurado.",
+          "opcoes": [
+            "A pedra rolou pelo barranco após a chuva forte.",
+            "Quando o assunto é mentira, meu pai tem um coração de pedra.",
+            "Os operários retiraram a pedra que bloqueava a estrada.",
+            "O calçamento da praça foi feito com pedra portuguesa.",
+            "A criança guardou uma pedra colorida no bolso."
+          ],
+          "gabarito": 1,
+          "comentario": "Em B, \"coração de pedra\" significa insensível, rígido: sentido figurado. Nas demais alternativas, pedra designa o mineral, em sentido próprio.",
+          "dificuldade": "facil"
+        },
+        {
+          "subassunto": null,
+          "enunciado": "Na frase \"Depois da notícia, chorei rios de lágrimas\", a figura de linguagem presente é a",
+          "opcoes": [
+            "metonímia.",
+            "eufemismo.",
+            "hipérbole.",
+            "antítese.",
+            "ironia."
+          ],
+          "gabarito": 2,
+          "comentario": "\"Rios de lágrimas\" é um exagero intencional para enfatizar o choro: hipérbole (C). Não há troca de termos por proximidade (metonímia), suavização (eufemismo), oposição de ideias (antítese) nem sentido contrário ao dito (ironia).",
+          "dificuldade": "facil"
+        },
+        {
+          "subassunto": null,
+          "enunciado": "Assinale a alternativa em que ocorre eufemismo.",
+          "opcoes": [
+            "O velho sargento nos deixou ontem, após longa doença.",
+            "Já pedi mil vezes para você fechar o portão.",
+            "O vento cantava entre as folhas das árvores.",
+            "Que ótimo motorista: bateu o carro três vezes na mesma semana!",
+            "Naquele dia, senti ao mesmo tempo alegria e tristeza."
+          ],
+          "gabarito": 0,
+          "comentario": "\"Nos deixou\" suaviza a ideia de morte: eufemismo (A). B traz hipérbole; C, personificação; D, ironia; E, antítese.",
+          "dificuldade": "media"
+        },
+        {
+          "subassunto": null,
+          "enunciado": "Em \"Com sede depois da corrida, o soldado bebeu dois copos seguidos\", a expressão \"bebeu dois copos\" exemplifica a",
+          "opcoes": [
+            "catacrese, pois o termo perdeu seu sentido original.",
+            "comparação, pois aproxima dois seres por meio de conectivo.",
+            "hipérbole, pois exagera a quantidade de líquido ingerido.",
+            "personificação, pois atribui ação humana a um objeto.",
+            "metonímia, pois o recipiente é mencionado no lugar do conteúdo."
+          ],
+          "gabarito": 4,
+          "comentario": "Ninguém bebe o copo, e sim o líquido que ele contém: é metonímia do tipo continente pelo conteúdo (E). Não há conectivo comparativo (B), exagero (C), ação humana atribuída a objeto (D) nem catacrese, que é o uso de termo figurado já cristalizado por falta de palavra própria (A).",
+          "dificuldade": "media"
+        },
+        {
+          "subassunto": null,
+          "enunciado": "Considere as frases:\nI. O vaso caiu da janela e se quebrou na calçada.\nII. A ficha só caiu quando ele releu a carta.\nIII. O paraquedista caiu no meio do campo de futebol.\nIV. O novo soldado logo caiu nas graças do comandante.\nO verbo \"cair\" está empregado em sentido figurado apenas em",
+          "opcoes": [
+            "I e III.",
+            "I e II.",
+            "III e IV.",
+            "II e IV.",
+            "I, II e IV."
+          ],
+          "gabarito": 3,
+          "comentario": "Em II, \"a ficha caiu\" significa \"entendeu\"; em IV, \"caiu nas graças\" significa \"conquistou a simpatia\": ambos são usos figurados (D). Em I e III, \"cair\" indica queda física de verdade (o vaso e o paraquedista chegaram ao chão): sentido próprio.",
+          "dificuldade": "dificil"
+        }
+      ]
     },
     {
-     "pergunta": "Quem é o narrador-personagem?",
-     "resposta": "O narrador em 1ª pessoa que participa da história."
+      "curso": "pm-sp-soldado",
+      "disciplina": "Língua Portuguesa e Interpretação de Texto",
+      "assunto": "Pontuação",
+      "aula": {
+        "titulo": "Pontuação: vírgula e demais sinais",
+        "secoes": [
+          {
+            "titulo": "A regra que mais cai: o que NÃO separar",
+            "texto": "Não se usa vírgula entre termos que formam o núcleo da oração em ordem direta:\n• sujeito e verbo: \"Os moradores do bairro, reclamaram\" (errado);\n• verbo e complemento: \"O policial entregou, o relatório\" (errado);\n• nome e seu complemento.\nSe o sujeito for longo, continua proibido separá-lo do verbo com uma única vírgula. Vírgulas em dupla, isolando um termo intercalado, são outra história."
+          },
+          {
+            "titulo": "Quando a vírgula é usada",
+            "texto": "• Vocativo (chamamento): \"Soldado, apresente-se.\"\n• Aposto explicativo: \"Marina, a nova sargento, assumiu o turno.\"\n• Adjunto adverbial deslocado: \"Durante a madrugada, a equipe fez a ronda.\" (se for curto, a vírgula é facultativa)\n• Enumeração: \"Trouxe colete, rádio e lanterna.\"\n• Orações coordenadas sem conectivo: \"Chegou, olhou, saiu.\"\n• Antes de mas, porém, contudo, logo, pois (explicativo): \"Estudou muito, mas não passou.\"\n• Conjunções deslocadas vêm entre vírgulas: \"O prazo, porém, terminou.\"\n• Oração adverbial anteposta: \"Quando o alarme tocou, todos saíram.\"\n• Omissão do verbo já dito (elipse): \"Eu prefiro café; ela, chá.\""
+          },
+          {
+            "titulo": "Adjetiva explicativa x restritiva",
+            "texto": "A vírgula muda o sentido nas orações iniciadas por pronome relativo (que, o qual):\n• Restritiva, sem vírgula: \"Os candidatos que estudaram foram aprovados.\" Só parte dos candidatos estudou, e foi essa parte que passou.\n• Explicativa, entre vírgulas: \"Os candidatos, que estudaram, foram aprovados.\" Todos os candidatos estudaram e todos passaram.\nEssa diferença é muito cobrada pela VUNESP."
+          },
+          {
+            "titulo": "Outros sinais",
+            "texto": "• Ponto e vírgula: separa orações longas ou itens de enumeração que já têm vírgulas; também separa orações coordenadas com conjunção deslocada.\n• Dois-pontos: anuncia citação, explicação, enumeração ou esclarecimento. \"Só havia uma saída: recuar.\"\n• Travessão: marca fala de personagem ou isola expressões, como as vírgulas, com mais destaque.\n• Parênteses: isolam informações acessórias.\n• Aspas: indicam citação, ironia, estrangeirismo ou destaque.\n• Reticências: indicam interrupção, hesitação ou suspense."
+          },
+          {
+            "titulo": "Bizu de prova",
+            "texto": "Para julgar uma vírgula, coloque a frase em ordem direta (sujeito + verbo + complemento + adjuntos). Se a vírgula estiver separando sujeito de verbo ou verbo de complemento, está errada. Se estiver isolando algo deslocado ou acessório, verifique se há vírgula de abertura e de fechamento.\nOutra pista útil: termos intercalados (aposto, conjunção deslocada, oração explicativa) exigem vírgula dupla, uma antes e outra depois. Se a alternativa abre a vírgula e esquece de fechá-la, normalmente está errada. Já a vírgula antes do \"e\" é possível quando as orações têm sujeitos diferentes: \"O cabo dirigia, e o soldado observava a rua\"."
+          }
+        ]
+      },
+      "revisao": {
+        "pontos": [
+          "Nunca separe sujeito e verbo com vírgula.",
+          "Nunca separe verbo e complemento com vírgula.",
+          "Vocativo e aposto explicativo ficam entre vírgulas.",
+          "Adjunto adverbial deslocado: vírgula recomendada; se curto, facultativa.",
+          "Use vírgula antes de mas, porém, contudo.",
+          "Conjunção deslocada no meio da oração fica entre vírgulas.",
+          "Adjetiva explicativa tem vírgula; restritiva não tem.",
+          "Vírgula pode indicar verbo omitido (elipse).",
+          "Dois-pontos anunciam explicação, citação ou enumeração."
+        ]
+      },
+      "mapa": {
+        "no_central": "Pontuação",
+        "ramos": [
+          {
+            "label": "Vírgula proibida",
+            "filhos": [
+              "Sujeito e verbo",
+              "Verbo e complemento",
+              "Nome e complemento"
+            ]
+          },
+          {
+            "label": "Vírgula obrigatória",
+            "filhos": [
+              "Vocativo",
+              "Aposto explicativo",
+              "Conjunção deslocada",
+              "Elipse do verbo"
+            ]
+          },
+          {
+            "label": "Orações",
+            "filhos": [
+              "Coordenadas sem conectivo",
+              "Antes de mas",
+              "Adverbial anteposta"
+            ]
+          },
+          {
+            "label": "Adjetivas",
+            "filhos": [
+              "Explicativa com vírgula",
+              "Restritiva sem vírgula"
+            ]
+          },
+          {
+            "label": "Outros sinais",
+            "filhos": [
+              "Ponto e vírgula",
+              "Dois-pontos",
+              "Travessão",
+              "Aspas",
+              "Reticências"
+            ]
+          }
+        ]
+      },
+      "flashcards": [
+        {
+          "pergunta": "Pode haver vírgula entre sujeito e verbo?",
+          "resposta": "Não, em ordem direta é proibido."
+        },
+        {
+          "pergunta": "Como se pontua o vocativo?",
+          "resposta": "Separado por vírgula (ou vírgulas)."
+        },
+        {
+          "pergunta": "Qual a diferença de pontuação entre adjetiva explicativa e restritiva?",
+          "resposta": "A explicativa vem entre vírgulas; a restritiva, sem vírgula."
+        },
+        {
+          "pergunta": "Em \"Eu prefiro café; ela, chá\", o que indica a vírgula?",
+          "resposta": "A omissão do verbo (elipse)."
+        },
+        {
+          "pergunta": "Onde fica a vírgula em relação ao \"mas\"?",
+          "resposta": "Antes dele: \"Estudou, mas não passou.\""
+        },
+        {
+          "pergunta": "Para que servem os dois-pontos?",
+          "resposta": "Anunciar explicação, citação, enumeração ou esclarecimento."
+        }
+      ],
+      "questoes": [
+        {
+          "subassunto": null,
+          "enunciado": "Assinale a alternativa corretamente pontuada de acordo com a norma-padrão.",
+          "opcoes": [
+            "Os moradores do bairro, reclamaram do barulho.",
+            "Senhor comandante, a viatura já está pronta.",
+            "O policial entregou, o relatório ao delegado.",
+            "A cidade de São Paulo, é a mais populosa do país.",
+            "Os candidatos aprovados, farão o exame médico."
+          ],
+          "gabarito": 1,
+          "comentario": "Em B, a vírgula isola o vocativo \"Senhor comandante\", o que é obrigatório. Em A, D e E, a vírgula separa indevidamente o sujeito do verbo; em C, separa o verbo de seu complemento.",
+          "dificuldade": "facil"
+        },
+        {
+          "subassunto": null,
+          "enunciado": "Em \"Marina, a nova sargento da companhia, assumiu o turno da noite\", as vírgulas foram empregadas para isolar",
+          "opcoes": [
+            "um vocativo.",
+            "um adjunto adverbial deslocado.",
+            "uma oração adjetiva restritiva.",
+            "um aposto explicativo.",
+            "um sujeito posposto ao verbo."
+          ],
+          "gabarito": 3,
+          "comentario": "\"A nova sargento da companhia\" explica quem é Marina: é aposto explicativo (D). Não há chamamento (vocativo), circunstância adverbial, oração com pronome relativo nem sujeito posposto; Marina é o sujeito, anteposto ao verbo.",
+          "dificuldade": "facil"
+        },
+        {
+          "subassunto": null,
+          "enunciado": "Considere as frases:\nI. Os candidatos que estudaram foram aprovados.\nII. Os candidatos, que estudaram, foram aprovados.\nÉ correto afirmar que",
+          "opcoes": [
+            "as duas frases têm exatamente o mesmo sentido.",
+            "em I, todos os candidatos estudaram e foram aprovados.",
+            "em II, afirma-se que todos os candidatos estudaram e foram aprovados.",
+            "em II, as vírgulas estão erradas, pois separam o sujeito do verbo.",
+            "em I, falta vírgula obrigatória antes do pronome \"que\"."
+          ],
+          "gabarito": 2,
+          "comentario": "Em II, a oração entre vírgulas é explicativa: todos os candidatos estudaram e foram aprovados (C). Em I, a oração é restritiva: só os que estudaram foram aprovados, por isso os sentidos diferem (A e B erradas). As vírgulas de II isolam uma oração intercalada, o que é correto (D), e a restritiva não leva vírgula (E).",
+          "dificuldade": "media"
+        },
+        {
+          "subassunto": null,
+          "enunciado": "Assinale a alternativa corretamente pontuada.",
+          "opcoes": [
+            "O soldado estudou muito mas, não foi convocado.",
+            "O soldado estudou, muito mas não foi convocado.",
+            "O soldado, estudou muito, mas não foi convocado.",
+            "O soldado estudou muito mas não, foi convocado.",
+            "O soldado estudou muito, mas não foi convocado."
+          ],
+          "gabarito": 4,
+          "comentario": "A vírgula deve vir antes da conjunção adversativa \"mas\" (E). Em A, a vírgula está depois do \"mas\"; em B, separa o verbo do advérbio de modo indevido e deixa o \"mas\" sem vírgula; em C, separa sujeito e verbo; em D, separa \"não\" do verbo.",
+          "dificuldade": "media"
+        },
+        {
+          "subassunto": null,
+          "enunciado": "Assinale a alternativa em que a vírgula indica a omissão de um verbo já mencionado.",
+          "opcoes": [
+            "Na primeira fase, ele fez a prova objetiva; na segunda, o teste físico.",
+            "Pedro, venha até a sala do comandante.",
+            "Chegou cedo, conferiu o equipamento, saiu para a ronda.",
+            "Em São Paulo, a temperatura caiu bastante ontem.",
+            "O sargento, que é experiente, orientou a tropa."
+          ],
+          "gabarito": 0,
+          "comentario": "Em A, após \"na segunda\", a vírgula marca a omissão do verbo \"fez\" (elipse): \"na segunda, [fez] o teste físico\". Em B há vocativo; em C, orações coordenadas sem conectivo; em D, adjunto adverbial deslocado; em E, oração adjetiva explicativa.",
+          "dificuldade": "dificil"
+        }
+      ]
     },
     {
-     "pergunta": "O que é o eu lírico?",
-     "resposta": "A voz que fala no poema; não se confunde com o autor."
+      "curso": "pm-sp-soldado",
+      "disciplina": "Língua Portuguesa e Interpretação de Texto",
+      "assunto": "Classes de palavras: emprego e sentido que imprimem às relações que estabelecem",
+      "aula": {
+        "titulo": "Classes de palavras: emprego e sentido",
+        "secoes": [
+          {
+            "titulo": "Substantivo e adjetivo",
+            "texto": "Substantivo nomeia seres, objetos, lugares, sentimentos e ações (policial, cidade, coragem, chegada). Qualquer palavra antecedida de artigo pode virar substantivo: \"O não dele encerrou a conversa\" (substantivação).\nAdjetivo caracteriza o substantivo e concorda com ele em gênero e número (viatura nova, viaturas novas). A posição pode mudar o sentido: \"um grande homem\" (importante) x \"um homem grande\" (alto, corpulento)."
+          },
+          {
+            "titulo": "Numeral e pronome",
+            "texto": "Numeral indica quantidade ou ordem: cardinal (dois), ordinal (segundo), multiplicativo (dobro) e fracionário (metade).\nPronome substitui ou acompanha o substantivo:\n• Pessoais: eu, tu, ele; oblíquos me, te, se, o, a, lhe.\n• Possessivos: meu, seu, nosso.\n• Demonstrativos: este (perto de quem fala / o que vou dizer), esse (perto de quem ouve / o que já foi dito), aquele (distante).\n• Relativos: que, quem, onde (só para lugar), o qual, cujo. \"Cujo\" indica posse, concorda com o que vem depois e não aceita artigo depois dele: \"o policial cuja viatura quebrou\"."
+          },
+          {
+            "titulo": "Verbo",
+            "texto": "Verbo indica ação, estado ou fenômeno e varia em pessoa, número, tempo, modo e voz.\n• Indicativo: certeza (estudo, estudei, estudarei, estudaria).\n• Subjuntivo: dúvida, hipótese, desejo (que eu estude, se eu estudasse, quando eu estudar).\n• Imperativo: ordem, pedido (estude).\nVozes: ativa (\"O policial prendeu o suspeito\"), passiva analítica (\"O suspeito foi preso pelo policial\"), passiva sintética (\"Prenderam-se os suspeitos\") e reflexiva (\"Ele se feriu\").\nAtenção a verbos irregulares: quando eu vier (vir), quando eu vir (ver), se eu puser (pôr)."
+          },
+          {
+            "titulo": "Advérbio",
+            "texto": "Advérbio modifica verbo, adjetivo ou outro advérbio, indicando circunstância: tempo (ontem, já), lugar (aqui, longe), modo (bem, rapidamente), intensidade (muito, bastante, meio), negação (não), afirmação (sim, certamente), dúvida (talvez).\nÉ invariável: \"Ela estava meio cansada\" (e não \"meia cansada\"); \"Elas estavam bastante atentas\". Já \"meia\" como numeral varia: \"meio-dia e meia\" (meia hora)."
+          },
+          {
+            "titulo": "Preposição",
+            "texto": "Preposição liga dois termos, estabelecendo relação de sentido entre eles: a, ante, após, até, com, contra, de, desde, em, entre, para, perante, por, sem, sob, sobre, trás.\nO sentido depende do contexto:\n• com: companhia (saiu com o irmão), instrumento (cortou com a faca), modo (agiu com calma).\n• de: posse (carro de João), origem (veio de Santos), matéria (mesa de madeira), causa (morreu de frio).\n• por: causa (foi preso por furto), meio (enviou por e-mail), lugar (passou por aqui).\n• para: finalidade (treina para passar), direção (foi para casa)."
+          },
+          {
+            "titulo": "Conjunção",
+            "texto": "Conjunção liga orações e indica a relação lógica entre elas.\n• Coordenativas: aditivas (e, nem), adversativas (mas, porém, contudo, todavia, entretanto), alternativas (ou... ou), conclusivas (logo, portanto, por isso), explicativas (pois, porque, que).\n• Subordinativas: causais (porque, como, já que), concessivas (embora, ainda que, mesmo que), condicionais (se, caso), temporais (quando, assim que), finais (para que, a fim de que), consecutivas (tão... que), conformativas (conforme, segundo), proporcionais (à medida que, à proporção que), comparativas (como, mais... do que)."
+          },
+          {
+            "titulo": "Bizu de prova",
+            "texto": "• A pergunta mais comum é trocar um conectivo por outro de mesmo sentido: \"embora\" = \"ainda que\"; \"porém\" = \"contudo\"; \"portanto\" = \"logo\".\n• \"Cuja a\" está sempre errado; \"onde\" só para lugar.\n• \"Meio\" antes de adjetivo não varia: \"meio cansada\"."
+          }
+        ]
+      },
+      "revisao": {
+        "pontos": [
+          "Qualquer palavra com artigo pode virar substantivo.",
+          "Adjetivo antes ou depois do substantivo pode mudar o sentido.",
+          "Cujo indica posse e não aceita artigo depois: cuja viatura.",
+          "Onde só se usa para lugar físico.",
+          "Este = perto de quem fala; esse = perto de quem ouve.",
+          "Advérbio é invariável: meio cansada, bastante atentas.",
+          "Porém, contudo, todavia = oposição; portanto, logo = conclusão.",
+          "Embora, ainda que, mesmo que = concessão.",
+          "Quando eu vir (ver) x quando eu vier (vir): futuro do subjuntivo.",
+          "O sentido da preposição depende do contexto."
+        ]
+      },
+      "mapa": {
+        "no_central": "Classes de palavras",
+        "ramos": [
+          {
+            "label": "Nomes",
+            "filhos": [
+              "Substantivo",
+              "Adjetivo",
+              "Numeral",
+              "Substantivação"
+            ]
+          },
+          {
+            "label": "Pronome",
+            "filhos": [
+              "Pessoal",
+              "Possessivo",
+              "Demonstrativo",
+              "Relativo (cujo, onde)"
+            ]
+          },
+          {
+            "label": "Verbo",
+            "filhos": [
+              "Modos",
+              "Tempos",
+              "Vozes",
+              "Irregulares"
+            ]
+          },
+          {
+            "label": "Advérbio",
+            "filhos": [
+              "Circunstâncias",
+              "Invariável",
+              "Meio e bastante"
+            ]
+          },
+          {
+            "label": "Preposição",
+            "filhos": [
+              "Liga termos",
+              "Causa, meio, lugar",
+              "Finalidade, posse"
+            ]
+          },
+          {
+            "label": "Conjunção",
+            "filhos": [
+              "Coordenativas",
+              "Subordinativas",
+              "Troca por equivalente"
+            ]
+          }
+        ]
+      },
+      "flashcards": [
+        {
+          "pergunta": "Qual o valor de \"porém\"?",
+          "resposta": "Oposição (adversativa)."
+        },
+        {
+          "pergunta": "Qual o valor de \"embora\"?",
+          "resposta": "Concessão."
+        },
+        {
+          "pergunta": "\"Cujo\" pode vir seguido de artigo?",
+          "resposta": "Não. Diz-se \"cuja viatura\", nunca \"cuja a viatura\"."
+        },
+        {
+          "pergunta": "\"Ela estava meio cansada\" ou \"meia cansada\"?",
+          "resposta": "Meio cansada: advérbio é invariável."
+        },
+        {
+          "pergunta": "O que é substantivação?",
+          "resposta": "Uso de palavra de outra classe como substantivo, geralmente com artigo: o não, o amanhã."
+        },
+        {
+          "pergunta": "Quais são os modos verbais?",
+          "resposta": "Indicativo, subjuntivo e imperativo."
+        }
+      ],
+      "questoes": [
+        {
+          "subassunto": "Conjunção",
+          "enunciado": "Em \"O candidato estudou bastante, porém não foi aprovado na primeira fase\", a conjunção \"porém\" expressa ideia de",
+          "opcoes": [
+            "conclusão.",
+            "oposição.",
+            "explicação.",
+            "adição.",
+            "alternância."
+          ],
+          "gabarito": 1,
+          "comentario": "\"Porém\" é conjunção coordenativa adversativa: o resultado (não aprovação) se opõe ao esperado pelo esforço (B). Conclusão seria \"portanto\"; explicação, \"pois\"; adição, \"e\"; alternância, \"ou\".",
+          "dificuldade": "facil"
+        },
+        {
+          "subassunto": "Advérbio",
+          "enunciado": "Assinale a alternativa correta quanto ao emprego da palavra \"meio\", de acordo com a norma-padrão.",
+          "opcoes": [
+            "A soldado estava meio cansada após o plantão.",
+            "A candidata ficou meia nervosa antes da prova.",
+            "Os portões estavam meios fechados durante a noite.",
+            "A reunião terminou ao meio-dia e meio.",
+            "Ele bebeu meio garrafa de água depois do treino."
+          ],
+          "gabarito": 0,
+          "comentario": "Antes de adjetivo, \"meio\" é advérbio (um pouco) e não varia: \"meio cansada\" (A). Por isso B e C estão erradas. Em D, subentende-se \"meia hora\": meio-dia e meia. Em E, \"meio\" é numeral e concorda com \"garrafa\": meia garrafa.",
+          "dificuldade": "facil"
+        },
+        {
+          "subassunto": "Preposição",
+          "enunciado": "Na frase \"O sargento saiu da reunião com pressa\", a preposição \"com\" estabelece relação de",
+          "opcoes": [
+            "companhia.",
+            "instrumento.",
+            "causa.",
+            "lugar.",
+            "modo."
+          ],
+          "gabarito": 4,
+          "comentario": "\"Com pressa\" indica a maneira como o sargento saiu: relação de modo (E). Haveria companhia em \"saiu com o colega\" e instrumento em \"abriu com a chave\". Não há causa nem lugar na expressão.",
+          "dificuldade": "media"
+        },
+        {
+          "subassunto": "Pronome",
+          "enunciado": "Assinale a alternativa que completa corretamente a frase: \"O policial ______ viatura quebrou pediu apoio à central.\"",
+          "opcoes": [
+            "que a",
+            "cuja a",
+            "onde a",
+            "cuja",
+            "o qual"
+          ],
+          "gabarito": 3,
+          "comentario": "Há relação de posse (a viatura do policial), expressa pelo pronome relativo \"cujo\", que concorda com o termo seguinte e não admite artigo depois: \"cuja viatura\" (D). \"Cuja a\" é erro comum; \"onde\" só se refere a lugar; \"que a\" e \"o qual\" não expressam posse nessa construção.",
+          "dificuldade": "media"
+        },
+        {
+          "subassunto": "Verbo",
+          "enunciado": "Assinale a alternativa em que o verbo destacado está no futuro do subjuntivo.",
+          "opcoes": [
+            "Se eu fosse você, aceitaria a proposta.",
+            "Espero que ele venha à formatura.",
+            "Quando você vier à cidade, avise-me.",
+            "Ele virá ao quartel amanhã cedo.",
+            "Ele viria à reunião se pudesse."
+          ],
+          "gabarito": 2,
+          "comentario": "\"Vier\" (quando você vier) é futuro do subjuntivo do verbo vir (C). \"Fosse\" é pretérito imperfeito do subjuntivo; \"venha\", presente do subjuntivo; \"virá\", futuro do presente do indicativo; \"viria\", futuro do pretérito do indicativo.",
+          "dificuldade": "dificil"
+        }
+      ]
     },
     {
-     "pergunta": "O que é a tese de um texto argumentativo?",
-     "resposta": "O ponto de vista principal defendido pelo autor."
+      "curso": "pm-sp-soldado",
+      "disciplina": "Língua Portuguesa e Interpretação de Texto",
+      "assunto": "Concordância",
+      "aula": {
+        "titulo": "Concordância verbal e nominal",
+        "secoes": [
+          {
+            "titulo": "Concordância verbal: regra geral e sujeito composto",
+            "texto": "O verbo concorda com o sujeito em número e pessoa: \"Os soldados chegaram\". Ache o sujeito perguntando \"quem?\" ou \"o quê?\" ao verbo, principalmente quando ele vem depois do verbo: \"Chegaram as novas viaturas\".\n• Sujeito composto antes do verbo: plural. \"O cabo e o soldado saíram.\"\n• Sujeito composto depois do verbo: plural ou concordância com o núcleo mais próximo. \"Saíram (ou saiu) o cabo e o soldado.\"\n• Pessoas diferentes: a 1ª prevalece sobre as outras; a 2ª sobre a 3ª. \"Eu e ele iremos.\""
+          },
+          {
+            "titulo": "Casos especiais que mais caem",
+            "texto": "• Haver no sentido de existir ou acontecer é impessoal: fica no singular. \"Havia muitos candidatos.\" \"Houve dois acidentes.\" O auxiliar também fica no singular: \"Deve haver vagas.\"\n• Fazer indicando tempo decorrido é impessoal: \"Faz dez anos que ele se formou.\" \"Vai fazer três meses.\"\n• Existir, ocorrer e acontecer NÃO são impessoais: \"Existem vagas.\" \"Ocorreram falhas.\"\n• Expressões partitivas (a maioria de, grande parte de) + plural: verbo no singular ou no plural. \"A maioria dos alunos saiu/saíram.\"\n• Verbo + se: se o verbo for transitivo direto, o \"se\" é partícula apassivadora e o verbo concorda: \"Vendem-se casas\". Se vier com preposição, o \"se\" indetermina o sujeito e o verbo fica no singular: \"Precisa-se de vigilantes\"; \"Trata-se de casos graves\"."
+          },
+          {
+            "titulo": "Concordância nominal: regra geral",
+            "texto": "Artigo, adjetivo, numeral e pronome concordam em gênero e número com o substantivo: \"as primeiras viaturas novas\".\n• Adjetivo depois de dois substantivos: concorda com o mais próximo ou vai para o plural. \"Farda e boné novos\" ou \"farda e boné novo\".\n• Adjetivo antes de dois substantivos: concorda com o mais próximo. \"Nova farda e boné.\""
+          },
+          {
+            "titulo": "Palavras que variam e que não variam",
+            "texto": "Variam (concordam com o termo a que se referem):\n• anexo, incluso, obrigado, mesmo, próprio, quite: \"Seguem anexas as fotos\"; \"Muito obrigada, disse a policial\"; \"Elas mesmas resolveram\". (Quando \"mesmo\" significa \"realmente\", é advérbio e não varia.)\n• bastante como adjetivo (= muitos): \"Havia bastantes provas\".\nNão variam:\n• menos: \"menos pessoas\" (nunca \"menas\").\n• bastante e meio como advérbio (antes de adjetivo): \"bastante organizados\", \"meio cansada\".\n• a expressão \"em anexo\": \"Seguem em anexo as fotos\"."
+          },
+          {
+            "titulo": "É proibido, é necessário, é bom",
+            "texto": "Sem artigo ou determinante, a expressão fica invariável: \"É proibido entrada\"; \"Água é bom para a saúde\"; \"É necessário paciência\".\nCom artigo ou determinante, concorda: \"É proibida a entrada\"; \"A água é boa\"; \"É necessária muita paciência\"."
+          },
+          {
+            "titulo": "Bizu de prova",
+            "texto": "• Ache o sujeito antes de tudo, mesmo que ele venha depois do verbo.\n• \"Havia\", \"houve\", \"faz\" (tempo): sempre no singular. \"Existem\" e \"ocorreram\" vão para o plural.\n• Verbo + se: sem preposição, concorda (vendem-se casas); com preposição, singular (precisa-se de vigilantes)."
+          }
+        ]
+      },
+      "revisao": {
+        "pontos": [
+          "Verbo concorda com o sujeito, mesmo quando o sujeito vem depois.",
+          "Haver = existir: sempre no singular (havia muitos candidatos).",
+          "Fazer indicando tempo: singular (faz dez anos).",
+          "Existir e ocorrer concordam normalmente: existem vagas.",
+          "Vendem-se casas (apassivadora); precisa-se de pessoas (indeterminação).",
+          "Anexo, obrigado, mesmo, próprio e quite concordam.",
+          "Menos é invariável: nunca use \"menas\".",
+          "Bastante antes de adjetivo não varia; antes de substantivo, varia.",
+          "É proibido entrada; é proibida a entrada."
+        ]
+      },
+      "mapa": {
+        "no_central": "Concordância",
+        "ramos": [
+          {
+            "label": "Verbal: regra geral",
+            "filhos": [
+              "Verbo concorda com sujeito",
+              "Sujeito posposto",
+              "Sujeito composto"
+            ]
+          },
+          {
+            "label": "Verbos impessoais",
+            "filhos": [
+              "Haver = existir",
+              "Fazer = tempo",
+              "Auxiliar no singular"
+            ]
+          },
+          {
+            "label": "Verbo + se",
+            "filhos": [
+              "Apassivadora: vendem-se",
+              "Indeterminação: precisa-se de"
+            ]
+          },
+          {
+            "label": "Nominal: regra geral",
+            "filhos": [
+              "Gênero e número",
+              "Adjetivo após dois nomes",
+              "Adjetivo antes de dois nomes"
+            ]
+          },
+          {
+            "label": "Variáveis x invariáveis",
+            "filhos": [
+              "Anexo, obrigado, mesmo",
+              "Menos",
+              "Bastante e meio",
+              "É proibido / é proibida a"
+            ]
+          }
+        ]
+      },
+      "flashcards": [
+        {
+          "pergunta": "\"Havia\" ou \"haviam\" muitos candidatos?",
+          "resposta": "Havia: haver no sentido de existir é impessoal."
+        },
+        {
+          "pergunta": "\"Faz\" ou \"fazem\" cinco anos?",
+          "resposta": "Faz: fazer indicando tempo é impessoal."
+        },
+        {
+          "pergunta": "\"Aluga-se\" ou \"alugam-se\" salas?",
+          "resposta": "Alugam-se salas (se apassivador, verbo concorda)."
+        },
+        {
+          "pergunta": "\"Precisa-se\" ou \"precisam-se\" de vigilantes?",
+          "resposta": "Precisa-se: com preposição, o se indetermina o sujeito."
+        },
+        {
+          "pergunta": "\"Seguem anexo\" ou \"seguem anexas\" as fotos?",
+          "resposta": "Seguem anexas as fotos."
+        },
+        {
+          "pergunta": "Qual a forma correta: \"é proibido entrada\" ou \"é proibida entrada\"?",
+          "resposta": "É proibido entrada (sem artigo, invariável)."
+        }
+      ],
+      "questoes": [
+        {
+          "subassunto": "Concordância verbal",
+          "enunciado": "Assinale a alternativa correta quanto à concordância verbal.",
+          "opcoes": [
+            "Havia muitos candidatos aguardando na fila.",
+            "Haviam muitos candidatos aguardando na fila.",
+            "Houveram diversos problemas durante a prova.",
+            "Devem haver vagas remanescentes no concurso.",
+            "Existe, nesta cidade, muitas escolas públicas."
+          ],
+          "gabarito": 0,
+          "comentario": "Haver no sentido de existir é impessoal e fica no singular (A); por isso B e C estão erradas. Em D, o auxiliar acompanha o verbo impessoal: \"deve haver vagas\". Em E, existir concorda com o sujeito: \"existem muitas escolas\".",
+          "dificuldade": "facil"
+        },
+        {
+          "subassunto": "Concordância nominal",
+          "enunciado": "Assinale a alternativa correta quanto à concordância nominal.",
+          "opcoes": [
+            "Seguem anexo as fotos do local da ocorrência.",
+            "Segue anexa as fotos do local da ocorrência.",
+            "Seguem anexos as fotos do local da ocorrência.",
+            "Segue anexas as fotos do local da ocorrência.",
+            "Seguem anexas as fotos do local da ocorrência."
+          ],
+          "gabarito": 4,
+          "comentario": "O sujeito é \"as fotos\" (feminino plural): o verbo vai para o plural (seguem) e o adjetivo \"anexo\" concorda com ele (anexas), como em E. A deixa o adjetivo invariável; B e D erram a concordância verbal; C erra o gênero.",
+          "dificuldade": "facil"
+        },
+        {
+          "subassunto": "Concordância verbal",
+          "enunciado": "Assinale a alternativa em que a concordância do verbo acompanhado do pronome \"se\" está de acordo com a norma-padrão.",
+          "opcoes": [
+            "Aluga-se apartamentos próximos ao batalhão.",
+            "Precisam-se de vigilantes para o turno da noite.",
+            "Consertam-se relógios e aparelhos eletrônicos.",
+            "Vende-se terrenos em área urbana.",
+            "Tratam-se de casos que exigem atenção."
+          ],
+          "gabarito": 2,
+          "comentario": "Consertar é transitivo direto: o \"se\" é partícula apassivadora e o verbo concorda com o sujeito plural, \"relógios e aparelhos\" (C). Em A e D, o verbo deveria estar no plural (alugam-se, vendem-se). Em B e E, os verbos exigem preposição, o \"se\" indetermina o sujeito e o verbo fica no singular (precisa-se, trata-se).",
+          "dificuldade": "media"
+        },
+        {
+          "subassunto": "Concordância verbal",
+          "enunciado": "Assinale a alternativa correta quanto à concordância verbal.",
+          "opcoes": [
+            "Fazem cinco anos que ele ingressou na corporação.",
+            "Faz cinco anos que ele ingressou na corporação.",
+            "Vão fazer três meses que ele saiu do batalhão.",
+            "Devem fazer dois anos que não chove tanto.",
+            "Fizeram dez dias que a viatura está na oficina."
+          ],
+          "gabarito": 1,
+          "comentario": "O verbo fazer indicando tempo decorrido é impessoal e fica no singular (B). O mesmo vale para o auxiliar da locução: \"vai fazer\", \"deve fazer\" (C e D erradas). A e E pluralizam indevidamente o verbo fazer.",
+          "dificuldade": "media"
+        },
+        {
+          "subassunto": "Concordância nominal",
+          "enunciado": "Assinale a alternativa inteiramente correta quanto à concordância nominal.",
+          "opcoes": [
+            "Havia menas pessoas na audiência do que no ano passado.",
+            "Os candidatos declararam estar quite com o serviço militar.",
+            "\"Muito obrigado\", disse a sargento ao receber a homenagem.",
+            "Os documentos estavam bastante organizados, e havia bastantes provas.",
+            "É proibida entrada de pessoas estranhas ao serviço."
+          ],
+          "gabarito": 3,
+          "comentario": "Em D, \"bastante\" antes de adjetivo é advérbio (invariável) e \"bastantes\" antes de substantivo é adjetivo (varia): ambos corretos. \"Menos\" não varia (A); \"quite\" concorda com o termo a que se refere: \"estar quites\" (B); a mulher diz \"obrigada\" (C); sem artigo, usa-se \"é proibido entrada\" (E).",
+          "dificuldade": "dificil"
+        }
+      ]
+    },
+    {
+      "curso": "pm-sp-soldado",
+      "disciplina": "Língua Portuguesa e Interpretação de Texto",
+      "assunto": "Regência",
+      "aula": {
+        "titulo": "Regência verbal e nominal",
+        "secoes": [
+          {
+            "titulo": "O que é regência",
+            "texto": "Regência é a relação entre um termo que exige complemento (regente) e o complemento (regido). Quando o regente é um verbo, fala-se em regência verbal; quando é um nome (substantivo, adjetivo ou advérbio), regência nominal.\n• Verbo transitivo direto (VTD): complemento sem preposição. \"Comprou o uniforme.\"\n• Verbo transitivo indireto (VTI): complemento com preposição. \"Obedeceu ao sargento.\"\n• Verbo transitivo direto e indireto (VTDI): os dois. \"Entregou o relatório ao delegado.\""
+          },
+          {
+            "titulo": "Verbos que mudam de sentido",
+            "texto": "• Assistir: no sentido de ver, presenciar, pede \"a\" (assisti ao jogo); no sentido de ajudar, prestar assistência, é VTD (o médico assistiu os feridos).\n• Aspirar: respirar = VTD (aspirou o ar puro); desejar, almejar = pede \"a\" (aspira a uma promoção).\n• Visar: mirar ou pôr visto = VTD (visou o alvo; visou o documento); ter como objetivo = pede \"a\" (visa ao cargo).\n• Proceder: no sentido de realizar, dar início, pede \"a\" (procedeu à vistoria)."
+          },
+          {
+            "titulo": "Verbos que caem sempre",
+            "texto": "• Obedecer e desobedecer pedem \"a\": obedecer às normas.\n• Preferir: preferir uma coisa a outra, sem \"mais\" e sem \"do que\". \"Prefiro estudar a trabalhar.\"\n• Chegar e ir (movimento) pedem \"a\": chegou ao quartel; vou à delegacia.\n• Implicar (acarretar) é VTD: \"A falta implicará punição.\"\n• Namorar é VTD: namorava a vizinha.\n• Esquecer e lembrar: sem pronome, sem preposição (esqueci o documento); com pronome, com \"de\" (esqueci-me do documento).\n• Pagar e perdoar: coisa sem preposição, pessoa com \"a\". \"Pagou o salário ao funcionário.\"\n• Simpatizar pede \"com\" e não é pronominal: \"simpatizo com ele\" (e não \"simpatizo-me\")."
+          },
+          {
+            "titulo": "Regência nominal",
+            "texto": "Alguns nomes exigem preposição específica:\n• apto a, apto para; acessível a; favorável a; contrário a; preferível a\n• ansioso por, ansioso para; residente em, situado em\n• compatível com; satisfeito com; parecido com\n• obediência a; respeito a, respeito por; aversão a\nAssim como no verbo, o nome da mesma família costuma manter a preposição: obedecer a / obediência a."
+          },
+          {
+            "titulo": "Regência com pronome relativo",
+            "texto": "Se o verbo da oração adjetiva exige preposição, ela vem antes do pronome relativo:\n• \"O filme a que assisti\" (assistir a).\n• \"A cidade em que moro\" (morar em).\n• \"O cargo a que aspiro\" (aspirar a).\n• \"O colega de quem gosto\" (gostar de).\nDica: desfaça a frase (assisti ao filme; moro na cidade) para descobrir a preposição."
+          },
+          {
+            "titulo": "Bizu de prova",
+            "texto": "• Os campeões: assistir a (ver), obedecer a, preferir A a B, chegar a, implicar sem \"em\".\n• Na dúvida, desfaça a frase: \"o cargo a que aspiro\" = \"aspiro ao cargo\".\n• Se o verbo pede \"a\" e vem palavra feminina com artigo, aparece a crase: obedecer às normas."
+          }
+        ]
+      },
+      "revisao": {
+        "pontos": [
+          "Assistir (ver) pede a: assisti ao jogo.",
+          "Assistir (ajudar) é VTD: assistiu os feridos.",
+          "Aspirar (desejar) e visar (objetivar) pedem a.",
+          "Obedecer e desobedecer pedem a.",
+          "Preferir uma coisa a outra, sem mais e sem do que.",
+          "Chegar e ir pedem a: chegou ao quartel.",
+          "Implicar (acarretar) não pede em: implicou punição.",
+          "Pagar e perdoar: coisa sem preposição, pessoa com a.",
+          "Simpatizar com, sem pronome.",
+          "A preposição exigida vai antes do relativo: o filme a que assisti."
+        ]
+      },
+      "mapa": {
+        "no_central": "Regência",
+        "ramos": [
+          {
+            "label": "Conceito",
+            "filhos": [
+              "Termo regente",
+              "Termo regido",
+              "VTD, VTI, VTDI"
+            ]
+          },
+          {
+            "label": "Mudam de sentido",
+            "filhos": [
+              "Assistir",
+              "Aspirar",
+              "Visar",
+              "Proceder"
+            ]
+          },
+          {
+            "label": "Mais cobrados",
+            "filhos": [
+              "Obedecer a",
+              "Preferir a",
+              "Chegar a",
+              "Implicar (VTD)",
+              "Pagar e perdoar"
+            ]
+          },
+          {
+            "label": "Regência nominal",
+            "filhos": [
+              "Apto a/para",
+              "Favorável a",
+              "Compatível com",
+              "Residente em"
+            ]
+          },
+          {
+            "label": "Com relativo",
+            "filhos": [
+              "A que assisti",
+              "Em que moro",
+              "De quem gosto"
+            ]
+          }
+        ]
+      },
+      "flashcards": [
+        {
+          "pergunta": "\"Assisti o filme\" ou \"assisti ao filme\"?",
+          "resposta": "Assisti ao filme (ver = assistir a)."
+        },
+        {
+          "pergunta": "Como fica \"prefiro mais X do que Y\" na norma-padrão?",
+          "resposta": "Prefiro X a Y."
+        },
+        {
+          "pergunta": "\"Implicar em\" está correto no sentido de acarretar?",
+          "resposta": "Não. Implicar (acarretar) é VTD: implicou punição."
+        },
+        {
+          "pergunta": "Qual a regência de \"visar\" no sentido de almejar?",
+          "resposta": "Pede a: visa ao cargo."
+        },
+        {
+          "pergunta": "\"Chegou no quartel\" ou \"chegou ao quartel\"?",
+          "resposta": "Chegou ao quartel."
+        },
+        {
+          "pergunta": "Complete: \"A cidade ___ moro\".",
+          "resposta": "Em que (morar em)."
+        }
+      ],
+      "questoes": [
+        {
+          "subassunto": "Regência nominal",
+          "enunciado": "Assinale a alternativa que completa corretamente a frase: \"Após o curso, o candidato ficou apto ______ exercer a função.\"",
+          "opcoes": [
+            "a",
+            "com",
+            "em",
+            "de",
+            "sobre"
+          ],
+          "gabarito": 0,
+          "comentario": "O adjetivo \"apto\" rege as preposições \"a\" ou \"para\": apto a exercer (A). As preposições com, em, de e sobre não são exigidas por esse nome.",
+          "dificuldade": "facil"
+        },
+        {
+          "subassunto": "Regência verbal",
+          "enunciado": "Assinale a alternativa correta quanto à regência verbal, de acordo com a norma-padrão.",
+          "opcoes": [
+            "Os moradores assistiram o desfile de Sete de Setembro.",
+            "Os moradores assistiram ao desfile de Sete de Setembro.",
+            "Todos devem obedecer o regulamento interno.",
+            "Prefiro mais estudar do que trabalhar à noite.",
+            "Chegamos no quartel antes do nascer do sol."
+          ],
+          "gabarito": 1,
+          "comentario": "Assistir no sentido de ver pede a preposição \"a\": assistiram ao desfile (B), e não \"o desfile\" (A). Obedecer também pede \"a\": obedecer ao regulamento (C). Preferir se constrói sem \"mais\" e com \"a\": prefiro estudar a trabalhar (D). Chegar (movimento) pede \"a\": chegamos ao quartel (E).",
+          "dificuldade": "facil"
+        },
+        {
+          "subassunto": "Regência verbal",
+          "enunciado": "Assinale a alternativa correta quanto à regência verbal.",
+          "opcoes": [
+            "A decisão do comando implicou em mudanças na escala.",
+            "O soldado esqueceu do compromisso marcado com o capitão.",
+            "O comerciante pagou ao funcionário o salário atrasado.",
+            "Simpatizo-me muito com o novo comandante da companhia.",
+            "Durante anos, ele obedeceu o regulamento sem reclamar."
+          ],
+          "gabarito": 2,
+          "comentario": "Pagar: a coisa paga vem sem preposição e a pessoa, com \"a\": pagou ao funcionário o salário (C). Implicar (acarretar) não pede \"em\": implicou mudanças (A). Esquecer sem pronome não leva \"de\": esqueceu o compromisso, ou esqueceu-se do compromisso (B). Simpatizar não leva pronome: simpatizo com (D). Obedecer pede \"a\": obedeceu ao regulamento (E).",
+          "dificuldade": "media"
+        },
+        {
+          "subassunto": "Regência verbal",
+          "enunciado": "Assinale a alternativa que completa corretamente a frase: \"Este é o posto ______ aspiro desde que entrei na corporação.\"",
+          "opcoes": [
+            "que",
+            "em que",
+            "de que",
+            "a que",
+            "com que"
+          ],
+          "gabarito": 3,
+          "comentario": "Aspirar, no sentido de desejar, pede a preposição \"a\" (aspiro ao posto). Na oração adjetiva, a preposição vem antes do relativo: \"o posto a que aspiro\" (D). As demais opções omitem a preposição ou usam preposição que o verbo não exige.",
+          "dificuldade": "media"
+        },
+        {
+          "subassunto": "Regência verbal",
+          "enunciado": "Nas frases \"O médico do batalhão assistiu os feridos\" e \"O público assistiu ao espetáculo\", o verbo \"assistir\" significa, respectivamente,",
+          "opcoes": [
+            "ver e ajudar.",
+            "morar e presenciar.",
+            "caber e ajudar.",
+            "presenciar e prestar socorro.",
+            "prestar assistência e presenciar."
+          ],
+          "gabarito": 4,
+          "comentario": "Sem preposição (VTD), assistir significa ajudar, prestar assistência: o médico assistiu os feridos. Com a preposição \"a\" (VTI), significa ver, presenciar: assistiu ao espetáculo (E). As demais alternativas invertem ou trocam os sentidos.",
+          "dificuldade": "dificil"
+        }
+      ]
+    },
+    {
+      "curso": "pm-sp-soldado",
+      "disciplina": "Língua Portuguesa e Interpretação de Texto",
+      "assunto": "Colocação pronominal",
+      "aula": {
+        "titulo": "Colocação pronominal: próclise, ênclise e mesóclise",
+        "secoes": [
+          {
+            "titulo": "Os pronomes e as três posições",
+            "texto": "Colocação pronominal é a posição dos pronomes oblíquos átonos (me, te, se, o, a, os, as, lhe, lhes, nos, vos) em relação ao verbo.\n• Próclise: antes do verbo. \"Não me contaram.\"\n• Ênclise: depois do verbo, com hífen. \"Contaram-me.\"\n• Mesóclise: no meio do verbo, só no futuro do presente e no futuro do pretérito. \"Contar-me-ão\"; \"Contar-me-iam\"."
+          },
+          {
+            "titulo": "Próclise: as palavras atrativas",
+            "texto": "A próclise é obrigatória quando há, antes do verbo, uma palavra que \"puxa\" o pronome:\n• Palavras negativas: não, nunca, jamais, ninguém, nada. \"Ninguém me avisou.\"\n• Advérbios sem vírgula depois: \"Aqui se trabalha.\" (Com vírgula, volta a ênclise: \"Aqui, trabalha-se.\")\n• Pronomes relativos: \"O policial que me atendeu.\"\n• Pronomes indefinidos: \"Tudo se resolveu.\"\n• Pronomes interrogativos: \"Quem te contou?\"\n• Conjunções subordinativas: \"Quando me chamaram, saí.\"\n• Frases exclamativas e optativas (desejo): \"Deus te abençoe!\"\n• \"Em\" + gerúndio: \"Em se tratando de segurança...\""
+          },
+          {
+            "titulo": "Ênclise",
+            "texto": "A ênclise é a colocação padrão quando não há fator de próclise:\n• No início de frase: a norma-padrão não admite começar oração com pronome oblíquo átono. \"Disseram-me a verdade\" (e não \"Me disseram\").\n• Após pausa (vírgula, ponto-e-vírgula).\n• Com verbo no imperativo afirmativo: \"Entregue-me o relatório.\"\n• Com gerúndio sem preposição \"em\": \"Saiu, despedindo-se de todos.\"\n• Com infinitivo impessoal: \"Convém avisá-lo.\"\nAtenção: não há ênclise com futuro do presente e do pretérito (\"entregarei-lhe\" está errado)."
+          },
+          {
+            "titulo": "Mesóclise",
+            "texto": "Usa-se com o futuro do presente e o futuro do pretérito, quando não há palavra atrativa:\n• \"Entregar-lhe-ei o relatório amanhã.\"\n• \"Far-se-ia a reunião, se houvesse tempo.\"\nSe houver palavra atrativa, a próclise prevalece: \"Não lhe entregarei o relatório.\""
+          },
+          {
+            "titulo": "Locuções verbais",
+            "texto": "• Com infinitivo ou gerúndio: o pronome pode ficar depois do verbo principal ou ligado ao auxiliar. \"Quero falar-lhe\" ou \"Quero-lhe falar\". Com palavra atrativa: \"Não lhe quero falar\" ou \"Não quero falar-lhe\".\n• Com particípio: o pronome nunca vem depois do particípio. \"Tinham-se preparado\" (correto); \"tinham preparado-se\" (errado). Com palavra atrativa: \"Não se tinham preparado\"."
+          },
+          {
+            "titulo": "Bizu de prova",
+            "texto": "Siga esta ordem ao analisar cada frase:\n1. Há palavra atrativa antes do verbo (negação, relativo, indefinido, interrogativo, conjunção subordinativa)? Então é próclise.\n2. Não há, e o verbo está no futuro do presente ou do pretérito? Então é mesóclise.\n3. Não há, e o verbo inicia a frase ou vem após vírgula? Então é ênclise.\n4. Em locução verbal com particípio, o pronome nunca fica depois do particípio.\nLembre: a VUNESP cobra a norma-padrão, mesmo que a fala cotidiana use \"me empresta\" no início da frase."
+          }
+        ]
+      },
+      "revisao": {
+        "pontos": [
+          "Próclise antes, ênclise depois, mesóclise no meio do verbo.",
+          "Não se inicia frase com pronome oblíquo átono na norma-padrão.",
+          "Palavras negativas atraem o pronome: não me disse.",
+          "Relativos, indefinidos e interrogativos atraem o pronome.",
+          "Conjunção subordinativa atrai o pronome: quando me viu.",
+          "Mesóclise só com futuro do presente e do pretérito.",
+          "Nunca ênclise com futuro: entregarei-lhe está errado.",
+          "Nunca pronome depois de particípio: tinham preparado-se está errado.",
+          "Em + gerúndio pede próclise: em se tratando."
+        ]
+      },
+      "mapa": {
+        "no_central": "Colocação pronominal",
+        "ramos": [
+          {
+            "label": "Próclise",
+            "filhos": [
+              "Palavras negativas",
+              "Relativos e indefinidos",
+              "Conjunções subordinativas",
+              "Advérbio sem vírgula",
+              "Frases optativas"
+            ]
+          },
+          {
+            "label": "Ênclise",
+            "filhos": [
+              "Início de frase",
+              "Após vírgula",
+              "Imperativo afirmativo",
+              "Gerúndio e infinitivo"
+            ]
+          },
+          {
+            "label": "Mesóclise",
+            "filhos": [
+              "Futuro do presente",
+              "Futuro do pretérito",
+              "Sem palavra atrativa"
+            ]
+          },
+          {
+            "label": "Locuções verbais",
+            "filhos": [
+              "Com infinitivo ou gerúndio",
+              "Com particípio",
+              "Nunca após particípio"
+            ]
+          }
+        ]
+      },
+      "flashcards": [
+        {
+          "pergunta": "O que é próclise?",
+          "resposta": "Pronome antes do verbo: não me disse."
+        },
+        {
+          "pergunta": "Posso iniciar frase com \"me\" na norma-padrão?",
+          "resposta": "Não. Use ênclise: disseram-me."
+        },
+        {
+          "pergunta": "Quando se usa mesóclise?",
+          "resposta": "Com futuro do presente ou do pretérito, sem palavra atrativa."
+        },
+        {
+          "pergunta": "Como fica \"entregarei + lhe\"?",
+          "resposta": "Entregar-lhe-ei (ou lhe entregarei, se houver palavra atrativa)."
+        },
+        {
+          "pergunta": "\"Tinham preparado-se\" está correto?",
+          "resposta": "Não. O correto é \"tinham-se preparado\"."
+        },
+        {
+          "pergunta": "\"Ninguém me avisou\" ou \"Ninguém avisou-me\"?",
+          "resposta": "Ninguém me avisou: pronome indefinido atrai."
+        }
+      ],
+      "questoes": [
+        {
+          "subassunto": null,
+          "enunciado": "Assinale a alternativa correta quanto à colocação pronominal, segundo a norma-padrão.",
+          "opcoes": [
+            "Ninguém me explicou o motivo da demora.",
+            "Ninguém explicou-me o motivo da demora.",
+            "Me explicaram o motivo da demora.",
+            "Ninguém explicar-me-á o motivo da demora.",
+            "Explicaram me o motivo da demora."
+          ],
+          "gabarito": 0,
+          "comentario": "O pronome indefinido \"ninguém\" atrai o pronome oblíquo: próclise (A). B ignora o fator de atração; C inicia a frase com pronome átono; D usa mesóclise mesmo com palavra atrativa (o correto seria \"ninguém me explicará\"); E não usa hífen na ênclise.",
+          "dificuldade": "facil"
+        },
+        {
+          "subassunto": null,
+          "enunciado": "Assinale a alternativa em que a colocação do pronome está de acordo com a norma-padrão.",
+          "opcoes": [
+            "Me disseram que a prova foi adiada.",
+            "Não conte-me mentiras sobre o ocorrido.",
+            "Disseram-me que a prova foi adiada.",
+            "Quem contou-lhe o segredo da equipe?",
+            "O policial que atendeu-me foi muito educado."
+          ],
+          "gabarito": 2,
+          "comentario": "Sem palavra atrativa e em início de frase, usa-se ênclise: \"Disseram-me\" (C). A inicia a frase com pronome átono. Em B, a negação \"não\" exige próclise (não me conte); em D, o interrogativo \"quem\" (quem lhe contou); em E, o relativo \"que\" (que me atendeu).",
+          "dificuldade": "facil"
+        },
+        {
+          "subassunto": null,
+          "enunciado": "Assinale a alternativa em que a colocação pronominal está correta.",
+          "opcoes": [
+            "Em tratando-se de segurança, todo cuidado é pouco.",
+            "Em se tratando de segurança, todo cuidado é pouco.",
+            "Se trata de um caso que exige cautela.",
+            "Quando trata-se de segurança, ninguém se descuida.",
+            "Tratará-se do assunto na próxima reunião."
+          ],
+          "gabarito": 1,
+          "comentario": "A preposição \"em\" seguida de gerúndio exige próclise: \"em se tratando\" (B). A contraria essa regra; C inicia a frase com pronome átono; em D, a conjunção subordinativa \"quando\" exige próclise (quando se trata); em E, não há ênclise com futuro: o correto é \"tratar-se-á\".",
+          "dificuldade": "media"
+        },
+        {
+          "subassunto": null,
+          "enunciado": "Reescrevendo-se a frase \"Entregarei o relatório a você amanhã\" com a substituição de \"a você\" por um pronome oblíquo, a forma correta, de acordo com a norma-padrão, é:",
+          "opcoes": [
+            "Entregarei-lhe o relatório amanhã.",
+            "Lhe entregarei o relatório amanhã.",
+            "Entregar-lhe-ia o relatório amanhã.",
+            "Entregarlhe ei o relatório amanhã.",
+            "Entregar-lhe-ei o relatório amanhã."
+          ],
+          "gabarito": 4,
+          "comentario": "Com o futuro do presente e sem palavra atrativa, usa-se mesóclise: \"entregar-lhe-ei\" (E). Não há ênclise com futuro (A); a frase não pode começar com pronome átono (B); C muda o tempo verbal para o futuro do pretérito; D não tem os hífens obrigatórios.",
+          "dificuldade": "media"
+        },
+        {
+          "subassunto": null,
+          "enunciado": "Assinale a alternativa correta quanto à colocação pronominal em locução verbal.",
+          "opcoes": [
+            "Os soldados tinham preparado-se para a prova física.",
+            "Os soldados que tinham-se preparado foram aprovados.",
+            "Os soldados haviam dedicado-se aos treinos durante meses.",
+            "Os soldados tinham-se preparado para a prova física.",
+            "Os soldados não tinham-se preparado para a prova física."
+          ],
+          "gabarito": 3,
+          "comentario": "Em locução com particípio, o pronome nunca vem depois do particípio; sem palavra atrativa, liga-se ao auxiliar: \"tinham-se preparado\" (D). A e C colocam o pronome após o particípio. Em B, o relativo \"que\" exige próclise ao auxiliar (que se tinham preparado); em E, o \"não\" também exige próclise (não se tinham preparado).",
+          "dificuldade": "dificil"
+        }
+      ]
+    },
+    {
+      "curso": "pm-sp-soldado",
+      "disciplina": "Língua Portuguesa e Interpretação de Texto",
+      "assunto": "Crase",
+      "aula": {
+        "titulo": "Crase: quando usar o acento grave",
+        "secoes": [
+          {
+            "titulo": "O que é crase",
+            "texto": "Crase é a fusão de duas vogais \"a\": a preposição \"a\" (exigida por um verbo ou nome) + o artigo feminino \"a\" (ou o \"a\" inicial de aquele, aquela, aquilo). Essa fusão é marcada pelo acento grave: à.\n• \"Fui a + a escola\" = \"Fui à escola\".\n• \"Refiro-me a + aquele caso\" = \"Refiro-me àquele caso\".\nSe faltar a preposição ou o artigo, não há crase."
+          },
+          {
+            "titulo": "Truques para testar",
+            "texto": "• Troque a palavra feminina por uma masculina: se aparecer \"ao\", há crase. \"Fui à escola\" / \"Fui ao colégio\".\n• Para nomes de lugar, use o verbo voltar: \"volto da\", crase há; \"volto de\", crase pra quê? \"Vou à Bahia\" (volto da Bahia); \"Vou a Curitiba\" (volto de Curitiba).\n• Se o lugar vier determinado, pode haver artigo: \"Vou à Curitiba dos anos 1990\"."
+          },
+          {
+            "titulo": "Casos proibidos",
+            "texto": "Não há crase:\n• Antes de palavra masculina: andar a pé, a cavalo.\n• Antes de verbo: começou a chover.\n• Antes da maioria dos pronomes (pessoais, de tratamento como você e Vossa Excelência, demonstrativos esta e essa, indefinidos): refiro-me a você; dirigiu-se a essa sala.\n• Antes de artigo indefinido: assisti a uma palestra.\n• Com \"a\" no singular diante de palavra no plural: falou a pessoas estranhas.\n• Entre palavras repetidas: cara a cara, frente a frente.\n• Antes de \"casa\" (lar) e \"terra\" (terra firme) sem determinação: voltou a casa cedo; o marinheiro desceu a terra. Com determinação, há crase: voltou à casa dos pais."
+          },
+          {
+            "titulo": "Casos obrigatórios",
+            "texto": "• Horas determinadas: às 8h, à uma hora, das 8h às 12h.\n• Locuções femininas adverbiais, prepositivas e conjuntivas: às vezes, à noite, às pressas, à procura de, à espera de, à medida que.\n• Expressão \"à moda de\", mesmo subentendida: bife à milanesa, gol à Pelé.\n• Aquele, aquela, aquilo precedidos de preposição \"a\": entreguei àquele soldado."
+          },
+          {
+            "titulo": "Casos facultativos",
+            "texto": "O acento grave é facultativo:\n• Antes de nome próprio feminino de pessoa: entreguei a/à Carla.\n• Antes de pronome possessivo feminino no singular: enviou flores a/à sua mãe.\n• Depois da preposição \"até\": foi até a/à porta.\nNa prova, quando a questão pedir o caso facultativo, procure esses três."
+          },
+          {
+            "titulo": "Bizu de prova",
+            "texto": "• Caiu \"à pé\", \"à você\", \"começou à chover\", \"frente à frente\"? Tudo errado: sem crase antes de masculino, pronome, verbo e palavras repetidas.\n• Horas sempre com crase: às 8h, das 8h às 12h.\n• Questão de crase facultativa: procure possessivo feminino (à/a sua), nome de mulher ou \"até\"."
+          }
+        ]
+      },
+      "revisao": {
+        "pontos": [
+          "Crase = preposição a + artigo a.",
+          "Troque por masculino: se virar ao, há crase.",
+          "Voltar da: crase há; voltar de: crase pra quê?",
+          "Nunca antes de masculino, verbo ou artigo indefinido.",
+          "Nunca com a singular diante de plural: a pessoas.",
+          "Sempre nas horas: às 8h, das 8h às 12h.",
+          "Sempre em locuções femininas: às vezes, à noite, à medida que.",
+          "Àquele, àquela, àquilo quando há preposição a.",
+          "Facultativa: nome de mulher, possessivo feminino singular e após até.",
+          "Casa (lar) e terra (firme) sem determinação: sem crase."
+        ]
+      },
+      "mapa": {
+        "no_central": "Crase",
+        "ramos": [
+          {
+            "label": "Conceito",
+            "filhos": [
+              "Preposição a + artigo a",
+              "A + aquele/aquela/aquilo",
+              "Acento grave"
+            ]
+          },
+          {
+            "label": "Testes",
+            "filhos": [
+              "Troca por masculino",
+              "Volto da / volto de"
+            ]
+          },
+          {
+            "label": "Proibida",
+            "filhos": [
+              "Masculino",
+              "Verbo",
+              "Pronomes pessoais e de tratamento",
+              "Artigo indefinido",
+              "Palavras repetidas"
+            ]
+          },
+          {
+            "label": "Obrigatória",
+            "filhos": [
+              "Horas",
+              "Locuções femininas",
+              "À moda de",
+              "Àquele"
+            ]
+          },
+          {
+            "label": "Facultativa",
+            "filhos": [
+              "Nome de mulher",
+              "Possessivo feminino",
+              "Após até"
+            ]
+          }
+        ]
+      },
+      "flashcards": [
+        {
+          "pergunta": "O que é crase?",
+          "resposta": "Fusão da preposição a com o artigo a (ou com o a de aquele/aquela/aquilo)."
+        },
+        {
+          "pergunta": "Qual o truque do masculino?",
+          "resposta": "Se, trocando por masculino, surgir \"ao\", há crase."
+        },
+        {
+          "pergunta": "Há crase antes de verbo?",
+          "resposta": "Não: começou a chover."
+        },
+        {
+          "pergunta": "\"Vou a Curitiba\" ou \"vou à Curitiba\"?",
+          "resposta": "Vou a Curitiba (volto de Curitiba)."
+        },
+        {
+          "pergunta": "Cite um caso de crase facultativa.",
+          "resposta": "Antes de possessivo feminino singular: a/à sua mãe."
+        },
+        {
+          "pergunta": "Há crase em \"frente a frente\"?",
+          "resposta": "Não, entre palavras repetidas não há crase."
+        }
+      ],
+      "questoes": [
+        {
+          "subassunto": null,
+          "enunciado": "Assinale a alternativa em que o acento indicativo de crase está empregado corretamente.",
+          "opcoes": [
+            "O policial foi à pé até a base comunitária.",
+            "A equipe chegou ao local às 7h da manhã.",
+            "Refiro-me à você, e não ao seu colega.",
+            "Assim que saímos, começou à chover.",
+            "Fiquei frente à frente com o suspeito."
+          ],
+          "gabarito": 1,
+          "comentario": "Em horas determinadas, há crase: às 7h (B). Não há crase antes de palavra masculina (a pé), antes de pronome de tratamento como \"você\", antes de verbo (a chover) nem entre palavras repetidas (frente a frente).",
+          "dificuldade": "facil"
+        },
+        {
+          "subassunto": null,
+          "enunciado": "Assinale a alternativa que completa corretamente a frase: \"Nas férias, vou ___ Bahia e, depois, ___ Curitiba.\"",
+          "opcoes": [
+            "a ... à",
+            "à ... à",
+            "a ... a",
+            "à ... a",
+            "há ... a"
+          ],
+          "gabarito": 3,
+          "comentario": "Pelo teste do verbo voltar: \"volto da Bahia\" (há artigo, logo, crase: à Bahia) e \"volto de Curitiba\" (sem artigo, sem crase: a Curitiba). A resposta é D. \"Há\" é forma do verbo haver e não cabe na frase.",
+          "dificuldade": "facil"
+        },
+        {
+          "subassunto": null,
+          "enunciado": "Assinale a alternativa correta quanto ao emprego do acento indicativo de crase.",
+          "opcoes": [
+            "O sargento entregou o documento àquele soldado.",
+            "O candidato dirigiu-se à essa sala para a prova.",
+            "O comandante pediu à ela que redigisse o relatório.",
+            "Ontem assisti à uma palestra sobre segurança.",
+            "Os policiais chegaram à cavalo ao evento."
+          ],
+          "gabarito": 0,
+          "comentario": "Entregar algo a alguém exige a preposição \"a\", que se funde com o \"a\" inicial de \"aquele\": àquele soldado (A). Não há crase antes de \"essa\" (B), de pronome pessoal \"ela\" (C), de artigo indefinido \"uma\" (D) nem de palavra masculina \"cavalo\" (E).",
+          "dificuldade": "media"
+        },
+        {
+          "subassunto": null,
+          "enunciado": "Assinale a alternativa em que o emprego do acento indicativo de crase é FACULTATIVO.",
+          "opcoes": [
+            "Às vezes, a ronda se estende até a madrugada.",
+            "Depois do plantão, voltou à casa dos pais.",
+            "O capitão referiu-se à diretora da escola.",
+            "Todos devem obedecer às ordens superiores.",
+            "No domingo, enviou flores à sua mãe."
+          ],
+          "gabarito": 4,
+          "comentario": "Antes de pronome possessivo feminino no singular, o artigo é opcional, por isso a crase é facultativa: a/à sua mãe (E). Em A, a locução \"às vezes\" exige crase; em B, \"casa\" está determinada (dos pais); em C e D, há preposição exigida pelo verbo e artigo diante de palavra feminina, logo, crase obrigatória.",
+          "dificuldade": "media"
+        },
+        {
+          "subassunto": null,
+          "enunciado": "Assinale a alternativa em que o acento indicativo de crase foi empregado corretamente.",
+          "opcoes": [
+            "Na abordagem, os policiais ficaram cara à cara com o suspeito.",
+            "A equipe ficou à uma distância segura do incêndio.",
+            "O atendimento ao público vai das 8h às 12h.",
+            "Terminado o plantão, o soldado chegou à casa cedo.",
+            "O novo servidor estava disposto à colaborar com todos."
+          ],
+          "gabarito": 2,
+          "comentario": "Na indicação de intervalo de horas com \"das\", usa-se \"às\": das 8h às 12h (C). Em A, não há crase entre palavras repetidas (cara a cara); em B, não há crase antes do artigo indefinido \"uma\"; em D, \"casa\" no sentido de lar, sem determinação, não leva artigo; em E, não há crase antes de verbo.",
+          "dificuldade": "dificil"
+        }
+      ]
     }
-   ],
-   "questoes": [
-    {
-     "subassunto": "Textos não literários",
-     "enunciado": "Leia o texto.\n\"A prefeitura anunciou que, a partir do próximo mês, a coleta seletiva passará a ocorrer duas vezes por semana nos bairros da zona norte. Segundo a secretaria responsável, a mudança busca reduzir o acúmulo de recicláveis nas calçadas e ampliar a renda das cooperativas de catadores, que reclamavam da irregularidade do serviço.\"\nDe acordo com o texto, a mudança na coleta seletiva tem como objetivo",
-     "opcoes": [
-      "substituir as cooperativas de catadores por empresas particulares.",
-      "reduzir o acúmulo de recicláveis nas calçadas e beneficiar as cooperativas.",
-      "diminuir a frequência da coleta nos bairros da zona norte.",
-      "atender a uma exigência feita pelos moradores da zona sul.",
-      "encerrar a coleta seletiva nos demais bairros da cidade."
-     ],
-     "gabarito": 1,
-     "comentario": "O texto afirma expressamente que a mudança busca reduzir o acúmulo de recicláveis e ampliar a renda das cooperativas (B). A frequência aumenta, não diminui (C); o texto não fala em empresas particulares (A), em zona sul (D) nem em encerrar a coleta em outros bairros (E): são extrapolações.",
-     "dificuldade": "facil"
-    },
-    {
-     "subassunto": "Textos não literários",
-     "enunciado": "Leia o texto.\n\"Pesquisas indicam que dormir menos de seis horas por noite, de forma frequente, está associado a queda de atenção e de memória. Por isso, especialistas recomendam horários regulares para deitar e acordar, inclusive nos fins de semana.\"\nÉ compatível com o texto a seguinte afirmação:",
-     "opcoes": [
-      "Dormir pouco em uma única noite causa perda permanente de memória.",
-      "Os especialistas desaconselham qualquer atividade nos fins de semana.",
-      "A regularidade dos horários de sono é apresentada como recomendação.",
-      "O texto garante que dormir mais de dez horas melhora a memória.",
-      "As pesquisas provam que a atenção não depende do sono."
-     ],
-     "gabarito": 2,
-     "comentario": "O texto diz que especialistas recomendam horários regulares para dormir e acordar (C). A fala em privação frequente, não em uma noite, nem em perda permanente; B distorce a recomendação; D extrapola (o texto não fala em dez horas); E contradiz o texto, que associa sono e atenção.",
-     "dificuldade": "facil"
-    },
-    {
-     "subassunto": "Textos literários",
-     "enunciado": "Leia o trecho.\n\"Seu Almeida abria a venda antes do sol. Varria a calçada com a mesma vassoura de sempre, cumprimentava o padeiro pelo nome e anotava num caderno de capa gasta o fiado dos vizinhos. Nunca cobrou juros. Dizia que a conta mais difícil de fechar era a da confiança.\"\nNo contexto, a frase final sugere que Seu Almeida",
-     "opcoes": [
-      "considerava a matemática um obstáculo para o comércio.",
-      "desconfiava dos vizinhos que compravam fiado.",
-      "pretendia fechar a venda por causa das dívidas.",
-      "valorizava a confiança com os fregueses acima do lucro.",
-      "cobrava juros apenas dos clientes desconhecidos."
-     ],
-     "gabarito": 3,
-     "comentario": "A palavra \"conta\" é usada em sentido figurado: a confiança é algo difícil de construir e de manter, e o fato de ele nunca cobrar juros reforça que valorizava a relação com os fregueses (D). A e C tomam \"conta\" e \"fechar\" em sentido literal; B contradiz o texto; E contradiz a afirmação de que ele nunca cobrou juros.",
-     "dificuldade": "media"
-    },
-    {
-     "subassunto": "Textos literários",
-     "enunciado": "Leia o trecho.\n\"Eu tinha nove anos quando vi o mar pela primeira vez. Meu pai estacionou a caminhonete, tirou os sapatos e disse apenas: vai. Corri até a água como quem corre para um segredo, e o frio nos tornozelos foi a primeira notícia que o mundo me deu de que era maior do que a minha rua.\"\nConsiderando o trecho, é correto afirmar que",
-     "opcoes": [
-      "o narrador é apenas observador e não participa dos fatos narrados.",
-      "o texto é predominantemente dissertativo, pois defende uma tese.",
-      "o pai demonstra medo de que o filho entre na água.",
-      "a expressão \"como quem corre para um segredo\" está empregada em sentido literal.",
-      "o narrador participa dos fatos e relata uma experiência marcante da infância."
-     ],
-     "gabarito": 4,
-     "comentario": "O uso da 1ª pessoa (eu, meu pai, corri) mostra um narrador-personagem que relata uma descoberta marcante (E). Não é observador (A); o texto é narrativo, não dissertativo (B); o pai incentiva o filho com \"vai\" (C); a comparação \"como quem corre para um segredo\" tem sentido figurado (D).",
-     "dificuldade": "media"
-    },
-    {
-     "subassunto": "Textos não literários",
-     "enunciado": "Leia o texto.\n\"Há quem diga que a tecnologia isola as pessoas. O argumento, porém, ignora que o mesmo celular que distrai à mesa de jantar é o que permite a uma avó ver o neto que mora em outro país. O problema, portanto, não está no aparelho, mas no uso que se faz dele.\"\nA tese defendida pelo autor e o sentido do termo \"portanto\" são, respectivamente:",
-     "opcoes": [
-      "os efeitos da tecnologia dependem do uso que se faz dela; conclusão.",
-      "a tecnologia isola as pessoas; oposição.",
-      "os celulares devem ser proibidos durante as refeições; causa.",
-      "os efeitos da tecnologia dependem do uso que se faz dela; concessão.",
-      "a distância prejudica os laços familiares; conclusão."
-     ],
-     "gabarito": 0,
-     "comentario": "O autor apresenta uma opinião alheia (a tecnologia isola), refuta-a com \"porém\" e conclui, com \"portanto\", que o problema está no uso (A). B traz a opinião que o autor contesta; C e E não são defendidas no texto; D acerta a tese, mas \"portanto\" indica conclusão, não concessão.",
-     "dificuldade": "dificil"
-    }
-   ]
-  },
-  {
-   "curso": "pm-sp-soldado",
-   "disciplina": "Língua Portuguesa e Interpretação de Texto",
-   "assunto": "Sinônimos e antônimos",
-   "aula": {
-    "titulo": "Sinônimos e antônimos: o sentido depende do contexto",
-    "secoes": [
-     {
-      "titulo": "Sinônimos",
-      "texto": "Sinônimos são palavras de sentido igual ou muito parecido, que podem substituir uma à outra em determinado contexto. Exemplos: esclarecer / elucidar; rápido / veloz; findar / terminar.\nNa prática, quase não existem sinônimos perfeitos. A troca só é válida se mantiver o sentido da frase. Por isso, a banca pergunta: \"a palavra X pode ser substituída, sem alteração de sentido, por...\". Sempre teste a substituição dentro da frase."
-     },
-     {
-      "titulo": "Antônimos",
-      "texto": "Antônimos são palavras de sentido contrário: honesto / desonesto; ágil / lento; diligente / negligente; ativo / passivo.\nMuitos antônimos são formados por prefixos de negação:\n• des-: fazer / desfazer; leal / desleal.\n• in- (im-, i-): capaz / incapaz; possível / impossível; legal / ilegal.\n• a- (an-): típico / atípico."
-     },
-     {
-      "titulo": "Contexto e polissemia",
-      "texto": "Uma mesma palavra pode ter vários sentidos (polissemia), e o sinônimo muda conforme o contexto.\n• \"O policial pegou o ônibus\" = tomou.\n• \"O policial pegou o suspeito\" = prendeu, capturou.\n• \"A gripe pegou a turma toda\" = contaminou.\nConclusão: nunca escolha o sinônimo pela palavra isolada; leia a frase inteira."
-     },
-     {
-      "titulo": "Parônimos e homônimos: pegadinhas comuns",
-      "texto": "Parônimos são palavras parecidas na escrita e na pronúncia, mas de sentidos diferentes:\n• cumprimento (saudação, execução) / comprimento (medida)\n• eminente (importante) / iminente (prestes a acontecer)\n• ratificar (confirmar) / retificar (corrigir)\n• descrição (ato de descrever) / discrição (reserva, prudência)\n• tráfego (trânsito) / tráfico (comércio ilegal)\n• infligir (aplicar pena) / infringir (violar regra)\nHomônimos têm a mesma pronúncia ou escrita, mas sentidos diferentes: cela (prisão) / sela (arreio); concerto (apresentação musical) / conserto (reparo); sessão (reunião) / seção (divisão) / cessão (ato de ceder)."
-     },
-     {
-      "titulo": "Vocabulário que costuma aparecer",
-      "texto": "• exíguo: pequeno, escasso\n• prolixo: que se estende demais / conciso: breve, objetivo\n• reticente: reservado, que evita falar / loquaz: que fala muito\n• apreensivo: preocupado\n• taxativo: categórico, que não admite contestação\n• lícito: permitido por lei / ilícito: proibido\n• efêmero: passageiro / perene: duradouro"
-     },
-     {
-      "titulo": "Como a banca pergunta",
-      "texto": "As questões costumam aparecer de três formas:\n• \"O termo X pode ser substituído, sem prejuízo de sentido, por...\": procure o sinônimo que funciona naquela frase.\n• \"O antônimo de X, no contexto, é...\": pense no sentido oposto ao que a palavra tem ali, e não em qualquer sentido do dicionário.\n• \"A substituição que altera o sentido é...\": teste cada troca; a errada costuma trazer um antônimo ou um parônimo.\nSe não conhecer a palavra, use o contexto: as frases vizinhas quase sempre dão pistas do sentido."
-     }
-    ]
-   },
-   "revisao": {
-    "pontos": [
-     "Sinônimo só vale se a troca mantiver o sentido da frase.",
-     "Teste sempre a substituição dentro do contexto.",
-     "Prefixos des- e in- formam muitos antônimos.",
-     "Ratificar confirma; retificar corrige.",
-     "Iminente = prestes a acontecer; eminente = importante.",
-     "Tráfego é trânsito; tráfico é comércio ilegal.",
-     "Infringir é violar; infligir é aplicar (pena, castigo).",
-     "Descrição é descrever; discrição é reserva.",
-     "Efêmero é o contrário de perene; prolixo é o contrário de conciso."
-    ]
-   },
-   "mapa": {
-    "no_central": "Relações de sentido entre palavras",
-    "ramos": [
-     {
-      "label": "Sinônimos",
-      "filhos": [
-       "Sentido semelhante",
-       "Dependem do contexto",
-       "Teste da substituição"
-      ]
-     },
-     {
-      "label": "Antônimos",
-      "filhos": [
-       "Sentido oposto",
-       "Prefixo des-",
-       "Prefixo in-/im-/i-"
-      ]
-     },
-     {
-      "label": "Polissemia",
-      "filhos": [
-       "Vários sentidos",
-       "Contexto define o sinônimo"
-      ]
-     },
-     {
-      "label": "Parônimos",
-      "filhos": [
-       "Ratificar x retificar",
-       "Eminente x iminente",
-       "Tráfego x tráfico",
-       "Infringir x infligir"
-      ]
-     },
-     {
-      "label": "Homônimos",
-      "filhos": [
-       "Cela x sela",
-       "Concerto x conserto",
-       "Sessão x seção x cessão"
-      ]
-     }
-    ]
-   },
-   "flashcards": [
-    {
-     "pergunta": "Qual o sentido de \"elucidar\"?",
-     "resposta": "Esclarecer, explicar."
-    },
-    {
-     "pergunta": "Qual o antônimo de \"diligente\"?",
-     "resposta": "Negligente."
-    },
-    {
-     "pergunta": "Ratificar ou retificar: qual significa corrigir?",
-     "resposta": "Retificar."
-    },
-    {
-     "pergunta": "O que significa \"iminente\"?",
-     "resposta": "Prestes a acontecer."
-    },
-    {
-     "pergunta": "Qual a diferença entre infringir e infligir?",
-     "resposta": "Infringir é violar uma regra; infligir é aplicar pena ou castigo."
-    },
-    {
-     "pergunta": "Qual o antônimo de \"efêmero\"?",
-     "resposta": "Duradouro, perene."
-    }
-   ],
-   "questoes": [
-    {
-     "subassunto": null,
-     "enunciado": "Na frase \"O depoimento da testemunha foi fundamental para elucidar o caso\", o termo destacado \"elucidar\" pode ser substituído, sem alteração de sentido, por",
-     "opcoes": [
-      "complicar.",
-      "esclarecer.",
-      "arquivar.",
-      "adiar.",
-      "ocultar."
-     ],
-     "gabarito": 1,
-     "comentario": "Elucidar significa esclarecer, tornar claro (B). Complicar e ocultar têm sentido oposto; arquivar e adiar não têm relação de sinonímia com elucidar.",
-     "dificuldade": "facil"
-    },
-    {
-     "subassunto": null,
-     "enunciado": "Na frase \"A equipe mostrou-se diligente durante toda a operação\", o antônimo de \"diligente\" é",
-     "opcoes": [
-      "cuidadosa.",
-      "atenta.",
-      "negligente.",
-      "eficiente.",
-      "dedicada."
-     ],
-     "gabarito": 2,
-     "comentario": "Diligente é quem age com cuidado e empenho; o contrário é negligente (C). As demais alternativas são sinônimos ou palavras de sentido próximo a diligente.",
-     "dificuldade": "facil"
-    },
-    {
-     "subassunto": null,
-     "enunciado": "Assinale a alternativa em que a palavra destacada está empregada corretamente, de acordo com seu sentido.",
-     "opcoes": [
-      "O perigo era iminente, por isso a área foi isolada imediatamente.",
-      "O juiz vai retificar a sentença, confirmando-a sem nenhuma alteração.",
-      "O cumprimento da rua foi medido pelos técnicos da prefeitura.",
-      "A polícia intensificou o combate ao tráfego de drogas na região.",
-      "O agente agiu com descrição, sem chamar a atenção de ninguém."
-     ],
-     "gabarito": 0,
-     "comentario": "Iminente significa prestes a acontecer, o que justifica o isolamento (A). Em B, confirmar é ratificar; em C, a medida é comprimento; em D, o comércio ilegal é tráfico; em E, a reserva é discrição.",
-     "dificuldade": "media"
-    },
-    {
-     "subassunto": null,
-     "enunciado": "Na frase \"O comandante foi taxativo: ninguém sairia do quartel antes do fim da vistoria\", a palavra \"taxativo\" tem sentido equivalente a",
-     "opcoes": [
-      "hesitante.",
-      "indiferente.",
-      "bem-humorado.",
-      "evasivo.",
-      "categórico."
-     ],
-     "gabarito": 4,
-     "comentario": "Taxativo é quem fala de forma firme, sem admitir contestação: categórico (E). Hesitante e evasivo sugerem dúvida ou fuga do assunto; indiferente e bem-humorado não correspondem ao tom da ordem dada.",
-     "dificuldade": "media"
-    },
-    {
-     "subassunto": null,
-     "enunciado": "Assinale a alternativa em que a substituição do termo destacado ALTERA o sentido original da frase.",
-     "opcoes": [
-      "\"O suspeito ficou apreensivo com a chegada da viatura\" por preocupado.",
-      "\"O discurso do vereador foi prolixo\" por longo e cheio de rodeios.",
-      "\"O reajuste concedido foi exíguo\" por pequeno.",
-      "\"A testemunha mostrou-se reticente\" por loquaz.",
-      "\"O acordo firmado entre as partes era lícito\" por legal."
-     ],
-     "gabarito": 3,
-     "comentario": "Reticente é quem se mostra reservado e evita falar; loquaz é quem fala muito. A troca inverte o sentido (D). Nas demais, os termos são equivalentes: apreensivo/preocupado, prolixo/longo e cheio de rodeios, exíguo/pequeno, lícito/legal.",
-     "dificuldade": "dificil"
-    }
-   ]
-  },
-  {
-   "curso": "pm-sp-soldado",
-   "disciplina": "Língua Portuguesa e Interpretação de Texto",
-   "assunto": "Sentido próprio e figurado das palavras",
-   "aula": {
-    "titulo": "Sentido próprio (denotação) e figurado (conotação)",
-    "secoes": [
-     {
-      "titulo": "Denotação e conotação",
-      "texto": "Sentido próprio (denotativo) é o sentido literal, do dicionário, objetivo. Sentido figurado (conotativo) é o sentido ampliado, simbólico, que depende do contexto.\n• \"A pedra rolou pelo barranco.\" (sentido próprio: pedra é mineral)\n• \"Ele tem um coração de pedra.\" (sentido figurado: insensível)\nTextos técnicos, notícias e documentos preferem a denotação. Textos literários, publicidade, músicas e a fala do dia a dia usam muito a conotação."
-     },
-     {
-      "titulo": "Como identificar o sentido figurado",
-      "texto": "Pergunte: a palavra está sendo usada com o significado básico dela? Se o sentido só funciona como imagem ou comparação, é figurado.\n• \"A ficha caiu\" = ele finalmente entendeu.\n• \"Ela é o braço direito do chefe\" = principal auxiliar.\n• \"O preço subiu\" também é um uso ampliado, mas já tão comum que muitos nem percebem (é o que acontece com a catacrese, vista adiante).\nO contexto é sempre o juiz final."
-     },
-     {
-      "titulo": "Figuras de palavra mais cobradas",
-      "texto": "• Metáfora: comparação implícita, sem conectivo. \"Aquele soldado é uma rocha.\"\n• Comparação (símile): comparação explícita, com conectivo (como, feito, tal qual). \"Forte como uma rocha.\"\n• Metonímia: troca de um termo por outro com relação próxima: autor pela obra (\"Li Machado de Assis\"), continente pelo conteúdo (\"Bebeu dois copos\"), marca pelo produto, parte pelo todo.\n• Catacrese: uso figurado que já virou comum por falta de palavra própria: pé da mesa, braço da cadeira, céu da boca.\n• Personificação (prosopopeia): dar características humanas a seres não humanos. \"O vento sussurrava na janela.\""
-     },
-     {
-      "titulo": "Figuras de pensamento",
-      "texto": "• Hipérbole: exagero intencional. \"Já falei isso mil vezes.\"\n• Eufemismo: suavização de ideia desagradável. \"Ele nos deixou\" (morreu).\n• Ironia: dizer o contrário do que se pensa, com intenção crítica ou de humor. \"Que belo serviço: quebrou tudo!\"\n• Antítese: aproximação de ideias opostas. \"Entre o riso e o choro.\"\n• Paradoxo: ideias opostas que parecem se contradizer na mesma afirmação. \"Estar sozinho no meio da multidão.\""
-     },
-     {
-      "titulo": "Dica de prova",
-      "texto": "A VUNESP costuma perguntar: \"a expressão X foi empregada em sentido figurado em...\" ou \"a frase que traz o termo em sentido próprio é...\". Leia cada alternativa imaginando a cena ao pé da letra. Se a cena literal for absurda ou impossível, o sentido é figurado.\nOutra forma comum é pedir o sentido de uma expressão figurada no contexto, como \"quebrar o gelo\" (iniciar uma conversa, desfazer o constrangimento) ou \"pôr lenha na fogueira\" (agravar uma situação). Nesses casos, a resposta é o sentido figurado, nunca a leitura literal."
-     }
-    ]
-   },
-   "revisao": {
-    "pontos": [
-     "Denotação = sentido literal; conotação = sentido figurado.",
-     "O contexto decide se o sentido é próprio ou figurado.",
-     "Metáfora compara sem conectivo; comparação usa como, tal qual.",
-     "Metonímia: autor pela obra, continente pelo conteúdo, parte pelo todo.",
-     "Catacrese: pé da mesa, braço da cadeira, céu da boca.",
-     "Hipérbole é exagero; eufemismo é suavização.",
-     "Ironia diz o contrário do que se pensa.",
-     "Personificação dá traços humanos a seres inanimados.",
-     "Imagine a cena ao pé da letra: se for absurda, é figurado."
-    ]
-   },
-   "mapa": {
-    "no_central": "Sentido das palavras",
-    "ramos": [
-     {
-      "label": "Sentido próprio",
-      "filhos": [
-       "Denotação",
-       "Literal",
-       "Textos técnicos e notícias"
-      ]
-     },
-     {
-      "label": "Sentido figurado",
-      "filhos": [
-       "Conotação",
-       "Depende do contexto",
-       "Literatura e publicidade"
-      ]
-     },
-     {
-      "label": "Figuras de palavra",
-      "filhos": [
-       "Metáfora",
-       "Comparação",
-       "Metonímia",
-       "Catacrese",
-       "Personificação"
-      ]
-     },
-     {
-      "label": "Figuras de pensamento",
-      "filhos": [
-       "Hipérbole",
-       "Eufemismo",
-       "Ironia",
-       "Antítese",
-       "Paradoxo"
-      ]
-     }
-    ]
-   },
-   "flashcards": [
-    {
-     "pergunta": "O que é denotação?",
-     "resposta": "O uso da palavra em seu sentido próprio, literal."
-    },
-    {
-     "pergunta": "Qual a diferença entre metáfora e comparação?",
-     "resposta": "A comparação usa conectivo (como); a metáfora, não."
-    },
-    {
-     "pergunta": "\"Li Machado de Assis\" contém qual figura?",
-     "resposta": "Metonímia (autor pela obra)."
-    },
-    {
-     "pergunta": "\"Chorei rios de lágrimas\" contém qual figura?",
-     "resposta": "Hipérbole."
-    },
-    {
-     "pergunta": "\"Pé da mesa\" é exemplo de qual figura?",
-     "resposta": "Catacrese."
-    },
-    {
-     "pergunta": "O que é eufemismo?",
-     "resposta": "Suavizar uma ideia desagradável ou chocante."
-    }
-   ],
-   "questoes": [
-    {
-     "subassunto": null,
-     "enunciado": "Assinale a alternativa em que a palavra \"pedra\" está empregada em sentido figurado.",
-     "opcoes": [
-      "A pedra rolou pelo barranco após a chuva forte.",
-      "Quando o assunto é mentira, meu pai tem um coração de pedra.",
-      "Os operários retiraram a pedra que bloqueava a estrada.",
-      "O calçamento da praça foi feito com pedra portuguesa.",
-      "A criança guardou uma pedra colorida no bolso."
-     ],
-     "gabarito": 1,
-     "comentario": "Em B, \"coração de pedra\" significa insensível, rígido: sentido figurado. Nas demais alternativas, pedra designa o mineral, em sentido próprio.",
-     "dificuldade": "facil"
-    },
-    {
-     "subassunto": null,
-     "enunciado": "Na frase \"Depois da notícia, chorei rios de lágrimas\", a figura de linguagem presente é a",
-     "opcoes": [
-      "metonímia.",
-      "eufemismo.",
-      "hipérbole.",
-      "antítese.",
-      "ironia."
-     ],
-     "gabarito": 2,
-     "comentario": "\"Rios de lágrimas\" é um exagero intencional para enfatizar o choro: hipérbole (C). Não há troca de termos por proximidade (metonímia), suavização (eufemismo), oposição de ideias (antítese) nem sentido contrário ao dito (ironia).",
-     "dificuldade": "facil"
-    },
-    {
-     "subassunto": null,
-     "enunciado": "Assinale a alternativa em que ocorre eufemismo.",
-     "opcoes": [
-      "O velho sargento nos deixou ontem, após longa doença.",
-      "Já pedi mil vezes para você fechar o portão.",
-      "O vento cantava entre as folhas das árvores.",
-      "Que ótimo motorista: bateu o carro três vezes na mesma semana!",
-      "Naquele dia, senti ao mesmo tempo alegria e tristeza."
-     ],
-     "gabarito": 0,
-     "comentario": "\"Nos deixou\" suaviza a ideia de morte: eufemismo (A). B traz hipérbole; C, personificação; D, ironia; E, antítese.",
-     "dificuldade": "media"
-    },
-    {
-     "subassunto": null,
-     "enunciado": "Em \"Com sede depois da corrida, o soldado bebeu dois copos seguidos\", a expressão \"bebeu dois copos\" exemplifica a",
-     "opcoes": [
-      "catacrese, pois o termo perdeu seu sentido original.",
-      "comparação, pois aproxima dois seres por meio de conectivo.",
-      "hipérbole, pois exagera a quantidade de líquido ingerido.",
-      "personificação, pois atribui ação humana a um objeto.",
-      "metonímia, pois o recipiente é mencionado no lugar do conteúdo."
-     ],
-     "gabarito": 4,
-     "comentario": "Ninguém bebe o copo, e sim o líquido que ele contém: é metonímia do tipo continente pelo conteúdo (E). Não há conectivo comparativo (B), exagero (C), ação humana atribuída a objeto (D) nem catacrese, que é o uso de termo figurado já cristalizado por falta de palavra própria (A).",
-     "dificuldade": "media"
-    },
-    {
-     "subassunto": null,
-     "enunciado": "Considere as frases:\nI. O vaso caiu da janela e se quebrou na calçada.\nII. A ficha só caiu quando ele releu a carta.\nIII. O paraquedista caiu fora da área demarcada.\nIV. O novo soldado logo caiu nas graças do comandante.\nO verbo \"cair\" está empregado em sentido figurado apenas em",
-     "opcoes": [
-      "I e III.",
-      "I e II.",
-      "III e IV.",
-      "II e IV.",
-      "I, II e IV."
-     ],
-     "gabarito": 3,
-     "comentario": "Em II, \"a ficha caiu\" significa \"entendeu\"; em IV, \"caiu nas graças\" significa \"conquistou a simpatia\": ambos são usos figurados (D). Em I e III, cair indica queda física, sentido próprio.",
-     "dificuldade": "dificil"
-    }
-   ]
-  },
-  {
-   "curso": "pm-sp-soldado",
-   "disciplina": "Língua Portuguesa e Interpretação de Texto",
-   "assunto": "Pontuação",
-   "aula": {
-    "titulo": "Pontuação: vírgula e demais sinais",
-    "secoes": [
-     {
-      "titulo": "A regra que mais cai: o que NÃO separar",
-      "texto": "Não se usa vírgula entre termos que formam o núcleo da oração em ordem direta:\n• sujeito e verbo: \"Os moradores do bairro, reclamaram\" (errado);\n• verbo e complemento: \"O policial entregou, o relatório\" (errado);\n• nome e seu complemento.\nSe o sujeito for longo, continua proibido separá-lo do verbo com uma única vírgula. Vírgulas em dupla, isolando um termo intercalado, são outra história."
-     },
-     {
-      "titulo": "Quando a vírgula é usada",
-      "texto": "• Vocativo (chamamento): \"Soldado, apresente-se.\"\n• Aposto explicativo: \"Marina, a nova sargento, assumiu o turno.\"\n• Adjunto adverbial deslocado: \"Durante a madrugada, a equipe fez a ronda.\" (se for curto, a vírgula é facultativa)\n• Enumeração: \"Trouxe colete, rádio e lanterna.\"\n• Orações coordenadas sem conectivo: \"Chegou, olhou, saiu.\"\n• Antes de mas, porém, contudo, logo, pois (explicativo): \"Estudou muito, mas não passou.\"\n• Conjunções deslocadas vêm entre vírgulas: \"O prazo, porém, terminou.\"\n• Oração adverbial anteposta: \"Quando o alarme tocou, todos saíram.\"\n• Elipse (omissão) do verbo: \"Eu prefiro café; ela, chá.\""
-     },
-     {
-      "titulo": "Adjetiva explicativa x restritiva",
-      "texto": "A vírgula muda o sentido nas orações iniciadas por pronome relativo (que, o qual):\n• Restritiva, sem vírgula: \"Os candidatos que estudaram foram aprovados.\" Só parte dos candidatos estudou, e foi essa parte que passou.\n• Explicativa, entre vírgulas: \"Os candidatos, que estudaram, foram aprovados.\" Todos os candidatos estudaram e todos passaram.\nEssa diferença é muito cobrada pela VUNESP."
-     },
-     {
-      "titulo": "Outros sinais",
-      "texto": "• Ponto-e-vírgula: separa orações longas ou itens de enumeração que já têm vírgulas; também separa orações coordenadas com conjunção deslocada.\n• Dois-pontos: anuncia citação, explicação, enumeração ou esclarecimento. \"Só havia uma saída: recuar.\"\n• Travessão: marca fala de personagem ou isola expressões, como as vírgulas, com mais destaque.\n• Parênteses: isolam informações acessórias.\n• Aspas: indicam citação, ironia, estrangeirismo ou destaque.\n• Reticências: indicam interrupção, hesitação ou suspense."
-     },
-     {
-      "titulo": "Dica de prova",
-      "texto": "Para julgar uma vírgula, coloque a frase em ordem direta (sujeito + verbo + complemento + adjuntos). Se a vírgula estiver separando sujeito de verbo ou verbo de complemento, está errada. Se estiver isolando algo deslocado ou acessório, verifique se há vírgula de abertura e de fechamento.\nOutra pista útil: termos intercalados (aposto, conjunção deslocada, oração explicativa) exigem vírgula dupla, uma antes e outra depois. Se a alternativa abre a vírgula e esquece de fechá-la, normalmente está errada. Já a vírgula antes do \"e\" é possível quando as orações têm sujeitos diferentes: \"O cabo dirigia, e o soldado observava a rua\"."
-     }
-    ]
-   },
-   "revisao": {
-    "pontos": [
-     "Nunca separe sujeito e verbo com vírgula.",
-     "Nunca separe verbo e complemento com vírgula.",
-     "Vocativo e aposto explicativo ficam entre vírgulas.",
-     "Adjunto adverbial deslocado: vírgula recomendada; se curto, facultativa.",
-     "Use vírgula antes de mas, porém, contudo.",
-     "Conjunção deslocada no meio da oração fica entre vírgulas.",
-     "Adjetiva explicativa tem vírgula; restritiva não tem.",
-     "Vírgula pode indicar verbo omitido (elipse).",
-     "Dois-pontos anunciam explicação, citação ou enumeração."
-    ]
-   },
-   "mapa": {
-    "no_central": "Pontuação",
-    "ramos": [
-     {
-      "label": "Vírgula proibida",
-      "filhos": [
-       "Sujeito e verbo",
-       "Verbo e complemento",
-       "Nome e complemento"
-      ]
-     },
-     {
-      "label": "Vírgula obrigatória",
-      "filhos": [
-       "Vocativo",
-       "Aposto explicativo",
-       "Conjunção deslocada",
-       "Elipse do verbo"
-      ]
-     },
-     {
-      "label": "Orações",
-      "filhos": [
-       "Coordenadas sem conectivo",
-       "Antes de mas",
-       "Adverbial anteposta"
-      ]
-     },
-     {
-      "label": "Adjetivas",
-      "filhos": [
-       "Explicativa com vírgula",
-       "Restritiva sem vírgula"
-      ]
-     },
-     {
-      "label": "Outros sinais",
-      "filhos": [
-       "Ponto-e-vírgula",
-       "Dois-pontos",
-       "Travessão",
-       "Aspas",
-       "Reticências"
-      ]
-     }
-    ]
-   },
-   "flashcards": [
-    {
-     "pergunta": "Pode haver vírgula entre sujeito e verbo?",
-     "resposta": "Não, em ordem direta é proibido."
-    },
-    {
-     "pergunta": "Como se pontua o vocativo?",
-     "resposta": "Separado por vírgula (ou vírgulas)."
-    },
-    {
-     "pergunta": "Qual a diferença de pontuação entre adjetiva explicativa e restritiva?",
-     "resposta": "A explicativa vem entre vírgulas; a restritiva, sem vírgula."
-    },
-    {
-     "pergunta": "Em \"Eu prefiro café; ela, chá\", o que indica a vírgula?",
-     "resposta": "A omissão do verbo (elipse)."
-    },
-    {
-     "pergunta": "Onde fica a vírgula em relação ao \"mas\"?",
-     "resposta": "Antes dele: \"Estudou, mas não passou.\""
-    },
-    {
-     "pergunta": "Para que servem os dois-pontos?",
-     "resposta": "Anunciar explicação, citação, enumeração ou esclarecimento."
-    }
-   ],
-   "questoes": [
-    {
-     "subassunto": null,
-     "enunciado": "Assinale a alternativa corretamente pontuada de acordo com a norma-padrão.",
-     "opcoes": [
-      "Os moradores do bairro, reclamaram do barulho.",
-      "Senhor comandante, a viatura já está pronta.",
-      "O policial entregou, o relatório ao delegado.",
-      "A cidade de São Paulo, é a mais populosa do país.",
-      "Os candidatos aprovados, farão o exame médico."
-     ],
-     "gabarito": 1,
-     "comentario": "Em B, a vírgula isola o vocativo \"Senhor comandante\", o que é obrigatório. Em A, D e E, a vírgula separa indevidamente o sujeito do verbo; em C, separa o verbo de seu complemento.",
-     "dificuldade": "facil"
-    },
-    {
-     "subassunto": null,
-     "enunciado": "Em \"Marina, a nova sargento da companhia, assumiu o turno da noite\", as vírgulas foram empregadas para isolar",
-     "opcoes": [
-      "um vocativo.",
-      "um adjunto adverbial deslocado.",
-      "uma oração adjetiva restritiva.",
-      "um aposto explicativo.",
-      "um sujeito posposto ao verbo."
-     ],
-     "gabarito": 3,
-     "comentario": "\"A nova sargento da companhia\" explica quem é Marina: é aposto explicativo (D). Não há chamamento (vocativo), circunstância adverbial, oração com pronome relativo nem sujeito posposto; Marina é o sujeito, anteposto ao verbo.",
-     "dificuldade": "facil"
-    },
-    {
-     "subassunto": null,
-     "enunciado": "Considere as frases:\nI. Os candidatos que estudaram foram aprovados.\nII. Os candidatos, que estudaram, foram aprovados.\nÉ correto afirmar que",
-     "opcoes": [
-      "as duas frases têm exatamente o mesmo sentido.",
-      "em I, todos os candidatos estudaram e foram aprovados.",
-      "em II, afirma-se que todos os candidatos estudaram e foram aprovados.",
-      "em II, as vírgulas estão erradas, pois separam o sujeito do verbo.",
-      "em I, falta vírgula obrigatória antes do pronome \"que\"."
-     ],
-     "gabarito": 2,
-     "comentario": "Em II, a oração entre vírgulas é explicativa: todos os candidatos estudaram e foram aprovados (C). Em I, a oração é restritiva: só os que estudaram foram aprovados, por isso os sentidos diferem (A e B erradas). As vírgulas de II isolam uma oração intercalada, o que é correto (D), e a restritiva não leva vírgula (E).",
-     "dificuldade": "media"
-    },
-    {
-     "subassunto": null,
-     "enunciado": "Assinale a alternativa corretamente pontuada.",
-     "opcoes": [
-      "O soldado estudou muito mas, não foi convocado.",
-      "O soldado estudou, muito mas não foi convocado.",
-      "O soldado, estudou muito, mas não foi convocado.",
-      "O soldado estudou muito mas não, foi convocado.",
-      "O soldado estudou muito, mas não foi convocado."
-     ],
-     "gabarito": 4,
-     "comentario": "A vírgula deve vir antes da conjunção adversativa \"mas\" (E). Em A, a vírgula está depois do \"mas\"; em B, separa o verbo do advérbio de modo indevido e deixa o \"mas\" sem vírgula; em C, separa sujeito e verbo; em D, separa \"não\" do verbo.",
-     "dificuldade": "media"
-    },
-    {
-     "subassunto": null,
-     "enunciado": "Assinale a alternativa em que a vírgula indica a omissão de um verbo já mencionado.",
-     "opcoes": [
-      "Na primeira fase, ele fez a prova objetiva; na segunda, o teste físico.",
-      "Pedro, venha até a sala do comandante.",
-      "Chegou cedo, conferiu o equipamento, saiu para a ronda.",
-      "Em São Paulo, a temperatura caiu bastante ontem.",
-      "O sargento, que é experiente, orientou a tropa."
-     ],
-     "gabarito": 0,
-     "comentario": "Em A, após \"na segunda\", a vírgula marca a omissão do verbo \"fez\" (elipse/zeugma): \"na segunda, [fez] o teste físico\". Em B há vocativo; em C, orações coordenadas sem conectivo; em D, adjunto adverbial deslocado; em E, oração adjetiva explicativa.",
-     "dificuldade": "dificil"
-    }
-   ]
-  },
-  {
-   "curso": "pm-sp-soldado",
-   "disciplina": "Língua Portuguesa e Interpretação de Texto",
-   "assunto": "Classes de palavras: emprego e sentido que imprimem às relações que estabelecem",
-   "aula": {
-    "titulo": "Classes de palavras: emprego e sentido",
-    "secoes": [
-     {
-      "titulo": "Substantivo e adjetivo",
-      "texto": "Substantivo nomeia seres, objetos, lugares, sentimentos e ações (policial, cidade, coragem, chegada). Qualquer palavra antecedida de artigo pode virar substantivo: \"O não dele encerrou a conversa\" (substantivação).\nAdjetivo caracteriza o substantivo e concorda com ele em gênero e número (viatura nova, viaturas novas). A posição pode mudar o sentido: \"um grande homem\" (importante) x \"um homem grande\" (alto, corpulento)."
-     },
-     {
-      "titulo": "Numeral e pronome",
-      "texto": "Numeral indica quantidade ou ordem: cardinal (dois), ordinal (segundo), multiplicativo (dobro), fracionário (metade, um terço).\nPronome substitui ou acompanha o substantivo:\n• Pessoais: eu, tu, ele; oblíquos me, te, se, o, a, lhe.\n• Possessivos: meu, seu, nosso.\n• Demonstrativos: este (perto de quem fala / o que vou dizer), esse (perto de quem ouve / o que já foi dito), aquele (distante).\n• Relativos: que, quem, onde (só para lugar), o qual, cujo. \"Cujo\" indica posse, concorda com o que vem depois e não aceita artigo depois dele: \"o policial cuja viatura quebrou\"."
-     },
-     {
-      "titulo": "Verbo",
-      "texto": "Verbo indica ação, estado ou fenômeno e varia em pessoa, número, tempo, modo e voz.\n• Indicativo: certeza (estudo, estudei, estudarei, estudaria).\n• Subjuntivo: dúvida, hipótese, desejo (que eu estude, se eu estudasse, quando eu estudar).\n• Imperativo: ordem, pedido (estude).\nVozes: ativa (\"O policial prendeu o suspeito\"), passiva analítica (\"O suspeito foi preso pelo policial\"), passiva sintética (\"Prenderam-se os suspeitos\") e reflexiva (\"Ele se feriu\").\nAtenção a verbos irregulares: quando eu vier (vir), quando eu vir (ver), se eu puser (pôr)."
-     },
-     {
-      "titulo": "Advérbio",
-      "texto": "Advérbio modifica verbo, adjetivo ou outro advérbio, indicando circunstância: tempo (ontem, já), lugar (aqui, longe), modo (bem, rapidamente), intensidade (muito, bastante, meio), negação (não), afirmação (sim, certamente), dúvida (talvez).\nÉ invariável: \"Ela estava meio cansada\" (e não \"meia cansada\"); \"Elas estavam bastante atentas\". Já \"meia\" como numeral varia: \"meio-dia e meia\" (meia hora)."
-     },
-     {
-      "titulo": "Preposição",
-      "texto": "Preposição liga dois termos, estabelecendo relação de sentido entre eles: a, ante, após, até, com, contra, de, desde, em, entre, para, perante, por, sem, sob, sobre, trás.\nO sentido depende do contexto:\n• com: companhia (saiu com o irmão), instrumento (cortou com a faca), modo (agiu com calma).\n• de: posse (carro de João), origem (veio de Santos), matéria (mesa de madeira), causa (morreu de frio).\n• por: causa (foi preso por furto), meio (enviou por e-mail), lugar (passou por aqui).\n• para: finalidade (treina para passar), direção (foi para casa)."
-     },
-     {
-      "titulo": "Conjunção",
-      "texto": "Conjunção liga orações e indica a relação lógica entre elas.\n• Coordenativas: aditivas (e, nem), adversativas (mas, porém, contudo, todavia, entretanto), alternativas (ou... ou), conclusivas (logo, portanto, por isso), explicativas (pois, porque, que).\n• Subordinativas: causais (porque, como, já que), concessivas (embora, ainda que, mesmo que), condicionais (se, caso), temporais (quando, assim que), finais (para que, a fim de que), consecutivas (tão... que), conformativas (conforme, segundo), proporcionais (à medida que, à proporção que), comparativas (como, mais... do que).\nNa prova, costuma-se trocar uma conjunção por outra de mesmo sentido: \"embora\" por \"ainda que\"; \"porém\" por \"contudo\"; \"portanto\" por \"logo\"."
-     }
-    ]
-   },
-   "revisao": {
-    "pontos": [
-     "Qualquer palavra com artigo pode virar substantivo.",
-     "Adjetivo antes ou depois do substantivo pode mudar o sentido.",
-     "Cujo indica posse e não aceita artigo depois: cuja viatura.",
-     "Onde só se usa para lugar físico.",
-     "Este = perto de quem fala; esse = perto de quem ouve.",
-     "Advérbio é invariável: meio cansada, bastante atentas.",
-     "Porém, contudo, todavia = oposição; portanto, logo = conclusão.",
-     "Embora, ainda que, mesmo que = concessão.",
-     "Quando eu vir (ver) x quando eu vier (vir): futuro do subjuntivo.",
-     "O sentido da preposição depende do contexto."
-    ]
-   },
-   "mapa": {
-    "no_central": "Classes de palavras",
-    "ramos": [
-     {
-      "label": "Nomes",
-      "filhos": [
-       "Substantivo",
-       "Adjetivo",
-       "Numeral",
-       "Substantivação"
-      ]
-     },
-     {
-      "label": "Pronome",
-      "filhos": [
-       "Pessoal",
-       "Possessivo",
-       "Demonstrativo",
-       "Relativo (cujo, onde)"
-      ]
-     },
-     {
-      "label": "Verbo",
-      "filhos": [
-       "Modos",
-       "Tempos",
-       "Vozes",
-       "Irregulares"
-      ]
-     },
-     {
-      "label": "Advérbio",
-      "filhos": [
-       "Circunstâncias",
-       "Invariável",
-       "Meio e bastante"
-      ]
-     },
-     {
-      "label": "Preposição",
-      "filhos": [
-       "Liga termos",
-       "Causa, meio, lugar",
-       "Finalidade, posse"
-      ]
-     },
-     {
-      "label": "Conjunção",
-      "filhos": [
-       "Coordenativas",
-       "Subordinativas",
-       "Troca por equivalente"
-      ]
-     }
-    ]
-   },
-   "flashcards": [
-    {
-     "pergunta": "Qual o valor de \"porém\"?",
-     "resposta": "Oposição (adversativa)."
-    },
-    {
-     "pergunta": "Qual o valor de \"embora\"?",
-     "resposta": "Concessão."
-    },
-    {
-     "pergunta": "\"Cujo\" pode vir seguido de artigo?",
-     "resposta": "Não. Diz-se \"cuja viatura\", nunca \"cuja a viatura\"."
-    },
-    {
-     "pergunta": "\"Ela estava meio cansada\" ou \"meia cansada\"?",
-     "resposta": "Meio cansada: advérbio é invariável."
-    },
-    {
-     "pergunta": "O que é substantivação?",
-     "resposta": "Uso de palavra de outra classe como substantivo, geralmente com artigo: o não, o amanhã."
-    },
-    {
-     "pergunta": "Quais são os modos verbais?",
-     "resposta": "Indicativo, subjuntivo e imperativo."
-    }
-   ],
-   "questoes": [
-    {
-     "subassunto": "Conjunção",
-     "enunciado": "Em \"O candidato estudou bastante, porém não foi aprovado na primeira fase\", a conjunção \"porém\" expressa ideia de",
-     "opcoes": [
-      "conclusão.",
-      "oposição.",
-      "explicação.",
-      "adição.",
-      "alternância."
-     ],
-     "gabarito": 1,
-     "comentario": "\"Porém\" é conjunção coordenativa adversativa: o resultado (não aprovação) se opõe ao esperado pelo esforço (B). Conclusão seria \"portanto\"; explicação, \"pois\"; adição, \"e\"; alternância, \"ou\".",
-     "dificuldade": "facil"
-    },
-    {
-     "subassunto": "Advérbio",
-     "enunciado": "Assinale a alternativa correta quanto ao emprego da palavra \"meio\", de acordo com a norma-padrão.",
-     "opcoes": [
-      "A soldado estava meio cansada após o plantão.",
-      "A candidata ficou meia nervosa antes da prova.",
-      "Os portões estavam meios fechados durante a noite.",
-      "A reunião terminou ao meio-dia e meio.",
-      "Ele bebeu meio garrafa de água depois do treino."
-     ],
-     "gabarito": 0,
-     "comentario": "Antes de adjetivo, \"meio\" é advérbio (um pouco) e não varia: \"meio cansada\" (A). Por isso B e C estão erradas. Em D, subentende-se \"meia hora\": meio-dia e meia. Em E, \"meio\" é numeral e concorda com \"garrafa\": meia garrafa.",
-     "dificuldade": "facil"
-    },
-    {
-     "subassunto": "Preposição",
-     "enunciado": "Na frase \"O sargento saiu da reunião com pressa\", a preposição \"com\" estabelece relação de",
-     "opcoes": [
-      "companhia.",
-      "instrumento.",
-      "causa.",
-      "lugar.",
-      "modo."
-     ],
-     "gabarito": 4,
-     "comentario": "\"Com pressa\" indica a maneira como o sargento saiu: relação de modo (E). Haveria companhia em \"saiu com o colega\" e instrumento em \"abriu com a chave\". Não há causa nem lugar na expressão.",
-     "dificuldade": "media"
-    },
-    {
-     "subassunto": "Pronome",
-     "enunciado": "Assinale a alternativa que completa corretamente a frase: \"O policial ______ viatura quebrou pediu apoio à central.\"",
-     "opcoes": [
-      "que a",
-      "cuja a",
-      "onde a",
-      "cuja",
-      "o qual"
-     ],
-     "gabarito": 3,
-     "comentario": "Há relação de posse (a viatura do policial), expressa pelo pronome relativo \"cujo\", que concorda com o termo seguinte e não admite artigo depois: \"cuja viatura\" (D). \"Cuja a\" é erro comum; \"onde\" só se refere a lugar; \"que a\" e \"o qual\" não expressam posse nessa construção.",
-     "dificuldade": "media"
-    },
-    {
-     "subassunto": "Verbo",
-     "enunciado": "Assinale a alternativa em que o verbo destacado está no futuro do subjuntivo.",
-     "opcoes": [
-      "Se eu fosse você, aceitaria a proposta.",
-      "Espero que ele venha à formatura.",
-      "Quando você vier à cidade, avise-me.",
-      "Ele virá ao quartel amanhã cedo.",
-      "Ele viria à reunião se pudesse."
-     ],
-     "gabarito": 2,
-     "comentario": "\"Vier\" (quando você vier) é futuro do subjuntivo do verbo vir (C). \"Fosse\" é pretérito imperfeito do subjuntivo; \"venha\", presente do subjuntivo; \"virá\", futuro do presente do indicativo; \"viria\", futuro do pretérito do indicativo.",
-     "dificuldade": "dificil"
-    }
-   ]
-  },
-  {
-   "curso": "pm-sp-soldado",
-   "disciplina": "Língua Portuguesa e Interpretação de Texto",
-   "assunto": "Concordância",
-   "aula": {
-    "titulo": "Concordância verbal e nominal",
-    "secoes": [
-     {
-      "titulo": "Concordância verbal: regra geral e sujeito composto",
-      "texto": "O verbo concorda com o sujeito em número e pessoa: \"Os soldados chegaram\". Ache o sujeito perguntando \"quem?\" ou \"o quê?\" ao verbo, principalmente quando ele vem depois do verbo: \"Chegaram as novas viaturas\".\n• Sujeito composto antes do verbo: plural. \"O cabo e o soldado saíram.\"\n• Sujeito composto depois do verbo: plural ou concordância com o núcleo mais próximo. \"Saíram (ou saiu) o cabo e o soldado.\"\n• Pessoas diferentes: a 1ª prevalece sobre as outras; a 2ª sobre a 3ª. \"Eu e ele iremos.\""
-     },
-     {
-      "titulo": "Casos especiais que mais caem",
-      "texto": "• Haver no sentido de existir ou acontecer é impessoal: fica no singular. \"Havia muitos candidatos.\" \"Houve dois acidentes.\" O auxiliar também fica no singular: \"Deve haver vagas.\"\n• Fazer indicando tempo decorrido é impessoal: \"Faz dez anos que ele se formou.\" \"Vai fazer três meses.\"\n• Existir, ocorrer e acontecer NÃO são impessoais: \"Existem vagas.\" \"Ocorreram falhas.\"\n• Expressões partitivas (a maioria de, grande parte de) + plural: verbo no singular ou no plural. \"A maioria dos alunos saiu/saíram.\"\n• Verbo + se: se o verbo for transitivo direto, o \"se\" é partícula apassivadora e o verbo concorda: \"Vendem-se casas\". Se vier com preposição, o \"se\" indetermina o sujeito e o verbo fica no singular: \"Precisa-se de vigilantes\"; \"Trata-se de casos graves\"."
-     },
-     {
-      "titulo": "Concordância nominal: regra geral",
-      "texto": "Artigo, adjetivo, numeral e pronome concordam em gênero e número com o substantivo: \"as primeiras viaturas novas\".\n• Adjetivo depois de dois substantivos: concorda com o mais próximo ou vai para o plural. \"Farda e boné novos\" ou \"farda e boné novo\".\n• Adjetivo antes de dois substantivos: concorda com o mais próximo. \"Nova farda e boné.\""
-     },
-     {
-      "titulo": "Palavras que variam e que não variam",
-      "texto": "Variam (concordam com o termo a que se referem):\n• anexo, incluso, obrigado, mesmo, próprio, quite: \"Seguem anexas as fotos\"; \"Muito obrigada, disse a policial\"; \"Elas mesmas resolveram\". (Quando \"mesmo\" significa \"realmente\", é advérbio e não varia.)\n• bastante como adjetivo (= muitos): \"Havia bastantes provas\".\nNão variam:\n• menos: \"menos pessoas\" (nunca \"menas\").\n• bastante e meio como advérbio (antes de adjetivo): \"bastante organizados\", \"meio cansada\".\n• a expressão \"em anexo\": \"Seguem em anexo as fotos\"."
-     },
-     {
-      "titulo": "É proibido, é necessário, é bom",
-      "texto": "Sem artigo ou determinante, a expressão fica invariável: \"É proibido entrada\"; \"Água é bom para a saúde\"; \"É necessário paciência\".\nCom artigo ou determinante, concorda: \"É proibida a entrada\"; \"A água é boa\"; \"É necessária muita paciência\"."
-     }
-    ]
-   },
-   "revisao": {
-    "pontos": [
-     "Verbo concorda com o sujeito, mesmo quando o sujeito vem depois.",
-     "Haver = existir: sempre no singular (havia muitos candidatos).",
-     "Fazer indicando tempo: singular (faz dez anos).",
-     "Existir e ocorrer concordam normalmente: existem vagas.",
-     "Vendem-se casas (apassivadora); precisa-se de pessoas (indeterminação).",
-     "Anexo, obrigado, mesmo, próprio e quite concordam.",
-     "Menos é invariável: nunca use \"menas\".",
-     "Bastante antes de adjetivo não varia; antes de substantivo, varia.",
-     "É proibido entrada; é proibida a entrada."
-    ]
-   },
-   "mapa": {
-    "no_central": "Concordância",
-    "ramos": [
-     {
-      "label": "Verbal: regra geral",
-      "filhos": [
-       "Verbo concorda com sujeito",
-       "Sujeito posposto",
-       "Sujeito composto"
-      ]
-     },
-     {
-      "label": "Verbos impessoais",
-      "filhos": [
-       "Haver = existir",
-       "Fazer = tempo",
-       "Auxiliar no singular"
-      ]
-     },
-     {
-      "label": "Verbo + se",
-      "filhos": [
-       "Apassivadora: vendem-se",
-       "Indeterminação: precisa-se de"
-      ]
-     },
-     {
-      "label": "Nominal: regra geral",
-      "filhos": [
-       "Gênero e número",
-       "Adjetivo após dois nomes",
-       "Adjetivo antes de dois nomes"
-      ]
-     },
-     {
-      "label": "Variáveis x invariáveis",
-      "filhos": [
-       "Anexo, obrigado, mesmo",
-       "Menos",
-       "Bastante e meio",
-       "É proibido / é proibida a"
-      ]
-     }
-    ]
-   },
-   "flashcards": [
-    {
-     "pergunta": "\"Havia\" ou \"haviam\" muitos candidatos?",
-     "resposta": "Havia: haver no sentido de existir é impessoal."
-    },
-    {
-     "pergunta": "\"Faz\" ou \"fazem\" cinco anos?",
-     "resposta": "Faz: fazer indicando tempo é impessoal."
-    },
-    {
-     "pergunta": "\"Aluga-se\" ou \"alugam-se\" salas?",
-     "resposta": "Alugam-se salas (se apassivador, verbo concorda)."
-    },
-    {
-     "pergunta": "\"Precisa-se\" ou \"precisam-se\" de vigilantes?",
-     "resposta": "Precisa-se: com preposição, o se indetermina o sujeito."
-    },
-    {
-     "pergunta": "\"Seguem anexo\" ou \"seguem anexas\" as fotos?",
-     "resposta": "Seguem anexas as fotos."
-    },
-    {
-     "pergunta": "Qual a forma correta: \"é proibido entrada\" ou \"é proibida entrada\"?",
-     "resposta": "É proibido entrada (sem artigo, invariável)."
-    }
-   ],
-   "questoes": [
-    {
-     "subassunto": "Concordância verbal",
-     "enunciado": "Assinale a alternativa correta quanto à concordância verbal.",
-     "opcoes": [
-      "Havia muitos candidatos aguardando na fila.",
-      "Haviam muitos candidatos aguardando na fila.",
-      "Houveram diversos problemas durante a prova.",
-      "Devem haver vagas remanescentes no concurso.",
-      "Existe, nesta cidade, muitas escolas públicas."
-     ],
-     "gabarito": 0,
-     "comentario": "Haver no sentido de existir é impessoal e fica no singular (A); por isso B e C estão erradas. Em D, o auxiliar acompanha o verbo impessoal: \"deve haver vagas\". Em E, existir concorda com o sujeito: \"existem muitas escolas\".",
-     "dificuldade": "facil"
-    },
-    {
-     "subassunto": "Concordância nominal",
-     "enunciado": "Assinale a alternativa correta quanto à concordância nominal.",
-     "opcoes": [
-      "Seguem anexo as fotos do local da ocorrência.",
-      "Segue anexa as fotos do local da ocorrência.",
-      "Seguem anexos as fotos do local da ocorrência.",
-      "Segue anexas as fotos do local da ocorrência.",
-      "Seguem anexas as fotos do local da ocorrência."
-     ],
-     "gabarito": 4,
-     "comentario": "O sujeito é \"as fotos\" (feminino plural): o verbo vai para o plural (seguem) e o adjetivo \"anexo\" concorda com ele (anexas), como em E. A deixa o adjetivo invariável; B e D erram a concordância verbal; C erra o gênero.",
-     "dificuldade": "facil"
-    },
-    {
-     "subassunto": "Concordância verbal",
-     "enunciado": "Assinale a alternativa em que a concordância do verbo acompanhado do pronome \"se\" está de acordo com a norma-padrão.",
-     "opcoes": [
-      "Aluga-se apartamentos próximos ao batalhão.",
-      "Precisam-se de vigilantes para o turno da noite.",
-      "Consertam-se relógios e aparelhos eletrônicos.",
-      "Vende-se terrenos em área urbana.",
-      "Tratam-se de casos que exigem atenção."
-     ],
-     "gabarito": 2,
-     "comentario": "Consertar é transitivo direto: o \"se\" é partícula apassivadora e o verbo concorda com o sujeito plural, \"relógios e aparelhos\" (C). Em A e D, o verbo deveria estar no plural (alugam-se, vendem-se). Em B e E, os verbos exigem preposição, o \"se\" indetermina o sujeito e o verbo fica no singular (precisa-se, trata-se).",
-     "dificuldade": "media"
-    },
-    {
-     "subassunto": "Concordância verbal",
-     "enunciado": "Assinale a alternativa correta quanto à concordância verbal.",
-     "opcoes": [
-      "Fazem cinco anos que ele ingressou na corporação.",
-      "Faz cinco anos que ele ingressou na corporação.",
-      "Vão fazer três meses que ele saiu do batalhão.",
-      "Devem fazer dois anos que não chove tanto.",
-      "Fizeram dez dias que a viatura está na oficina."
-     ],
-     "gabarito": 1,
-     "comentario": "O verbo fazer indicando tempo decorrido é impessoal e fica no singular (B). O mesmo vale para o auxiliar da locução: \"vai fazer\", \"deve fazer\" (C e D erradas). A e E pluralizam indevidamente o verbo fazer.",
-     "dificuldade": "media"
-    },
-    {
-     "subassunto": "Concordância nominal",
-     "enunciado": "Assinale a alternativa inteiramente correta quanto à concordância nominal.",
-     "opcoes": [
-      "Havia menas pessoas na audiência do que no ano passado.",
-      "Os candidatos declararam estar quite com o serviço militar.",
-      "\"Muito obrigado\", disse a sargento ao receber a homenagem.",
-      "Os documentos estavam bastante organizados, e havia bastantes provas.",
-      "É proibida entrada de pessoas estranhas ao serviço."
-     ],
-     "gabarito": 3,
-     "comentario": "Em D, \"bastante\" antes de adjetivo é advérbio (invariável) e \"bastantes\" antes de substantivo é adjetivo (varia): ambos corretos. \"Menos\" não varia (A); \"quite\" concorda com o termo a que se refere: \"estar quites\" (B); a mulher diz \"obrigada\" (C); sem artigo, usa-se \"é proibido entrada\" (E).",
-     "dificuldade": "dificil"
-    }
-   ]
-  },
-  {
-   "curso": "pm-sp-soldado",
-   "disciplina": "Língua Portuguesa e Interpretação de Texto",
-   "assunto": "Regência",
-   "aula": {
-    "titulo": "Regência verbal e nominal",
-    "secoes": [
-     {
-      "titulo": "O que é regência",
-      "texto": "Regência é a relação entre um termo que exige complemento (regente) e o complemento (regido). Quando o regente é um verbo, fala-se em regência verbal; quando é um nome (substantivo, adjetivo ou advérbio), regência nominal.\n• Verbo transitivo direto (VTD): complemento sem preposição. \"Comprou o uniforme.\"\n• Verbo transitivo indireto (VTI): complemento com preposição. \"Obedeceu ao sargento.\"\n• Verbo transitivo direto e indireto (VTDI): os dois. \"Entregou o relatório ao delegado.\""
-     },
-     {
-      "titulo": "Verbos que mudam de sentido",
-      "texto": "• Assistir: no sentido de ver, presenciar, pede \"a\" (assisti ao jogo); no sentido de ajudar, prestar assistência, é VTD (o médico assistiu os feridos).\n• Aspirar: respirar = VTD (aspirou o ar puro); desejar, almejar = pede \"a\" (aspira a uma promoção).\n• Visar: mirar ou pôr visto = VTD (visou o alvo; visou o documento); ter como objetivo = pede \"a\" (visa ao cargo).\n• Proceder: no sentido de realizar, dar início, pede \"a\" (procedeu à vistoria)."
-     },
-     {
-      "titulo": "Verbos que caem sempre",
-      "texto": "• Obedecer e desobedecer pedem \"a\": obedecer às normas.\n• Preferir: preferir uma coisa a outra, sem \"mais\" e sem \"do que\". \"Prefiro estudar a trabalhar.\"\n• Chegar e ir (movimento) pedem \"a\": chegou ao quartel; vou à delegacia.\n• Implicar (acarretar) é VTD: \"A falta implicará punição.\"\n• Namorar é VTD: namorava a vizinha.\n• Esquecer e lembrar: sem pronome, sem preposição (esqueci o documento); com pronome, com \"de\" (esqueci-me do documento).\n• Pagar e perdoar: coisa sem preposição, pessoa com \"a\". \"Pagou o salário ao funcionário.\"\n• Simpatizar pede \"com\" e não é pronominal: \"simpatizo com ele\" (e não \"simpatizo-me\")."
-     },
-     {
-      "titulo": "Regência nominal",
-      "texto": "Alguns nomes exigem preposição específica:\n• apto a, apto para; acessível a; favorável a; contrário a; preferível a\n• ansioso por, ansioso para; residente em, situado em\n• compatível com; satisfeito com; parecido com\n• obediência a; respeito a, respeito por; aversão a\nAssim como no verbo, o nome da mesma família costuma manter a preposição: obedecer a / obediência a."
-     },
-     {
-      "titulo": "Regência com pronome relativo",
-      "texto": "Se o verbo da oração adjetiva exige preposição, ela vem antes do pronome relativo:\n• \"O filme a que assisti\" (assistir a).\n• \"A cidade em que moro\" (morar em).\n• \"O cargo a que aspiro\" (aspirar a).\n• \"O colega de quem gosto\" (gostar de).\nDica: desfaça a frase (assisti ao filme; moro na cidade) para descobrir a preposição."
-     }
-    ]
-   },
-   "revisao": {
-    "pontos": [
-     "Assistir (ver) pede a: assisti ao jogo.",
-     "Assistir (ajudar) é VTD: assistiu os feridos.",
-     "Aspirar (desejar) e visar (objetivar) pedem a.",
-     "Obedecer e desobedecer pedem a.",
-     "Preferir uma coisa a outra, sem mais e sem do que.",
-     "Chegar e ir pedem a: chegou ao quartel.",
-     "Implicar (acarretar) não pede em: implicou punição.",
-     "Pagar e perdoar: coisa sem preposição, pessoa com a.",
-     "Simpatizar com, sem pronome.",
-     "A preposição exigida vai antes do relativo: o filme a que assisti."
-    ]
-   },
-   "mapa": {
-    "no_central": "Regência",
-    "ramos": [
-     {
-      "label": "Conceito",
-      "filhos": [
-       "Termo regente",
-       "Termo regido",
-       "VTD, VTI, VTDI"
-      ]
-     },
-     {
-      "label": "Mudam de sentido",
-      "filhos": [
-       "Assistir",
-       "Aspirar",
-       "Visar",
-       "Proceder"
-      ]
-     },
-     {
-      "label": "Mais cobrados",
-      "filhos": [
-       "Obedecer a",
-       "Preferir a",
-       "Chegar a",
-       "Implicar (VTD)",
-       "Pagar e perdoar"
-      ]
-     },
-     {
-      "label": "Regência nominal",
-      "filhos": [
-       "Apto a/para",
-       "Favorável a",
-       "Compatível com",
-       "Residente em"
-      ]
-     },
-     {
-      "label": "Com relativo",
-      "filhos": [
-       "A que assisti",
-       "Em que moro",
-       "De quem gosto"
-      ]
-     }
-    ]
-   },
-   "flashcards": [
-    {
-     "pergunta": "\"Assisti o filme\" ou \"assisti ao filme\"?",
-     "resposta": "Assisti ao filme (ver = assistir a)."
-    },
-    {
-     "pergunta": "Como fica \"prefiro mais X do que Y\" na norma-padrão?",
-     "resposta": "Prefiro X a Y."
-    },
-    {
-     "pergunta": "\"Implicar em\" está correto no sentido de acarretar?",
-     "resposta": "Não. Implicar (acarretar) é VTD: implicou punição."
-    },
-    {
-     "pergunta": "Qual a regência de \"visar\" no sentido de almejar?",
-     "resposta": "Pede a: visa ao cargo."
-    },
-    {
-     "pergunta": "\"Chegou no quartel\" ou \"chegou ao quartel\"?",
-     "resposta": "Chegou ao quartel."
-    },
-    {
-     "pergunta": "Complete: \"A cidade ___ moro\".",
-     "resposta": "Em que (morar em)."
-    }
-   ],
-   "questoes": [
-    {
-     "subassunto": "Regência nominal",
-     "enunciado": "Assinale a alternativa que completa corretamente a frase: \"Após o curso, o candidato ficou apto ______ exercer a função.\"",
-     "opcoes": [
-      "a",
-      "com",
-      "em",
-      "de",
-      "sobre"
-     ],
-     "gabarito": 0,
-     "comentario": "O adjetivo \"apto\" rege as preposições \"a\" ou \"para\": apto a exercer (A). As preposições com, em, de e sobre não são exigidas por esse nome.",
-     "dificuldade": "facil"
-    },
-    {
-     "subassunto": "Regência verbal",
-     "enunciado": "Assinale a alternativa correta quanto à regência verbal, de acordo com a norma-padrão.",
-     "opcoes": [
-      "Os moradores assistiram o desfile de Sete de Setembro.",
-      "Os moradores assistiram ao desfile de Sete de Setembro.",
-      "Todos devem obedecer o regulamento interno.",
-      "Prefiro mais estudar do que trabalhar à noite.",
-      "Chegamos no quartel antes do nascer do sol."
-     ],
-     "gabarito": 1,
-     "comentario": "Assistir no sentido de ver pede a preposição \"a\": assistiram ao desfile (B), e não \"o desfile\" (A). Obedecer também pede \"a\": obedecer ao regulamento (C). Preferir se constrói sem \"mais\" e com \"a\": prefiro estudar a trabalhar (D). Chegar (movimento) pede \"a\": chegamos ao quartel (E).",
-     "dificuldade": "facil"
-    },
-    {
-     "subassunto": "Regência verbal",
-     "enunciado": "Assinale a alternativa correta quanto à regência verbal.",
-     "opcoes": [
-      "A decisão do comando implicou em mudanças na escala.",
-      "O soldado esqueceu do compromisso marcado com o capitão.",
-      "O comerciante pagou ao funcionário o salário atrasado.",
-      "Simpatizo-me muito com o novo comandante da companhia.",
-      "Durante anos, ele visava o cargo de sargento."
-     ],
-     "gabarito": 2,
-     "comentario": "Pagar: a coisa paga não tem preposição e a pessoa, sim: pagou ao funcionário o salário (C). Implicar (acarretar) é VTD: implicou mudanças (A). Esquecer sem pronome não leva \"de\": esqueceu o compromisso, ou esqueceu-se do compromisso (B). Simpatizar não é pronominal: simpatizo com (D). Visar (almejar) pede \"a\": visava ao cargo (E).",
-     "dificuldade": "media"
-    },
-    {
-     "subassunto": "Regência verbal",
-     "enunciado": "Assinale a alternativa que completa corretamente a frase: \"Este é o posto ______ aspiro desde que entrei na corporação.\"",
-     "opcoes": [
-      "que",
-      "em que",
-      "de que",
-      "a que",
-      "com que"
-     ],
-     "gabarito": 3,
-     "comentario": "Aspirar, no sentido de desejar, pede a preposição \"a\" (aspiro ao posto). Na oração adjetiva, a preposição vem antes do relativo: \"o posto a que aspiro\" (D). As demais opções omitem a preposição ou usam preposição que o verbo não exige.",
-     "dificuldade": "media"
-    },
-    {
-     "subassunto": "Regência verbal",
-     "enunciado": "Nas frases \"O médico do batalhão assistiu os feridos\" e \"O público assistiu ao espetáculo\", o verbo \"assistir\" significa, respectivamente,",
-     "opcoes": [
-      "ver e ajudar.",
-      "morar e presenciar.",
-      "caber e ajudar.",
-      "presenciar e prestar socorro.",
-      "prestar assistência e presenciar."
-     ],
-     "gabarito": 4,
-     "comentario": "Sem preposição (VTD), assistir significa ajudar, prestar assistência: o médico assistiu os feridos. Com a preposição \"a\" (VTI), significa ver, presenciar: assistiu ao espetáculo (E). As demais alternativas invertem ou trocam os sentidos.",
-     "dificuldade": "dificil"
-    }
-   ]
-  },
-  {
-   "curso": "pm-sp-soldado",
-   "disciplina": "Língua Portuguesa e Interpretação de Texto",
-   "assunto": "Colocação pronominal",
-   "aula": {
-    "titulo": "Colocação pronominal: próclise, ênclise e mesóclise",
-    "secoes": [
-     {
-      "titulo": "Os pronomes e as três posições",
-      "texto": "Colocação pronominal é a posição dos pronomes oblíquos átonos (me, te, se, o, a, os, as, lhe, lhes, nos, vos) em relação ao verbo.\n• Próclise: antes do verbo. \"Não me contaram.\"\n• Ênclise: depois do verbo, com hífen. \"Contaram-me.\"\n• Mesóclise: no meio do verbo, só no futuro do presente e no futuro do pretérito. \"Contar-me-ão\"; \"Contar-me-iam\"."
-     },
-     {
-      "titulo": "Próclise: as palavras atrativas",
-      "texto": "A próclise é obrigatória quando há, antes do verbo, uma palavra que \"puxa\" o pronome:\n• Palavras negativas: não, nunca, jamais, ninguém, nada. \"Ninguém me avisou.\"\n• Advérbios sem vírgula depois: \"Aqui se trabalha.\" (Com vírgula, volta a ênclise: \"Aqui, trabalha-se.\")\n• Pronomes relativos: \"O policial que me atendeu.\"\n• Pronomes indefinidos: \"Tudo se resolveu.\"\n• Pronomes interrogativos: \"Quem te contou?\"\n• Conjunções subordinativas: \"Quando me chamaram, saí.\"\n• Frases exclamativas e optativas (desejo): \"Deus te abençoe!\"\n• \"Em\" + gerúndio: \"Em se tratando de segurança...\""
-     },
-     {
-      "titulo": "Ênclise",
-      "texto": "A ênclise é a colocação padrão quando não há fator de próclise:\n• No início de frase: a norma-padrão não admite começar oração com pronome oblíquo átono. \"Disseram-me a verdade\" (e não \"Me disseram\").\n• Após pausa (vírgula, ponto-e-vírgula).\n• Com verbo no imperativo afirmativo: \"Entregue-me o relatório.\"\n• Com gerúndio sem preposição \"em\": \"Saiu, despedindo-se de todos.\"\n• Com infinitivo impessoal: \"Convém avisá-lo.\"\nAtenção: não há ênclise com futuro do presente e do pretérito (\"entregarei-lhe\" está errado)."
-     },
-     {
-      "titulo": "Mesóclise",
-      "texto": "Usa-se com o futuro do presente e o futuro do pretérito, quando não há palavra atrativa:\n• \"Entregar-lhe-ei o relatório amanhã.\"\n• \"Far-se-ia a reunião, se houvesse quórum.\"\nSe houver palavra atrativa, a próclise prevalece: \"Não lhe entregarei o relatório.\""
-     },
-     {
-      "titulo": "Locuções verbais",
-      "texto": "• Com infinitivo ou gerúndio: o pronome pode ficar depois do verbo principal ou ligado ao auxiliar. \"Quero falar-lhe\" ou \"Quero-lhe falar\". Com palavra atrativa: \"Não lhe quero falar\" ou \"Não quero falar-lhe\".\n• Com particípio: o pronome nunca vem depois do particípio. \"Tinham-se preparado\" (correto); \"tinham preparado-se\" (errado). Com palavra atrativa: \"Não se tinham preparado\"."
-     },
-     {
-      "titulo": "Dica de prova",
-      "texto": "Siga esta ordem ao analisar cada frase:\n1. Há palavra atrativa antes do verbo (negação, relativo, indefinido, interrogativo, conjunção subordinativa)? Então é próclise.\n2. Não há, e o verbo está no futuro do presente ou do pretérito? Então é mesóclise.\n3. Não há, e o verbo inicia a frase ou vem após vírgula? Então é ênclise.\n4. Em locução verbal com particípio, o pronome nunca fica depois do particípio.\nLembre: a VUNESP cobra a norma-padrão, mesmo que a fala cotidiana use \"me empresta\" no início da frase."
-     }
-    ]
-   },
-   "revisao": {
-    "pontos": [
-     "Próclise antes, ênclise depois, mesóclise no meio do verbo.",
-     "Não se inicia frase com pronome oblíquo átono na norma-padrão.",
-     "Palavras negativas atraem o pronome: não me disse.",
-     "Relativos, indefinidos e interrogativos atraem o pronome.",
-     "Conjunção subordinativa atrai o pronome: quando me viu.",
-     "Mesóclise só com futuro do presente e do pretérito.",
-     "Nunca ênclise com futuro: entregarei-lhe está errado.",
-     "Nunca pronome depois de particípio: tinham preparado-se está errado.",
-     "Em + gerúndio pede próclise: em se tratando."
-    ]
-   },
-   "mapa": {
-    "no_central": "Colocação pronominal",
-    "ramos": [
-     {
-      "label": "Próclise",
-      "filhos": [
-       "Palavras negativas",
-       "Relativos e indefinidos",
-       "Conjunções subordinativas",
-       "Advérbio sem vírgula",
-       "Frases optativas"
-      ]
-     },
-     {
-      "label": "Ênclise",
-      "filhos": [
-       "Início de frase",
-       "Após vírgula",
-       "Imperativo afirmativo",
-       "Gerúndio e infinitivo"
-      ]
-     },
-     {
-      "label": "Mesóclise",
-      "filhos": [
-       "Futuro do presente",
-       "Futuro do pretérito",
-       "Sem palavra atrativa"
-      ]
-     },
-     {
-      "label": "Locuções verbais",
-      "filhos": [
-       "Com infinitivo ou gerúndio",
-       "Com particípio",
-       "Nunca após particípio"
-      ]
-     }
-    ]
-   },
-   "flashcards": [
-    {
-     "pergunta": "O que é próclise?",
-     "resposta": "Pronome antes do verbo: não me disse."
-    },
-    {
-     "pergunta": "Posso iniciar frase com \"me\" na norma-padrão?",
-     "resposta": "Não. Use ênclise: disseram-me."
-    },
-    {
-     "pergunta": "Quando se usa mesóclise?",
-     "resposta": "Com futuro do presente ou do pretérito, sem palavra atrativa."
-    },
-    {
-     "pergunta": "Como fica \"entregarei + lhe\"?",
-     "resposta": "Entregar-lhe-ei (ou lhe entregarei, se houver palavra atrativa)."
-    },
-    {
-     "pergunta": "\"Tinham preparado-se\" está correto?",
-     "resposta": "Não. O correto é \"tinham-se preparado\"."
-    },
-    {
-     "pergunta": "\"Ninguém me avisou\" ou \"Ninguém avisou-me\"?",
-     "resposta": "Ninguém me avisou: pronome indefinido atrai."
-    }
-   ],
-   "questoes": [
-    {
-     "subassunto": null,
-     "enunciado": "Assinale a alternativa correta quanto à colocação pronominal, segundo a norma-padrão.",
-     "opcoes": [
-      "Ninguém me explicou o motivo da demora.",
-      "Ninguém explicou-me o motivo da demora.",
-      "Me explicaram o motivo da demora.",
-      "Ninguém explicar-me-á o motivo da demora.",
-      "Explicaram me o motivo da demora."
-     ],
-     "gabarito": 0,
-     "comentario": "O pronome indefinido \"ninguém\" atrai o pronome oblíquo: próclise (A). B ignora o fator de atração; C inicia a frase com pronome átono; D usa mesóclise mesmo com palavra atrativa (o correto seria \"ninguém me explicará\"); E não usa hífen na ênclise.",
-     "dificuldade": "facil"
-    },
-    {
-     "subassunto": null,
-     "enunciado": "Assinale a alternativa em que a colocação do pronome está de acordo com a norma-padrão.",
-     "opcoes": [
-      "Me disseram que a prova foi adiada.",
-      "Não conte-me mentiras sobre o ocorrido.",
-      "Disseram-me que a prova foi adiada.",
-      "Quem contou-lhe o segredo da equipe?",
-      "O policial que atendeu-me foi muito educado."
-     ],
-     "gabarito": 2,
-     "comentario": "Sem palavra atrativa e em início de frase, usa-se ênclise: \"Disseram-me\" (C). A inicia a frase com pronome átono. Em B, a negação \"não\" exige próclise (não me conte); em D, o interrogativo \"quem\" (quem lhe contou); em E, o relativo \"que\" (que me atendeu).",
-     "dificuldade": "facil"
-    },
-    {
-     "subassunto": null,
-     "enunciado": "Assinale a alternativa em que a colocação pronominal está correta.",
-     "opcoes": [
-      "Em tratando-se de segurança, todo cuidado é pouco.",
-      "Em se tratando de segurança, todo cuidado é pouco.",
-      "Se trata de um caso que exige cautela.",
-      "Quando trata-se de segurança, ninguém se descuida.",
-      "Tratará-se do assunto na próxima reunião."
-     ],
-     "gabarito": 1,
-     "comentario": "A preposição \"em\" seguida de gerúndio exige próclise: \"em se tratando\" (B). A contraria essa regra; C inicia a frase com pronome átono; em D, a conjunção subordinativa \"quando\" exige próclise (quando se trata); em E, não há ênclise com futuro: o correto é \"tratar-se-á\".",
-     "dificuldade": "media"
-    },
-    {
-     "subassunto": null,
-     "enunciado": "Reescrevendo-se a frase \"Entregarei o relatório a você amanhã\" com a substituição de \"a você\" por um pronome oblíquo, a forma correta, de acordo com a norma-padrão, é:",
-     "opcoes": [
-      "Entregarei-lhe o relatório amanhã.",
-      "Lhe entregarei o relatório amanhã.",
-      "Entregar-lhe-ia o relatório amanhã.",
-      "Entregarlhe ei o relatório amanhã.",
-      "Entregar-lhe-ei o relatório amanhã."
-     ],
-     "gabarito": 4,
-     "comentario": "Com o futuro do presente e sem palavra atrativa, usa-se mesóclise: \"entregar-lhe-ei\" (E). Não há ênclise com futuro (A); a frase não pode começar com pronome átono (B); C muda o tempo verbal para o futuro do pretérito; D não tem os hífens obrigatórios.",
-     "dificuldade": "media"
-    },
-    {
-     "subassunto": null,
-     "enunciado": "Assinale a alternativa correta quanto à colocação pronominal em locução verbal.",
-     "opcoes": [
-      "Os soldados tinham preparado-se para a prova física.",
-      "Os soldados que tinham-se preparado foram aprovados.",
-      "Os soldados haviam dedicado-se aos treinos durante meses.",
-      "Os soldados tinham-se preparado para a prova física.",
-      "Os soldados não tinham-se preparado para a prova física."
-     ],
-     "gabarito": 3,
-     "comentario": "Em locução com particípio, o pronome nunca vem depois do particípio; sem palavra atrativa, liga-se ao auxiliar: \"tinham-se preparado\" (D). A e C colocam o pronome após o particípio. Em B, o relativo \"que\" exige próclise ao auxiliar (que se tinham preparado); em E, o \"não\" também exige próclise (não se tinham preparado).",
-     "dificuldade": "dificil"
-    }
-   ]
-  },
-  {
-   "curso": "pm-sp-soldado",
-   "disciplina": "Língua Portuguesa e Interpretação de Texto",
-   "assunto": "Crase",
-   "aula": {
-    "titulo": "Crase: quando usar o acento grave",
-    "secoes": [
-     {
-      "titulo": "O que é crase",
-      "texto": "Crase é a fusão de duas vogais \"a\": a preposição \"a\" (exigida por um verbo ou nome) + o artigo feminino \"a\" (ou o \"a\" inicial de aquele, aquela, aquilo). Essa fusão é marcada pelo acento grave: à.\n• \"Fui a + a escola\" = \"Fui à escola\".\n• \"Refiro-me a + aquele caso\" = \"Refiro-me àquele caso\".\nSe faltar a preposição ou o artigo, não há crase."
-     },
-     {
-      "titulo": "Truques para testar",
-      "texto": "• Troque a palavra feminina por uma masculina: se aparecer \"ao\", há crase. \"Fui à escola\" / \"Fui ao colégio\".\n• Para nomes de lugar, use o verbo voltar: \"volto da\", crase há; \"volto de\", crase pra quê? \"Vou à Bahia\" (volto da Bahia); \"Vou a Curitiba\" (volto de Curitiba).\n• Se o lugar vier determinado, pode haver artigo: \"Vou à Curitiba dos anos 1990\"."
-     },
-     {
-      "titulo": "Casos proibidos",
-      "texto": "Não há crase:\n• Antes de palavra masculina: andar a pé, a cavalo.\n• Antes de verbo: começou a chover.\n• Antes da maioria dos pronomes (pessoais, de tratamento como você e Vossa Excelência, demonstrativos esta e essa, indefinidos): refiro-me a você; dirigiu-se a essa sala.\n• Antes de artigo indefinido: assisti a uma palestra.\n• Com \"a\" no singular diante de palavra no plural: falou a pessoas estranhas.\n• Entre palavras repetidas: cara a cara, frente a frente.\n• Antes de \"casa\" (lar) e \"terra\" (terra firme) sem determinação: voltou a casa cedo; o marinheiro desceu a terra. Com determinação, há crase: voltou à casa dos pais."
-     },
-     {
-      "titulo": "Casos obrigatórios",
-      "texto": "• Horas determinadas: às 8h, à uma hora, das 8h às 12h.\n• Locuções femininas adverbiais, prepositivas e conjuntivas: às vezes, à noite, às pressas, à procura de, à espera de, à medida que.\n• Expressão \"à moda de\", mesmo subentendida: bife à milanesa, gol à Pelé.\n• Aquele, aquela, aquilo precedidos de preposição \"a\": entreguei àquele soldado."
-     },
-     {
-      "titulo": "Casos facultativos",
-      "texto": "O acento grave é facultativo:\n• Antes de nome próprio feminino de pessoa: entreguei a/à Carla.\n• Antes de pronome possessivo feminino no singular: enviou flores a/à sua mãe.\n• Depois da preposição \"até\": foi até a/à porta.\nNa prova, quando a questão pedir o caso facultativo, procure esses três."
-     }
-    ]
-   },
-   "revisao": {
-    "pontos": [
-     "Crase = preposição a + artigo a.",
-     "Troque por masculino: se virar ao, há crase.",
-     "Voltar da: crase há; voltar de: crase pra quê?",
-     "Nunca antes de masculino, verbo ou artigo indefinido.",
-     "Nunca com a singular diante de plural: a pessoas.",
-     "Sempre nas horas: às 8h, das 8h às 12h.",
-     "Sempre em locuções femininas: às vezes, à noite, à medida que.",
-     "Àquele, àquela, àquilo quando há preposição a.",
-     "Facultativa: nome de mulher, possessivo feminino singular e após até.",
-     "Casa (lar) e terra (firme) sem determinação: sem crase."
-    ]
-   },
-   "mapa": {
-    "no_central": "Crase",
-    "ramos": [
-     {
-      "label": "Conceito",
-      "filhos": [
-       "Preposição a + artigo a",
-       "A + aquele/aquela/aquilo",
-       "Acento grave"
-      ]
-     },
-     {
-      "label": "Testes",
-      "filhos": [
-       "Troca por masculino",
-       "Volto da / volto de"
-      ]
-     },
-     {
-      "label": "Proibida",
-      "filhos": [
-       "Masculino",
-       "Verbo",
-       "Pronomes pessoais e de tratamento",
-       "Artigo indefinido",
-       "Palavras repetidas"
-      ]
-     },
-     {
-      "label": "Obrigatória",
-      "filhos": [
-       "Horas",
-       "Locuções femininas",
-       "À moda de",
-       "Àquele"
-      ]
-     },
-     {
-      "label": "Facultativa",
-      "filhos": [
-       "Nome de mulher",
-       "Possessivo feminino",
-       "Após até"
-      ]
-     }
-    ]
-   },
-   "flashcards": [
-    {
-     "pergunta": "O que é crase?",
-     "resposta": "Fusão da preposição a com o artigo a (ou com o a de aquele/aquela/aquilo)."
-    },
-    {
-     "pergunta": "Qual o truque do masculino?",
-     "resposta": "Se, trocando por masculino, surgir \"ao\", há crase."
-    },
-    {
-     "pergunta": "Há crase antes de verbo?",
-     "resposta": "Não: começou a chover."
-    },
-    {
-     "pergunta": "\"Vou a Curitiba\" ou \"vou à Curitiba\"?",
-     "resposta": "Vou a Curitiba (volto de Curitiba)."
-    },
-    {
-     "pergunta": "Cite um caso de crase facultativa.",
-     "resposta": "Antes de possessivo feminino singular: a/à sua mãe."
-    },
-    {
-     "pergunta": "Há crase em \"frente a frente\"?",
-     "resposta": "Não, entre palavras repetidas não há crase."
-    }
-   ],
-   "questoes": [
-    {
-     "subassunto": null,
-     "enunciado": "Assinale a alternativa em que o acento indicativo de crase está empregado corretamente.",
-     "opcoes": [
-      "O policial foi à pé até a base comunitária.",
-      "A equipe chegou ao local às 7h da manhã.",
-      "Refiro-me à você, e não ao seu colega.",
-      "Assim que saímos, começou à chover.",
-      "Fiquei frente à frente com o suspeito."
-     ],
-     "gabarito": 1,
-     "comentario": "Em horas determinadas, há crase: às 7h (B). Não há crase antes de palavra masculina (a pé), antes de pronome de tratamento como \"você\", antes de verbo (a chover) nem entre palavras repetidas (frente a frente).",
-     "dificuldade": "facil"
-    },
-    {
-     "subassunto": null,
-     "enunciado": "Assinale a alternativa que completa corretamente a frase: \"Nas férias, vou ___ Bahia e, depois, ___ Curitiba.\"",
-     "opcoes": [
-      "a ... à",
-      "à ... à",
-      "a ... a",
-      "à ... a",
-      "há ... a"
-     ],
-     "gabarito": 3,
-     "comentario": "Pelo teste do verbo voltar: \"volto da Bahia\" (há artigo, logo, crase: à Bahia) e \"volto de Curitiba\" (sem artigo, sem crase: a Curitiba). A resposta é D. \"Há\" é forma do verbo haver e não cabe na frase.",
-     "dificuldade": "facil"
-    },
-    {
-     "subassunto": null,
-     "enunciado": "Assinale a alternativa correta quanto ao emprego do acento indicativo de crase.",
-     "opcoes": [
-      "O sargento entregou o documento àquele soldado.",
-      "O candidato dirigiu-se à essa sala para a prova.",
-      "O comandante pediu à ela que redigisse o relatório.",
-      "Ontem assisti à uma palestra sobre segurança.",
-      "Os policiais chegaram à cavalo ao evento."
-     ],
-     "gabarito": 0,
-     "comentario": "Entregar algo a alguém exige a preposição \"a\", que se funde com o \"a\" inicial de \"aquele\": àquele soldado (A). Não há crase antes de \"essa\" (B), de pronome pessoal \"ela\" (C), de artigo indefinido \"uma\" (D) nem de palavra masculina \"cavalo\" (E).",
-     "dificuldade": "media"
-    },
-    {
-     "subassunto": null,
-     "enunciado": "Assinale a alternativa em que o emprego do acento indicativo de crase é FACULTATIVO.",
-     "opcoes": [
-      "Às vezes, a ronda se estende até a madrugada.",
-      "Depois do plantão, voltou à casa dos pais.",
-      "O capitão referiu-se à diretora da escola.",
-      "Todos devem obedecer às ordens superiores.",
-      "No domingo, enviou flores à sua mãe."
-     ],
-     "gabarito": 4,
-     "comentario": "Antes de pronome possessivo feminino no singular, o artigo é opcional, por isso a crase é facultativa: a/à sua mãe (E). Em A, a locução \"às vezes\" exige crase; em B, \"casa\" está determinada (dos pais); em C e D, há preposição exigida pelo verbo e artigo diante de palavra feminina, logo, crase obrigatória.",
-     "dificuldade": "media"
-    },
-    {
-     "subassunto": null,
-     "enunciado": "Assinale a alternativa em que o acento indicativo de crase foi empregado corretamente.",
-     "opcoes": [
-      "Após meses embarcados, os marinheiros voltaram à terra.",
-      "A equipe ficou à uma distância segura do incêndio.",
-      "O atendimento ao público vai das 8h às 12h.",
-      "Terminado o plantão, o soldado chegou à casa cedo.",
-      "O novo servidor estava disposto à colaborar com todos."
-     ],
-     "gabarito": 2,
-     "comentario": "Na indicação de intervalo de horas com \"das\", usa-se \"às\": das 8h às 12h (C). Em A, \"terra\" no sentido de terra firme, sem determinação, não recebe artigo; em B, não há crase antes do artigo indefinido \"uma\"; em D, \"casa\" no sentido de lar, sem determinação, não leva artigo; em E, não há crase antes de verbo.",
-     "dificuldade": "dificil"
-    }
-   ]
-  }
- ]
+  ]
 }

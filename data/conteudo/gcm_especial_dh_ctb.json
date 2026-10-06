@@ -9,23 +9,27 @@
     "secoes": [
      {
       "titulo": "Posse x porte: a diferença que mais cai",
-      "texto": "O Estatuto do Desarmamento controla a circulação de armas de fogo e munições no Brasil. O cadastro nacional é o Sinarm, ligado à Polícia Federal.\n• Posse: manter a arma dentro da residência (ou domicílio) ou no local de trabalho, quando a pessoa é titular ou responsável legal do estabelecimento. Para isso basta o certificado de registro válido.\n• Porte: levar a arma consigo fora desses locais (na rua, no carro, em viagem). Exige autorização específica de porte.\nAs armas são classificadas em uso permitido, uso restrito e uso proibido, conforme regulamento. Essa classificação muda o crime e a pena."
+      "texto": "O Estatuto do Desarmamento controla armas de fogo e munições no Brasil. O cadastro nacional é o Sinarm, ligado à Polícia Federal.\n• Posse: manter a arma dentro de casa ou no local de trabalho (sendo titular ou responsável pelo estabelecimento). Basta o registro válido.\n• Porte: levar a arma consigo fora desses locais (rua, carro, viagem). Exige autorização de porte.\nAs armas podem ser de uso permitido, restrito ou proibido, e isso muda o crime e a pena."
      },
      {
       "titulo": "Do porte (arts. 6º a 11)",
-      "texto": "A regra é a proibição do porte em todo o território nacional. As exceções estão na própria lei: integrantes das Forças Armadas, das polícias, das guardas municipais, de órgãos de inteligência, agentes e guardas prisionais, empresas de segurança privada e de transporte de valores, praticantes de tiro desportivo, entre outros.\nGuardas municipais: a lei original diferenciava o porte conforme o número de habitantes do município. O STF considerou essa diferenciação inconstitucional, de modo que os integrantes das guardas podem ter porte independentemente do tamanho da cidade. O porte do guarda depende de formação adequada e de mecanismos de fiscalização e controle interno da corporação.\nPara o cidadão comum, a autorização de porte de arma de uso permitido é concedida pela Polícia Federal, após autorização do Sinarm. É preciso demonstrar efetiva necessidade e cumprir requisitos como idoneidade, ocupação lícita, residência certa, capacidade técnica e aptidão psicológica. O porte perde a eficácia automaticamente se o portador for detido ou abordado em estado de embriaguez ou sob efeito de substâncias químicas ou alucinógenas."
+      "texto": "A regra é a proibição do porte em todo o país. A própria lei traz as exceções, como Forças Armadas, polícias, guardas municipais, agentes prisionais, empresas de segurança privada e atiradores desportivos.\n• Guardas municipais: a lei original limitava o porte conforme o número de habitantes da cidade. O STF derrubou esse limite: o guarda pode ter porte em município de qualquer tamanho, desde que tenha formação adequada e a corporação mantenha fiscalização e controle interno.\n• Cidadão comum: o porte de arma de uso permitido é autorizado pela Polícia Federal, após autorização do Sinarm. É preciso demonstrar efetiva necessidade, idoneidade, capacidade técnica e aptidão psicológica, entre outros requisitos.\n• O porte perde a eficácia automaticamente se o portador for detido ou abordado embriagado ou sob efeito de substâncias químicas ou alucinógenas."
      },
      {
       "titulo": "Crimes de posse e de omissão de cautela",
-      "texto": "• Posse irregular de arma de fogo de uso permitido (art. 12): possuir ou manter a arma, sem registro válido, dentro de casa ou no local de trabalho (sendo titular ou responsável). Pena de detenção de 1 a 3 anos e multa.\n• Omissão de cautela (art. 13): deixar de tomar os cuidados necessários para impedir que menor de 18 anos ou pessoa com deficiência mental se apodere da arma que está sob sua posse ou propriedade. É um crime culposo (falta de cuidado). Na mesma pena incorre o responsável por empresa de segurança ou transporte de valores que não registra ocorrência nem comunica à Polícia Federal a perda, furto ou roubo de arma nas primeiras 24 horas."
+      "texto": "• Posse irregular de arma de uso permitido (art. 12): manter a arma, sem registro válido, em casa ou no trabalho. Detenção de 1 a 3 anos e multa.\n• Omissão de cautela (art. 13): não tomar os cuidados necessários e deixar que menor de 18 anos ou pessoa com deficiência mental pegue a arma. É crime culposo, ou seja, por descuido. Também responde o responsável por empresa de segurança ou transporte de valores que não avisa a Polícia Federal, em 24 horas, da perda, furto ou roubo de arma."
      },
      {
       "titulo": "Porte ilegal, disparo e armas de uso restrito ou proibido",
-      "texto": "• Porte ilegal de arma de uso permitido (art. 14): portar, transportar, ceder, emprestar ou ocultar arma, acessório ou munição de uso permitido sem autorização. Pena de reclusão de 2 a 4 anos e multa. Carregar a arma no carro, em regra, é porte, e não posse.\n• Disparo de arma de fogo (art. 15): disparar em lugar habitado ou em suas adjacências, em via pública ou em direção a ela, desde que o disparo não tenha como finalidade a prática de outro crime (é crime subsidiário).\n• Posse ou porte de arma de uso restrito (art. 16): pena de reclusão de 3 a 6 anos e multa. Se a arma for de uso proibido, a pena sobe para reclusão de 4 a 12 anos. Nas mesmas penas incorre quem, por exemplo, porta ou possui arma com numeração raspada, suprimida ou adulterada, ainda que a arma seja de uso permitido.\nA posse ou o porte de arma de uso proibido é crime hediondo."
+      "texto": "• Porte ilegal de arma de uso permitido (art. 14): portar, transportar, emprestar ou ocultar arma, acessório ou munição sem autorização. Reclusão de 2 a 4 anos e multa. Arma no carro, em regra, é porte.\n• Disparo de arma de fogo (art. 15): disparar em lugar habitado, em via pública ou em direção a ela, se o tiro não tiver como finalidade outro crime (se foi para matar alguém, responde pelo crime mais grave).\n• Arma de uso restrito (art. 16): reclusão de 3 a 6 anos e multa; de uso proibido: 4 a 12 anos. Numeração raspada, suprimida ou adulterada leva às mesmas penas, ainda que a arma seja de uso permitido.\nA posse ou o porte de arma de uso proibido é crime hediondo."
      },
      {
       "titulo": "Comércio, tráfico e o que o STF derrubou",
-      "texto": "• Comércio ilegal (art. 17) e tráfico internacional de arma de fogo (art. 18) são os crimes mais graves da lei.\n• As penas aumentam, por exemplo, quando o autor integra os órgãos e empresas que têm porte autorizado.\n• Atenção: o STF declarou inconstitucionais a regra que tornava inafiançáveis o porte ilegal e o disparo e a que proibia a liberdade provisória em alguns crimes da lei. Por isso, não afirme na prova que esses crimes são automaticamente inafiançáveis."
+      "texto": "• Comércio ilegal (art. 17) e tráfico internacional de arma de fogo (art. 18) são os crimes mais graves da lei.\n• O STF declarou inconstitucionais as regras que proibiam fiança no porte ilegal e no disparo e as que vedavam a liberdade provisória. Na prova, não marque que esses crimes são automaticamente inafiançáveis."
+     },
+     {
+      "titulo": "Bizu de prova",
+      "texto": "• Posse = casa ou trabalho (art. 12, detenção de 1 a 3 anos). Porte = rua, carro, viagem (art. 14, reclusão de 2 a 4 anos).\n• Numeração raspada leva ao art. 16, mesmo com arma de uso permitido.\n• Embriagado com a arma: o porte perde a eficácia na hora.\n• Guarda municipal tem porte independentemente do número de habitantes do município."
      }
     ]
    },
@@ -199,23 +203,27 @@
     "secoes": [
      {
       "titulo": "Para que serve a lei",
-      "texto": "A Lei nº 13.869/2019 define os crimes de abuso de autoridade cometidos por agente público que, no exercício de suas funções ou a pretexto de exercê-las, abusa do poder que lhe foi atribuído. Ela protege, ao mesmo tempo, o cidadão atingido e o bom funcionamento da Administração.\nO conceito de agente público é amplo: qualquer pessoa que exerça, ainda que de forma transitória ou sem remuneração, cargo, emprego, mandato ou função em qualquer dos Poderes, em todos os níveis da Federação. Servidores, militares, membros do Judiciário, do Ministério Público e do Legislativo estão incluídos. O guarda municipal, evidentemente, também."
+      "texto": "A Lei nº 13.869/2019 define os crimes de abuso de autoridade cometidos por agente público que, no exercício de suas funções ou a pretexto de exercê-las, abusa do poder que lhe foi atribuído. Ela protege, ao mesmo tempo, o cidadão atingido e o bom funcionamento da Administração.\nO conceito de agente público é amplo: qualquer pessoa que exerça, mesmo de forma temporária ou sem remuneração, cargo, emprego, mandato ou função em qualquer Poder (União, Estados, DF e Municípios). Servidores, militares, juízes, promotores e parlamentares estão incluídos. O guarda municipal também."
      },
      {
-      "titulo": "O elemento subjetivo especial",
-      "texto": "Não basta errar. Para haver crime, o agente precisa agir com uma destas finalidades específicas:\n• prejudicar outra pessoa;\n• beneficiar a si mesmo ou a terceiro;\n• agir por mero capricho ou satisfação pessoal.\nAlém disso, a lei diz expressamente que a divergência na interpretação da lei ou na avaliação de fatos e provas, por si só, não configura abuso de autoridade. Todos os crimes da lei são dolosos; não existe abuso de autoridade culposo."
+      "titulo": "A finalidade específica (sem ela não há crime)",
+      "texto": "Não basta errar. Para haver crime, o agente precisa agir com uma destas finalidades específicas:\n• prejudicar outra pessoa;\n• beneficiar a si mesmo ou a terceiro;\n• agir por mero capricho ou satisfação pessoal.\nA lei diz expressamente que a divergência na interpretação da lei ou na avaliação de fatos e provas, por si só, não é abuso de autoridade. Todos os crimes da lei são dolosos (com intenção); não existe abuso de autoridade culposo."
      },
      {
       "titulo": "Ação penal, efeitos da condenação e penas alternativas",
-      "texto": "• A ação penal é pública incondicionada (o Ministério Público age sem depender de representação). Se o MP não agir no prazo legal, admite-se ação privada subsidiária da pública.\n• Efeitos da condenação: tornar certa a obrigação de indenizar o dano; inabilitação para exercer cargo, mandato ou função por um período; e perda do cargo, mandato ou função. A inabilitação e a perda do cargo dependem de reincidência em crime de abuso de autoridade e não são automáticas: o juiz precisa declará-las de forma motivada na sentença.\n• A lei prevê penas restritivas de direitos, como prestação de serviços à comunidade e suspensão do exercício do cargo com perda dos vencimentos."
+      "texto": "• Ação penal pública incondicionada: o Ministério Público age sem depender da vontade da vítima. Se o MP ficar parado no prazo legal, a vítima pode propor a ação (ação privada subsidiária).\n• Efeitos da condenação: obrigação de indenizar o dano; inabilitação para cargo, mandato ou função por um período; e perda do cargo. A inabilitação e a perda do cargo só ocorrem em caso de reincidência em abuso de autoridade e não são automáticas: o juiz precisa declará-las, com fundamentação, na sentença.\n• Penas alternativas: prestação de serviços à comunidade e suspensão do exercício do cargo, com perda dos vencimentos."
      },
      {
       "titulo": "Independência das instâncias",
-      "texto": "As penas da lei são aplicadas independentemente das sanções de natureza civil e administrativa. Porém, quando o juízo criminal já decidiu sobre a existência do fato ou sobre quem é o autor, essas questões não podem mais ser discutidas nas outras esferas. Também faz coisa julgada no cível e no administrativo a sentença penal que reconhece que o ato foi praticado em legítima defesa, estado de necessidade, estrito cumprimento de dever legal ou exercício regular de direito."
+      "texto": "Um mesmo fato pode gerar punição penal, civil e administrativa. Mas, se o juiz criminal decidir que o fato não existiu ou que o agente não foi o autor, ou reconhecer legítima defesa, estado de necessidade, estrito cumprimento de dever legal ou exercício regular de direito, isso vale também nas outras esferas."
      },
      {
       "titulo": "Condutas que interessam ao guarda municipal",
-      "texto": "Alguns exemplos de crimes previstos na lei:\n• constranger o preso, com violência, grave ameaça ou redução da capacidade de resistência, a exibir-se à curiosidade pública ou a situação vexatória;\n• deixar de se identificar, ou identificar-se falsamente, ao preso no momento da captura;\n• submeter o preso a interrogatório policial durante o repouso noturno, salvo se capturado em flagrante ou se ele, devidamente assistido, consentir em prestar declarações;\n• invadir ou permanecer em imóvel alheio sem autorização judicial ou fora das hipóteses legais, inclusive cumprir mandado de busca domiciliar após as 21h ou antes das 5h. Não há crime quando o ingresso é para prestar socorro ou quando há fundados indícios de flagrante delito ou desastre;\n• fazer uso, em desfavor do investigado, de prova que sabe ser ilícita;\n• exigir informação ou cumprimento de obrigação sem amparo legal, ou usar o cargo para se livrar de obrigação ou obter vantagem (a famosa carteirada);\n• antecipar o responsável pelas investigações, por meio de comunicação ou rede social, a atribuição de culpa antes de concluídas as apurações e formalizada a acusação."
+      "texto": "Alguns exemplos de crimes previstos na lei:\n• constranger o preso, com violência, grave ameaça ou redução da capacidade de resistência, a exibir-se à curiosidade pública ou a situação vexatória;\n• deixar de se identificar, ou identificar-se falsamente, ao preso no momento da captura;\n• submeter o preso a interrogatório policial durante o repouso noturno, salvo se capturado em flagrante ou se ele, devidamente assistido, consentir em prestar declarações;\n• invadir ou permanecer em imóvel alheio sem autorização judicial ou fora das hipóteses legais, inclusive cumprir mandado de busca domiciliar após as 21h ou antes das 5h. Não há crime quando o ingresso é para prestar socorro ou quando há fundados indícios de flagrante delito ou desastre;\n• fazer uso, em desfavor do investigado, de prova que sabe ser ilícita;\n• exigir informação ou cumprimento de obrigação sem amparo legal, ou usar o cargo para se livrar de obrigação ou obter vantagem (a famosa carteirada);\n• o responsável pela investigação apontar a culpa de alguém em rede social ou na imprensa antes de concluídas as apurações e formalizada a acusação."
+     },
+     {
+      "titulo": "Bizu de prova",
+      "texto": "• Sem a finalidade específica (prejudicar, beneficiar ou capricho) não há crime.\n• Não existe abuso de autoridade culposo.\n• Ação pública incondicionada.\n• Perda do cargo: só com reincidência e declarada na sentença.\n• Horário proibido para cumprir mandado de busca domiciliar: depois das 21h ou antes das 5h."
      }
     ]
    },
@@ -388,23 +396,27 @@
     "secoes": [
      {
       "titulo": "Visão geral do Sisnad",
-      "texto": "A Lei nº 11.343/2006 instituiu o Sistema Nacional de Políticas Públicas sobre Drogas (Sisnad). Ela tem duas frentes: prevenção, atenção e reinserção social de usuários e dependentes; e repressão à produção não autorizada e ao tráfico.\nDrogas, para a lei, são as substâncias ou produtos capazes de causar dependência que estejam especificados em lei ou em listas atualizadas periodicamente pelo Poder Executivo da União. Por isso se diz que os tipos penais da lei são normas penais em branco: dependem de uma lista oficial para serem completados."
+      "texto": "A Lei nº 11.343/2006 instituiu o Sistema Nacional de Políticas Públicas sobre Drogas (Sisnad). Ela tem duas frentes: prevenção, atenção e reinserção social de usuários e dependentes; e repressão à produção não autorizada e ao tráfico.\nDrogas, para a lei, são as substâncias capazes de causar dependência listadas em lei ou em listas oficiais atualizadas pelo Poder Executivo da União. Se a substância não está na lista, não há crime da Lei de Drogas."
      },
      {
       "titulo": "Porte para consumo pessoal (art. 28)",
-      "texto": "Quem adquire, guarda, tem em depósito, transporta ou traz consigo droga para consumo pessoal não recebe pena de prisão. As medidas previstas são:\n• advertência sobre os efeitos das drogas;\n• prestação de serviços à comunidade;\n• medida educativa de comparecimento a programa ou curso educativo.\nA mesma regra vale para quem cultiva pequena quantidade para consumo próprio. Para saber se a droga era para uso pessoal, o juiz considera a natureza e a quantidade da substância, o local e as condições da ação, as circunstâncias sociais e pessoais e a conduta e os antecedentes do agente.\nNa abordagem, não se impõe prisão em flagrante ao usuário: ele é encaminhado ao juízo competente ou assume o compromisso de comparecer, lavrando-se termo circunstanciado.\nAtenção: em 2024 o STF decidiu que o porte de maconha para consumo pessoal não é crime, mas ilícito de natureza administrativa, e fixou um critério de quantidade como presunção relativa de usuário. As demais drogas continuam no art. 28."
+      "texto": "Quem adquire, guarda, tem em depósito, transporta ou traz consigo droga para consumo pessoal não recebe pena de prisão. As medidas previstas são:\n• advertência sobre os efeitos das drogas;\n• prestação de serviços à comunidade;\n• medida educativa de comparecimento a programa ou curso educativo.\nA mesma regra vale para quem cultiva pequena quantidade para consumo próprio. Para saber se a droga era para uso pessoal, o juiz analisa a natureza e a quantidade da substância, o local e as condições da ação, as circunstâncias sociais e pessoais e os antecedentes do agente.\nNa abordagem, o usuário não é preso em flagrante: ele é encaminhado ao juiz ou assina compromisso de comparecer, e lavra-se termo circunstanciado (registro simplificado da ocorrência).\nAtenção: em 2024 o STF decidiu que o porte de maconha para consumo pessoal não é crime, mas ilícito de natureza administrativa, e fixou uma quantidade de referência para diferenciar usuário de traficante. As demais drogas continuam no art. 28."
      },
      {
       "titulo": "Tráfico (art. 33)",
-      "texto": "O tráfico tem muitos verbos: importar, exportar, preparar, produzir, fabricar, adquirir, vender, expor à venda, oferecer, ter em depósito, transportar, trazer consigo, guardar, prescrever, ministrar, entregar a consumo ou fornecer droga, ainda que gratuitamente, sem autorização. A pena é de reclusão de 5 a 15 anos e multa. É crime equiparado a hediondo por força da Constituição.\n• Induzir, instigar ou auxiliar alguém ao uso de droga é figura própria, mais branda.\n• Uso compartilhado: oferecer droga eventualmente e sem objetivo de lucro a pessoa do seu relacionamento, para juntos a consumirem, tem pena bem menor que o tráfico.\n• Tráfico privilegiado: a pena pode ser reduzida de 1/6 a 2/3 se o agente for primário, de bons antecedentes, não se dedicar a atividades criminosas nem integrar organização criminosa. O tráfico privilegiado não é considerado hediondo."
+      "texto": "O tráfico tem muitos verbos: importar, produzir, vender, oferecer, ter em depósito, transportar, trazer consigo, guardar, entregar a consumo ou fornecer droga, ainda que de graça, sem autorização, entre outros. A pena é de reclusão de 5 a 15 anos e multa. É crime equiparado a hediondo por força da Constituição.\n• Induzir, instigar ou auxiliar alguém ao uso de droga é figura própria, mais branda.\n• Uso compartilhado: oferecer droga eventualmente e sem objetivo de lucro a pessoa do seu relacionamento, para juntos a consumirem, tem pena bem menor que o tráfico.\n• Tráfico privilegiado: a pena pode ser reduzida de 1/6 a 2/3 se o agente for primário, de bons antecedentes, não se dedicar a atividades criminosas nem integrar organização criminosa. O tráfico privilegiado não é considerado hediondo."
      },
      {
       "titulo": "Outros crimes da lei",
-      "texto": "• Maquinário: fabricar, possuir ou fornecer equipamentos destinados à produção de drogas.\n• Associação para o tráfico (art. 35): duas ou mais pessoas associadas para praticar tráfico, reiteradamente ou não.\n• Financiar ou custear o tráfico (art. 36).\n• Colaborar como informante com grupo ou associação destinada ao tráfico (art. 37).\n• Prescrever ou ministrar droga culposamente, em dose excessiva ou sem necessidade (art. 38).\n• Conduzir embarcação ou aeronave após consumir droga, expondo a dano a segurança de outrem (art. 39)."
+      "texto": "• Maquinário: fabricar, possuir ou fornecer equipamentos destinados à produção de drogas.\n• Associação para o tráfico (art. 35): duas ou mais pessoas associadas para praticar tráfico, reiteradamente ou não.\n• Financiar ou custear o tráfico (art. 36).\n• Colaborar como informante com grupo ou associação destinada ao tráfico (art. 37)."
      },
      {
-      "titulo": "Aumentos, reduções e dosimetria",
-      "texto": "• Aumento de 1/6 a 2/3 (art. 40) em situações como tráfico transnacional ou entre estados, prática nas imediações de escolas, hospitais ou presídios, uso de violência ou arma, ou envolvimento de criança ou adolescente.\n• Colaboração voluntária (art. 41): quem ajuda a identificar coautores e recuperar o produto do crime pode ter a pena reduzida de 1/3 a 2/3.\n• Na fixação da pena, o juiz considera com preponderância a natureza e a quantidade da droga, a personalidade e a conduta social do agente.\n• É isento de pena quem, em razão da dependência, ou sob o efeito de droga proveniente de caso fortuito ou força maior, era, ao tempo da ação ou omissão, inteiramente incapaz de entender o caráter ilícito do fato ou de determinar-se de acordo com esse entendimento."
+      "titulo": "Aumentos e reduções de pena",
+      "texto": "• Aumento de 1/6 a 2/3 (art. 40) em situações como tráfico entre países ou entre estados, nas imediações de escolas, hospitais ou presídios, com violência ou arma, ou envolvendo criança ou adolescente.\n• Colaboração voluntária (art. 41): quem ajuda a identificar comparsas e recuperar o produto do crime pode ter a pena reduzida de 1/3 a 2/3."
+     },
+     {
+      "titulo": "Bizu de prova",
+      "texto": "• Usuário (art. 28): nunca vai preso; advertência, serviços à comunidade ou curso educativo.\n• Fornecer droga de graça também é tráfico (art. 33).\n• Uso compartilhado: eventual + sem lucro + pessoa do relacionamento + consumo conjunto.\n• Associação para o tráfico: basta duas pessoas.\n• Tráfico privilegiado não é hediondo."
      }
     ]
    },
@@ -581,11 +593,11 @@
      },
      {
       "titulo": "Responsabilidade da pessoa jurídica",
-      "texto": "A lei admite que a empresa responda criminalmente. Isso ocorre quando a infração é cometida por decisão do seu representante legal ou contratual, ou de seu órgão colegiado, no interesse ou benefício da entidade.\n• A responsabilidade da pessoa jurídica não exclui a das pessoas físicas autoras, coautoras ou partícipes do mesmo fato.\n• Pode ser desconsiderada a personalidade jurídica sempre que ela for obstáculo ao ressarcimento dos prejuízos ao meio ambiente.\n• Penas para a pessoa jurídica: multa, restritivas de direitos (como suspensão de atividades e proibição de contratar com o poder público) e prestação de serviços à comunidade."
+      "texto": "A lei admite que a empresa responda criminalmente. Isso ocorre quando a infração é cometida por decisão do seu representante legal ou contratual, ou de seu órgão colegiado, no interesse ou benefício da entidade.\n• A responsabilidade da pessoa jurídica não exclui a das pessoas físicas autoras, coautoras ou partícipes do mesmo fato.\n• Desconsideração da pessoa jurídica: se a empresa for usada como obstáculo para não pagar os prejuízos ambientais, a Justiça pode ir além dela e cobrar de quem está por trás.\n• Penas para a pessoa jurídica: multa, restritivas de direitos (como suspensão de atividades e proibição de contratar com o poder público) e prestação de serviços à comunidade."
      },
      {
       "titulo": "Penas para a pessoa física",
-      "texto": "A lei valoriza penas alternativas. As penas restritivas de direitos substituem a prisão quando o crime é culposo ou quando a pena privativa de liberdade aplicada é inferior a 4 anos, e as circunstâncias indicarem que a substituição é suficiente.\nSão exemplos de penas restritivas: prestação de serviços à comunidade, interdição temporária de direitos, suspensão parcial ou total de atividades, prestação pecuniária e recolhimento domiciliar.\nNas infrações de menor potencial ofensivo, a transação penal depende da prévia composição do dano ambiental, salvo comprovada impossibilidade."
+      "texto": "A lei valoriza penas alternativas. As penas restritivas de direitos substituem a prisão quando o crime é culposo (sem intenção) ou quando a pena de prisão aplicada é inferior a 4 anos, e as circunstâncias indicarem que a substituição é suficiente.\nSão exemplos de penas restritivas: prestação de serviços à comunidade, interdição temporária de direitos, suspensão parcial ou total de atividades, prestação pecuniária e recolhimento domiciliar."
      },
      {
       "titulo": "Crimes em espécie",
@@ -594,6 +606,10 @@
      {
       "titulo": "Processo e papel da guarda municipal",
       "texto": "Os crimes ambientais são de ação penal pública incondicionada. Além do crime, o fato pode gerar infração administrativa, apurada pelos órgãos ambientais do Sisnama.\nA Lei nº 13.022/2014 inclui entre as competências da guarda municipal a proteção do patrimônio ecológico, histórico, cultural, arquitetônico e ambiental do município. Na prática, o guarda atua na prevenção (parques, áreas de mananciais), no registro da ocorrência, na preservação do local e no acionamento dos órgãos competentes."
+     },
+     {
+      "titulo": "Bizu de prova",
+      "texto": "• Empresa pode responder por crime ambiental, e isso não livra os diretores.\n• Pena de prisão inferior a 4 anos (ou crime culposo) pode virar pena alternativa.\n• Maus-tratos a cão ou gato: reclusão de 2 a 5 anos.\n• Pichação é crime; grafite artístico autorizado não é.\n• Matar animal para matar a fome (estado de necessidade) não é crime."
      }
     ]
    },
@@ -603,7 +619,7 @@
      "A responsabilidade da empresa não exclui a das pessoas físicas.",
      "Desconsideração da personalidade jurídica quando for obstáculo ao ressarcimento.",
      "Substituição por restritiva: crime culposo ou pena inferior a 4 anos.",
-     "Transação penal depende da prévia composição do dano ambiental.",
+     "Mesmo fato: responsabilidade penal, administrativa e civil.",
      "Maus-tratos a cão ou gato: reclusão de 2 a 5 anos, multa e proibição da guarda.",
      "Grafite artístico e consentido não é crime; pichação é.",
      "Abate para saciar a fome (estado de necessidade) não é crime.",
@@ -653,7 +669,7 @@
       "label": "Processo",
       "filhos": [
        "Ação pública incondicionada",
-       "Composição do dano antes da transação",
+       "Infração administrativa (Sisnama)",
        "Guarda protege patrimônio ambiental"
       ]
      }
@@ -716,16 +732,16 @@
     },
     {
      "subassunto": null,
-     "enunciado": "Nos crimes previstos na Lei nº 9.605/1998, a ação penal é",
+     "enunciado": "Uma pessoa é condenada por crime ambiental doloso a 3 anos de detenção. Segundo a Lei nº 9.605/1998, essa pena",
      "opcoes": [
-      "pública incondicionada.",
-      "pública condicionada à representação do órgão ambiental.",
-      "privada, proposta pelo proprietário da área.",
-      "privada subsidiária, em regra.",
-      "pública condicionada à requisição do Ministro do Meio Ambiente."
+      "nunca pode ser substituída, pois crimes ambientais exigem prisão.",
+      "só poderia ser substituída se o crime fosse culposo.",
+      "pode ser substituída por pena restritiva de direitos, pois é inferior a 4 anos, se as circunstâncias indicarem que a substituição é suficiente.",
+      "só poderia ser substituída se fosse inferior a 1 ano.",
+      "deve ser convertida automaticamente em multa."
      ],
-     "gabarito": 0,
-     "comentario": "A própria lei estabelece que nos crimes ambientais a ação penal é pública incondicionada.",
+     "gabarito": 2,
+     "comentario": "A lei permite a substituição por pena restritiva de direitos quando o crime é culposo OU quando a pena de prisão aplicada é inferior a 4 anos, desde que as circunstâncias indiquem ser suficiente. Como 3 anos é menos que 4, cabe a substituição, mesmo sendo crime doloso. Não há limite de 1 ano nem conversão automática em multa.",
      "dificuldade": "media"
     },
     {
@@ -767,7 +783,7 @@
     "secoes": [
      {
       "titulo": "O que diz a Constituição",
-      "texto": "A Constituição trata o racismo com rigor máximo. A prática do racismo constitui crime inafiançável e imprescritível, sujeito à pena de reclusão. Além disso, a lei deve punir qualquer discriminação atentatória dos direitos e liberdades fundamentais, e um dos objetivos da República é promover o bem de todos, sem preconceitos de origem, raça, sexo, cor, idade e quaisquer outras formas de discriminação.\n• Inafiançável: não se admite fiança (o que não impede outras formas de liberdade provisória).\n• Imprescritível: o Estado pode punir a qualquer tempo."
+      "texto": "A Constituição trata o racismo com rigor máximo. A prática do racismo constitui crime inafiançável e imprescritível, sujeito à pena de reclusão. Além disso, a lei deve punir qualquer discriminação atentatória dos direitos e liberdades fundamentais, e um dos objetivos da República é promover o bem de todos, sem preconceitos de origem, raça, sexo, cor, idade e quaisquer outras formas de discriminação.\n• Inafiançável: não se admite fiança (pagamento para responder em liberdade).\n• Imprescritível: o Estado pode punir a qualquer tempo."
      },
      {
       "titulo": "A Lei nº 7.716/1989",
@@ -779,11 +795,15 @@
      },
      {
       "titulo": "Agravamentos e interpretação",
-      "texto": "A lei prevê aumento de pena, entre outros casos, quando o crime é praticado em contexto de descontração ou diversão (o chamado racismo recreativo) e quando praticado por funcionário público no exercício das funções ou a pretexto de exercê-las. O juiz deve considerar discriminatória a atitude ou tratamento que cause constrangimento, humilhação, vergonha, medo ou exposição indevida e que normalmente não se dispensaria a outros grupos.\nEm 2019, o STF decidiu que atos de homofobia e transfobia se enquadram nos crimes da Lei nº 7.716/1989 até que o Congresso edite lei específica."
+      "texto": "A lei prevê aumento de pena, entre outros casos, quando o crime é praticado em contexto de descontração ou diversão (o chamado racismo recreativo) e quando praticado por funcionário público no exercício das funções ou a pretexto de exercê-las. O juiz deve considerar discriminatória a atitude que cause constrangimento, humilhação, vergonha, medo ou exposição indevida e que normalmente não seria dirigida a pessoas de outros grupos.\nEm 2019, o STF decidiu que atos de homofobia e transfobia se enquadram nos crimes da Lei nº 7.716/1989 até que o Congresso edite lei específica."
      },
      {
       "titulo": "Atuação do guarda municipal",
       "texto": "Diante de ocorrência de racismo ou injúria racial, o agente deve acolher a vítima sem minimizar o fato, identificar testemunhas, preservar provas (mensagens, vídeos, imagens) e encaminhar as partes à autoridade policial. Como a ação penal é pública incondicionada, não é preciso que a vítima represente para que o caso seja investigado. E o próprio agente público que discrimina no serviço tem sua pena aumentada."
+     },
+     {
+      "titulo": "Bizu de prova",
+      "texto": "• Racismo: inafiançável, imprescritível e com reclusão.\n• Xingamento racial a uma pessoa = injúria racial, hoje na Lei nº 7.716/1989, com ação pública incondicionada.\n• Ofensa por religião, idade ou deficiência = injúria qualificada do Código Penal.\n• Barrar alguém na porta da loja pela cor = crime da Lei nº 7.716/1989.\n• Guarda que discrimina em serviço tem pena aumentada."
      }
     ]
    },
@@ -918,16 +938,16 @@
     },
     {
      "subassunto": null,
-     "enunciado": "Em relação à injúria racial, atualmente prevista na Lei nº 7.716/1989, a ação penal é",
+     "enunciado": "Em um bar, um cliente insatisfeito xinga o garçom com ofensas referentes à cor da pele dele. Em tese, a conduta configura",
      "opcoes": [
-      "pública incondicionada.",
-      "privada, mediante queixa.",
-      "pública condicionada à representação.",
-      "privada subsidiária obrigatória.",
-      "pública condicionada à requisição do Ministro da Justiça."
+      "injúria simples do Código Penal, que depende de queixa da vítima.",
+      "injúria racial, prevista na Lei nº 7.716/1989, de ação penal pública incondicionada.",
+      "contravenção penal de perturbação do sossego.",
+      "fato atípico, pois a ofensa foi verbal.",
+      "crime contra a honra que depende de representação do dono do bar."
      ],
-     "gabarito": 0,
-     "comentario": "Os crimes da Lei nº 7.716/1989, incluindo a injúria racial, são de ação penal pública incondicionada. Antes da mudança, quando estava no Código Penal, a injúria racial dependia de representação.",
+     "gabarito": 1,
+     "comentario": "Ofender uma pessoa determinada por causa da cor é injúria racial, que a Lei nº 14.532/2023 levou para a Lei nº 7.716/1989. A ação é pública incondicionada: o MP age sem precisar da vontade da vítima. Não é injúria simples, porque o conteúdo é racial; e a ofensa verbal é suficiente para o crime.",
      "dificuldade": "media"
     },
     {
@@ -955,19 +975,23 @@
     "secoes": [
      {
       "titulo": "Disposições preliminares (arts. 1º a 6º)",
-      "texto": "O ECA adota a doutrina da proteção integral: crianças e adolescentes são sujeitos de direitos, e não objetos de tutela.\n• Criança: pessoa até 12 anos incompletos.\n• Adolescente: de 12 a 18 anos. Em casos excepcionais previstos em lei, o ECA se aplica a pessoas entre 18 e 21 anos.\nÉ dever da família, da comunidade, da sociedade em geral e do poder público assegurar, com absoluta prioridade, os direitos à vida, saúde, alimentação, educação, esporte, lazer, profissionalização, cultura, dignidade, respeito, liberdade e convivência familiar e comunitária. A prioridade significa: primazia de receber proteção e socorro em qualquer circunstância; precedência no atendimento nos serviços públicos; preferência nas políticas sociais; e destinação privilegiada de recursos.\nNenhuma criança ou adolescente será objeto de negligência, discriminação, exploração, violência, crueldade e opressão. Na interpretação do ECA, considera-se a condição peculiar de pessoa em desenvolvimento."
+      "texto": "O ECA adota a proteção integral: crianças e adolescentes são sujeitos de direitos, e não simples objetos de cuidado.\n• Criança: pessoa até 12 anos incompletos.\n• Adolescente: de 12 a 18 anos. Em casos excepcionais previstos em lei, o ECA se aplica a pessoas entre 18 e 21 anos.\nÉ dever da família, da comunidade, da sociedade em geral e do poder público assegurar, com absoluta prioridade, os direitos à vida, saúde, alimentação, educação, esporte, lazer, profissionalização, cultura, dignidade, respeito, liberdade e convivência familiar e comunitária. A prioridade significa: receber proteção e socorro em primeiro lugar, ser atendido antes nos serviços públicos, ter preferência nas políticas sociais e receber mais recursos públicos."
      },
      {
       "titulo": "Da prática de ato infracional (arts. 103 a 109)",
-      "texto": "Ato infracional é a conduta descrita como crime ou contravenção penal. Os menores de 18 anos são penalmente inimputáveis e ficam sujeitos às medidas do ECA; considera-se a idade na data do fato.\n• Criança que pratica ato infracional recebe medidas de proteção (não recebe medida socioeducativa).\n• Adolescente só pode ser privado de liberdade em flagrante de ato infracional ou por ordem escrita e fundamentada da autoridade judiciária competente. Ele tem direito de saber quem são os responsáveis pela sua apreensão e de ser informado de seus direitos.\n• A apreensão e o local onde o adolescente está recolhido devem ser comunicados imediatamente ao juiz e à família ou a pessoa por ele indicada, examinando-se desde logo a possibilidade de liberação.\n• A internação antes da sentença pode durar no máximo 45 dias e exige decisão fundamentada, com indícios suficientes de autoria e materialidade e necessidade imperiosa.\n• O adolescente civilmente identificado não passa por identificação compulsória pelos órgãos policiais, salvo para confrontação, havendo dúvida fundada."
+      "texto": "Ato infracional é a conduta descrita como crime ou contravenção penal. Os menores de 18 anos são penalmente inimputáveis (não respondem pelo Código Penal) e ficam sujeitos às medidas do ECA; considera-se a idade na data do fato.\n• Criança que pratica ato infracional recebe medidas de proteção (não recebe medida socioeducativa).\n• Adolescente só pode ser privado de liberdade em flagrante de ato infracional ou por ordem escrita e fundamentada da autoridade judiciária competente.\n• A apreensão e o local onde o adolescente está recolhido devem ser comunicados imediatamente ao juiz e à família ou a pessoa por ele indicada.\n• A internação antes da sentença pode durar no máximo 45 dias e exige decisão fundamentada, com indícios suficientes de autoria e materialidade e necessidade imperiosa."
      },
      {
       "titulo": "Do Conselho Tutelar (arts. 131 a 137)",
-      "texto": "O Conselho Tutelar é órgão permanente e autônomo, não jurisdicional, encarregado pela sociedade de zelar pelo cumprimento dos direitos da criança e do adolescente.\n• Em cada município deve haver, no mínimo, um Conselho Tutelar, integrante da administração pública local, com 5 membros escolhidos pela população local para mandato de 4 anos, permitida a recondução por novos processos de escolha.\n• Requisitos para candidatura: reconhecida idoneidade moral, idade superior a 21 anos e residência no município.\n• Lei municipal disciplina local, dia e horário de funcionamento e remuneração.\n• O exercício efetivo da função é serviço público relevante.\n• As decisões do Conselho só podem ser revistas pela autoridade judiciária, a pedido de quem tenha legítimo interesse."
+      "texto": "O Conselho Tutelar é órgão permanente e autônomo, não jurisdicional (não é Justiça), encarregado pela sociedade de zelar pelos direitos da criança e do adolescente.\n• Em cada município há, no mínimo, um Conselho, com 5 membros escolhidos pela população local para mandato de 4 anos, permitida a recondução por novos processos de escolha.\n• Para ser candidato: idoneidade moral, mais de 21 anos e residência no município.\n• As decisões do Conselho só podem ser revistas pelo juiz, a pedido de quem tenha legítimo interesse."
      },
      {
       "titulo": "Dos crimes (arts. 225 a 244-B)",
-      "texto": "O ECA traz crimes praticados contra crianças e adolescentes, todos de ação penal pública incondicionada. Alguns importam diretamente ao agente de segurança:\n• privar adolescente de liberdade, apreendendo-o sem flagrante e sem ordem escrita do juiz;\n• deixar a autoridade responsável pela apreensão de comunicar imediatamente o fato ao juiz e à família;\n• submeter criança ou adolescente sob sua autoridade, guarda ou vigilância a vexame ou constrangimento;\n• deixar de ordenar, sem justa causa, a imediata liberação quando souber da ilegalidade da apreensão.\nOutros crimes importantes: produzir, vender, divulgar ou armazenar material de pornografia infantil; aliciar criança por meio de comunicação para fins libidinosos; vender ou fornecer, ainda que de graça, bebida alcoólica a criança ou adolescente; e corrupção de menores (corromper ou facilitar a corrupção de menor de 18, praticando infração penal com ele ou induzindo-o a praticá-la), crime que dispensa a prova de que o menor foi efetivamente corrompido."
+      "texto": "O ECA traz crimes praticados contra crianças e adolescentes, todos de ação penal pública incondicionada. Alguns importam diretamente ao agente de segurança:\n• privar adolescente de liberdade, apreendendo-o sem flagrante e sem ordem escrita do juiz;\n• deixar a autoridade responsável pela apreensão de comunicar imediatamente o fato ao juiz e à família;\n• submeter criança ou adolescente sob sua autoridade, guarda ou vigilância a vexame ou constrangimento;\n• deixar de ordenar, sem justa causa, a imediata liberação quando souber da ilegalidade da apreensão.\nOutros crimes importantes: pornografia infantil; vender ou fornecer, ainda que de graça, bebida alcoólica a criança ou adolescente; e corrupção de menores (praticar infração penal com menor de 18 ou induzi-lo a praticá-la), que dispensa prova de que o menor foi efetivamente corrompido."
+     },
+     {
+      "titulo": "Bizu de prova",
+      "texto": "• Criança: até 12 anos incompletos. Adolescente: 12 a 18.\n• Criança que comete ato infracional recebe só medida de proteção.\n• Adolescente só é apreendido em flagrante ou por ordem escrita do juiz; comunicação imediata ao juiz e à família.\n• Internação provisória: no máximo 45 dias.\n• Conselho Tutelar: 5 membros, mandato de 4 anos, não é órgão do Judiciário."
      }
     ]
    },
@@ -1147,11 +1171,15 @@
      },
      {
       "titulo": "Regras gerais dos crimes",
-      "texto": "• Os crimes do Estatuto são de ação penal pública incondicionada.\n• Não se aplicam as imunidades do Código Penal nos crimes patrimoniais entre parentes. Assim, o filho que se apropria da aposentadoria do pai idoso pode ser punido normalmente.\n• Aplicam-se aos crimes do Estatuto, no que couber, o Código Penal e o Código de Processo Penal. Desde a Lei nº 15.163/2025, a Lei dos Juizados (Lei nº 9.099/1995) não se aplica aos crimes previstos no Estatuto nem aos crimes praticados com violência contra a pessoa idosa, independentemente da pena prevista (art. 94). Atenção: a antiga regra que mandava aplicar o rito da Lei nº 9.099/1995 aos crimes com pena máxima de até 4 anos (interpretada pelo STF na ADI 3.096) foi substituída."
+      "texto": "• Os crimes do Estatuto são de ação penal pública incondicionada.\n• Não vale a regra do Código Penal que isenta de pena parentes próximos em crimes contra o patrimônio. Assim, o filho que se apropria da aposentadoria do pai idoso pode ser punido normalmente.\n• Desde a Lei nº 15.163/2025 (art. 94), a Lei dos Juizados Especiais Criminais (Lei nº 9.099/1995, que traz benefícios para crimes de menor gravidade) não se aplica aos crimes do Estatuto nem aos crimes cometidos com violência contra a pessoa idosa, qualquer que seja a pena. A regra antiga, que mandava usar o rito dos Juizados para pena máxima de até 4 anos, foi substituída."
      },
      {
       "titulo": "Crimes em espécie (arts. 95 a 108)",
       "texto": "Alguns exemplos que mais caem:\n• discriminar a pessoa idosa, impedindo ou dificultando seu acesso a operações bancárias, transporte ou direito de contratar; ou desdenhar, humilhar ou menosprezar a pessoa idosa;\n• deixar de prestar assistência à pessoa idosa em situação de iminente perigo (omissão de socorro);\n• abandonar a pessoa idosa em hospitais, casas de saúde ou entidades de longa permanência, ou não prover suas necessidades básicas quando obrigado;\n• expor a perigo a integridade física ou psíquica da pessoa idosa (maus-tratos);\n• apropriar-se de ou desviar bens, proventos, pensão ou qualquer rendimento da pessoa idosa;\n• reter cartão magnético de conta bancária de benefícios ou outro documento, para garantir recebimento de dívida;\n• induzir pessoa idosa sem discernimento a outorgar procuração, ou coagi-la a doar, contratar, testar ou outorgar procuração;\n• lavrar ato notarial envolvendo pessoa idosa sem discernimento, sem representação legal."
+     },
+     {
+      "titulo": "Bizu de prova",
+      "texto": "• Pessoa idosa: 60 anos ou mais; maiores de 80 têm prioridade especial.\n• Crimes do Estatuto: ação pública incondicionada.\n• Filho que desvia a aposentadoria do pai idoso responde normalmente; parentesco não isenta.\n• Reter cartão do benefício para garantir dívida é crime.\n• Lei nº 9.099/1995 não se aplica, qualquer que seja a pena."
      }
     ]
    },
@@ -1162,8 +1190,8 @@
      "Atendimento preferencial, imediato e individualizado.",
      "Todo cidadão deve comunicar violação que presenciar ou conhecer.",
      "Crimes: ação penal pública incondicionada.",
-     "Não valem as imunidades patrimoniais entre parentes do Código Penal.",
-     "Lei nº 9.099/1995 não se aplica aos crimes do Estatuto nem aos crimes com violência contra a pessoa idosa, qualquer que seja a pena (art. 94, Lei nº 15.163/2025).",
+     "Parentesco não isenta de pena nos crimes patrimoniais contra a pessoa idosa.",
+     "Lei nº 9.099/1995 não se aplica aos crimes do Estatuto nem aos cometidos com violência contra a pessoa idosa, qualquer que seja a pena (Lei nº 15.163/2025).",
      "Reter cartão de benefício para cobrar dívida é crime.",
      "Apropriar-se de pensão ou aposentadoria da pessoa idosa é crime."
     ]
@@ -1222,7 +1250,7 @@
     },
     {
      "pergunta": "Filho que se apropria da aposentadoria do pai idoso fica isento de pena por ser parente?",
-     "resposta": "Não. O Estatuto afasta essas imunidades."
+     "resposta": "Não. No Estatuto, o parentesco não isenta de pena nos crimes contra o patrimônio da pessoa idosa."
     },
     {
      "pergunta": "Reter cartão de benefício da pessoa idosa para garantir dívida é crime?",
@@ -1230,7 +1258,7 @@
     },
     {
      "pergunta": "A Lei nº 9.099/1995 se aplica aos crimes do Estatuto da Pessoa Idosa?",
-     "resposta": "Não. Desde a Lei nº 15.163/2025, o art. 94 afasta a Lei nº 9.099/1995 dos crimes do Estatuto e dos crimes praticados com violência contra a pessoa idosa, independentemente da pena."
+     "resposta": "Não. Desde a Lei nº 15.163/2025 (art. 94), ela não se aplica aos crimes do Estatuto nem aos cometidos com violência contra a pessoa idosa, qualquer que seja a pena."
     }
    ],
    "questoes": [
@@ -1292,16 +1320,16 @@
     },
     {
      "subassunto": "Dos crimes em espécie (arts. 95 a 108)",
-     "enunciado": "Com a redação dada pela Lei nº 15.163/2025 ao art. 94 do Estatuto da Pessoa Idosa, quanto à aplicação da Lei nº 9.099/1995, é correto afirmar que",
+     "enunciado": "Uma pessoa responde por crime previsto no Estatuto da Pessoa Idosa cuja pena máxima é de 1 ano. Segundo o art. 94 do Estatuto, com a redação dada pela Lei nº 15.163/2025, a Lei dos Juizados Especiais Criminais (Lei nº 9.099/1995)",
      "opcoes": [
-      "aplica-se o procedimento da Lei nº 9.099/1995 aos crimes do Estatuto cuja pena máxima não ultrapasse 4 anos.",
-      "fica garantida a transação penal ao autor de crime contra pessoa idosa.",
-      "aplica-se integralmente aos crimes do Estatuto com pena máxima de até 2 anos.",
-      "torna obrigatória a suspensão condicional do processo.",
-      "não se aplica aos crimes previstos no Estatuto nem aos crimes praticados com violência contra a pessoa idosa, independentemente da pena prevista."
+      "aplica-se, porque a pena máxima não passa de 2 anos.",
+      "aplica-se a todos os crimes do Estatuto com pena máxima de até 4 anos.",
+      "só deixa de ser aplicada se a vítima tiver mais de 80 anos.",
+      "não se aplica aos crimes do Estatuto, qualquer que seja a pena prevista.",
+      "só deixa de ser aplicada se a vítima pedir."
      ],
-     "gabarito": 4,
-     "comentario": "Correta a E. A Lei nº 15.163/2025 deu nova redação ao art. 94: aos crimes do Estatuto aplicam-se, no que couber, o Código Penal e o CPP, e o parágrafo único afasta a Lei nº 9.099/1995 desses crimes e dos praticados com violência contra a pessoa idosa, qualquer que seja a pena. A regra antiga (rito da Lei nº 9.099/1995 para pena máxima de até 4 anos, alternativa A) foi substituída; transação penal, aplicação integral e suspensão condicional obrigatória (B, C e D) não têm base na lei.",
+     "gabarito": 3,
+     "comentario": "Pegadinha clássica: pela regra geral, crime com pena máxima de até 2 anos iria para o Juizado. Mas o art. 94, parágrafo único, do Estatuto (Lei nº 15.163/2025) afasta a Lei nº 9.099/1995 dos crimes do Estatuto e dos crimes com violência contra a pessoa idosa, independentemente da pena. A regra dos 4 anos (B) era a redação antiga; idade acima de 80 e pedido da vítima não têm relação com o tema.",
      "dificuldade": "dificil"
     }
    ]
@@ -1315,7 +1343,7 @@
     "secoes": [
      {
       "titulo": "Objetivo da lei",
-      "texto": "A Lei nº 11.340/2006 cria mecanismos para coibir e prevenir a violência doméstica e familiar contra a mulher, com base na Constituição e em tratados internacionais, como a Convenção sobre a Eliminação de Todas as Formas de Discriminação contra a Mulher e a Convenção de Belém do Pará. Leva o nome de Maria da Penha Maia Fernandes, cujo caso levou a Comissão Interamericana de Direitos Humanos a responsabilizar o Brasil por omissão.\nToda mulher, independentemente de classe, raça, etnia, orientação sexual, renda, cultura, nível educacional, idade e religião, goza dos direitos fundamentais. A lei deve ser interpretada considerando os fins sociais e as condições peculiares das mulheres em situação de violência."
+      "texto": "A Lei nº 11.340/2006 cria mecanismos para coibir e prevenir a violência doméstica e familiar contra a mulher, com base na Constituição e em tratados internacionais, como a Convenção de Belém do Pará. Leva o nome de Maria da Penha Maia Fernandes, cujo caso levou a Comissão Interamericana de Direitos Humanos a responsabilizar o Brasil por omissão.\nToda mulher, independentemente de classe, raça, orientação sexual, renda, idade ou religião, goza dos direitos fundamentais."
      },
      {
       "titulo": "O que é violência doméstica e familiar",
@@ -1327,7 +1355,11 @@
      },
      {
       "titulo": "Políticas públicas (art. 8º) e o papel da guarda",
-      "texto": "A política de enfrentamento é feita por ações articuladas da União, dos Estados, do Distrito Federal, dos Municípios e de entidades não governamentais. Entre as diretrizes estão: integração do Judiciário, MP e Defensoria com a segurança pública, a assistência social, a saúde, a educação, o trabalho e a habitação; atendimento policial especializado, em especial nas Delegacias de Atendimento à Mulher; campanhas educativas; e capacitação permanente das polícias, da Guarda Municipal, do Corpo de Bombeiros e demais profissionais quanto às questões de gênero e de raça ou etnia.\nMuitas guardas mantêm programas de patrulha para acompanhar mulheres com medidas protetivas. Pontos gerais da lei que também caem: não se aplica a Lei nº 9.099/1995 aos crimes praticados com violência doméstica e familiar contra a mulher; e descumprir medida protetiva de urgência é crime."
+      "texto": "A política de enfrentamento é feita por ações articuladas da União, dos Estados, do Distrito Federal, dos Municípios e de entidades não governamentais. Entre as diretrizes estão: integração da Justiça com segurança, saúde e assistência social; atendimento policial especializado, em especial nas Delegacias da Mulher; campanhas educativas; e capacitação permanente das polícias, da Guarda Municipal e do Corpo de Bombeiros quanto às questões de gênero e de raça ou etnia.\nMuitas guardas mantêm programas de patrulha para acompanhar mulheres com medidas protetivas. Pontos gerais da lei que também caem: não se aplica a Lei nº 9.099/1995 aos crimes praticados com violência doméstica e familiar contra a mulher; e descumprir medida protetiva de urgência é crime."
+     },
+     {
+      "titulo": "Bizu de prova",
+      "texto": "• Três âmbitos: casa (unidade doméstica), família e relação íntima de afeto (namoro conta, mesmo sem morar junto).\n• Reter documentos ou cartão = violência patrimonial; xingar, caluniar ou difamar = violência moral.\n• A lista de formas de violência é exemplificativa.\n• Vale também entre duas mulheres.\n• Lei nº 9.099/1995 não se aplica."
      }
     ]
    },
@@ -1495,7 +1527,7 @@
     "secoes": [
      {
       "titulo": "Origem e conceito",
-      "texto": "A Lei nº 13.146/2015, conhecida como Lei Brasileira de Inclusão (LBI), tem como base a Convenção sobre os Direitos das Pessoas com Deficiência da ONU, que foi aprovada no Brasil com equivalência de emenda constitucional.\nPessoa com deficiência é aquela que tem impedimento de longo prazo de natureza física, mental, intelectual ou sensorial, o qual, em interação com uma ou mais barreiras, pode obstruir sua participação plena e efetiva na sociedade em igualdade de condições com as demais pessoas. É o modelo social: a deficiência resulta do encontro entre o impedimento e as barreiras do ambiente. Quando necessária, a avaliação da deficiência é biopsicossocial, feita por equipe multiprofissional e interdisciplinar."
+      "texto": "A Lei nº 13.146/2015, conhecida como Lei Brasileira de Inclusão (LBI), tem como base a Convenção sobre os Direitos das Pessoas com Deficiência da ONU, que foi aprovada no Brasil com força de emenda constitucional.\nPessoa com deficiência é aquela que tem impedimento de longo prazo de natureza física, mental, intelectual ou sensorial, o qual, em interação com uma ou mais barreiras, pode obstruir sua participação plena e efetiva na sociedade em igualdade de condições com as demais pessoas. É o modelo social: a deficiência resulta do encontro entre o impedimento e as barreiras do ambiente. Quando necessária, a avaliação é biopsicossocial, isto é, olha o corpo, a mente e o contexto social da pessoa, e é feita por equipe multiprofissional."
      },
      {
       "titulo": "Conceitos importantes (art. 3º)",
@@ -1503,15 +1535,19 @@
      },
      {
       "titulo": "Igualdade e capacidade",
-      "texto": "Toda pessoa com deficiência tem direito à igualdade de oportunidades e não sofrerá discriminação. Considera-se discriminação também a recusa de adaptações razoáveis.\nA deficiência não afeta a plena capacidade civil: a pessoa pode casar, constituir união estável, exercer direitos sexuais e reprodutivos, decidir sobre número de filhos, conservar a fertilidade e exercer guarda e adoção. A curatela passou a ser medida extraordinária, que atinge apenas atos de natureza patrimonial e negocial. Foi criada a tomada de decisão apoiada, em que a pessoa escolhe apoiadores de confiança."
+      "texto": "Toda pessoa com deficiência tem direito à igualdade de oportunidades e não sofrerá discriminação. Considera-se discriminação também a recusa de adaptações razoáveis.\nA deficiência não afeta a plena capacidade civil: a pessoa pode casar, constituir união estável, exercer direitos sexuais e reprodutivos, decidir sobre número de filhos, conservar a fertilidade e exercer guarda e adoção. A curatela (nomeação de alguém para ajudar a pessoa a administrar seus interesses) passou a ser medida excepcional e atinge apenas atos ligados a dinheiro, bens e negócios. Foi criada também a tomada de decisão apoiada, em que a própria pessoa escolhe duas pessoas de confiança para ajudá-la a decidir."
      },
      {
       "titulo": "Atendimento prioritário",
-      "texto": "A pessoa com deficiência tem atendimento prioritário, que inclui: proteção e socorro em quaisquer circunstâncias; atendimento em todas as instituições e serviços de atendimento ao público; disponibilização de recursos humanos e tecnológicos que garantam atendimento em igualdade de condições; e prioridade na tramitação de processos. O direito se estende ao acompanhante ou atendente pessoal, salvo em alguns casos específicos."
+      "texto": "A pessoa com deficiência tem atendimento prioritário, que inclui: proteção e socorro em quaisquer circunstâncias; atendimento em todas as instituições e serviços de atendimento ao público; e prioridade na tramitação de processos. O direito se estende, em regra, ao acompanhante."
      },
      {
       "titulo": "Crimes e atuação do agente",
-      "texto": "A LBI prevê crimes como:\n• praticar, induzir ou incitar discriminação de pessoa em razão de sua deficiência (reclusão de 1 a 3 anos e multa; aumento de 1/3 se a vítima estiver sob cuidado e responsabilidade do agente; e reclusão de 2 a 5 anos e multa se cometido por meio de comunicação social ou de publicação de qualquer natureza);\n• apropriar-se de ou desviar bens, proventos, pensão, benefícios ou remuneração da pessoa com deficiência;\n• abandonar pessoa com deficiência em hospitais, casas de saúde ou entidades de abrigamento, ou não prover suas necessidades básicas quando obrigado;\n• reter ou utilizar cartão magnético ou documento da pessoa com deficiência para obter vantagem indevida.\nNa abordagem, o guarda deve comunicar-se de forma acessível, respeitar tecnologias assistivas (como cão-guia e cadeira de rodas) e evitar barreiras atitudinais."
+      "texto": "A LBI prevê crimes como:\n• praticar, induzir ou incitar discriminação de pessoa em razão de sua deficiência (reclusão de 1 a 3 anos e multa; aumento de 1/3 se a vítima estiver sob cuidado do agente; reclusão de 2 a 5 anos e multa se feito por meio de comunicação social ou publicação de qualquer natureza);\n• apropriar-se de ou desviar bens, proventos, pensão, benefícios ou remuneração da pessoa com deficiência;\n• abandonar pessoa com deficiência em hospitais ou abrigos;\n• reter ou utilizar cartão magnético ou documento da pessoa com deficiência para obter vantagem indevida.\nNa abordagem, o guarda deve comunicar-se de forma acessível, respeitar tecnologias assistivas (como cão-guia e cadeira de rodas) e evitar barreiras atitudinais."
+     },
+     {
+      "titulo": "Bizu de prova",
+      "texto": "• Deficiência = impedimento de longo prazo + barreiras.\n• Barreira atitudinal = comportamento que exclui.\n• Deficiência não retira a capacidade civil: pode casar e ter filhos.\n• Mobilidade reduzida inclui idoso, gestante, lactante, pessoa com criança de colo e obeso.\n• Discriminar por deficiência: reclusão de 1 a 3 anos; pela imprensa ou publicação, 2 a 5 anos."
      }
     ]
    },
@@ -1662,16 +1698,16 @@
     },
     {
      "subassunto": null,
-     "enunciado": "Segundo a Lei nº 13.146/2015, NÃO se inclui expressamente no conceito de pessoa com mobilidade reduzida a",
+     "enunciado": "Uma pessoa publica, em jornal de grande circulação, texto incitando a discriminação contra pessoas com deficiência. Segundo a Lei nº 13.146/2015, a pena prevista é de",
      "opcoes": [
-      "pessoa idosa.",
-      "gestante.",
-      "lactante.",
-      "pessoa com alta estatura, sem dificuldade de movimentação.",
-      "pessoa com criança de colo."
+      "reclusão de 1 a 3 anos e multa, sem qualquer alteração.",
+      "detenção de 6 meses a 1 ano.",
+      "reclusão de 2 a 5 anos e multa, por ter sido cometido por meio de comunicação social ou publicação.",
+      "apenas multa, por se tratar de manifestação de opinião.",
+      "reclusão de 1 a 3 anos, aumentada de 1/3 por ter sido praticada em público."
      ],
-     "gabarito": 3,
-     "comentario": "A lei considera pessoa com mobilidade reduzida quem tem dificuldade de movimentação, permanente ou temporária, incluindo idoso, gestante, lactante, pessoa com criança de colo e obeso. A alta estatura, sem dificuldade de movimentação, não está no conceito.",
+     "gabarito": 2,
+     "comentario": "O crime de praticar, induzir ou incitar discriminação por deficiência tem pena de reclusão de 1 a 3 anos e multa. Se cometido por meios de comunicação social ou publicação de qualquer natureza, a pena passa a ser de reclusão de 2 a 5 anos e multa. O aumento de 1/3 vale quando a vítima está sob cuidado e responsabilidade do agente, não por ser em público.",
      "dificuldade": "dificil"
     }
    ]
@@ -1689,19 +1725,23 @@
      },
      {
       "titulo": "Natureza jurídica",
-      "texto": "A DUDH é uma resolução da Assembleia Geral, e não um tratado. Por isso, formalmente não foi submetida a ratificação. Mesmo assim, tem enorme força: inspirou constituições (inclusive a brasileira) e tratados, e muitos de seus preceitos são considerados parte do costume internacional.\nPara dar força obrigatória a seus direitos, a ONU aprovou em 1966 dois pactos: o Pacto Internacional sobre Direitos Civis e Políticos e o Pacto Internacional sobre Direitos Econômicos, Sociais e Culturais. A DUDH e esses dois pactos formam a chamada Carta Internacional dos Direitos Humanos."
+      "texto": "A DUDH é uma resolução da Assembleia Geral, e não um tratado. Por isso, formalmente não foi submetida a ratificação. Mesmo assim, tem enorme força: inspirou constituições (inclusive a brasileira) e tratados, e muitos de seus preceitos são considerados regras aceitas por todos os países.\nPara dar força obrigatória a seus direitos, a ONU aprovou em 1966 dois pactos: o Pacto Internacional sobre Direitos Civis e Políticos e o Pacto Internacional sobre Direitos Econômicos, Sociais e Culturais. A DUDH e esses dois pactos formam a chamada Carta Internacional dos Direitos Humanos."
      },
      {
       "titulo": "Princípios que estruturam a Declaração",
-      "texto": "• Todos os seres humanos nascem livres e iguais em dignidade e em direitos; são dotados de razão e consciência e devem agir uns com os outros com espírito de fraternidade (art. 1º).\n• Os direitos valem para todos, sem distinção de raça, cor, sexo, língua, religião, opinião política, origem nacional ou social, riqueza, nascimento ou outra condição (art. 2º).\n• Características que as provas cobram: universalidade (valem para todos), indivisibilidade e interdependência (direitos civis e sociais caminham juntos), inalienabilidade e historicidade."
+      "texto": "• Todos os seres humanos nascem livres e iguais em dignidade e em direitos; são dotados de razão e consciência e devem agir uns com os outros com espírito de fraternidade (art. 1º).\n• Os direitos valem para todos, sem distinção de raça, cor, sexo, língua, religião, opinião política, origem nacional ou social, riqueza, nascimento ou outra condição (art. 2º).\n• Características que as provas cobram: universalidade (valem para todos), indivisibilidade e interdependência (direitos civis e sociais caminham juntos), inalienabilidade (não podem ser vendidos nem renunciados) e historicidade (foram conquistados ao longo da história)."
      },
      {
       "titulo": "Direitos civis e políticos",
-      "texto": "Entre outros: direito à vida, à liberdade e à segurança pessoal; proibição da escravidão e da servidão; proibição da tortura e de penas ou tratamentos cruéis, desumanos ou degradantes; igualdade perante a lei; proibição de prisão, detenção ou exílio arbitrários; julgamento justo e público por tribunal independente; presunção de inocência até prova de culpa; proteção da vida privada, da família, do lar e da correspondência; liberdade de locomoção; direito de asilo; direito a uma nacionalidade; liberdade de pensamento, consciência e religião; liberdade de opinião e expressão; liberdade de reunião e associação pacíficas (ninguém pode ser obrigado a fazer parte de uma associação); participação no governo e eleições periódicas."
+      "texto": "Entre outros: direito à vida, à liberdade e à segurança pessoal; proibição da escravidão e da tortura e de penas ou tratamentos cruéis, desumanos ou degradantes; igualdade perante a lei; proibição de prisão, detenção ou exílio arbitrários; julgamento justo e público; presunção de inocência até prova de culpa; proteção da vida privada, da família, do lar e da correspondência; liberdade de locomoção; direito de asilo e a uma nacionalidade; liberdade de pensamento, religião, opinião e expressão; liberdade de reunião e associação pacíficas (ninguém pode ser obrigado a fazer parte de uma associação); e participação no governo, com eleições periódicas."
      },
      {
       "titulo": "Direitos econômicos, sociais e culturais e deveres",
       "texto": "A DUDH também prevê: seguridade social; trabalho, livre escolha de emprego, salário igual por trabalho igual e direito de organizar sindicatos; repouso e lazer; padrão de vida adequado (alimentação, vestuário, moradia, cuidados médicos); instrução gratuita, ao menos nos graus elementares, sendo a instrução elementar obrigatória; e participação na vida cultural.\nPor fim, afirma que toda pessoa tem deveres para com a comunidade e que o exercício dos direitos só pode sofrer limitações determinadas por lei, para assegurar o respeito aos direitos dos outros e às justas exigências da moral, da ordem pública e do bem-estar. Nenhuma disposição pode ser interpretada para destruir os direitos nela previstos.\nPara o guarda municipal, a DUDH se traduz em abordagens sem tortura, sem tratamento degradante, sem discriminação e com respeito à presunção de inocência."
+     },
+     {
+      "titulo": "Bizu de prova",
+      "texto": "• Data: 10 de dezembro de 1948, Assembleia Geral da ONU.\n• É resolução, não tratado.\n• DUDH + dois Pactos de 1966 = Carta Internacional dos Direitos Humanos.\n• Art. 1º: todos nascem livres e iguais em dignidade e direitos.\n• Direitos podem ser limitados, mas só por lei; instrução elementar é obrigatória."
      }
     ]
    },
@@ -1892,6 +1932,10 @@
      {
       "titulo": "Aplicação na atuação do guarda",
       "texto": "Esses princípios orientam cada abordagem: tratar a todos com urbanidade, sem distinção de cor, classe social, gênero, orientação sexual ou origem; usar a força apenas na medida necessária; preservar a integridade física e moral de quem está sob custódia; e não expor pessoas a situação vexatória."
+     },
+     {
+      "titulo": "Bizu de prova",
+      "texto": "• Dignidade = FUNDAMENTO (art. 1º). Promover o bem de todos sem preconceito = OBJETIVO (art. 3º). Prevalência dos direitos humanos = relações internacionais (art. 4º).\n• Cotas e ações afirmativas = igualdade material.\n• Tratado de direitos humanos com 3/5, dois turnos, nas duas Casas = emenda constitucional.\n• Expor preso à humilhação viola a dignidade humana."
      }
     ]
    },
@@ -1981,8 +2025,8 @@
       "objetivo fundamental da República.",
       "fundamento da República Federativa do Brasil.",
       "princípio das relações internacionais.",
-      "direito social de natureza programática.",
-      "norma de eficácia limitada, dependente de lei."
+      "direito social previsto no art. 6º.",
+      "direito individual que depende de regulamentação por lei."
      ],
      "gabarito": 1,
      "comentario": "O art. 1º, III, da Constituição coloca a dignidade da pessoa humana entre os fundamentos da República. Objetivos estão no art. 3º e princípios das relações internacionais no art. 4º.",
@@ -2072,6 +2116,10 @@
      {
       "titulo": "Segurança pública e perfilamento racial",
       "texto": "Perfilamento racial é selecionar pessoas para abordagem ou revista com base na cor da pele ou aparência. A busca pessoal sem mandado exige fundada suspeita, baseada em elementos objetivos e concretos. Em 2024, o STF afirmou que não é lícita a busca pessoal motivada pela raça, cor da pele, sexo, orientação sexual ou aparência física da pessoa.\nBoas práticas: registrar os motivos objetivos da abordagem, tratar todos com o mesmo padrão de cortesia, acolher denúncias de discriminação e encaminhá-las, e lembrar que o agente público que discrimina no exercício da função tem responsabilidade penal agravada e responde também administrativa e civilmente."
+     },
+     {
+      "titulo": "Bizu de prova",
+      "texto": "• Racismo institucional = práticas das instituições; estrutural = desigualdade enraizada na sociedade; individual = atitude de uma pessoa.\n• População negra = pretos e pardos (autodeclaração, critério IBGE).\n• Convenção Interamericana contra o Racismo tem força de emenda constitucional.\n• Abordagem exige fundada suspeita objetiva; cor da pele nunca é motivo."
      }
     ]
    },
@@ -2257,6 +2305,10 @@
      {
       "titulo": "Papel do agente de segurança",
       "texto": "O guarda municipal é, muitas vezes, o primeiro a chegar. Deve: interromper a agressão e proteger a vítima; acionar socorro médico; não culpabilizar a vítima nem tentar reconciliar o casal; ouvir com privacidade; verificar a existência de medida protetiva; preservar provas; e encaminhar o caso à autoridade policial. Patrulhas específicas de guardas municipais acompanham mulheres com medidas protetivas, reforçando a prevenção."
+     },
+     {
+      "titulo": "Bizu de prova",
+      "texto": "• Feminicídio: crime autônomo (art. 121-A do CP), reclusão de 20 a 40 anos, hediondo.\n• Não basta a vítima ser mulher: é preciso violência doméstica ou menosprezo/discriminação à condição de mulher.\n• Belém do Pará (1994) = Convenção Interamericana sobre violência contra a mulher.\n• Caso Maria da Penha: Comissão Interamericana responsabilizou o Brasil.\n• Na ocorrência: proteger a vítima, não culpabilizá-la, não tentar reconciliar o casal."
      }
     ]
    },
@@ -2443,7 +2495,11 @@
      },
      {
       "titulo": "Responsabilização administrativa, civil e penal por abuso de autoridade, discriminação ou uso indevido de dados",
-      "texto": "As esferas são, em regra, independentes: um mesmo fato pode gerar punição nas três.\n• Administrativa: processo disciplinar, com penas que vão de advertência a demissão, conforme o estatuto; pode haver também improbidade administrativa, se houver dolo e a conduta se enquadrar na Lei nº 8.429/1992 (por exemplo, revelar fato que deva permanecer em segredo, conhecido em razão das atribuições, propiciando beneficiamento por informação privilegiada ou colocando em risco a segurança da sociedade e do Estado).\n• Civil: o Estado responde objetivamente pelos danos que seus agentes causarem a terceiros, com direito de regresso contra o agente que agiu com dolo ou culpa.\n• Penal: violação de sigilo funcional, inserção de dados falsos ou alteração indevida em sistema de informações, invasão de dispositivo informático, crimes de abuso de autoridade (como divulgar gravação sem relação com a prova, expondo a intimidade do investigado) e crimes de discriminação da Lei nº 7.716/1989."
+      "texto": "As esferas são, em regra, independentes: um mesmo fato pode gerar punição nas três.\n• Administrativa: processo disciplinar, com penas que vão de advertência a demissão, conforme o estatuto; em casos graves e intencionais, pode haver também improbidade administrativa (Lei nº 8.429/1992), como revelar segredo do serviço para beneficiar alguém.\n• Civil: o Estado responde objetivamente (sem precisar provar culpa) pelos danos que seus agentes causarem a terceiros, e depois pode cobrar do agente que agiu com dolo ou culpa (direito de regresso).\n• Penal: violação de sigilo funcional, inserção de dados falsos ou alteração indevida em sistema de informações, invasão de dispositivo informático, crimes de abuso de autoridade (como divulgar gravação sem relação com a prova, expondo a intimidade do investigado) e crimes de discriminação da Lei nº 7.716/1989."
+     },
+     {
+      "titulo": "Bizu de prova",
+      "texto": "• EC nº 115/2022 colocou a proteção de dados entre os direitos fundamentais.\n• Dado sensível: raça, religião, política, saúde, vida sexual, genético e biométrico.\n• Consultar sistema por interesse pessoal viola a finalidade e gera punição.\n• Segurança pública: LGPD não se aplica diretamente, mas os princípios sim.\n• Dano causado por agente: Município paga e cobra do agente culpado."
      }
     ]
    },
@@ -2631,6 +2687,10 @@
      {
       "titulo": "Prevalência e sinalização deficiente (arts. 89 e 90)",
       "texto": "Embora fora do intervalo do edital, estes pontos completam o tema e caem muito:\n• Ordem de prevalência: as ordens do agente de trânsito prevalecem sobre as normas de circulação e outros sinais; as indicações do semáforo prevalecem sobre os demais sinais; e as indicações dos sinais prevalecem sobre as demais normas de trânsito.\n• Não se aplicam sanções por desrespeito à sinalização quando ela for insuficiente ou incorreta. O órgão responsável pela sinalização responde pela sua falta, insuficiência ou incorreta colocação.\nO guarda municipal que atua no trânsito deve dominar os gestos e silvos, pois sua ordem prevalece sobre o semáforo."
+     },
+     {
+      "titulo": "Bizu de prova",
+      "texto": "• Prevalência: agente > semáforo > placas e marcas > normas de circulação.\n• Placa octogonal = Parada Obrigatória; triangular = Dê a Preferência.\n• Linha amarela separa sentidos opostos; branca, mesmo sentido; contínua proíbe ultrapassar.\n• Apito: um breve = siga; dois breves = pare; um longo = diminua a marcha.\n• Sinalização insuficiente ou incorreta: não há multa."
      }
     ]
    },
@@ -2726,16 +2786,16 @@
    "questoes": [
     {
      "subassunto": null,
-     "enunciado": "Segundo o Código de Trânsito Brasileiro, as ordens do agente de trânsito prevalecem sobre",
+     "enunciado": "A placa de regulamentação 'Parada Obrigatória', que obriga o condutor a parar antes de entrar no cruzamento, tem formato",
      "opcoes": [
-      "nenhum outro sinal, pois o semáforo é soberano.",
-      "as normas de circulação e outros sinais.",
-      "apenas as placas de advertência.",
-      "somente as marcas viárias.",
-      "apenas os sinais sonoros."
+      "circular, com borda vermelha.",
+      "triangular, com borda vermelha.",
+      "de losango, na cor amarela.",
+      "octogonal.",
+      "retangular, na cor azul."
      ],
-     "gabarito": 1,
-     "comentario": "O CTB estabelece que as ordens do agente prevalecem sobre as normas de circulação e outros sinais; depois vêm o semáforo, os demais sinais e as normas.",
+     "gabarito": 3,
+     "comentario": "A Parada Obrigatória é exceção à regra das placas de regulamentação circulares: tem formato octogonal (oito lados). A triangular é a de Dê a Preferência; o losango amarelo é típico das placas de advertência.",
      "dificuldade": "facil"
     },
     {
@@ -2782,16 +2842,16 @@
     },
     {
      "subassunto": null,
-     "enunciado": "Após obra de recapeamento, a prefeitura pretende reabrir uma avenida antes de repintar as faixas e recolocar as placas. À luz do CTB, é correto afirmar que",
+     "enunciado": "Em um cruzamento, o semáforo está verde para um condutor, mas o agente de trânsito, no local, emite dois silvos breves de apito e faz gesto de parada. O condutor deve",
      "opcoes": [
-      "a reabertura é permitida, desde que haja agente no local.",
-      "basta a sinalização vertical provisória.",
-      "a sinalização horizontal é dispensável em vias urbanas.",
-      "a reabertura é permitida por até 30 dias sem sinalização.",
-      "nenhuma via pavimentada pode ser reaberta ao trânsito após obras enquanto não estiver devidamente sinalizada, vertical e horizontalmente."
+      "seguir, pois o semáforo verde prevalece sobre o agente.",
+      "seguir, pois dois silvos breves significam 'siga'.",
+      "parar, pois as ordens do agente prevalecem sobre o semáforo e os demais sinais.",
+      "diminuir a marcha e seguir com cuidado.",
+      "parar somente se houver placa de Parada Obrigatória no local."
      ],
-     "gabarito": 4,
-     "comentario": "O CTB veda entregar via pavimentada após construção ou reabri-la após obras ou manutenção sem a devida sinalização vertical e horizontal que garanta segurança. Não há exceção por presença de agente ou prazo de tolerância.",
+     "gabarito": 2,
+     "comentario": "Pela ordem de prevalência do CTB, as ordens do agente vêm antes do semáforo e dos demais sinais. Dois silvos breves significam 'pare' (um breve é 'siga'; um longo, 'diminua a marcha'). Não é preciso placa: a ordem do agente basta.",
      "dificuldade": "dificil"
     }
    ]
@@ -2805,7 +2865,7 @@
     "secoes": [
      {
       "titulo": "Conceito e consequências",
-      "texto": "Constitui infração de trânsito a inobservância de qualquer preceito do CTB ou da legislação complementar (art. 161, na redação da Lei nº 14.071/2020). O infrator fica sujeito às penalidades e medidas administrativas indicadas em cada artigo do capítulo de infrações, sem prejuízo das punições por crimes de trânsito.\n• Penalidades: advertência por escrito, multa, suspensão do direito de dirigir, cassação da CNH, cassação da Permissão para Dirigir e frequência obrigatória em curso de reciclagem.\n• Medidas administrativas: providências para corrigir a situação na hora, como retenção do veículo, remoção do veículo, recolhimento do documento de habilitação e do licenciamento, transbordo do excesso de carga e teste de alcoolemia.\nA penalidade pune; a medida administrativa corrige."
+      "texto": "Infração de trânsito é o descumprimento de qualquer regra do CTB ou da legislação complementar (art. 161). O infrator fica sujeito às penalidades e medidas administrativas indicadas em cada artigo do capítulo de infrações, sem prejuízo das punições por crimes de trânsito.\n• Penalidades: advertência por escrito, multa, suspensão do direito de dirigir, cassação da CNH, cassação da Permissão para Dirigir e frequência obrigatória em curso de reciclagem.\n• Medidas administrativas: providências para corrigir a situação na hora, como retenção e remoção do veículo, recolhimento do documento de habilitação e teste do bafômetro.\nA penalidade pune; a medida administrativa corrige."
      },
      {
       "titulo": "Gravidade, pontos e multas",
@@ -2813,15 +2873,19 @@
      },
      {
       "titulo": "Infrações que mais caem",
-      "texto": "• Dirigir sem possuir habilitação: gravíssima.\n• Dirigir sob influência de álcool ou de substância psicoativa que cause dependência: gravíssima, multa multiplicada por 10 e suspensão do direito de dirigir por 12 meses, com recolhimento do documento de habilitação e retenção do veículo. Recusar-se ao teste (bafômetro, exame ou perícia) tem as mesmas penalidades.\n• Disputar corrida (racha): gravíssima, multa multiplicada por 10, suspensão e remoção do veículo.\n• Deixar de usar cinto de segurança (condutor ou passageiro): grave.\n• Transportar criança sem as normas de segurança: gravíssima.\n• Avançar o sinal vermelho do semáforo ou a parada obrigatória: gravíssima.\n• Excesso de velocidade: até 20% acima do limite é média; de 20% a 50%, grave; acima de 50%, gravíssima com multa multiplicada por 3 e suspensão.\n• Dirigir usando telefone celular: média; segurando ou manuseando o aparelho: gravíssima.\n• Conduzir motocicleta sem capacete: gravíssima, com suspensão.\n• Estacionar em vaga reservada a idoso ou pessoa com deficiência sem credencial: gravíssima.\n• Deixar o condutor envolvido em acidente com vítima de prestar socorro: gravíssima, com suspensão."
+      "texto": "• Dirigir sem possuir habilitação: gravíssima.\n• Dirigir sob influência de álcool ou de outra substância psicoativa: gravíssima, multa x10 e suspensão do direito de dirigir por 12 meses. Recusar o bafômetro, exame ou perícia tem as mesmas penalidades.\n• Deixar de usar cinto de segurança (condutor ou passageiro): grave.\n• Transportar criança sem as normas de segurança: gravíssima.\n• Avançar o sinal vermelho do semáforo ou a parada obrigatória: gravíssima.\n• Excesso de velocidade: até 20% acima do limite é média; de 20% a 50%, grave; acima de 50%, gravíssima com multa multiplicada por 3 e suspensão.\n• Dirigir usando telefone celular: média; segurando ou manuseando o aparelho: gravíssima.\n• Conduzir motocicleta sem capacete: gravíssima, com suspensão.\n• Estacionar em vaga reservada a idoso ou pessoa com deficiência sem credencial: gravíssima."
      },
      {
       "titulo": "Responsabilidade pelas infrações",
-      "texto": "• O proprietário responde pelas infrações ligadas à regularização do veículo (documentação, equipamentos obrigatórios, licenciamento).\n• O condutor responde pelas infrações decorrentes de atos praticados na direção do veículo.\n• Se o condutor não for identificado no ato, o principal condutor ou o proprietário tem 30 dias, contados da notificação da autuação, para indicá-lo; se não o fizer, será considerado responsável o principal condutor ou, na falta dele, o proprietário."
+      "texto": "• O proprietário responde pelas infrações ligadas à regularização do veículo (documentos, equipamentos, licenciamento).\n• O condutor responde pelas infrações decorrentes de atos praticados na direção do veículo.\n• Se o condutor não for identificado no ato, o principal condutor ou o proprietário tem 30 dias, contados da notificação da autuação, para indicá-lo; se não o fizer, será considerado responsável o principal condutor ou, na falta dele, o proprietário."
      },
      {
       "titulo": "A guarda municipal e a fiscalização de trânsito",
-      "texto": "O CTB atribui aos órgãos executivos de trânsito dos municípios a fiscalização e a autuação de infrações de circulação, estacionamento e parada. A Lei nº 13.022/2014 permite à guarda exercer as competências de trânsito que lhe forem conferidas, nas vias e logradouros municipais, ou de forma concorrente, mediante convênio. O STF reconheceu que as guardas municipais podem exercer a fiscalização de trânsito, inclusive impondo multas, nos limites da competência municipal."
+      "texto": "O município fiscaliza infrações de circulação, estacionamento e parada. A Lei nº 13.022/2014 permite à guarda exercer as competências de trânsito que lhe forem conferidas, nas vias e logradouros municipais, ou de forma concorrente, mediante convênio. O STF reconheceu que as guardas municipais podem exercer a fiscalização de trânsito, inclusive impondo multas, nos limites da competência municipal."
+     },
+     {
+      "titulo": "Bizu de prova",
+      "texto": "• Pontos: gravíssima 7, grave 5, média 4, leve 3.\n• Álcool ou recusa do bafômetro: gravíssima, multa x10 e suspensão por 12 meses.\n• Velocidade: calcule a porcentagem acima do limite. Ex.: limite 60 e velocidade 75 → 15 a mais → 15 ÷ 60 = 25% → grave.\n• Remoção e retenção são medidas administrativas, não penalidades."
      }
     ]
    },
@@ -2972,16 +3036,16 @@
     },
     {
      "subassunto": null,
-     "enunciado": "Sobre a atuação das guardas municipais na fiscalização de trânsito, é correto afirmar que",
+     "enunciado": "Em uma avenida com velocidade máxima de 60 km/h, um veículo é flagrado pelo radar a 81 km/h (velocidade já considerada após a tolerância). Segundo o CTB, a infração é",
      "opcoes": [
-      "é vedada pela Constituição, pois trânsito é atribuição exclusiva da polícia militar.",
-      "o STF reconheceu que as guardas municipais podem exercer a fiscalização de trânsito, inclusive com imposição de multas, nos limites da competência municipal.",
-      "a guarda só pode orientar condutores, sem lavrar autos de infração em hipótese alguma.",
-      "a guarda pode fiscalizar apenas rodovias federais.",
-      "depende de autorização do Ministério Público em cada autuação."
+      "média, pois o excesso foi de até 20%.",
+      "gravíssima, com multa multiplicada por 3 e suspensão, pois ultrapassou o limite em mais de 20 km/h.",
+      "grave, pois o excesso ficou entre 20% e 50% acima do limite.",
+      "leve, pois a via é urbana.",
+      "gravíssima, pois qualquer excesso acima de 20 km/h é gravíssimo."
      ],
-     "gabarito": 1,
-     "comentario": "O STF decidiu que é constitucional atribuir às guardas municipais o exercício do poder de polícia de trânsito, inclusive a imposição de sanções, respeitada a competência do município. A Lei nº 13.022/2014 também prevê essa atuação nas vias municipais ou por convênio.",
+     "gabarito": 2,
+     "comentario": "Excesso: 81 − 60 = 21 km/h. Em porcentagem: 21 ÷ 60 = 0,35 = 35%. Até 20% é média; de mais de 20% até 50% é grave; acima de 50% é gravíssima (multa x3 e suspensão). Como 35% está entre 20% e 50%, a infração é grave. O CTB usa porcentagem, não 'km/h a mais'; para ser gravíssima, o veículo teria de passar de 90 km/h.",
      "dificuldade": "dificil"
     }
    ]
@@ -3003,7 +3067,7 @@
      },
      {
       "titulo": "Provimento, vacância e estágio probatório",
-      "texto": "Provimento é o ato que preenche o cargo. Forma originária: nomeação. Formas derivadas comuns: promoção, readaptação, reversão, aproveitamento, reintegração e recondução.\n• Após a nomeação vem a posse (assinatura do termo, com aceitação das atribuições e deveres) e, em seguida, o exercício (início efetivo do trabalho), em prazos fixados pelo estatuto.\n• No estágio probatório avaliam-se requisitos como assiduidade, disciplina, iniciativa, produtividade e responsabilidade.\n• Vacância é a desocupação do cargo: exoneração, demissão, promoção, readaptação, aposentadoria, posse em outro cargo inacumulável e falecimento. Exoneração não é punição; demissão é."
+      "texto": "Provimento é o ato que preenche o cargo. Forma originária (a primeira entrada no cargo): nomeação. Formas derivadas (dependem de vínculo anterior): promoção, readaptação, reversão, aproveitamento, reintegração e recondução.\n• Após a nomeação vem a posse (assinatura do termo, com aceitação das atribuições e deveres) e, em seguida, o exercício (início efetivo do trabalho), em prazos fixados pelo estatuto.\n• No estágio probatório avaliam-se requisitos como assiduidade, disciplina, iniciativa, produtividade e responsabilidade.\n• Vacância é a desocupação do cargo: exoneração, demissão, promoção, readaptação, aposentadoria, posse em outro cargo inacumulável e falecimento. Exoneração não é punição; demissão é."
      },
      {
       "titulo": "Direitos e vantagens",
@@ -3012,6 +3076,10 @@
      {
       "titulo": "Deveres, proibições e regime disciplinar",
       "texto": "Deveres típicos: assiduidade e pontualidade; lealdade às instituições; observar as normas; cumprir as ordens superiores, exceto quando manifestamente ilegais; guardar sigilo sobre assuntos da repartição; tratar as pessoas com urbanidade; zelar pelo patrimônio público; e levar ao conhecimento da autoridade irregularidades de que tiver ciência.\nProibições típicas: ausentar-se do serviço sem autorização; retirar documentos sem autorização; valer-se do cargo para obter proveito pessoal; receber propina ou vantagem em razão das atribuições; e participar de gerência de empresa privada (salvo exceções legais).\nPenalidades comuns: advertência, suspensão, demissão, cassação de aposentadoria ou disponibilidade e destituição de cargo em comissão. Apuração: sindicância e processo administrativo disciplinar, sempre com contraditório e ampla defesa. As responsabilidades civil, penal e administrativa são independentes; mas a absolvição criminal que negue a existência do fato ou a autoria afasta a responsabilidade administrativa. A absolvição por falta de provas não afasta."
+     },
+     {
+      "titulo": "Bizu de prova",
+      "texto": "• Estabilidade: 3 anos de efetivo exercício + avaliação especial de desempenho.\n• Ordem: nomeação → posse → exercício.\n• Nomeação é a única forma originária de provimento.\n• Exoneração não é punição; demissão é.\n• Absolvição criminal por falta de provas NÃO impede punição administrativa."
      }
     ]
    },
@@ -3187,7 +3255,7 @@
     "secoes": [
      {
       "titulo": "Como estudar este assunto",
-      "texto": "Cada município organiza sua guarda por lei própria (criação, estrutura, carreira, regime disciplinar) e por decretos que a regulamentam. Todas essas normas, porém, devem respeitar a Constituição e o Estatuto Geral das Guardas Municipais (Lei nº 13.022/2014). Por isso, estude primeiro a lei federal, que é igual para todos, e depois leia a lei e os decretos do seu município indicados no edital, comparando os dois."
+      "texto": "Cada município organiza sua guarda por lei e decretos próprios, que devem respeitar a Constituição e o Estatuto Geral das Guardas Municipais (Lei nº 13.022/2014). Estude primeiro a lei federal, igual para todos, e depois a lei do seu município indicada no edital."
      },
      {
       "titulo": "Natureza, princípios e subordinação",
@@ -3195,15 +3263,19 @@
      },
      {
       "titulo": "Competências",
-      "texto": "Competência geral: proteção de bens, serviços, logradouros públicos municipais e instalações do município. Competências específicas incluem, entre outras: prevenir e inibir atos delituosos contra bens, serviços e instalações municipais; atuar preventivamente para proteção sistêmica da população; colaborar com os órgãos de segurança pública em ações conjuntas; exercer competências de trânsito; proteger o patrimônio ecológico, histórico, cultural, arquitetônico e ambiental; cooperar com a defesa civil; encaminhar ao delegado de polícia, diante de flagrante delito, o autor da infração, preservando o local do crime quando possível; desenvolver ações de prevenção primária à violência; e atuar na segurança escolar.\nAs guardas integram o Sistema Único de Segurança Pública (Susp). Em 2025, o STF reconheceu que podem realizar policiamento ostensivo e comunitário, respeitadas as atribuições dos demais órgãos de segurança e sem exercer funções de polícia judiciária."
+      "texto": "Competência geral: proteger bens, serviços, logradouros e instalações do município. Competências específicas incluem, entre outras: prevenir e inibir crimes contra bens, serviços e instalações municipais; colaborar com os demais órgãos de segurança pública; exercer competências de trânsito; proteger o patrimônio ecológico, histórico, cultural e ambiental; cooperar com a defesa civil; atuar na segurança escolar; e, diante de flagrante delito, encaminhar o autor ao delegado de polícia, preservando o local do crime quando possível.\nAs guardas integram o Sistema Único de Segurança Pública (Susp). Em 2025, o STF reconheceu que podem realizar policiamento ostensivo e comunitário, respeitadas as atribuições dos demais órgãos e sem exercer funções de polícia judiciária (investigação)."
      },
      {
       "titulo": "Pessoal, carreira e controle",
-      "texto": "• A guarda é formada por servidores de carreira única, com plano de cargos e salários definido em lei municipal.\n• Requisitos básicos de investidura: nacionalidade brasileira, gozo dos direitos políticos, quitação com obrigações militares e eleitorais, nível médio completo, idade mínima de 18 anos, aptidão física, mental e psicológica e idoneidade moral comprovada por investigação social e certidões. A lei municipal pode acrescentar outros.\n• O exercício das atribuições exige capacitação específica.\n• Controle interno por corregedoria, para apurar faltas disciplinares (obrigatória nas guardas com efetivo superior a 50 servidores e em todas que usam arma de fogo), e controle externo por ouvidoria independente da direção da guarda.\n• A guarda deve ter código de conduta próprio e não pode ficar sujeita a regulamento disciplinar de natureza militar.\n• Os cargos em comissão devem ser ocupados por membros efetivos da carreira (a lei admite exceção temporária no início do funcionamento)."
+      "texto": "• A guarda é formada por servidores de carreira única, com plano de cargos e salários definido em lei municipal.\n• Requisitos básicos de ingresso: ser brasileiro, estar em dia com direitos políticos e obrigações militares e eleitorais, nível médio completo, 18 anos, aptidão física, mental e psicológica e idoneidade moral. A lei municipal pode acrescentar outros.\n• O exercício das atribuições exige capacitação específica.\n• Controle interno por corregedoria, para apurar faltas disciplinares (obrigatória nas guardas com efetivo superior a 50 servidores e em todas que usam arma de fogo), e controle externo por ouvidoria independente da direção da guarda.\n• A guarda deve ter código de conduta próprio e não pode ficar sujeita a regulamento disciplinar de natureza militar.\n• Os cargos em comissão devem ser ocupados por membros efetivos da carreira."
      },
      {
       "titulo": "Outras regras e o que procurar na lei local",
-      "texto": "• A estrutura hierárquica não pode usar denominação idêntica à das forças militares (postos, graduações, títulos, uniformes, distintivos e condecorações).\n• Uniformes e equipamentos padronizados, preferencialmente na cor azul-marinho.\n• Número telefônico 153 e faixa exclusiva de rádio.\n• O guarda preso antes da condenação definitiva tem direito a ficar em cela separada dos demais presos.\n• É permitido usar denominações consagradas, como guarda civil, guarda civil municipal, guarda metropolitana e guarda civil metropolitana.\n• Municípios vizinhos podem compartilhar serviços da guarda por consórcio público.\nNa lei do seu município, procure: nome do órgão e a secretaria a que se vincula; classes da carreira e critérios de promoção; jornada; regime disciplinar e corregedoria; porte de arma e seus requisitos; e as competências locais."
+      "texto": "• A estrutura hierárquica não pode usar denominação idêntica à das forças militares (postos, graduações, títulos, uniformes, distintivos e condecorações).\n• Uniformes e equipamentos padronizados, preferencialmente na cor azul-marinho.\n• Número telefônico 153 e faixa exclusiva de rádio.\n• O guarda preso antes da condenação definitiva tem direito a ficar em cela separada dos demais presos.\nNa lei do seu município, procure: secretaria a que a guarda se vincula, classes da carreira, promoção, jornada, regime disciplinar e porte de arma."
+     },
+     {
+      "titulo": "Bizu de prova",
+      "texto": "• Guarda: instituição CIVIL, subordinada ao prefeito.\n• Princípio que mais cai: uso progressivo da força.\n• Ingresso: nível médio e 18 anos.\n• Corregedoria (interno) e ouvidoria independente (externo).\n• Proibido regulamento disciplinar militar e nomes de postos militares.\n• Flagrante: encaminhar ao delegado e preservar o local."
      }
     ]
    },

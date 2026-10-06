@@ -1,0 +1,734 @@
+{
+ "itens": [
+  {
+   "curso": "gcm-geral",
+   "disciplina": "Direito Penal",
+   "assunto": "Parte Geral",
+   "materiais": []
+  },
+  {
+   "curso": "gcm-geral",
+   "disciplina": "Direito Constitucional",
+   "assunto": "Princípios Fundamentais (Título I)",
+   "materiais": []
+  },
+  {
+   "curso": "gcm-geral",
+   "disciplina": "Direitos Humanos",
+   "assunto": "Princípios constitucionais",
+   "materiais": []
+  },
+  {
+   "curso": "gcm-geral",
+   "disciplina": "Legislação Penal Especial",
+   "assunto": "Racismo como crime",
+   "materiais": [
+    {
+     "tipo": "jurisprudencia",
+     "titulo": "STF — HC 82.424/RS",
+     "subassunto": null,
+     "conteudo": {
+      "tribunal": "STF",
+      "referencia": "HC 82.424/RS",
+      "enunciado": "O anti-semitismo constitui crime de racismo, de caráter permanente, como tal sendo insuscetível de prescrição nos termos do art. 5º, XLII, da Constituição. O crime de racismo não se resume apenas às discriminações com fundo étnico-racial: abrange toda e qualquer prática de descriminação baseada em preconceito de raça.",
+      "tipo": "acordao"
+     },
+     "fonte_oficial": "https://jurisprudencia.stf.jus.br/"
+    },
+    {
+     "tipo": "jurisprudencia",
+     "titulo": "STF — HC 154.248/DF",
+     "subassunto": null,
+     "conteudo": {
+      "tribunal": "STF",
+      "referencia": "HC 154.248/DF",
+      "enunciado": "A injúria racial (à época, CP, art. 140, §3º; hoje art. 2º-A da Lei 7.716/1989, incluído pela Lei 14.532/2023) constitui crime imprescritível, equiparável ao racismo para fins do art. 5º, XLII, da Constituição Federal. A distinção entre injúria racial (ofensa individual) e crime de racismo (discriminação estrutural) não retira da injúria racial o caráter de delito baseado em preconceito de raça.",
+      "tipo": "acordao"
+     },
+     "fonte_oficial": "https://jurisprudencia.stf.jus.br/"
+    },
+    {
+     "tipo": "jurisprudencia",
+     "titulo": "STF — ADO 26/DF e MI 4.733/DF",
+     "subassunto": null,
+     "conteudo": {
+      "tribunal": "STF",
+      "referencia": "ADO 26/DF e MI 4.733/DF",
+      "enunciado": "Até que sobrevenha lei emanada do Congresso Nacional destinada a implementar os mandados de criminalização definidos nos incisos XLI e XLII do art. 5º da Constituição da República, as condutas homofóbicas e transfóbicas, reais ou supostas, que envolvem aversão odiosa à orientação sexual ou à identidade de gênero de alguém, por traduzirem expressões de racismo, compreendido este em sua dimensão social, ajustam-se, por identidade de razão e mediante adequação típica, aos preceitos primários de incriminação definidos na Lei nº 7.716, de 08/01/1989, constituindo, também, na hipótese de homicídio doloso, circunstância que o qualifica, por configurar motivo torpe (Código Penal, art. 121, § 2º, I, \"in fine\"). (item 1 da tese)",
+      "tipo": "precedente"
+     },
+     "fonte_oficial": "https://portal.stf.jus.br/processos/listarProcessos.asp?classe=ADO&numeroProcesso=26"
+    }
+   ]
+  },
+  {
+   "curso": "gcm-geral",
+   "disciplina": "Direitos Humanos",
+   "assunto": "Racismo como violação de direitos fundamentais",
+   "materiais": [
+    {
+     "tipo": "jurisprudencia",
+     "titulo": "STF — HC 82.424/RS",
+     "subassunto": null,
+     "conteudo": {
+      "tribunal": "STF",
+      "referencia": "HC 82.424/RS",
+      "enunciado": "O anti-semitismo constitui crime de racismo, de caráter permanente, como tal sendo insuscetível de prescrição nos termos do art. 5º, XLII, da Constituição. O crime de racismo não se resume apenas às discriminações com fundo étnico-racial: abrange toda e qualquer prática de descriminação baseada em preconceito de raça.",
+      "tipo": "acordao"
+     },
+     "fonte_oficial": "https://jurisprudencia.stf.jus.br/"
+    },
+    {
+     "tipo": "jurisprudencia",
+     "titulo": "STF — HC 154.248/DF",
+     "subassunto": null,
+     "conteudo": {
+      "tribunal": "STF",
+      "referencia": "HC 154.248/DF",
+      "enunciado": "A injúria racial (à época, CP, art. 140, §3º; hoje art. 2º-A da Lei 7.716/1989, incluído pela Lei 14.532/2023) constitui crime imprescritível, equiparável ao racismo para fins do art. 5º, XLII, da Constituição Federal. A distinção entre injúria racial (ofensa individual) e crime de racismo (discriminação estrutural) não retira da injúria racial o caráter de delito baseado em preconceito de raça.",
+      "tipo": "acordao"
+     },
+     "fonte_oficial": "https://jurisprudencia.stf.jus.br/"
+    },
+    {
+     "tipo": "jurisprudencia",
+     "titulo": "STF — ADO 26/DF e MI 4.733/DF",
+     "subassunto": null,
+     "conteudo": {
+      "tribunal": "STF",
+      "referencia": "ADO 26/DF e MI 4.733/DF",
+      "enunciado": "Até que sobrevenha lei emanada do Congresso Nacional destinada a implementar os mandados de criminalização definidos nos incisos XLI e XLII do art. 5º da Constituição da República, as condutas homofóbicas e transfóbicas, reais ou supostas, que envolvem aversão odiosa à orientação sexual ou à identidade de gênero de alguém, por traduzirem expressões de racismo, compreendido este em sua dimensão social, ajustam-se, por identidade de razão e mediante adequação típica, aos preceitos primários de incriminação definidos na Lei nº 7.716, de 08/01/1989, constituindo, também, na hipótese de homicídio doloso, circunstância que o qualifica, por configurar motivo torpe (Código Penal, art. 121, § 2º, I, \"in fine\"). (item 1 da tese)",
+      "tipo": "precedente"
+     },
+     "fonte_oficial": "https://portal.stf.jus.br/processos/listarProcessos.asp?classe=ADO&numeroProcesso=26"
+    }
+   ]
+  },
+  {
+   "curso": "gcm-geral",
+   "disciplina": "Legislação Penal Especial",
+   "assunto": "Lei de Abuso de Autoridade (Lei nº 13.869/2019)",
+   "materiais": []
+  },
+  {
+   "curso": "gcm-geral",
+   "disciplina": "Direito Administrativo",
+   "assunto": "Improbidade Administrativa (Lei nº 8.429/1992)",
+   "materiais": []
+  },
+  {
+   "curso": "gcm-geral",
+   "disciplina": "Direito Constitucional",
+   "assunto": "Direitos e Deveres Individuais e Coletivos (art. 5º)",
+   "materiais": [
+    {
+     "tipo": "jurisprudencia",
+     "titulo": "STF — Tema 280/STF",
+     "subassunto": null,
+     "conteudo": {
+      "tribunal": "STF",
+      "referencia": "Tema 280/STF",
+      "enunciado": "A entrada forçada em domicílio sem mandado judicial só é lícita, mesmo em período noturno, quando amparada em fundadas razões, devidamente justificadas a posteriori, que indiquem que dentro da casa ocorre situação de flagrante delito, sob pena de responsabilidade disciplinar, civil e penal do agente ou da autoridade, e de nulidade dos atos praticados.",
+      "tipo": "tese_repercussao_geral"
+     },
+     "fonte_oficial": "https://portal.stf.jus.br/jurisprudenciaRepercussao/verAndamentoProcesso.asp?incidente=3774503&numeroProcesso=603616&classeProcesso=RE&numeroTema=280"
+    },
+    {
+     "tipo": "jurisprudencia",
+     "titulo": "STF — Tema 998/STF",
+     "subassunto": null,
+     "conteudo": {
+      "tribunal": "STF",
+      "referencia": "Tema 998/STF",
+      "enunciado": "Em visitas sociais nos presídios ou estabelecimentos de segregação, é inadmissível a revista íntima vexatória, com desnudamento de visitantes ou exames invasivos com finalidade de causar humilhação; a prova obtida por esse meio é ilícita, ressalvadas decisões judiciais em cada caso concreto. Excepcionalmente, ausentes ou ineficazes scanners e equipamentos, admite-se revista íntima motivada por indícios robustos, com consentimento do visitante; fixado prazo de 24 meses para instalação dos equipamentos.",
+      "tipo": "tese_repercussao_geral"
+     },
+     "fonte_oficial": "https://noticias.stf.jus.br/postsnoticias/stf-proibe-revista-humilhante-em-presidio-e-admite-inspecao-intima-em-casos-excepcionais/"
+    }
+   ]
+  },
+  {
+   "curso": "pm-sp-soldado",
+   "disciplina": "Noções de Administração Pública",
+   "assunto": "Constituição Federal – Título II: Dos Direitos e Garantias Fundamentais",
+   "materiais": []
+  },
+  {
+   "curso": "gcm-geral",
+   "disciplina": "Legislação de Proteção a Grupos Vulneráveis",
+   "assunto": "Lei Maria da Penha (Lei nº 11.340/2006)",
+   "materiais": [
+    {
+     "tipo": "jurisprudencia",
+     "titulo": "STJ — Súmula 542",
+     "subassunto": null,
+     "conteudo": {
+      "tribunal": "STJ",
+      "referencia": "Súmula 542",
+      "enunciado": "A ação penal relativa ao crime de lesão corporal resultante de violência doméstica contra a mulher é pública incondicionada.",
+      "tipo": "sumula"
+     },
+     "fonte_oficial": "https://www.stj.jus.br/sites/portalp/Paginas/Comunicacao/Noticias/Noticias.aspx"
+    },
+    {
+     "tipo": "jurisprudencia",
+     "titulo": "STJ — Súmula 536/STJ",
+     "subassunto": null,
+     "conteudo": {
+      "tribunal": "STJ",
+      "referencia": "Súmula 536/STJ",
+      "enunciado": "A suspensão condicional do processo e a transação penal não se aplicam na hipótese de delitos sujeitos ao rito da Lei Maria da Penha.",
+      "tipo": "sumula"
+     },
+     "fonte_oficial": "https://scon.stj.jus.br/docs_internet/jurisprudencia/tematica/download/SU/Verbetes/VerbetesSTJ.pdf"
+    },
+    {
+     "tipo": "jurisprudencia",
+     "titulo": "STJ — Súmula 600/STJ",
+     "subassunto": null,
+     "conteudo": {
+      "tribunal": "STJ",
+      "referencia": "Súmula 600/STJ",
+      "enunciado": "Para configuração da violência doméstica e familiar prevista no artigo 5º da Lei 11.340/2006, Lei Maria da Penha, não se exige a coabitação entre autor e vítima.",
+      "tipo": "sumula"
+     },
+     "fonte_oficial": "https://scon.stj.jus.br/docs_internet/jurisprudencia/tematica/download/SU/Verbetes/VerbetesSTJ.pdf"
+    }
+   ]
+  },
+  {
+   "curso": "gcm-geral",
+   "disciplina": "Direito Constitucional",
+   "assunto": "Direitos Sociais (art. 6º)",
+   "materiais": []
+  },
+  {
+   "curso": "gcm-geral",
+   "disciplina": "Legislação Penal Especial",
+   "assunto": "Estatuto do Desarmamento (Lei nº 10.826/2003)",
+   "materiais": []
+  },
+  {
+   "curso": "gcm-geral",
+   "disciplina": "Legislação Penal Especial",
+   "assunto": "Lei de Drogas – Sisnad (Lei nº 11.343/2006)",
+   "materiais": [
+    {
+     "tipo": "jurisprudencia",
+     "titulo": "STF — Súmula Vinculante 63/STF",
+     "subassunto": null,
+     "conteudo": {
+      "tribunal": "STF",
+      "referencia": "Súmula Vinculante 63/STF",
+      "enunciado": "O tráfico privilegiado (art. 33, § 4º, da Lei nº 11.343/2006) não configura crime hediondo, afastando-se a aplicação dos parâmetros mais rigorosos de progressão de regime e de livramento condicional.",
+      "tipo": "sumula_vinculante"
+     },
+     "fonte_oficial": "https://portal.stf.jus.br/jurisprudencia/sumariosumulas.asp?base=26&sumula=9519"
+    },
+    {
+     "tipo": "jurisprudencia",
+     "titulo": "STF — Tema 506/STF",
+     "subassunto": null,
+     "conteudo": {
+      "tribunal": "STF",
+      "referencia": "Tema 506/STF",
+      "enunciado": "1. Não comete infração penal quem adquirir, guardar, tiver em depósito, transportar ou trouxer consigo, para consumo pessoal, a substância cannabis sativa, sem prejuízo do reconhecimento da ilicitude extrapenal da conduta, com apreensão da droga e aplicação de sanções de advertência sobre os efeitos dela (art. 28, I) e medida educativa de comparecimento a programa ou curso educativo (art. 28, III); [...] 4. Nos termos do § 2º do artigo 28 da Lei 11.343/2006, será presumido usuário quem, para consumo próprio, adquirir, guardar, tiver em depósito, transportar ou trouxer consigo, até 40 gramas de cannabis sativa ou seis plantas-fêmeas, até que o Congresso Nacional venha a legislar a respeito; 5. A presunção do item anterior é relativa, não estando a autoridade policial e seus agentes impedidos de realizar a prisão em flagrante por tráfico de drogas, mesmo para quantidades inferiores ao limite acima estabelecido, quando presentes elementos que indiquem intuito de mercancia, como a forma de acondicionamento da droga, as circunstâncias da apreensão, a variedade de substâncias apreendidas, a apreensão simultânea de instrumentos como balança, registros de operações comerciais e aparelho celular contendo contatos de usuários ou traficantes; [...]",
+      "tipo": "tese_repercussao_geral"
+     },
+     "fonte_oficial": "https://portal.stf.jus.br/jurisprudenciaRepercussao/verAndamentoProcesso.asp?incidente=4034145&numeroProcesso=635659&classeProcesso=RE&numeroTema=506"
+    }
+   ]
+  },
+  {
+   "curso": "gcm-geral",
+   "disciplina": "Direito Constitucional",
+   "assunto": "Administração Pública (art. 37)",
+   "materiais": []
+  },
+  {
+   "curso": "pm-sp-soldado",
+   "disciplina": "Noções de Administração Pública",
+   "assunto": "Constituição Federal – Título III: Da Organização do Estado (Capítulo VII – Da Administração Pública)",
+   "materiais": []
+  },
+  {
+   "curso": "gcm-geral",
+   "disciplina": "Direito Penal",
+   "assunto": "Crimes contra a pessoa",
+   "materiais": [
+    {
+     "tipo": "jurisprudencia",
+     "titulo": "STJ — Súmula 588/STJ",
+     "subassunto": null,
+     "conteudo": {
+      "tribunal": "STJ",
+      "referencia": "Súmula 588/STJ",
+      "enunciado": "A prática de crime ou contravenção penal contra a mulher com violência ou grave ameaça no ambiente doméstico impossibilita a substituição da pena privativa de liberdade por restritiva de direitos.",
+      "tipo": "sumula"
+     },
+     "fonte_oficial": "https://scon.stj.jus.br/docs_internet/jurisprudencia/tematica/download/SU/Verbetes/VerbetesSTJ.pdf"
+    },
+    {
+     "tipo": "jurisprudencia",
+     "titulo": "STF — Tema 592/STF",
+     "subassunto": null,
+     "conteudo": {
+      "tribunal": "STF",
+      "referencia": "Tema 592/STF",
+      "enunciado": "Em caso de inobservância do seu dever específico de proteção previsto no art. 5º, inciso XLIX, da Constituição Federal, o Estado é responsável pela morte de detento. No caso-paradigma, o preso morreu por asfixia mecânica (enforcamento) na Penitenciária Estadual de Jacuí/RS, sem conclusão sobre homicídio ou suicídio.",
+      "tipo": "tese_repercussao_geral"
+     },
+     "fonte_oficial": "https://portal.stf.jus.br/jurisprudenciaRepercussao/tema.asp?num=592"
+    }
+   ]
+  },
+  {
+   "curso": "gcm-geral",
+   "disciplina": "Direito Constitucional",
+   "assunto": "Segurança Pública (art. 144)",
+   "materiais": [
+    {
+     "tipo": "jurisprudencia",
+     "titulo": "STF — Tema 541/STF",
+     "subassunto": null,
+     "conteudo": {
+      "tribunal": "STF",
+      "referencia": "Tema 541/STF",
+      "enunciado": "(1) O exercício do direito de greve, sob qualquer forma ou modalidade, é vedado aos policiais civis e a todos os servidores públicos que atuem diretamente na área de segurança pública. (2) É obrigatória a participação do Poder Público em mediação instaurada pelos órgãos classistas das carreiras de segurança pública, nos termos do art. 165 do CPC, para vocalização dos interesses da categoria.",
+      "tipo": "tese_repercussao_geral"
+     },
+     "fonte_oficial": "https://portal.stf.jus.br/jurisprudenciaRepercussao/verAndamentoProcesso.asp?incidente=4128634&numeroProcesso=654432&classeProcesso=ARE&numeroTema=541"
+    },
+    {
+     "tipo": "jurisprudencia",
+     "titulo": "STF — Tema 656/STF",
+     "subassunto": null,
+     "conteudo": {
+      "tribunal": "STF",
+      "referencia": "Tema 656/STF",
+      "enunciado": "É constitucional, no âmbito dos municípios, o exercício de ações de segurança urbana pelas Guardas Municipais, inclusive policiamento ostensivo e comunitário, respeitadas as atribuições dos demais órgãos de segurança pública previstos no art. 144 da Constituição Federal e excluída qualquer atividade de polícia judiciária, sendo submetidas ao controle externo da atividade policial pelo Ministério Público, nos termos do artigo 129, inciso VII, da CF. Conforme o art. 144, § 8º, da Constituição Federal, as leis municipais devem observar as normas gerais fixadas pelo Congresso Nacional.",
+      "tipo": "tese_repercussao_geral"
+     },
+     "fonte_oficial": "https://portal.stf.jus.br/jurisprudenciaRepercussao/verAndamentoProcesso.asp?incidente=3832832&numeroProcesso=608588&classeProcesso=RE&numeroTema=656"
+    },
+    {
+     "tipo": "jurisprudencia",
+     "titulo": "STF — Tema 1.237/STF",
+     "subassunto": null,
+     "conteudo": {
+      "tribunal": "STF",
+      "referencia": "Tema 1.237/STF",
+      "enunciado": "(i) O Estado é responsável, na esfera cível, por morte ou ferimento decorrente de operações de segurança pública, nos termos da Teoria do Risco Administrativo; (ii) É ônus probatório do ente federativo demonstrar eventuais excludentes de responsabilidade civil; (iii) A perícia inconclusiva sobre a origem de disparo fatal durante operações policiais e militares não é suficiente, por si só, para afastar a responsabilidade civil do Estado, por constituir elemento indiciário.",
+      "tipo": "tese_repercussao_geral"
+     },
+     "fonte_oficial": "https://portal.stf.jus.br/jurisprudenciaRepercussao/tema.asp?num=1237"
+    },
+    {
+     "tipo": "jurisprudencia",
+     "titulo": "STF — Tema 472/STF",
+     "subassunto": null,
+     "conteudo": {
+      "tribunal": "STF",
+      "referencia": "Tema 472/STF",
+      "enunciado": "É constitucional a atribuição às guardas municipais do exercício de poder de polícia de trânsito, inclusive para imposição de sanções administrativas legalmente previstas.",
+      "tipo": "tese_repercussao_geral"
+     },
+     "fonte_oficial": "https://portal.stf.jus.br/jurisprudenciaRepercussao/verAndamentoProcesso.asp?incidente=4146148&numeroProcesso=658570&classeProcesso=RE&numeroTema=472"
+    },
+    {
+     "tipo": "jurisprudencia",
+     "titulo": "STJ — AgRg no HC 909.471/SP",
+     "subassunto": null,
+     "conteudo": {
+      "tribunal": "STJ",
+      "referencia": "AgRg no HC 909.471/SP",
+      "enunciado": "Guardas municipais podem realizar busca pessoal em via pública quando houver fundada suspeita de prática delitiva. Com a readequação jurisprudencial da Sexta Turma (após o Tema 656/STF), é válida a abordagem feita por guardas durante patrulhamento ostensivo, inclusive quando a fundada suspeita decorre da tentativa de fuga ao avistar a guarnição.",
+      "tipo": "precedente"
+     },
+     "fonte_oficial": "https://processo.stj.jus.br/jurisprudencia/externo/informativo/?acao=pesquisar&livre=%22909.471%22&operador=e&b=INFJ&thesaurus=JURIDICO"
+    },
+    {
+     "tipo": "jurisprudencia",
+     "titulo": "STF — ADPF 1.095/DF",
+     "subassunto": null,
+     "conteudo": {
+      "tribunal": "STF",
+      "referencia": "ADPF 1.095/DF",
+      "enunciado": "Os guardas municipais integram o Sistema Único de Segurança Pública (SUSP), mas não têm direito a aposentadoria especial, pois o rol constitucional (art. 40 da CF, na redação da EC 103/2019) de categorias com critérios diferenciados é taxativo e não os inclui.",
+      "tipo": "precedente"
+     },
+     "fonte_oficial": "https://noticias.stf.jus.br/postsnoticias/supremo-rejeita-possibilidade-de-aposentadoria-especial-para-guardas-municipais/"
+    }
+   ]
+  },
+  {
+   "curso": "pm-sp-soldado",
+   "disciplina": "Noções de Administração Pública",
+   "assunto": "Constituição Federal – Título V: Da Defesa do Estado e das Instituições Democráticas",
+   "materiais": [
+    {
+     "tipo": "jurisprudencia",
+     "titulo": "STF — Tema 541/STF",
+     "subassunto": null,
+     "conteudo": {
+      "tribunal": "STF",
+      "referencia": "Tema 541/STF",
+      "enunciado": "(1) O exercício do direito de greve, sob qualquer forma ou modalidade, é vedado aos policiais civis e a todos os servidores públicos que atuem diretamente na área de segurança pública. (2) É obrigatória a participação do Poder Público em mediação instaurada pelos órgãos classistas das carreiras de segurança pública, nos termos do art. 165 do CPC, para vocalização dos interesses da categoria.",
+      "tipo": "tese_repercussao_geral"
+     },
+     "fonte_oficial": "https://portal.stf.jus.br/jurisprudenciaRepercussao/verAndamentoProcesso.asp?incidente=4128634&numeroProcesso=654432&classeProcesso=ARE&numeroTema=541"
+    },
+    {
+     "tipo": "jurisprudencia",
+     "titulo": "STF — Tema 656/STF",
+     "subassunto": null,
+     "conteudo": {
+      "tribunal": "STF",
+      "referencia": "Tema 656/STF",
+      "enunciado": "É constitucional, no âmbito dos municípios, o exercício de ações de segurança urbana pelas Guardas Municipais, inclusive policiamento ostensivo e comunitário, respeitadas as atribuições dos demais órgãos de segurança pública previstos no art. 144 da Constituição Federal e excluída qualquer atividade de polícia judiciária, sendo submetidas ao controle externo da atividade policial pelo Ministério Público, nos termos do artigo 129, inciso VII, da CF. Conforme o art. 144, § 8º, da Constituição Federal, as leis municipais devem observar as normas gerais fixadas pelo Congresso Nacional.",
+      "tipo": "tese_repercussao_geral"
+     },
+     "fonte_oficial": "https://portal.stf.jus.br/jurisprudenciaRepercussao/verAndamentoProcesso.asp?incidente=3832832&numeroProcesso=608588&classeProcesso=RE&numeroTema=656"
+    },
+    {
+     "tipo": "jurisprudencia",
+     "titulo": "STF — Tema 1.237/STF",
+     "subassunto": null,
+     "conteudo": {
+      "tribunal": "STF",
+      "referencia": "Tema 1.237/STF",
+      "enunciado": "(i) O Estado é responsável, na esfera cível, por morte ou ferimento decorrente de operações de segurança pública, nos termos da Teoria do Risco Administrativo; (ii) É ônus probatório do ente federativo demonstrar eventuais excludentes de responsabilidade civil; (iii) A perícia inconclusiva sobre a origem de disparo fatal durante operações policiais e militares não é suficiente, por si só, para afastar a responsabilidade civil do Estado, por constituir elemento indiciário.",
+      "tipo": "tese_repercussao_geral"
+     },
+     "fonte_oficial": "https://portal.stf.jus.br/jurisprudenciaRepercussao/tema.asp?num=1237"
+    },
+    {
+     "tipo": "jurisprudencia",
+     "titulo": "STF — ADPF 1.095/DF",
+     "subassunto": null,
+     "conteudo": {
+      "tribunal": "STF",
+      "referencia": "ADPF 1.095/DF",
+      "enunciado": "Os guardas municipais integram o Sistema Único de Segurança Pública (SUSP), mas não têm direito a aposentadoria especial, pois o rol constitucional (art. 40 da CF, na redação da EC 103/2019) de categorias com critérios diferenciados é taxativo e não os inclui.",
+      "tipo": "precedente"
+     },
+     "fonte_oficial": "https://noticias.stf.jus.br/postsnoticias/supremo-rejeita-possibilidade-de-aposentadoria-especial-para-guardas-municipais/"
+    }
+   ]
+  },
+  {
+   "curso": "gcm-geral",
+   "disciplina": "Direito Penal",
+   "assunto": "Crimes contra o patrimônio",
+   "materiais": [
+    {
+     "tipo": "jurisprudencia",
+     "titulo": "STF — Súmula 610",
+     "subassunto": null,
+     "conteudo": {
+      "tribunal": "STF",
+      "referencia": "Súmula 610",
+      "enunciado": "Há crime de latrocínio, quando o homicídio se consuma, ainda que não realize o agente a subtração de bens da vítima.",
+      "tipo": "sumula"
+     },
+     "fonte_oficial": "https://jurisprudencia.stf.jus.br/"
+    },
+    {
+     "tipo": "jurisprudencia",
+     "titulo": "STJ — Súmula 96",
+     "subassunto": null,
+     "conteudo": {
+      "tribunal": "STJ",
+      "referencia": "Súmula 96",
+      "enunciado": "O crime de extorsão consuma-se independentemente da obtenção da vantagem indevida.",
+      "tipo": "sumula"
+     },
+     "fonte_oficial": "https://www.stj.jus.br/sites/portalp/Paginas/Comunicacao/Noticias/Noticias.aspx"
+    },
+    {
+     "tipo": "jurisprudencia",
+     "titulo": "STJ — Súmula 567/STJ",
+     "subassunto": null,
+     "conteudo": {
+      "tribunal": "STJ",
+      "referencia": "Súmula 567/STJ",
+      "enunciado": "Sistema de vigilância realizado por monitoramento eletrônico ou por existência de segurança no interior de estabelecimento comercial, por si só, não torna impossível a configuração do crime de furto.",
+      "tipo": "sumula"
+     },
+     "fonte_oficial": "https://scon.stj.jus.br/SCON/sumstj/toc.jsp?livre=%27567%27.num.&O=JT"
+    },
+    {
+     "tipo": "jurisprudencia",
+     "titulo": "STJ — Súmula 582/STJ",
+     "subassunto": null,
+     "conteudo": {
+      "tribunal": "STJ",
+      "referencia": "Súmula 582/STJ",
+      "enunciado": "Consuma-se o crime de roubo com a inversão da posse do bem mediante emprego de violência ou grave ameaça, ainda que por breve tempo e em seguida à perseguição imediata ao agente e recuperação da coisa roubada, sendo prescindível a posse mansa e pacífica ou desvigiada.",
+      "tipo": "sumula"
+     },
+     "fonte_oficial": "https://scon.stj.jus.br/SCON/sumstj/toc.jsp?livre=%27582%27.num.&O=JT"
+    },
+    {
+     "tipo": "jurisprudencia",
+     "titulo": "STJ — Súmula 442/STJ",
+     "subassunto": null,
+     "conteudo": {
+      "tribunal": "STJ",
+      "referencia": "Súmula 442/STJ",
+      "enunciado": "É inadmissível aplicar, no furto qualificado, pelo concurso de agentes, a majorante do roubo.",
+      "tipo": "sumula"
+     },
+     "fonte_oficial": "https://scon.stj.jus.br/SCON/sumstj/toc.jsp?livre=%27442%27.num.&O=JT"
+    },
+    {
+     "tipo": "jurisprudencia",
+     "titulo": "STJ — Súmula 511/STJ",
+     "subassunto": null,
+     "conteudo": {
+      "tribunal": "STJ",
+      "referencia": "Súmula 511/STJ",
+      "enunciado": "É possível o reconhecimento do privilégio previsto no § 2º do art. 155 do CP nos casos de crime de furto qualificado, se estiverem presentes a primariedade do agente, o pequeno valor da coisa e a qualificadora for de ordem objetiva.",
+      "tipo": "sumula"
+     },
+     "fonte_oficial": "https://scon.stj.jus.br/SCON/sumstj/toc.jsp?livre=%27511%27.num.&O=JT"
+    }
+   ]
+  },
+  {
+   "curso": "gcm-geral",
+   "disciplina": "Direito Penal",
+   "assunto": "Crimes contra a dignidade sexual",
+   "materiais": [
+    {
+     "tipo": "jurisprudencia",
+     "titulo": "STJ — Súmula 593",
+     "subassunto": null,
+     "conteudo": {
+      "tribunal": "STJ",
+      "referencia": "Súmula 593",
+      "enunciado": "O crime de estupro de vulnerável se configura com a conjunção carnal ou prática de ato libidinoso com menor de 14 anos, sendo irrelevante eventual consentimento da vítima, a experiência sexual anterior ou a existência de relacionamento amoroso com o agente.",
+      "tipo": "sumula"
+     },
+     "fonte_oficial": "https://www.stj.jus.br/sites/portalp/Paginas/Comunicacao/Noticias/Noticias.aspx"
+    }
+   ]
+  },
+  {
+   "curso": "gcm-geral",
+   "disciplina": "Direito Processual Penal",
+   "assunto": "Busca e apreensão (arts. 240 a 250)",
+   "materiais": [
+    {
+     "tipo": "jurisprudencia",
+     "titulo": "STF — Tema 280/STF",
+     "subassunto": null,
+     "conteudo": {
+      "tribunal": "STF",
+      "referencia": "Tema 280/STF",
+      "enunciado": "A entrada forçada em domicílio sem mandado judicial só é lícita, mesmo em período noturno, quando amparada em fundadas razões, devidamente justificadas a posteriori, que indiquem que dentro da casa ocorre situação de flagrante delito, sob pena de responsabilidade disciplinar, civil e penal do agente ou da autoridade, e de nulidade dos atos praticados.",
+      "tipo": "tese_repercussao_geral"
+     },
+     "fonte_oficial": "https://portal.stf.jus.br/jurisprudenciaRepercussao/verAndamentoProcesso.asp?incidente=3774503&numeroProcesso=603616&classeProcesso=RE&numeroTema=280"
+    },
+    {
+     "tipo": "jurisprudencia",
+     "titulo": "STJ — RHC 158.580/BA",
+     "subassunto": null,
+     "conteudo": {
+      "tribunal": "STJ",
+      "referencia": "RHC 158.580/BA",
+      "enunciado": "Busca pessoal (art. 244 CPP): a mera alegação genérica de \"atitude suspeita\" é insuficiente. Exige-se fundada suspeita (justa causa) baseada em juízo de probabilidade, descrita com precisão e aferida objetivamente, de que a pessoa porta arma proibida ou objetos/papéis que constituam corpo de delito; não bastam informações de fonte não identificada ou impressões subjetivas. A violação gera ilicitude da prova obtida e das dela derivadas.",
+      "tipo": "julgado"
+     },
+     "fonte_oficial": "https://scon.stj.jus.br/jurisprudencia/externo/informativo/?aplicacao=informativo&acao=pesquisar&livre=%40CNOT%3D%27019030%27"
+    }
+   ]
+  },
+  {
+   "curso": "gcm-geral",
+   "disciplina": "Direito Penal",
+   "assunto": "Crimes contra a fé pública",
+   "materiais": []
+  },
+  {
+   "curso": "gcm-geral",
+   "disciplina": "Direito Processual Penal",
+   "assunto": "Prisão em flagrante (arts. 301 a 310)",
+   "materiais": [
+    {
+     "tipo": "jurisprudencia",
+     "titulo": "STF — Súmula 145",
+     "subassunto": null,
+     "conteudo": {
+      "tribunal": "STF",
+      "referencia": "Súmula 145",
+      "enunciado": "Não há crime, quando a preparação do flagrante pela polícia torna impossível a sua consumação.",
+      "tipo": "sumula"
+     },
+     "fonte_oficial": "https://jurisprudencia.stf.jus.br/"
+    },
+    {
+     "tipo": "jurisprudencia",
+     "titulo": "STF — Tema 280/STF",
+     "subassunto": null,
+     "conteudo": {
+      "tribunal": "STF",
+      "referencia": "Tema 280/STF",
+      "enunciado": "A entrada forçada em domicílio sem mandado judicial só é lícita, mesmo em período noturno, quando amparada em fundadas razões, devidamente justificadas a posteriori, que indiquem que dentro da casa ocorre situação de flagrante delito, sob pena de responsabilidade disciplinar, civil e penal do agente ou da autoridade, e de nulidade dos atos praticados.",
+      "tipo": "tese_repercussao_geral"
+     },
+     "fonte_oficial": "https://portal.stf.jus.br/jurisprudenciaRepercussao/verAndamentoProcesso.asp?incidente=3774503&numeroProcesso=603616&classeProcesso=RE&numeroTema=280"
+    }
+   ]
+  },
+  {
+   "curso": "gcm-geral",
+   "disciplina": "Direito Penal",
+   "assunto": "Crimes contra a Administração Pública",
+   "materiais": [
+    {
+     "tipo": "jurisprudencia",
+     "titulo": "STJ — Súmula 599/STJ",
+     "subassunto": null,
+     "conteudo": {
+      "tribunal": "STJ",
+      "referencia": "Súmula 599/STJ",
+      "enunciado": "O princípio da insignificância é inaplicável aos crimes contra a administração pública.",
+      "tipo": "sumula"
+     },
+     "fonte_oficial": "https://scon.stj.jus.br/SCON/sumstj/toc.jsp?livre=%27599%27.num.&O=JT"
+    },
+    {
+     "tipo": "jurisprudencia",
+     "titulo": "STJ — Tema 1.060/STJ",
+     "subassunto": null,
+     "conteudo": {
+      "tribunal": "STJ",
+      "referencia": "Tema 1.060/STJ",
+      "enunciado": "A desobediência à ordem legal de parada, emanada por agentes públicos em contexto de policiamento ostensivo, para a prevenção e repressão de crimes, constitui conduta penalmente típica, prevista no art. 330 do Código Penal Brasileiro.",
+      "tipo": "tese_repetitivo"
+     },
+     "fonte_oficial": "https://processo.stj.jus.br/repetitivos/temas_repetitivos/pesquisa.jsp?novaConsulta=true&tipo_pesquisa=T&cod_tema_inicial=1060&cod_tema_final=1060"
+    },
+    {
+     "tipo": "jurisprudencia",
+     "titulo": "STJ — HC 379.269/MS",
+     "subassunto": null,
+     "conteudo": {
+      "tribunal": "STJ",
+      "referencia": "HC 379.269/MS",
+      "enunciado": "A criminalização do desacato (CP, art. 331) é compatível com o Pacto de San José da Costa Rica (CADH). O tipo penal não viola a liberdade de expressão, pois protege a regularidade do serviço público e o respeito à função, não às opiniões políticas ou críticas ao funcionamento dos órgãos.",
+      "tipo": "acordao"
+     },
+     "fonte_oficial": "https://www.stj.jus.br/sites/portalp/Paginas/Comunicacao/Noticias/Noticias.aspx"
+    }
+   ]
+  },
+  {
+   "curso": "gcm-geral",
+   "disciplina": "Legislação Específica das Guardas e Segurança Pública",
+   "assunto": "Uso de algemas (Súmula Vinculante nº 11 do STF)",
+   "materiais": [
+    {
+     "tipo": "jurisprudencia",
+     "titulo": "STF — Súmula Vinculante 11/STF",
+     "subassunto": null,
+     "conteudo": {
+      "tribunal": "STF",
+      "referencia": "Súmula Vinculante 11/STF",
+      "enunciado": "Só é lícito o uso de algemas em casos de resistência e de fundado receio de fuga ou de perigo à integridade física própria ou alheia, por parte do preso ou de terceiros, justificada a excepcionalidade por escrito, sob pena de responsabilidade disciplinar, civil e penal do agente ou da autoridade e de nulidade da prisão ou do ato processual a que se refere, sem prejuízo da responsabilidade civil do Estado.",
+      "tipo": "sumula_vinculante"
+     },
+     "fonte_oficial": "https://portal.stf.jus.br/jurisprudencia/sumariosumulas.asp?base=26&sumula=1220"
+    }
+   ]
+  },
+  {
+   "curso": "gcm-geral",
+   "disciplina": "Legislação Específica das Guardas e Segurança Pública",
+   "assunto": "Estatuto Geral das Guardas Municipais (Lei nº 13.022/2014)",
+   "materiais": [
+    {
+     "tipo": "jurisprudencia",
+     "titulo": "STF — Tema 656/STF",
+     "subassunto": null,
+     "conteudo": {
+      "tribunal": "STF",
+      "referencia": "Tema 656/STF",
+      "enunciado": "É constitucional, no âmbito dos municípios, o exercício de ações de segurança urbana pelas Guardas Municipais, inclusive policiamento ostensivo e comunitário, respeitadas as atribuições dos demais órgãos de segurança pública previstos no art. 144 da Constituição Federal e excluída qualquer atividade de polícia judiciária, sendo submetidas ao controle externo da atividade policial pelo Ministério Público, nos termos do artigo 129, inciso VII, da CF. Conforme o art. 144, § 8º, da Constituição Federal, as leis municipais devem observar as normas gerais fixadas pelo Congresso Nacional.",
+      "tipo": "tese_repercussao_geral"
+     },
+     "fonte_oficial": "https://portal.stf.jus.br/jurisprudenciaRepercussao/verAndamentoProcesso.asp?incidente=3832832&numeroProcesso=608588&classeProcesso=RE&numeroTema=656"
+    },
+    {
+     "tipo": "jurisprudencia",
+     "titulo": "STF — Tema 472/STF",
+     "subassunto": null,
+     "conteudo": {
+      "tribunal": "STF",
+      "referencia": "Tema 472/STF",
+      "enunciado": "É constitucional a atribuição às guardas municipais do exercício de poder de polícia de trânsito, inclusive para imposição de sanções administrativas legalmente previstas.",
+      "tipo": "tese_repercussao_geral"
+     },
+     "fonte_oficial": "https://portal.stf.jus.br/jurisprudenciaRepercussao/verAndamentoProcesso.asp?incidente=4146148&numeroProcesso=658570&classeProcesso=RE&numeroTema=472"
+    },
+    {
+     "tipo": "jurisprudencia",
+     "titulo": "STJ — AgRg no HC 909.471/SP",
+     "subassunto": null,
+     "conteudo": {
+      "tribunal": "STJ",
+      "referencia": "AgRg no HC 909.471/SP",
+      "enunciado": "Guardas municipais podem realizar busca pessoal em via pública quando houver fundada suspeita de prática delitiva. Com a readequação jurisprudencial da Sexta Turma (após o Tema 656/STF), é válida a abordagem feita por guardas durante patrulhamento ostensivo, inclusive quando a fundada suspeita decorre da tentativa de fuga ao avistar a guarnição.",
+      "tipo": "precedente"
+     },
+     "fonte_oficial": "https://processo.stj.jus.br/jurisprudencia/externo/informativo/?acao=pesquisar&livre=%22909.471%22&operador=e&b=INFJ&thesaurus=JURIDICO"
+    },
+    {
+     "tipo": "jurisprudencia",
+     "titulo": "STF — ADPF 1.095/DF",
+     "subassunto": null,
+     "conteudo": {
+      "tribunal": "STF",
+      "referencia": "ADPF 1.095/DF",
+      "enunciado": "Os guardas municipais integram o Sistema Único de Segurança Pública (SUSP), mas não têm direito a aposentadoria especial, pois o rol constitucional (art. 40 da CF, na redação da EC 103/2019) de categorias com critérios diferenciados é taxativo e não os inclui.",
+      "tipo": "precedente"
+     },
+     "fonte_oficial": "https://noticias.stf.jus.br/postsnoticias/supremo-rejeita-possibilidade-de-aposentadoria-especial-para-guardas-municipais/"
+    }
+   ]
+  },
+  {
+   "curso": "gcm-geral",
+   "disciplina": "Legislação de Proteção a Grupos Vulneráveis",
+   "assunto": "Estatuto da Criança e do Adolescente (Lei nº 8.069/1990)",
+   "materiais": [
+    {
+     "tipo": "jurisprudencia",
+     "titulo": "STJ — Súmula 500/STJ",
+     "subassunto": null,
+     "conteudo": {
+      "tribunal": "STJ",
+      "referencia": "Súmula 500/STJ",
+      "enunciado": "A configuração do crime do art. 244-B do ECA independe da prova da efetiva corrupção do menor, por se tratar de delito formal.",
+      "tipo": "sumula"
+     },
+     "fonte_oficial": "https://scon.stj.jus.br/SCON/sumstj/toc.jsp?livre=%27500%27.num.&O=JT"
+    },
+    {
+     "tipo": "jurisprudencia",
+     "titulo": "STJ — Súmula 605/STJ",
+     "subassunto": null,
+     "conteudo": {
+      "tribunal": "STJ",
+      "referencia": "Súmula 605/STJ",
+      "enunciado": "A superveniência da maioridade penal não interfere na apuração de ato infracional nem na aplicabilidade de medida socioeducativa em curso, inclusive na liberdade assistida, enquanto não atingida a idade de 21 anos.",
+      "tipo": "sumula"
+     },
+     "fonte_oficial": "https://scon.stj.jus.br/SCON/SearchBRS?b=SUMU&livre=@NUM%3D605"
+    }
+   ]
+  }
+ ]
+}

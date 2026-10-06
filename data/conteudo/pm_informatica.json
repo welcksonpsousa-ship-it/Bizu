@@ -9,23 +9,27 @@
     "secoes": [
      {
       "titulo": "Arquivos, pastas, diretórios e atalhos",
-      "texto": "No Windows 10, tudo o que você salva é um arquivo: um documento, uma foto, uma planilha. O arquivo tem nome e extensão (ex.: relatorio.docx), e a extensão indica o tipo e o programa que o abre.\nPasta e diretório são a mesma ideia: um local que organiza arquivos e outras pastas (subpastas), formando uma estrutura em árvore. O caminho mostra onde o item está, por exemplo C:\\Users\\Ana\\Documentos\\relatorio.docx.\nAtalho é um arquivo pequeno (extensão .lnk) que apenas aponta para outro item. Ele aparece com uma setinha no ícone. Apagar o atalho NÃO apaga o arquivo original.\n• Nomes de arquivos e pastas não podem conter os caracteres \\ / : * ? \" < > |\n• Dois itens com o mesmo nome e extensão não podem ficar na mesma pasta."
+      "texto": "Tudo o que se salva é um arquivo (documento, foto, planilha), com nome e extensão (ex.: relatorio.docx), e a extensão indica o tipo e o programa que o abre.\nPasta e diretório são a mesma coisa: um local que organiza arquivos e subpastas. O caminho mostra onde o item está, por exemplo C:\\Users\\Ana\\Documentos\\relatorio.docx.\nAtalho é um arquivo pequeno (extensão .lnk) que apenas aponta para outro item. Ele aparece com uma setinha no ícone. Apagar o atalho NÃO apaga o arquivo original.\n• Nomes de arquivos e pastas não podem conter os caracteres \\ / : * ? \" < > |\n• Dois itens com o mesmo nome e extensão não podem ficar na mesma pasta."
      },
      {
       "titulo": "Área de trabalho e menus",
-      "texto": "A Área de Trabalho é a tela inicial após o login. Nela ficam ícones (como a Lixeira), o papel de parede e a Barra de Tarefas, na parte inferior.\nNa Barra de Tarefas estão o botão Iniciar, a caixa de pesquisa, os programas fixados e abertos e, à direita, a área de notificação com relógio, rede e volume.\nO Menu Iniciar (tecla Windows ou Ctrl+Esc) reúne a lista de aplicativos, os blocos dinâmicos e o acesso a Configurações e ao botão de desligar.\n• Windows+D: mostra a área de trabalho (e volta).\n• Windows+E: abre o Explorador de Arquivos.\n• Windows+I: abre as Configurações.\n• Windows+L: bloqueia o computador.\n• Alt+Tab: alterna entre janelas abertas; Alt+F4: fecha a janela ativa.\n• Ctrl+Shift+Esc: abre o Gerenciador de Tarefas."
+      "texto": "A Área de Trabalho é a tela inicial após o login. Nela ficam ícones (como a Lixeira), o papel de parede e a Barra de Tarefas, na parte inferior.\nNa Barra de Tarefas ficam o botão Iniciar, a pesquisa, os programas abertos e, à direita, a área de notificação (relógio, rede, volume).\nO Menu Iniciar (tecla Windows ou Ctrl+Esc) reúne os aplicativos, as Configurações e o botão de desligar.\n• Windows+D: mostra a área de trabalho (e volta).\n• Windows+E: abre o Explorador de Arquivos.\n• Windows+I: abre as Configurações.\n• Windows+L: bloqueia o computador.\n• Alt+Tab: alterna entre janelas abertas; Alt+F4: fecha a janela ativa.\n• Ctrl+Shift+Esc: abre o Gerenciador de Tarefas."
      },
      {
       "titulo": "Área de transferência",
-      "texto": "A Área de Transferência é um espaço temporário na memória que guarda o que você copiou ou recortou até colar.\n• Ctrl+C: copiar (o original fica onde está).\n• Ctrl+X: recortar (o item sai do lugar quando é colado em outro).\n• Ctrl+V: colar.\nO conteúdo comum da área de transferência é perdido ao desligar o computador. O Windows 10 também oferece o histórico da área de transferência, aberto com Windows+V, que permite escolher entre itens copiados anteriormente (é preciso ativar o recurso)."
+      "texto": "A Área de Transferência é um espaço temporário na memória que guarda o que você copiou ou recortou até colar.\n• Ctrl+C: copiar (o original fica onde está).\n• Ctrl+X: recortar (o item sai do lugar quando é colado em outro).\n• Ctrl+V: colar.\nO conteúdo é perdido ao desligar o computador. Windows+V abre o histórico da área de transferência, com itens copiados antes (o recurso precisa ser ativado)."
      },
      {
       "titulo": "Manipulação de arquivos e pastas",
-      "texto": "O Explorador de Arquivos é a ferramenta para criar, renomear, copiar, mover e excluir itens.\n• F2: renomeia o item selecionado.\n• Ctrl+Shift+N: cria nova pasta no Explorador.\n• Delete: envia o item para a Lixeira (de onde pode ser restaurado).\n• Shift+Delete: exclui definitivamente, sem passar pela Lixeira.\n• Ctrl+A: seleciona todos os itens (no Windows em português também vale para o Explorador).\n• Ctrl+clique seleciona itens alternados; Shift+clique seleciona um intervalo.\nArrastar com o mouse: dentro da MESMA unidade (ex.: de C: para C:), o item é MOVIDO; para OUTRA unidade (ex.: de C: para um pendrive), o item é COPIADO. Segurando Ctrl ao arrastar, força a cópia; segurando Shift, força a movimentação; segurando Alt, cria um atalho.\nArquivos apagados de pendrive ou de unidade de rede normalmente não vão para a Lixeira."
+      "texto": "O Explorador de Arquivos é a ferramenta para criar, renomear, copiar, mover e excluir itens.\n• F2: renomeia o item selecionado.\n• Ctrl+Shift+N: cria nova pasta no Explorador.\n• Delete: envia o item para a Lixeira (de onde pode ser restaurado).\n• Shift+Delete: exclui definitivamente, sem passar pela Lixeira.\n• Ctrl+A: seleciona todos os itens.\nArrastar com o mouse: dentro da MESMA unidade (ex.: de C: para C:), o item é MOVIDO; para OUTRA unidade (ex.: de C: para um pendrive), o item é COPIADO. Segurando Ctrl ao arrastar, força a cópia; segurando Shift, força a movimentação; segurando Alt, cria um atalho.\nArquivos apagados de pendrive ou de unidade de rede normalmente não vão para a Lixeira."
      },
      {
       "titulo": "Programas, aplicativos e integração com o Office 2016",
-      "texto": "Programas são abertos pelo Menu Iniciar, pela pesquisa da Barra de Tarefas, por atalhos ou com duplo clique em um arquivo associado. A associação entre extensão e programa define quem abre o arquivo: .docx abre no Word, .xlsx no Excel e .pptx no PowerPoint.\nO Windows 10 integra-se ao pacote Office 2016: é possível copiar uma tabela do Excel e colar no Word pela Área de Transferência, fixar os programas do Office na Barra de Tarefas e abrir documentos recentes pela lista de atalhos (clique com o botão direito no ícone do programa na Barra de Tarefas).\nPara desinstalar ou alterar programas, use Configurações > Aplicativos."
+      "texto": "Programas são abertos pelo Menu Iniciar, pela pesquisa, por atalhos ou com duplo clique em um arquivo. A associação entre extensão e programa define quem abre o arquivo: .docx abre no Word, .xlsx no Excel e .pptx no PowerPoint.\nCom o Office 2016, dá para copiar uma tabela do Excel e colar no Word pela Área de Transferência e fixar os programas na Barra de Tarefas."
+     },
+     {
+      "titulo": "Bizu de prova",
+      "texto": "• Campeões de prova: atalho (.lnk) x arquivo original; Delete x Shift+Delete; Ctrl+C, Ctrl+X e Ctrl+V.\n• Arrastar: na mesma unidade, move; para outra unidade (pendrive), copia.\n• Windows+E (Explorador), Windows+D (área de trabalho), Windows+L (bloquear), F2 (renomear).\n• Excluiu do pendrive ou da rede? Não vai para a Lixeira."
      }
     ]
    },
@@ -216,6 +220,10 @@
      {
       "titulo": "Quebras, numeração, legendas, índices e impressão",
       "texto": "• Ctrl+Enter: quebra de página (também em Inserir > Quebra de Página ou Layout > Quebras).\n• Quebras de seção (Layout > Quebras) permitem orientação, margens ou numeração diferentes em partes do documento.\nNumeração de páginas: Inserir > Número de Página, escolhendo a posição (início ou fim da página, margens).\nLegendas (Referências > Inserir Legenda) numeram figuras e tabelas automaticamente (Figura 1, Tabela 1...). Na mesma guia estão o Sumário, gerado a partir dos estilos de Título, e o Índice remissivo, a partir de entradas marcadas.\nImpressão: Arquivo > Imprimir ou Ctrl+P. Ali se escolhem impressora, número de cópias, intervalo de páginas (ex.: 1-3;5), orientação e visualização prévia."
+     },
+     {
+      "titulo": "Bizu de prova",
+      "texto": "• A VUNESP cobra os atalhos do Word em PORTUGUÊS: Ctrl+N negrito, Ctrl+S sublinhado, Ctrl+B salvar, Ctrl+O novo, Ctrl+A abrir.\n• Não confunda com o navegador, onde Ctrl+N abre nova janela.\n• Colunas e Quebras: guia Layout. Legenda e Sumário: guia Referências.\n• Ctrl+Enter quebra página; Shift+Enter quebra só a linha."
      }
     ]
    },
@@ -389,7 +397,7 @@
     "secoes": [
      {
       "titulo": "Estrutura básica: pasta, planilha, célula",
-      "texto": "No Excel 2016, o arquivo é chamado de Pasta de Trabalho (extensão .xlsx; com macros, .xlsm). Cada pasta contém uma ou mais Planilhas (abas na parte inferior).\nA planilha é uma grade de linhas (numeradas: 1, 2, 3...) e colunas (letras: A, B... Z, AA, AB...). No Excel 2016 são 1.048.576 linhas e 16.384 colunas (a última é XFD).\nCélula é o cruzamento de coluna com linha, identificada pelo endereço: B3 = coluna B, linha 3. Intervalo é um conjunto de células, como A1:A10 (de A1 até A10). A Caixa de Nome mostra o endereço da célula ativa, e a Barra de Fórmulas mostra seu conteúdo.\n• F2: edita a célula ativa. Ctrl+; insere a data atual."
+      "texto": "No Excel 2016, o arquivo é chamado de Pasta de Trabalho (extensão .xlsx; com macros, .xlsm). Cada pasta contém uma ou mais Planilhas (abas na parte inferior).\nA planilha é uma grade de linhas (numeradas: 1, 2, 3...) e colunas (letras: A, B... Z, AA, AB...). No Excel 2016 são 1.048.576 linhas e 16.384 colunas (a última é XFD).\nCélula é o cruzamento de coluna com linha, identificada pelo endereço: B3 = coluna B, linha 3. Intervalo é um conjunto de células, como A1:A10 (de A1 até A10). A Caixa de Nome mostra o endereço da célula ativa, e a Barra de Fórmulas mostra seu conteúdo."
      },
      {
       "titulo": "Fórmulas e referências",
@@ -401,11 +409,15 @@
      },
      {
       "titulo": "Tabelas, gráficos, classificação e dados externos",
-      "texto": "Inserir > Tabela transforma um intervalo em tabela com filtros e estilos. Inserir > Gráficos cria colunas, barras, linhas, pizza e outros. Alt+F1 cria gráfico na própria planilha; F11 cria gráfico em uma planilha separada.\nClassificação: Dados > Classificar (ordem crescente/decrescente, por uma ou várias colunas). Filtro: Dados > Filtro.\nObtenção de dados externos: guia Dados, grupo Obter e Transformar (ou Obter Dados Externos), para importar de arquivos de texto/CSV, Access, páginas da Web e outras fontes.\nObjetos (imagens, formas, SmartArt, caixas de texto) ficam na guia Inserir."
+      "texto": "Inserir > Tabela transforma um intervalo em tabela com filtros e estilos. Inserir > Gráficos cria colunas, barras, linhas, pizza e outros. Alt+F1 cria gráfico na própria planilha; F11 cria gráfico em uma planilha separada.\nClassificação: Dados > Classificar (ordem crescente/decrescente, por uma ou várias colunas). Filtro: Dados > Filtro.\nDados externos (arquivos de texto/CSV, Access, páginas da Web) são importados pela guia Dados."
      },
      {
       "titulo": "Impressão, quebras e numeração de páginas",
       "texto": "Arquivo > Imprimir (Ctrl+P) mostra a visualização e permite escolher planilha ativa, pasta inteira ou seleção, orientação e dimensionamento (ex.: ajustar planilha em uma página).\nNa guia Layout da Página: Área de Impressão, Quebras (inserir quebra de página manual), Margens, Orientação e Imprimir Títulos (repetir linhas em cada página).\nO modo Visualização da Quebra de Página (guia Exibir) mostra onde cada página termina. Números de página entram no cabeçalho ou rodapé (Inserir > Cabeçalho e Rodapé), por meio de campos predefinidos como Número da Página, Número de Páginas, Data e Nome do Arquivo."
+     },
+     {
+      "titulo": "Bizu de prova",
+      "texto": "• Fórmula começa com = e respeita a prioridade: multiplicação antes da soma.\n• O $ trava: ao copiar a fórmula, só a parte sem $ muda.\n• CONT.NÚM conta números; CONT.VALORES conta tudo que não está vazio.\n• SE(teste; valor se verdadeiro; valor se falso). Classificar e Filtro: guia Dados."
      }
     ]
    },
@@ -597,6 +609,10 @@
      {
       "titulo": "Animação e transição",
       "texto": "Transição é o efeito na PASSAGEM de um slide para outro (guia Transições): tipo de efeito, duração, som e avanço ao clicar ou após um tempo.\nAnimação é o efeito aplicado a um OBJETO dentro do slide (guia Animações). Tipos: Entrada, Ênfase, Saída e Trajetórias de Animação. O Painel de Animação mostra e reordena os efeitos.\nPara apresentar:\n• F5: inicia do primeiro slide.\n• Shift+F5: inicia do slide atual.\n• Esc: encerra a apresentação.\n• Setas, Enter, espaço ou clique avançam."
+     },
+     {
+      "titulo": "Bizu de prova",
+      "texto": "• Transição = passagem entre slides; Animação = objeto dentro do slide.\n• F5 começa do primeiro slide; Shift+F5, do slide atual; Esc encerra.\n• Anotações são só para o apresentador; o público não vê.\n• Botão de ação: Inserir > Formas > Botões de Ação."
      }
     ]
    },
@@ -782,6 +798,10 @@
      {
       "titulo": "Anexação de arquivos",
       "texto": "Anexo é um arquivo enviado junto com a mensagem (documento, foto, planilha), indicado geralmente por um ícone de clipe. Os provedores limitam o tamanho total dos anexos; arquivos grandes costumam ser compartilhados por link de armazenamento em nuvem.\nCuidados de segurança:\n• Desconfie de anexos inesperados, mesmo de conhecidos, sobretudo executáveis (.exe) e arquivos compactados.\n• Phishing é a mensagem falsa que tenta roubar senhas ou dados, imitando bancos e órgãos públicos.\n• Spam é a mensagem não solicitada enviada em massa."
+     },
+     {
+      "titulo": "Bizu de prova",
+      "texto": "• Cco esconde os destinatários; \"Responder a todos\" não alcança quem estava em Cco.\n• Encaminhar leva o anexo; Responder, em regra, não.\n• SMTP envia; POP3 e IMAP recebem.\n• Mensagem que pede senha \"com urgência\", imitando banco ou órgão público, é phishing."
      }
     ]
    },
@@ -965,6 +985,10 @@
      {
       "titulo": "Impressão de páginas e cuidados",
       "texto": "Para imprimir uma página, use Ctrl+P ou o menu do navegador (ícone de três pontos ou três barras) > Imprimir. É possível escolher impressora, páginas, orientação e também Salvar como PDF.\nCuidados: verifique o cadeado e o endereço antes de digitar senhas; desconfie de links encurtados ou com erros de digitação no domínio; mantenha o navegador atualizado."
+     },
+     {
+      "titulo": "Bizu de prova",
+      "texto": "• URL = protocolo (https) + domínio + caminho.\n• Cadeado = HTTPS = conexão criptografada (mas não prova que o site é honesto: confira o endereço).\n• Atalhos: Ctrl+T nova guia, Ctrl+W fecha, Ctrl+Shift+T reabre, Ctrl+D favorito, Ctrl+H histórico.\n• Navegação anônima não esconde nada do provedor nem do site."
      }
     ]
    },
@@ -1154,6 +1178,10 @@
      {
       "titulo": "Formulários",
       "texto": "O Google Formulários cria questionários, pesquisas, inscrições e testes. Tipos de pergunta: resposta curta, parágrafo, múltipla escolha, caixas de seleção, lista suspensa, escala linear, data, hora, entre outros.\nO formulário é enviado por link ou e-mail. As respostas aparecem na guia Respostas, com gráficos de resumo, e podem ser enviadas automaticamente para uma planilha do Google Planilhas. Também é possível transformar o formulário em teste, com gabarito e nota."
+     },
+     {
+      "titulo": "Bizu de prova",
+      "texto": "• Tudo é salvo sozinho na nuvem: não existe botão Salvar.\n• Drive: Leitor (só vê), Comentarista (vê e comenta), Editor (altera).\n• Gmail usa marcadores, e Arquivar não exclui a mensagem.\n• Respostas do Formulários podem ir direto para uma planilha."
      }
     ]
    },
@@ -1331,7 +1359,7 @@
      },
      {
       "titulo": "Chats",
-      "texto": "O chat serve para conversas diretas, fora de uma equipe:\n• Chat individual (1:1): entre duas pessoas.\n• Chat em grupo: com várias pessoas, ao adicionar mais de um nome no campo Para; o grupo pode receber um nome.\nNo chat é possível enviar texto formatado, emojis, GIFs, arquivos e links. A @menção (digitar @ seguido do nome) chama a atenção de uma pessoa específica, que recebe notificação. Mensagens enviadas podem ser editadas ou excluídas pelo autor.\nArquivos enviados em chats ficam armazenados no OneDrive de quem os compartilhou."
+      "texto": "O chat serve para conversas diretas, fora de uma equipe:\n• Chat individual (1:1): entre duas pessoas.\n• Chat em grupo: com várias pessoas, ao adicionar mais de um nome no campo Para; o grupo pode receber um nome.\nNo chat é possível enviar texto formatado, emojis, GIFs, arquivos e links. A @menção (digitar @ seguido do nome) chama a atenção de uma pessoa específica, que recebe notificação. Mensagens enviadas podem ser editadas ou excluídas pelo autor."
      },
      {
       "titulo": "Chamadas de áudio e vídeo",
@@ -1343,7 +1371,11 @@
      },
      {
       "titulo": "Trabalho colaborativo com Word, Excel e PowerPoint",
-      "texto": "Arquivos postados em um canal ficam na guia Arquivos do canal, armazenados no SharePoint da equipe.\nDocumentos do Word, Excel e PowerPoint podem ser abertos dentro do próprio Teams, no navegador ou no aplicativo da área de trabalho. Várias pessoas podem editar o mesmo arquivo ao mesmo tempo (coautoria), e as alterações são salvas automaticamente.\nTambém é possível adicionar um arquivo como guia no canal, deixando-o fixado para acesso rápido, e conversar sobre o documento sem sair dele."
+      "texto": "Arquivos postados em um canal ficam na guia Arquivos do canal, à disposição de todos os membros.\nDocumentos do Word, Excel e PowerPoint podem ser abertos dentro do próprio Teams, no navegador ou no aplicativo da área de trabalho. Várias pessoas podem editar o mesmo arquivo ao mesmo tempo (coautoria), e as alterações são salvas automaticamente.\nTambém é possível adicionar um arquivo como guia no canal, deixando-o fixado para acesso rápido, e conversar sobre o documento sem sair dele."
+     },
+     {
+      "titulo": "Bizu de prova",
+      "texto": "• Equipe se divide em canais; toda equipe nasce com o canal Geral.\n• @nome manda notificação para a pessoa.\n• Reunião: na hora (Reunir agora) ou agendada pelo Calendário, com convite e link.\n• Word, Excel e PowerPoint abertos no Teams podem ser editados por várias pessoas ao mesmo tempo."
      }
     ]
    },
@@ -1356,7 +1388,7 @@
      "Equipe privada: entrada controlada pelo proprietário; pública: aberta à organização.",
      "Canal privado é visto só por parte dos membros.",
      "Arquivos de canal ficam no SharePoint; de chat, no OneDrive.",
-     "Word, Excel e PowerPoint permitem coautoria dentro do Teams.",
+     "Arquivos postados no canal ficam na guia Arquivos, à disposição dos membros.",
      "Reuniões: Reunir agora ou agendar pelo Calendário."
     ]
    },
@@ -1369,7 +1401,7 @@
        "Individual 1:1",
        "Em grupo",
        "@menção",
-       "Arquivos no OneDrive"
+       "Editar ou excluir mensagens"
       ]
      },
      {
@@ -1394,7 +1426,7 @@
       "label": "Colaboração",
       "filhos": [
        "Guia Arquivos",
-       "SharePoint",
+       "Arquivo fixado como guia",
        "Coautoria em Word, Excel e PowerPoint",
        "Salvamento automático"
       ]
@@ -1411,8 +1443,8 @@
      "resposta": "Usando @menção (@nome)."
     },
     {
-     "pergunta": "Onde ficam armazenados os arquivos de um canal?",
-     "resposta": "No SharePoint da equipe."
+     "pergunta": "Onde ficam os arquivos postados em um canal?",
+     "resposta": "Na guia Arquivos do canal, à disposição de todos os membros."
     },
     {
      "pergunta": "Quem gerencia membros e configurações de uma equipe?",
@@ -1486,7 +1518,7 @@
     },
     {
      "subassunto": "Criação de grupos",
-     "enunciado": "Considere as afirmações sobre o Microsoft Teams.\nI. Em uma equipe pública, qualquer pessoa da organização pode entrar.\nII. Um canal privado é visível apenas para os membros da equipe que foram adicionados a ele.\nIII. Arquivos compartilhados em um chat individual ficam armazenados no SharePoint da equipe.\nIV. Um chat em grupo pode ser iniciado adicionando mais de uma pessoa no campo Para de um novo chat.\nEstá correto o que se afirma em",
+     "enunciado": "Considere as afirmações sobre o Microsoft Teams.\nI. Em uma equipe pública, qualquer pessoa da organização pode entrar.\nII. Um canal privado é visível apenas para os membros da equipe que foram adicionados a ele.\nIII. No Teams, só é possível fazer reuniões que tenham sido agendadas com antecedência pelo Calendário.\nIV. Um chat em grupo pode ser iniciado adicionando mais de uma pessoa no campo Para de um novo chat.\nEstá correto o que se afirma em",
      "opcoes": [
       "I e III, apenas.",
       "II e III, apenas.",
@@ -1495,7 +1527,7 @@
       "I, II e IV, apenas."
      ],
      "gabarito": 4,
-     "comentario": "I correta: equipe pública é aberta à organização. II correta: canal privado é restrito a quem foi adicionado. III errada: arquivos de chat ficam no OneDrive de quem compartilhou; o SharePoint guarda os arquivos de canais. IV correta: é assim que se cria um chat em grupo. Logo, I, II e IV.",
+     "comentario": "I correta: equipe pública é aberta à organização. II correta: canal privado é restrito a quem foi adicionado. III errada: além de agendar pelo Calendário, é possível fazer reunião na hora (Reunir agora) ou ligar direto de um chat. IV correta: é assim que se cria um chat em grupo. Logo, I, II e IV.",
      "dificuldade": "dificil"
     }
    ]

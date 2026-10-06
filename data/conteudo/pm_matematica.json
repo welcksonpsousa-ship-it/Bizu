@@ -9,11 +9,11 @@
     "secoes": [
      {
       "titulo": "O que são os números inteiros",
-      "texto": "O conjunto dos números inteiros (Z) reúne os naturais (0, 1, 2, 3...) e seus opostos negativos (-1, -2, -3...). Assim, Z = {..., -3, -2, -1, 0, 1, 2, 3, ...}.\nEles aparecem em situações do dia a dia: temperatura abaixo de zero, saldo bancário negativo, andares de subsolo, altitude abaixo do nível do mar.\n• Oposto (ou simétrico): o oposto de 5 é -5; o oposto de -8 é 8. A soma de um número com seu oposto é sempre zero.\n• Módulo (valor absoluto): é a distância do número até o zero na reta. |−6| = 6 e |6| = 6.\n• Comparação: na reta numérica, quem está mais à direita é maior. Entre negativos, o maior é o de menor módulo: -2 > -9."
+      "texto": "O conjunto dos números inteiros (Z) reúne os naturais (0, 1, 2, 3...) e seus opostos negativos (-1, -2, -3...). Assim, Z = {..., -3, -2, -1, 0, 1, 2, 3, ...}.\n• Oposto (ou simétrico): o oposto de 5 é -5; o oposto de -8 é 8. A soma de um número com seu oposto é sempre zero.\n• Módulo (valor absoluto): é a distância do número até o zero na reta. |−6| = 6 e |6| = 6.\n• Comparação: na reta numérica, quem está mais à direita é maior. Entre negativos, o maior é o de menor módulo: -2 > -9."
      },
      {
       "titulo": "Adição e subtração",
-      "texto": "Regra prática para somar inteiros:\n• Sinais iguais: soma os módulos e conserva o sinal. Ex.: (-4) + (-6) = -10.\n• Sinais diferentes: subtrai os módulos e fica o sinal do número de maior módulo. Ex.: (-9) + 4 = -5; 12 + (-3) = 9.\nSubtrair é somar o oposto: 5 - (-3) = 5 + 3 = 8; -2 - 7 = -2 + (-7) = -9.\nEliminação de parênteses: sinal de menos antes dos parênteses troca o sinal de tudo que está dentro. Ex.: -(4 - 9) = -4 + 9 = 5.\nDica de prova: pense em dinheiro. Positivo é o que você tem, negativo é o que você deve. Se você deve 9 e recebe 4, continua devendo 5."
+      "texto": "Regra prática para somar inteiros:\n• Sinais iguais: soma os módulos e conserva o sinal. Ex.: (-4) + (-6) = -10.\n• Sinais diferentes: subtrai os módulos e fica o sinal do número de maior módulo. Ex.: (-9) + 4 = -5; 12 + (-3) = 9.\nSubtrair é somar o oposto: 5 - (-3) = 5 + 3 = 8; -2 - 7 = -2 + (-7) = -9.\nEliminação de parênteses: sinal de menos antes dos parênteses troca o sinal de tudo que está dentro. Ex.: -(4 - 9) = -4 + 9 = 5.\nDica: pense em dinheiro. Quem deve 9 e recebe 4 continua devendo 5."
      },
      {
       "titulo": "Multiplicação, divisão e potência",
@@ -21,11 +21,15 @@
      },
      {
       "titulo": "Ordem das operações (expressões numéricas)",
-      "texto": "Resolva sempre nesta ordem:\n1. Parênteses ( ), depois colchetes [ ], depois chaves { }.\n2. Potências e raízes.\n3. Multiplicações e divisões, na ordem em que aparecem (da esquerda para a direita).\n4. Adições e subtrações, na ordem em que aparecem.\nExemplo: 10 - 2 x (-3) + (-8) : 4 = 10 + 6 - 2 = 14.\nErro comum: fazer 10 - 2 = 8 primeiro. Multiplicação vem antes da subtração."
+      "texto": "Resolva sempre nesta ordem:\n1. Parênteses ( ), depois colchetes [ ], depois chaves { }.\n2. Potências e raízes.\n3. Multiplicações e divisões, na ordem em que aparecem (da esquerda para a direita).\n4. Adições e subtrações, na ordem em que aparecem.\nExemplo: 10 - 2 x (-3) + (-8) : 4 = 10 + 6 - 2 = 14."
      },
      {
       "titulo": "Propriedades",
-      "texto": "Na adição e na multiplicação de inteiros valem:\n• Comutativa: a ordem não altera o resultado. (-3) + 7 = 7 + (-3); 4 x (-2) = (-2) x 4.\n• Associativa: agrupar de formas diferentes não altera o resultado. [(-2) + 5] + 1 = (-2) + [5 + 1].\n• Elemento neutro: 0 na adição (a + 0 = a) e 1 na multiplicação (a x 1 = a).\n• Elemento oposto: a + (-a) = 0.\n• Distributiva: a x (b + c) = a x b + a x c. Ex.: -3 x (4 - 2) = -12 + 6 = -6.\nAtenção: subtração e divisão NÃO são comutativas nem associativas. 5 - 3 é diferente de 3 - 5, e 12 : 4 é diferente de 4 : 12.\nO conjunto Z é fechado para adição, subtração e multiplicação (o resultado é sempre inteiro), mas não para a divisão: 7 : 2 = 3,5, que não é inteiro."
+      "texto": "• Comutativa (a ordem não altera o resultado), na adição e na multiplicação: 4 x (-2) = (-2) x 4.\n• Elemento neutro: 0 na adição e 1 na multiplicação.\n• Oposto: a + (-a) = 0.\n• Distributiva: -3 x (4 - 2) = -12 + 6 = -6.\nSubtração e divisão NÃO são comutativas: 5 - 3 é diferente de 3 - 5."
+     },
+     {
+      "titulo": "Bizu de prova",
+      "texto": "• O que mais cai: contas com sinais em situações do dia a dia (temperatura, saldo bancário, andares de prédio).\n• Pegadinha clássica: -2^2 = -4, mas (-2)^2 = 4.\n• Na expressão, multiplicação e divisão vêm antes de soma e subtração, mesmo que apareçam depois.\n• \"Posição final\" usa os sinais; \"total percorrido\" soma os deslocamentos sem sinal."
      }
     ]
    },
@@ -132,16 +136,16 @@
     },
     {
      "subassunto": "Propriedades",
-     "enunciado": "Assinale a alternativa que apresenta uma igualdade verdadeira.",
+     "enunciado": "Assinale a alternativa que apresenta uma afirmação verdadeira sobre as operações com números inteiros.",
      "opcoes": [
-      "(-8) + (+3) = +5",
-      "(-2)^2 = -4",
-      "(-3) x (-4) = 12",
-      "(-15) : (+3) = 5",
-      "(-6) - (-6) = -12"
+      "A subtração é comutativa, pois 7 - 2 = 2 - 7.",
+      "A multiplicação é comutativa, pois (-4) x 3 = 3 x (-4).",
+      "O elemento neutro da multiplicação é o zero.",
+      "A soma de um número com o seu oposto é igual a 1.",
+      "A divisão é comutativa, pois 12 : 4 = 4 : 12."
      ],
-     "gabarito": 2,
-     "comentario": "(-3) x (-4) = 12, pois sinais iguais dão resultado positivo. As demais erram: (-8) + 3 = -5; (-2)^2 = 4 (expoente par); (-15) : 3 = -5 (sinais diferentes); (-6) - (-6) = -6 + 6 = 0.",
+     "gabarito": 1,
+     "comentario": "Na multiplicação a ordem dos fatores não altera o produto: (-4) x 3 = -12 = 3 x (-4). Erradas: 7 - 2 = 5 e 2 - 7 = -5 (subtração não é comutativa); o neutro da multiplicação é o 1 (o zero é o neutro da adição); número + oposto dá 0, não 1; 12 : 4 = 3 e 4 : 12 não é inteiro (divisão não é comutativa).",
      "dificuldade": "facil"
     },
     {
@@ -213,7 +217,11 @@
      },
      {
       "titulo": "Propriedades",
-      "texto": "Em Q valem as propriedades comutativa, associativa e distributiva, além dos elementos neutros (0 na adição e 1 na multiplicação).\n• Inverso multiplicativo: todo racional diferente de zero tem um inverso cujo produto dá 1. O inverso de 3/7 é 7/3; o inverso de 0,5 é 2.\n• Densidade: entre dois racionais quaisquer sempre existe outro racional (por exemplo, a média deles). Por isso não se fala em sucessor de um racional.\n• Q é fechado para adição, subtração, multiplicação e divisão (exceto por zero)."
+      "texto": "Em Q valem as mesmas propriedades dos inteiros: comutativa, associativa, distributiva, 0 como neutro da adição e 1 como neutro da multiplicação.\n• Inverso: todo racional diferente de zero tem um inverso, e o produto dos dois dá 1. O inverso de 3/7 é 7/3; o inverso de 0,5 é 2.\n• O zero não tem inverso, porque não existe divisão por zero."
+     },
+     {
+      "titulo": "Bizu de prova",
+      "texto": "• O problema mais cobrado: \"gastou uma fração, depois outra, e sobrou tanto\". Ache a fração que sobrou e descubra quanto vale cada parte.\n• Para comparar frações, transforme todas em decimal.\n• Cuidado: 0,66 é menor que 2/3 = 0,666...\n• Na multiplicação de decimais, conte as casas depois da vírgula."
      }
     ]
    },
@@ -270,8 +278,8 @@
       "label": "Propriedades",
       "filhos": [
        "Inverso multiplicativo",
-       "Densidade",
-       "Fechamento"
+       "Zero não tem inverso",
+       "Comutativa e distributiva"
       ]
      }
     ]
@@ -397,6 +405,10 @@
      {
       "titulo": "Problemas clássicos de prova",
       "texto": "1. Eventos periódicos: dois ônibus saem juntos às 7h, um a cada 15 min e outro a cada 20 min. Voltam a sair juntos após mmc(15, 20) = 60 min, ou seja, às 8h.\n2. Luzes que piscam, remédios tomados em intervalos diferentes, plantões em escalas diferentes: sempre mmc dos intervalos.\n3. Soma de frações: o mmc dos denominadores é o menor denominador comum. 5/6 + 3/8: mmc(6, 8) = 24, então 20/24 + 9/24 = 29/24.\n4. Restos iguais: o menor número (maior que o resto) que dividido por 6, 8 e 9 deixa resto 2 é mmc + 2 = 72 + 2 = 74. Os seguintes com a mesma propriedade são 146, 218... (somando 72 a cada vez).\nAtenção ao que a questão pede: horário, quantidade de vezes, ou o próprio número."
+     },
+     {
+      "titulo": "Bizu de prova",
+      "texto": "• Palavras que pedem mmc: \"juntos novamente\", \"coincidir\", \"ao mesmo tempo\". Palavras que pedem mdc: \"maior tamanho possível\", \"sem sobras\".\n• Escala de serviço: dois guardas que folgam a cada 4 e a cada 6 dias voltam a folgar juntos em mmc(4, 6) = 12 dias.\n• Veja o que se pede: horário, data ou número de vezes.\n• Conferência: o mmc tem de ser divisível por todos os números."
      }
     ]
    },
@@ -484,16 +496,16 @@
    "questoes": [
     {
      "subassunto": null,
-     "enunciado": "O mínimo múltiplo comum entre 12 e 18 é",
+     "enunciado": "Um policial tem folga a cada 12 dias e um colega dele, a cada 18 dias. Hoje os dois estão de folga. Eles voltarão a folgar juntos, pela primeira vez, daqui a",
      "opcoes": [
-      "6",
-      "216",
-      "36",
-      "72",
-      "30"
+      "6 dias",
+      "216 dias",
+      "36 dias",
+      "72 dias",
+      "30 dias"
      ],
      "gabarito": 2,
-     "comentario": "12 = 2^2 x 3 e 18 = 2 x 3^2; mmc = 2^2 x 3^2 = 36. 6 é o mdc; 216 é o produto; 72 é múltiplo comum, mas não o menor; 30 é a soma.",
+     "comentario": "Voltar a coincidir é caso de mmc. 12 = 2^2 x 3 e 18 = 2 x 3^2; mmc = 2^2 x 3^2 = 36 dias. 6 é o mdc; 216 é o produto 12 x 18; 72 é múltiplo comum, mas não o menor; 30 é a soma.",
      "dificuldade": "facil"
     },
     {
@@ -580,6 +592,10 @@
      {
       "titulo": "Grandezas proporcionais",
       "texto": "Duas grandezas são diretamente proporcionais quando, dobrando uma, a outra também dobra (a razão entre elas é constante). Ex.: quantidade comprada e valor pago.\nSão inversamente proporcionais quando, dobrando uma, a outra cai pela metade (o produto é constante). Ex.: número de trabalhadores e tempo para terminar uma obra, velocidade e tempo de viagem.\nIdentificar o tipo de relação é o primeiro passo da regra de três."
+     },
+     {
+      "titulo": "Bizu de prova",
+      "texto": "• Escala: multiplique pelo número da escala e converta (1 km = 100.000 cm).\n• Divisão proporcional: some os pesos, divida o total pela soma e multiplique cada peso.\n• Divisão inversa: quem tem número maior recebe menos (mais faltas, menor gratificação).\n• Respeite a ordem pedida: \"homens para mulheres\" é homens/mulheres."
      }
     ]
    },
@@ -766,6 +782,10 @@
      {
       "titulo": "Variação percentual",
       "texto": "Variação percentual = (valor final - valor inicial) / valor inicial x 100.\nA base é sempre o valor INICIAL (o \"de onde se partiu\").\nExemplo: as ocorrências passaram de 250 para 300. Variação: 50 / 250 = 0,20 = aumento de 20%. Se voltarem de 300 para 250, a queda é 50 / 300, aproximadamente 16,7%, e não 20%.\nPor isso, para desfazer um aumento de 25% é preciso um desconto de 20%: a base mudou."
+     },
+     {
+      "titulo": "Bizu de prova",
+      "texto": "• Use o fator: aumento de 15% é x 1,15; desconto de 15% é x 0,85.\n• Aumentos e descontos sucessivos: multiplique os fatores, nunca some as taxas.\n• Para achar o preço antigo, divida pelo fator (150 : 1,25 = 120).\n• A base da variação percentual é sempre o valor inicial."
      }
     ]
    },
@@ -950,6 +970,10 @@
      {
       "titulo": "Exemplo resolvido completo",
       "texto": "Um carro a 60 km/h faz um percurso em 2h30min. Quanto tempo levaria a 75 km/h?\n1. Grandezas: velocidade e tempo. Aumentando a velocidade, o tempo diminui: inversa.\n2. Tempo em horas: 2h30min = 2,5 h.\n3. Multiplica em linha: 60 x 2,5 = 75 x t, então 150 = 75t e t = 2 h.\nOutra forma: a distância é 60 x 2,5 = 150 km; a 75 km/h, gasta 150 / 75 = 2 h."
+     },
+     {
+      "titulo": "Bizu de prova",
+      "texto": "• Pergunte: \"se um dobra, o outro dobra ou cai pela metade?\"\n• Direta: multiplica cruzado. Inversa: multiplica na mesma linha.\n• Velocidade e tempo, operários e dias: inversas. Distância e combustível, quantidade e preço: diretas.\n• Confira o bom senso: com menos pedreiros, a obra nunca termina mais cedo."
      }
     ]
    },
@@ -1055,7 +1079,7 @@
       "24 dias"
      ],
      "gabarito": 0,
-     "comentario": "Menos pedreiros exigem mais dias: regra de três inversa. 6 x 10 = 4 x d, então d = 60 / 4 = 15 dias. 6,7 dias resulta de usar regra direta; 8 e 12 dias são menores ou próximos sem cálculo; 24 dias exagera.",
+     "comentario": "Menos pedreiros exigem mais dias: regra de três inversa. 6 x 10 = 4 x d, então d = 60 / 4 = 15 dias. 6,7 dias resulta de usar regra direta (10 x 4 / 6); 8 e 12 dias dariam menos tempo ou quase o mesmo com menos gente, o que não faz sentido; 24 dias multiplica 6 x 4.",
      "dificuldade": "facil"
     },
     {
@@ -1123,7 +1147,11 @@
      },
      {
       "titulo": "Propriedades importantes",
-      "texto": "• Somar uma constante a todos os valores soma essa constante à média. Se todos ganham 1 ponto, a média sobe 1 ponto.\n• Multiplicar todos os valores por uma constante multiplica a média por ela.\n• A média fica sempre entre o menor e o maior valor do conjunto.\n• A soma das diferenças de cada valor em relação à média é zero. Isso ajuda a conferir contas.\n• A média é sensível a valores extremos: um único valor muito alto ou muito baixo puxa a média.\nCuidado: a média de duas médias só é a média geral quando os grupos têm o mesmo tamanho. Se forem grupos de tamanhos diferentes, trabalhe com as somas."
+      "texto": "• Somar uma constante a todos os valores soma essa constante à média. Se todos ganham 1 ponto, a média sobe 1 ponto.\n• Multiplicar todos os valores por uma constante multiplica a média por ela.\n• A média fica sempre entre o menor e o maior valor do conjunto.\n• A média é sensível a valores extremos: um único valor muito alto ou muito baixo puxa a média.\nCuidado: a média de duas médias só é a média geral quando os grupos têm o mesmo tamanho. Se forem grupos de tamanhos diferentes, trabalhe com as somas."
+     },
+     {
+      "titulo": "Bizu de prova",
+      "texto": "• Quase toda questão sai de: soma = média x quantidade.\n• Entrou ou saiu alguém: recalcule a soma e divida pela nova quantidade.\n• Nota que falta = soma desejada - soma atual.\n• Não tire \"média das médias\" de grupos de tamanhos diferentes."
      }
     ]
    },
@@ -1300,6 +1328,10 @@
      {
       "titulo": "Problemas com frações do restante",
       "texto": "Atenção à expressão \"do restante\". Exemplo: uma pessoa gastou 1/4 do dinheiro e depois 2/5 do que sobrou, ficando com R$ 180.\nApós gastar 1/4, sobram 3/4 de x. Gastando 2/5 disso, sobram 3/5 de 3/4 de x = 9/20 de x.\n9x/20 = 180, então x = 400.\nErro comum: somar 1/4 + 2/5 como se as duas frações se referissem ao total."
+     },
+     {
+      "titulo": "Bizu de prova",
+      "texto": "• Traduza o texto: dobro = 2x; metade = x/2; terça parte = x/3; consecutivos = x e x + 1.\n• Fração \"do restante\": multiplique o que sobra (3/4 x 3/5), não some as frações gastas.\n• Idades: daqui a n anos, some n para TODAS as pessoas.\n• Na dúvida, teste as alternativas no enunciado."
      }
     ]
    },
@@ -1452,7 +1484,7 @@
       "R$ 520,00"
      ],
      "gabarito": 3,
-     "comentario": "Após a farmácia sobraram 3/4 do total. No supermercado gastou 2/5 desse restante, sobrando 3/5 de 3/4 = 9/20 do total. 9x/20 = 180, então x = 400. Conferindo: gasta 100, sobram 300; gasta 120, sobram 180. R$ 514,29 (que não aparece) viria de somar 1/4 + 2/5 como frações do total; R$ 300,00 é o valor após a farmácia; as demais não resultam do cálculo.",
+     "comentario": "Após a farmácia sobraram 3/4 do total. No supermercado gastou 2/5 desse restante, sobrando 3/5 de 3/4 = 9/20 do total. 9x/20 = 180, então x = 400. Conferindo: gasta 100, sobram 300; gasta 120, sobram 180. O erro comum é somar 1/4 + 2/5 como frações do total, o que nem gera valor inteiro; R$ 300,00 é o que sobrou depois da farmácia; as demais não resultam do cálculo.",
      "dificuldade": "dificil"
     }
    ]
@@ -1481,8 +1513,8 @@
       "texto": "• Carros e motos (ou galinhas e coelhos): 20 veículos e 56 rodas. c + m = 20 e 4c + 2m = 56. Da primeira, m = 20 - c. Substituindo: 4c + 40 - 2c = 56, então c = 8 e m = 12.\n• Ingressos inteiros e meias: quantidade total e valor arrecadado.\n• Provas com pontuação por acerto e desconto por erro: a + e = total de questões; (pontos por acerto) x a - (desconto) x e = nota.\n• Soma e diferença de dois números: some as equações e divida por 2.\nDica rápida de conferência: teste a alternativa nas duas condições do enunciado."
      },
      {
-      "titulo": "Tipos de solução",
-      "texto": "Um sistema de duas equações do 1º grau pode ter:\n• uma única solução (sistema possível e determinado) - o caso das provas;\n• infinitas soluções, quando uma equação é múltipla da outra, como x + y = 3 e 2x + 2y = 6 (possível e indeterminado);\n• nenhuma solução, quando as equações se contradizem, como x + y = 3 e x + y = 5 (impossível)."
+      "titulo": "Bizu de prova",
+      "texto": "• Os modelos que mais caem: carros e motos, inteiras e meias, acertos e erros.\n• Soma S e diferença D: maior = (S + D)/2; menor = (S - D)/2.\n• Leia o que se pede: número de motos ou de carros? de inteiras ou de meias?\n• Testar as alternativas nas duas condições do enunciado resolve em segundos."
      }
     ]
    },
@@ -1495,7 +1527,7 @@
      "Carros e motos: c + m = veículos; 4c + 2m = rodas.",
      "Soma S e diferença D: maior = (S + D)/2; menor = (S - D)/2.",
      "Confira a solução nas duas equações.",
-     "Equações proporcionais: infinitas soluções; contraditórias: nenhuma."
+     "Teste a resposta nas duas condições do enunciado."
     ]
    },
    "mapa": {
@@ -1533,11 +1565,10 @@
       ]
      },
      {
-      "label": "Classificação",
+      "label": "Conferência",
       "filhos": [
-       "Determinado",
-       "Indeterminado",
-       "Impossível"
+       "Testar nas duas equações",
+       "Ler o que foi pedido"
       ]
      }
     ]
@@ -1564,8 +1595,8 @@
      "resposta": "4 carros e 6 motos."
     },
     {
-     "pergunta": "x + y = 3 e x + y = 5 têm solução?",
-     "resposta": "Não; o sistema é impossível."
+     "pergunta": "Dois números somam 50 e diferem de 10. Qual é o maior?",
+     "resposta": "30, pois (50 + 10) / 2 = 30."
     }
    ],
    "questoes": [
@@ -1667,6 +1698,10 @@
      {
       "titulo": "Estratégia de prova",
       "texto": "1. Coloque todas as medidas na mesma unidade antes de operar.\n2. Identifique o tipo: comprimento (fator 10), área (fator 100), volume (fator 1.000), capacidade (fator 10).\n3. Em problemas de reservatórios, calcule o volume em m³, converta para litros e só então use a vazão (L/min ou L/h).\n4. Em tempo, trabalhe em minutos para evitar erros com decimais."
+     },
+     {
+      "titulo": "Bizu de prova",
+      "texto": "• Comprimento anda 1 casa por degrau; área, 2 casas; volume, 3 casas.\n• Decore: 1 m³ = 1.000 L; 1 dm³ = 1 L; 1 ha = 10.000 m².\n• Tempo: 0,5 h = 30 min; 0,25 h = 15 min; 0,4 h = 24 min.\n• Reservatório: volume em m³, depois em litros, depois divida pela vazão."
      }
     ]
    },
@@ -1848,6 +1883,10 @@
      {
       "titulo": "Cálculos que mais caem",
       "texto": "• Diferença entre maior e menor valor (amplitude).\n• Total e média de uma série.\n• Variação percentual entre dois períodos: (final - inicial) / inicial. Ex.: de 250 para 300 é aumento de 50 / 250 = 20%.\n• Participação percentual de uma parte no total.\n• Ângulo de um setor: percentual x 3,6°.\n• Completar tabela de grandezas proporcionais usando a constante (razão ou produto).\nExemplo: se x e y são inversamente proporcionais e x = 2 corresponde a y = 30, a constante é 60; para x = 5, y = 60 / 5 = 12."
+     },
+     {
+      "titulo": "Bizu de prova",
+      "texto": "• Tabela de grandezas: teste y/x (constante = direta) e x . y (constante = inversa).\n• Gráfico de setores: percentual x 3,6° dá o ângulo.\n• Variação percentual: diferença dividida pelo valor de antes.\n• Leia a base: \"das mulheres\" é diferente de \"dos aprovados\"."
      }
     ]
    },
@@ -2011,11 +2050,11 @@
     "secoes": [
      {
       "titulo": "Formas",
-      "texto": "Figuras planas (duas dimensões):\n• Triângulo: 3 lados; a soma dos ângulos internos é 180°. Classificação por lados: equilátero (3 iguais), isósceles (2 iguais), escaleno (todos diferentes). Triângulo retângulo tem um ângulo de 90°.\n• Quadriláteros: 4 lados; soma dos ângulos internos 360°. Quadrado (4 lados iguais e 4 ângulos retos), retângulo (4 ângulos retos), losango (4 lados iguais), paralelogramo e trapézio (só um par de lados paralelos).\n• Círculo: todos os pontos a mesma distância (raio) do centro. Diâmetro = 2 x raio.\nSólidos (três dimensões): cubo, paralelepípedo (bloco retangular), prisma, pirâmide, cilindro, cone e esfera."
+      "texto": "Figuras planas (duas dimensões):\n• Triângulo: 3 lados; a soma dos ângulos internos é 180°. Classificação por lados: equilátero (3 iguais), isósceles (2 iguais), escaleno (todos diferentes). Triângulo retângulo tem um ângulo de 90°.\n• Quadriláteros: 4 lados; soma dos ângulos internos 360°. Quadrado (4 lados iguais e 4 ângulos retos), retângulo (4 ângulos retos), losango (4 lados iguais), paralelogramo e trapézio (só um par de lados paralelos).\n• Círculo: todos os pontos a mesma distância (raio) do centro. Diâmetro = 2 x raio."
      },
      {
       "titulo": "Perímetro",
-      "texto": "Perímetro é o comprimento do contorno: a soma de todos os lados. É medido em unidade de comprimento (m, cm).\n• Quadrado de lado L: P = 4L.\n• Retângulo de lados a e b: P = 2(a + b). Ex.: 12 m x 7 m tem P = 38 m.\n• Triângulo: soma dos três lados.\n• Circunferência de raio r: C = 2 x pi x r (use pi aproximadamente 3,14 ou o valor dado na questão).\nAplicações: cercas, rodapés, voltas em uma pista, arame para contornar um terreno."
+      "texto": "Perímetro é o comprimento do contorno: a soma de todos os lados. É medido em unidade de comprimento (m, cm).\n• Quadrado de lado L: P = 4L.\n• Retângulo de lados a e b: P = 2(a + b). Ex.: 12 m x 7 m tem P = 38 m.\n• Triângulo: soma dos três lados.\n• Circunferência de raio r: C = 2 x pi x r (use pi aproximadamente 3,14 ou o valor dado na questão)."
      },
      {
       "titulo": "Área",
@@ -2023,11 +2062,15 @@
      },
      {
       "titulo": "Volume",
-      "texto": "Volume mede o espaço ocupado, em unidade cúbica (m³, cm³).\n• Cubo de aresta a: V = a³. Ex.: aresta 40 cm: V = 64.000 cm³ = 64 dm³ = 64 L.\n• Paralelepípedo: V = comprimento x largura x altura.\n• Prisma e cilindro: V = área da base x altura. Cilindro: V = pi x r² x h.\nLembre: 1 dm³ = 1 L e 1 m³ = 1.000 L. Dobrando a aresta de um cubo, o volume fica 8 vezes maior."
+      "texto": "Volume mede o espaço ocupado, em unidade cúbica (m³, cm³).\n• Cubo de aresta a: V = a³. Ex.: aresta 40 cm: V = 64.000 cm³ = 64 dm³ = 64 L.\n• Paralelepípedo: V = comprimento x largura x altura.\nLembre: 1 dm³ = 1 L e 1 m³ = 1.000 L. Dobrando a aresta de um cubo, o volume fica 8 vezes maior."
      },
      {
       "titulo": "Teorema de Pitágoras",
-      "texto": "Vale apenas para triângulos retângulos. O lado oposto ao ângulo reto é a hipotenusa (o maior lado); os outros dois são os catetos.\nhipotenusa² = cateto² + cateto²\nExemplo: catetos 6 e 8: h² = 36 + 64 = 100, então h = 10.\nPara achar um cateto: cateto² = hipotenusa² - outro cateto². Ex.: hipotenusa 13 e cateto 5: c² = 169 - 25 = 144, c = 12.\nTernas pitagóricas que aparecem muito: 3, 4, 5; 5, 12, 13; 8, 15, 17 e seus múltiplos (6, 8, 10; 9, 12, 15).\nAplicações: escada apoiada no muro, diagonal de um retângulo, distância em linha reta."
+      "texto": "Vale apenas para triângulos retângulos. O lado oposto ao ângulo reto é a hipotenusa (o maior lado); os outros dois são os catetos.\nhipotenusa² = cateto² + cateto²\nExemplo: catetos 6 e 8: h² = 36 + 64 = 100, então h = 10.\nPara achar um cateto: cateto² = hipotenusa² - outro cateto². Ex.: hipotenusa 13 e cateto 5: c² = 169 - 25 = 144, c = 12.\nTernas pitagóricas que aparecem muito: 3, 4, 5; 5, 12, 13; 8, 15, 17 e seus múltiplos (6, 8, 10; 9, 12, 15)."
+     },
+     {
+      "titulo": "Bizu de prova",
+      "texto": "• Cerca, rodapé, moldura: perímetro. Piso, pintura, grama: área. Caixa-d'água: volume.\n• As ternas 3-4-5 e 5-12-13 resolvem Pitágoras quase sem conta (escada no muro, diagonal).\n• Área do triângulo: não esqueça de dividir por 2.\n• Volume em litros: 1 dm³ = 1 L."
      }
     ]
    },
@@ -2078,8 +2121,8 @@
       "filhos": [
        "Cubo a³",
        "Paralelepípedo",
-       "Cilindro",
-       "1 dm³ = 1 L"
+       "1 dm³ = 1 L",
+       "1 m³ = 1.000 L"
       ]
      },
      {
@@ -2213,6 +2256,10 @@
      {
       "titulo": "Problemas de associação e de verdade/mentira",
       "texto": "Associação: pessoas, profissões, cores, cidades. Monte uma tabela cruzando as informações e marque com X o que é impossível. Quando uma linha fica com uma só opção, ela é a certa, e essa opção sai das outras linhas.\nVerdade e mentira: suponha uma hipótese (por exemplo, \"o culpado é A\") e verifique quantas afirmações ficam verdadeiras. A hipótese correta é a que respeita a regra do enunciado (por exemplo, \"apenas um diz a verdade\"). Teste todas as hipóteses; normalmente só uma funciona.\nDica: comece pelas informações mais restritivas (\"Bia não é advogada nem médica\" já define Bia)."
+     },
+     {
+      "titulo": "Bizu de prova",
+      "texto": "• Negação de \"todo\" é \"algum... não\"; de \"Se A, então B\" é \"A e não B\".\n• Equivalente do \"se... então\": inverta e negue as duas partes (contrapositiva).\n• Associação: monte a tabela e comece pela pista mais fechada.\n• Verdade/mentira: teste um suspeito por vez e conte as frases verdadeiras."
      }
     ]
    },
@@ -2401,6 +2448,10 @@
      {
       "titulo": "Armadilhas mais comuns",
       "texto": "• Responder um valor intermediário (a questão pede o troco e você marca o total).\n• Misturar unidades (minutos com horas, metros com quilômetros).\n• Somar porcentagens sucessivas em vez de multiplicar os fatores.\n• Tratar como diretamente proporcionais grandezas que são inversas (operários e dias).\n• Ignorar palavras como \"restante\", \"a mais\", \"cada\", \"no total\".\nSempre releia a pergunta antes de marcar a alternativa."
+     },
+     {
+      "titulo": "Bizu de prova",
+      "texto": "• Releia a pergunta antes de marcar: troco ou total? motos ou carros?\n• Horários: trabalhe em minutos; passou de 24h, é o dia seguinte.\n• Combustível: litros = km : km por litro; custo = litros x preço.\n• Quando a conta travar, teste as alternativas."
      }
     ]
    },

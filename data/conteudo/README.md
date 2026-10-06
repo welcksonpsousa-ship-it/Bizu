@@ -5,6 +5,7 @@ Arquivos importados no site pela rota `POST /admin/importar` (um item por assunt
 - `pm_*.json`, `gcm_*.json`, `gerais_atualidades.json`, `constitucional_adm.json`: aulas, revisões, mapas mentais, flashcards e questões inéditas.
   Os três arquivos jurídicos (`constitucional_adm`, `gcm_guardas_penal`, `gcm_especial_dh_ctb`) já estão na versão auditada contra a lei vigente;
   os relatórios de cada alteração estão em `auditoria/`.
+- Todo o material foi revisado para o NÍVEL MÉDIO (critérios em `NIVEL.md`; relatórios em `nivel/`). A jurisprudência exibida no site é a de `juris_nivel.json`.
 - Lei seca:
   - `oficial.json`: artigos e jurisprudência já revisados (CF, CP, CPP e leis penais especiais).
   - `leis_drive.json`: artigos de leis compiladas, conferidos dispositivo a dispositivo com a publicação original no Senado Federal

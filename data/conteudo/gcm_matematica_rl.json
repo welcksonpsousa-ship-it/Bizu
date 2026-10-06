@@ -13,7 +13,7 @@
      },
      {
       "titulo": "Inteiros: operações, múltiplos e divisores",
-      "texto": "Regra de sinais na multiplicação e divisão: sinais iguais dão resultado positivo; sinais diferentes, negativo. Ex.: (−3) × (−4) = 12 e (−20) : 5 = −4.\nNa adição, sinais iguais: soma e conserva o sinal; sinais diferentes: subtrai e fica com o sinal do maior em módulo. Ex.: −7 + 3 = −4.\nMúltiplos de um número: resultados da multiplicação dele por 0, 1, 2, 3... (múltiplos de 6: 0, 6, 12, 18...).\nDivisores: números que o dividem sem deixar resto (divisores de 12: 1, 2, 3, 4, 6, 12).\nCritérios de divisibilidade úteis: por 2 (termina em par), por 3 (soma dos algarismos divisível por 3), por 5 (termina em 0 ou 5), por 10 (termina em 0).\nQuantidade de divisores: fatore o número, some 1 a cada expoente e multiplique. Ex.: 36 = 2² × 3² → (2+1)(2+1) = 9 divisores."
+      "texto": "Regra de sinais na multiplicação e divisão: sinais iguais dão resultado positivo; sinais diferentes, negativo. Ex.: (−3) × (−4) = 12 e (−20) : 5 = −4.\nNa adição, sinais iguais: soma e conserva o sinal; sinais diferentes: subtrai e fica com o sinal do maior em módulo. Ex.: −7 + 3 = −4.\nMúltiplos de um número: resultados da multiplicação dele por 0, 1, 2, 3... (múltiplos de 6: 0, 6, 12, 18...).\nDivisores: números que o dividem sem deixar resto (divisores de 12: 1, 2, 3, 4, 6, 12).\nCritérios de divisibilidade úteis: por 2 (termina em par), por 3 (soma dos algarismos divisível por 3), por 5 (termina em 0 ou 5), por 10 (termina em 0).\nQuantidade de divisores: fatore o número, some 1 a cada expoente e multiplique. Ex.: 36 = 2² × 3² → (2+1)(2+1) = 9 divisores. Para números pequenos, também dá para simplesmente listar: 1, 2, 3, 4, 6, 9, 12, 18, 36."
      },
      {
       "titulo": "Frações e decimais",
@@ -22,6 +22,10 @@
      {
       "titulo": "Potenciação e radiciação",
       "texto": "Potência: aⁿ é a multiplicada por ela mesma n vezes (2⁴ = 16).\nPropriedades principais:\n• aᵐ · aⁿ = aᵐ⁺ⁿ e aᵐ : aⁿ = aᵐ⁻ⁿ\n• (aᵐ)ⁿ = aᵐ·ⁿ\n• a⁰ = 1 (a ≠ 0) e a⁻ⁿ = 1/aⁿ\n• Base negativa: expoente par dá resultado positivo; ímpar, negativo. Atenção: (−2)² = 4, mas −2² = −4.\nRaiz: √a é o número que, elevado ao quadrado, dá a. √(a·b) = √a · √b. Memorize os quadrados de 1 a 15 (1, 4, 9, ..., 144, 169, 196, 225).\nOrdem das operações: parênteses → potências e raízes → multiplicação e divisão → adição e subtração."
+     },
+     {
+      "titulo": "Bizu de prova",
+      "texto": "• O que mais cai: expressões com potência e raiz, frações em problemas de salário e a pergunta \"qual número é irracional?\".\n• Raiz exata (√49, √0,16) é racional; raiz não exata (√2, √3) é irracional.\n• (−2)² = 4, mas −2² = −4.\n• \"Fração do que sobra\": multiplique as frações (1/3 de 3/5 = 1/5)."
      }
     ]
    },
@@ -208,6 +212,10 @@
      {
       "titulo": "Exemplo resolvido",
       "texto": "Uma escala tem guardas que folgam a cada 4 dias e outros a cada 6 dias. Se hoje todos folgaram juntos, a próxima folga comum será daqui a MMC(4, 6) = 12 dias.\nJá para montar kits iguais com 24 apitos e 36 lanternas, usando todo o material e o maior número de kits: MDC(24, 36) = 12 kits, cada um com 2 apitos e 3 lanternas."
+     },
+     {
+      "titulo": "Bizu de prova",
+      "texto": "• \"Voltam a se encontrar\", \"saem juntos de novo\" → MMC. \"Maior pedaço\", \"maior número de kits\", \"sem sobras\" → MDC.\n• MMC dá resultado maior ou igual aos números; MDC, menor ou igual.\n• MMC em minutos e a questão pede horário? Converta e some ao horário inicial.\n• Em cortes, confira se pedem o tamanho do pedaço ou o número de pedaços."
      }
     ]
    },
@@ -384,6 +392,10 @@
      {
       "titulo": "Problemas com idades e quantidades",
       "texto": "Quando o problema dá uma razão e uma condição extra, chame as quantidades de 3k e 4k (por exemplo) e monte uma equação.\nEx.: idades na razão 3:4 hoje e 4:5 daqui a 5 anos → (3k + 5)/(4k + 5) = 4/5 → k = 5 → idades 15 e 20.\nEsse recurso da constante k evita trabalhar com duas incógnitas."
+     },
+     {
+      "titulo": "Bizu de prova",
+      "texto": "• Antes de montar a razão, ponha tudo na mesma unidade (15 min para 2 h = 15/120).\n• \"Na razão 3 para 2, total 40\": divida 40 por 5 partes e multiplique.\n• Divisão inversa: quem tem o maior número recebe a menor parte.\n• Some as partes no final: tem de dar o total."
      }
     ]
    },
@@ -560,6 +572,10 @@
      {
       "titulo": "Exemplo completo de composta",
       "texto": "Uma equipe de 8 operários, 6 horas por dia, termina uma obra em 15 dias. Quantos dias levariam 10 operários trabalhando 8 horas por dia?\n• Mais operários → menos dias (inversa).\n• Mais horas por dia → menos dias (inversa).\n• x = 15 × (8/10) × (6/8) = 9 dias.\nConferência: 8 × 6 × 15 = 720 horas de trabalho; 10 × 8 × 9 = 720. Bateu, a resposta está certa.\nSe o serviço também mudasse (por exemplo, o dobro da obra), multiplicaríamos ainda por 2, pois quantidade de serviço e dias são diretamente proporcionais."
+     },
+     {
+      "titulo": "Bizu de prova",
+      "texto": "• Primeiro classifique: \"mais guardas, menos horas\" é inversa; \"mais dias, mais muro\" é direta.\n• Na composta, compare cada grandeza só com a coluna do x.\n• Problemas de trabalho: pessoas × horas por dia × dias é constante (horas-homem) e serve para conferir.\n• 1 min 30 s = 90 s, e não 130 s."
      }
     ]
    },
@@ -736,6 +752,10 @@
      {
       "titulo": "Porcentagem de porcentagem e armadilhas",
       "texto": "\"20% de 30%\" é 0,20 × 0,30 = 0,06 = 6%. Ex.: 30% dos guardas de um grupo são do turno da noite e, desses, 20% são motoristas → 6% do grupo inteiro.\nArmadilhas típicas da banca:\n• Somar percentuais que incidem sobre bases diferentes.\n• Confundir \"pontos percentuais\" com porcentagem: uma taxa que sobe de 10% para 12% subiu 2 pontos percentuais, mas 20% em termos relativos.\n• Calcular desconto sobre o preço final em vez do preço original.\nLer com calma \"de quê\" é cada porcentagem resolve metade da questão."
+     },
+     {
+      "titulo": "Bizu de prova",
+      "texto": "• Fator resolve quase tudo: +25% é × 1,25; −15% é × 0,85.\n• Aumentos/descontos seguidos: multiplique os fatores (+10% e +20% = +32%).\n• Preço antes do desconto: divida pelo fator (170 : 0,85 = 200), nunca some a taxa ao preço pago.\n• A base da variação percentual é o valor antigo."
      }
     ]
    },
@@ -816,7 +836,7 @@
    "questoes": [
     {
      "subassunto": null,
-     "enunciado": "Quanto é 15% de 240?",
+     "enunciado": "Uma guarda municipal tem 240 integrantes, dos quais 15% trabalham no turno da noite. Quantos guardas trabalham à noite?",
      "opcoes": [
       "12",
       "18",
@@ -825,7 +845,7 @@
       "36"
      ],
      "gabarito": 4,
-     "comentario": "15% de 240 = 0,15 × 240 = 36. Outra forma: 10% de 240 = 24 e 5% = 12; somando, 36. As alternativas 24 e 12 são apenas 10% e 5%.",
+     "comentario": "15% de 240 = 0,15 × 240 = 36. Atalho: 10% de 240 = 24 e 5% = 12; somando, 36. As alternativas 24 e 12 correspondem só a 10% e a 5%; 18 e 30 não correspondem a 15%.",
      "dificuldade": "facil"
     },
     {
@@ -908,6 +928,10 @@
      {
       "titulo": "Situações clássicas",
       "texto": "• Capital dobra: juros = capital → i · t = 1 (100%). A 5% ao mês, dobra em 20 meses.\n• Capital triplica: juros = 2 × capital → i · t = 2 (200%).\n• Comparar duas aplicações: calcule o montante de cada uma e compare.\n• Descobrir a taxa: divida os juros pelo capital (taxa do período todo) e depois pelo tempo.\nEx.: R$ 1.200 renderam R$ 216 em 6 meses → 216/1.200 = 18% no período → 3% ao mês.\nDiferença para os juros compostos: nos compostos, os juros de cada mês entram no cálculo do mês seguinte (\"juros sobre juros\"). Nos simples, isso não acontece."
+     },
+     {
+      "titulo": "Bizu de prova",
+      "texto": "• Fórmula única: J = C × i × t, com a taxa em decimal (3% = 0,03). Montante = capital + juros.\n• Taxa e tempo na mesma unidade: 24% ao ano = 2% ao mês.\n• Capital dobra quando os juros somam 100%: a 5% ao mês, 20 meses.\n• Atenção ao que se pede: juros ou montante?"
      }
     ]
    },
@@ -1000,7 +1024,7 @@
       "R$ 600,00"
      ],
      "gabarito": 0,
-     "comentario": "J = C · i · t = 2.000 × 0,03 × 6 = R$ 360,00. R$ 60,00 é o juro de apenas um mês; R$ 300,00 seria o juro de 5 meses; as demais não correspondem à fórmula.",
+     "comentario": "J = C · i · t = 2.000 × 0,03 × 6 = R$ 360,00. R$ 300,00 seria o juro de apenas 5 meses; R$ 600,00 usa 5% em vez de 3%; R$ 330,00 e R$ 450,00 não correspondem à fórmula.",
      "dificuldade": "facil"
     },
     {
@@ -1083,6 +1107,10 @@
      {
       "titulo": "Sistemas de equações do 1º grau",
       "texto": "Duas equações e duas incógnitas. Métodos:\n• Adição: some ou subtraia as equações para eliminar uma incógnita. Ex.: h + m = 30 e h − m = 6 → 2h = 36 → h = 18, m = 12.\n• Substituição: isole uma incógnita em uma equação e substitua na outra.\nProblema típico: \"em um estacionamento há carros e motos, 20 veículos e 56 rodas\" → c + m = 20 e 4c + 2m = 56 → c = 8 e m = 12.\nConfira sempre nas DUAS equações."
+     },
+     {
+      "titulo": "Bizu de prova",
+      "texto": "• 1º grau: troque de lado com a operação inversa e confira substituindo.\n• 2º grau: muitas vezes basta soma e produto (x² − 5x + 6 = 0 → raízes 2 e 3).\n• Em problemas de medida ou idade, descarte a raiz negativa.\n• Sistema \"total e diferença\": some as equações e divida por 2."
      }
     ]
    },
@@ -1230,7 +1258,7 @@
       "44 m"
      ],
      "gabarito": 3,
-     "comentario": "Largura x e comprimento x + 4: x(x + 4) = 96 → x² + 4x − 96 = 0. Δ = 16 + 384 = 400; x = (−4 + 20)/2 = 8 (a raiz negativa −12 não serve para medida). Lados 8 m e 12 m; perímetro = 2 × (8 + 12) = 40 m. 20 m seria só a soma de dois lados.",
+     "comentario": "Largura x e comprimento x + 4: x(x + 4) = 96 → x² + 4x − 96 = 0. Δ = 16 + 384 = 400; x = (−4 + 20)/2 = 8 (a raiz negativa −12 não serve para medida). Lados 8 m e 12 m; perímetro = 2 × (8 + 12) = 40 m. Erros comuns: confundir perímetro com área ou somar os lados uma vez só (8 + 12 = 20 m).",
      "dificuldade": "dificil"
     }
    ]
@@ -1261,6 +1289,10 @@
      {
       "titulo": "Aplicações no cotidiano urbano",
       "texto": "• Consumo de água: leitura em m³ na conta; 1 m³ = 1.000 L.\n• Velocidade: 60 km/h significa 1 km por minuto; para passar de km/h a m/s, divida por 3,6.\n• Terrenos e praças: áreas em m² ou hectares.\n• Cargas: toneladas e quilos; embalagens em g e mL.\nDica: converta tudo para a mesma unidade ANTES de somar, comparar ou dividir."
+     },
+     {
+      "titulo": "Bizu de prova",
+      "texto": "• Comprimento, massa e capacidade: de 10 em 10. Área: de 100 em 100. Volume: de 1.000 em 1.000.\n• Decore: 1 m³ = 1.000 L; 1 dm³ = 1 L; 1 ha = 10.000 m²; 1 km² = 1.000.000 m².\n• Tempo é de 60 em 60: 1,5 h = 1 h 30 min.\n• Plantão que vira a meia-noite: conte até 24h e depois some o resto."
      }
     ]
    },
@@ -1402,7 +1434,7 @@
       "50.000 m²"
      ],
      "gabarito": 4,
-     "comentario": "1 km² = 1.000 m × 1.000 m = 1.000.000 m². Logo, 0,05 km² = 0,05 × 1.000.000 = 50.000 m². Usar fatores errados (1.000 ou 100.000, por exemplo) leva a valores como 50 m² ou 5.000 m²; lembre que na área o fator entre km e m é 1.000 × 1.000.",
+     "comentario": "1 km² = 1.000 m × 1.000 m = 1.000.000 m². Logo, 0,05 km² = 0,05 × 1.000.000 = 50.000 m². Quem usa fator 100.000 chega a 5.000 m²; quem usa 10.000.000, a 500.000 m². Lembre: na área, o fator entre km e m é 1.000 × 1.000.",
      "dificuldade": "media"
     },
     {
@@ -1447,6 +1479,10 @@
      {
       "titulo": "Exemplo resolvido",
       "texto": "Tabela de ocorrências: janeiro 12, fevereiro 18, março 15, abril 9.\n• Total: 54. Média mensal: 54 : 4 = 13,5.\n• Mês com mais ocorrências: fevereiro; com menos: abril.\n• Participação de fevereiro no total: 18/54 = 1/3 ≈ 33%.\n• Variação de março para abril: de 15 para 9, queda de 6 ocorrências, isto é, 40% (6/15)."
+     },
+     {
+      "titulo": "Bizu de prova",
+      "texto": "• Média: soma ÷ quantidade. Soma = média × quantidade resolve \"nota que falta\" e \"valor retirado\".\n• Retirou um valor? Diminua a soma E a quantidade.\n• Setores: ângulo = porcentagem × 360° (25% → 90°).\n• Leia a unidade da tabela (milhares? %) e não conclua além do que o gráfico mostra."
      }
     ]
    },
@@ -1624,6 +1660,10 @@
      {
       "titulo": "Teorema de Tales",
       "texto": "Um feixe de retas paralelas cortado por duas transversais determina segmentos proporcionais.\nEx.: segmentos 4 e 6 numa transversal correspondem a 10 e x na outra → 4/6 = 10/x → x = 15.\nConsequência prática: semelhança de triângulos. Um poste que projeta sombra de 6 m ao lado de uma pessoa de 1,80 m com sombra de 1,20 m tem altura h: h/6 = 1,80/1,20 → h = 9 m."
+     },
+     {
+      "titulo": "Bizu de prova",
+      "texto": "• Perímetro (cerca, contorno) é diferente de área (piso, grama).\n• Complementares somam 90°; suplementares, 180°.\n• Escada no muro e diagonal: Pitágoras; as ternas 3-4-5 e 6-8-10 resolvem rápido.\n• Sombra e altura: proporção (Tales/semelhança). Área do triângulo: divida por 2."
      }
     ]
    },
@@ -1810,6 +1850,10 @@
      {
       "titulo": "Ordem de grandeza e bom senso",
       "texto": "Antes de marcar a resposta, pergunte-se: \"esse número é razoável?\".\n• Um carro não anda a 900 km/h; uma pessoa não pesa 7 kg.\n• Se o preço de 3 produtos de cerca de R$ 20 deu R$ 600, houve erro de vírgula.\nTrabalhar com potências de 10 ajuda: 0,49 × 802 : 0,199 ≈ 0,5 × 800 : 0,2 = 2.000.\nNa prova, quando as alternativas estão bem espaçadas (100, 1.000, 10.000), a estimativa sozinha resolve a questão em segundos."
+     },
+     {
+      "titulo": "Bizu de prova",
+      "texto": "• Arredondar: olhe só o algarismo à direita da casa pedida; 5 ou mais sobe.\n• Truncar é cortar sem arredondar.\n• Alternativas muito espaçadas (100, 1.000, 10.000)? Estime e marque.\n• Raiz não exata: ache os quadrados perfeitos vizinhos (49 < 50 < 64)."
      }
     ]
    },
@@ -1987,6 +2031,10 @@
      {
       "titulo": "Exemplo de trás para frente",
       "texto": "Um guarda gastou metade do dinheiro que tinha no almoço e depois R$ 10,00 no estacionamento, ficando com R$ 25,00. Quanto tinha no início?\nDesfazendo as operações na ordem inversa:\n• Antes do estacionamento: 25 + 10 = R$ 35,00.\n• Antes do almoço (que levou metade): 35 × 2 = R$ 70,00.\nConferindo: 70 : 2 = 35; 35 − 10 = 25. Certo.\nErros mais comuns nas provas: não ler a pergunta até o fim, responder um resultado intermediário (a alternativa \"pegadinha\" costuma ser exatamente ele) e esquecer de converter unidades."
+     },
+     {
+      "titulo": "Bizu de prova",
+      "texto": "• Anote cada resultado parcial com a unidade: a \"pegadinha\" costuma ser um valor intermediário.\n• \"Do restante\": a fração vale sobre o que sobrou.\n• Tarifa fixa + valor por km: tire a parte fixa antes de dividir.\n• Sabe o final e as etapas? Resolva de trás para frente."
      }
     ]
    },
@@ -2149,7 +2197,7 @@
     "secoes": [
      {
       "titulo": "Proposição",
-      "texto": "Proposição é toda frase declarativa que pode ser classificada como verdadeira (V) ou falsa (F), mas não as duas coisas ao mesmo tempo.\nSão proposições: \"Brasília é a capital do Brasil\" (V); \"2 + 2 = 5\" (F).\nNÃO são proposições: perguntas (\"Que horas são?\"), ordens (\"Feche a porta\"), exclamações (\"Que calor!\") e sentenças abertas (\"x + 2 = 5\", \"Ele é guarda\"), cujo valor depende de quem ou do que é x.\nProposições simples são representadas por letras (p, q, r). Proposições compostas unem simples por conectivos."
+      "texto": "Proposição é toda frase declarativa que pode ser classificada como verdadeira (V) ou falsa (F), mas não as duas coisas ao mesmo tempo.\nSão proposições: \"Brasília é a capital do Brasil\" (V); \"2 + 2 = 5\" (F).\nNÃO são proposições: perguntas (\"Que horas são?\"), ordens (\"Feche a porta\"), exclamações (\"Que calor!\") e sentenças abertas (\"x + 2 = 5\", \"Ele é guarda\"), cujo valor depende de quem ou do que é x.\nProposições simples são representadas por letras (p, q, r). Proposições compostas unem simples por conectivos. Símbolos: ~ (não), ∧ (e), ∨ (ou), → (se... então), ↔ (se e somente se)."
      },
      {
       "titulo": "Conectivos e tabela-verdade",
@@ -2157,11 +2205,15 @@
      },
      {
       "titulo": "Negações (Leis de De Morgan)",
-      "texto": "• ~(p ∧ q) ≡ ~p ∨ ~q → nega as duas partes e troca \"e\" por \"ou\".\n• ~(p ∨ q) ≡ ~p ∧ ~q → nega as duas partes e troca \"ou\" por \"e\".\n• ~(p → q) ≡ p ∧ ~q → mantém a primeira, nega a segunda e usa \"e\". (\"Mané\": MAntém E NEga.)\n• ~(p ↔ q) equivale à disjunção exclusiva.\nNegação de quantificadores: \"Todo guarda é pontual\" nega-se com \"Algum guarda não é pontual\"; \"Nenhum...\" nega-se com \"Algum...\"."
+      "texto": "• ~(p ∧ q) ≡ ~p ∨ ~q → nega as duas partes e troca \"e\" por \"ou\".\n• ~(p ∨ q) ≡ ~p ∧ ~q → nega as duas partes e troca \"ou\" por \"e\".\n• ~(p → q) ≡ p ∧ ~q → mantém a primeira, nega a segunda e usa \"e\". (\"Mané\": MAntém E NEga.)\nNegação de quantificadores: \"Todo guarda é pontual\" nega-se com \"Algum guarda não é pontual\"; \"Nenhum...\" nega-se com \"Algum...\"."
      },
      {
       "titulo": "Equivalências da condicional",
       "texto": "p → q é equivalente a:\n• ~q → ~p (contrapositiva: inverte e nega as duas).\n• ~p ∨ q (troca por \"ou\", negando a primeira).\nNÃO são equivalentes à condicional: a recíproca (q → p) e a inversa (~p → ~q).\nTautologia: proposição sempre V (ex.: p ∨ ~p). Contradição: sempre F (ex.: p ∧ ~p). Contingência: pode ser V ou F.\nNa dúvida sobre uma equivalência, monte a tabela-verdade das duas proposições: se as colunas finais forem idênticas, são equivalentes."
+     },
+     {
+      "titulo": "Bizu de prova",
+      "texto": "• Condicional (se... então) só é falsa em V → F. É a regra que mais cai.\n• Negar \"e\": nega as duas partes e troca por \"ou\". Negar \"ou\": nega as duas e troca por \"e\".\n• Negar \"Se A, então B\": \"A e não B\".\n• Equivalente de \"Se A, então B\": \"Se não B, então não A\". Cuidado: \"Se B, então A\" NÃO é equivalente."
      }
     ]
    },
@@ -2336,8 +2388,8 @@
       "texto": "Argumento é um conjunto de premissas (informações dadas como verdadeiras) seguido de uma conclusão.\nArgumento VÁLIDO: sempre que todas as premissas forem verdadeiras, a conclusão também será, obrigatoriamente.\nImportante: validade trata da FORMA do raciocínio, não do conteúdo. Na prova, aceite as premissas como verdadeiras, mesmo que pareçam estranhas, e não use conhecimentos de fora.\nArgumento inválido (sofisma ou falácia): as premissas podem ser verdadeiras e a conclusão falsa."
      },
      {
-      "titulo": "Regras de inferência que mais caem",
-      "texto": "• Modus ponens: p → q; p; logo q. (\"Se estuda, passa. Estudou. Logo, passa.\")\n• Modus tollens: p → q; ~q; logo ~p. (\"Se há evento, a praça fecha. Não fechou. Logo, não há evento.\")\n• Silogismo disjuntivo: p ∨ q; ~q; logo p.\n• Silogismo hipotético (encadeamento): p → q; q → r; logo p → r.\nFalácias clássicas:\n• Afirmar o consequente: p → q; q; logo p. (INVÁLIDO)\n• Negar o antecedente: p → q; ~p; logo ~q. (INVÁLIDO)"
+      "titulo": "Regras que mais caem",
+      "texto": "• Afirmar a primeira parte: \"Se estuda, passa. Estudou.\" Logo, passa. (os livros chamam de modus ponens)\n• Negar a segunda parte: \"Se há evento, a praça fecha. Não fechou.\" Logo, não há evento. (modus tollens)\n• \"Ou\" com uma parte falsa: \"Está na base ou na ronda. Não está na ronda.\" Logo, está na base.\n• Encadeamento: \"Se A, então B\" e \"Se B, então C\" → \"Se A, então C\".\nRaciocínios ERRADOS (falácias) que a banca usa como pegadinha:\n• Afirmar a segunda parte: \"Se estuda, passa. Passou.\" NÃO se conclui que estudou.\n• Negar a primeira parte: \"Se estuda, passa. Não estudou.\" NÃO se conclui que não passou."
      },
      {
       "titulo": "Método prático para achar a conclusão",
@@ -2350,6 +2402,10 @@
      {
       "titulo": "Cuidados na prova",
       "texto": "• Não confunda conclusão VERDADEIRA no mundo real com conclusão VÁLIDA a partir das premissas. A banca coloca alternativas \"de bom senso\" que não decorrem do texto.\n• \"Pelo menos um\", \"algum\" e \"existe\" dizem a mesma coisa em lógica.\n• \"Somente se\" indica condição necessária: \"p somente se q\" equivale a \"se p, então q\".\n• Leia cada alternativa como um teste: ela é obrigatória em todos os cenários em que as premissas são verdadeiras?"
+     },
+     {
+      "titulo": "Bizu de prova",
+      "texto": "• Aceite as premissas como verdadeiras, mesmo que pareçam absurdas; não use conhecimento de fora.\n• Comece SEMPRE pela premissa simples (sem \"se\", \"e\", \"ou\").\n• Alternativa \"de bom senso\" que não decorre das premissas está errada.\n• \"Todo A é B\" não permite concluir \"todo B é A\"."
      }
     ]
    },
@@ -2357,9 +2413,9 @@
     "pontos": [
      "Válido = premissas V garantem conclusão V.",
      "Aceite as premissas como verdadeiras, sem usar conhecimento externo.",
-     "Modus ponens: p → q, p ⊢ q.",
-     "Modus tollens: p → q, ~q ⊢ ~p.",
-     "Afirmar o consequente e negar o antecedente são falácias.",
+     "Se A então B; A aconteceu → B acontece.",
+     "Se A então B; B não aconteceu → A não aconteceu.",
+     "Afirmar a segunda parte ou negar a primeira NÃO leva a conclusão válida.",
      "Comece pela premissa simples.",
      "Condicional com consequente F exige antecedente F.",
      "'Todo A é B' não significa 'todo B é A'."
@@ -2379,9 +2435,9 @@
      {
       "label": "Regras válidas",
       "filhos": [
-       "Modus ponens",
-       "Modus tollens",
-       "Silogismo disjuntivo",
+       "Afirmar a 1ª parte",
+       "Negar a 2ª parte",
+       "Ou com uma parte falsa",
        "Encadeamento"
       ]
      },
@@ -2408,12 +2464,12 @@
      "resposta": "Se as premissas são V, a conclusão é necessariamente V."
     },
     {
-     "pergunta": "De 'p → q' e '~q', o que se conclui?",
-     "resposta": "~p (modus tollens)."
+     "pergunta": "De 'Se p, então q' e 'não q', o que se conclui?",
+     "resposta": "Não p (negando a segunda parte, nega-se a primeira)."
     },
     {
-     "pergunta": "De 'p → q' e 'q', pode-se concluir p?",
-     "resposta": "Não; é a falácia de afirmar o consequente."
+     "pergunta": "De 'Se p, então q' e 'q', pode-se concluir p?",
+     "resposta": "Não. Afirmar a segunda parte não garante a primeira (falácia)."
     },
     {
      "pergunta": "Por onde começar a resolver um encadeamento de premissas?",
@@ -2523,6 +2579,10 @@
      {
       "titulo": "Contagem com três conjuntos",
       "texto": "Comece pela região central (os três), depois as interseções de dois (descontando o centro) e, por último, o \"somente\".\nEx.: A = 50, B = 40, C = 30; A∩B = 15, A∩C = 10, B∩C = 8; A∩B∩C = 5.\n• A e B, sem C: 10. A e C, sem B: 5. B e C, sem A: 3.\n• Só A: 50 − 10 − 5 − 5 = 30. Só B: 40 − 10 − 3 − 5 = 22. Só C: 30 − 5 − 3 − 5 = 17.\n• União: 30 + 22 + 17 + 10 + 5 + 3 + 5 = 92.\nFórmula: n(A∪B∪C) = A + B + C − (A∩B) − (A∩C) − (B∩C) + (A∩B∩C)."
+     },
+     {
+      "titulo": "Bizu de prova",
+      "texto": "• Desenhe! \"Todo\" = círculo dentro; \"nenhum\" = círculos separados; \"algum\" = círculos cruzados.\n• Contagem: preencha do centro (interseção) para fora.\n• União de dois: A + B − ambos. Quem não está em nenhum = total − união.\n• Erro clássico: somar A + B sem tirar quem está nos dois."
      }
     ]
    },
@@ -2693,6 +2753,10 @@
      {
       "titulo": "Raciocínio sequencial",
       "texto": "São questões de figuras, posições ou ações encadeadas: \"o que vem depois?\", \"qual está fora do padrão?\".\nDicas:\n• Observe mais de uma característica: forma, cor, quantidade, rotação, posição.\n• Uma figura que gira 90° a cada passo volta à posição inicial após 4 passos.\n• Escreva a sequência até perceber a repetição; não tente adivinhar de cabeça.\n• Teste o padrão encontrado em TODOS os termos dados antes de responder.\n• Se dois padrões parecem servir, prefira o mais simples que explique todos os termos."
+     },
+     {
+      "titulo": "Bizu de prova",
+      "texto": "• Calcule a diferença entre vizinhos; se não for constante, teste multiplicação ou diferenças crescentes.\n• Letras: troque por números (A = 1, B = 2...) e confira se o alfabeto tem 26 letras.\n• Padrão que se repete: divida a posição pelo tamanho do ciclo e use o resto (resto 0 = último).\n• Teste o padrão em todos os termos antes de marcar."
      }
     ]
    },
@@ -2871,6 +2935,10 @@
      {
       "titulo": "Dicas finais",
       "texto": "• Não use conhecimento externo nem \"achismo\": só o que as pistas garantem.\n• Se ao final restarem duas possibilidades, releia as pistas: provavelmente alguma não foi usada.\n• Nas alternativas, marque apenas o que é necessariamente verdadeiro na solução encontrada."
+     },
+     {
+      "titulo": "Bizu de prova",
+      "texto": "• Associação: monte a tabela e marque X no que é proibido; sobrou uma opção, ela é a certa.\n• Fila: preencha primeiro as posições fixas (primeiro, último).\n• \"Imediatamente atrás\" exige vizinhos.\n• Verdade/mentira: teste um culpado por vez e conte quantas falas ficam verdadeiras."
      }
     ]
    },
@@ -3047,6 +3115,10 @@
      {
       "titulo": "Calendário",
       "texto": "Meses com 31 dias: janeiro, março, maio, julho, agosto, outubro e dezembro. Com 30: abril, junho, setembro e novembro. Fevereiro: 28 dias (29 em ano bissexto).\nAno comum: 365 dias = 52 semanas + 1 dia (o mesmo dia do ano \"anda\" um dia da semana). Ano bissexto: 366 dias.\nEx.: se 1º de março é segunda, 1º de maio vem 61 dias depois → resto 5 → sábado."
+     },
+     {
+      "titulo": "Bizu de prova",
+      "texto": "• Direita = sentido horário (N → L → S → O); esquerda = anti-horário.\n• Deslocamentos: some Norte com Sul e Leste com Oeste separadamente.\n• Dias da semana: divida por 7 e use o resto.\n• \"Anteontem\" = hoje − 2: descubra primeiro que dia é hoje."
      }
     ]
    },
@@ -3233,6 +3305,10 @@
      {
       "titulo": "Exemplo comentado",
       "texto": "Grupo de letras: AZ, BY, CX, DW, EU. Qual par é o intruso?\n• Posições: A = 1 e Z = 26; B = 2 e Y = 25; C = 3 e X = 24; D = 4 e W = 23.\n• A regra: a soma das posições é sempre 27 (a 1ª com a última, a 2ª com a penúltima...).\n• E = 5 deveria formar par com a letra 22, que é V. Como o par é EU (U = 21), ele é o intruso.\nPerceba o método: transformar em números, descobrir a regra nos quatro que \"combinam\" e checar o que sobra."
+     },
+     {
+      "titulo": "Bizu de prova",
+      "texto": "• Procure a característica que vale para quatro e falha em só um.\n• Números: teste par/ímpar, primo, quadrado perfeito, múltiplo.\n• Analogia: descubra a relação do 1º par (profissional → local, parte → todo) e repita.\n• Cuidado com a resposta que \"tem a ver\" mas não mantém a mesma relação."
      }
     ]
    },
@@ -3312,16 +3388,16 @@
    "questoes": [
     {
      "subassunto": null,
-     "enunciado": "Qual das palavras a seguir NÃO pertence ao mesmo grupo das demais?",
+     "enunciado": "Qual dos animais a seguir NÃO pertence ao mesmo grupo dos demais?",
      "opcoes": [
-      "Maçã",
-      "Cadeira",
-      "Mesa",
-      "Sofá",
-      "Armário"
+      "Galinha",
+      "Cachorro",
+      "Cavalo",
+      "Baleia",
+      "Gato"
      ],
      "gabarito": 0,
-     "comentario": "Cadeira, mesa, sofá e armário são móveis. Maçã é uma fruta, portanto é o elemento que não pertence ao grupo.",
+     "comentario": "Cachorro, cavalo, baleia e gato são mamíferos (mamam quando filhotes). A galinha é uma ave. Cuidado com a baleia: apesar de viver na água, é mamífero, e não peixe; por isso ela pertence ao grupo.",
      "dificuldade": "facil"
     },
     {
@@ -3408,6 +3484,10 @@
      {
       "titulo": "Exemplo completo",
       "texto": "Carro A: 360 km com 30 L. Carro B: 420 km com 40 L. Viagem de 840 km, litro a R$ 6,00.\n• Rendimento: A = 12 km/L; B = 10,5 km/L. O A é mais econômico.\n• Litros na viagem: A = 70 L; B = 80 L.\n• Custo: A = R$ 420,00; B = R$ 480,00. Diferença: R$ 60,00.\nNote que olhar só os litros dos percursos originais (30 × 40) enganaria, porque as distâncias eram diferentes: é preciso comparar na mesma base."
+     },
+     {
+      "titulo": "Bizu de prova",
+      "texto": "• Reduza à unidade: quanto por 1 kg, por 1 litro, por 1 guarda.\n• Compare taxas, não totais: maior total não é maior média.\n• Consumo: litros = distância ÷ km/L; maior km/L = mais econômico.\n• Converta unidades (g × kg, semana × mês) antes de comparar."
      }
     ]
    },
