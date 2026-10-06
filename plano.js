@@ -32,6 +32,8 @@
       'Legislação Municipal': 2,
     },
   };
+  // Matérias que dependem do município do aluno: só entram no plano quando não há mais nada com lacuna.
+  const LOCAIS = new Set(['Legislação Municipal']);
   const ROTULO = { A: '1ª matéria', B: '2ª matéria', C: '3ª matéria' };
   const PAPEL_DESC = { A: 'maior peso na prova', B: 'peso médio', C: 'menor peso' };
 
@@ -74,7 +76,7 @@
       const n = assuntos.length;
       const gapMedio = n ? assuntos.reduce((s, x) => s + x.gap, 0) / n : 0;
       const total = assuntos.reduce((s, x) => s + x.total, 0), acertos = assuntos.reduce((s, x) => s + x.acertos, 0);
-      return { di, ord: i, peso: p.peso, estimado: p.estimado, assuntos, gapMedio, ganho: p.peso * gapMedio,
+      return { di, ord: i, local: LOCAIS.has(di.nome), peso: p.peso, estimado: p.estimado, assuntos, gapMedio, ganho: p.peso * gapMedio,
         novos: assuntos.filter((x) => x.tipo === 'novo').length, total, acertos, acc: total ? acertos / total : null };
     });
     const totalPeso = discs.reduce((s, d) => s + d.peso, 0) || 1;
@@ -191,7 +193,8 @@
     const B = al.B ? base.find((d) => d !== A) || null : null;
     let C = null;
     if (al.C) {
-      const cand = base.filter((d) => d !== A && d !== B && d.gapMedio >= 0.3);
+      const cand0 = base.filter((d) => d !== A && d !== B && d.gapMedio >= 0.3);
+      const cand = cand0.some((d) => !d.local) ? cand0.filter((d) => !d.local) : cand0;
       C = cand.sort((x, y) => x.peso - y.peso || y.gapMedio - x.gapMedio)[0] || null;   // a menos importante que ainda tem lacuna
     }
     // tempo de matérias que não existem volta para a principal
@@ -240,9 +243,11 @@
       rr[p.di.id] -= total; return p;
     };
     const escolher = (papel, usados, rr) => {
-      let c = an.discs.filter((d) => d.tier === papel && !usados.has(d.di.id) && d.gapMedio >= 0.15 && d.assuntos.length);
+      let c = an.discs.filter((d) => d.tier === papel && !usados.has(d.di.id) && d.gapMedio >= 0.15 && d.assuntos.length && !d.local);
       if (!c.length) {
         c = an.discs.filter((d) => !usados.has(d.di.id) && d.gapMedio >= 0.15 && d.assuntos.length);
+        c.sort((x, y) => (x.local ? 1 : 0) - (y.local ? 1 : 0) || 0);
+        const semLocal = c.filter((d) => !d.local); if (semLocal.length) c = semLocal;
         c.sort(papel === 'C' ? (x, y) => x.peso - y.peso : (x, y) => y.peso - x.peso);
         return c[0] || null;
       }
