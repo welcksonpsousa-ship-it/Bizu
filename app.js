@@ -144,7 +144,7 @@ function showView(name, arg) {
     painel: renderPainel, estudar: renderEstudar,
     cronograma: carregarCronograma, calendario: renderCalendario, cronometro: carregarCronometro,
     materias: renderMaterias, assunto: () => renderAssunto(arg), busca: () => { $('buscaInp').focus(); buscar(); },
-    material: () => renderMaterial(name.slice(2)), meuresumo: renderMeuResumo, questoes: () => { $('qContainer').innerHTML = emp('Escolha os filtros e clique em Buscar questões'); },
+    material: () => renderMaterial(name.slice(2)), meuresumo: renderMeuResumo, questoes: renderQuestoes,
     simulados: renderSimulados, salvas: renderSalvas, revisoes: renderRevisoes, redacao: renderRedacao,
     desempenho: renderDesempenho, dominio: renderDominio, conta: renderConta, admin: renderAdmin,
   }[alvo];
@@ -253,13 +253,15 @@ function badgeRev(n) { $('badgeRev').textContent = n; $('badgeRev').classList.to
 /* ---------------- CONTEXTO DO PLANO (desempenho + revisões + domínio) ---------------- */
 // Junta o que o aluno já fez e entrega ao motor (plano.js), que decide o que estudar.
 async function ctxPlano() {
-  const [d, r, c] = await Promise.all([
+  const [d, r, c, bi] = await Promise.all([
     api('/desempenho?' + cq()).catch(() => ({})),
     api('/revisoes?' + cq()).catch(() => ({ revisoes: [] })),
     api('/cron/resumo').catch(() => ({ sessoes: [] })),
+    api('/banco/insights?' + cq()).catch(() => ({ assuntos: [] })),
   ]);
+  const banco = {}; (bi.assuntos || []).forEach((x) => { banco[x.assunto_id] = x; });
   const estudados = new Set((c.sessoes || []).filter((x) => x.assunto_id && (x.liquido_s || 0) >= 300).map((x) => x.assunto_id));
-  const an = Plano.analisar({ cursoId: S.curso.id, est: S.est, dom: S.dom, porAssunto: d.por_assunto || {}, estudados });
+  const an = Plano.analisar({ cursoId: S.curso.id, est: S.est, dom: S.dom, porAssunto: d.por_assunto || {}, estudados, banco });
   return { an, revs: (r.revisoes || []).filter((x) => S.ass[x.assunto_id]) };
 }
 function marcarEstudado(id) { if ((S.dom[id] || 0) < 1) { S.dom[id] = 1; api('/dominio', { body: { assunto_id: id, nivel: 1 } }).catch(() => {}); } }
@@ -308,6 +310,7 @@ function desenharEA(s, an, t) {
       const i = it.info, a = i.a;
       const tag = `${EA_TIPO[i.tipo]}${i.tipo === 'fraco' ? ` · ${Math.round(i.acc * 100)}% de acerto` : ''}${i.reforco ? ' · reforço' : ''}`;
       return `<div class="ea-item"><div class="ea-ih"><strong>${b.papel === 'F' ? esc(i.di.nome) + ' — ' : ''}${esc(a.nome)}</strong><span class="badge${i.tipo === 'fraco' ? ' berr' : i.tipo === 'novo' ? ' bok' : ''}">${tag}</span></div>
+        ${i.motivos && i.motivos.length ? `<p class="ea-why small">Por quê: ${esc(i.motivos.slice(0, 3).join(' · '))}</p>` : ''}<div class="ea-go"><button type="button" class="btn-blue btn-sm" data-estudar="${a.id}">ESTUDAR AGORA</button></div>
         <ul class="ea-passos">${it.passos.map((p) => passo(`${b.papel}|${a.id}|${p.tipo}`, p.titulo, p.min, (i.tipo === 'novo' && p === it.passos[0]) ? ` data-estudou="${a.id}"` : '', [p.tipo, a.id])).join('')}</ul></div>`;
     }).join('');
     return `<div class="ea-bloco ea-${b.papel}"><div class="ea-bh"><span class="ea-faixa">${faixa}</span><strong>${titulo}</strong><span class="badge">${b.min} min</span></div>
@@ -347,7 +350,8 @@ $('eaTempo').addEventListener('keydown', (e) => { if (e.key === 'Enter') gerarEA
 $('eaChips').addEventListener('click', (e) => { const b = e.target.closest('[data-min]'); if (b) { $('eaTempo').value = b.dataset.min; gerarEA(); } });
 $('eaContainer').addEventListener('click', (e) => {
   const ab = e.target.closest('[data-abrir]'); if (ab) { abrirPasso(ab.dataset.abrir, ab.dataset.ass); return; }
-  const cr = e.target.closest('[data-crono]'); if (cr) estudarNoCronometro(cr.dataset.crono);
+  const cr = e.target.closest('[data-crono]'); if (cr) { estudarNoCronometro(cr.dataset.crono); return; }
+  const ea = e.target.closest('[data-estudar]'); if (ea) showView('assunto', ea.dataset.estudar);
 });
 $('eaContainer').addEventListener('change', (e) => {
   const c = e.target.closest('input[data-k]'); if (!c) return;
@@ -488,21 +492,63 @@ $('btnMrSalvar').addEventListener('click', async () => {
 });
 
 /* ---------------- QUESTÕES ---------------- */
+let QF = null;
+const subNome = (q) => { const as = S.ass[q.assunto_id]; const s = as && q.subassunto_id ? as.subassuntos.find((x) => x.id === q.subassunto_id) : null; return s ? s.nome : ''; };
+async function renderQuestoes() {
+  $('qContainer').innerHTML = emp('Escolha os filtros e clique em Buscar questões, ou use GERAR TREINO');
+  $('qInfo').textContent = ''; $('trDesc').textContent = '';
+  try { QF = await api('/questoes/filtros?' + cq()); } catch (e) { QF = null; }
+  const op = (m, vazio, ord) => `<option value="">${vazio}</option>` + Object.keys(m || {}).sort(ord).map((k) => `<option value="${esc(k)}">${esc(k)} (${m[k]})</option>`).join('');
+  const sel = (id, html) => { const v = $(id).value; $(id).innerHTML = html; if ([...$(id).options].some((o) => o.value === v)) $(id).value = v; };
+  sel('qBanca', op(QF && QF.bancas, 'Todas as bancas')); sel('qCargo', op(QF && QF.cargos, 'Todos os cargos'));
+  sel('qAno', op(QF && QF.anos, 'Todos os anos', (x, y) => y - x)); sel('qNivel', op(QF && QF.niveis, 'Todos os níveis'));
+}
+function paramsQ() {
+  const p = [filtroQS(CASCATAS[0])];
+  [['qBanca', 'banca'], ['qCargo', 'cargo'], ['qAno', 'ano'], ['qNivel', 'nivel'], ['qOrigem', 'tipo'], ['qEstado', 'estado'], ['qDif', 'dificuldade'], ['qCompat', 'compat']].forEach(([id, k]) => { if ($(id).value) p.push(k + '=' + encodeURIComponent($(id).value)); });
+  const b = $('qBusca').value.trim(); if (b.length >= 3) p.push('q=' + encodeURIComponent(b));
+  return p;
+}
 $('btnQ').addEventListener('click', buscarQuestoes);
 async function buscarQuestoes() {
-  const box = $('qContainer'); box.innerHTML = ld('Buscando...');
+  const box = $('qContainer'); box.innerHTML = ld('Buscando...'); $('trDesc').textContent = '';
   try {
-    const qs = (await api('/questoes?limit=10&' + filtroQS(CASCATAS[0]))).questoes;
-    box.innerHTML = qs.length ? qs.map(qCard).join('') : emp('Nenhuma questão publicada para este filtro', EM_PREPARO_SUB);
+    const r = await api('/questoes?limit=' + $('qQtd').value + '&' + paramsQ().join('&'));
+    $('qInfo').textContent = `${r.candidatas} questão(ões) disponíveis com estes filtros · exibindo ${r.questoes.length} · banca-alvo do curso: ${r.banca_alvo || '—'}`;
+    box.innerHTML = r.questoes.length ? r.questoes.map(qCard).join('') : emp('Nenhuma questão publicada para este filtro', 'Tente remover algum filtro ou use “Todos os níveis”.');
     ligarQuestoes(box);
   } catch (e) { box.innerHTML = emp(e.message); }
 }
+$('btnTreino').addEventListener('click', async () => {
+  const box = $('qContainer'); box.innerHTML = ld('Montando seu treino...'); $('trDesc').textContent = '';
+  try {
+    const r = await api('/treino?modo=' + $('trModo').value + '&qtd=' + $('trQtd').value + '&' + [filtroQS(CASCATAS[0]), ...(($('qCompat').value ? ['compat=' + $('qCompat').value] : []))].join('&'));
+    $('trDesc').textContent = r.descricao + (r.aviso ? ' — ' + r.aviso : '');
+    $('qInfo').textContent = `Treino com ${r.questoes.length} questões (de ${r.candidatas} candidatas) · banca-alvo: ${r.banca_alvo || '—'}`;
+    box.innerHTML = r.questoes.length ? r.questoes.map(qCard).join('') : emp('Nenhuma questão disponível para este objetivo', 'Tente outro objetivo de treino.');
+    ligarQuestoes(box);
+  } catch (e) { box.innerHTML = emp(e.message); }
+});
 function qCard(q) {
-  const a = S.ass[q.assunto_id];
-  return `<div class="qcard" data-q="${q.id}"><div class="qmeta"><span class="badge">${esc(a ? a.disciplina : '')}</span><span class="badge">${esc(a ? a.nome : '')}</span>${q.banca ? `<span class="badge">${esc(q.banca)} ${q.ano || ''}</span>` : ''}</div>
-    <div class="qenunciado">${esc(q.enunciado)}</div>
-    <div class="opcoes-w">${(q.opcoes || []).map((o, i) => `<button type="button" class="opcao" data-i="${i}"><span class="letra">${String.fromCharCode(65 + i)}</span><span>${esc(o)}</span></button>`).join('')}</div>
-    <div class="gab-box hidden"></div><button type="button" class="btn-ghost btn-sm btn-salvar">Salvar questão</button></div>`;
+  const a = S.ass[q.assunto_id], real = q.tipo === 'real', sub = subNome(q);
+  const i = (q.enunciado || '').lastIndexOf('\n\n— — —\n');
+  const apoio = i >= 0 ? q.enunciado.slice(0, i) : '', enun = i >= 0 ? q.enunciado.slice(i + 8) : q.enunciado;
+  const badges = [
+    `<span class="badge ${real ? 'q-real' : 'q-aut'}">${real ? '🟦 QUESTÃO REAL' : '🟨 QUESTÃO AUTORAL'}</span>`,
+    a ? `<span class="badge">${esc(a.disciplina)}</span><span class="badge">${esc(a.nome)}</span>` : '',
+    sub ? `<span class="badge">${esc(sub)}</span>` : '',
+    real ? `<span class="badge">${esc(q.banca_ref || q.banca || '')}${q.ano ? ' · ' + q.ano : ''}</span>` : `<span class="badge">Banca de referência: ${esc(q.banca_ref || '—')}</span>`,
+    q.banca_alvo === false && q.banca_ref ? '<span class="badge berr">Outra banca (não é a banca-alvo)</span>' : '',
+    q.nivel ? `<span class="badge">Nível ${esc(q.nivel)}${q.nivel_compat && q.nivel_compat !== 'Compatível' ? ' · ' + esc(q.nivel_compat) + ' do cargo' : ''}</span>` : '',
+    q.dificuldade ? `<span class="badge">${({ facil: 'Fácil', media: 'Média', dificil: 'Difícil' })[q.dificuldade] || ''}</span>` : '',
+    q.ultima === true ? '<span class="badge bok">Já acertei</span>' : q.ultima === false ? '<span class="badge berr">Já errei</span>' : '',
+  ].join('');
+  const origem = [q.origem, real && q.concurso ? q.concurso : '', real && q.numero_questao ? 'questão ' + q.numero_questao : ''].filter(Boolean).join(' · ');
+  return `<div class="qcard" data-q="${q.id}"><div class="qmeta">${badges}</div>
+    ${apoio ? `<div class="q-apoio">${esc(apoio)}</div>` : ''}<div class="qenunciado">${esc(enun)}</div>
+    <div class="opcoes-w">${(q.opcoes || []).map((o, k) => `<button type="button" class="opcao" data-i="${k}"><span class="letra">${String.fromCharCode(65 + k)}</span><span>${esc(o)}</span></button>`).join('')}</div>
+    <div class="gab-box hidden"></div>${origem ? `<div class="q-origem muted small">Origem: ${esc(origem)}</div>` : ''}
+    <button type="button" class="btn-ghost btn-sm btn-salvar">${q.salva ? 'Remover dos salvos' : 'Salvar questão'}</button></div>`;
 }
 function ligarQuestoes(box) {
   $$('.qcard', box).forEach((card) => {
@@ -511,10 +557,14 @@ function ligarQuestoes(box) {
       try {
         const r = await api('/responder', { body: { questao_id: card.dataset.q, resposta: +b.dataset.i } });
         $$('.opcao', card)[r.gabarito].classList.add('certa'); if (!r.correta) b.classList.add('errada');
-        const g = $$('.gab-box', card)[0]; if (r.comentario) { g.innerHTML = `<div class="gab-title">Comentário</div><div>${esc(r.comentario)}</div>`; g.classList.remove('hidden'); }
+        const g = $$('.gab-box', card)[0];
+        const ex = [r.lei_relacionada ? `Lei relacionada: ${esc(r.lei_relacionada)}` : '', r.juris_relacionada ? `Jurisprudência: ${esc(r.juris_relacionada)}` : '', r.legislacao_considerada ? `Legislação considerada: ${esc(r.legislacao_considerada)}` : ''].filter(Boolean);
+        g.innerHTML = `<div class="gab-title">${r.correta ? 'Você acertou!' : 'Você errou.'} Gabarito: ${String.fromCharCode(65 + r.gabarito)}</div>${r.comentario ? `<div>${esc(r.comentario)}</div>` : '<div class="muted small">Esta questão não tem comentário detalhado.</div>'}${ex.length ? `<div class="muted small mt1">${ex.join(' · ')}</div>` : ''}${r.fonte ? `<div class="muted small mt1">Fonte: ${esc(r.fonte)}</div>` : ''}`;
+        g.classList.remove('hidden');
       } catch (e) { alert(e.message); $$('.opcao', card).forEach((x) => { x.disabled = false; }); }
     }));
-    $$('.btn-salvar', card)[0].addEventListener('click', (e) => api('/questoes/salvar', { body: { questao_id: card.dataset.q } }).then(() => { e.target.textContent = 'Salva'; }).catch((er) => alert(er.message)));
+    const sv = $$('.btn-salvar', card)[0];
+    sv.addEventListener('click', () => { const rem = sv.textContent.startsWith('Remover'); api('/questoes/salvar', { body: { questao_id: card.dataset.q, salvar: rem ? false : true } }).then(() => { sv.textContent = rem ? 'Salvar questão' : 'Remover dos salvos'; }).catch((er) => alert(er.message)); });
   });
 }
 async function renderSalvas() {
@@ -522,34 +572,39 @@ async function renderSalvas() {
   try { const qs = (await api('/questoes/salvas')).questoes; box.innerHTML = qs.length ? qs.map(qCard).join('') : emp('Nenhuma questão salva'); ligarQuestoes(box); } catch (e) { box.innerHTML = emp(e.message); }
 }
 
-/* ---------------- SIMULADOS ---------------- */
-let SIM = null, SIM_T = null;
+/* ---------------- SIMULADOS (acervo por link do Drive) ---------------- */
+const driveId = (u) => { const m = /\/d\/([^/?#]+)/.exec(u || '') || /[?&]id=([^&]+)/.exec(u || ''); return m ? m[1] : null; };
+const driveView = (u) => { const id = driveId(u); return id ? `https://drive.google.com/file/d/${id}/view` : u; };
+const driveDl = (u) => { const id = driveId(u); return id ? `https://drive.google.com/uc?export=download&id=${id}` : u; };
+const lnk = (href, txt, cls) => `<a class="btn-ghost btn-sm ${cls || ''}" href="${esc(href)}" target="_blank" rel="noopener noreferrer">${txt}</a>`;
+function simCard(s, rs) {
+  const igual = s.gabaritoUrl && s.gabaritoUrl === s.comentarioUrl;
+  const acoes = [
+    s.provaUrl ? lnk(driveView(s.provaUrl), 'Ver prova online') + lnk(driveDl(s.provaUrl), 'Baixar prova') : '<span class="muted small">Prova ainda não disponível</span>',
+    s.gabaritoUrl ? lnk(driveView(s.gabaritoUrl), igual ? 'Gabarito comentado' : 'Gabarito') : '',
+    s.comentarioUrl && !igual ? lnk(driveView(s.comentarioUrl), 'Gabarito comentado') : '',
+  ].join('');
+  const ult = rs[0] ? `<div class="small mt1">Último resultado: <strong>${rs[0].acertos}/${rs[0].total}</strong> (${Math.round(rs[0].acertos / rs[0].total * 100)}%) em ${new Date(rs[0].criado_em).toLocaleDateString('pt-BR')}${rs.length > 1 ? ` · ${rs.length} tentativas` : ''}</div>` : '';
+  return `<div class="card sim-card" data-sim="${s.id}"><div class="card-title">${esc(s.titulo)}</div>
+    <div class="qmeta">${s.tipo ? `<span class="badge ${/real/i.test(s.tipo) ? 'q-real' : 'q-aut'}">${esc(s.tipo)}</span>` : ''}${s.banca ? `<span class="badge">${esc(s.banca)}</span>` : ''}${s.ano ? `<span class="badge">${esc(s.ano)}</span>` : ''}${s.cargo ? `<span class="badge">${esc(s.cargo)}</span>` : ''}</div>
+    ${s.descricao ? `<p class="muted small">${esc(s.descricao)}</p>` : ''}<div class="sim-acoes">${acoes}</div>${ult}
+    <details class="sim-reg"><summary>Registrar meu resultado</summary><div class="filters mt1"><div class="fgroup"><label>Acertos</label><input type="number" min="0" max="300" class="sr-ac"></div><div class="fgroup"><label>Total de questões</label><input type="number" min="1" max="300" value="60" class="sr-tt"></div><div class="fgroup"><label>Tempo (min, opcional)</label><input type="number" min="0" max="600" class="sr-tm"></div><button type="button" class="btn-blue btn-sm sr-ok">Registrar</button></div><div class="muted small sr-msg" role="status"></div></details></div>`;
+}
 async function renderSimulados() {
-  $('simProva').classList.add('hidden'); $('simLista').classList.remove('hidden');
+  const box = $('simLista'); box.innerHTML = ld();
   try {
-    const d = await api('/simulados?' + cq());
-    $('simLista').innerHTML = d.simulados.length ? `<div class="agenda">${d.simulados.map((s) => `<div class="card"><div class="card-title">${esc(s.titulo)}</div><div class="muted small">${s.questoes} questões · ${s.duracao_min} min</div><button type="button" class="btn-blue mt2" onclick="iniciarSimulado('${s.id}')">Iniciar</button></div>`).join('')}</div>` : emp('Nenhum simulado publicado para este curso', EM_PREPARO_SUB);
-    $('simHist').innerHTML = d.historico.filter((h) => h.entregue_em).length ? d.historico.filter((h) => h.entregue_em).map((h) => `<div class="cob-tema-row"><span>${new Date(h.entregue_em).toLocaleString('pt-BR')}</span><span class="badge">${h.acertos}/${h.total}</span></div>`).join('') : emp('Nenhum simulado feito ainda');
-  } catch (e) { $('simLista').innerHTML = emp(e.message); }
+    const d = await api('/simulados-drive?' + cq()); const por = {}; d.resultados.forEach((r) => { (por[r.simulado_id] = por[r.simulado_id] || []).push(r); });
+    box.innerHTML = d.simulados.length ? `<div class="sim-grid">${d.simulados.map((s) => simCard(s, por[s.id] || [])).join('')}</div>` : emp('Nenhum simulado publicado para este curso', EM_PREPARO_SUB);
+    $$('.sim-card', box).forEach((c) => $$('.sr-ok', c)[0].addEventListener('click', async () => {
+      const ac = parseInt($$('.sr-ac', c)[0].value, 10), tt = parseInt($$('.sr-tt', c)[0].value, 10), msg = $$('.sr-msg', c)[0];
+      if (!(ac >= 0) || !(tt >= 1) || ac > tt) { msg.textContent = 'Informe acertos e total válidos.'; return; }
+      try { await api('/simulados-drive/resultado', { body: { simulado_id: c.dataset.sim, acertos: ac, total: tt, tempo_min: parseInt($$('.sr-tm', c)[0].value, 10) || null } }); renderSimulados(); } catch (e) { msg.textContent = e.message; }
+    }));
+    const nome = {}; d.simulados.forEach((s) => { nome[s.id] = s.titulo; });
+    $('simHist').innerHTML = d.resultados.length ? d.resultados.map((h) => `<div class="cob-tema-row"><span>${esc(nome[h.simulado_id] || 'Simulado')} · ${new Date(h.criado_em).toLocaleString('pt-BR')}</span><span><span class="badge">${h.acertos}/${h.total} · ${Math.round(h.acertos / h.total * 100)}%</span> <button type="button" class="btn-ghost btn-sm" data-delres="${h.id}">Excluir</button></span></div>`).join('') : emp('Nenhum simulado registrado ainda');
+    $$('#simHist [data-delres]').forEach((b) => b.addEventListener('click', async () => { if (confirm('Excluir este resultado?')) { await api('/simulados-drive/resultado/excluir', { body: { id: b.dataset.delres } }).catch((e) => alert(e.message)); renderSimulados(); } }));
+  } catch (e) { box.innerHTML = emp(e.message); }
 }
-async function iniciarSimulado(id) {
-  try {
-    SIM = await api('/simulado/iniciar', { body: { simulado_id: id } }); SIM.resp = {}; SIM.fim = Date.now() + SIM.duracao_min * 60000;
-    $('simLista').classList.add('hidden'); const box = $('simProva'); box.classList.remove('hidden');
-    box.innerHTML = `<div class="card"><div class="flex between center"><div class="card-title">${esc(SIM.titulo)}</div><div class="sim-timer" id="simTimer"></div></div></div>` +
-      SIM.questoes.map((q, n) => `<div class="qcard" data-q="${q.id}"><div class="qmeta"><span class="badge">Questão ${n + 1}</span></div><div class="qenunciado">${esc(q.enunciado)}</div><div class="opcoes-w">${q.opcoes.map((o, i) => `<button type="button" class="opcao" data-i="${i}"><span class="letra">${String.fromCharCode(65 + i)}</span><span>${esc(o)}</span></button>`).join('')}</div></div>`).join('') +
-      '<button type="button" class="btn-blue" id="btnSimEntregar">Entregar simulado</button>';
-    $$('#simProva .qcard').forEach((c) => $$('.opcao', c).forEach((b) => b.addEventListener('click', () => { SIM.resp[c.dataset.q] = +b.dataset.i; $$('.opcao', c).forEach((x) => x.classList.toggle('certa', x === b)); })));
-    $('btnSimEntregar').addEventListener('click', entregarSimulado);
-    clearInterval(SIM_T); SIM_T = setInterval(() => { const r = (SIM.fim - Date.now()) / 1000; $('simTimer').textContent = hms(r); if (r <= 0) entregarSimulado(); }, 1000);
-  } catch (e) { alert(e.message); }
-}
-async function entregarSimulado() {
-  clearInterval(SIM_T); if (!SIM) return; const s = SIM; SIM = null;
-  try { const r = await api('/simulado/entregar', { body: { tentativa_id: s.tentativa_id, respostas: s.resp } }); alert(`Resultado: ${r.acertos} de ${r.total}`); } catch (e) { alert(e.message); }
-  renderSimulados();
-}
-window.iniciarSimulado = iniciarSimulado;
 
 /* ---------------- REVISÕES ---------------- */
 function revCard(r) {
@@ -802,7 +857,7 @@ $('btnContaSenha').addEventListener('click', async () => {
 $$('#admTabs .tab').forEach((t) => t.addEventListener('click', () => {
   $$('#admTabs .tab').forEach((x) => x.classList.toggle('on', x === t));
   $$('#v-admin [data-ap]').forEach((p) => p.classList.toggle('hidden', p.dataset.ap !== t.dataset.at));
-  ({ estrutura: renderAdmEstrutura, cobertura: renderAdmCobertura, usuarios: renderAdmUsuarios })[t.dataset.at]();
+  ({ estrutura: renderAdmEstrutura, cobertura: renderAdmCobertura, banco: renderAdmBanco, simulados: renderAdmSimulados, usuarios: renderAdmUsuarios })[t.dataset.at]();
 }));
 function renderAdmin() { if (!S.admin) { showView('painel'); return; } const t = $$('#admTabs .tab.on')[0]; t.click(); }
 function renderAdmEstrutura() {
@@ -827,6 +882,75 @@ async function renderAdmCobertura() {
   try {
     const est = (await api('/admin/cobertura?' + cq())).disciplinas;
     box.innerHTML = `<div class="card tbl-wrap"><table class="tbl"><thead><tr><th>Disciplina / assunto</th>${SLOTS.map(([, n]) => `<th>${n}</th>`).join('')}</tr></thead><tbody>${est.map((di) => `<tr><td colspan="${SLOTS.length + 1}"><strong>${esc(di.nome)}</strong></td></tr>${di.assuntos.map((a) => `<tr><td>${esc(a.nome)}</td>${SLOTS.map(([k]) => `<td>${a.conteudo[k] || 0}</td>`).join('')}</tr>`).join('')}`).join('')}</tbody></table><p class="muted small mt1">Inclui material ainda não publicado.</p></div>`;
+  } catch (e) { box.innerHTML = emp(e.message); }
+}
+/* ---------------- ADMIN: BANCO DE QUESTÕES E SIMULADOS ---------------- */
+const FAIXA = { verde: '🟢', amarelo: '🟡', vermelho: '🔴' };
+const FLAG_TXT = { sem_questoes: 'sem questões', poucas: 'poucas questões', excesso: 'excesso', sem_banca_alvo: 'sem questão real da banca-alvo', sem_recente: 'sem questão recente', sem_nivel_adequado: 'sem nível adequado', precisa_complemento_autoral: 'precisa de complemento autoral' };
+let ADM_REV = { status: 'revisao', pagina: 0 };
+async function renderAdmBanco() {
+  const box = $('admBanco'); box.innerHTML = ld('Calculando indicadores do banco...');
+  try {
+    const r = await api('/admin/banco/resumo?' + cq()); const c = r.cursos[S.curso.id]; const t = r.totais;
+    if (!c) { box.innerHTML = emp('Sem dados para este curso'); return; }
+    const kv = (o) => Object.entries(o || {}).sort((x, y) => y[1] - x[1]).map(([k, v]) => `<span class="badge">${esc(k)}: ${v}</span>`).join(' ');
+    const e = c.edital;
+    box.innerHTML = `<div class="card mb2"><div class="card-title">Banco de Questões — ${esc(S.curso.nome)}</div>
+      <div class="qmeta"><span class="badge q-real">🟦 Reais: ${c.reais}</span><span class="badge q-aut">🟨 Autorais: ${c.autorais}</span><span class="badge">Total: ${c.total}</span><span class="badge berr">Em revisão administrativa: ${c.sem_classificacao}</span><span class="badge">Desatualizadas: ${c.desatualizadas}</span><span class="badge">Possíveis duplicadas: ${c.duplicadas_possiveis}</span><span class="badge">Assuntos sem questões: ${c.assuntos_sem_questoes}</span></div>
+      <p class="small mt1"><strong>Edital:</strong> ${e.disciplinas_com_questoes_pct}% das disciplinas · ${e.assuntos_com_questoes_pct}% dos assuntos com questões · ${e.assuntos_banca_alvo_pct === null ? 'banca-alvo (' + esc(c.banca_alvo) + '): ainda sem provas reais da banca no banco' : e.assuntos_banca_alvo_pct + '% dos assuntos com questão real da banca-alvo (' + esc(c.banca_alvo) + ')'} · ${e.assuntos_precisam_complemento} assunto(s) precisam de complementação · 🟢 ${e.verde} 🟡 ${e.amarelo} 🔴 ${e.vermelho}</p>
+      <p class="small">Por status: ${kv(c.por_status)}</p><p class="small">Por banca: ${kv(c.por_banca)}</p><p class="small">Por nível: ${kv(c.por_nivel)} · Compatibilidade: ${kv(c.por_compat)}</p><p class="small">Por ano (reais): ${kv(c.por_ano)}</p>
+      <p class="small">Por disciplina: ${Object.entries(c.por_disciplina).map(([d, o]) => `<span class="badge">${esc(d)}: ${o.total} (${o.reais} reais · ${o.autorais} autorais)</span>`).join(' ')}</p>
+      <p class="muted small">Total geral (todos os cursos): ${t.total} questões — ${t.reais} reais, ${t.autorais} autorais.</p></div>
+    <div class="card tbl-wrap mb2"><div class="card-title">Cobertura por assunto</div><table class="tbl"><thead><tr><th></th><th>Disciplina / assunto</th><th>Reais</th><th>Banca-alvo</th><th>Recentes</th><th>Autorais</th><th>Total</th><th>Revisão</th><th>Alertas</th></tr></thead><tbody>${c.cobertura.map((l) => `<tr><td>${FAIXA[l.faixa]}</td><td><span class="muted small">${esc(l.disciplina)}</span><br>${esc(l.assunto)}</td><td>${l.reais}</td><td>${l.reais_alvo}</td><td>${l.recentes}</td><td>${l.autorais}</td><td><strong>${l.total}</strong></td><td>${l.em_revisao + l.desatualizadas}</td><td class="small">${l.flags.map((f) => FLAG_TXT[f] || f).join('; ')}</td></tr>`).join('')}</tbody></table><p class="muted small mt1">🟢 boa (≥ 10 questões e questões reais da banca-alvo quando existem provas) · 🟡 média · 🔴 insuficiente (&lt; 6). Contam apenas questões publicadas, atualizadas e compatíveis com o nível do cargo.</p></div>
+    <div class="card mb2"><div class="card-title">Fila de revisão administrativa</div><div class="filters"><div class="fgroup"><label for="admRevSt">Status</label><select id="admRevSt"><option value="revisao">Em revisão</option><option value="desatualizada">Desatualizadas</option><option value="anulada">Anuladas</option><option value="duplicada">Duplicadas</option></select></div></div><div id="admRevLista"></div></div>
+    <div class="card tbl-wrap"><div class="card-title">Arquivos do Drive processados</div><div id="admFontes">${ld()}</div></div>`;
+    $('admRevSt').value = ADM_REV.status; $('admRevSt').addEventListener('change', () => { ADM_REV = { status: $('admRevSt').value, pagina: 0 }; carregarRev(); });
+    carregarRev();
+    api('/admin/fontes').then((f) => { $('admFontes').innerHTML = `<table class="tbl"><thead><tr><th>Arquivo</th><th>Pasta</th><th>Tipo</th><th>Questões</th><th>Status</th></tr></thead><tbody>${f.fontes.filter((x) => !x.curso_id || x.curso_id === S.curso.id).map((x) => `<tr><td>${esc(x.nome)}</td><td>${esc(x.pasta || '')}</td><td>${esc(x.categoria)}</td><td>${x.qtd_questoes || '—'}</td><td>${esc(x.status)}${x.obs ? `<br><span class="muted small">${esc(x.obs)}</span>` : ''}</td></tr>`).join('')}</tbody></table>`; }).catch(() => { $('admFontes').innerHTML = ''; });
+  } catch (e) { box.innerHTML = emp(e.message); }
+}
+async function carregarRev() {
+  const box = $('admRevLista'); box.innerHTML = ld();
+  try {
+    const r = await api(`/admin/banco/revisao?${cq()}&status=${ADM_REV.status}&pagina=${ADM_REV.pagina}`);
+    box.innerHTML = `<p class="muted small">${r.total} questão(ões) · página ${ADM_REV.pagina + 1}</p>` + (r.questoes.length ? r.questoes.map((q) => `<div class="qcard" data-q="${q.id}"><div class="qmeta"><span class="badge ${q.tipo === 'real' ? 'q-real' : 'q-aut'}">${q.tipo === 'real' ? '🟦 REAL' : '🟨 AUTORAL'}</span><span class="badge">${esc(q.concurso || q.origem || '')}${q.numero_questao ? ' · Q' + q.numero_questao : ''}</span><span class="badge">${esc(q.disciplina)} › ${esc(q.assunto)}</span></div>
+      <div class="qenunciado small">${esc((q.enunciado || '').slice(-600))}</div><ol type="A" class="small">${(q.opcoes || []).map((o, i) => `<li${i === q.gabarito ? ' class="bold"' : ''}>${esc(o)}</li>`).join('')}</ol>
+      <p class="small"><strong>Motivo:</strong> ${esc(q.motivo_status || '—')}</p>${q.legislacao_considerada ? `<p class="small muted">Legislação considerada: ${esc(q.legislacao_considerada)}</p>` : ''}
+      <div class="sim-acoes"><button type="button" class="btn-blue btn-sm" data-st="publicada">Publicar</button><button type="button" class="btn-ghost btn-sm" data-st="revisao">Revisão</button><button type="button" class="btn-ghost btn-sm" data-st="desatualizada">Desatualizada</button><button type="button" class="btn-ghost btn-sm" data-st="anulada">Anulada</button><button type="button" class="btn-ghost btn-sm" data-st="excluir">Excluir</button></div></div>`).join('') : emp('Nada nesta fila')) +
+      `<div class="sim-acoes">${ADM_REV.pagina > 0 ? '<button type="button" class="btn-ghost btn-sm" id="revAnt">‹ Anterior</button>' : ''}${(ADM_REV.pagina + 1) * 30 < r.total ? '<button type="button" class="btn-ghost btn-sm" id="revProx">Próxima ›</button>' : ''}</div>`;
+    $$('#admRevLista [data-st]').forEach((b) => b.addEventListener('click', async () => {
+      const id = b.closest('.qcard').dataset.q, st = b.dataset.st;
+      try {
+        if (st === 'excluir') { if (!confirm('Excluir definitivamente esta questão?')) return; await api('/admin/banco/questao', { body: { id, acao: 'excluir' } }); }
+        else { const motivo = st === 'publicada' ? null : prompt('Motivo (opcional):') || null; await api('/admin/banco/questao', { body: { id, acao: 'status', status: st, motivo } }); }
+        carregarRev();
+      } catch (e) { alert(e.message); }
+    }));
+    if ($('revAnt')) $('revAnt').addEventListener('click', () => { ADM_REV.pagina--; carregarRev(); });
+    if ($('revProx')) $('revProx').addEventListener('click', () => { ADM_REV.pagina++; carregarRev(); });
+  } catch (e) { box.innerHTML = emp(e.message); }
+}
+let ADM_SIM_ED = null;
+async function renderAdmSimulados() {
+  const box = $('admSimulados'); box.innerHTML = ld();
+  try {
+    const l = (await api('/admin/simulados?' + cq())).simulados; ADM_SIM_ED = null;
+    const f = (id, rot, v, ph) => `<div class="fgroup"><label for="${id}">${rot}</label><input id="${id}" value="${esc(v || '')}" placeholder="${esc(ph || '')}"></div>`;
+    box.innerHTML = `<div class="card mb2"><div class="card-title" id="asTit">Novo simulado — ${esc(S.curso.nome)}</div><p class="muted small">Cole os links de compartilhamento do Google Drive (“qualquer pessoa com o link”). O simulado só aparece para os alunos depois de publicado.</p>
+      <div class="filters">${f('asTitulo', 'Título')}${f('asCargo', 'Cargo')}${f('asBanca', 'Banca')}${f('asAno', 'Ano')}${f('asTipo', 'Tipo', 'Prova real', 'Prova real / Simulado autoral')}${f('asProva', 'Link da prova')}${f('asGab', 'Link do gabarito')}${f('asCom', 'Link do gabarito comentado')}${f('asDesc', 'Descrição (opcional)')}
+      <div class="fgroup"><label><input type="checkbox" id="asPub"> Publicado</label></div><button type="button" class="btn-blue" id="asSalvar">Salvar simulado</button><button type="button" class="btn-ghost hidden" id="asCancel">Cancelar edição</button></div><div class="muted small" id="asMsg" role="status"></div></div>
+    <div class="card tbl-wrap"><table class="tbl"><thead><tr><th>Simulado</th><th>Banca / ano</th><th>Links</th><th>Status</th><th></th></tr></thead><tbody>${l.map((s) => `<tr data-id="${s.id}"><td>${esc(s.titulo)}<br><span class="muted small">${esc(s.tipo || '')} · ${esc(s.cargo || '')}</span></td><td>${esc(s.banca || '')} ${esc(s.ano || '')}</td><td class="small">${s.prova_url ? '✔ prova ' : '✘ prova '}${s.gabarito_url ? '✔ gabarito ' : '✘ gabarito '}${s.comentario_url ? '✔ comentado' : '✘ comentado'}</td><td>${s.publicado ? '<span class="badge bok">Publicado</span>' : '<span class="badge">Rascunho</span>'}</td><td class="adm-acts"><button type="button" class="btn-ghost btn-sm" data-ed="${s.id}">Editar</button><button type="button" class="btn-ghost btn-sm" data-pub="${s.id}" data-v="${s.publicado ? 0 : 1}">${s.publicado ? 'Despublicar' : 'Publicar'}</button><button type="button" class="btn-ghost btn-sm" data-del="${s.id}">Excluir</button></td></tr>`).join('')}</tbody></table></div>`;
+    const corpo = () => ({ titulo: $('asTitulo').value, cargo: $('asCargo').value, banca: $('asBanca').value, ano: $('asAno').value, tipo: $('asTipo').value || 'Prova real', prova_url: $('asProva').value.trim(), gabarito_url: $('asGab').value.trim(), comentario_url: $('asCom').value.trim(), descricao: $('asDesc').value, publicado: $('asPub').checked });
+    $('asSalvar').addEventListener('click', async () => {
+      try { await api('/admin/simulados', { body: { ...corpo(), acao: ADM_SIM_ED ? 'editar' : 'criar', id: ADM_SIM_ED, curso_id: S.curso.id } }); renderAdmSimulados(); } catch (e) { $('asMsg').textContent = e.message; }
+    });
+    $('asCancel').addEventListener('click', renderAdmSimulados);
+    $$('#admSimulados [data-ed]').forEach((b) => b.addEventListener('click', () => {
+      const s = l.find((x) => x.id === b.dataset.ed); ADM_SIM_ED = s.id; $('asTit').textContent = 'Editar simulado'; $('asCancel').classList.remove('hidden');
+      [['asTitulo', 'titulo'], ['asCargo', 'cargo'], ['asBanca', 'banca'], ['asAno', 'ano'], ['asTipo', 'tipo'], ['asProva', 'prova_url'], ['asGab', 'gabarito_url'], ['asCom', 'comentario_url'], ['asDesc', 'descricao']].forEach(([i, k]) => { $(i).value = s[k] || ''; }); $('asPub').checked = !!s.publicado; window.scrollTo(0, 0);
+    }));
+    $$('#admSimulados [data-pub]').forEach((b) => b.addEventListener('click', async () => { await api('/admin/simulados', { body: { acao: 'publicar', id: b.dataset.pub, publicado: b.dataset.v === '1' } }).catch((e) => alert(e.message)); renderAdmSimulados(); }));
+    $$('#admSimulados [data-del]').forEach((b) => b.addEventListener('click', async () => { if (confirm('Excluir este simulado?')) { await api('/admin/simulados', { body: { acao: 'excluir', id: b.dataset.del } }).catch((e) => alert(e.message)); renderAdmSimulados(); } }));
   } catch (e) { box.innerHTML = emp(e.message); }
 }
 async function renderAdmUsuarios() {

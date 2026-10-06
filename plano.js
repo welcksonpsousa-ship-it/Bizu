@@ -66,10 +66,15 @@
       gap = Math.max(0.5, 0.85 * base + 0.05);                 // estudou mas ainda não praticou
       tipo = 'pratica';
     }
-    return { a, di, ord, dom, total, acertos, acc, estudado, tipo, gap, prio: gap + (tipo === 'fraco' ? 0.15 : 0) };
+    // Banco de questões: incidência na banca e tempo sem revisar entram na prioridade (peso do edital já está na disciplina).
+    const bk = (ctx.banco && ctx.banco[a.id]) || null;
+    const incN = bk && bk.incidencia_pct != null && ctx.bancoMaxInc ? bk.incidencia_pct / ctx.bancoMaxInc : 0;
+    const tempoN = bk && bk.dias_sem_estudo != null ? Math.min(1, bk.dias_sem_estudo / 30) : 0;
+    return { a, di, ord, dom, total, acertos, acc, estudado, tipo, gap, bk, motivos: bk ? bk.motivos : [], prio: gap + (tipo === 'fraco' ? 0.15 : 0) + 0.25 * incN + 0.1 * tempoN };
   }
 
   function analisar(ctx) {
+    if (ctx.banco && ctx.bancoMaxInc == null) ctx.bancoMaxInc = Math.max(0, ...Object.values(ctx.banco).map((b) => b.incidencia_pct || 0));
     const discs = ctx.est.map((di, i) => {
       const p = pesoDisciplina(ctx.cursoId, di);
       const assuntos = di.assuntos.map((a, j) => infoAssunto(a, di, j, ctx));

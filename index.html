@@ -344,22 +344,54 @@
 
       <!-- QUESTÕES -->
       <section id="v-questoes" class="view">
-        <div class="view-hdr"><div><h1 class="view-title">Questões</h1><div class="view-sub">Treine por disciplina, assunto e subassunto</div></div></div>
+        <div class="view-hdr"><div><h1 class="view-title">Questões</h1><div class="view-sub">Banco com questões reais de prova e questões autorais, por banca, nível e edital</div></div></div>
+        <div class="card mb2" id="trCard">
+          <div class="card-title">Gerar treino</div>
+          <div class="filters">
+            <div class="fgroup"><label for="trModo">Objetivo do treino</label><select id="trModo">
+              <option value="adaptativo">Adaptativo (incidência + peso + desempenho + tempo)</option>
+              <option value="edital">Por edital (peso das disciplinas)</option>
+              <option value="banca">Por banca-alvo</option>
+              <option value="nivel">Por nível (compatíveis com o cargo)</option>
+              <option value="incidencia">Por incidência (o que mais cai)</option>
+              <option value="desempenho">Por desempenho (onde acerto menos)</option>
+              <option value="erros">Meus erros</option>
+              <option value="nao_estudados">Assuntos não estudados</option>
+              <option value="baixa_cobertura">Pouco praticados</option>
+              <option value="revisoes">Revisões pendentes</option>
+            </select></div>
+            <div class="fgroup"><label for="trQtd">Questões</label><select id="trQtd"><option>10</option><option selected>20</option><option>30</option><option>50</option></select></div>
+            <button type="button" class="btn-blue" id="btnTreino">GERAR TREINO</button>
+          </div>
+          <div class="muted small" id="trDesc" role="status"></div>
+        </div>
         <div class="filters" data-cascata="q">
           <div class="fgroup"><label for="qDisc">Disciplina</label><select id="qDisc"></select></div>
           <div class="fgroup"><label for="qAss">Assunto</label><select id="qAss"></select></div>
           <div class="fgroup"><label for="qSubA">Subassunto</label><select id="qSubA"></select></div>
+        </div>
+        <div class="filters">
+          <div class="fgroup"><label for="qBanca">Banca</label><select id="qBanca"></select></div>
+          <div class="fgroup"><label for="qCargo">Cargo</label><select id="qCargo"></select></div>
+          <div class="fgroup"><label for="qAno">Ano</label><select id="qAno"></select></div>
+          <div class="fgroup"><label for="qNivel">Nível</label><select id="qNivel"></select></div>
+          <div class="fgroup"><label for="qOrigem">Origem</label><select id="qOrigem"><option value="">Reais e autorais</option><option value="real">Somente reais</option><option value="autoral">Somente autorais</option></select></div>
+          <div class="fgroup"><label for="qEstado">Meu histórico</label><select id="qEstado"><option value="">Todas</option><option value="nao_respondidas">Não respondidas</option><option value="erradas">Erradas</option><option value="acertadas">Acertadas</option><option value="salvas">Salvas</option></select></div>
+          <div class="fgroup"><label for="qDif">Dificuldade</label><select id="qDif"><option value="">Todas</option><option value="facil">Fáceis</option><option value="media">Médias</option><option value="dificil">Difíceis</option></select></div>
+          <div class="fgroup"><label for="qCompat">Nível do cargo</label><select id="qCompat"><option value="compativeis">Somente compatíveis (padrão)</option><option value="todas">Todos os níveis</option></select></div>
+          <div class="fgroup"><label for="qBusca">Buscar no enunciado</label><input id="qBusca" type="search" placeholder="palavra ou trecho"></div>
+          <div class="fgroup"><label for="qQtd">Quantidade</label><select id="qQtd"><option>10</option><option>20</option><option>30</option><option>50</option></select></div>
           <button type="button" class="btn-blue" id="btnQ">Buscar questões</button>
         </div>
+        <div class="muted small mb2" id="qInfo" role="status"></div>
         <div id="qContainer"></div>
       </section>
 
       <!-- SIMULADOS -->
       <section id="v-simulados" class="view">
-        <div class="view-hdr"><div><h1 class="view-title">Simulados</h1><div class="view-sub">Provas completas no formato do edital, com tempo</div></div></div>
+        <div class="view-hdr"><div><h1 class="view-title">Simulados</h1><div class="view-sub">Provas completas para abrir, resolver, conferir o gabarito e registrar seu resultado</div></div></div>
         <div id="simLista"></div>
-        <div id="simProva" class="hidden"></div>
-        <div class="card mt2"><div class="card-title">Seu histórico</div><div id="simHist"></div></div>
+        <div class="card mt2"><div class="card-title">Seu histórico de simulados</div><div id="simHist"></div></div>
       </section>
 
       <!-- SALVAS -->
@@ -442,10 +474,14 @@
         <div class="tabs" role="tablist" id="admTabs">
           <button type="button" class="tab on" data-at="estrutura" role="tab">Estrutura curricular</button>
           <button type="button" class="tab" data-at="cobertura" role="tab">Cobertura</button>
+          <button type="button" class="tab" data-at="banco" role="tab">Banco de questões</button>
+          <button type="button" class="tab" data-at="simulados" role="tab">Simulados</button>
           <button type="button" class="tab" data-at="usuarios" role="tab">Usuários</button>
         </div>
         <div data-ap="estrutura"><div id="admEstrutura"></div></div>
         <div data-ap="cobertura" class="hidden"><div id="admCobertura"></div></div>
+        <div data-ap="banco" class="hidden"><div id="admBanco"></div></div>
+        <div data-ap="simulados" class="hidden"><div id="admSimulados"></div></div>
         <div data-ap="usuarios" class="hidden">
           <div class="card mb2">
             <div class="card-title">Criar usuário</div>
