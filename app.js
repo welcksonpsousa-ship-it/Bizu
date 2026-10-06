@@ -141,7 +141,7 @@ function showView(name, arg) {
   fecharDrawer();
   try { window.scrollTo({ top: 0, behavior: 'instant' }); } catch (e) { window.scrollTo(0, 0); }
   const fn = {
-    painel: renderPainel, estudar: () => { $('eaContainer').innerHTML = emp('Escolha o tempo disponível e clique em Gerar recomendação'); },
+    painel: renderPainel, estudar: renderEstudar,
     cronograma: carregarCronograma, calendario: renderCalendario, cronometro: carregarCronometro,
     materias: renderMaterias, assunto: () => renderAssunto(arg), busca: () => { $('buscaInp').focus(); buscar(); },
     material: () => renderMaterial(name.slice(2)), meuresumo: renderMeuResumo, questoes: () => { $('qContainer').innerHTML = emp('Escolha os filtros e clique em Buscar questões'); },
@@ -250,43 +250,113 @@ async function renderPainel() {
 }
 function badgeRev(n) { $('badgeRev').textContent = n; $('badgeRev').classList.toggle('hidden', !n); }
 
-/* ---------------- O QUE ESTUDAR ---------------- */
-function prioridades() {
-  // Peso da disciplina na prova (quando o edital informa) × falta de domínio do aluno.
-  const lista = [];
-  S.est.forEach((di) => di.assuntos.forEach((a) => {
-    const peso = di.questoes ? di.questoes / Math.max(1, di.assuntos.length) : 1;
-    lista.push({ a, di, score: peso * (5 - (S.dom[a.id] || 0)) });
-  }));
-  return lista.sort((x, y) => y.score - x.score || x.di.nome.localeCompare(y.di.nome));
+/* ---------------- CONTEXTO DO PLANO (desempenho + revisões + domínio) ---------------- */
+// Junta o que o aluno já fez e entrega ao motor (plano.js), que decide o que estudar.
+async function ctxPlano() {
+  const [d, r, c] = await Promise.all([
+    api('/desempenho?' + cq()).catch(() => ({})),
+    api('/revisoes?' + cq()).catch(() => ({ revisoes: [] })),
+    api('/cron/resumo').catch(() => ({ sessoes: [] })),
+  ]);
+  const estudados = new Set((c.sessoes || []).filter((x) => x.assunto_id && (x.liquido_s || 0) >= 300).map((x) => x.assunto_id));
+  const an = Plano.analisar({ cursoId: S.curso.id, est: S.est, dom: S.dom, porAssunto: d.por_assunto || {}, estudados });
+  return { an, revs: (r.revisoes || []).filter((x) => S.ass[x.assunto_id]) };
 }
-$('btnEA').addEventListener('click', async () => {
-  const cont = $('eaContainer'); const t = parseInt($('eaTempo').value, 10);
-  cont.innerHTML = ld('Analisando...');
-  let revs = [];
-  try { revs = (await api('/revisoes?' + cq())).revisoes.filter((r) => r.vencida || r.hoje); } catch (e) {}
-  const pri = prioridades();
-  if (!pri.length) { cont.innerHTML = emp('O curso ainda não tem assuntos cadastrados'); return; }
-  const foco = revs.length ? { a: S.ass[revs[0].assunto_id], di: S.disc[revs[0].disciplina_id], rev: true } : pri[0];
-  const seg = pri.find((p) => p.a.id !== foco.a.id) || foco;
-  const nome = (x) => `${x.di.nome} — ${x.a.nome}`;
-  cont.innerHTML = `<div class="ea-box">
-    <div class="ea-lbl">Sessão — ${t} min</div>
-    <div class="ea-sessao">Foco: ${esc(nome(foco))}</div>
-    <p class="muted small mb1">${foco.rev ? 'Motivo: revisão programada vencendo.' : 'Motivo: peso da disciplina na prova e seu domínio atual do assunto.'}</p>
-    <ul class="ea-steps">
-      <li class="ea-step"><span class="ea-num">1</span><div><strong>Teoria de ${esc(foco.a.nome)}</strong><div class="muted small">${Math.round(t * 0.35)} min · Bizu PDF / aulas / lei seca do assunto</div></div></li>
-      <li class="ea-step"><span class="ea-num">2</span><div><strong>Questões de ${esc(foco.a.nome)}</strong><div class="muted small">${Math.round(t * 0.3)} min</div></div></li>
-      <li class="ea-step"><span class="ea-num">3</span><div><strong>Revisão dos erros e do Meu Resumo</strong><div class="muted small">${Math.round(t * 0.15)} min</div></div></li>
-      <li class="ea-step"><span class="ea-num">4</span><div><strong>Flashcards de ${esc(nome(seg))}</strong><div class="muted small">${Math.round(t * 0.1)} min</div></div></li>
-      <li class="ea-step"><span class="ea-num">5</span><div><strong>Redação: planeje um parágrafo</strong><div class="muted small">${Math.round(t * 0.1)} min</div></div></li>
-    </ul>
-    <div class="flex gap1 mt2" style="flex-wrap:wrap">
-      <button type="button" class="btn-blue" onclick="showView('assunto','${foco.a.id}')">Abrir o assunto</button>
-      <button type="button" class="btn-ghost" onclick="estudarNoCronometro('${foco.a.id}')">Iniciar no Cronômetro X</button>
-      <button type="button" class="btn-ghost" data-go="redacao">Redação</button>
-    </div></div>
-    <div class="card"><div class="card-title">Próximos assuntos prioritários</div>${pri.slice(0, 8).map((p) => `<div class="cob-tema-row link-row" onclick="showView('assunto','${p.a.id}')"><span>${esc(p.a.nome)}</span><span class="badge">${esc(p.di.nome)}</span><span class="badge">${NIVEIS[S.dom[p.a.id] || 0]}</span></div>`).join('')}</div>`;
+function marcarEstudado(id) { if ((S.dom[id] || 0) < 1) { S.dom[id] = 1; api('/dominio', { body: { assunto_id: id, nivel: 1 } }).catch(() => {}); } }
+function abrirPasso(tipo, id) {
+  const a = S.ass[id]; if (!a) return;
+  if (tipo === 'questoes') { showView('questoes'); selecionar(CASCATAS[0], a.disciplina_id, id); buscarQuestoes(); }
+  else { showView('m-' + tipo); selecionar(CASCATAS[1], a.disciplina_id, id); renderMaterial(tipo); }
+}
+
+/* ---------------- O QUE ESTUDAR ---------------- */
+const EA_TIPO = { novo: 'assunto novo', fraco: 'ponto fraco', pratica: 'falta praticar', bom: 'manutenção' };
+const eaChaveDia = () => 'bizux.ea.' + S.curso.id + '.' + diaISO(new Date());
+const eaFeitos = () => { try { return JSON.parse(lsGet(eaChaveDia(), '{}')) || {}; } catch (e) { return {}; } };
+function renderEstudar() {
+  const m = parseInt(lsGet('bizux.ea.min', '90'), 10);
+  $('eaTempo').value = m >= 20 ? m : 90;
+  gerarEA();
+}
+async function gerarEA() {
+  const cont = $('eaContainer');
+  let t = parseInt($('eaTempo').value, 10);
+  if (!(t >= 20)) t = 90;
+  t = Math.min(480, Math.round(t / 5) * 5); $('eaTempo').value = t; lsSet('bizux.ea.min', String(t));
+  if (!S.est.length) { cont.innerHTML = emp('O curso ainda não tem assuntos cadastrados'); return; }
+  cont.innerHTML = ld('Analisando seu desempenho...');
+  try {
+    const { an, revs } = await ctxPlano();
+    const vencidas = revs.filter((r) => r.vencida || r.hoje);
+    desenharEA(Plano.sessaoHoje(an, t, vencidas), an, t);
+  } catch (e) { cont.innerHTML = emp(e.message); }
+}
+function desenharEA(s, an, t) {
+  const feitos = eaFeitos(); let ini = 0;
+  const passo = (key, titulo, min, extra, abrir) => `<li class="ea-passo${feitos[key] ? ' feito' : ''}"><label class="ea-chk"><input type="checkbox" data-k="${esc(key)}"${extra || ''}${feitos[key] ? ' checked' : ''}><span class="ea-ptxt">${esc(titulo)}</span></label><span class="ea-pmin">${min} min</span>${abrir ? `<button type="button" class="btn-ghost btn-sm" data-abrir="${abrir[0]}" data-ass="${abrir[1]}">Abrir</button>` : ''}</li>`;
+  const blocos = s.blocos.map((b) => {
+    const faixa = `${ini}–${ini + b.min} min`; ini += b.min;
+    if (b.papel === 'rev') {
+      const un = Math.max(1, Math.round(b.min / 5)), base = Math.floor(un / b.revs.length), ex = un % b.revs.length;
+      return `<div class="ea-bloco ea-rev"><div class="ea-bh"><span class="ea-faixa">${faixa}</span><strong>Revisão relâmpago</strong><span class="badge">${b.min} min</span></div>
+        <p class="muted small">Revisões que já venceram (24 horas, 7 ou 30 dias após estudar). Quanto antes, menos você esquece.</p>
+        <ul class="ea-passos">${b.revs.map((r, i) => { const a = S.ass[r.assunto_id]; return passo('rev|' + r.id, `${a.disciplina} — ${a.nome} (revisão de ${r.tipo})`, 5 * Math.max(1, base + (i < ex ? 1 : 0)), ` data-rev="${r.id}"`, ['flashcard', r.assunto_id]); }).join('')}</ul></div>`;
+    }
+    const titulo = b.papel === 'F' ? 'Fechamento · questões' : `${Plano.ROTULO[b.papel]} · ${esc(b.d.di.nome)}`;
+    const primeiro = b.itens[0] && b.itens[0].info.a.id;
+    const itens = b.itens.map((it) => {
+      const i = it.info, a = i.a;
+      const tag = `${EA_TIPO[i.tipo]}${i.tipo === 'fraco' ? ` · ${Math.round(i.acc * 100)}% de acerto` : ''}${i.reforco ? ' · reforço' : ''}`;
+      return `<div class="ea-item"><div class="ea-ih"><strong>${b.papel === 'F' ? esc(i.di.nome) + ' — ' : ''}${esc(a.nome)}</strong><span class="badge${i.tipo === 'fraco' ? ' berr' : i.tipo === 'novo' ? ' bok' : ''}">${tag}</span></div>
+        <ul class="ea-passos">${it.passos.map((p) => passo(`${b.papel}|${a.id}|${p.tipo}`, p.titulo, p.min, (i.tipo === 'novo' && p === it.passos[0]) ? ` data-estudou="${a.id}"` : '', [p.tipo, a.id])).join('')}</ul></div>`;
+    }).join('');
+    return `<div class="ea-bloco ea-${b.papel}"><div class="ea-bh"><span class="ea-faixa">${faixa}</span><strong>${titulo}</strong><span class="badge">${b.min} min</span></div>
+      <p class="muted small">${esc(b.motivo || '')}</p>${itens}
+      ${primeiro ? `<div class="ea-bf"><button type="button" class="btn-ghost btn-sm" data-crono="${primeiro}">Cronometrar este bloco</button></div>` : ''}</div>`;
+  }).join('');
+  const resp = an.discs.reduce((n, d) => n + d.total, 0), ac = an.discs.reduce((n, d) => n + d.acertos, 0);
+  const fracos = []; an.discs.forEach((d) => d.assuntos.forEach((x) => { if (x.tipo === 'fraco') fracos.push(x); }));
+  fracos.sort((x, y) => x.acc - y.acc);
+  const novos = an.discs.reduce((n, d) => n + d.novos, 0);
+  const sit = resp ? `Seu acerto geral é de ${Math.round((ac / resp) * 100)}% em ${resp} questões · ${fracos.length} ponto(s) fraco(s) · ${novos} assunto(s) ainda não estudado(s).`
+    : `Você ainda não respondeu questões, então o plano começa pelo que mais pesa na prova (${novos} assuntos ainda não estudados). Resolva as questões dos passos para o plano passar a focar nos seus erros.`;
+  const foco = s.blocos.filter((b) => b.d).map((b) => b.d.di.nome).join(' + ');
+  const maxG = Math.max(0.0001, ...an.discs.map((d) => d.ganho));
+  const porGanho = an.discs.slice().sort((x, y) => y.ganho - x.ganho || y.peso - x.peso);
+  $('eaContainer').innerHTML = `<div class="ea-box">
+      <div class="ea-lbl">Plano de hoje · ${t} min</div>
+      <div class="ea-sessao">${esc(foco || 'Revisão e questões')}</div>
+      <p class="muted small">${esc(sit)}</p>
+      <div class="ea-prog"><div class="pbar-bg"><div class="pbar" id="eaProg" style="width:0%"></div></div><span class="small bold" id="eaProgTxt"></span></div>
+    </div>${blocos}
+    <div class="card mt2"><div class="card-title">Por que este plano?</div>
+      <p class="muted small mb2">Pontos a ganhar = peso da matéria na prova × quanto ainda falta dominar (assuntos não estudados e questões erradas). O plano começa pelo maior potencial de ganho${s.C ? '; a 3ª matéria, quando há tempo, é a de menor peso que ainda tem lacuna' : ''}.</p>
+      ${porGanho.map((d) => `<div class="prow"><div class="plabel" title="${esc(d.di.nome)}">${esc(d.di.nome)}</div><div class="pbar-bg"><div class="pbar" style="width:${Math.round((d.ganho / maxG) * 100)}%;background:var(--accent)"></div></div><div class="ppct">${d.pct}% da prova</div></div>`).join('')}
+      ${fracos.length ? `<div class="card-title mt2">Onde você mais erra</div>${fracos.slice(0, 5).map((x) => `<div class="prow link-row" onclick="showView('assunto','${x.a.id}')"><div class="plabel" title="${esc(x.a.nome)}">${esc(x.a.nome)}</div><div class="pbar-bg"><div class="pbar" style="width:${Math.round(x.acc * 100)}%;background:${corP(Math.round(x.acc * 100))}"></div></div><div class="ppct">${Math.round(x.acc * 100)}%</div></div>`).join('')}` : ''}
+    </div>`;
+  atualizarProgEA();
+}
+function atualizarProgEA() {
+  const todos = $$('#eaContainer .ea-passo input[data-k]'); if (!todos.length || !$('eaProg')) return;
+  const fe = todos.filter((c) => c.checked).length;
+  $('eaProg').style.width = Math.round((fe / todos.length) * 100) + '%';
+  $('eaProgTxt').textContent = fe === todos.length ? 'Plano de hoje concluído! Amanhã ele muda conforme seu desempenho.' : `${fe} de ${todos.length} passos`;
+}
+$('btnEA').addEventListener('click', gerarEA);
+$('eaTempo').addEventListener('keydown', (e) => { if (e.key === 'Enter') gerarEA(); });
+$('eaChips').addEventListener('click', (e) => { const b = e.target.closest('[data-min]'); if (b) { $('eaTempo').value = b.dataset.min; gerarEA(); } });
+$('eaContainer').addEventListener('click', (e) => {
+  const ab = e.target.closest('[data-abrir]'); if (ab) { abrirPasso(ab.dataset.abrir, ab.dataset.ass); return; }
+  const cr = e.target.closest('[data-crono]'); if (cr) estudarNoCronometro(cr.dataset.crono);
+});
+$('eaContainer').addEventListener('change', (e) => {
+  const c = e.target.closest('input[data-k]'); if (!c) return;
+  const f = eaFeitos(); if (c.checked) f[c.dataset.k] = 1; else delete f[c.dataset.k];
+  lsSet(eaChaveDia(), JSON.stringify(f));
+  c.closest('.ea-passo').classList.toggle('feito', c.checked);
+  atualizarProgEA();
+  if (c.checked && c.dataset.estudou) marcarEstudado(c.dataset.estudou);
+  if (c.checked && c.dataset.rev) api('/revisoes/feita', { body: { id: c.dataset.rev } }).then(() => api('/revisoes?' + cq())).then((r) => badgeRev(r.total || 0)).catch(() => {});
 });
 
 /* ---------------- DISCIPLINAS (estrutura) ---------------- */
@@ -564,60 +634,77 @@ function renderDominio() {
 $('domDisc').addEventListener('change', renderDominio);
 
 /* ---------------- CRONOGRAMA ---------------- */
-function gerarPlano() {
-  const h = Math.max(1, Math.min(14, parseFloat($('cronoH').value) || 3)), dias = parseInt($('cronoDias').value, 10);
-  const sab = $('cronoSabSim').checked, dom = $('cronoDomRed').checked;
-  const fila = prioridades().map((p) => p.a.id);
-  const blocos = Math.max(1, Math.floor((h * 60) / 50));
-  const plano = []; const hoje = new Date(); let k = 0; const rev = {};
-  for (let i = 0; i < 14; i++) {
-    const dt = new Date(hoje.getFullYear(), hoje.getMonth(), hoje.getDate() + i), wd = dt.getDay(), iso = diaISO(dt);
-    // Segunda a sexta: estudo. Sábado: simulado (se marcado) ou estudo a partir de 6 dias/semana.
-    // Domingo: redação (se marcado) ou estudo só com 7 dias/semana. O resto é folga.
-    const especial = (wd === 6 && sab) ? 'simulado' : (wd === 0 && dom) ? 'redacao' : null;
-    const estuda = wd >= 1 && wd <= 5 || (wd === 6 && dias >= 6) || (wd === 0 && dias >= 7);
-    if (!especial && !estuda) { plano.push({ data: iso, folga: true, itens: [] }); continue; }
-    const itens = [];
-    (rev[iso] || []).forEach((id) => itens.push({ tipo: 'revisao', assunto_id: id, min: 20 }));
-    if (especial === 'simulado') itens.push({ tipo: 'simulado', min: Math.min(h * 60, 240) });
-    else if (especial === 'redacao') itens.push({ tipo: 'redacao', min: Math.min(h * 60, 90) });
-    else {
-      const n = Math.max(1, blocos - Math.ceil(itens.length / 2));
-      for (let b = 0; b < n && fila.length; b++) {
-        const id = fila[k++ % fila.length]; itens.push({ tipo: 'estudo', assunto_id: id, min: 50 });
-        [1, 7].forEach((dd) => { const r = diaISO(new Date(dt.getFullYear(), dt.getMonth(), dt.getDate() + dd)); (rev[r] = rev[r] || []).push(id); });
-      }
-    }
-    plano.push({ data: iso, itens });
-  }
-  return { plano, config: { h, dias, sab, dom } };
+// A 1ª matéria de cada dia é a de maior peso na prova; a 2ª, de peso médio; a 3ª (se houver tempo), a de menor peso.
+// O tempo que sobra vai para questões e revisão. Sábado: simulado + correção. Domingo: redação + revisão geral.
+const num = (id, d, mn, mx) => { const v = parseFloat($(id).value); return Math.min(mx, Math.max(mn, Number.isFinite(v) ? v : d)); };
+function lerCfgCrono() {
+  return { h: num('cronoH', 3, 1, 14), hSab: num('cronoHSab', 4, 3.5, 12), hDom: num('cronoHDom', 3, 2, 12), dias: parseInt($('cronoDias').value, 10) || 6, sab: $('cronoSabSim').checked, dom: $('cronoDomRed').checked };
+}
+function gerarPlano(ctx) {
+  const config = lerCfgCrono();
+  const revsPend = ctx.revs.map((r) => ({ assunto_id: r.assunto_id, data: r.vence_em }));
+  return { plano: Plano.cronograma(ctx.an, config, new Date(), revsPend), config };
 }
 $('btnCrono').addEventListener('click', async () => {
-  const { plano, config } = gerarPlano(); S.crono = { plano, config };
-  desenharCronograma(plano, {});
+  $('cronoContainer').innerHTML = ld('Montando seu cronograma...');
+  let ctx; try { ctx = await ctxPlano(); } catch (e) { $('cronoContainer').innerHTML = emp(e.message); return; }
+  const { plano, config } = gerarPlano(ctx); S.crono = { plano, config };
+  desenharCronograma(plano, {}); renderPesos(ctx.an);
   try { await api('/cronograma/salvar', { body: { curso_id: S.curso.id, plano, config } }); } catch (e) { $('cronoContainer').insertAdjacentHTML('afterbegin', `<p class="err">O plano foi gerado, mas não foi salvo: ${esc(e.message)}</p>`); }
   carregarCronograma(true);
 });
+function renderPesos(an) {
+  const ord = an.discs.slice().sort((x, y) => y.peso - x.peso || x.ord - y.ord), max = ord[0] ? ord[0].peso : 1;
+  $('cronoPesos').innerHTML = ord.map((d) => `<div class="prow"><div class="plabel" title="${esc(d.di.nome)}">${esc(d.di.nome)}</div><div class="pbar-bg"><div class="pbar" style="width:${Math.round((d.peso / max) * 100)}%"></div></div><div class="ppct">${d.estimado ? '≈ ' : ''}${d.pct}% da prova</div><span class="badge">${Plano.ROTULO[d.tier]}</span></div>`).join('')
+    + `<p class="muted small mt1">${an.estimado ? 'Este edital não informa quantas questões vêm de cada matéria; os pesos são estimativas baseadas em provas de guarda municipal e podem variar por município. ' : ''}No cronograma, a 1ª matéria do dia é sempre uma das que mais pesam e a 3ª é de menor peso.</p>`;
+}
 async function carregarCronograma(soReal) {
   let porDia = {};
   try { porDia = (await api('/cron/resumo')).por_dia || {}; } catch (e) {}
   if (!soReal) {
-    try { const c = (await api('/cronograma?' + cq())).cronograma; S.crono = c; if (c && c.config) { $('cronoH').value = c.config.h; $('cronoDias').value = c.config.dias; $('cronoSabSim').checked = !!c.config.sab; $('cronoDomRed').checked = !!c.config.dom; } } catch (e) { S.crono = null; }
+    try {
+      const c = (await api('/cronograma?' + cq())).cronograma; S.crono = c;
+      if (c && c.config) { $('cronoH').value = c.config.h; $('cronoDias').value = c.config.dias; $('cronoSabSim').checked = !!c.config.sab; $('cronoDomRed').checked = !!c.config.dom; $('cronoHSab').value = c.config.hSab || 4; $('cronoHDom').value = c.config.hDom || 3; }
+    } catch (e) { S.crono = null; }
+    ctxPlano().then((ctx) => renderPesos(ctx.an)).catch(() => { $('cronoPesos').textContent = ''; });
   }
   if (!S.crono || !S.crono.plano || !S.crono.plano.length) { $('cronoContainer').innerHTML = emp('Configure a agenda e clique em Gerar cronograma'); return; }
   desenharCronograma(S.crono.plano, porDia);
 }
+function nomeItemCrono(it) {
+  const a = it.assunto_id ? S.ass[it.assunto_id] : null, ass = a ? `${a.disciplina} — ${a.nome}` : 'Assunto removido';
+  switch (it.tipo) {
+    case 'simulado': return 'Simulado completo (60 questões, 3 h): faça sem consulta';
+    case 'correcao': return 'Corrija o simulado: refaça os erros e leia cada comentário';
+    case 'redacao': return 'Redação: escreva um texto completo (até 30 linhas)';
+    case 'autocorrecao': return 'Corrija sua redação pelos critérios: Tema, Estrutura, Língua e Coesão';
+    case 'revisao_geral': return 'Revisão geral: erros da semana, flashcards e lei seca';
+    case 'questoes_fracas': return 'Questões dos seus pontos fracos (assuntos com menor acerto)';
+    case 'questoes': return 'Questões de fixação — ' + ass;
+    case 'revisao': return 'Revisão — ' + ass;
+    default: return ass;
+  }
+}
 function desenharCronograma(plano, porDia) {
-  const nomeItem = (it) => it.tipo === 'simulado' ? 'Simulado completo' : it.tipo === 'redacao' ? 'Redação: escrever um texto completo' : (S.ass[it.assunto_id] ? `${S.ass[it.assunto_id].disciplina} — ${S.ass[it.assunto_id].nome}` : 'Assunto removido');
-  const cls = { revisao: 'is-rev', simulado: 'is-sim', redacao: 'is-red', estudo: '' };
-  const tag = { revisao: '<span class="crono-tag t-rev">revisão</span>', simulado: '<span class="crono-tag t-sim">simulado</span>', redacao: '<span class="crono-tag t-red">redação</span>', estudo: '' };
+  const cls = { revisao: 'is-rev', simulado: 'is-sim', redacao: 'is-red' };
+  const tagDe = (it) => {
+    if (it.tipo === 'estudo') return it.papel ? `<span class="crono-tag t-${it.papel}">${Plano.ROTULO[it.papel]}${it.reforco ? ' · reforço' : ''}</span>` : '';
+    const t = { revisao: ['rev', 'revisão'], simulado: ['sim', 'simulado'], redacao: ['red', 'redação'], correcao: ['q', 'correção'], autocorrecao: ['q', 'correção'], questoes: ['q', 'questões'], questoes_fracas: ['q', 'pontos fracos'], revisao_geral: ['rev', 'revisão geral'] }[it.tipo];
+    return t ? `<span class="crono-tag t-${t[0]}">${t[1]}</span>` : '';
+  };
+  const alvo = (it) => {
+    if (it.assunto_id && S.ass[it.assunto_id]) return ` data-cass="${it.assunto_id}"`;
+    return { simulado: ' data-go="simulados"', correcao: ' data-go="simulados"', redacao: ' data-go="redacao"', autocorrecao: ' data-go="redacao"', questoes_fracas: ' data-go="desempenho"', revisao_geral: ' data-go="revisoes"' }[it.tipo] || '';
+  };
   $('cronoContainer').innerHTML = plano.map((d) => {
     const plan = d.itens.reduce((n, i) => n + i.min, 0) * 60, real = porDia[d.data] || 0;
     return `<div class="crono-card"><div class="crono-dia">${esc(nomeDia(d.data))}</div>
+      ${d.foco && d.foco.length ? `<div class="crono-foco">${esc(d.foco.join(' · '))}</div>` : ''}
       ${plan && d.data <= diaISO(new Date()) ? `<div class="crono-real"><span>Real ${hm(real)} / plano ${hm(plan)}</span><div class="pbar-bg" style="flex:1"><div class="pbar" style="width:${Math.min(100, Math.round((real / plan) * 100))}%;background:${corP(Math.round((real / plan) * 100))}"></div></div></div>` : ''}
-      ${d.folga ? '<p class="muted small">Folga</p>' : d.itens.map((it) => `<div class="crono-sess ${cls[it.tipo]}"><span class="crono-t">${it.min}min</span><span>${esc(nomeItem(it))}${tag[it.tipo]}</span></div>`).join('')}</div>`;
+      ${d.folga ? '<p class="muted small">Folga</p>' : d.itens.map((it) => `<div class="crono-sess ${cls[it.tipo] || ''}${alvo(it) ? ' link-row' : ''}"${alvo(it)}><span class="crono-t">${it.min}min</span><span>${esc(nomeItemCrono(it))}${tagDe(it)}</span></div>`).join('')}</div>`;
   }).join('');
 }
+$('cronoContainer').addEventListener('click', (e) => { const c = e.target.closest('[data-cass]'); if (c) showView('assunto', c.dataset.cass); });
 
 /* ---------------- CALENDÁRIO ---------------- */
 let CAL = { ano: new Date().getFullYear(), mes: new Date().getMonth(), sel: diaISO(new Date()), eventos: [] };

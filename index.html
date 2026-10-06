@@ -195,29 +195,44 @@
 
       <!-- O QUE ESTUDAR -->
       <section id="v-estudar" class="view">
-        <div class="view-hdr"><div><h1 class="view-title">O que estudar agora?</h1><div class="view-sub">Recomendação baseada no seu desempenho, nas revisões pendentes e no seu domínio de cada assunto</div></div></div>
-        <div class="filters">
-          <div class="fgroup"><label for="eaTempo">Tempo disponível</label>
-            <select id="eaTempo"><option value="60">60 min</option><option value="90" selected>90 min</option><option value="120">2 horas</option><option value="180">3 horas</option><option value="240">4+ horas</option></select></div>
-          <button type="button" class="btn-blue" id="btnEA">Gerar recomendação</button>
+        <div class="view-hdr"><div><h1 class="view-title">O que estudar hoje?</h1><div class="view-sub">Diga quanto tempo você tem. O plano usa o peso de cada matéria na prova, as questões que você mais erra e o que você ainda não estudou</div></div></div>
+        <div class="card mb2">
+          <div class="filters">
+            <div class="fgroup fgroup-sm"><label for="eaTempo">Tempo hoje (minutos)</label><input type="number" id="eaTempo" min="20" max="480" step="5" value="90" inputmode="numeric"></div>
+            <div class="ea-chips" id="eaChips" role="group" aria-label="Tempos rápidos">
+              <button type="button" class="btn-ghost btn-sm" data-min="30">30 min</button>
+              <button type="button" class="btn-ghost btn-sm" data-min="60">1 h</button>
+              <button type="button" class="btn-ghost btn-sm" data-min="90">1h30</button>
+              <button type="button" class="btn-ghost btn-sm" data-min="120">2 h</button>
+              <button type="button" class="btn-ghost btn-sm" data-min="180">3 h</button>
+            </div>
+            <button type="button" class="btn-blue" id="btnEA">Gerar plano de hoje</button>
+          </div>
         </div>
         <div id="eaContainer"></div>
       </section>
 
       <!-- CRONOGRAMA -->
       <section id="v-cronograma" class="view">
-        <div class="view-hdr"><div><h1 class="view-title">Cronograma</h1><div class="view-sub">Plano de 14 dias com revisões integradas · Sábado: simulado · Domingo: redação</div></div></div>
+        <div class="view-hdr"><div><h1 class="view-title">Cronograma</h1><div class="view-sub">Plano de 14 dias · a 1ª matéria de cada dia é a que mais pesa na prova · sábado: simulado e correção · domingo: redação e revisão geral</div></div></div>
         <div class="card mb2">
           <div class="card-title">Configurar agenda</div>
           <div class="filters">
-            <div class="fgroup"><label for="cronoH">Horas por dia</label><input type="number" id="cronoH" value="3" min="1" max="14"></div>
-            <div class="fgroup"><label for="cronoDias">Dias por semana</label><select id="cronoDias"><option value="5">5 dias</option><option value="6" selected>6 dias</option><option value="7">7 dias</option></select></div>
+            <div class="fgroup"><label for="cronoH">Horas por dia útil</label><input type="number" id="cronoH" value="3" min="1" max="14" step="0.5"></div>
+            <div class="fgroup"><label for="cronoDias">Dias de estudo por semana</label><select id="cronoDias"><option value="5">5 dias (seg a sex)</option><option value="6" selected>6 dias (seg a sáb)</option><option value="7">7 dias</option></select></div>
+            <div class="fgroup"><label for="cronoHSab">Horas no sábado</label><input type="number" id="cronoHSab" value="4" min="3.5" max="12" step="0.5"></div>
+            <div class="fgroup"><label for="cronoHDom">Horas no domingo</label><input type="number" id="cronoHDom" value="3" min="2" max="12" step="0.5"></div>
             <button type="button" class="btn-blue" id="btnCrono">Gerar cronograma</button>
           </div>
           <div class="check-row">
-            <label class="check"><input type="checkbox" id="cronoSabSim" checked> Sábado: simulado</label>
-            <label class="check"><input type="checkbox" id="cronoDomRed" checked> Domingo: redação</label>
+            <label class="check"><input type="checkbox" id="cronoSabSim" checked> Sábado: simulado + correção</label>
+            <label class="check"><input type="checkbox" id="cronoDomRed" checked> Domingo: redação + revisão geral</label>
           </div>
+          <p class="muted small mt1">Com 1 hora por dia o plano só cabe a 1ª matéria; com 1h30, a 1ª e a 2ª; a partir de 2h30 entra a 3ª, de menor peso. O tempo que sobra vai para questões e revisão.</p>
+        </div>
+        <div class="card mb2" id="cronoPesosCard">
+          <div class="card-title">Peso de cada matéria na prova</div>
+          <div id="cronoPesos">Carregando...</div>
         </div>
         <div id="cronoContainer" class="agenda"></div>
       </section>
@@ -450,6 +465,7 @@
     </main>
   </div>
 </div>
+<script src="/plano.js"></script>
 <script src="/app.js"></script>
 </body>
 </html>

@@ -746,3 +746,46 @@ div:has(>.ldots:first-child)[style]{font-size:var(--fs-sm)}
 .red-apoio{background:var(--surface-2);border:1px solid var(--border);border-radius:var(--r);padding:10px 14px;margin-bottom:8px;font-size:13.5px}
 .red-apoio p{margin:4px 0}
 .red-proposta{margin-top:10px;padding:10px 14px;border-left:3px solid var(--accent);background:var(--accent-soft);border-radius:var(--r-sm)}
+
+/* ---------- O que estudar hoje / cronograma por peso ---------- */
+.ea-chips{display:flex;gap:6px;flex-wrap:wrap;align-items:center;flex:1 1 auto}
+.ea-prog{display:flex;align-items:center;gap:12px;margin-top:12px}
+.ea-prog .pbar-bg{height:8px}
+.ea-bloco{background:var(--surface);border:1px solid var(--border);border-left:4px solid var(--border-2);border-radius:var(--r-lg);padding:16px 18px;margin-bottom:12px}
+.ea-bloco.ea-A{border-left-color:var(--primary)}
+.ea-bloco.ea-B{border-left-color:var(--info)}
+.ea-bloco.ea-C{border-left-color:var(--warn)}
+.ea-bloco.ea-F{border-left-color:var(--err)}
+.ea-bloco.ea-rev{border-left-color:var(--accent)}
+.ea-bh{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:4px}
+.ea-bh strong{font-size:var(--fs-md);flex:1 1 200px;min-width:0}
+.ea-faixa{font-size:12px;font-weight:700;color:var(--text-2);background:var(--surface-3);border-radius:6px;padding:2px 8px;font-variant-numeric:tabular-nums}
+.ea-item{margin-top:12px;padding-top:10px;border-top:1px dashed var(--border)}
+.ea-ih{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:6px}
+.ea-ih strong{font-size:var(--fs-base);flex:1 1 200px;min-width:0}
+.ea-passos{list-style:none;display:flex;flex-direction:column;gap:2px}
+.ea-passo{display:flex;align-items:center;gap:10px;padding:6px 0;font-size:var(--fs-base)}
+.ea-chk{display:flex;align-items:flex-start;gap:10px;flex:1 1 auto;min-width:0;cursor:pointer;line-height:1.45}
+.ea-chk input{margin-top:3px;width:17px;height:17px;flex-shrink:0;accent-color:var(--primary)}
+.ea-pmin{flex-shrink:0;font-size:12px;font-weight:700;color:var(--text-2);font-variant-numeric:tabular-nums}
+.ea-passo.feito .ea-ptxt{text-decoration:line-through;color:var(--text-3)}
+.ea-bf{margin-top:12px}
+.crono-foco{font-size:var(--fs-xs);color:var(--text-2);margin:-4px 0 10px}
+.crono-tag.t-A{background:var(--primary-soft);color:var(--primary-text);border:1px solid var(--primary-line)}
+.crono-tag.t-B{background:rgba(141,182,255,.12);color:var(--info);border:1px solid rgba(141,182,255,.38)}
+.crono-tag.t-C{background:var(--warn-soft);color:var(--warn);border:1px solid var(--warn-line)}
+.crono-tag.t-q{background:var(--err-soft);color:var(--err);border:1px solid var(--err-line)}
+.crono-sess.link-row{cursor:pointer}
+.crono-sess.link-row:hover{background:var(--surface-2)}
+#cronoPesos .prow .badge{flex-shrink:0}
+@media (max-width:700px){
+  .ea-bloco{padding:14px}
+  .ea-passo{flex-wrap:wrap}
+  .ea-pmin{order:2}
+  .ea-passo .btn-sm{order:3}
+  #cronoPesos .prow{flex-wrap:wrap}
+}
+
+#eaContainer .ppct,#cronoPesos .ppct{white-space:nowrap;min-width:92px;text-align:right}
+#eaContainer .prow .plabel,#cronoPesos .prow .plabel{width:230px}
+@media (max-width:700px){#eaContainer .prow .plabel,#cronoPesos .prow .plabel{width:100%}}

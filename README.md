@@ -34,3 +34,15 @@ Cada material é ligado a um **assunto** (e opcionalmente a um subassunto) e só
 - `cx_materiais` — `tipo` = `pdf`, `aula`, `flashcard`, `mapa_mental`, `lei_seca`, `jurisprudencia` ou `revisao`;
 - `cx_simulados` — lista de questões por curso;
 - `cx_redacao_temas` — propostas de redação por curso.
+
+
+## Planejamento de estudo (O que estudar / Cronograma)
+
+`plano.js` é o motor (sem DOM). Regras: cada disciplina tem um peso na prova (nº de questões do edital; na GCM, peso estimado);
+cada assunto tem uma lacuna (não estudado = 1; sobe com erros, desce com acertos e domínio).
+- **O que estudar hoje:** o aluno informa o tempo; o plano prioriza peso × lacuna, começa pelas revisões vencidas,
+  fecha com o ponto fraco (menor acerto) e marca o assunto como estudado quando o aluno conclui a aula.
+- **Cronograma (14 dias):** 1ª matéria do dia = a de maior peso; 2ª = peso médio; 3ª (só com 2h30+) = menor peso;
+  sobra de tempo = questões e revisão 24h/7 dias. Sábado: simulado + correção. Domingo: redação + revisão geral.
+
+Testes do motor: `node scripts/test-plano.js`.
