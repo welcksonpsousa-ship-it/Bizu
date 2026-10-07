@@ -70,7 +70,7 @@ Tudo o que não aparece acima — no PM: Noções de Administração Pública e 
 | Jurisprudência | 4 | 36 |
 | Questões reais (publicadas) | 650 | 0 |
 | Questões autorais (rotuladas) | 293 | 1005 |
-| Vídeos YouTube | 22 (14 assuntos) | 93 (48 assuntos) |
+| Vídeos YouTube | 50 (42 de 42 assuntos) | 127 (81 de 84 assuntos) |
 
 (Contagens incluem materiais compartilhados em cada curso.) O PM tem 827 questões reais extraídas das 16 provas; as demais estão em revisão/anuladas/desatualizadas, conforme `AUDITORIA-BANCO-QUESTOES-BIZU.md`.
 
@@ -91,7 +91,7 @@ Aba nova, mentor integrado aos dados do aluno (curso, edital, desempenho, erros,
 **Limitação:** perguntas abertas (explicar conceito/lei) exigem o modelo de IA, que **não está ativado** — falta o segredo `ANTHROPIC_API_KEY` na função `cx-api`. Sem ele, o Chat X responde que não tem como responder em vez de inventar.
 
 ## 13. Vídeos
-Apenas vídeos reais do YouTube, curados a partir dos vídeos verificados do Delta X (somente leitura), validados por oEmbed e embutidos por iframe (`youtube-nocookie`); sem download nem hospedagem. Assuntos sem vídeo adequado ficam sem player (nada inventado) e a aba admin **Vídeos** permite adicionar com validação. Recomenda-se revisar manualmente 3 associações menos certas (injúria racial, Estatuto do Desarmamento, falsificação).
+Apenas vídeos reais do YouTube, curados a partir dos vídeos verificados do Delta X (somente leitura), validados por oEmbed e embutidos por iframe (`youtube-nocookie`); sem download nem hospedagem. Todos os assuntos do PM têm vídeo; no GCM, 3 assuntos que variam por município (História e Geografia do município; Estatuto dos servidores municipais; Leis e decretos municipais da Guarda) ficam sem player, pois não existe aula única válida para todos (nada inventado). Em Atualidades os vídeos são datados (retrospectiva set/2026 no GCM) e devem ser trocados periodicamente. Os vídeos foram buscados por assunto no YouTube, conferidos pelo título e validados como incorporáveis e a aba admin **Vídeos** permite adicionar com validação. Recomenda-se revisar manualmente 3 associações menos certas (injúria racial, Estatuto do Desarmamento, falsificação).
 
 ## 14. Dependências externas
 YouTube (vídeos), Google Drive (provas/simulados, links “qualquer pessoa com o link”), Supabase (banco e função), Vercel (site), ANTHROPIC_API_KEY (opcional, só para perguntas abertas do Chat X).
