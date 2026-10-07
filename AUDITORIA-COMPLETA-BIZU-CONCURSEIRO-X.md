@@ -32,8 +32,9 @@ Nada foi apagado ou reconstruído; todas as funções que já funcionavam foram 
 - **Chat X** (aba nova).
 
 ## 5. Matérias e assuntos
-PM-SP: Língua Portuguesa e Interpretação de Texto, Matemática, Noções Básicas de Informática, Conhecimentos Gerais, Direito/Conhecimentos específicos conforme estrutura publicada (5 disciplinas, 42 assuntos).
-GCM Geral: 15 disciplinas, 84 assuntos (lista completa em Admin → Estrutura curricular).
+**PM-SP (5 disciplinas / 42 assuntos):** Língua Portuguesa e Interpretação de Texto (9), Matemática (14), Conhecimentos Gerais (5), Noções Básicas de Informática (8), Noções de Administração Pública (6).
+
+**GCM Geral (15 disciplinas / 84 assuntos):** Língua Portuguesa (13), Matemática (12), Raciocínio Lógico (8), Noções de Informática (10), Atualidades e Realidades Municipais (4), Direito Constitucional (5), Legislação Específica das Guardas e Segurança Pública (4), Direito Penal (6), Direito Processual Penal (3), Legislação Penal Especial (5), Legislação de Proteção a Grupos Vulneráveis (4), Direitos Humanos (5), Código de Trânsito Brasileiro (2), Direito Administrativo (1), Legislação Municipal (2).
 
 ## 6. Mapa de compartilhamento PM × GCM
 Regra: só compartilha quando o conteúdo é realmente o mesmo; nome parecido não basta.
@@ -46,7 +47,7 @@ Regra: só compartilha quando o conteúdo é realmente o mesmo; nome parecido n�
 | Língua Portuguesa | Pontuação | sim | sim | **Compartilhado** (aula, mapa mental, revisão) |
 | Língua Portuguesa | Regência | sim | sim | **Compartilhado** (aula, mapa mental, revisão) |
 | Matemática | Porcentagem | sim | sim | **Compartilhado** (aula, mapa mental, revisão) |
-| Matemática | Razão e proporção | sim | sim | Base + complemento (flashcards/questões próprios) |
+| Matemática / Raciocínio Lógico | Razão e proporção | sim | sim | Base + complemento (flashcards/questões próprios) |
 | Matemática | Resolução de situações-problema | sim | sim | Base + complemento |
 | Matemática | Noções de geometria | sim | sim | Base + complemento |
 | Informática | Internet | sim | sim | Base + complemento |
@@ -56,7 +57,7 @@ Regra: só compartilha quando o conteúdo é realmente o mesmo; nome parecido n�
 Além disso, **40 materiais idênticos** (29 lei seca, 6 jurisprudência, 5 flashcards) viraram um registro único vinculado aos dois cursos. Total: **58 vínculos compartilhados** (40 idênticos + 18 em nível de assunto). Flashcards dos 6 assuntos compartilhados ficaram **separados** de propósito, para não perder cartões diferentes de cada curso. Materiais compartilhados mostram o selo “Material compartilhado PM-SP + GCM”.
 
 ## 7. Conteúdo específico (não compartilhado)
-Tudo o que não aparece acima: Direito, legislação policial/municipal, conhecimentos específicos de cada carreira etc. Questões de cada curso são **separadas** (nenhuma questão copiada entre cursos).
+Tudo o que não aparece acima — no PM: Noções de Administração Pública e demais assuntos próprios; no GCM: Direito Constitucional, Penal, Processual Penal, Legislação Penal Especial, Grupos Vulneráveis, Direitos Humanos, CTB, Direito Administrativo, Legislação Municipal e Guardas. Questões de cada curso são **separadas** (nenhuma questão copiada entre cursos).
 
 ## 8. Quantidades (publicadas)
 | Item | PM-SP | GCM |
