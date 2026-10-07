@@ -803,3 +803,19 @@ div:has(>.ldots:first-child)[style]{font-size:var(--fs-sm)}
 .ea-why{margin:4px 0 6px;color:var(--text-2)}
 .ea-go{margin:2px 0 8px}
 @media(max-width:600px){.sim-grid{grid-template-columns:1fr}.sim-acoes a,.sim-acoes button{flex:1 1 44%;text-align:center}}
+
+.vid-box{margin:0 0 14px}
+.vid-item{margin-bottom:12px}
+.vid-wrap{position:relative;width:100%;aspect-ratio:16/9;background:#000;border-radius:var(--radius-md,10px);overflow:hidden}
+.vid-wrap iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.vid-tit{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-top:6px}
+.badge-share{background:var(--info-bg,rgba(80,140,255,.15));color:var(--info,#4b8cff);margin-top:4px;align-self:flex-start}
+.chat-wrap{display:flex;flex-direction:column;gap:12px}
+.chat-log{display:flex;flex-direction:column;gap:10px;min-height:260px;max-height:62vh;overflow:auto;padding:4px}
+.chat-msg{max-width:92%;padding:10px 14px;border-radius:14px;line-height:1.5;white-space:pre-wrap;word-break:break-word}
+.chat-msg.eu{align-self:flex-end;background:var(--primary,#2b5fd9);color:#fff}
+.chat-msg.x{align-self:flex-start;background:var(--surface-2,rgba(128,128,128,.12))}
+.chat-acoes{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px}
+.chat-sug{display:flex;flex-wrap:wrap;gap:6px}
+.chat-form{display:flex;gap:8px}
+.chat-form input{flex:1;min-width:0}

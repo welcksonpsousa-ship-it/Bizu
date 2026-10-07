@@ -117,6 +117,7 @@
         <button type="button" class="nav-btn" data-v="cronograma"><svg class="ni"><use href="#i-calendar"/></svg><span class="nl">Cronograma</span></button>
         <button type="button" class="nav-btn" data-v="calendario"><svg class="ni"><use href="#i-calendar"/></svg><span class="nl">Calendário</span></button>
         <button type="button" class="nav-btn" data-v="cronometro"><svg class="ni"><use href="#i-clock"/></svg><span class="nl">Cronômetro X</span></button>
+        <button type="button" class="nav-btn" data-v="chatx"><svg class="ni"><use href="#i-spark"/></svg><span class="nl">Chat X</span></button>
 
         <div class="nav-section">Estudo</div>
         <button type="button" class="nav-btn" data-v="materias"><svg class="ni"><use href="#i-book"/></svg><span class="nl">Disciplinas</span></button>
@@ -387,9 +388,25 @@
         <div id="qContainer"></div>
       </section>
 
+      <!-- CHAT X -->
+      <section id="v-chatx" class="view">
+        <div class="view-hdr"><div><h1 class="view-title">Chat X</h1><div class="view-sub">Seu mentor de estudos: responde com base no seu curso, edital, desempenho, erros, revisões e tempo de estudo</div></div></div>
+        <div class="card chat-wrap">
+          <div class="chat-log" id="chatLog" role="log" aria-live="polite"></div>
+          <div class="chat-sug" id="chatSug"></div>
+          <form class="chat-form" id="chatForm" autocomplete="off"><input id="chatInp" maxlength="1000" placeholder="Pergunte: o que estudar hoje? onde mais erro? tenho 2 horas..." aria-label="Mensagem para o Chat X"><button type="submit" class="btn-blue" id="chatSend">Enviar</button></form>
+          <div class="muted small">O Chat X usa apenas os seus dados reais; quando não tiver informação suficiente, ele avisa em vez de inventar.</div>
+        </div>
+      </section>
+
       <!-- SIMULADOS -->
       <section id="v-simulados" class="view">
         <div class="view-hdr"><div><h1 class="view-title">Simulados</h1><div class="view-sub">Provas completas para abrir, resolver, conferir o gabarito e registrar seu resultado</div></div></div>
+        <div class="tabs" role="tablist" id="simTabs">
+          <button type="button" class="tab on" data-st="prova_real" role="tab">Provas reais</button>
+          <button type="button" class="tab" data-st="simulado" role="tab">Simulados</button>
+        </div>
+        <div class="muted small mb2" id="simTabInfo"></div>
         <div id="simLista"></div>
         <div class="card mt2"><div class="card-title">Seu histórico de simulados</div><div id="simHist"></div></div>
       </section>
@@ -476,12 +493,14 @@
           <button type="button" class="tab" data-at="cobertura" role="tab">Cobertura</button>
           <button type="button" class="tab" data-at="banco" role="tab">Banco de questões</button>
           <button type="button" class="tab" data-at="simulados" role="tab">Simulados</button>
+          <button type="button" class="tab" data-at="videos" role="tab">Vídeos</button>
           <button type="button" class="tab" data-at="usuarios" role="tab">Usuários</button>
         </div>
         <div data-ap="estrutura"><div id="admEstrutura"></div></div>
         <div data-ap="cobertura" class="hidden"><div id="admCobertura"></div></div>
         <div data-ap="banco" class="hidden"><div id="admBanco"></div></div>
         <div data-ap="simulados" class="hidden"><div id="admSimulados"></div></div>
+        <div data-ap="videos" class="hidden"><div id="admVideos"></div></div>
         <div data-ap="usuarios" class="hidden">
           <div class="card mb2">
             <div class="card-title">Criar usuário</div>

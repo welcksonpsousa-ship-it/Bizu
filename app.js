@@ -145,7 +145,7 @@ function showView(name, arg) {
     cronograma: carregarCronograma, calendario: renderCalendario, cronometro: carregarCronometro,
     materias: renderMaterias, assunto: () => renderAssunto(arg), busca: () => { $('buscaInp').focus(); buscar(); },
     material: () => renderMaterial(name.slice(2)), meuresumo: renderMeuResumo, questoes: renderQuestoes,
-    simulados: renderSimulados, salvas: renderSalvas, revisoes: renderRevisoes, redacao: renderRedacao,
+    chatx: renderChatX, simulados: renderSimulados, salvas: renderSalvas, revisoes: renderRevisoes, redacao: renderRedacao,
     desempenho: renderDesempenho, dominio: renderDominio, conta: renderConta, admin: renderAdmin,
   }[alvo];
   if (fn) fn();
@@ -448,10 +448,28 @@ async function renderMaterial(tipo) {
       return;
     }
     const aberto = !!$('matlAss').value;
-    box.innerHTML = itens.map((m) => { const a = S.ass[m.assunto_id]; return `<details class="card mat-item"${aberto ? ' open' : ''}><summary><span class="card-title">${esc(m.titulo)}</span><span class="muted small">${esc(a ? a.disciplina + ' › ' + a.nome : '')}</span></summary><div class="mat-corpo">${corpoMaterial(m)}</div></details>`; }).join('');
+    box.innerHTML = itens.map((m) => { const a = S.ass[m.assunto_id]; return `<details class="card mat-item"${aberto ? ' open' : ''}><summary><span class="card-title">${esc(m.titulo)}</span><span class="muted small">${esc(a ? a.disciplina + ' › ' + a.nome : '')}</span>${selo(m)}</summary><div class="mat-corpo">${tipo === 'aula' ? `<div class="vid-box" data-ass="${m.assunto_id}" data-mat="${m.id}"></div>` : ''}${corpoMaterial(m)}</div></details>`; }).join('');
+    if (tipo === 'aula') {
+      for (const k in VID_CACHE) delete VID_CACHE[k];
+      $$('#matlLista details.mat-item').forEach((d) => { const vb = $$('.vid-box', d)[0]; const go = () => { if (vb.dataset.ok) return; vb.dataset.ok = '1'; carregarVideos(vb); }; if (d.open) go(); d.addEventListener('toggle', () => { if (d.open) go(); }); });
+    }
   } catch (e) { if (seq === S.matSeq) box.innerHTML = emp(e.message); }
 }
 
+const selo = (m) => (m.compartilhado ? '<span class="badge badge-share" title="Este material é o mesmo nos dois cursos">Material compartilhado PM-SP + GCM</span>' : '');
+const VID_CACHE = {};
+async function carregarVideos(box) {
+  const aid = box.dataset.ass;
+  // o mesmo vídeo aparece só na primeira aula do assunto, para não repetir
+  if (VID_CACHE[aid] && VID_CACHE[aid] !== box.dataset.mat) return;
+  box.innerHTML = '';
+  try {
+    const vs = (await api('/videos?assunto_id=' + aid)).videos;
+    if (!vs.length) return;
+    VID_CACHE[aid] = box.dataset.mat;
+    box.innerHTML = vs.map((v) => `<div class="vid-item"><div class="vid-wrap"><iframe src="https://www.youtube-nocookie.com/embed/${encodeURIComponent(v.video_id)}" title="${esc(v.titulo)}" loading="lazy" allow="accelerometer; encrypted-media; picture-in-picture; fullscreen" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div><div class="vid-tit small"><strong>${esc(v.titulo)}</strong>${v.canal ? ' · <span class="muted">' + esc(v.canal) + '</span>' : ''}<a class="btn-ghost btn-sm" href="https://www.youtube.com/watch?v=${encodeURIComponent(v.video_id)}" target="_blank" rel="noopener noreferrer">Abrir no YouTube</a></div></div>`).join('');
+  } catch (e) { /* sem vídeo: a aula em texto continua */ }
+}
 /* Corpo de cada tipo de material. Texto vem do banco: sempre escapado. */
 function textoFmt(t) {
   const linhas = String(t || '').split('\n'); let h = '', lista = [];
@@ -572,6 +590,53 @@ async function renderSalvas() {
   try { const qs = (await api('/questoes/salvas')).questoes; box.innerHTML = qs.length ? qs.map(qCard).join('') : emp('Nenhuma questão salva'); ligarQuestoes(box); } catch (e) { box.innerHTML = emp(e.message); }
 }
 
+/* ---------------- CHAT X (mentor) ---------------- */
+const CHAT = { hist: [], curso: null, ocupado: false };
+const CHAT_SUG = ['O que estudar hoje?', 'Tenho 2 horas hoje', 'Qual minha matéria mais fraca?', 'Onde mais erro?', 'Minha revisão de amanhã', 'Como está minha evolução?', 'Montar meu cronograma'];
+function chatAdd(papel, texto, acoes) {
+  const log = $('chatLog'); const d = document.createElement('div'); d.className = 'chat-msg ' + (papel === 'user' ? 'eu' : 'x'); d.textContent = texto;
+  if (acoes && acoes.length) {
+    const w = document.createElement('div'); w.className = 'chat-acoes';
+    const extra = []; const est = acoes.find((x) => x.tipo === 'estudar' && x.assunto_id);
+    if (est && !acoes.some((x) => x.tipo === 'lei')) extra.push({ tipo: 'lei', rotulo: 'ABRIR LEI SECA', assunto_id: est.assunto_id });
+    if (est && !acoes.some((x) => x.tipo === 'aula')) extra.push({ tipo: 'aula', rotulo: 'ABRIR AULA', assunto_id: est.assunto_id });
+    [...acoes, ...extra].forEach((ac) => { const b = document.createElement('button'); b.type = 'button'; b.className = 'btn-ghost btn-sm'; b.textContent = ac.rotulo; b.addEventListener('click', () => chatAcao(ac)); w.appendChild(b); });
+    d.appendChild(w);
+  }
+  log.appendChild(d); log.scrollTop = log.scrollHeight; return d;
+}
+async function chatAcao(ac) {
+  const id = ac.assunto_id;
+  if (['estudar', 'aula', 'flashcards', 'lei'].includes(ac.tipo) && (!id || !S.ass[id])) { chatAdd('x', 'Esse assunto não pertence ao curso atual. Abra a lista de disciplinas para escolher.'); return showView('materias'); }
+  if (ac.tipo === 'estudar') return showView('assunto', id);
+  if (ac.tipo === 'aula') return abrirPasso('aula', id);
+  if (ac.tipo === 'flashcards') return abrirPasso('flashcard', id);
+  if (ac.tipo === 'lei') return abrirPasso('lei_seca', id);
+  if (ac.tipo === 'revisar') return showView('revisoes');
+  if (ac.tipo === 'simulado') return showView('simulados');
+  if (ac.tipo === 'treino') { showView('questoes'); if ($('trModo').querySelector(`option[value="${ac.modo}"]`)) $('trModo').value = ac.modo; if (ac.qtd) $('trQtd').value = String(ac.qtd); return $('btnTreino').click(); }
+  if (ac.tipo === 'plano') { showView('estudar'); $('eaTempo').value = Math.max(20, Math.min(600, ac.minutos || 90)); return gerarEA(); }
+  if (ac.tipo === 'cronograma') { showView('cronograma'); await carregarCronograma(); $('cronoH').value = Math.max(1, Math.min(14, Math.round((ac.minutos || 120) / 60 * 2) / 2)); return $('btnCrono').click(); }
+  showView('materias');
+}
+async function chatEnviar(txt) {
+  txt = (txt || '').trim(); if (!txt || CHAT.ocupado) return;
+  CHAT.ocupado = true; $('chatSend').disabled = true; $('chatInp').value = '';
+  chatAdd('user', txt); const esp = chatAdd('x', 'Analisando seus dados...');
+  try {
+    const r = await api('/chatx', { body: { curso_id: S.curso.id, mensagem: txt, historico: CHAT.hist.slice(-6) } });
+    esp.remove(); chatAdd('x', r.texto, r.acoes);
+    CHAT.hist.push({ role: 'user', content: txt }, { role: 'assistant', content: r.texto });
+  } catch (e) { esp.textContent = e.message || 'Não consegui responder agora.'; }
+  CHAT.ocupado = false; $('chatSend').disabled = false; $('chatInp').focus();
+}
+function renderChatX() {
+  if (CHAT.curso !== S.curso.id) { CHAT.curso = S.curso.id; CHAT.hist = []; $('chatLog').innerHTML = ''; chatAdd('x', `Olá! Sou o Chat X, seu mentor no ${S.curso.nome}. Posso dizer o que estudar hoje, onde você mais erra, sua matéria mais fraca, suas revisões e montar seu plano ou cronograma — sempre com os seus dados reais. Como posso ajudar?`); }
+  $('chatSug').innerHTML = CHAT_SUG.map((s) => `<button type="button" class="btn-ghost btn-sm">${esc(s)}</button>`).join('');
+  $$('#chatSug button').forEach((b) => b.addEventListener('click', () => chatEnviar(b.textContent)));
+}
+$('chatForm').addEventListener('submit', (e) => { e.preventDefault(); chatEnviar($('chatInp').value); });
+
 /* ---------------- SIMULADOS (acervo por link do Drive) ---------------- */
 const driveId = (u) => { const m = /\/d\/([^/?#]+)/.exec(u || '') || /[?&]id=([^&]+)/.exec(u || ''); return m ? m[1] : null; };
 const driveView = (u) => { const id = driveId(u); return id ? `https://drive.google.com/file/d/${id}/view` : u; };
@@ -586,15 +651,19 @@ function simCard(s, rs) {
   ].join('');
   const ult = rs[0] ? `<div class="small mt1">Último resultado: <strong>${rs[0].acertos}/${rs[0].total}</strong> (${Math.round(rs[0].acertos / rs[0].total * 100)}%) em ${new Date(rs[0].criado_em).toLocaleDateString('pt-BR')}${rs.length > 1 ? ` · ${rs.length} tentativas` : ''}</div>` : '';
   return `<div class="card sim-card" data-sim="${s.id}"><div class="card-title">${esc(s.titulo)}</div>
-    <div class="qmeta">${s.tipo ? `<span class="badge ${/real/i.test(s.tipo) ? 'q-real' : 'q-aut'}">${esc(s.tipo)}</span>` : ''}${s.banca ? `<span class="badge">${esc(s.banca)}</span>` : ''}${s.ano ? `<span class="badge">${esc(s.ano)}</span>` : ''}${s.cargo ? `<span class="badge">${esc(s.cargo)}</span>` : ''}</div>
+    <div class="qmeta">${s.tipo ? `<span class="badge ${/real/i.test(s.tipo) ? 'q-real' : 'q-aut'}">${esc(s.tipo)}</span>` : ''}${s.numero ? `<span class="badge">Nº ${s.numero}</span>` : ''}${s.data ? `<span class="badge">${new Date(s.data + 'T12:00:00').toLocaleDateString('pt-BR')}</span>` : ''}${s.banca ? `<span class="badge">${esc(s.banca)}</span>` : ''}${s.ano ? `<span class="badge">${esc(s.ano)}</span>` : ''}${s.cargo ? `<span class="badge">${esc(s.cargo)}</span>` : ''}</div>
     ${s.descricao ? `<p class="muted small">${esc(s.descricao)}</p>` : ''}<div class="sim-acoes">${acoes}</div>${ult}
     <details class="sim-reg"><summary>Registrar meu resultado</summary><div class="filters mt1"><div class="fgroup"><label>Acertos</label><input type="number" min="0" max="300" class="sr-ac"></div><div class="fgroup"><label>Total de questões</label><input type="number" min="1" max="300" value="60" class="sr-tt"></div><div class="fgroup"><label>Tempo (min, opcional)</label><input type="number" min="0" max="600" class="sr-tm"></div><button type="button" class="btn-blue btn-sm sr-ok">Registrar</button></div><div class="muted small sr-msg" role="status"></div></details></div>`;
 }
+let SIM_CAT = 'prova_real';
+$$('#simTabs .tab').forEach((t) => t.addEventListener('click', () => { SIM_CAT = t.dataset.st; renderSimulados(); }));
 async function renderSimulados() {
   const box = $('simLista'); box.innerHTML = ld();
+  $$('#simTabs .tab').forEach((x) => x.classList.toggle('on', x.dataset.st === SIM_CAT));
+  $('simTabInfo').textContent = SIM_CAT === 'prova_real' ? 'Provas oficiais de concursos anteriores, em ordem cronológica.' : 'Simulados exclusivos do Bizu: cada um tem seu próprio conjunto de questões, sem repetição entre eles nem com as provas reais.';
   try {
-    const d = await api('/simulados-drive?' + cq()); const por = {}; d.resultados.forEach((r) => { (por[r.simulado_id] = por[r.simulado_id] || []).push(r); });
-    box.innerHTML = d.simulados.length ? `<div class="sim-grid">${d.simulados.map((s) => simCard(s, por[s.id] || [])).join('')}</div>` : emp('Nenhum simulado publicado para este curso', EM_PREPARO_SUB);
+    const dAll = await api('/simulados-drive?' + cq()); const d = { ...dAll, simulados: dAll.simulados.filter((s) => (s.categoria || 'prova_real') === SIM_CAT).sort((x, y) => (x.numero || 0) - (y.numero || 0)) }; const por = {}; d.resultados.forEach((r) => { (por[r.simulado_id] = por[r.simulado_id] || []).push(r); });
+    box.innerHTML = d.simulados.length ? `<div class="sim-grid">${d.simulados.map((s) => simCard(s, por[s.id] || [])).join('')}</div>` : emp(SIM_CAT === 'prova_real' ? 'Nenhuma prova real publicada para este curso ainda' : 'Os simulados deste curso serão publicados em breve', 'O administrador publica por aqui assim que estiverem prontos.');
     $$('.sim-card', box).forEach((c) => $$('.sr-ok', c)[0].addEventListener('click', async () => {
       const ac = parseInt($$('.sr-ac', c)[0].value, 10), tt = parseInt($$('.sr-tt', c)[0].value, 10), msg = $$('.sr-msg', c)[0];
       if (!(ac >= 0) || !(tt >= 1) || ac > tt) { msg.textContent = 'Informe acertos e total válidos.'; return; }
@@ -857,7 +926,7 @@ $('btnContaSenha').addEventListener('click', async () => {
 $$('#admTabs .tab').forEach((t) => t.addEventListener('click', () => {
   $$('#admTabs .tab').forEach((x) => x.classList.toggle('on', x === t));
   $$('#v-admin [data-ap]').forEach((p) => p.classList.toggle('hidden', p.dataset.ap !== t.dataset.at));
-  ({ estrutura: renderAdmEstrutura, cobertura: renderAdmCobertura, banco: renderAdmBanco, simulados: renderAdmSimulados, usuarios: renderAdmUsuarios })[t.dataset.at]();
+  ({ estrutura: renderAdmEstrutura, cobertura: renderAdmCobertura, banco: renderAdmBanco, simulados: renderAdmSimulados, videos: renderAdmVideos, usuarios: renderAdmUsuarios })[t.dataset.at]();
 }));
 function renderAdmin() { if (!S.admin) { showView('painel'); return; } const t = $$('#admTabs .tab.on')[0]; t.click(); }
 function renderAdmEstrutura() {
@@ -889,6 +958,19 @@ const FAIXA = { verde: '🟢', amarelo: '🟡', vermelho: '🔴' };
 const FLAG_TXT = { sem_questoes: 'sem questões', poucas: 'poucas questões', excesso: 'excesso', sem_banca_alvo: 'sem questão real da banca-alvo', sem_recente: 'sem questão recente', sem_nivel_adequado: 'sem nível adequado', precisa_complemento_autoral: 'precisa de complemento autoral' };
 let ADM_REV = { status: 'revisao', pagina: 0 };
 async function renderAdmBanco() {
+  await renderAdmBanco0();
+  const box = $('admBanco'); if (!box.firstChild || box.querySelector('.empty')) return;
+  box.insertAdjacentHTML('afterbegin', '<div class="card mb2" id="admDup"><div class="card-title">Controle de duplicidade (uma questão, um uso)</div><div class="muted small">Verificando...</div></div>');
+  try {
+    const d = await api('/admin/banco/duplicidade');
+    const prov = Object.entries(d.questoes_ligadas_a_prova_real || {}).map(([k, v]) => `<span class="badge">${esc(k)}: ${v}</span>`).join(' ');
+    $('admDup').innerHTML = `<div class="card-title">Controle de duplicidade (uma questão, um uso)</div>
+      <div class="qmeta"><span class="badge">Questões no banco: ${d.total_questoes}</span><span class="badge ${d.hash_repetido ? 'berr' : 'bok'}">Hash repetido: ${d.hash_repetido}</span><span class="badge ${d.grupos_texto_repetido ? 'berr' : 'bok'}">Grupos de texto repetido: ${d.grupos_texto_repetido}</span><span class="badge">Provas reais cadastradas: ${d.provas_reais_cadastradas}</span><span class="badge">Simulados cadastrados: ${d.simulados_cadastrados}</span></div>
+      <p class="small mt1">${esc(d.regra)}</p>${prov ? `<p class="small"><strong>Questões do banco por prova de origem:</strong> ${prov}</p>` : ''}
+      <p class="muted small">Ao publicar um novo simulado ou prova com questões do banco, rode esta verificação antes: o conjunto de cada simulado deve ser exclusivo.</p>`;
+  } catch (e) { $('admDup').innerHTML = '<div class="card-title">Controle de duplicidade</div>' + emp(e.message); }
+}
+async function renderAdmBanco0() {
   const box = $('admBanco'); box.innerHTML = ld('Calculando indicadores do banco...');
   try {
     const r = await api('/admin/banco/resumo?' + cq()); const c = r.cursos[S.curso.id]; const t = r.totais;
@@ -937,20 +1019,33 @@ async function renderAdmSimulados() {
     const l = (await api('/admin/simulados?' + cq())).simulados; ADM_SIM_ED = null;
     const f = (id, rot, v, ph) => `<div class="fgroup"><label for="${id}">${rot}</label><input id="${id}" value="${esc(v || '')}" placeholder="${esc(ph || '')}"></div>`;
     box.innerHTML = `<div class="card mb2"><div class="card-title" id="asTit">Novo simulado — ${esc(S.curso.nome)}</div><p class="muted small">Cole os links de compartilhamento do Google Drive (“qualquer pessoa com o link”). O simulado só aparece para os alunos depois de publicado.</p>
-      <div class="filters">${f('asTitulo', 'Título')}${f('asCargo', 'Cargo')}${f('asBanca', 'Banca')}${f('asAno', 'Ano')}${f('asTipo', 'Tipo', 'Prova real', 'Prova real / Simulado autoral')}${f('asProva', 'Link da prova')}${f('asGab', 'Link do gabarito')}${f('asCom', 'Link do gabarito comentado')}${f('asDesc', 'Descrição (opcional)')}
+      <div class="filters">${f('asTitulo', 'Título')}${f('asCargo', 'Cargo')}${f('asBanca', 'Banca')}${f('asAno', 'Ano')}<div class="fgroup"><label for="asCat">Categoria</label><select id="asCat"><option value="prova_real">Prova real</option><option value="simulado">Simulado</option></select></div>${f('asNum', 'Número')}<div class="fgroup"><label for="asData">Data da prova</label><input id="asData" type="date"></div>${f('asTipo', 'Tipo', 'Prova real', 'Prova real / Simulado autoral')}${f('asProva', 'Link da prova')}${f('asGab', 'Link do gabarito')}${f('asCom', 'Link do gabarito comentado')}${f('asDesc', 'Descrição (opcional)')}
       <div class="fgroup"><label><input type="checkbox" id="asPub"> Publicado</label></div><button type="button" class="btn-blue" id="asSalvar">Salvar simulado</button><button type="button" class="btn-ghost hidden" id="asCancel">Cancelar edição</button></div><div class="muted small" id="asMsg" role="status"></div></div>
-    <div class="card tbl-wrap"><table class="tbl"><thead><tr><th>Simulado</th><th>Banca / ano</th><th>Links</th><th>Status</th><th></th></tr></thead><tbody>${l.map((s) => `<tr data-id="${s.id}"><td>${esc(s.titulo)}<br><span class="muted small">${esc(s.tipo || '')} · ${esc(s.cargo || '')}</span></td><td>${esc(s.banca || '')} ${esc(s.ano || '')}</td><td class="small">${s.prova_url ? '✔ prova ' : '✘ prova '}${s.gabarito_url ? '✔ gabarito ' : '✘ gabarito '}${s.comentario_url ? '✔ comentado' : '✘ comentado'}</td><td>${s.publicado ? '<span class="badge bok">Publicado</span>' : '<span class="badge">Rascunho</span>'}</td><td class="adm-acts"><button type="button" class="btn-ghost btn-sm" data-ed="${s.id}">Editar</button><button type="button" class="btn-ghost btn-sm" data-pub="${s.id}" data-v="${s.publicado ? 0 : 1}">${s.publicado ? 'Despublicar' : 'Publicar'}</button><button type="button" class="btn-ghost btn-sm" data-del="${s.id}">Excluir</button></td></tr>`).join('')}</tbody></table></div>`;
-    const corpo = () => ({ titulo: $('asTitulo').value, cargo: $('asCargo').value, banca: $('asBanca').value, ano: $('asAno').value, tipo: $('asTipo').value || 'Prova real', prova_url: $('asProva').value.trim(), gabarito_url: $('asGab').value.trim(), comentario_url: $('asCom').value.trim(), descricao: $('asDesc').value, publicado: $('asPub').checked });
+    <div class="card tbl-wrap"><table class="tbl"><thead><tr><th>Simulado</th><th>Categoria</th><th>Banca / ano</th><th>Links</th><th>Status</th><th></th></tr></thead><tbody>${l.map((s) => `<tr data-id="${s.id}"><td>${esc(s.titulo)}<br><span class="muted small">${esc(s.tipo || '')} · ${esc(s.cargo || '')}</span></td><td>${s.categoria === 'simulado' ? 'Simulado' : 'Prova real'}${s.numero ? ' nº ' + s.numero : ''}</td><td>${esc(s.banca || '')} ${esc(s.ano || '')}</td><td class="small">${s.prova_url ? '✔ prova ' : '✘ prova '}${s.gabarito_url ? '✔ gabarito ' : '✘ gabarito '}${s.comentario_url ? '✔ comentado' : '✘ comentado'}</td><td>${s.publicado ? '<span class="badge bok">Publicado</span>' : '<span class="badge">Rascunho</span>'}</td><td class="adm-acts"><button type="button" class="btn-ghost btn-sm" data-ed="${s.id}">Editar</button><button type="button" class="btn-ghost btn-sm" data-pub="${s.id}" data-v="${s.publicado ? 0 : 1}">${s.publicado ? 'Despublicar' : 'Publicar'}</button><button type="button" class="btn-ghost btn-sm" data-del="${s.id}">Excluir</button></td></tr>`).join('')}</tbody></table></div>`;
+    const corpo = () => ({ titulo: $('asTitulo').value, cargo: $('asCargo').value, banca: $('asBanca').value, ano: $('asAno').value, tipo: $('asTipo').value || ($('asCat').value === 'simulado' ? 'Simulado autoral' : 'Prova real'), categoria: $('asCat').value, numero: parseInt($('asNum').value, 10) || null, data_prova: $('asData').value || null, prova_url: $('asProva').value.trim(), gabarito_url: $('asGab').value.trim(), comentario_url: $('asCom').value.trim(), descricao: $('asDesc').value, publicado: $('asPub').checked });
     $('asSalvar').addEventListener('click', async () => {
       try { await api('/admin/simulados', { body: { ...corpo(), acao: ADM_SIM_ED ? 'editar' : 'criar', id: ADM_SIM_ED, curso_id: S.curso.id } }); renderAdmSimulados(); } catch (e) { $('asMsg').textContent = e.message; }
     });
     $('asCancel').addEventListener('click', renderAdmSimulados);
     $$('#admSimulados [data-ed]').forEach((b) => b.addEventListener('click', () => {
       const s = l.find((x) => x.id === b.dataset.ed); ADM_SIM_ED = s.id; $('asTit').textContent = 'Editar simulado'; $('asCancel').classList.remove('hidden');
-      [['asTitulo', 'titulo'], ['asCargo', 'cargo'], ['asBanca', 'banca'], ['asAno', 'ano'], ['asTipo', 'tipo'], ['asProva', 'prova_url'], ['asGab', 'gabarito_url'], ['asCom', 'comentario_url'], ['asDesc', 'descricao']].forEach(([i, k]) => { $(i).value = s[k] || ''; }); $('asPub').checked = !!s.publicado; window.scrollTo(0, 0);
+      [['asTitulo', 'titulo'], ['asCargo', 'cargo'], ['asBanca', 'banca'], ['asAno', 'ano'], ['asTipo', 'tipo'], ['asProva', 'prova_url'], ['asGab', 'gabarito_url'], ['asCom', 'comentario_url'], ['asDesc', 'descricao'], ['asNum', 'numero'], ['asData', 'data_prova']].forEach(([i, k]) => { $(i).value = s[k] || ''; }); $('asCat').value = s.categoria || 'prova_real'; $('asPub').checked = !!s.publicado; window.scrollTo(0, 0);
     }));
     $$('#admSimulados [data-pub]').forEach((b) => b.addEventListener('click', async () => { await api('/admin/simulados', { body: { acao: 'publicar', id: b.dataset.pub, publicado: b.dataset.v === '1' } }).catch((e) => alert(e.message)); renderAdmSimulados(); }));
     $$('#admSimulados [data-del]').forEach((b) => b.addEventListener('click', async () => { if (confirm('Excluir este simulado?')) { await api('/admin/simulados', { body: { acao: 'excluir', id: b.dataset.del } }).catch((e) => alert(e.message)); renderAdmSimulados(); } }));
+  } catch (e) { box.innerHTML = emp(e.message); }
+}
+async function renderAdmVideos() {
+  const box = $('admVideos'); box.innerHTML = ld();
+  try {
+    const vs = (await api('/admin/videos?' + cq())).videos;
+    box.innerHTML = `<div class="card mb2"><div class="card-title">Adicionar vídeo do YouTube — ${esc(S.curso.nome)}</div><p class="muted small">Só vídeos reais, que permitem incorporação. O vídeo é validado no YouTube antes de salvar; nada é baixado nem hospedado aqui.</p>
+      <div class="filters"><div class="fgroup"><label for="avAss">Assunto</label><select id="avAss">${S.est.map((d) => `<optgroup label="${esc(d.nome)}">${d.assuntos.map((x) => `<option value="${x.id}">${esc(x.nome)}</option>`).join('')}</optgroup>`).join('')}</select></div>
+      <div class="fgroup"><label for="avUrl">Link do vídeo</label><input id="avUrl" placeholder="https://www.youtube.com/watch?v=..."></div><div class="fgroup"><label for="avOrd">Ordem</label><input id="avOrd" type="number" min="1" value="1"></div><button type="button" class="btn-blue" id="avAdd">Adicionar</button></div><div class="muted small" id="avMsg" role="status"></div></div>
+    <div class="card tbl-wrap"><div class="card-title">${vs.length} vídeo(s) neste curso</div><table class="tbl"><thead><tr><th>Disciplina / assunto</th><th>Vídeo</th><th>Status</th><th></th></tr></thead><tbody>${vs.map((v) => `<tr><td>${esc(v.disciplina)}<br><span class="muted small">${esc(v.assunto)}</span></td><td><a href="https://www.youtube.com/watch?v=${encodeURIComponent(v.video_id)}" target="_blank" rel="noopener noreferrer">${esc(v.titulo)}</a><br><span class="muted small">${esc(v.canal || '')}</span></td><td>${v.publicado ? '<span class="badge bok">Publicado</span>' : '<span class="badge">Oculto</span>'}</td><td class="adm-acts"><button type="button" class="btn-ghost btn-sm" data-pub="${v.id}" data-v="${v.publicado ? 0 : 1}">${v.publicado ? 'Ocultar' : 'Publicar'}</button><button type="button" class="btn-ghost btn-sm" data-del="${v.id}">Excluir</button></td></tr>`).join('')}</tbody></table></div>`;
+    $('avAdd').addEventListener('click', async () => { $('avMsg').textContent = 'Validando...'; try { await api('/admin/videos', { body: { acao: 'criar', assunto_id: $('avAss').value, url: $('avUrl').value.trim(), ordem: $('avOrd').value } }); renderAdmVideos(); } catch (e) { $('avMsg').textContent = e.message; } });
+    $$('#admVideos [data-pub]').forEach((b) => b.addEventListener('click', async () => { await api('/admin/videos', { body: { acao: 'publicar', id: b.dataset.pub, publicado: b.dataset.v === '1' } }).catch((e) => alert(e.message)); renderAdmVideos(); }));
+    $$('#admVideos [data-del]').forEach((b) => b.addEventListener('click', async () => { if (confirm('Excluir este vídeo?')) { await api('/admin/videos', { body: { acao: 'excluir', id: b.dataset.del } }).catch((e) => alert(e.message)); renderAdmVideos(); } }));
   } catch (e) { box.innerHTML = emp(e.message); }
 }
 async function renderAdmUsuarios() {

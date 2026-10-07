@@ -67,7 +67,8 @@ async function carregarEstrutura(curso: string, incluirNaoPublicado = false) {
   let qq = porCurso(db.from('cx_questoes').select('assunto_id' + JOIN_CURSO), curso);
   let qm = porCurso(db.from('cx_materiais').select('assunto_id,tipo' + JOIN_CURSO), curso);
   if (!incluirNaoPublicado) { qq = qq.eq('publicado', true); qm = qm.eq('publicado', true); }
-  const [{ data: qs }, { data: ms }] = await Promise.all([qq, qm]);
+  const [{ data: qs }, { data: ms }, vs] = await Promise.all([qq, qm, vinculosDoCurso(curso, { soPublicados: !incluirNaoPublicado })]);
+  vs.forEach((v: any) => { const t = v.m.tipo; (cont[v.assunto_id] ??= {})[t] = (cont[v.assunto_id][t] ?? 0) + 1; });
   (qs ?? []).forEach((q: any) => { (cont[q.assunto_id] ??= {}).questoes = (cont[q.assunto_id].questoes ?? 0) + 1; });
   (ms ?? []).forEach((m: any) => { (cont[m.assunto_id] ??= {})[m.tipo] = (cont[m.assunto_id][m.tipo] ?? 0) + 1; });
   const ord = (a: any, b: any) => a.ordem - b.ordem || String(a.nome).localeCompare(b.nome);
@@ -263,7 +264,179 @@ const limparSim = (s: any) => ({
   prova_url: s.prova_url ? String(s.prova_url).slice(0, 600) : null, gabarito_url: s.gabarito_url ? String(s.gabarito_url).slice(0, 600) : null,
   comentario_url: s.comentario_url ? String(s.comentario_url).slice(0, 600) : null, descricao: s.descricao ? String(s.descricao).slice(0, 600) : null,
   publicado: s.publicado === true, ordem: Number.isInteger(s.ordem) ? s.ordem : 0,
+  categoria: s.categoria === 'simulado' ? 'simulado' : 'prova_real', numero: Number.isInteger(s.numero) ? s.numero : (parseInt(s.numero) || null),
+  data_prova: /^\d{4}-\d{2}-\d{2}$/.test(String(s.data_prova ?? '')) ? s.data_prova : null,
 });
+
+
+// ---------- materiais compartilhados, vídeos e Chat X ----------
+async function mapaAssuntoCurso() {
+  const { data } = await db.from('cx_assuntos').select('id,disciplina_id,cx_disciplinas!inner(curso_id)');
+  const m: Record<string, { curso: string; disciplina_id: string }> = {};
+  (data ?? []).forEach((a: any) => { m[a.id] = { curso: a.cx_disciplinas.curso_id, disciplina_id: a.disciplina_id }; });
+  return m;
+}
+async function vinculosDoCurso(curso: string, filtro: { disciplina_id?: string | null; assunto_id?: string | null; tipo?: string; soPublicados?: boolean } = {}) {
+  const mapa = await mapaAssuntoCurso();
+  const { data: vs } = await db.from('cx_materiais_vinculos').select('assunto_id,material_id');
+  const rel = (vs ?? []).filter((v: any) => mapa[v.assunto_id]?.curso === curso && (!filtro.assunto_id || v.assunto_id === filtro.assunto_id) && (!filtro.disciplina_id || mapa[v.assunto_id].disciplina_id === filtro.disciplina_id));
+  const ids = [...new Set(rel.map((v: any) => v.material_id))] as string[];
+  const mats: Record<string, any> = {};
+  for (let i = 0; i < ids.length; i += 80) {
+    let qb = db.from('cx_materiais').select('id,subassunto_id,tipo,titulo,conteudo,url,fonte_oficial,publicado').in('id', ids.slice(i, i + 80));
+    if (filtro.tipo) qb = qb.eq('tipo', filtro.tipo);
+    if (filtro.soPublicados) qb = qb.eq('publicado', true);
+    const { data } = await qb; (data ?? []).forEach((m: any) => { mats[m.id] = m; });
+  }
+  return rel.filter((v: any) => mats[v.material_id]).map((v: any) => ({ assunto_id: v.assunto_id, m: mats[v.material_id] }));
+}
+async function cursosDosMateriais(ids: string[]) {
+  const out: Record<string, Set<string>> = {};
+  const mapa = await mapaAssuntoCurso();
+  for (let i = 0; i < ids.length; i += 80) {
+    const part = ids.slice(i, i + 80);
+    const [{ data: own }, { data: vin }] = await Promise.all([
+      db.from('cx_materiais').select('id,assunto_id').in('id', part),
+      db.from('cx_materiais_vinculos').select('material_id,assunto_id').in('material_id', part),
+    ]);
+    (own ?? []).forEach((r: any) => { const c = mapa[r.assunto_id]?.curso; if (c) (out[r.id] ??= new Set()).add(c); });
+    (vin ?? []).forEach((r: any) => { const c = mapa[r.assunto_id]?.curso; if (c) (out[r.material_id] ??= new Set()).add(c); });
+  }
+  return out;
+}
+const videoIdDe = (u: unknown) => { const t = String(u ?? '').trim(); const m = /(?:v=|youtu\.be\/|embed\/|shorts\/)([A-Za-z0-9_-]{11})/.exec(t) ?? /^([A-Za-z0-9_-]{11})$/.exec(t); return m ? m[1] : null; };
+async function oembedYT(id: string) {
+  try {
+    const r = await fetch(`https://www.youtube.com/oembed?url=${encodeURIComponent('https://www.youtube.com/watch?v=' + id)}&format=json`, { signal: AbortSignal.timeout(10000) });
+    if (!r.ok) return null; const j = await r.json(); return { titulo: String(j.title ?? ''), canal: String(j.author_name ?? '') };
+  } catch { return null; }
+}
+const driveIdDe = (u: unknown) => { const m = /\/d\/([^/?#]+)/.exec(String(u ?? '')) ?? /[?&]id=([^&]+)/.exec(String(u ?? '')); return m ? m[1] : null; };
+const normCh = (s: string) => String(s ?? '').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/[^a-z0-9 ]+/g, ' ').replace(/\s+/g, ' ').trim();
+
+// Chat X: mentor que responde com os dados reais do aluno (nunca inventa; sem dados suficientes, diz isso).
+async function dadosChatX(curso: string, uid: string) {
+  const ins = await insightsAssuntos(curso, uid);
+  const hoje = hojeISO(), amanha = addDias(hoje, 1);
+  const [tent, revs, sess, simr, est] = await Promise.all([
+    todos((a, b) => db.from('cx_tentativas').select('correta,criado_em,cx_questoes!inner(assunto_id,cx_assuntos!inner(cx_disciplinas!inner(curso_id)))').eq('user_id', uid).eq('cx_questoes.cx_assuntos.cx_disciplinas.curso_id', curso).order('criado_em').range(a, b)),
+    db.from('cx_revisoes').select('assunto_id,tipo,vence_em').eq('user_id', uid).is('feita_em', null).lte('vence_em', amanha).then((r: any) => r.data ?? []),
+    db.from('cx_sessoes').select('inicio,liquido_s,fim,pausado_em,pausas_s,curso_id').eq('user_id', uid).gte('inicio', new Date(Date.now() - 7 * 86400000).toISOString()).then((r: any) => r.data ?? []),
+    db.from('cx_simulado_resultados').select('acertos,total,criado_em,cx_simulados_drive!inner(titulo,curso_id)').eq('user_id', uid).eq('cx_simulados_drive.curso_id', curso).order('criado_em', { ascending: false }).limit(5).then((r: any) => r.data ?? []),
+    carregarEstrutura(curso),
+  ]);
+  const porAss: Record<string, any> = {}; ins.assuntos.forEach((a: any) => porAss[a.assunto_id] = a);
+  const discs: Record<string, any> = {};
+  ins.assuntos.forEach((a: any) => { const d = (discs[a.disciplina] ??= { nome: a.disciplina, id: a.disciplina_id, peso: a.peso_disc, tent: 0, ac: 0, prio: 0, assuntos: [] }); d.tent += a.tentativas; d.ac += a.acertos; d.prio += a.prioridade; d.assuntos.push(a); });
+  const disciplinas = Object.values(discs).map((d: any) => ({ ...d, acerto: d.tent ? Math.round(100 * d.ac / d.tent) : null }));
+  const semana = (ini: number, fim: number) => { const t = tent.filter((x: any) => { const age = (Date.now() - Date.parse(x.criado_em)) / 86400000; return age >= ini && age < fim; }); return { n: t.length, pct: t.length ? Math.round(100 * t.filter((x: any) => x.correta).length / t.length) : null }; };
+  const sem = sess.filter((x: any) => x.curso_id === curso).reduce((acc: number, x: any) => acc + (x.liquido_s ?? liquido(x)), 0);
+  return { ins, porAss, disciplinas, totalTent: tent.length, sem1: semana(0, 7), sem0: semana(7, 14), revs, hoje, amanha, estudoSemanaS: sem, simr, est };
+}
+function respostaChatX(msg: string, D: any, curso: string) {
+  const n = normCh(msg); const tem = (...ws: string[]) => ws.some((w) => n.includes(w));
+  const A = D.ins.assuntos as any[]; const nomeAss = (a: any) => `${a.assunto} (${a.disciplina})`;
+  const acao = (tipo: string, rotulo: string, extra: any = {}) => ({ tipo, rotulo, ...extra });
+  const poucos = D.totalTent < 10;
+  const faltaDados = 'Ainda não tenho dados suficientes sobre o seu desempenho (menos de 10 questões respondidas neste curso). Responda um treino adaptativo e eu passo a apontar seus pontos fracos com precisão.';
+  const topPrio = [...A].sort((x, y) => y.prioridade - x.prioridade).slice(0, 3);
+  const linhaAss = (a: any) => `• ${nomeAss(a)}${a.motivos && a.motivos.length ? ' — ' + a.motivos.slice(0, 2).join('; ') : ''}`;
+  let minutos: number | null = null;
+  const mh = /(\d+(?:[.,]\d+)?)\s*(?:h|hora|horas)\b/.exec(n); const mm = /(\d+)\s*(?:min|minutos)\b/.exec(n);
+  if (mh) minutos = Math.round(parseFloat(mh[1].replace(',', '.')) * 60); else if (mm) minutos = parseInt(mm[1]); else if (tem('meia hora')) minutos = 30;
+  if (minutos) minutos = Math.max(20, Math.min(480, minutos));
+  if (/\b(explique|explica|explicar|o que e|qual a diferenca|diferenca entre|como funciona|significa|defina|conceito|sumula|resuma|lei \d)\b/.test(n)) return null;
+  if (!n || n.length < 3 || tem('ajuda', 'o que voce faz', 'comandos', 'menu')) {
+    return { texto: 'Sou o Chat X, seu mentor de estudos. Posso: dizer o que estudar hoje (ex.: "tenho 2 horas hoje"), mostrar sua matéria mais fraca, explicar onde você mais erra, montar a revisão de amanhã, indicar prioridades pela incidência da banca, mostrar sua evolução e sugerir questões, aula, lei seca, flashcards ou simulado.', acoes: [acao('plano', 'O QUE ESTUDAR HOJE', { minutos: 90 }), acao('treino', 'FAZER QUESTÕES', { modo: 'adaptativo', qtd: 20 })], dados: true };
+  }
+  if (tem('revis')) {
+    const venc = D.revs.filter((r: any) => r.vence_em <= D.hoje), amanha = D.revs.filter((r: any) => r.vence_em === D.amanha);
+    const nm = (r: any) => (D.porAss[r.assunto_id] ? nomeAss(D.porAss[r.assunto_id]) : 'assunto');
+    if (!D.revs.length) return { texto: 'Você não tem revisões pendentes para hoje nem para amanhã. As revisões (24 horas, 7 e 30 dias) são criadas automaticamente quando você responde questões de um assunto.', acoes: [acao('treino', 'FAZER QUESTÕES', { modo: 'adaptativo', qtd: 20 })], dados: true };
+    const linhas = [...venc.map((r: any) => `• Hoje/atrasada: ${nm(r)} (revisão de ${r.tipo})`), ...amanha.map((r: any) => `• Amanhã: ${nm(r)} (revisão de ${r.tipo})`)];
+    return { texto: `Sua fila de revisão:\n${linhas.join('\n')}\n\nFaça as revisões atrasadas primeiro; elas vencem a curva do esquecimento.`, acoes: [acao('revisar', 'REVISAR'), ...venc.slice(0, 2).map((r: any) => acao('flashcards', 'VER FLASHCARDS — ' + nm(r).slice(0, 28), { assunto_id: r.assunto_id }))], dados: true };
+  }
+  if (tem('por que') && tem('err')) {
+    if (poucos) return { texto: faltaDados, acoes: [acao('treino', 'FAZER QUESTÕES', { modo: 'adaptativo', qtd: 20 })], dados: false };
+    const alvo = D.disciplinas.find((d: any) => normCh(d.nome).split(' ').some((w: string) => w.length >= 5 && n.includes(w)));
+    const lista = (alvo ? alvo.assuntos : A).filter((a: any) => a.tentativas >= 3 && a.acerto_pct !== null).sort((x: any, y: any) => x.acerto_pct - y.acerto_pct).slice(0, 4);
+    if (!lista.length) return { texto: `${alvo ? 'Em ' + alvo.nome + ' ' : ''}ainda tenho poucas respostas por assunto (mínimo 3) para dizer por que você erra. Resolva mais questões desse tema.`, acoes: [acao('treino', 'FAZER QUESTÕES', { modo: 'desempenho', qtd: 20 })], dados: false };
+    return { texto: `Onde você mais erra${alvo ? ' em ' + alvo.nome : ''}:\n${lista.map((a: any) => `• ${a.assunto}: ${a.acerto_pct}% de acerto em ${a.tentativas} questões (${a.erradas} erradas)`).join('\n')}\n\nO padrão costuma ser lacuna de base: leia a aula e a lei seca do assunto e depois refaça as questões que errou.`, acoes: [acao('estudar', 'REVISAR ASSUNTO', { assunto_id: lista[0].assunto_id }), acao('aula', 'ABRIR AULA', { assunto_id: lista[0].assunto_id }), acao('treino', 'FAZER QUESTÕES — meus erros', { modo: 'erros', qtd: 15 })], dados: true };
+  }
+  if (tem('fraca', 'pior', 'dificuldade', 'mais erro')) {
+    if (poucos) return { texto: faltaDados, acoes: [acao('treino', 'FAZER QUESTÕES', { modo: 'adaptativo', qtd: 20 })], dados: false };
+    const ds = D.disciplinas.filter((d: any) => d.tent >= 5).sort((x: any, y: any) => x.acerto - y.acerto);
+    if (!ds.length) return { texto: 'Tenho poucas respostas por disciplina (mínimo 5 em cada). Responda mais questões para eu apontar sua matéria mais fraca.', acoes: [acao('treino', 'FAZER QUESTÕES', { modo: 'edital', qtd: 30 })], dados: false };
+    const w = ds[0]; const aw = [...w.assuntos].filter((a: any) => a.tentativas >= 3).sort((x: any, y: any) => x.acerto_pct - y.acerto_pct)[0];
+    return { texto: `Sua matéria mais fraca hoje é ${w.nome}: ${w.acerto}% de acerto em ${w.tent} questões.${aw ? ` O pior assunto dela é ${aw.assunto} (${aw.acerto_pct}%).` : ''}\nRanking: ${ds.slice(0, 5).map((d: any) => `${d.nome} ${d.acerto}%`).join(' · ')}.`, acoes: [aw ? acao('estudar', 'REVISAR ASSUNTO', { assunto_id: aw.assunto_id }) : acao('treino', 'FAZER QUESTÕES', { modo: 'desempenho', qtd: 20 }), acao('treino', 'FAZER QUESTÕES', { modo: 'desempenho', qtd: 20 })], dados: true };
+  }
+  if (tem('abaixo', 'nivel da prova', 'estou bem') || /\bmeta\b/.test(n)) {
+    if (poucos) return { texto: faltaDados, acoes: [acao('treino', 'FAZER QUESTÕES', { modo: 'adaptativo', qtd: 20 })], dados: false };
+    const META = 70; const ab = D.disciplinas.filter((d: any) => d.tent >= 5 && d.acerto < META).sort((x: any, y: any) => x.acerto - y.acerto);
+    return { texto: ab.length ? `Usando 70% de acerto como meta, você está abaixo em: ${ab.map((d: any) => `${d.nome} (${d.acerto}%)`).join(', ')}. As demais matérias com dados suficientes estão na meta ou acima.` : 'Nas matérias com dados suficientes (5+ questões) você está na meta de 70% ou acima. Continue ampliando a prática nas que ainda têm poucas questões.', acoes: [acao('treino', 'FAZER QUESTÕES', { modo: 'desempenho', qtd: 20 })], dados: true };
+  }
+  if (tem('evolu', 'progress', 'melhorando', 'estou melhor')) {
+    const a = D.sem1, b = D.sem0;
+    if (a.n < 10) return { texto: `Nos últimos 7 dias você respondeu ${a.n} questões; preciso de pelo menos 10 para avaliar sua evolução.`, acoes: [acao('treino', 'FAZER QUESTÕES', { modo: 'adaptativo', qtd: 20 })], dados: false };
+    const cmp = b.n >= 10 ? (a.pct > b.pct ? `Evoluiu: de ${b.pct}% para ${a.pct}% de acerto.` : a.pct < b.pct ? `Caiu: de ${b.pct}% para ${a.pct}%. Vale reforçar a base e as revisões.` : `Estável em ${a.pct}%.`) : `Acerto de ${a.pct}% na semana (sem semana anterior suficiente para comparar).`;
+    return { texto: `Últimos 7 dias: ${a.n} questões, ${a.pct}% de acerto. Semana anterior: ${b.n} questões${b.pct !== null ? ', ' + b.pct + '%' : ''}.\n${cmp}\nTempo líquido de estudo na semana: ${Math.round(D.estudoSemanaS / 60)} min.`, acoes: [acao('treino', 'FAZER QUESTÕES', { modo: 'adaptativo', qtd: 20 })], dados: true };
+  }
+  if (tem('simulado')) {
+    const ult = D.simr[0];
+    return { texto: ult ? `Seu último simulado registrado: ${ult.cx_simulados_drive.titulo} — ${ult.acertos}/${ult.total} (${Math.round(100 * ult.acertos / ult.total)}%). Faça o próximo em condições de prova (tempo corrido) e registre o resultado para eu acompanhar.` : 'Você ainda não registrou nenhum simulado neste curso. Abra a aba Simulados, faça uma prova, confira o gabarito comentado e registre seu resultado.', acoes: [acao('simulado', 'FAZER SIMULADO')], dados: !!ult };
+  }
+  if (tem('priorid', 'priorizar', 'mais importante', 'incidencia', 'cai mais', 'o que mais cai')) {
+    return { texto: `Prioridades de hoje (incidência na banca + peso no edital + seu desempenho + tempo sem revisar):\n${topPrio.map(linhaAss).join('\n')}`, acoes: [acao('estudar', 'ESTUDAR AGORA', { assunto_id: topPrio[0].assunto_id }), acao('treino', 'FAZER QUESTÕES', { modo: 'adaptativo', qtd: 20 })], dados: true };
+  }
+  if (tem('cronograma')) {
+    return { texto: `Posso aplicar ao cronograma sua rotina de ${minutos ?? 120} min/dia: a 1ª matéria é a de maior peso, a 2ª de peso médio, e sobra de tempo vai para revisão e questões; no fim de semana entram simulado, redação e correção.`, acoes: [acao('cronograma', 'APLICAR AO CRONOGRAMA', { minutos: minutos ?? 120 })], dados: true };
+  }
+  if (tem('hoje', 'minutos', 'estudar agora', 'o que devo estudar', 'o que estudo', 'o que fazer', 'estudar') || /\bhoras?\b/.test(n)) {
+    const t = minutos ?? 90; const venc = D.revs.filter((r: any) => r.vence_em <= D.hoje).length;
+    const txt = `Com ${t} minutos hoje, minha recomendação é:\n${venc ? `• Primeiro, ${venc} revisão(ões) vencida(s) (cerca de ${Math.min(30, venc * 10)} min).\n` : ''}${topPrio.map(linhaAss).join('\n')}\nUse "O que estudar" para ver o plano completo, dividido por tempo, com aula, flashcards e questões.${poucos ? '\n(Ainda tenho poucos dados do seu desempenho — o plano parte do peso do edital e da incidência na banca.)' : ''}`;
+    return { texto: txt, acoes: [acao('plano', `PLANO DE HOJE (${t} min)`, { minutos: t }), acao('estudar', 'ESTUDAR AGORA', { assunto_id: topPrio[0].assunto_id }), acao('treino', 'FAZER QUESTÕES', { modo: 'adaptativo', qtd: 20 })], dados: true };
+  }
+  if (tem('questoes', 'treino', 'praticar')) {
+    return { texto: `Sugiro um treino adaptativo de 20 questões: ele mistura o que mais cai na banca, o peso do edital e onde você mais erra.`, acoes: [acao('treino', 'FAZER QUESTÕES', { modo: 'adaptativo', qtd: 20 }), acao('treino', 'MEUS ERROS', { modo: 'erros', qtd: 15 })], dados: true };
+  }
+  return null;
+}
+async function chamarLLM(system: string, hist: any[], msg: string) {
+  const key = Deno.env.get('ANTHROPIC_API_KEY'); if (!key) return null;
+  const model = Deno.env.get('CHATX_MODEL') ?? 'claude-haiku-4-5-20251001';
+  try {
+    const r = await fetch('https://api.anthropic.com/v1/messages', { method: 'POST', signal: AbortSignal.timeout(25000), headers: { 'content-type': 'application/json', 'x-api-key': key, 'anthropic-version': '2023-06-01' }, body: JSON.stringify({ model, max_tokens: 800, system, messages: [...hist, { role: 'user', content: msg }] }) });
+    if (!r.ok) return null; const j = await r.json();
+    return (j.content ?? []).map((c: any) => c.text ?? '').join('').trim() || null;
+  } catch { return null; }
+}
+const PROMPT_CHATX = `Você é o Chat X, mentor virtual do Bizu do Concurseiro X.
+
+Sua função é ajudar o aluno a alcançar aprovação em concursos policiais.
+
+Analise o edital, desempenho, erros, acertos, tempo disponível, revisões e incidência das matérias.
+
+Priorize aquilo que possui maior impacto na aprovação.
+
+Não invente dados.
+
+Não invente fontes jurídicas.
+
+Não apresente informação jurídica duvidosa como fato.
+
+Seja direto, estratégico e didático.
+
+Sempre que possível, transforme orientação em uma ação dentro do Bizu:
+
+ESTUDAR
+REVISAR
+FAZER QUESTÕES
+VER AULA
+VER LEI SECA
+VER FLASHCARDS
+FAZER SIMULADO
+
+Regras adicionais: responda em português do Brasil, em até 12 linhas. Use somente os dados do aluno fornecidos abaixo; se um dado não existir, diga que ainda não há dados suficientes e oriente como gerá-los. Em dúvida jurídica, não cite artigo, súmula ou jurisprudência de memória: indique a Lei Seca e a aula do assunto dentro do Bizu e a fonte oficial (planalto.gov.br).`;
 
 // ---------- cronômetro ----------
 function liquido(s: any, agora = Date.now()) {
@@ -507,7 +680,42 @@ async function handle(req: Request, ck: Ck): Promise<Response> {
       if (uuidOk(q.get('assunto_id'))) qb = qb.eq('assunto_id', q.get('assunto_id'));
       if (uuidOk(q.get('subassunto_id'))) qb = qb.eq('subassunto_id', q.get('subassunto_id'));
       const { data } = await qb.limit(200);
-      return json({ materiais: semJoin(data) });
+      const lista: any[] = semJoin(data);
+      if (!uuidOk(q.get('subassunto_id'))) {
+        // materiais compartilhados: uma única fonte de verdade vinculada a assuntos de outros cursos
+        const vv = await vinculosDoCurso(curso, { disciplina_id: uuidOk(q.get('disciplina_id')) ? q.get('disciplina_id') : null, assunto_id: uuidOk(q.get('assunto_id')) ? q.get('assunto_id') : null, tipo, soPublicados: true });
+        vv.forEach((r: any) => { const m = r.m; lista.push({ id: m.id, assunto_id: r.assunto_id, subassunto_id: null, tipo: m.tipo, titulo: m.titulo, conteudo: m.conteudo, url: m.url, fonte_oficial: m.fonte_oficial }); });
+      }
+      const cs = await cursosDosMateriais([...new Set(lista.map((m) => m.id))]);
+      lista.forEach((m) => { m.cursos = [...(cs[m.id] ?? [])]; m.compartilhado = m.cursos.length > 1; });
+      return json({ materiais: lista });
+    }
+    // ----- vídeos da aula (YouTube incorporado) -----
+    if (path === '/videos') {
+      if (!uuidOk(q.get('assunto_id'))) return fail('Assunto inválido');
+      const { data } = await db.from('cx_videos').select('id,video_id,titulo,canal,ordem').eq('assunto_id', q.get('assunto_id')).eq('publicado', true).order('ordem');
+      return json({ videos: data ?? [] });
+    }
+    // ----- Chat X -----
+    if (path === '/chatx/status') return json({ llm: !!Deno.env.get('ANTHROPIC_API_KEY') });
+    if (path === '/chatx' && req.method === 'POST') {
+      const cid = body.curso_id ?? curso;
+      if (!(await cursoValido(cid))) return fail('Curso inválido');
+      const msg = String(body.mensagem ?? '').trim().slice(0, 1000);
+      if (!msg) return fail('Escreva sua pergunta');
+      const D = await dadosChatX(cid, uid);
+      const regra = respostaChatX(msg, D, cid);
+      if (regra) return json({ ...regra, llm: false });
+      // pergunta livre: usa o modelo de IA quando configurado, com os dados do aluno como contexto
+      const hist = (Array.isArray(body.historico) ? body.historico : []).slice(-6).filter((h: any) => h && (h.role === 'user' || h.role === 'assistant') && typeof h.content === 'string').map((h: any) => ({ role: h.role, content: String(h.content).slice(0, 1500) }));
+      while (hist.length && hist[0].role !== 'user') hist.shift();
+      const ctx = { curso: cid, banca_alvo: D.ins.banca_alvo, questoes_respondidas: D.totalTent, ultimos_7_dias: D.sem1, semana_anterior: D.sem0, tempo_estudo_semana_min: Math.round(D.estudoSemanaS / 60), revisoes_vencidas_ou_amanha: D.revs.length,
+        disciplinas: D.disciplinas.map((d: any) => ({ nome: d.nome, peso: d.peso, acerto_pct: d.acerto, respondidas: d.tent })),
+        prioridades: [...D.ins.assuntos].sort((x: any, y: any) => y.prioridade - x.prioridade).slice(0, 8).map((a: any) => ({ assunto: a.assunto, disciplina: a.disciplina, motivos: a.motivos })),
+        simulados: D.simr.map((r: any) => ({ titulo: r.cx_simulados_drive.titulo, acertos: r.acertos, total: r.total })) };
+      const txt = await chamarLLM(PROMPT_CHATX + '\n\nDADOS DO ALUNO (JSON):\n' + JSON.stringify(ctx), hist, msg);
+      if (txt) return json({ texto: txt, acoes: [{ tipo: 'treino', rotulo: 'FAZER QUESTÕES', modo: 'adaptativo', qtd: 20 }, { tipo: 'plano', rotulo: 'O QUE ESTUDAR HOJE', minutos: 90 }], llm: true, dados: true });
+      return json({ texto: 'Esta pergunta é aberta (conceito, explicação de questão ou tema jurídico) e exige o modelo de IA do Chat X, que ainda não está ativado neste ambiente. Não vou inventar resposta. Enquanto isso, posso orientar pelos seus dados: o que estudar hoje, matéria mais fraca, onde você mais erra, revisão de amanhã, prioridades e evolução — e o conteúdo jurídico você encontra na Aula e na Lei Seca do assunto.', acoes: [{ tipo: 'plano', rotulo: 'O QUE ESTUDAR HOJE', minutos: 90 }, { tipo: 'estudar_menu', rotulo: 'ABRIR MATÉRIAS' }], llm: false, dados: true, llm_indisponivel: true });
     }
 
     // ----- desempenho -----
@@ -576,12 +784,12 @@ async function handle(req: Request, ck: Ck): Promise<Response> {
     if (path === '/simulados-drive') {
       if (!(await cursoValido(curso))) return fail('Curso inválido');
       const [{ data: sims }, { data: res }] = await Promise.all([
-        db.from('cx_simulados_drive').select('id,titulo,cargo,banca,ano,tipo,prova_url,gabarito_url,comentario_url,descricao,ordem').eq('curso_id', curso).eq('publicado', true).order('ordem').order('titulo'),
+        db.from('cx_simulados_drive').select('id,titulo,cargo,banca,ano,tipo,prova_url,gabarito_url,comentario_url,descricao,ordem,categoria,numero,data_prova').eq('curso_id', curso).eq('publicado', true).order('ordem').order('titulo'),
         db.from('cx_simulado_resultados').select('id,simulado_id,acertos,total,tempo_min,obs,criado_em').eq('user_id', uid).order('criado_em', { ascending: false }).limit(300),
       ]);
       const ids = new Set((sims ?? []).map((s: any) => s.id));
       const hist = (res ?? []).filter((r: any) => ids.has(r.simulado_id));
-      return json({ simulados: (sims ?? []).map((s: any) => ({ id: s.id, titulo: s.titulo, cargo: s.cargo, banca: s.banca, ano: s.ano, tipo: s.tipo, provaUrl: s.prova_url, gabaritoUrl: s.gabarito_url, comentarioUrl: s.comentario_url, descricao: s.descricao })), resultados: hist });
+      return json({ simulados: (sims ?? []).map((s: any) => ({ id: s.id, titulo: s.titulo, cargo: s.cargo, banca: s.banca, ano: s.ano, tipo: s.tipo, provaUrl: s.prova_url, gabaritoUrl: s.gabarito_url, comentarioUrl: s.comentario_url, descricao: s.descricao, categoria: s.categoria, numero: s.numero, data: s.data_prova })), resultados: hist });
     }
     if (path === '/simulados-drive/resultado' && req.method === 'POST') {
       if (!uuidOk(body.simulado_id)) return fail('Simulado inválido');
@@ -863,6 +1071,82 @@ async function handle(req: Request, ck: Ck): Promise<Response> {
           return json({ ok: true });
         }
         return fail('Ação inválida');
+      }
+      // Vídeos do YouTube das aulas (validados pelo oEmbed do YouTube; nada hospedado no site).
+      if (path === '/admin/videos' && req.method === 'GET') {
+        const { data } = await db.from('cx_videos').select('id,video_id,titulo,canal,ordem,publicado,origem,verificado_em,cx_assuntos!inner(nome,cx_disciplinas!inner(nome,curso_id))').order('criado_em');
+        return json({ videos: (data ?? []).filter((v: any) => !curso || v.cx_assuntos.cx_disciplinas.curso_id === curso).map((v: any) => ({ id: v.id, video_id: v.video_id, titulo: v.titulo, canal: v.canal, ordem: v.ordem, publicado: v.publicado, origem: v.origem, verificado_em: v.verificado_em, assunto: v.cx_assuntos.nome, disciplina: v.cx_assuntos.cx_disciplinas.nome, curso_id: v.cx_assuntos.cx_disciplinas.curso_id })) });
+      }
+      if (path === '/admin/videos' && req.method === 'POST') {
+        if (body.acao === 'excluir') { if (!uuidOk(body.id)) return fail('Vídeo inválido'); await db.from('cx_videos').delete().eq('id', body.id); return json({ ok: true }); }
+        if (body.acao === 'publicar') { if (!uuidOk(body.id)) return fail('Vídeo inválido'); await db.from('cx_videos').update({ publicado: body.publicado === true }).eq('id', body.id); return json({ ok: true }); }
+        if (body.acao === 'criar') {
+          const vid = videoIdDe(body.url ?? body.video_id); if (!vid || !uuidOk(body.assunto_id)) return fail('Informe o assunto e um link válido do YouTube');
+          const meta = await oembedYT(vid); if (!meta) return fail('Vídeo indisponível ou que não permite incorporação.');
+          const { error } = await db.from('cx_videos').upsert({ assunto_id: body.assunto_id, video_id: vid, titulo: meta.titulo, canal: meta.canal, ordem: parseInt(body.ordem) || 1, origem: 'administrador', verificado_em: new Date().toISOString(), publicado: true }, { onConflict: 'assunto_id,video_id' });
+          if (error) return fail('Não foi possível salvar o vídeo.'); return json({ ok: true });
+        }
+        if (body.acao === 'lote') {
+          const cache: Record<string, Record<string, string>> = {}; let ok = 0; const rej: string[] = [];
+          for (const v of Array.isArray(body.itens) ? body.itens : []) {
+            if (!(await cursoValido(v.curso)) || !videoIdDe(v.video_id)) { rej.push('inválido: ' + v.assunto); continue; }
+            if (!cache[v.curso]) { const est = await carregarEstrutura(v.curso, true); cache[v.curso] = {}; est.forEach((d: any) => d.assuntos.forEach((a: any) => { cache[v.curso][d.nome + '||' + a.nome] = a.id; })); }
+            const aid = cache[v.curso][v.disciplina + '||' + v.assunto]; if (!aid) { rej.push('assunto não encontrado: ' + v.assunto); continue; }
+            const { error } = await db.from('cx_videos').upsert({ assunto_id: aid, video_id: videoIdDe(v.video_id), titulo: String(v.titulo ?? '').slice(0, 300), canal: v.canal ? String(v.canal).slice(0, 120) : null, ordem: parseInt(v.ordem) || 1, origem: v.origem ? String(v.origem).slice(0, 200) : null, verificado_em: new Date().toISOString(), publicado: true }, { onConflict: 'assunto_id,video_id' });
+            if (error) rej.push(error.message); else ok++;
+          }
+          return json({ ok: true, gravados: ok, rejeitados: rej });
+        }
+        return fail('Ação inválida');
+      }
+      // Compartilhamento inteligente de materiais entre cursos (uma fonte de verdade + vínculos).
+      if (path === '/admin/materiais/compartilhar' && req.method === 'POST') {
+        const executar = body.executar === true;
+        const mapaAC = await mapaAssuntoCurso();
+        const mats = await todos((a, b) => db.from('cx_materiais').select('id,assunto_id,tipo,titulo,conteudo').order('id').range(a, b));
+        const cursoDe = (m: any) => mapaAC[m.assunto_id]?.curso;
+        const chave = (m: any) => m.tipo + '|' + JSON.stringify(m.conteudo);
+        const acoes: any[] = [];
+        if (body.modo === 'identicos') {
+          const idx = new Map<string, any>(); mats.filter((m) => cursoDe(m) === 'pm-sp-soldado').forEach((m) => { const k = chave(m); if (!idx.has(k)) idx.set(k, m); });
+          mats.filter((m) => cursoDe(m) === 'gcm-geral').forEach((g) => { const b = idx.get(chave(g)); if (b) acoes.push({ base: b.id, dest: g.assunto_id, remover: g.id, tipo: g.tipo, titulo: g.titulo }); });
+        } else if (body.modo === 'assuntos') {
+          const lenAula = (aid: string) => mats.filter((m) => m.assunto_id === aid && m.tipo === 'aula').reduce((t, m) => t + JSON.stringify(m.conteudo).length, 0);
+          for (const par of Array.isArray(body.pares) ? body.pares : []) {
+            if (!uuidOk(par.pm_assunto_id) || !uuidOk(par.gcm_assunto_id)) continue;
+            const pmBase = lenAula(par.pm_assunto_id) >= lenAula(par.gcm_assunto_id);
+            const baseA = pmBase ? par.pm_assunto_id : par.gcm_assunto_id, destA = pmBase ? par.gcm_assunto_id : par.pm_assunto_id;
+            for (const tipo of Array.isArray(par.tipos) ? par.tipos : []) {
+              const bs = mats.filter((m) => m.assunto_id === baseA && m.tipo === tipo), ds = mats.filter((m) => m.assunto_id === destA && m.tipo === tipo);
+              if (!bs.length) continue;
+              bs.forEach((b) => acoes.push({ base: b.id, dest: destA, remover: null, tipo, titulo: b.titulo }));
+              ds.forEach((d) => acoes.push({ base: null, dest: destA, remover: d.id, tipo, titulo: d.titulo }));
+            }
+          }
+        } else return fail('Modo inválido');
+        let vinc = 0, rem = 0;
+        if (executar) {
+          const pares = new Map<string, any>(); acoes.filter((x) => x.base).forEach((x) => pares.set(x.base + '|' + x.dest, { material_id: x.base, assunto_id: x.dest, tipo_vinculo: 'compartilhado' }));
+          const lista = [...pares.values()];
+          for (let i = 0; i < lista.length; i += 100) { const { error } = await db.from('cx_materiais_vinculos').upsert(lista.slice(i, i + 100), { onConflict: 'material_id,assunto_id', ignoreDuplicates: true }); if (error) return fail('Erro ao vincular: ' + error.message, 500); }
+          vinc = lista.length;
+          const ids = [...new Set(acoes.filter((x) => x.remover).map((x) => x.remover))];
+          for (let i = 0; i < ids.length; i += 100) { await db.from('cx_materiais').delete().in('id', ids.slice(i, i + 100)); }
+          rem = ids.length;
+        }
+        return json({ ok: true, executado: executar, vinculos: executar ? vinc : new Set(acoes.filter((x) => x.base).map((x) => x.base + '|' + x.dest)).size, removidos: executar ? rem : acoes.filter((x) => x.remover).length, amostra: acoes.slice(0, 12) });
+      }
+      // Controle de duplicidade: banco x provas reais x simulados.
+      if (path === '/admin/banco/duplicidade') {
+        const qs = await todos((a, b) => db.from('cx_questoes').select('id,tipo,status,hash,arquivo_id,enunciado,opcoes,concurso,numero_questao').order('id').range(a, b));
+        const { data: sims } = await db.from('cx_simulados_drive').select('id,titulo,categoria,curso_id,prova_url,publicado');
+        const provaPorArquivo: Record<string, any> = {}; (sims ?? []).forEach((s: any) => { const id = driveIdDe(s.prova_url); if (id) provaPorArquivo[id] = s; });
+        const porHash: Record<string, number> = {}; qs.forEach((x: any) => { if (x.hash) porHash[x.hash] = (porHash[x.hash] ?? 0) + 1; });
+        const porTexto: Record<string, string[]> = {}; qs.forEach((x: any) => { const e = String(x.enunciado ?? ''); const k = normTxt(e.includes('\n\n— — —\n') ? e.split('\n\n— — —\n').pop()! : e).slice(0, 200) + '|' + (x.opcoes ?? []).map(normTxt).sort().join('|').slice(0, 200); (porTexto[k] ??= []).push(x.id); });
+        const grupos = Object.values(porTexto).filter((g) => g.length > 1);
+        const deProva: Record<string, number> = {}; qs.forEach((x: any) => { const s = provaPorArquivo[x.arquivo_id]; if (s) deProva[s.titulo] = (deProva[s.titulo] ?? 0) + 1; });
+        return json({ total_questoes: qs.length, hash_repetido: Object.values(porHash).filter((n) => n > 1).length, grupos_texto_repetido: grupos.length, exemplo_grupos: grupos.slice(0, 5), questoes_ligadas_a_prova_real: deProva, simulados_cadastrados: (sims ?? []).filter((s: any) => s.categoria === 'simulado').length, provas_reais_cadastradas: (sims ?? []).filter((s: any) => s.categoria === 'prova_real').length,
+          regra: 'Simulados e provas reais são arquivos do Drive (acervo independente) e não contêm questões do banco; o banco impede repetição por hash e por texto. Questões do banco originadas de prova real ficam identificadas pelo arquivo de origem.' });
       }
       if (path === '/admin/redacao-temas' && req.method === 'POST') {
         if (!(await cursoValido(body.curso_id))) return fail('Curso inválido');
