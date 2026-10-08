@@ -79,7 +79,7 @@ Mantidas todas: **16 provas reais PM-SP (VUNESP)** com prova, gabarito e gabarit
 
 ## 10. Estrutura de simulados
 Aba **Simulados** pronta para PM e GCM. Campos: título, número, curso, cargo, banca, data, prova, gabarito, gabarito comentado, link do Drive, publicado/não publicado.
-- **PM-SP:** nenhum simulado publicado — aba mostra “serão publicados em breve”. **Nenhum simulado fictício foi inserido.**
+- **PM-SP:** 10 simulados autorais de Soldado (60 questões + redação, perfil VUNESP) importados da pasta “SD PM SP” do Drive, cada um com prova e gabarito comentado. Cópias “- Copia” foram ignoradas.
 - **GCM:** 10 simulados autorais já existentes (arquivos do Drive) foram mantidos e aparecem na aba Simulados.
 
 ## 11. Duplicidade (“uma questão, um uso”)
@@ -109,3 +109,8 @@ Geração dos PDFs (Bizu PDF) de cada assunto/curso e do material compartilhado 
 - Dados de teste de tentativas do administrador não puderam ser apagados por API (permanecem na conta de teste).
 - GCM não tem provas reais cadastradas; PM não tem simulados publicados.
 - Flashcards dos assuntos compartilhados continuam separados por curso.
+
+## 19. Simulados PM-SP importados do Drive (08/10/2026)
+Fonte: pasta MENTORIA/SIMULADOS/SD PM SP. Arquivos públicos (abrem e baixam sem login). Distribuição por prova: 20 Português, 15 Matemática, 15 Conhecimentos Gerais, 5 Informática, 5 Administração Pública.
+
+**Alerta de duplicidade (regra “uma questão, um uso”):** dos 600 itens dos 10 PDFs, só **201 são questões distintas**. A partir do Simulado 2, o número de questões já vistas em simulados anteriores é, por simulado: S2 31 · S3 31 · S4 42 · S5 59 · S6 54 · S7 56 · S8 44 · S9 41 · S10 41 (o Simulado 1 é todo inédito). Em contrapartida, não há sobreposição relevante com o banco de questões do site. Os simulados foram publicados porque foi pedido, mas o ideal é reescrever as repetidas antes de divulgar; podem ser despublicados na aba Admin → Simulados.
