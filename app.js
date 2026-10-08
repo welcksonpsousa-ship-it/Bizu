@@ -563,10 +563,11 @@ function qCard(q) {
   ].join('');
   const origem = [q.origem, real && q.concurso ? q.concurso : '', real && q.numero_questao ? 'questão ' + q.numero_questao : ''].filter(Boolean).join(' · ');
   return `<div class="qcard" data-q="${q.id}"><div class="qmeta">${badges}</div>
-    ${apoio ? `<div class="q-apoio">${esc(apoio)}</div>` : ''}<div class="qenunciado">${esc(enun)}</div>
+    ${apoio ? `<div class="q-apoio">${esc(apoio)}</div>` : ''}<div class="qenunciado">${esc(enun)}</div>${(q.imagens || []).map((im) => `<figure class="q-fig"><a href="${esc(im.url)}" target="_blank" rel="noopener noreferrer"><img src="${esc(im.url)}" alt="${esc(im.alt || 'Figura da questão')}" loading="lazy"></a></figure>`).join('')}
     <div class="opcoes-w">${(q.opcoes || []).map((o, k) => `<button type="button" class="opcao" data-i="${k}"><span class="letra">${String.fromCharCode(65 + k)}</span><span>${esc(o)}</span></button>`).join('')}</div>
     <div class="gab-box hidden"></div>${origem ? `<div class="q-origem muted small">Origem: ${esc(origem)}</div>` : ''}
-    <button type="button" class="btn-ghost btn-sm btn-salvar">${q.salva ? 'Remover dos salvos' : 'Salvar questão'}</button></div>`;
+    <div class="q-acoes"><button type="button" class="btn-ghost btn-sm btn-salvar">${q.salva ? 'Remover dos salvos' : 'Salvar questão'}</button><button type="button" class="btn-ghost btn-sm btn-com" aria-expanded="false">💬 Comentários (<span class="n-com">${q.n_comentarios || 0}</span>)</button></div>
+    <div class="q-com hidden"></div></div>`;
 }
 function ligarQuestoes(box) {
   $$('.qcard', box).forEach((card) => {
@@ -581,9 +582,47 @@ function ligarQuestoes(box) {
         g.classList.remove('hidden');
       } catch (e) { alert(e.message); $$('.opcao', card).forEach((x) => { x.disabled = false; }); }
     }));
+    const bc = $$('.btn-com', card)[0]; if (bc) bc.addEventListener('click', () => alternarComentarios(card, bc));
     const sv = $$('.btn-salvar', card)[0];
     sv.addEventListener('click', () => { const rem = sv.textContent.startsWith('Remover'); api('/questoes/salvar', { body: { questao_id: card.dataset.q, salvar: rem ? false : true } }).then(() => { sv.textContent = rem ? 'Salvar questão' : 'Remover dos salvos'; }).catch((er) => alert(er.message)); });
   });
+}
+
+/* ---------------- COMENTÁRIOS DOS ALUNOS NAS QUESTÕES ---------------- */
+function quandoCom(iso) {
+  const s = (Date.now() - new Date(iso).getTime()) / 1000;
+  if (s < 60) return 'agora há pouco'; if (s < 3600) return Math.floor(s / 60) + ' min'; if (s < 86400) return Math.floor(s / 3600) + ' h';
+  if (s < 86400 * 30) return Math.floor(s / 86400) + ' d'; return new Date(iso).toLocaleDateString('pt-BR');
+}
+async function alternarComentarios(card, btn) {
+  const box = $$('.q-com', card)[0], abrir = box.classList.contains('hidden');
+  box.classList.toggle('hidden', !abrir); btn.setAttribute('aria-expanded', String(abrir));
+  if (abrir) await carregarComentarios(card);
+}
+async function carregarComentarios(card) {
+  const box = $$('.q-com', card)[0]; box.innerHTML = ld('Carregando comentários...');
+  try {
+    const cs = (await api('/questoes/comentarios?questao_id=' + card.dataset.q)).comentarios;
+    $$('.n-com', card)[0].textContent = cs.length;
+    const raiz = cs.filter((c) => !c.parent_id), filhos = {}; cs.filter((c) => c.parent_id).forEach((c) => { (filhos[c.parent_id] = filhos[c.parent_id] || []).push(c); });
+    const item = (c, resp) => `<div class="com${resp ? ' com-resp' : ''}" data-c="${c.id}"><div class="com-hd"><strong>${esc(c.autor)}</strong>${c.eh_admin ? '<span class="badge bok">Equipe</span>' : ''}<span class="muted small">${quandoCom(c.criado_em)}${c.editado_em ? ' · editado' : ''}</span></div><div class="com-tx">${esc(c.texto)}</div><div class="com-ac">${resp ? '' : '<button type="button" class="link-btn" data-a="resp">Responder</button>'}${c.meu ? '<button type="button" class="link-btn" data-a="edit">Editar</button>' : ''}${c.meu || S.admin ? '<button type="button" class="link-btn" data-a="del">Excluir</button>' : ''}${c.meu ? '' : '<button type="button" class="link-btn" data-a="rep">Denunciar</button>'}</div></div>`;
+    box.innerHTML = `<div class="com-lista">${raiz.length ? raiz.map((c) => item(c, false) + (filhos[c.id] || []).map((f) => item(f, true)).join('')).join('') : '<div class="muted small">Seja o primeiro a comentar. Tire dúvidas, compartilhe macetes e ajude os colegas.</div>'}</div>
+      <form class="com-form"><textarea maxlength="1500" rows="2" placeholder="Escreva seu comentário (respeito acima de tudo)" aria-label="Comentário"></textarea><div class="com-form-ac"><span class="muted small com-msg" role="status"></span><button type="submit" class="btn-blue btn-sm">Comentar</button></div></form>`;
+    const form = $$('.com-form', box)[0], ta = $$('textarea', form)[0], msg = $$('.com-msg', form)[0]; let parent = null;
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault(); msg.textContent = '';
+      try { await api('/questoes/comentarios', { body: { questao_id: card.dataset.q, texto: ta.value, parent_id: parent } }); await carregarComentarios(card); } catch (er) { msg.textContent = er.message; }
+    });
+    $$('.com [data-a]', box).forEach((b) => b.addEventListener('click', async () => {
+      const id = b.closest('.com').dataset.c, ac = b.dataset.a;
+      try {
+        if (ac === 'resp') { parent = id; ta.focus(); msg.textContent = 'Respondendo a ' + b.closest('.com').querySelector('strong').textContent; }
+        else if (ac === 'del') { if (confirm('Excluir este comentário?')) { await api('/questoes/comentarios/excluir', { body: { id } }); await carregarComentarios(card); } }
+        else if (ac === 'edit') { const atual = b.closest('.com').querySelector('.com-tx').textContent; const t = prompt('Editar comentário:', atual); if (t && t.trim() && t !== atual) { await api('/questoes/comentarios/editar', { body: { id, texto: t } }); await carregarComentarios(card); } }
+        else if (ac === 'rep') { if (confirm('Denunciar este comentário como inadequado?')) { await api('/questoes/comentarios/denunciar', { body: { id } }); b.textContent = 'Denunciado'; b.disabled = true; } }
+      } catch (er) { alert(er.message); }
+    }));
+  } catch (e) { box.innerHTML = emp(e.message); }
 }
 async function renderSalvas() {
   const box = $('salvasLista'); box.innerHTML = ld();
@@ -926,7 +965,7 @@ $('btnContaSenha').addEventListener('click', async () => {
 $$('#admTabs .tab').forEach((t) => t.addEventListener('click', () => {
   $$('#admTabs .tab').forEach((x) => x.classList.toggle('on', x === t));
   $$('#v-admin [data-ap]').forEach((p) => p.classList.toggle('hidden', p.dataset.ap !== t.dataset.at));
-  ({ estrutura: renderAdmEstrutura, cobertura: renderAdmCobertura, banco: renderAdmBanco, simulados: renderAdmSimulados, videos: renderAdmVideos, usuarios: renderAdmUsuarios })[t.dataset.at]();
+  ({ estrutura: renderAdmEstrutura, cobertura: renderAdmCobertura, banco: renderAdmBanco, simulados: renderAdmSimulados, comentarios: renderAdmComentarios, videos: renderAdmVideos, usuarios: renderAdmUsuarios })[t.dataset.at]();
 }));
 function renderAdmin() { if (!S.admin) { showView('painel'); return; } const t = $$('#admTabs .tab.on')[0]; t.click(); }
 function renderAdmEstrutura() {
@@ -1033,6 +1072,20 @@ async function renderAdmSimulados() {
     }));
     $$('#admSimulados [data-pub]').forEach((b) => b.addEventListener('click', async () => { await api('/admin/simulados', { body: { acao: 'publicar', id: b.dataset.pub, publicado: b.dataset.v === '1' } }).catch((e) => alert(e.message)); renderAdmSimulados(); }));
     $$('#admSimulados [data-del]').forEach((b) => b.addEventListener('click', async () => { if (confirm('Excluir este simulado?')) { await api('/admin/simulados', { body: { acao: 'excluir', id: b.dataset.del } }).catch((e) => alert(e.message)); renderAdmSimulados(); } }));
+  } catch (e) { box.innerHTML = emp(e.message); }
+}
+async function renderAdmComentarios() {
+  const box = $('admComentarios'); box.innerHTML = ld();
+  try {
+    const f = box.dataset.f || 'denunciados'; const r = await api('/admin/comentarios?filtro=' + f);
+    box.innerHTML = `<div class="card mb2"><div class="card-title">Comentários dos alunos (${r.total} no total)</div><div class="filters"><div class="fgroup"><label for="acFiltro">Mostrar</label><select id="acFiltro"><option value="denunciados"${f === 'denunciados' ? ' selected' : ''}>Denunciados ou ocultos</option><option value="todos"${f === 'todos' ? ' selected' : ''}>Mais recentes</option></select></div></div>
+      <p class="muted small">Comentários com 3 denúncias de alunos diferentes ficam ocultos automaticamente. Você pode liberar, ocultar ou excluir.</p></div>
+      <div class="card">${r.comentarios.length ? r.comentarios.map((c) => `<div class="cob-tema-row" data-id="${c.id}"><span><strong>${esc(c.autor)}</strong> ${c.oculto ? '<span class="badge berr">oculto</span>' : ''}${c.denuncias ? `<span class="badge">${c.denuncias} denúncia(s)</span>` : ''}<br>${esc(c.texto)}<br><span class="muted small">Questão: ${esc(c.enunciado)}…</span></span><span class="adm-acts">${c.oculto || c.denuncias ? '<button type="button" class="btn-ghost btn-sm" data-ac="liberar">Liberar</button>' : '<button type="button" class="btn-ghost btn-sm" data-ac="ocultar">Ocultar</button>'}<button type="button" class="btn-ghost btn-sm" data-ac="excluir">Excluir</button></span></div>`).join('') : emp('Nenhum comentário para moderar')}</div>`;
+    $('acFiltro').addEventListener('change', () => { box.dataset.f = $('acFiltro').value; renderAdmComentarios(); });
+    $$('#admComentarios [data-ac]', box).forEach((b) => b.addEventListener('click', async () => {
+      if (b.dataset.ac === 'excluir' && !confirm('Excluir este comentário?')) return;
+      await api('/admin/comentarios', { body: { id: b.closest('[data-id]').dataset.id, acao: b.dataset.ac } }).catch((e) => alert(e.message)); renderAdmComentarios();
+    }));
   } catch (e) { box.innerHTML = emp(e.message); }
 }
 async function renderAdmVideos() {

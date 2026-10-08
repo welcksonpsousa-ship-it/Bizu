@@ -97,7 +97,7 @@ const CARGO_CURSO: Record<string, string> = { 'pm-sp-soldado': 'Soldado PM 2ª C
 const ANO_RECENTE = 2022;
 const STATUS_Q = ['publicada', 'revisao', 'desatualizada', 'anulada', 'duplicada'];
 const NIVEIS = ['Fundamental', 'Médio', 'Técnico', 'Superior', 'Específico'];
-const COLS_Q = 'id,assunto_id,subassunto_id,enunciado,opcoes,banca,ano,orgao,dificuldade,tipo,cargo,banca_ref,concurso,numero_questao,nivel,nivel_compat,fonte,origem,lei_relacionada,juris_relacionada,legislacao_considerada,status,incluida_em';
+const COLS_Q = 'id,assunto_id,subassunto_id,enunciado,opcoes,imagens,banca,ano,orgao,dificuldade,tipo,cargo,banca_ref,concurso,numero_questao,nivel,nivel_compat,fonte,origem,lei_relacionada,juris_relacionada,legislacao_considerada,status,incluida_em';
 const COLS_Q_ADMIN = COLS_Q + ',gabarito,comentario,motivo_status,publicado,arquivo_id,hash';
 const normTxt = (s: string) => String(s ?? '').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/[^a-z0-9]+/g, ' ').trim();
 async function sha1(s: string) {
@@ -227,6 +227,12 @@ function resumoEdital(cob: any, est: any[]) {
     verde: L.filter((l: any) => l.faixa === 'verde').length, amarelo: L.filter((l: any) => l.faixa === 'amarelo').length, vermelho: L.filter((l: any) => l.faixa === 'vermelho').length,
   };
 }
+// Imagens da questão: só URLs https ou caminhos do próprio site (/img/q/...); até 4 por questão.
+function limparImagens(v: any) {
+  if (!Array.isArray(v)) return [];
+  return v.filter((x: any) => x && typeof x.url === 'string' && /^(https:\/\/|\/img\/q\/)/.test(x.url) && x.url.length < 400).slice(0, 4)
+    .map((x: any) => ({ url: x.url, alt: String(x.alt ?? 'Figura da questão').slice(0, 300) }));
+}
 // Resolve assunto/subassunto por nome dentro do curso e grava questões com deduplicação por hash.
 async function gravarQuestoes(curso: string, lote: any[], padrao: any = {}) {
   const est = await carregarEstrutura(curso, true);
@@ -250,6 +256,7 @@ async function gravarQuestoes(curso: string, lote: any[], padrao: any = {}) {
       numero_questao: q.numero_questao ?? null, nivel: NIVEIS.includes(q.nivel) ? q.nivel : 'Médio', nivel_compat: ['Compatível', 'Abaixo', 'Acima'].includes(q.nivel_compat) ? q.nivel_compat : 'Compatível',
       fonte: q.fonte ?? null, origem: q.origem ?? null, arquivo_id: q.arquivo_id ?? null, lei_relacionada: q.lei_relacionada ?? null, juris_relacionada: q.juris_relacionada ?? null,
       legislacao_considerada: q.legislacao_considerada ?? null, status, motivo_status: q.motivo_status ?? null, publicado: status === 'publicada' && q.publicado !== false, hash: h,
+      imagens: limparImagens(q.imagens),
     });
   }
   for (let i = 0; i < rows.length; i += 100) {
@@ -599,9 +606,11 @@ async function handle(req: Request, ck: Ck): Promise<Response> {
       const { data: sv2 } = ids.length ? await db.from('cx_questoes_salvas').select('questao_id').eq('user_id', uid).in('questao_id', ids) : { data: [] as any[] };
       const savedSet = new Set((sv2 ?? []).map((r: any) => r.questao_id));
       const byId: Record<string, any> = {}; full.forEach((f) => byId[f.id] = f);
+      const nCom: Record<string, number> = {};
+      if (ids.length) { const { data: cm } = await db.from('cx_questoes_comentarios').select('questao_id').in('questao_id', ids).eq('oculto', false); (cm ?? []).forEach((r: any) => { nCom[r.questao_id] = (nCom[r.questao_id] ?? 0) + 1; }); }
       const out = ids.map((id) => byId[id]).filter(Boolean).map((f: any) => {
         const { cx_assuntos: a, status: _s, ...r } = f;
-        return { ...r, assunto: a?.nome ?? null, disciplina: a?.cx_disciplinas?.nome ?? null, salva: savedSet.has(r.id), ultima: r.id in ultima ? ultima[r.id] : null, banca_alvo: r.banca_ref === alvo, rotulo: r.tipo === 'real' ? 'QUESTÃO REAL' : 'QUESTÃO AUTORAL' };
+        return { ...r, assunto: a?.nome ?? null, disciplina: a?.cx_disciplinas?.nome ?? null, n_comentarios: nCom[r.id] ?? 0, salva: savedSet.has(r.id), ultima: r.id in ultima ? ultima[r.id] : null, banca_alvo: r.banca_ref === alvo, rotulo: r.tipo === 'real' ? 'QUESTÃO REAL' : 'QUESTÃO AUTORAL' };
       });
       return { questoes: out, candidatas: cand.length };
     }
@@ -659,8 +668,63 @@ async function handle(req: Request, ck: Ck): Promise<Response> {
       ], { onConflict: 'user_id,assunto_id,tipo', ignoreDuplicates: true });
       return json({ correta, gabarito: qt.gabarito, comentario: qt.comentario, lei_relacionada: qt.lei_relacionada, juris_relacionada: qt.juris_relacionada, legislacao_considerada: qt.legislacao_considerada, tipo: qt.tipo, origem: qt.origem, fonte: qt.fonte });
     }
+    // ----- comentários dos alunos nas questões (visíveis a todos os alunos) -----
+    if (path === '/questoes/comentarios' && req.method === 'GET') {
+      if (!uuidOk(q.get('questao_id'))) return fail('Questão inválida');
+      const { data } = await db.from('cx_questoes_comentarios').select('id,autor,eh_admin,texto,parent_id,criado_em,editado_em,user_id').eq('questao_id', q.get('questao_id')).eq('oculto', false).order('criado_em', { ascending: true }).limit(300);
+      return json({ comentarios: (data ?? []).map((c: any) => ({ id: c.id, autor: c.autor, eh_admin: c.eh_admin, texto: c.texto, parent_id: c.parent_id, criado_em: c.criado_em, editado_em: c.editado_em, meu: c.user_id === uid })) });
+    }
+    if (path === '/questoes/comentarios' && req.method === 'POST') {
+      if (!uuidOk(body.questao_id)) return fail('Questão inválida');
+      const texto = String(body.texto ?? '').replace(/\u0000/g, '').replace(/[\t ]+/g, ' ').replace(/\n{3,}/g, '\n\n').trim();
+      if (texto.length < 2) return fail('Escreva seu comentário.');
+      if (texto.length > 1500) return fail('Comentário muito longo (máximo 1500 caracteres).');
+      const { data: qq } = await db.from('cx_questoes').select('id').eq('id', body.questao_id).maybeSingle();
+      if (!qq) return fail('Questão não encontrada', 404);
+      let parent: string | null = null;
+      if (body.parent_id) {
+        if (!uuidOk(body.parent_id)) return fail('Comentário inválido');
+        const { data: pc } = await db.from('cx_questoes_comentarios').select('id,questao_id,parent_id').eq('id', body.parent_id).maybeSingle();
+        if (!pc || pc.questao_id !== body.questao_id) return fail('Comentário inválido');
+        parent = pc.parent_id ?? pc.id; // respostas ficam em um único nível
+      }
+      const desde = new Date(Date.now() - 3600_000).toISOString();
+      const { count: recentes } = await db.from('cx_questoes_comentarios').select('id', { count: 'exact', head: true }).eq('user_id', uid).gte('criado_em', desde);
+      if (!admin && (recentes ?? 0) >= 12) return fail('Muitos comentários em pouco tempo. Tente novamente em alguns minutos.', 429);
+      const { data: ult } = await db.from('cx_questoes_comentarios').select('texto').eq('user_id', uid).eq('questao_id', body.questao_id).order('criado_em', { ascending: false }).limit(1).maybeSingle();
+      if (ult && ult.texto === texto) return fail('Você já enviou esse comentário.');
+      const { data: pf } = await db.from('cx_perfis').select('nome').eq('user_id', uid).maybeSingle();
+      const base = String(pf?.nome ?? '').trim().split(/\s+/);
+      const autor = admin ? 'Equipe Bizu' : (base[0] ? (base[1] ? base[0] + ' ' + base[1][0].toUpperCase() + '.' : base[0]) : 'Aluno');
+      const { data, error } = await db.from('cx_questoes_comentarios').insert({ questao_id: body.questao_id, user_id: uid, autor: autor.slice(0, 60), eh_admin: admin, texto, parent_id: parent }).select('id,autor,eh_admin,texto,parent_id,criado_em').single();
+      if (error) return fail('Não foi possível enviar o comentário.', 500);
+      return json({ ok: true, comentario: { ...data, meu: true } });
+    }
+    if (path === '/questoes/comentarios/editar' && req.method === 'POST') {
+      if (!uuidOk(body.id)) return fail('Comentário inválido');
+      const texto = String(body.texto ?? '').replace(/\u0000/g, '').trim();
+      if (texto.length < 2 || texto.length > 1500) return fail('Comentário inválido.');
+      const { data, error } = await db.from('cx_questoes_comentarios').update({ texto, editado_em: new Date().toISOString() }).eq('id', body.id).eq('user_id', uid).select('id').maybeSingle();
+      if (error || !data) return fail('Não foi possível editar.', 403);
+      return json({ ok: true });
+    }
+    if (path === '/questoes/comentarios/excluir' && req.method === 'POST') {
+      if (!uuidOk(body.id)) return fail('Comentário inválido');
+      const qb = db.from('cx_questoes_comentarios').delete().eq('id', body.id);
+      await (admin ? qb : qb.eq('user_id', uid));
+      return json({ ok: true });
+    }
+    if (path === '/questoes/comentarios/denunciar' && req.method === 'POST') {
+      if (!uuidOk(body.id)) return fail('Comentário inválido');
+      const { error } = await db.from('cx_questoes_comentarios_denuncias').insert({ comentario_id: body.id, user_id: uid });
+      if (!error) {
+        const { count } = await db.from('cx_questoes_comentarios_denuncias').select('user_id', { count: 'exact', head: true }).eq('comentario_id', body.id);
+        await db.from('cx_questoes_comentarios').update({ denuncias: count ?? 1, oculto: (count ?? 0) >= 3 }).eq('id', body.id);
+      }
+      return json({ ok: true });
+    }
     if (path === '/questoes/salvas') {
-      const { data } = await db.from('cx_questoes_salvas').select('criado_em,cx_questoes(id,enunciado,opcoes,assunto_id,banca,banca_ref,ano,tipo,concurso,origem,nivel,nivel_compat)').eq('user_id', uid).order('criado_em', { ascending: false });
+      const { data } = await db.from('cx_questoes_salvas').select('criado_em,cx_questoes(id,enunciado,opcoes,imagens,assunto_id,banca,banca_ref,ano,tipo,concurso,origem,nivel,nivel_compat)').eq('user_id', uid).order('criado_em', { ascending: false });
       return json({ questoes: (data ?? []).map((r: any) => r.cx_questoes).filter(Boolean) });
     }
     if (path === '/questoes/salvar' && req.method === 'POST') {
@@ -1052,6 +1116,22 @@ async function handle(req: Request, ck: Ck): Promise<Response> {
         const { data, count } = await qb.order('concurso').order('numero_questao').range(pag * 30, pag * 30 + 29);
         return json({ total: count ?? 0, pagina: pag, questoes: (data ?? []).map((r: any) => { const { cx_assuntos: a, ...x } = r; return { ...x, assunto: a?.nome, disciplina: a?.cx_disciplinas?.nome, curso_id: a?.cx_disciplinas?.curso_id }; }) });
       }
+      if (path === '/admin/comentarios') {
+        if (req.method === 'POST') {
+          if (!uuidOk(body.id)) return fail('Comentário inválido');
+          if (body.acao === 'excluir') await db.from('cx_questoes_comentarios').delete().eq('id', body.id);
+          else if (body.acao === 'ocultar') await db.from('cx_questoes_comentarios').update({ oculto: body.oculto !== false }).eq('id', body.id);
+          else if (body.acao === 'liberar') { await db.from('cx_questoes_comentarios').update({ oculto: false, denuncias: 0 }).eq('id', body.id); await db.from('cx_questoes_comentarios_denuncias').delete().eq('comentario_id', body.id); }
+          else return fail('Ação inválida');
+          return json({ ok: true });
+        }
+        const filtro = q.get('filtro') ?? 'denunciados';
+        let qb = db.from('cx_questoes_comentarios').select('id,questao_id,autor,eh_admin,texto,denuncias,oculto,criado_em,cx_questoes(enunciado)').order('criado_em', { ascending: false }).limit(100);
+        if (filtro === 'denunciados') qb = qb.or('denuncias.gt.0,oculto.eq.true');
+        const { data } = await qb;
+        const { count } = await db.from('cx_questoes_comentarios').select('id', { count: 'exact', head: true });
+        return json({ total: count ?? 0, comentarios: (data ?? []).map((c: any) => ({ ...c, enunciado: String(c.cx_questoes?.enunciado ?? '').slice(0, 140), cx_questoes: undefined })) });
+      }
       if (path === '/admin/banco/questao' && req.method === 'POST') {
         if (!uuidOk(body.id)) return fail('Questão inválida');
         if (body.acao === 'excluir') { await db.from('cx_questoes').delete().eq('id', body.id); return json({ ok: true }); }
@@ -1060,6 +1140,7 @@ async function handle(req: Request, ck: Ck): Promise<Response> {
           await db.from('cx_questoes').update({ status: body.status, publicado: body.status === 'publicada', motivo_status: body.motivo ? String(body.motivo).slice(0, 500) : null }).eq('id', body.id);
           return json({ ok: true });
         }
+        if (body.acao === 'imagens') { await db.from('cx_questoes').update({ imagens: limparImagens(body.imagens) }).eq('id', body.id); return json({ ok: true }); }
         if (body.acao === 'editar') {
           const u: any = {}; const c = body.campos ?? {};
           for (const k of ['enunciado', 'comentario', 'lei_relacionada', 'juris_relacionada', 'legislacao_considerada', 'motivo_status', 'dificuldade', 'nivel', 'nivel_compat', 'fonte', 'origem']) if (c[k] !== undefined) u[k] = c[k];
