@@ -156,3 +156,10 @@ Fonte: pasta MENTORIA/SIMULADOS/SD PM SP. Arquivos públicos (abrem e baixam sem
 - **929 comentários gravados** (backup dos textos antigos fora do site). Hoje restam 3 comentários curtos entre as 3.589 questões publicadas.
 - **12 questões foram para `revisao`** (saem da prática dos alunos) por gabarito que não confere, enunciado ambíguo ou dado perdido na extração (destaque, figura, capacidade do tanque etc.). Elas precisam ser conferidas na prova original.
 - Os comentários são de autoria própria e não foram revisados por pessoa. Citações de lei só foram mantidas quando o revisor confirmou o texto; casos de dúvida estão sinalizados nas observações dos revisores.
+
+## 26. Provas de outros cargos só como questões, vídeos amplos e 4 alternativas (13/10/2026)
+- **Simulados no site:** só existem simulados e provas de PM-SP Soldado e GCM Geral. As provas de outros cargos (Sargento 2022, Cabo 2023, Aluno-Oficial 2024, Soldado 2010) entram apenas como questões do banco, sem aparecer como simulado nem como prova.
+- **Sargento 2022 e Cabo 2023:** importadas 43 e 31 questões (as provas têm 4 alternativas; o backend, versão 9, passou a aceitar 4 ou 5). Duas questões do Sargento foram deixadas de fora por serem quase iguais a questões que já estavam no banco. As 72 questões publicadas receberam comentário específico.
+- **Vídeos:** os 3 assuntos que estavam sem vídeo (História e Geografia do município, Estatuto dos servidores municipais, Leis municipais da GCM) receberam 2 vídeos cada, de assunto mais amplo (urbanização, Lei 8.112 e Regime Jurídico, Estatuto Geral das Guardas Municipais).
+- **Prova do Soldado 2021 (caderno PMES1903):** continua sem importar. O Drive só tem o caderno; o arquivo chamado "gabarito 2021" é uma página do Diário Oficial sem as respostas. Falta o arquivo do gabarito.
+- **Chat X:** funciona com a chave `ANTHROPIC_API_KEY` nos segredos das Edge Functions do Supabase; sem ela responde só com regras internas.
