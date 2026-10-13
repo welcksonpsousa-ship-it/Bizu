@@ -52,6 +52,10 @@
 </svg>
 
 <!-- LOGIN -->
+<div id="acessoBloq" class="acesso-bloq hidden" role="alertdialog" aria-modal="true" aria-labelledby="acessoBloqT">
+  <div class="gate-panel"><h2 id="acessoBloqT" class="view-title">Acesso encerrado</h2><p id="acessoBloqMsg" class="muted"></p>
+    <div class="flex gap2 wrap mt2"><button type="button" class="btn-ghost" id="btnAcessoConta">Minha conta</button><button type="button" class="btn-blue" id="btnAcessoSair">Sair</button></div></div>
+</div>
 <div id="gate">
   <div class="gate-panel fi" id="loginPanel">
     <div class="gate-logo">
@@ -151,6 +155,7 @@
     <div class="backdrop" id="uiBackdrop" hidden></div>
 
     <main class="main" id="mainContent" tabindex="-1">
+      <div id="bannerSenha" class="card banner-aviso hidden" role="status"><span>Por segurança, troque a senha inicial da sua conta.</span> <button type="button" class="btn-blue btn-sm" id="btnBannerSenha">Trocar agora</button></div>
 
       <!-- PAINEL -->
       <section id="v-painel" class="view on">
@@ -470,18 +475,78 @@
       <!-- MINHA CONTA -->
       <section id="v-conta" class="view">
         <div class="view-hdr"><div><h1 class="view-title">Minha conta</h1><div class="view-sub" id="contaEmail"></div></div></div>
+        <div id="contaAcesso" class="card conta-acesso hidden" role="status"></div>
+        <div class="card mb2" id="cardFoto">
+          <div class="card-title">Foto de perfil</div>
+          <div class="conta-foto">
+            <div class="avatar" id="avatarConta" aria-label="Foto de perfil"></div>
+            <div class="conta-foto-acoes">
+              <input type="file" id="fotoArq" accept="image/jpeg,image/png,image/webp" class="hidden">
+              <div class="flex gap2 wrap"><button type="button" class="btn-ghost btn-sm" id="btnFotoEscolher">Escolher imagem</button><button type="button" class="btn-ghost btn-sm" id="btnFotoRemover">Remover foto</button></div>
+              <div id="fotoPrevia" class="foto-previa hidden"><img id="fotoPreviaImg" alt="Prévia da nova foto"><div class="flex gap2 wrap"><button type="button" class="btn-blue btn-sm" id="btnFotoSalvar">Salvar foto</button><button type="button" class="btn-ghost btn-sm" id="btnFotoCancelar">Cancelar</button></div></div>
+              <div class="muted small" id="fotoMsg" role="status">JPEG, PNG ou WebP. A imagem é reduzida automaticamente.</div>
+            </div>
+          </div>
+        </div>
         <div class="card mb2">
-          <div class="card-title">Perfil</div>
-          <div class="filters"><div class="fgroup fgrow"><label for="contaNome">Nome</label><input id="contaNome" autocomplete="name"></div><button type="button" class="btn-blue" id="btnContaNome">Salvar</button></div>
+          <div class="card-title">Dados pessoais</div>
+          <div class="conta-grid">
+            <div class="fgroup"><label for="cNome">Nome completo</label><input id="cNome" maxlength="120" autocomplete="name"></div>
+            <div class="fgroup"><label for="cApelido">Apelido ou nome de exibição</label><input id="cApelido" maxlength="40"></div>
+            <div class="fgroup"><label for="cCelular">Celular (DDD + número)</label><input id="cCelular" inputmode="tel" maxlength="20" autocomplete="tel" placeholder="(11) 91234-5678"></div>
+            <div class="fgroup"><label for="cEscolaridade">Grau de escolaridade</label><select id="cEscolaridade"></select></div>
+            <div class="fgroup"><label for="cCidade">Cidade</label><input id="cCidade" maxlength="80" autocomplete="address-level2"></div>
+            <div class="fgroup"><label for="cEstado">Estado</label><select id="cEstado"></select></div>
+            <div class="fgroup"><label>E-mail cadastrado</label><input id="cEmail" readonly></div>
+            <div class="fgroup"><label>Conta criada em</label><input id="cCriada" readonly></div>
+          </div>
+          <div class="flex gap2 wrap mt1"><button type="button" class="btn-blue" id="btnSalvarPessoais">Salvar dados pessoais</button><span class="muted small" id="msgPessoais" role="status"></span></div>
+          <details class="conta-det"><summary>Alterar e-mail</summary>
+            <p class="muted small">Enviaremos um link de confirmação ao novo endereço. O e-mail só muda depois da confirmação.</p>
+            <div class="conta-grid">
+              <div class="fgroup"><label for="cEmailNovo">Novo e-mail</label><input id="cEmailNovo" type="email" autocomplete="email"></div>
+              <div class="fgroup"><label for="cEmailSenha">Senha atual</label><input id="cEmailSenha" type="password" autocomplete="current-password"></div>
+            </div>
+            <div class="flex gap2 wrap mt1"><button type="button" class="btn-blue btn-sm" id="btnEmail">Solicitar troca de e-mail</button><span class="muted small" id="msgEmail" role="status"></span></div>
+          </details>
+        </div>
+        <div class="card mb2">
+          <div class="card-title">Perfil de preparação</div>
+          <p class="muted small">Estas informações personalizam o cronograma e as metas. Todas são opcionais.</p>
+          <div class="conta-sec">Concurso</div>
+          <div class="conta-grid">
+            <div class="fgroup"><label for="cConcurso">Concurso pretendido</label><input id="cConcurso" maxlength="120" placeholder="Ex.: PM-SP Soldado 2027"></div>
+            <div class="fgroup"><label for="cCargo">Cargo pretendido</label><input id="cCargo" maxlength="120"></div>
+            <div class="fgroup"><label for="cCursoSel">Curso selecionado</label><select id="cCursoSel"></select></div>
+            <div class="fgroup"><label for="cMunicipio">Município ou região de interesse</label><input id="cMunicipio" maxlength="120"></div>
+            <div class="fgroup"><label for="cDataProva">Data prevista da prova</label><input id="cDataProva" type="date"></div>
+          </div>
+          <div class="conta-sec">Rotina de estudo</div>
+          <div class="conta-grid">
+            <div class="fgroup"><label for="cHorasDia">Tempo disponível por dia (horas)</label><input id="cHorasDia" type="number" min="0" max="24" step="0.5"></div>
+            <div class="fgroup"><label for="cDiasSemana">Dias disponíveis por semana</label><select id="cDiasSemana"><option value="">—</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option><option>7</option></select></div>
+            <div class="fgroup"><label for="cMeta">Meta semanal de estudo (horas)</label><input id="cMeta" type="number" min="0" max="168" step="0.5"><span class="muted small" id="cMetaDica"></span></div>
+            <div class="fgroup"><label for="cNivel">Nível atual</label><select id="cNivel"><option value="">—</option><option value="iniciante">Iniciante</option><option value="intermediario">Intermediário</option><option value="avancado">Avançado</option></select></div>
+          </div>
+          <div class="conta-sec">Histórico de preparação</div>
+          <div class="conta-grid">
+            <div class="fgroup"><label for="cInicio">Comecei a estudar em</label><input id="cInicio" type="date"><span class="muted small" id="cInicioDica"></span></div>
+            <div class="fgroup"><label for="cTotalMeses">Tempo total de preparação (meses)</label><input id="cTotalMeses" type="number" min="0" max="600" step="1"><span class="muted small">Considere só o tempo em que realmente estudou.</span></div>
+            <div class="fgroup"><label for="cRetomada">Retomei os estudos em</label><input id="cRetomada" type="date"></div>
+          </div>
+          <div class="fgroup mt1"><label>Períodos em que ficou sem estudar</label><div id="cPausas"></div><button type="button" class="btn-ghost btn-sm" id="btnPausaAdd">+ Adicionar período</button></div>
+          <div class="conta-sec">Matérias em que tem maior dificuldade</div>
+          <div class="check-row" id="cDificuldades"></div>
+          <div class="flex gap2 wrap mt2"><button type="button" class="btn-blue" id="btnSalvarPrep">Salvar preparação</button><span class="muted small" id="msgPrep" role="status"></span></div>
         </div>
         <div class="card">
           <div class="card-title">Alterar senha</div>
-          <div class="filters">
-            <div class="fgroup"><label for="contaSenha">Nova senha</label><input id="contaSenha" type="password" autocomplete="new-password"></div>
-            <div class="fgroup"><label for="contaSenha2">Confirmar</label><input id="contaSenha2" type="password" autocomplete="new-password"></div>
-            <button type="button" class="btn-blue" id="btnContaSenha">Alterar senha</button>
+          <div class="conta-grid">
+            <div class="fgroup"><label for="contaSenhaAtual">Senha atual</label><input id="contaSenhaAtual" type="password" autocomplete="current-password"></div>
+            <div class="fgroup"><label for="contaSenha">Nova senha (mínimo 8 caracteres)</label><input id="contaSenha" type="password" autocomplete="new-password"></div>
+            <div class="fgroup"><label for="contaSenha2">Confirmar nova senha</label><input id="contaSenha2" type="password" autocomplete="new-password"></div>
           </div>
-          <div class="muted small" id="contaMsg" role="status"></div>
+          <div class="flex gap2 wrap mt1"><button type="button" class="btn-blue" id="btnContaSenha">Alterar senha</button><span class="muted small" id="contaMsg" role="status"></span></div>
         </div>
       </section>
 
@@ -496,6 +561,9 @@
           <button type="button" class="tab" data-at="comentarios" role="tab">Comentários</button>
           <button type="button" class="tab" data-at="videos" role="tab">Vídeos</button>
           <button type="button" class="tab" data-at="usuarios" role="tab">Usuários</button>
+          <button type="button" class="tab" data-at="acessos" role="tab">Acessos</button>
+          <button type="button" class="tab" data-at="uso" role="tab">Uso das questões</button>
+          <button type="button" class="tab" data-at="apostilas" role="tab">Apostilas PDF</button>
         </div>
         <div data-ap="estrutura"><div id="admEstrutura"></div></div>
         <div data-ap="cobertura" class="hidden"><div id="admCobertura"></div></div>
@@ -503,6 +571,9 @@
         <div data-ap="simulados" class="hidden"><div id="admSimulados"></div></div>
         <div data-ap="comentarios" class="hidden"><div id="admComentarios"></div></div>
         <div data-ap="videos" class="hidden"><div id="admVideos"></div></div>
+        <div data-ap="acessos" class="hidden"><div id="admAcessos"></div></div>
+        <div data-ap="uso" class="hidden"><div id="admUso"></div></div>
+        <div data-ap="apostilas" class="hidden"><div id="admApostilas"></div></div>
         <div data-ap="usuarios" class="hidden">
           <div class="card mb2">
             <div class="card-title">Criar usuário</div>

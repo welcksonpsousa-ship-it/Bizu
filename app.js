@@ -35,9 +35,17 @@ async function api(path, opts = {}) {
   const r = await fetch(API + path, opts);
   const d = await r.json().catch(() => ({}));
   if (r.status === 401 && !path.startsWith('/login') && $('shell').classList.contains('on')) { location.reload(); throw new Error('Sessão expirada'); }
+  if (d.codigo === 'acesso_expirado') { mostrarAcessoBloqueado(d.message); throw new Error(d.message); }
   if (r.status >= 400 || d.error) throw new Error(d.message || 'Erro ' + r.status);
   return d;
 }
+function mostrarAcessoBloqueado(msg) {
+  $('acessoBloqMsg').textContent = msg || 'Seu acesso está encerrado. Procure o administrador.';
+  $('acessoBloq').classList.remove('hidden');
+}
+$('btnAcessoSair').addEventListener('click', () => { api('/logout', { method: 'POST' }).catch(() => {}).finally(() => location.reload()); });
+$('btnAcessoConta').addEventListener('click', () => { $('acessoBloq').classList.add('hidden'); showView('conta'); });
+$('btnBannerSenha').addEventListener('click', () => { showView('conta'); setTimeout(() => $('contaSenhaAtual').focus(), 200); });
 const cq = () => 'curso=' + encodeURIComponent(S.curso ? S.curso.id : '');
 
 /* ---------------- LOGIN ---------------- */
@@ -80,7 +88,9 @@ async function iniciar() {
   const d = await api('/bootstrap');
   $('gate').style.display = 'none'; $('shell').classList.add('on');
   S.cursos = d.cursos || []; S.admin = !!d.admin; S.perfil = d.profile || {}; S.email = d.profile?.email || '';
-  S.metrics = d.metrics || {};
+  S.metrics = d.metrics || {}; S.acesso = d.acesso || null;
+  if (S.acesso && S.acesso.bloqueado) { mostrarAcessoBloqueado(S.acesso.situacao === 'suspenso' ? 'Seu acesso está suspenso. Procure o administrador do Bizu do Concurseiro X.' : 'Seu acesso ao Bizu do Concurseiro X terminou em ' + new Date(S.acesso.expira_em).toLocaleDateString('pt-BR') + '. Procure o administrador para renovar. Seus dados e histórico foram preservados.'); return; }
+  if (S.acesso && S.acesso.trocar_senha) $('bannerSenha').classList.remove('hidden');
   S.curso = S.cursos.find((c) => c.id === d.curso_id) || S.cursos[0] || null;
   if (S.admin) { $('admNavSec').classList.remove('hidden'); $('admNavBtn').classList.remove('hidden'); }
   $('xpPill').textContent = (S.metrics.xp || 0) + ' XP';
@@ -89,8 +99,21 @@ async function iniciar() {
   renderCursoSwitch();
   await Promise.all([carregarEstrutura(), carregarDominio()]);
   cronRecuperar();
+  aplicarPerfilPreparacao();
   const v = (location.hash.match(/^#v=([\w-]+)/) || [])[1];
   showView(v && $('v-' + (v.startsWith('m-') ? 'material' : v)) ? v : 'painel');
+}
+// Usa o perfil de preparação (se preenchido) para sugerir tempo de estudo e rotina; nada é obrigatório.
+async function aplicarPerfilPreparacao() {
+  try {
+    const p = (await api('/perfil/dados')).perfil || {}; S.prep = p;
+    if (p.foto) { /* foto só aparece em Minha conta */ }
+    if (p.horas_dia > 0) {
+      $('eaTempo').value = Math.max(20, Math.min(480, Math.round(p.horas_dia * 60 / 5) * 5));
+      $('cronoH').value = Math.max(1, Math.min(14, Math.round(p.horas_dia * 2) / 2));
+    }
+    if (p.dias_semana) $('cronoDias').value = String(Math.max(5, Math.min(7, p.dias_semana)));
+  } catch (_) { /* perfil é opcional */ }
 }
 async function carregarEstrutura() {
   if (!S.curso) return;
@@ -485,6 +508,7 @@ function corpoMaterial(m) {
   if (m.tipo === 'mapa_mental') return `<p class="small" style="margin:0 0 8px"><strong>${esc(c.no_central || m.titulo)}</strong></p><ul class="mapa-ul">${(c.ramos || []).map((r) => `<li><strong>${esc(r.label)}</strong>${(r.filhos || []).length ? `<ul class="mapa-ul">${r.filhos.map((f) => `<li>${esc(f)}</li>`).join('')}</ul>` : ''}</li>`).join('')}</ul>`;
   if (m.tipo === 'lei_seca') return `${c.lei ? `<div class="badge">${esc(c.lei)}${c.artigo ? ' · ' + esc(c.artigo) : ''}</div>` : ''}<div class="scrl mt1">${esc(c.texto || '')}</div>${c.observacao ? `<p class="muted small mt1">${esc(c.observacao)}</p>` : ''}${fonte}`;
   if (m.tipo === 'jurisprudencia') return `<div class="juris-trib">${esc([c.tribunal, c.referencia].filter(Boolean).join(' · '))}</div><div class="juris-tese">${esc(c.enunciado || '')}</div>${fonte}`;
+  if (m.tipo === 'pdf' && m.url) return `<div class="pdf-card"><div class="pdf-meta">${textoFmt(c.texto)}<div class="muted small">${c.versao ? 'Versão ' + esc(c.versao) + ' · ' : ''}${c.atualizado_em ? 'atualizada em ' + esc(new Date(c.atualizado_em + 'T12:00:00').toLocaleDateString('pt-BR')) : ''}${c.paginas ? ' · ' + esc(c.paginas) + ' páginas' : ''}${c.tamanho_kb ? ' · ' + esc(c.tamanho_kb) + ' KB' : ''}</div></div><div class="flex gap2 wrap"><a class="btn-blue btn-sm" href="${esc(m.url)}" target="_blank" rel="noopener">Abrir PDF</a><a class="btn-ghost btn-sm" href="${esc(m.url)}" download>Baixar</a></div></div>` + fonte;
   return textoFmt(c.texto) + (m.url ? `<p class="mt1"><a class="btn-blue btn-sm" href="${esc(m.url)}" target="_blank" rel="noopener">Abrir</a></p>` : '') + fonte;
 }
 
@@ -952,20 +976,119 @@ async function carregarCronometro(soResumo) {
 }
 
 /* ---------------- MINHA CONTA ---------------- */
-function renderConta() { $('contaEmail').textContent = S.email; $('contaNome').value = S.perfil.full_name || ''; $('contaMsg').textContent = ''; }
-$('btnContaNome').addEventListener('click', async () => { try { await api('/perfil', { body: { nome: $('contaNome').value } }); S.perfil.full_name = $('contaNome').value; $('painelNome').textContent = $('contaNome').value.split(' ')[0] || 'Candidato'; $('contaMsg').textContent = 'Nome salvo.'; } catch (e) { $('contaMsg').textContent = e.message; } });
+const CONTA = { dados: null, pausas: [], foto: null };
+const dtBR = (iso) => (iso ? new Date(iso).toLocaleDateString('pt-BR') : '—');
+const iniciais = (n) => { const p = String(n || '?').trim().split(/\s+/); return ((p[0] || '?')[0] + (p[1] ? p[1][0] : '')).toUpperCase(); };
+function desenharAvatar(foto) {
+  const nome = ($('cApelido').value || $('cNome').value || S.perfil.full_name || S.email || '?');
+  $('avatarConta').innerHTML = foto ? `<img src="${esc(foto)}" alt="Foto de perfil">` : esc(iniciais(nome));
+}
+function pausaLinha(p = {}, i = 0) {
+  return `<div class="pausa-row" data-i="${i}"><div class="fgroup"><label>De</label><input type="date" class="p-de" value="${esc(p.de || '')}"></div><div class="fgroup"><label>Até</label><input type="date" class="p-ate" value="${esc(p.ate || '')}"></div><div class="fgroup pausa-motivo"><label>Motivo (opcional)</label><input class="p-mot" maxlength="120" value="${esc(p.motivo || '')}"></div><button type="button" class="btn-ghost btn-sm p-rm" aria-label="Remover período">Remover</button></div>`;
+}
+function desenharPausas() {
+  const box = $('cPausas'); box.innerHTML = CONTA.pausas.length ? CONTA.pausas.map((p, i) => pausaLinha(p, i)).join('') : '<div class="muted small mb1">Nenhum período informado.</div>';
+  $$('#cPausas .p-rm').forEach((b) => b.addEventListener('click', () => { lerPausas(); CONTA.pausas.splice(+b.closest('.pausa-row').dataset.i, 1); desenharPausas(); }));
+}
+function lerPausas() { CONTA.pausas = $$('#cPausas .pausa-row').map((r) => ({ de: $$('.p-de', r)[0].value, ate: $$('.p-ate', r)[0].value || null, motivo: $$('.p-mot', r)[0].value.trim() || null })); }
+function dicaTempo() {
+  const ini = $('cInicio').value; let t = '';
+  if (ini) { const m = Math.floor((Date.now() - Date.parse(ini + 'T12:00:00')) / (86400000 * 30.4375)); t = m >= 0 ? `Há ${m} ${m === 1 ? 'mês' : 'meses'}` : ''; }
+  $('cInicioDica').textContent = t;
+  const h = parseFloat($('cHorasDia').value), d = parseInt($('cDiasSemana').value);
+  $('cMetaDica').textContent = h > 0 && d > 0 ? `Sugestão pela sua rotina: ${Math.round(h * d * 10) / 10} h por semana` : '';
+}
+async function renderConta() {
+  CONTA.carregado = false; $('v-conta').dataset.ok = ''; $('contaEmail').textContent = S.email; $('contaMsg').textContent = '';
+  ['msgPessoais', 'msgEmail', 'msgPrep', 'fotoMsg'].forEach((id) => { $(id).textContent = id === 'fotoMsg' ? 'JPEG, PNG ou WebP. A imagem é reduzida automaticamente.' : ''; });
+  try {
+    const d = await api('/perfil/dados'); CONTA.dados = d; const p = d.perfil || {};
+    $('cNome').value = p.nome || S.perfil.full_name || ''; $('cApelido').value = p.apelido || '';
+    $('cCelular').value = fmtCel(p.celular); $('cCidade').value = p.cidade || '';
+    $('cEscolaridade').innerHTML = '<option value="">—</option>' + d.opcoes.escolaridades.map((x) => `<option${x === p.escolaridade ? ' selected' : ''}>${esc(x)}</option>`).join('');
+    $('cEstado').innerHTML = '<option value="">—</option>' + d.opcoes.estados.map((x) => `<option${x === p.estado ? ' selected' : ''}>${esc(x)}</option>`).join('');
+    $('cEmail').value = d.email || ''; $('cCriada').value = dtBR(d.conta_criada_em);
+    $('cConcurso').value = p.concurso_pretendido || ''; $('cCargo').value = p.cargo_pretendido || ''; $('cMunicipio').value = p.municipio_interesse || '';
+    $('cCursoSel').innerHTML = S.cursos.map((c) => `<option value="${esc(c.id)}"${c.id === (S.curso && S.curso.id) ? ' selected' : ''}>${esc(c.nome)}</option>`).join('');
+    $('cDataProva').value = p.data_prova || ''; $('cHorasDia').value = p.horas_dia ?? ''; $('cDiasSemana').value = p.dias_semana ?? '';
+    $('cMeta').value = p.meta_semanal_horas ?? ''; $('cNivel').value = p.nivel_atual || ''; $('cInicio').value = p.inicio_estudos || '';
+    $('cTotalMeses').value = p.tempo_preparacao_meses ?? ''; $('cRetomada').value = p.retomada_em || '';
+    CONTA.pausas = Array.isArray(p.pausas) ? p.pausas : []; desenharPausas();
+    const dif = new Set(p.materias_dificuldade || []);
+    $('cDificuldades').innerHTML = S.est.map((di) => `<label class="check"><input type="checkbox" class="c-dif" value="${esc(di.nome)}"${dif.has(di.nome) ? ' checked' : ''}> ${esc(di.nome)}</label>`).join('') + [...dif].filter((n) => !S.est.some((di) => di.nome === n)).map((n) => `<label class="check"><input type="checkbox" class="c-dif" value="${esc(n)}" checked> ${esc(n)}</label>`).join('');
+    CONTA.foto = p.foto || null; desenharAvatar(CONTA.foto); $('fotoPrevia').classList.add('hidden');
+    const ac = d.acesso, box = $('contaAcesso');
+    if (ac) { box.classList.remove('hidden'); box.classList.toggle('venc', !!ac.bloqueado); box.innerHTML = `<div class="card-title">Seu acesso</div><div class="small">Ativado em <strong>${dtBR(ac.ativado_em)}</strong> · válido até <strong>${dtBR(ac.expira_em)}</strong>${ac.dias_restantes != null ? ` (${ac.dias_restantes > 0 ? ac.dias_restantes + ' dias restantes' : 'encerrado'})` : ''} · situação: <strong>${esc(ac.situacao)}</strong></div>`; } else box.classList.add('hidden');
+    if (d.email_pendente) $('msgEmail').textContent = 'Troca pendente de confirmação para ' + d.email_pendente + '.';
+    dicaTempo(); CONTA.carregado = true; $('v-conta').dataset.ok = '1';
+  } catch (e) { $('msgPessoais').textContent = e.message; }
+}
+function fmtCel(v) { const d = String(v || '').replace(/\D/g, ''); if (d.length === 11) return `(${d.slice(0, 2)}) ${d.slice(2, 7)}-${d.slice(7)}`; if (d.length === 10) return `(${d.slice(0, 2)}) ${d.slice(2, 6)}-${d.slice(6)}`; return d; }
+['cInicio', 'cHorasDia', 'cDiasSemana'].forEach((id) => $(id).addEventListener('input', dicaTempo));
+['cNome', 'cApelido'].forEach((id) => $(id).addEventListener('input', () => { if (!CONTA.foto) desenharAvatar(null); }));
+$('btnSalvarPessoais').addEventListener('click', async () => {
+  const m = $('msgPessoais'); if (!CONTA.carregado) { m.textContent = 'Aguarde o carregamento dos seus dados.'; return; } m.textContent = 'Salvando...';
+  try {
+    await api('/perfil', { body: { nome: $('cNome').value, apelido: $('cApelido').value, celular: $('cCelular').value, escolaridade: $('cEscolaridade').value, cidade: $('cCidade').value, estado: $('cEstado').value } });
+    S.perfil.full_name = $('cNome').value; $('painelNome').textContent = ($('cApelido').value || $('cNome').value).split(' ')[0] || 'Candidato';
+    m.textContent = 'Dados pessoais salvos.';
+  } catch (e) { m.textContent = e.message; }
+});
+$('btnSalvarPrep').addEventListener('click', async () => {
+  const m = $('msgPrep'); if (!CONTA.carregado) { m.textContent = 'Aguarde o carregamento dos seus dados.'; return; } m.textContent = 'Salvando...'; lerPausas();
+  const num = (id) => { const v = $(id).value; return v === '' ? null : Number(v); };
+  try {
+    await api('/perfil', { body: { concurso_pretendido: $('cConcurso').value, cargo_pretendido: $('cCargo').value, municipio_interesse: $('cMunicipio').value, data_prova: $('cDataProva').value || null,
+      horas_dia: num('cHorasDia'), dias_semana: num('cDiasSemana'), meta_semanal_horas: num('cMeta'), nivel_atual: $('cNivel').value, inicio_estudos: $('cInicio').value || null,
+      tempo_preparacao_meses: num('cTotalMeses'), retomada_em: $('cRetomada').value || null, pausas: CONTA.pausas.filter((p) => p.de), materias_dificuldade: $$('.c-dif').filter((c) => c.checked).map((c) => c.value) } });
+    S.prep = null;
+    if ($('cCursoSel').value && S.curso && $('cCursoSel').value !== S.curso.id) await trocarCurso($('cCursoSel').value);
+    m.textContent = 'Preparação salva. O cronograma e as metas passam a usar esses dados.';
+  } catch (e) { m.textContent = e.message; }
+});
+$('btnPausaAdd').addEventListener('click', () => { lerPausas(); if (CONTA.pausas.length >= 20) return; CONTA.pausas.push({}); desenharPausas(); });
+/* foto: escolher, ver prévia (reduzida a 256 px) e salvar */
+let FOTO_NOVA = null;
+$('btnFotoEscolher').addEventListener('click', () => $('fotoArq').click());
+$('fotoArq').addEventListener('change', () => {
+  const f = $('fotoArq').files[0]; if (!f) return; const m = $('fotoMsg');
+  if (!/^image\/(jpeg|png|webp)$/.test(f.type)) { m.textContent = 'Escolha uma imagem JPEG, PNG ou WebP.'; return; }
+  if (f.size > 8 * 1024 * 1024) { m.textContent = 'Imagem muito grande (máximo 8 MB).'; return; }
+  const img = new Image(), url = URL.createObjectURL(f);
+  img.onload = () => {
+    const L = Math.min(img.width, img.height), cv = document.createElement('canvas'); cv.width = cv.height = 256;
+    cv.getContext('2d').drawImage(img, (img.width - L) / 2, (img.height - L) / 2, L, L, 0, 0, 256, 256);
+    FOTO_NOVA = cv.toDataURL('image/jpeg', 0.82); URL.revokeObjectURL(url);
+    $('fotoPreviaImg').src = FOTO_NOVA; $('fotoPrevia').classList.remove('hidden'); m.textContent = 'Confira a prévia e clique em Salvar foto.';
+  };
+  img.onerror = () => { m.textContent = 'Não foi possível ler essa imagem.'; };
+  img.src = url;
+});
+$('btnFotoCancelar').addEventListener('click', () => { FOTO_NOVA = null; $('fotoArq').value = ''; $('fotoPrevia').classList.add('hidden'); $('fotoMsg').textContent = 'Alteração cancelada.'; });
+$('btnFotoSalvar').addEventListener('click', async () => {
+  if (!FOTO_NOVA) return;
+  try { await api('/perfil/foto', { body: { foto: FOTO_NOVA } }); CONTA.foto = FOTO_NOVA; desenharAvatar(FOTO_NOVA); $('fotoPrevia').classList.add('hidden'); $('fotoArq').value = ''; FOTO_NOVA = null; $('fotoMsg').textContent = 'Foto atualizada.'; } catch (e) { $('fotoMsg').textContent = e.message; }
+});
+$('btnFotoRemover').addEventListener('click', async () => {
+  try { await api('/perfil/foto', { body: { remover: true } }); CONTA.foto = null; desenharAvatar(null); $('fotoMsg').textContent = 'Foto removida.'; } catch (e) { $('fotoMsg').textContent = e.message; }
+});
+$('btnEmail').addEventListener('click', async () => {
+  const m = $('msgEmail'); m.textContent = 'Enviando...';
+  try { const r = await api('/perfil/email', { body: { email: $('cEmailNovo').value, password: $('cEmailSenha').value, redirect_to: location.origin } }); $('cEmailSenha').value = ''; m.textContent = r.mensagem; } catch (e) { m.textContent = e.message; }
+});
 $('btnContaSenha').addEventListener('click', async () => {
-  const p1 = $('contaSenha').value, p2 = $('contaSenha2').value;
-  if (p1.length < 6) { $('contaMsg').textContent = 'A senha deve ter no mínimo 6 caracteres.'; return; }
-  if (p1 !== p2) { $('contaMsg').textContent = 'As senhas não coincidem.'; return; }
-  try { await api('/senha/alterar', { body: { password: p1 } }); $('contaSenha').value = $('contaSenha2').value = ''; $('contaMsg').textContent = 'Senha alterada.'; } catch (e) { $('contaMsg').textContent = e.message; }
+  const at = $('contaSenhaAtual').value, p1 = $('contaSenha').value, p2 = $('contaSenha2').value, m = $('contaMsg');
+  if (!at) { m.textContent = 'Informe a senha atual.'; return; }
+  if (p1.length < 8) { m.textContent = 'A nova senha deve ter no mínimo 8 caracteres.'; return; }
+  if (p1 !== p2) { m.textContent = 'As senhas não coincidem.'; return; }
+  try { await api('/senha/alterar', { body: { atual: at, password: p1 } }); $('contaSenhaAtual').value = $('contaSenha').value = $('contaSenha2').value = ''; $('bannerSenha').classList.add('hidden'); if (S.acesso) S.acesso.trocar_senha = false; m.textContent = 'Senha alterada.'; } catch (e) { m.textContent = e.message; }
 });
 
 /* ---------------- CENTRAL ADMINISTRATIVA ---------------- */
 $$('#admTabs .tab').forEach((t) => t.addEventListener('click', () => {
   $$('#admTabs .tab').forEach((x) => x.classList.toggle('on', x === t));
   $$('#v-admin [data-ap]').forEach((p) => p.classList.toggle('hidden', p.dataset.ap !== t.dataset.at));
-  ({ estrutura: renderAdmEstrutura, cobertura: renderAdmCobertura, banco: renderAdmBanco, simulados: renderAdmSimulados, comentarios: renderAdmComentarios, videos: renderAdmVideos, usuarios: renderAdmUsuarios })[t.dataset.at]();
+  ({ estrutura: renderAdmEstrutura, cobertura: renderAdmCobertura, banco: renderAdmBanco, simulados: renderAdmSimulados, comentarios: renderAdmComentarios, videos: renderAdmVideos, usuarios: renderAdmUsuarios, acessos: renderAdmAcessos, uso: renderAdmUso, apostilas: renderAdmApostilas })[t.dataset.at]();
 }));
 function renderAdmin() { if (!S.admin) { showView('painel'); return; } const t = $$('#admTabs .tab.on')[0]; t.click(); }
 function renderAdmEstrutura() {
@@ -1101,6 +1224,63 @@ async function renderAdmVideos() {
     $$('#admVideos [data-del]').forEach((b) => b.addEventListener('click', async () => { if (confirm('Excluir este vídeo?')) { await api('/admin/videos', { body: { acao: 'excluir', id: b.dataset.del } }).catch((e) => alert(e.message)); renderAdmVideos(); } }));
   } catch (e) { box.innerHTML = emp(e.message); }
 }
+/* ---- Admin: acessos por prazo, uso das questões e apostilas ---- */
+async function renderAdmAcessos() {
+  const box = $('admAcessos'); box.innerHTML = ld();
+  try {
+    const l = (await api('/admin/acessos')).acessos;
+    const f = (id, rot, v, tp) => `<div class="fgroup"><label for="${id}">${rot}</label><input id="${id}" type="${tp || 'text'}" value="${esc(v || '')}"></div>`;
+    box.innerHTML = `<div class="card mb2"><div class="card-title">Nova conta de aluno com prazo</div><p class="muted small">Cria a conta no sistema de autenticação (somente perfil de aluno) e registra o prazo de acesso. O prazo é aplicado no servidor.</p>
+      <div class="filters">${f('acEmail', 'E-mail', '', 'email')}${f('acSenha', 'Senha inicial', '', 'password')}${f('acNome', 'Nome')}<div class="fgroup fgroup-sm"><label for="acMeses">Meses</label><input id="acMeses" type="number" min="1" max="36" value="6"></div><button type="button" class="btn-blue" id="acCriar">Criar conta</button></div><div class="muted small" id="acMsg" role="status"></div></div>
+      <div class="card tbl-wrap"><table class="tbl adm-tbl-sm"><thead><tr><th>E-mail</th><th>Nome</th><th>Ativada em</th><th>Expira em</th><th>Dias</th><th>Situação</th><th>Último acesso</th><th>Ações</th></tr></thead><tbody>${l.map((a) => `<tr data-u="${a.user_id}"><td>${esc(a.email || '—')}</td><td>${esc(a.nome || '—')}</td><td>${dtBR(a.ativado_em)}</td><td>${dtBR(a.expira_em)}</td><td>${a.dias_restantes ?? '—'}</td><td><span class="badge${a.situacao === 'ativo' ? ' bgold' : ''}">${esc(a.situacao)}</span></td><td>${a.ultimo_login ? dtBR(a.ultimo_login) : '—'}</td><td><button type="button" class="btn-ghost btn-sm" data-ac="renovar">Renovar +6m</button> <button type="button" class="btn-ghost btn-sm" data-ac="${a.situacao === 'suspenso' ? 'reativar' : 'suspender'}">${a.situacao === 'suspenso' ? 'Reativar' : 'Suspender'}</button> <button type="button" class="btn-ghost btn-sm" data-ac="historico">Histórico</button></td></tr>`).join('') || '<tr><td colspan="8" class="muted">Nenhuma conta com prazo.</td></tr>'}</tbody></table></div><div id="acHist"></div>`;
+    $('acCriar').addEventListener('click', async () => {
+      try { const r = await api('/admin/acessos/criar', { body: { email: $('acEmail').value, password: $('acSenha').value, nome: $('acNome').value, meses: +$('acMeses').value || 6, curso_id: S.curso && S.curso.id } }); $('acMsg').textContent = r.ja_existia ? 'Conta já existia; prazo registrado se ainda não havia.' : 'Conta criada.'; renderAdmAcessos(); } catch (e) { $('acMsg').textContent = e.message; }
+    });
+    $$('#admAcessos [data-ac]').forEach((b) => b.addEventListener('click', async () => {
+      const uid = b.closest('tr').dataset.u, ac = b.dataset.ac;
+      if (ac === 'historico') { const a = l.find((x) => x.user_id === uid); $('acHist').innerHTML = `<div class="card"><div class="card-title">Histórico — ${esc(a.email)}</div>${(a.historico || []).map((h) => `<div class="small">${esc(new Date(h.em).toLocaleString('pt-BR'))} · <strong>${esc(h.evento)}</strong>${h.ate ? ' · até ' + dtBR(h.ate) : ''}${h.motivo ? ' · ' + esc(h.motivo) : ''}${h.por ? ' · por ' + esc(h.por) : ''}</div>`).join('') || '<div class="muted small">Sem eventos.</div>'}</div>`; return; }
+      if (ac === 'renovar' && !confirm('Renovar o acesso por mais 6 meses?')) return;
+      if (ac === 'suspender' && !confirm('Suspender o acesso desta conta?')) return;
+      try { await api('/admin/acessos', { body: { user_id: uid, acao: ac, meses: 6 } }); renderAdmAcessos(); } catch (e) { $('acMsg').textContent = e.message; }
+    }));
+  } catch (e) { box.innerHTML = emp(e.message); }
+}
+async function renderAdmUso() {
+  const box = $('admUso'); box.innerHTML = ld();
+  try {
+    const [r, mont] = await Promise.all([api('/admin/uso/resumo?' + cq()), api('/admin/simulados/montados?' + cq())]);
+    const ctxNome = { prova_real: 'Prova real', simulado_pdf: 'Simulado (PDF)', simulado: 'Simulado montado' };
+    const discs = [...new Map(r.por_assunto.map((x) => [x.disciplina_id, x.disciplina])).entries()];
+    box.innerHTML = `<div class="card mb2"><div class="card-title">Histórico de uso — ${esc(S.curso.nome)}</div><p class="muted small">Cada questão de prova real ou simulado fica registrada. Ao montar um simulado, o sistema só usa questões autorais ainda inéditas; se faltar, avisa e não completa com repetidas.</p>
+      <div class="res-grid"><div class="card"><div class="muted small">Itens no histórico</div><strong>${r.historico_total}</strong></div>${Object.entries(r.por_contexto).map(([k, n]) => `<div class="card"><div class="muted small">${ctxNome[k] || k}</div><strong>${n}</strong></div>`).join('')}<div class="card"><div class="muted small">Autorais inéditas</div><strong>${r.autorais_ineditas}</strong> <span class="muted small">de ${r.autorais_publicadas}</span></div><div class="card"><div class="muted small">Autorais já usadas</div><strong>${r.autorais_ja_usadas}</strong></div></div></div>
+      <div class="card mb2"><div class="card-title">Montar simulado inédito</div>
+        <div class="filters"><div class="fgroup fgrow"><label for="muTitulo">Título</label><input id="muTitulo" placeholder="Ex.: Simulado Inédito 11"></div><div class="fgroup fgroup-sm"><label for="muDur">Duração (min)</label><input id="muDur" type="number" min="10" max="600" value="180"></div></div>
+        <div class="tbl-wrap"><table class="tbl adm-tbl-sm"><thead><tr><th>Disciplina</th><th>Inéditas disponíveis</th><th>Quantidade</th></tr></thead><tbody>${discs.map(([id, nome]) => { const disp = r.por_assunto.filter((x) => x.disciplina_id === id).reduce((t, x) => t + x.ineditas, 0); return `<tr><td>${esc(nome)}</td><td>${disp}</td><td><input class="mu-q" data-d="${id}" type="number" min="0" max="${disp}" value="0" style="width:80px"></td></tr>`; }).join('')}</tbody></table></div>
+        <div class="flex gap2 wrap mt1"><button type="button" class="btn-ghost" id="muSim">Simular (sem criar)</button><button type="button" class="btn-blue" id="muMontar">Montar simulado</button><span class="muted small" id="muMsg" role="status"></span></div></div>
+      <div class="card tbl-wrap mb2"><div class="card-title">Simulados montados pelo sistema</div><table class="tbl adm-tbl-sm"><thead><tr><th>Título</th><th>Questões</th><th>Criado em</th><th>Publicado</th></tr></thead><tbody>${mont.simulados.map((x) => `<tr><td>${esc(x.titulo)}</td><td>${x.total}</td><td>${dtBR(x.criado_em)}</td><td>${x.publicado ? 'sim' : 'não'}</td></tr>`).join('') || '<tr><td colspan="4" class="muted">Nenhum simulado montado ainda. Os simulados em PDF continuam disponíveis na aba Simulados do aluno.</td></tr>'}</tbody></table></div>
+      <div class="card tbl-wrap"><div class="card-title">Origens registradas</div><table class="tbl adm-tbl-sm"><thead><tr><th>Tipo</th><th>Origem</th><th>Itens</th></tr></thead><tbody>${r.por_origem.map((o) => `<tr><td>${ctxNome[o.contexto] || o.contexto}</td><td>${esc(o.ref)}</td><td>${o.itens}</td></tr>`).join('')}</tbody></table></div>`;
+    const plano = () => $$('.mu-q').map((i) => ({ disciplina_id: i.dataset.d, qtd: +i.value || 0 })).filter((x) => x.qtd > 0);
+    const rodar = async (salvar) => {
+      const m = $('muMsg'); m.textContent = 'Verificando...';
+      if (!$('muTitulo').value.trim()) { m.textContent = 'Informe o título.'; return; }
+      if (!plano().length) { m.textContent = 'Informe a quantidade de questões por disciplina.'; return; }
+      try { const x = await api('/admin/simulados/montar', { body: { curso_id: S.curso.id, titulo: $('muTitulo').value, duracao_min: +$('muDur').value || null, plano: plano(), salvar } });
+        if (!x.ok) m.textContent = x.mensagem + ' Faltam: ' + x.faltam.map((f) => `${f.item} (precisa ${f.necessario}, há ${f.disponivel})`).join('; ');
+        else { m.textContent = salvar ? `Simulado criado com ${x.total} questões inéditas (não publicado).` : `Há questões inéditas suficientes (${x.total}).`; if (salvar) renderAdmUso(); } } catch (e) { m.textContent = e.message; }
+    };
+    $('muSim').addEventListener('click', () => rodar(false)); $('muMontar').addEventListener('click', () => rodar(true));
+  } catch (e) { box.innerHTML = emp(e.message); }
+}
+async function renderAdmApostilas() {
+  const box = $('admApostilas'); box.innerHTML = ld();
+  try {
+    const r = await api('/admin/apostilas?' + cq());
+    const nome = { pendente: 'Pendente', em_producao: 'Em produção', em_revisao: 'Em revisão', aprovado: 'Aprovado', publicado: 'Publicado', necessita_correcao: 'Necessita correção' };
+    box.innerHTML = `<div class="card mb2"><div class="card-title">Apostilas em PDF — ${esc(S.curso.nome)}</div><div class="flex gap2 wrap">${Object.keys(nome).map((k) => `<span class="apostila-st ${k}">${nome[k]}: ${r.por_status[k] || 0}</span>`).join('')}<span class="muted small">Total de assuntos: ${r.total}</span></div></div>
+      <div class="card tbl-wrap"><table class="tbl adm-tbl-sm"><thead><tr><th>Disciplina</th><th>Assunto</th><th>Status</th><th>Versão</th><th>Páginas</th><th>KB</th><th>Arquivo</th></tr></thead><tbody>${r.apostilas.map((a) => `<tr><td>${esc(a.disciplina)}</td><td>${esc(a.assunto)}</td><td><span class="apostila-st ${a.status}">${nome[a.status] || a.status}</span></td><td>${esc(a.versao || '—')}</td><td>${a.paginas ?? '—'}</td><td>${a.bytes ? Math.round(a.bytes / 1024) : '—'}</td><td>${a.arquivo && a.status === 'publicado' ? `<a href="${esc(a.arquivo)}" target="_blank" rel="noopener">abrir</a>` : '—'}</td></tr>`).join('')}</tbody></table></div>`;
+  } catch (e) { box.innerHTML = emp(e.message); }
+}
+
 async function renderAdmUsuarios() {
   $('admUCurso').innerHTML = S.cursos.map((c) => `<option value="${esc(c.id)}">${esc(c.nome)}</option>`).join('');
   const box = $('admUsuarios'); box.innerHTML = ld();

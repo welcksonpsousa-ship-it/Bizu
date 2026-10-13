@@ -453,6 +453,63 @@ function liquido(s: any, agora = Date.now()) {
   return Math.max(0, Math.min(TETO_SESSAO_S, Math.floor((fim - Date.parse(s.inicio)) / 1000) - pausa));
 }
 
+
+// ---------- acesso por prazo (validade aplicada no backend) ----------
+const ROTAS_LIVRES_SEM_ACESSO = ['/session', '/logout', '/bootstrap', '/perfil/dados', '/senha/alterar'];
+async function carregarAcesso(uid: string) {
+  const { data } = await db.from('cx_acessos').select('*').eq('user_id', uid).maybeSingle();
+  if (!data) return null;
+  const exp = data.expira_em ? Date.parse(data.expira_em) : null;
+  const vencido = exp !== null && exp < Date.now();
+  const bloqueado = data.situacao === 'suspenso' || vencido;
+  if (vencido && data.situacao === 'ativo') await db.from('cx_acessos').update({ situacao: 'expirado' }).eq('user_id', uid);
+  const situacao = data.situacao === 'suspenso' ? 'suspenso' : vencido ? 'expirado' : 'ativo';
+  return { ...data, situacao, bloqueado, dias_restantes: exp !== null ? Math.ceil((exp - Date.now()) / 86400000) : null };
+}
+const acessoPublico = (a: any) => a ? { situacao: a.situacao, ativado_em: a.ativado_em, expira_em: a.expira_em, dias_restantes: a.dias_restantes, bloqueado: a.bloqueado, trocar_senha: a.trocar_senha } : null;
+const somarMeses = (base: Date, n: number) => { const d = new Date(base.getTime()); const dia = d.getUTCDate(); d.setUTCDate(1); d.setUTCMonth(d.getUTCMonth() + n); const ult = new Date(Date.UTC(d.getUTCFullYear(), d.getUTCMonth() + 1, 0)).getUTCDate(); d.setUTCDate(Math.min(dia, ult)); return d; };
+
+// ---------- perfil do aluno ----------
+const ESCOLARIDADES = ['Fundamental incompleto', 'Fundamental completo', 'Médio incompleto', 'Médio completo', 'Superior incompleto', 'Superior completo', 'Pós-graduação'];
+const NIVEIS_ALUNO = ['iniciante', 'intermediario', 'avancado'];
+const UFS = ['AC', 'AL', 'AP', 'AM', 'BA', 'CE', 'DF', 'ES', 'GO', 'MA', 'MT', 'MS', 'MG', 'PA', 'PB', 'PR', 'PE', 'PI', 'RJ', 'RN', 'RS', 'RO', 'RR', 'SC', 'SP', 'SE', 'TO'];
+const dataOk = (v: unknown) => typeof v === 'string' && /^\d{4}-\d{2}-\d{2}$/.test(v) && !isNaN(Date.parse(v + 'T12:00:00Z')) && new Date(v + 'T12:00:00Z').toISOString().slice(0, 10) === v;
+function limparPerfil(b: any): { upd?: any; erro?: string } {
+  const u: any = {};
+  const txt = (k: string, max: number) => { if (b[k] === undefined) return; const v = b[k] === null ? '' : String(b[k]).replace(/[\u0000-\u001f]/g, ' ').trim().slice(0, max); u[k] = v || null; };
+  txt('nome', 120); txt('apelido', 40); txt('cidade', 80); txt('concurso_pretendido', 120); txt('cargo_pretendido', 120); txt('municipio_interesse', 120);
+  if (b.celular !== undefined) { const d = String(b.celular ?? '').replace(/\D/g, ''); if (d && (d.length < 10 || d.length > 11)) return { erro: 'Celular inválido. Informe DDD e número.' }; u.celular = d || null; }
+  if (b.escolaridade !== undefined) { if (b.escolaridade && !ESCOLARIDADES.includes(b.escolaridade)) return { erro: 'Escolaridade inválida.' }; u.escolaridade = b.escolaridade || null; }
+  if (b.estado !== undefined) { const e = String(b.estado ?? '').toUpperCase(); if (e && !UFS.includes(e)) return { erro: 'Estado inválido.' }; u.estado = e || null; }
+  if (b.nivel_atual !== undefined) { if (b.nivel_atual && !NIVEIS_ALUNO.includes(b.nivel_atual)) return { erro: 'Nível inválido.' }; u.nivel_atual = b.nivel_atual || null; }
+  const num = (k: string, min: number, max: number, rot: string, int = false) => {
+    if (b[k] === undefined) return null; if (b[k] === null || b[k] === '') { u[k] = null; return null; }
+    const n = Number(b[k]); if (!isFinite(n) || n < min || n > max || (int && !Number.isInteger(n))) return `${rot} deve estar entre ${min} e ${max}.`; u[k] = n; return null;
+  };
+  const e1 = num('horas_dia', 0, 24, 'Horas por dia') || num('dias_semana', 1, 7, 'Dias por semana', true) || num('tempo_preparacao_meses', 0, 600, 'Tempo de preparação (meses)', true) || num('meta_semanal_horas', 0, 168, 'Meta semanal (horas)');
+  if (e1) return { erro: e1 };
+  for (const k of ['inicio_estudos', 'retomada_em', 'data_prova']) {
+    if (b[k] === undefined) continue; if (b[k] === null || b[k] === '') { u[k] = null; continue; }
+    if (!dataOk(b[k])) return { erro: 'Data inválida em ' + k.replace(/_/g, ' ') + '.' }; u[k] = b[k];
+  }
+  if (u.inicio_estudos && u.inicio_estudos > hojeISO()) return { erro: 'A data de início dos estudos não pode ser futura.' };
+  if (b.materias_dificuldade !== undefined) {
+    if (!Array.isArray(b.materias_dificuldade) || b.materias_dificuldade.length > 20) return { erro: 'Matérias de dificuldade inválidas.' };
+    u.materias_dificuldade = b.materias_dificuldade.map((x: unknown) => String(x).trim().slice(0, 80)).filter(Boolean);
+  }
+  if (b.pausas !== undefined) {
+    if (!Array.isArray(b.pausas) || b.pausas.length > 20) return { erro: 'Períodos sem estudar inválidos.' };
+    const ps: any[] = [];
+    for (const p of b.pausas) {
+      if (!dataOk(p?.de) || (p?.ate && !dataOk(p.ate))) return { erro: 'Datas inválidas nos períodos sem estudar.' };
+      if (p.ate && p.ate < p.de) return { erro: 'No período sem estudar, a data final deve ser posterior à inicial.' };
+      ps.push({ de: p.de, ate: p.ate || null, motivo: p.motivo ? String(p.motivo).trim().slice(0, 120) : null });
+    }
+    u.pausas = ps;
+  }
+  return { upd: u };
+}
+
 // ---------- roteador ----------
 Deno.serve(async (req) => {
   const ck: Ck = [];
@@ -497,8 +554,15 @@ async function handle(req: Request, ck: Ck): Promise<Response> {
     if (!user) return fail('Sessão expirada. Entre novamente.', 401);
     const uid = user.id;
     const admin = ehAdmin(user);
+    // Validade de acesso: aplicada aqui, no backend, a todas as rotas protegidas (admin nunca é bloqueado).
+    const acesso = admin ? null : await carregarAcesso(uid);
+    if (acesso?.bloqueado && !ROTAS_LIVRES_SEM_ACESSO.includes(path)) {
+      const fim = acesso.expira_em ? new Date(acesso.expira_em).toLocaleDateString('pt-BR', { timeZone: 'America/Sao_Paulo' }) : '';
+      const msg = acesso.situacao === 'suspenso' ? 'Seu acesso está suspenso. Procure o administrador do Bizu do Concurseiro X.' : `Seu acesso ao Bizu do Concurseiro X terminou em ${fim}. Procure o administrador para renovar. Seus dados e histórico foram preservados.`;
+      return json({ error: true, codigo: 'acesso_expirado', message: msg, acesso: acessoPublico(acesso) }, 403);
+    }
 
-    if (path === '/session') return json({ user: { id: uid, email: user.email }, admin });
+    if (path === '/session') return json({ user: { id: uid, email: user.email }, admin, acesso: acessoPublico(acesso) });
 
     if (path === '/bootstrap') {
       await db.from('cx_perfis').upsert({ user_id: uid }, { onConflict: 'user_id', ignoreDuplicates: true });
@@ -512,21 +576,60 @@ async function handle(req: Request, ck: Ck): Promise<Response> {
       return json({
         profile: { full_name: perfil?.nome ?? (user.user_metadata as any)?.full_name ?? null, email: user.email },
         curso_id: perfil?.curso_id ?? cursos?.[0]?.id ?? null,
-        cursos: cursos ?? [], admin,
+        cursos: cursos ?? [], admin, acesso: acessoPublico(acesso),
         metrics: { questions: total, accuracy: total ? (acertos / total) * 100 : 0, xp, nivel: nivelDe(xp) },
       });
+    }
+    // ----- perfil do aluno (cada aluno só enxerga e altera o próprio) -----
+    if (path === '/perfil/dados' && req.method === 'GET') {
+      await db.from('cx_perfis').upsert({ user_id: uid }, { onConflict: 'user_id', ignoreDuplicates: true });
+      const { data: p } = await db.from('cx_perfis').select('*').eq('user_id', uid).maybeSingle();
+      const { user_id: _u, xp: _x, ...perfil } = (p ?? {}) as any;
+      const ini = perfil.inicio_estudos as string | null;
+      const meses = ini ? Math.max(0, Math.floor((Date.parse(hojeISO() + 'T12:00:00Z') - Date.parse(ini + 'T12:00:00Z')) / (86400000 * 30.4375))) : null;
+      return json({ perfil, email: user.email, email_pendente: (user as any).new_email ?? null, conta_criada_em: user.created_at, tempo_desde_inicio_meses: meses, acesso: acessoPublico(acesso), admin,
+        opcoes: { escolaridades: ESCOLARIDADES, niveis: NIVEIS_ALUNO, estados: UFS } });
     }
     if (path === '/perfil' && req.method === 'POST') {
       const upd: any = { user_id: uid };
       if (body.curso_id !== undefined) { if (!(await cursoValido(body.curso_id))) return fail('Curso inválido'); upd.curso_id = body.curso_id; }
-      if (typeof body.nome === 'string') upd.nome = body.nome.trim().slice(0, 120);
-      await db.from('cx_perfis').upsert(upd, { onConflict: 'user_id' });
+      const r = limparPerfil(body); if (r.erro) return fail(r.erro);
+      Object.assign(upd, r.upd, { atualizado_em: new Date().toISOString() });
+      const { error } = await db.from('cx_perfis').upsert(upd, { onConflict: 'user_id' });
+      if (error) return fail('Não foi possível salvar o perfil.', 500);
       return json({ ok: true });
     }
+    if (path === '/perfil/foto' && req.method === 'POST') {
+      if (body.remover === true) { await db.from('cx_perfis').upsert({ user_id: uid, foto: null, atualizado_em: new Date().toISOString() }, { onConflict: 'user_id' }); return json({ ok: true }); }
+      const f = String(body.foto ?? '');
+      if (!/^data:image\/(jpeg|png|webp);base64,[A-Za-z0-9+/=]+$/.test(f)) return fail('Envie uma imagem JPEG, PNG ou WebP.');
+      if (f.length > 150_000) return fail('Imagem muito grande. Use uma foto menor.');
+      await db.from('cx_perfis').upsert({ user_id: uid, foto: f, atualizado_em: new Date().toISOString() }, { onConflict: 'user_id' });
+      return json({ ok: true });
+    }
+    if (path === '/perfil/email' && req.method === 'POST') {
+      const novo = String(body.email ?? '').trim().toLowerCase();
+      if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(novo) || novo.length > 160) return fail('E-mail inválido.');
+      if (novo === (user.email ?? '').toLowerCase()) return fail('Este já é o seu e-mail.');
+      if (ADMIN_EMAILS.includes(novo)) return fail('Este e-mail não pode ser usado.');
+      const { data: s1, error: e1 } = await anon().auth.signInWithPassword({ email: user.email!, password: String(body.password ?? '') });
+      if (e1 || !s1.session) return fail('Senha atual incorreta.');
+      const c = createClient(SUPABASE_URL, ANON_KEY, { auth: { autoRefreshToken: false, persistSession: false } });
+      await c.auth.setSession({ access_token: s1.session.access_token, refresh_token: s1.session.refresh_token });
+      const { error: e2 } = await c.auth.updateUser({ email: novo }, { emailRedirectTo: typeof body.redirect_to === 'string' ? body.redirect_to : undefined });
+      if (e2) return fail(/already|registered|exists/i.test(e2.message) ? 'Este e-mail já está em uso.' : 'Não foi possível solicitar a troca de e-mail agora. Tente novamente em alguns minutos.');
+      return json({ ok: true, mensagem: 'Enviamos um link de confirmação para o novo endereço. O e-mail só muda depois da confirmação.' });
+    }
     if (path === '/senha/alterar' && req.method === 'POST') {
-      if (String(body.password ?? '').length < 6) return fail('A senha deve ter no mínimo 6 caracteres.');
-      const { error } = await db.auth.admin.updateUserById(uid, { password: body.password });
+      const nova = String(body.password ?? '');
+      if (nova.length < 8) return fail('A nova senha deve ter no mínimo 8 caracteres.');
+      if (nova.length > 72) return fail('A nova senha é muito longa.');
+      const { data: s1, error: e1 } = await anon().auth.signInWithPassword({ email: user.email!, password: String(body.atual ?? '') });
+      if (e1 || !s1.session) return fail('Senha atual incorreta.');
+      if (nova === String(body.atual)) return fail('A nova senha deve ser diferente da atual.');
+      const { error } = await db.auth.admin.updateUserById(uid, { password: nova });
       if (error) return fail('Não foi possível alterar a senha.');
+      await db.from('cx_acessos').update({ trocar_senha: false }).eq('user_id', uid);
       return json({ ok: true });
     }
 
@@ -1010,6 +1113,181 @@ async function handle(req: Request, ck: Ck): Promise<Response> {
         if (error) return fail(error.message.includes('already') ? 'Este e-mail já está cadastrado.' : 'Não foi possível criar o usuário.');
         await db.from('cx_perfis').upsert({ user_id: data.user.id, nome: body.nome ? String(body.nome).slice(0, 120) : null, curso_id: (await cursoValido(body.curso_id)) ? body.curso_id : null });
         return json({ ok: true, id: data.user.id });
+      }
+      // ----- acessos por prazo (contas de aluno) -----
+      if (path === '/admin/acessos' && req.method === 'GET') {
+        const { data: ac } = await db.from('cx_acessos').select('*').order('criado_em');
+        const { data: us } = await db.auth.admin.listUsers({ perPage: 200 });
+        const em: Record<string, any> = {}; (us?.users ?? []).forEach((u: any) => em[u.id] = u);
+        const { data: pf } = await db.from('cx_perfis').select('user_id,nome,curso_id');
+        const pm: Record<string, any> = {}; (pf ?? []).forEach((x: any) => pm[x.user_id] = x);
+        const agora = Date.now();
+        return json({ acessos: (ac ?? []).map((a: any) => { const exp = a.expira_em ? Date.parse(a.expira_em) : null; const venc = exp !== null && exp < agora;
+          return { ...a, email: em[a.user_id]?.email ?? null, nome: pm[a.user_id]?.nome ?? null, curso_id: pm[a.user_id]?.curso_id ?? null, ultimo_login: em[a.user_id]?.last_sign_in_at ?? null,
+            situacao: a.situacao === 'suspenso' ? 'suspenso' : venc ? 'expirado' : 'ativo', dias_restantes: exp !== null ? Math.ceil((exp - agora) / 86400000) : null }; }) });
+      }
+      if (path === '/admin/acessos/criar' && req.method === 'POST') {
+        const email = String(body.email ?? '').trim().toLowerCase(), senha = String(body.password ?? '');
+        const meses = Math.min(36, Math.max(1, parseInt(body.meses) || 6));
+        if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)) return fail('E-mail inválido');
+        if (ADMIN_EMAILS.includes(email)) return fail('Este e-mail é de administrador.');
+        let uidNovo: string | null = null, jaExistia = false;
+        const { data: cr, error: ce } = await db.auth.admin.createUser({ email, password: senha, email_confirm: true, user_metadata: { full_name: body.nome ?? null } });
+        if (ce) {
+          if (!/already|registered|exists/i.test(ce.message)) return fail('Não foi possível criar o usuário: ' + ce.message);
+          const { data: us } = await db.auth.admin.listUsers({ perPage: 1000 });
+          const ex = (us?.users ?? []).find((u: any) => (u.email ?? '').toLowerCase() === email);
+          if (!ex) return fail('E-mail já cadastrado, mas o usuário não foi localizado.');
+          uidNovo = ex.id; jaExistia = true;
+        } else uidNovo = cr.user.id;
+        const { data: ja } = await db.from('cx_acessos').select('user_id').eq('user_id', uidNovo!).maybeSingle();
+        if (!ja) {
+          const agora = new Date(), fim = somarMeses(agora, meses);
+          const { error: ae } = await db.from('cx_acessos').insert({ user_id: uidNovo, papel: 'aluno', ativado_em: agora.toISOString(), expira_em: fim.toISOString(), situacao: 'ativo', trocar_senha: body.trocar_senha !== false,
+            historico: [{ evento: 'criacao', em: agora.toISOString(), ate: fim.toISOString(), meses, por: user.email }] });
+          if (ae) return fail('Usuário criado, mas o acesso por prazo não foi gravado: ' + ae.message, 500);
+        }
+        await db.from('cx_perfis').upsert({ user_id: uidNovo, nome: body.nome ? String(body.nome).slice(0, 120) : null, curso_id: (await cursoValido(body.curso_id)) ? body.curso_id : null }, { onConflict: 'user_id' });
+        return json({ ok: true, id: uidNovo, ja_existia: jaExistia, acesso_ja_registrado: !!ja });
+      }
+      if (path === '/admin/acessos' && req.method === 'POST') {
+        if (!uuidOk(body.user_id)) return fail('Usuário inválido');
+        const { data: a } = await db.from('cx_acessos').select('*').eq('user_id', body.user_id).maybeSingle();
+        if (!a) return fail('Esta conta não tem controle de prazo.');
+        const hist: any[] = Array.isArray(a.historico) ? a.historico : []; const agora = new Date();
+        const upd: any = {};
+        if (body.acao === 'renovar') {
+          const meses = Math.min(36, Math.max(1, parseInt(body.meses) || 6));
+          const base = a.expira_em && Date.parse(a.expira_em) > agora.getTime() ? new Date(a.expira_em) : agora; const fim = somarMeses(base, meses);
+          upd.expira_em = fim.toISOString(); upd.situacao = 'ativo'; hist.push({ evento: 'renovacao', em: agora.toISOString(), de: a.expira_em, ate: fim.toISOString(), meses, por: user.email });
+        } else if (body.acao === 'suspender') { upd.situacao = 'suspenso'; hist.push({ evento: 'suspensao', em: agora.toISOString(), por: user.email }); }
+        else if (body.acao === 'reativar') { upd.situacao = 'ativo'; hist.push({ evento: 'reativacao', em: agora.toISOString(), por: user.email }); }
+        else if (body.acao === 'definir') {
+          const t = Date.parse(String(body.expira_em ?? '')); if (!isFinite(t)) return fail('Data inválida');
+          upd.expira_em = new Date(t).toISOString(); upd.situacao = t < agora.getTime() ? 'expirado' : 'ativo'; hist.push({ evento: 'ajuste_manual', em: agora.toISOString(), de: a.expira_em, ate: upd.expira_em, motivo: body.motivo ? String(body.motivo).slice(0, 160) : null, por: user.email });
+        } else return fail('Ação inválida');
+        upd.historico = hist;
+        const { error } = await db.from('cx_acessos').update(upd).eq('user_id', body.user_id);
+        if (error) return fail('Não foi possível atualizar o acesso.', 500);
+        return json({ ok: true, expira_em: upd.expira_em ?? a.expira_em, situacao: upd.situacao ?? a.situacao });
+      }
+
+      // ----- histórico de uso de questões (provas reais, simulados) e montagem de simulados inéditos -----
+      const hashEnun = async (e: string) => sha1(normTxt(e.includes('\n\n— — —\n') ? e.split('\n\n— — —\n').pop()! : e));
+      if (path === '/admin/uso/registrar' && req.method === 'POST') {
+        if (!(await cursoValido(body.curso_id))) return fail('Curso inválido');
+        if (!['prova_real', 'simulado_pdf', 'simulado'].includes(body.contexto)) return fail('Contexto inválido');
+        const rows: any[] = [];
+        for (const it of (Array.isArray(body.itens) ? body.itens : []).slice(0, 400)) {
+          if (typeof it?.enunciado !== 'string' || !Array.isArray(it.opcoes)) continue;
+          rows.push({ curso_id: body.curso_id, hash: await hashQuestao(it.enunciado, it.opcoes.map(String)), hash_enunciado: await hashEnun(it.enunciado), resumo: it.enunciado.slice(0, 160), contexto: body.contexto, ref: String(it.ref ?? body.ref ?? '').slice(0, 160) || 'sem referência', numero: Number.isInteger(it.numero) ? it.numero : null });
+        }
+        if (!rows.length) return fail('Nada a registrar');
+        const { error } = await db.from('cx_uso_questoes').upsert(rows, { onConflict: 'hash,contexto,ref', ignoreDuplicates: true });
+        if (error) return fail('Erro ao registrar: ' + error.message, 500);
+        return json({ ok: true, enviados: rows.length });
+      }
+      if (path === '/admin/uso/sincronizar' && req.method === 'POST') {
+        // registra no histórico todas as questões de prova real do banco (idempotente)
+        const qs = await todos((a, b) => db.from('cx_questoes').select('id,hash,enunciado,concurso,numero_questao,cx_assuntos!inner(cx_disciplinas!inner(curso_id))').eq('tipo', 'real').order('id').range(a, b));
+        const rows: any[] = [];
+        for (const x of qs) rows.push({ curso_id: x.cx_assuntos.cx_disciplinas.curso_id, questao_id: x.id, hash: x.hash, hash_enunciado: await hashEnun(x.enunciado), resumo: String(x.enunciado).slice(0, 160), contexto: 'prova_real', ref: String(x.concurso ?? 'prova real').slice(0, 160), numero: x.numero_questao });
+        for (let i = 0; i < rows.length; i += 200) { const { error } = await db.from('cx_uso_questoes').upsert(rows.slice(i, i + 200), { onConflict: 'hash,contexto,ref', ignoreDuplicates: true }); if (error) return fail('Erro ao sincronizar: ' + error.message, 500); }
+        return json({ ok: true, provas_reais: rows.length });
+      }
+      // candidatas inéditas: questão autoral publicada, nível compatível, cujo hash (e enunciado) nunca apareceu em prova real nem simulado
+      async function candidatasIneditas(cursoId: string) {
+        const uso = await todos((a, b) => db.from('cx_uso_questoes').select('hash,hash_enunciado,questao_id,contexto,ref').eq('curso_id', cursoId).range(a, b));
+        const h1 = new Set(uso.map((u: any) => u.hash)), h2 = new Set(uso.map((u: any) => u.hash_enunciado)), ids = new Set(uso.map((u: any) => u.questao_id).filter(Boolean));
+        const qs = await todos((a, b) => db.from('cx_questoes').select('id,hash,enunciado,assunto_id,tipo,dificuldade,nivel_compat,status,publicado,cx_assuntos!inner(nome,disciplina_id,cx_disciplinas!inner(nome,curso_id))').eq('cx_assuntos.cx_disciplinas.curso_id', cursoId).eq('tipo', 'autoral').eq('status', 'publicada').eq('publicado', true).eq('nivel_compat', 'Compatível').order('id').range(a, b));
+        const total = qs.length; const livres: any[] = [];
+        for (const x of qs) { if (ids.has(x.id) || h1.has(x.hash)) continue; if (h2.has(await hashEnun(x.enunciado))) continue; livres.push(x); }
+        return { livres, total, uso };
+      }
+      if (path === '/admin/uso/resumo') {
+        if (!(await cursoValido(curso))) return fail('Curso inválido');
+        const { livres, total, uso } = await candidatasIneditas(curso);
+        const porCtx: Record<string, number> = {}; const porRef: Record<string, number> = {};
+        uso.forEach((u: any) => { porCtx[u.contexto] = (porCtx[u.contexto] ?? 0) + 1; const k = u.contexto + '|' + u.ref; porRef[k] = (porRef[k] ?? 0) + 1; });
+        const porAss: Record<string, any> = {};
+        livres.forEach((x: any) => { const k = x.assunto_id; porAss[k] ??= { assunto_id: k, assunto: x.cx_assuntos.nome, disciplina_id: x.cx_assuntos.disciplina_id, disciplina: x.cx_assuntos.cx_disciplinas.nome, ineditas: 0 }; porAss[k].ineditas++; });
+        return json({ historico_total: uso.length, por_contexto: porCtx, por_origem: Object.entries(porRef).map(([k, n]) => ({ contexto: k.split('|')[0], ref: k.split('|').slice(1).join('|'), itens: n })).sort((a, b) => b.itens - a.itens).slice(0, 60),
+          autorais_publicadas: total, autorais_ineditas: livres.length, autorais_ja_usadas: total - livres.length, por_assunto: Object.values(porAss) });
+      }
+      if (path === '/admin/simulados/montados' && req.method === 'GET') {
+        const { data } = await db.from('cx_simulados').select('id,curso_id,titulo,duracao_min,publicado,criado_em,origem,questao_ids').eq('curso_id', curso).order('criado_em', { ascending: false });
+        return json({ simulados: (data ?? []).map((x: any) => ({ ...x, total: (x.questao_ids ?? []).length, questao_ids: undefined })) });
+      }
+      if (path === '/admin/simulados/montar' && req.method === 'POST') {
+        if (!(await cursoValido(body.curso_id))) return fail('Curso inválido');
+        const titulo = String(body.titulo ?? '').trim().slice(0, 160); if (!titulo) return fail('Informe o título do simulado');
+        const plano = Array.isArray(body.plano) ? body.plano.slice(0, 40) : []; if (!plano.length) return fail('Informe a distribuição de questões');
+        const { livres } = await candidatasIneditas(body.curso_id);
+        const usadas = new Set<string>(); const escolhidas: any[] = []; const faltam: any[] = [];
+        for (const it of plano) {
+          const qtd = Math.min(200, Math.max(1, parseInt(it.qtd) || 0)); if (!qtd) continue;
+          const pool = embaralhar(livres.filter((x: any) => !usadas.has(x.id) && (it.assunto_id ? x.assunto_id === it.assunto_id : it.disciplina_id ? x.cx_assuntos.disciplina_id === it.disciplina_id : true) && (!it.dificuldade || (x as any).dificuldade === it.dificuldade)));
+          const rot = it.assunto_id ? (livres.find((x: any) => x.assunto_id === it.assunto_id)?.cx_assuntos.nome ?? it.assunto_id) : it.disciplina_id ? (livres.find((x: any) => x.cx_assuntos.disciplina_id === it.disciplina_id)?.cx_assuntos.cx_disciplinas.nome ?? it.disciplina_id) : 'qualquer matéria';
+          if (pool.length < qtd) { faltam.push({ item: rot, necessario: qtd, disponivel: pool.length }); continue; }
+          pool.slice(0, qtd).forEach((x: any) => { usadas.add(x.id); escolhidas.push(x); });
+        }
+        if (faltam.length) return json({ ok: false, faltam, mensagem: 'Não há questões inéditas suficientes. O simulado não foi criado e nenhuma questão repetida foi usada para completá-lo.' });
+        if (body.salvar === false) return json({ ok: true, simulacao: true, total: escolhidas.length });
+        const { data: sim, error } = await db.from('cx_simulados').insert({ curso_id: body.curso_id, titulo, questao_ids: embaralhar(escolhidas.map((x: any) => x.id)), duracao_min: parseInt(body.duracao_min) || null, publicado: false, origem: 'montagem automática (somente inéditas)', atualizado_em: new Date().toISOString() }).select('id').single();
+        if (error) return fail('Não foi possível criar o simulado: ' + error.message, 500);
+        const regs = escolhidas.map((x: any) => ({ curso_id: body.curso_id, questao_id: x.id, hash: x.hash, hash_enunciado: '', resumo: String(x.enunciado).slice(0, 160), contexto: 'simulado', ref: titulo, numero: null }));
+        for (const r of regs) r.hash_enunciado = await hashEnun(escolhidas.find((x: any) => x.id === r.questao_id).enunciado);
+        await db.from('cx_uso_questoes').upsert(regs, { onConflict: 'hash,contexto,ref', ignoreDuplicates: true });
+        return json({ ok: true, id: sim.id, total: escolhidas.length });
+      }
+      if (path === '/admin/simulados/montados' && req.method === 'POST') {
+        if (!uuidOk(body.id)) return fail('Simulado inválido');
+        await db.from('cx_simulados').update({ publicado: body.publicado === true, atualizado_em: new Date().toISOString() }).eq('id', body.id);
+        return json({ ok: true });
+      }
+      // ----- controle de produção das apostilas em PDF -----
+      const STATUS_APOSTILA = ['pendente', 'em_producao', 'em_revisao', 'aprovado', 'publicado', 'necessita_correcao'];
+      if (path === '/admin/apostilas' && req.method === 'GET') {
+        if (!(await cursoValido(curso))) return fail('Curso inválido');
+        const est = await carregarEstrutura(curso, true);
+        const ids = est.flatMap((d: any) => d.assuntos.map((a: any) => a.id));
+        const { data: ap } = await db.from('cx_apostilas').select('*').in('assunto_id', ids);
+        const m: Record<string, any> = {}; (ap ?? []).forEach((x: any) => m[x.assunto_id] = x);
+        const linhas = est.flatMap((d: any) => d.assuntos.map((a: any) => ({ disciplina: d.nome, assunto: a.nome, assunto_id: a.id, ...(m[a.id] ?? { status: 'pendente' }) })));
+        const cont: Record<string, number> = {}; linhas.forEach((l: any) => { cont[l.status] = (cont[l.status] ?? 0) + 1; });
+        return json({ total: linhas.length, por_status: cont, apostilas: linhas });
+      }
+      if (path === '/admin/apostilas' && req.method === 'POST') {
+        // lote: itens [{curso, disciplina, assunto, status, versao, arquivo, paginas, bytes, obs, titulo}]. Ao publicar, cria/atualiza o material "pdf" do assunto.
+        const caches: Record<string, Record<string, string>> = {}; const rej: string[] = []; let ok = 0;
+        for (const it of (Array.isArray(body.itens) ? body.itens : []).slice(0, 200)) {
+          if (!(await cursoValido(it.curso)) || !STATUS_APOSTILA.includes(it.status)) { rej.push('inválido: ' + it.assunto); continue; }
+          if (!caches[it.curso]) { const est = await carregarEstrutura(it.curso, true); caches[it.curso] = {}; est.forEach((d: any) => d.assuntos.forEach((a: any) => { caches[it.curso][d.nome + '||' + a.nome] = a.id; })); }
+          const aid = caches[it.curso][it.disciplina + '||' + it.assunto]; if (!aid) { rej.push('assunto não encontrado: ' + it.assunto); continue; }
+          const agora = new Date().toISOString();
+          const { data: atual } = await db.from('cx_apostilas').select('material_id').eq('assunto_id', aid).maybeSingle();
+          const reg: any = { assunto_id: aid, status: it.status, versao: it.versao ?? null, arquivo: it.arquivo ?? null, paginas: Number.isInteger(it.paginas) ? it.paginas : null, bytes: Number.isInteger(it.bytes) ? it.bytes : null, obs: it.obs ? String(it.obs).slice(0, 500) : null, atualizado_em: agora };
+          if (it.status === 'em_producao' || it.status === 'em_revisao') reg.gerado_em = agora;
+          if (it.status === 'aprovado' || it.status === 'publicado') reg.revisado_em = agora;
+          let matId = atual?.material_id ?? null;
+          if (it.status === 'publicado') {
+            if (!it.arquivo || !/^\/apostilas\/[A-Za-z0-9_\-./]+\.pdf$/.test(it.arquivo)) { rej.push('arquivo inválido: ' + it.assunto); continue; }
+            reg.publicado_em = agora;
+            const mat = { assunto_id: aid, tipo: 'pdf', titulo: String(it.titulo ?? ('Apostila — ' + it.assunto)).slice(0, 300), url: it.arquivo, publicado: true, fonte_oficial: null,
+              conteudo: { texto: it.resumo ?? null, versao: it.versao ?? null, atualizado_em: agora.slice(0, 10), paginas: reg.paginas, tamanho_kb: reg.bytes ? Math.round(reg.bytes / 1024) : null } };
+            if (matId) { const { error } = await db.from('cx_materiais').update(mat).eq('id', matId); if (error) matId = null; }
+            if (!matId) { const { data: nm, error } = await db.from('cx_materiais').insert(mat).select('id').single(); if (error) { rej.push('material: ' + error.message); continue; } matId = nm.id; }
+            reg.material_id = matId;
+            if (Array.isArray(it.vincular_a)) for (const v of it.vincular_a.slice(0, 4)) {
+              if (!(await cursoValido(v.curso))) continue;
+              if (!caches[v.curso]) { const est = await carregarEstrutura(v.curso, true); caches[v.curso] = {}; est.forEach((d: any) => d.assuntos.forEach((a: any) => { caches[v.curso][d.nome + '||' + a.nome] = a.id; })); }
+              const dest = caches[v.curso][v.disciplina + '||' + v.assunto]; if (dest) await db.from('cx_materiais_vinculos').upsert({ material_id: matId, assunto_id: dest, tipo_vinculo: 'compartilhado' }, { onConflict: 'material_id,assunto_id', ignoreDuplicates: true });
+            }
+          } else if (matId) { await db.from('cx_materiais').update({ publicado: false }).eq('id', matId); }
+          const { error } = await db.from('cx_apostilas').upsert(reg, { onConflict: 'assunto_id' });
+          if (error) rej.push(error.message); else ok++;
+        }
+        return json({ ok: true, gravadas: ok, rejeitadas: rej });
       }
       // Importação de conteúdo de um assunto (idempotente: `limpar` apaga antes o que for do mesmo tipo).
       if (path === '/admin/importar' && req.method === 'POST') {
