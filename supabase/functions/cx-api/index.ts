@@ -243,7 +243,7 @@ async function gravarQuestoes(curso: string, lote: any[], padrao: any = {}) {
   for (const q of lote) {
     const a = idx[q.disciplina + '||' + q.assunto];
     if (!a) { rej.push(`assunto não encontrado: ${q.disciplina} / ${q.assunto}`); continue; }
-    if (!q.enunciado || !Array.isArray(q.opcoes) || q.opcoes.length !== 5 || !Number.isInteger(q.gabarito) || q.gabarito < 0 || q.gabarito > 4) { rej.push(`questão inválida: ${String(q.enunciado ?? '').slice(0, 40)}`); continue; }
+    if (!q.enunciado || !Array.isArray(q.opcoes) || ![4, 5].includes(q.opcoes.length) || !Number.isInteger(q.gabarito) || q.gabarito < 0 || q.gabarito >= q.opcoes.length) { rej.push(`questão inválida: ${String(q.enunciado ?? '').slice(0, 40)}`); continue; }
     const h = await hashQuestao(String(q.enunciado), q.opcoes.map(String));
     if (existentes.has(h)) { dup++; continue; }
     existentes.add(h);
@@ -617,7 +617,7 @@ async function handle(req: Request, ck: Ck): Promise<Response> {
       const c = createClient(SUPABASE_URL, ANON_KEY, { auth: { autoRefreshToken: false, persistSession: false } });
       await c.auth.setSession({ access_token: s1.session.access_token, refresh_token: s1.session.refresh_token });
       const { error: e2 } = await c.auth.updateUser({ email: novo }, { emailRedirectTo: typeof body.redirect_to === 'string' ? body.redirect_to : undefined });
-      if (e2) return fail(/already|registered|exists/i.test(e2.message) ? 'Este e-mail já está em uso.' : 'Não foi possível solicitar a troca de e-mail agora. Tente novamente em alguns minutos.');
+      if (e2) return fail(/already|registered|exists/i.test(e2.message) ? 'Este e-mail já está em uso.' : /invalid/i.test(e2.message) ? 'Este endereço de e-mail foi recusado pelo serviço de envio. Use um e-mail com domínio real que receba mensagens.' : 'Não foi possível solicitar a troca de e-mail agora. Tente novamente em alguns minutos.');
       return json({ ok: true, mensagem: 'Enviamos um link de confirmação para o novo endereço. O e-mail só muda depois da confirmação.' });
     }
     if (path === '/senha/alterar' && req.method === 'POST') {
@@ -1300,7 +1300,7 @@ async function handle(req: Request, ck: Ck): Promise<Response> {
         const tiposLimpar = limpar.filter((t) => TIPOS_MATERIAL.includes(t));
         if (tiposLimpar.length) await db.from('cx_materiais').delete().eq('assunto_id', as.id).in('tipo', tiposLimpar);
         const qs = (Array.isArray(body.questoes) ? body.questoes : []).filter((q: any) =>
-          q && q.enunciado && Array.isArray(q.opcoes) && q.opcoes.length === 5 && Number.isInteger(q.gabarito) && q.gabarito >= 0 && q.gabarito <= 4);
+          q && q.enunciado && Array.isArray(q.opcoes) && [4, 5].includes(q.opcoes.length) && Number.isInteger(q.gabarito) && q.gabarito >= 0 && q.gabarito < q.opcoes.length);
         const ms = (Array.isArray(body.materiais) ? body.materiais : []).filter((m: any) => m && TIPOS_MATERIAL.includes(m.tipo) && m.titulo);
         let gr: any = { inseridas: 0, duplicadas: 0, rejeitadas: [] };
         if (qs.length) {
@@ -1422,8 +1422,8 @@ async function handle(req: Request, ck: Ck): Promise<Response> {
         if (body.acao === 'editar') {
           const u: any = {}; const c = body.campos ?? {};
           for (const k of ['enunciado', 'comentario', 'lei_relacionada', 'juris_relacionada', 'legislacao_considerada', 'motivo_status', 'dificuldade', 'nivel', 'nivel_compat', 'fonte', 'origem']) if (c[k] !== undefined) u[k] = c[k];
-          if (Array.isArray(c.opcoes) && c.opcoes.length === 5) u.opcoes = c.opcoes.map(String);
-          if (Number.isInteger(c.gabarito) && c.gabarito >= 0 && c.gabarito <= 4) u.gabarito = c.gabarito;
+          if (Array.isArray(c.opcoes) && [4, 5].includes(c.opcoes.length)) u.opcoes = c.opcoes.map(String);
+          if (Number.isInteger(c.gabarito) && c.gabarito >= 0 && c.gabarito <= (u.opcoes ? u.opcoes.length : 5) - 1) u.gabarito = c.gabarito;
           if (c.assunto_id && uuidOk(c.assunto_id)) u.assunto_id = c.assunto_id;
           if (u.enunciado || u.opcoes) { const { data: cur } = await db.from('cx_questoes').select('enunciado,opcoes').eq('id', body.id).single(); u.hash = await hashQuestao(u.enunciado ?? cur!.enunciado, u.opcoes ?? cur!.opcoes); }
           const { error } = await db.from('cx_questoes').update(u).eq('id', body.id); if (error) return fail('Não foi possível salvar: ' + error.message);
