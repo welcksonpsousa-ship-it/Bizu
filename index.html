@@ -351,43 +351,60 @@
       <!-- QUESTÕES -->
       <section id="v-questoes" class="view">
         <div class="view-hdr"><div><h1 class="view-title">Questões</h1><div class="view-sub">Banco com questões reais de prova e questões autorais, por banca, nível e edital</div></div></div>
-        <div class="card mb2" id="trCard">
-          <div class="card-title">Gerar treino</div>
-          <div class="filters">
-            <div class="fgroup"><label for="trModo">Objetivo do treino</label><select id="trModo">
-              <option value="adaptativo">Adaptativo (incidência + peso + desempenho + tempo)</option>
-              <option value="edital">Por edital (peso das disciplinas)</option>
-              <option value="banca">Por banca-alvo</option>
-              <option value="nivel">Por nível (compatíveis com o cargo)</option>
-              <option value="incidencia">Por incidência (o que mais cai)</option>
-              <option value="desempenho">Por desempenho (onde acerto menos)</option>
-              <option value="erros">Meus erros</option>
-              <option value="nao_estudados">Assuntos não estudados</option>
-              <option value="baixa_cobertura">Pouco praticados</option>
-              <option value="revisoes">Revisões pendentes</option>
-            </select></div>
-            <div class="fgroup"><label for="trQtd">Questões</label><select id="trQtd"><option>10</option><option selected>20</option><option>30</option><option>50</option></select></div>
-            <button type="button" class="btn-blue" id="btnTreino">GERAR TREINO</button>
+        <div class="card mb2 q-busca">
+          <div class="card-title">Encontrar questões</div>
+          <div class="filters q-principais" data-cascata="q">
+            <div class="fgroup"><label for="qDisc">Matéria</label><select id="qDisc"></select></div>
+            <div class="fgroup"><label for="qAss">Assunto</label><select id="qAss"></select></div>
+            <div class="fgroup"><label for="qBanca">Banca</label><select id="qBanca"></select></div>
+            <div class="fgroup"><label for="qDif">Dificuldade</label><select id="qDif"><option value="">Todas</option><option value="facil">Fáceis</option><option value="media">Médias</option><option value="dificil">Difíceis</option></select></div>
+            <div class="fgroup fgroup-sm"><label for="qQtd">Quantidade</label><select id="qQtd"><option>10</option><option>20</option><option>30</option><option>50</option></select></div>
+            <button type="button" class="btn-blue" id="btnQ">Começar</button>
           </div>
+          <details class="q-mais" id="qMais">
+            <summary>Mais filtros <span class="muted small" id="qMaisN"></span></summary>
+            <div class="filters">
+              <div class="fgroup"><label for="qSubA">Subassunto</label><select id="qSubA"></select></div>
+              <div class="fgroup"><label for="qAno">Ano</label><select id="qAno"></select></div>
+              <div class="fgroup"><label for="qCargo">Cargo da prova</label><select id="qCargo"></select></div>
+              <div class="fgroup"><label for="qNivel">Escolaridade da prova</label><select id="qNivel"></select></div>
+              <div class="fgroup"><label for="qOrigem">Origem</label><select id="qOrigem"><option value="">Reais e autorais</option><option value="real">Somente reais</option><option value="autoral">Somente autorais</option></select></div>
+              <div class="fgroup"><label for="qEstado">Meu histórico</label><select id="qEstado"><option value="">Todas</option><option value="nao_respondidas">Não respondidas</option><option value="erradas">Erradas</option><option value="acertadas">Acertadas</option><option value="salvas">Salvas</option></select></div>
+              <div class="fgroup"><label for="qCompat">Nível do cargo</label><select id="qCompat"><option value="compativeis">Somente compatíveis (padrão)</option><option value="todas">Todos os níveis</option></select></div>
+              <div class="fgroup fgrow"><label for="qBusca">Buscar no enunciado</label><input id="qBusca" type="search" placeholder="palavra ou trecho"></div>
+            </div>
+          </details>
+        </div>
+        <div class="card mb2" id="trCard">
+          <div class="card-title">Treino inteligente</div>
+          <div class="q-atalhos" role="group" aria-label="Treinos rápidos">
+            <button type="button" class="chip" data-treino="adaptativo">Treino do dia</button>
+            <button type="button" class="chip" data-treino="erros">Meus erros</button>
+            <button type="button" class="chip" data-treino="revisoes">Revisões pendentes</button>
+            <button type="button" class="chip" data-treino="desempenho">Onde acerto menos</button>
+            <button type="button" class="chip" data-treino="incidencia">O que mais cai</button>
+          </div>
+          <details class="q-mais">
+            <summary>Outros tipos de treino</summary>
+            <div class="filters">
+              <div class="fgroup fgrow"><label for="trModo">Objetivo do treino</label><select id="trModo">
+                <option value="adaptativo">Adaptativo (incidência + peso + desempenho + tempo)</option>
+                <option value="edital">Por edital (peso das disciplinas)</option>
+                <option value="banca">Por banca-alvo</option>
+                <option value="nivel">Por nível (compatíveis com o cargo)</option>
+                <option value="incidencia">Por incidência (o que mais cai)</option>
+                <option value="desempenho">Por desempenho (onde acerto menos)</option>
+                <option value="erros">Meus erros</option>
+                <option value="nao_estudados">Assuntos não estudados</option>
+                <option value="baixa_cobertura">Pouco praticados</option>
+                <option value="revisoes">Revisões pendentes</option>
+              </select></div>
+              <div class="fgroup fgroup-sm"><label for="trQtd">Questões</label><select id="trQtd"><option>10</option><option selected>20</option><option>30</option><option>50</option></select></div>
+              <button type="button" class="btn-blue" id="btnTreino">Gerar treino</button>
+            </div>
+          </details>
+          <p class="muted small">O treino usa a matéria e o assunto escolhidos acima, se houver.</p>
           <div class="muted small" id="trDesc" role="status"></div>
-        </div>
-        <div class="filters" data-cascata="q">
-          <div class="fgroup"><label for="qDisc">Disciplina</label><select id="qDisc"></select></div>
-          <div class="fgroup"><label for="qAss">Assunto</label><select id="qAss"></select></div>
-          <div class="fgroup"><label for="qSubA">Subassunto</label><select id="qSubA"></select></div>
-        </div>
-        <div class="filters">
-          <div class="fgroup"><label for="qBanca">Banca</label><select id="qBanca"></select></div>
-          <div class="fgroup"><label for="qCargo">Cargo</label><select id="qCargo"></select></div>
-          <div class="fgroup"><label for="qAno">Ano</label><select id="qAno"></select></div>
-          <div class="fgroup"><label for="qNivel">Nível</label><select id="qNivel"></select></div>
-          <div class="fgroup"><label for="qOrigem">Origem</label><select id="qOrigem"><option value="">Reais e autorais</option><option value="real">Somente reais</option><option value="autoral">Somente autorais</option></select></div>
-          <div class="fgroup"><label for="qEstado">Meu histórico</label><select id="qEstado"><option value="">Todas</option><option value="nao_respondidas">Não respondidas</option><option value="erradas">Erradas</option><option value="acertadas">Acertadas</option><option value="salvas">Salvas</option></select></div>
-          <div class="fgroup"><label for="qDif">Dificuldade</label><select id="qDif"><option value="">Todas</option><option value="facil">Fáceis</option><option value="media">Médias</option><option value="dificil">Difíceis</option></select></div>
-          <div class="fgroup"><label for="qCompat">Nível do cargo</label><select id="qCompat"><option value="compativeis">Somente compatíveis (padrão)</option><option value="todas">Todos os níveis</option></select></div>
-          <div class="fgroup"><label for="qBusca">Buscar no enunciado</label><input id="qBusca" type="search" placeholder="palavra ou trecho"></div>
-          <div class="fgroup"><label for="qQtd">Quantidade</label><select id="qQtd"><option>10</option><option>20</option><option>30</option><option>50</option></select></div>
-          <button type="button" class="btn-blue" id="btnQ">Buscar questões</button>
         </div>
         <div class="muted small mb2" id="qInfo" role="status"></div>
         <div id="qContainer"></div>

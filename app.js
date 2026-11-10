@@ -537,7 +537,7 @@ $('btnMrSalvar').addEventListener('click', async () => {
 let QF = null;
 const subNome = (q) => { const as = S.ass[q.assunto_id]; const s = as && q.subassunto_id ? as.subassuntos.find((x) => x.id === q.subassunto_id) : null; return s ? s.nome : ''; };
 async function renderQuestoes() {
-  $('qContainer').innerHTML = emp('Escolha os filtros e clique em Buscar questões, ou use GERAR TREINO');
+  $('qContainer').innerHTML = emp('Escolha a matéria e clique em Começar, ou use um dos treinos rápidos');
   $('qInfo').textContent = ''; $('trDesc').textContent = '';
   try { QF = await api('/questoes/filtros?' + cq()); } catch (e) { QF = null; }
   const op = (m, vazio, ord) => `<option value="">${vazio}</option>` + Object.keys(m || {}).sort(ord).map((k) => `<option value="${esc(k)}">${esc(k)} (${m[k]})</option>`).join('');
@@ -552,6 +552,17 @@ function paramsQ() {
   return p;
 }
 $('btnQ').addEventListener('click', buscarQuestoes);
+// Treinos rápidos: escolhem o objetivo e geram o treino na hora.
+$$('#trCard [data-treino]').forEach((b) => b.addEventListener('click', () => { $('trModo').value = b.dataset.treino; $('btnTreino').click(); }));
+// Mostra quantos filtros extras estão ativos e mantém o painel aberto quando houver algum.
+const Q_EXTRAS = ['qSubA', 'qAno', 'qCargo', 'qNivel', 'qOrigem', 'qEstado', 'qBusca'];
+function contarFiltrosExtras() {
+  const n = Q_EXTRAS.filter((id) => $(id) && $(id).value).length + ($('qCompat').value === 'todas' ? 1 : 0);
+  $('qMaisN').textContent = n ? `(${n} ativo${n > 1 ? 's' : ''})` : '';
+  if (n) $('qMais').open = true;
+}
+[...Q_EXTRAS, 'qCompat'].forEach((id) => $(id) && $(id).addEventListener('change', contarFiltrosExtras));
+$('qBusca').addEventListener('input', contarFiltrosExtras);
 async function buscarQuestoes() {
   const box = $('qContainer'); box.innerHTML = ld('Buscando...'); $('trDesc').textContent = '';
   try {

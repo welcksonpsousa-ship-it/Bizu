@@ -859,3 +859,23 @@ div:has(>.ldots:first-child)[style]{font-size:var(--fs-sm)}
 .pdf-card{display:flex;gap:14px;align-items:center;flex-wrap:wrap}
 .pdf-card .pdf-meta{flex:1 1 220px;min-width:0}
 @media(max-width:600px){.conta-grid{grid-template-columns:1fr}.avatar{width:80px;height:80px}}
+
+/* ---- Questões: busca simples + filtros extras recolhidos ---- */
+.q-busca .filters,#trCard .filters{margin-bottom:0;padding:0;border:0;background:none}
+.q-mais{margin-top:12px;border-top:1px solid var(--border);padding-top:10px}
+.q-mais>summary{cursor:pointer;font-size:13px;font-weight:600;color:var(--primary-text);list-style:none;display:flex;gap:8px;align-items:center}
+.q-mais>summary::-webkit-details-marker{display:none}
+.q-mais>summary::before{content:"+";display:inline-block;width:14px;font-weight:700}
+.q-mais[open]>summary::before{content:"\2212"}
+.q-mais>.filters{margin-top:12px}
+.q-atalhos{display:flex;flex-wrap:wrap;gap:8px;margin:2px 0 6px}
+.chip{border:1px solid var(--border);background:var(--surface);color:var(--text);border-radius:999px;padding:8px 14px;font-size:13px;font-weight:600;cursor:pointer;min-height:36px}
+.chip:hover,.chip:focus-visible{border-color:var(--primary-text);color:var(--primary-text)}
+@media (max-width:640px){
+  .q-principais .fgroup{flex:1 1 45%;max-width:none}
+  .q-principais .fgroup.fgroup-sm{flex:1 1 45%}
+  .q-principais>button{width:100%}
+  .q-atalhos .chip{flex:1 1 calc(50% - 8px)}
+}
+/* etiquetas longas (origem/fonte da questão) quebram linha em vez de alargar a tela */
+.qcard .badge,#qContainer .badge,#simQuestoes .badge{white-space:normal;max-width:100%;overflow-wrap:anywhere;text-align:left}
