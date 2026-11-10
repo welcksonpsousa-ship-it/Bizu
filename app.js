@@ -927,15 +927,42 @@ function desenharCronograma(plano, porDia) {
     if (it.assunto_id && S.ass[it.assunto_id]) return ` data-cass="${it.assunto_id}"`;
     return { simulado: ' data-go="simulados"', correcao: ' data-go="simulados"', redacao: ' data-go="redacao"', autocorrecao: ' data-go="redacao"', questoes_fracas: ' data-go="desempenho"', revisao_geral: ' data-go="revisoes"' }[it.tipo] || '';
   };
-  $('cronoContainer').innerHTML = plano.map((d) => {
+  // Semana sempre de segunda a domingo; o plano (gerado a partir do dia em que foi criado) é encaixado nos dias certos.
+  const porData = {}; plano.forEach((d) => { porData[d.data] = d; });
+  const datas = plano.map((d) => d.data).sort();
+  const segDe = (isoD) => { const [a, m, dd] = isoD.split('-').map(Number); const dt = new Date(a, m - 1, dd); dt.setDate(dt.getDate() - ((dt.getDay() + 6) % 7)); return diaISO(dt); };
+  const somaDias = (isoD, n) => { const [a, m, dd] = isoD.split('-').map(Number); return diaISO(new Date(a, m - 1, dd + n)); };
+  const hojeI = diaISO(new Date()), primeira = segDe(datas[0]), ultima = segDe(datas[datas.length - 1]);
+  if (!CRONO_SEM.ini || CRONO_SEM.plano !== datas[0]) { CRONO_SEM.plano = datas[0]; CRONO_SEM.ini = hojeI >= primeira && hojeI <= somaDias(ultima, 6) ? segDe(hojeI) : primeira; }
+  if (CRONO_SEM.ini < primeira) CRONO_SEM.ini = primeira;
+  if (CRONO_SEM.ini > ultima) CRONO_SEM.ini = ultima;
+  const ini = CRONO_SEM.ini, fim = somaDias(ini, 6);
+  const fmt = (x) => nomeDia(x, { day: '2-digit', month: '2-digit' });
+  const venceu = hojeI > datas[datas.length - 1];
+  const nav = `<div class="crono-nav" role="group" aria-label="Semanas do cronograma">
+      <button type="button" class="btn-ghost btn-sm" data-sem="-1"${ini <= primeira ? ' disabled' : ''} aria-label="Semana anterior">‹ Anterior</button>
+      <div class="crono-nav-tit"><strong>Semana de ${fmt(ini)} a ${fmt(fim)}</strong>${hojeI >= ini && hojeI <= fim ? '<span class="badge">semana atual</span>' : ''}</div>
+      <button type="button" class="btn-ghost btn-sm" data-sem="1"${ini >= ultima ? ' disabled' : ''} aria-label="Próxima semana">Próxima ›</button>
+    </div>${venceu ? '<p class="muted small crono-aviso">Este plano já terminou. Clique em <strong>Gerar cronograma</strong> para montar as próximas semanas com o seu desempenho atual.</p>' : ''}`;
+  const semana = []; for (let k = 0; k < 7; k++) { const dt = somaDias(ini, k); semana.push(porData[dt] || { data: dt, fora: true, itens: [] }); }
+  $('cronoContainer').innerHTML = nav + semana.map((d) => {
+    if (d.fora) return `<div class="crono-card crono-fora${d.data === hojeI ? ' crono-hoje' : ''}"><div class="crono-dia">${esc(nomeDia(d.data))}</div><p class="muted small">${d.data < datas[0] ? 'Antes do início deste plano' : 'Depois do fim deste plano'}${porDia[d.data] ? ' · estudado ' + hm(porDia[d.data]) : ''}</p></div>`;
     const plan = d.itens.reduce((n, i) => n + i.min, 0) * 60, real = porDia[d.data] || 0;
-    return `<div class="crono-card"><div class="crono-dia">${esc(nomeDia(d.data))}</div>
+    return `<div class="crono-card${d.data === hojeI ? ' crono-hoje' : ''}"><div class="crono-dia">${esc(nomeDia(d.data))}</div>
       ${d.foco && d.foco.length ? `<div class="crono-foco">${esc(d.foco.join(' · '))}</div>` : ''}
       ${plan && d.data <= diaISO(new Date()) ? `<div class="crono-real"><span>Real ${hm(real)} / plano ${hm(plan)}</span><div class="pbar-bg" style="flex:1"><div class="pbar" style="width:${Math.min(100, Math.round((real / plan) * 100))}%;background:${corP(Math.round((real / plan) * 100))}"></div></div></div>` : ''}
       ${d.folga ? '<p class="muted small">Folga</p>' : d.itens.map((it) => `<div class="crono-sess ${cls[it.tipo] || ''}${alvo(it) ? ' link-row' : ''}"${alvo(it)}><span class="crono-t">${it.min}min</span><span>${esc(nomeItemCrono(it))}${tagDe(it)}</span></div>`).join('')}</div>`;
   }).join('');
 }
-$('cronoContainer').addEventListener('click', (e) => { const c = e.target.closest('[data-cass]'); if (c) showView('assunto', c.dataset.cass); });
+const CRONO_SEM = { ini: null, plano: null };
+$('cronoContainer').addEventListener('click', (e) => {
+  const nb = e.target.closest('[data-sem]');
+  if (nb && !nb.disabled) {
+    const [a, m, d] = CRONO_SEM.ini.split('-').map(Number); CRONO_SEM.ini = diaISO(new Date(a, m - 1, d + 7 * Number(nb.dataset.sem)));
+    carregarCronograma(true); return;
+  }
+  const c = e.target.closest('[data-cass]'); if (c) showView('assunto', c.dataset.cass);
+});
 
 /* ---------------- CALENDÁRIO ---------------- */
 let CAL = { ano: new Date().getFullYear(), mes: new Date().getMonth(), sel: diaISO(new Date()), eventos: [] };

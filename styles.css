@@ -883,3 +883,10 @@ div:has(>.ldots:first-child)[style]{font-size:var(--fs-sm)}
 /* Lei Seca / Jurisprudência agrupadas por matéria */
 .jur-disc{font-size:15px;font-weight:700;margin:22px 0 10px;padding-bottom:6px;border-bottom:1px solid var(--border);color:var(--text)}
 .jur-disc:first-child{margin-top:0}
+
+/* Cronograma X: uma semana por vez, de segunda a domingo */
+.crono-nav{grid-column:1/-1;display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap}
+.crono-nav-tit{display:flex;gap:8px;align-items:center;flex-wrap:wrap;justify-content:center;text-align:center}
+.crono-aviso{grid-column:1/-1;margin:0}
+.crono-fora{opacity:.6}
+.crono-hoje{border-color:var(--primary-text);box-shadow:0 0 0 1px var(--primary-text) inset}
