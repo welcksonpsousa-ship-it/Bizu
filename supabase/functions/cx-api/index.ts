@@ -1094,6 +1094,8 @@ async function handle(req: Request, ck: Ck): Promise<Response> {
       return json({ ok: true, correcao: cor });
     }
     if (path === '/redacoes/excluir' && req.method === 'POST') {
+      const { data: ex } = await db.from('cx_redacoes').select('arquivo_path').eq('id', body.id).eq('user_id', uid).maybeSingle();
+      if (ex?.arquivo_path) await db.storage.from('cx-redacoes').remove([ex.arquivo_path]);
       await db.from('cx_redacoes').delete().eq('id', body.id).eq('user_id', uid);
       return json({ ok: true });
     }

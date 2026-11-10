@@ -249,6 +249,7 @@ const totalConteudo = (a) => Object.values(a.conteudo || {}).reduce((n, v) => n 
 async function renderPainel() {
   const c = S.curso;
   const m = S.metrics || {};
+  carregarNoticias();
   $('stQ').textContent = m.questions || 0; $('stA').textContent = Math.round(m.accuracy || 0) + '%';
   $('stXP').textContent = m.xp || 0; $('stNivel').textContent = m.nivel || 1;
   $('stAssuntos').textContent = totalAssuntos();
@@ -795,13 +796,37 @@ async function renderRevisoes() {
 }
 window.revFeita = async (id) => { try { await api('/revisoes/feita', { body: { id } }); } catch (e) {} if (S.view === 'painel') renderPainel(); else renderRevisoes(); };
 
+/* ---------------- NOTÍCIAS DOS CONCURSOS ---------------- */
+const NOT = { filtro: 'curso', seq: 0 };
+const NOT_TIPO = { edital: 'Edital', autorizacao: 'Autorização', comissao: 'Comissão', banca: 'Banca', inscricoes: 'Inscrições', cronograma: 'Cronograma', resultado: 'Resultado', prova: 'Prova', outro: 'Notícia' };
+async function carregarNoticias() {
+  const box = $('notLista'); if (!box) return; const seq = ++NOT.seq;
+  box.innerHTML = ld();
+  try {
+    const ns = (await api('/noticias' + (NOT.filtro === 'curso' ? '?' + cq() : ''))).noticias;
+    if (seq !== NOT.seq) return;
+    if (!ns.length) { box.innerHTML = `<p class="muted small">Nenhuma notícia confirmada no momento${NOT.filtro === 'curso' ? ' para este curso' : ''}.</p>`; return; }
+    box.innerHTML = `<ul class="not-lista">${ns.slice(0, 12).map((n) => `<li class="not-item">
+      <div class="not-meta"><span class="badge">${esc(NOT_TIPO[n.tipo] || 'Notícia')}</span>${n.oficial ? '<span class="badge bok" title="Publicada pelo órgão ou pela banca">Fonte oficial</span>' : ''}<span class="muted small">${esc(n.concurso)} · ${esc(nomeDia(n.publicado_em, { day: '2-digit', month: '2-digit', year: 'numeric' }))}</span></div>
+      <a class="not-tit" href="${esc(n.fonte_url)}" target="_blank" rel="noopener">${esc(n.titulo)}</a>
+      <p class="small not-res">${esc(n.resumo)}</p>
+      <div class="muted small">Fonte: <a href="${esc(n.fonte_url)}" target="_blank" rel="noopener">${esc(n.fonte_nome)}</a></div></li>`).join('')}</ul>`;
+  } catch (e) { if (seq === NOT.seq) box.innerHTML = `<p class="muted small">${esc(e.message)}</p>`; }
+}
+$$('#notCard [data-not]').forEach((b) => b.addEventListener('click', () => {
+  NOT.filtro = b.dataset.not;
+  $$('#notCard [data-not]').forEach((x) => { x.classList.toggle('on', x === b); x.setAttribute('aria-pressed', String(x === b)); });
+  carregarNoticias();
+}));
+
 /* ---------------- REDAÇÃO ---------------- */
-let RED = { id: null, tema_id: null };
+let RED = { id: null, tema_id: null, arquivo: null };
+const IA = { status: null };
 function renderRedacao() {
   const c = S.curso;
   $('redSub').textContent = `${c.nome} — escreva, guarde e acompanhe suas redações`;
   $('redFormato').innerHTML = `<div class="card-title">Formato cobrado</div><p class="small">${esc(c.redacao_formato || 'Consulte o edital.')}</p>`;
-  contarRed();
+  contarRed(); statusIA();
 }
 $$('#redTabs .tab').forEach((t) => t.addEventListener('click', () => {
   $$('#redTabs .tab').forEach((x) => x.classList.toggle('on', x === t));
@@ -818,12 +843,95 @@ $('redTexto').addEventListener('input', contarRed);
 async function salvarRed(status) {
   try {
     const r = await api('/redacoes/salvar', { body: { id: RED.id, curso_id: S.curso.id, tema_id: RED.tema_id, tema_livre: $('redTema').value, titulo: $('redTituloInp').value, texto: $('redTexto').value, status } });
-    RED.id = r.id; $('redMsg').textContent = status === 'finalizada' ? 'Redação finalizada e guardada em Minhas redações.' : 'Rascunho salvo.';
-  } catch (e) { $('redMsg').textContent = e.message; }
+    RED.id = r.id;
+    const arq = RED.arquivo;
+    if (arq) {
+      $('redMsg').textContent = 'Guardando o arquivo...';
+      await api('/redacoes/anexo', { body: { id: r.id, nome: arq.nome, mime: arq.mime, base64: arq.base64 } });
+      if (RED.arquivo === arq) RED.arquivo = null;
+    }
+    $('redMsg').textContent = status === 'finalizada' ? 'Redação finalizada e guardada em Minhas redações.' : 'Rascunho salvo.';
+    return true;
+  } catch (e) { $('redMsg').textContent = e.message; return false; }
+}
+/* Envio de arquivo: o texto é extraído no próprio navegador (PDF com pdf.js, DOCX com mammoth) e o original é guardado no servidor. */
+const carregarScript = (src) => new Promise((ok, erro) => { if (document.querySelector(`script[src="${src}"]`)) return ok(); const s = document.createElement('script'); s.src = src; s.onload = ok; s.onerror = () => erro(new Error('Não foi possível carregar o leitor de arquivos. Verifique a conexão.')); document.head.appendChild(s); });
+const PDFJS = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js', PDFJS_W = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js', MAMMOTH = 'https://cdnjs.cloudflare.com/ajax/libs/mammoth/1.8.0/mammoth.browser.min.js';
+async function extrairTexto(arq) {
+  const buf = await arq.arrayBuffer();
+  if (/\.pdf$/i.test(arq.name) || arq.type === 'application/pdf') {
+    await carregarScript(PDFJS); window.pdfjsLib.GlobalWorkerOptions.workerSrc = PDFJS_W;
+    const doc = await window.pdfjsLib.getDocument({ data: buf.slice(0) }).promise; const partes = [];
+    for (let i = 1; i <= doc.numPages; i++) {
+      const pg = await doc.getPage(i); const tc = await pg.getTextContent(); let linha = '', y = null; const linhas = [];
+      tc.items.forEach((it) => { const yy = Math.round(it.transform[5]); if (y !== null && Math.abs(yy - y) > 2) { linhas.push(linha); linha = ''; } linha += it.str; y = yy; if (it.hasEOL) { linhas.push(linha); linha = ''; y = null; } });
+      if (linha) linhas.push(linha);
+      // une as linhas de um mesmo parágrafo: quebra só depois de ponto final, interrogação, exclamação ou dois-pontos
+      partes.push(linhas.map((l) => l.trim()).filter(Boolean).reduce((acc, l) => (acc && !/[.!?:”"]$/.test(acc.slice(-1)) ? acc + ' ' + l : acc ? acc + '\n' + l : l), ''));
+    }
+    return { texto: partes.join('\n\n'), mime: 'application/pdf', buf };
+  }
+  if (/\.docx$/i.test(arq.name)) {
+    await carregarScript(MAMMOTH);
+    const r = await window.mammoth.extractRawText({ arrayBuffer: buf.slice(0) });
+    return { texto: r.value, mime: 'application/vnd.openxmlformats-officedocument.wordprocessingml.document', buf };
+  }
+  if (/\.txt$/i.test(arq.name) || arq.type === 'text/plain') return { texto: new TextDecoder('utf-8').decode(buf), mime: 'text/plain', buf };
+  throw new Error('Formato não aceito. Envie PDF, DOCX ou TXT.');
+}
+const paraBase64 = (buf) => { const b = new Uint8Array(buf); let s = ''; for (let i = 0; i < b.length; i += 0x8000) s += String.fromCharCode.apply(null, b.subarray(i, i + 0x8000)); return btoa(s); };
+$('redArquivo').addEventListener('change', async (e) => {
+  const arq = e.target.files[0]; e.target.value = ''; if (!arq) return;
+  const info = $('redArqInfo');
+  if (arq.size > 5 * 1024 * 1024) { info.textContent = 'O arquivo deve ter até 5 MB.'; return; }
+  info.textContent = 'Lendo o arquivo...';
+  try {
+    const r = await extrairTexto(arq);
+    const texto = r.texto.replace(/\r/g, '').replace(/[ \t]+\n/g, '\n').replace(/\n{3,}/g, '\n\n').trim();
+    if ((texto.match(/\S+/g) || []).length < 20) { info.textContent = 'Não encontrei texto neste arquivo. Se for foto ou digitalização de manuscrito, digite o texto no campo abaixo.'; return; }
+    $('redTexto').value = texto; contarRed();
+    RED.arquivo = { nome: arq.name, mime: r.mime, base64: paraBase64(r.buf) };
+    info.textContent = `Texto extraído de “${arq.name}”.`;
+    // Depois de anexado, o arquivo é guardado e corrigido pela IA automaticamente (se a IA estiver ativada).
+    await statusIA();
+    if (IA.status && IA.status.redacao) { info.textContent += ' Corrigindo com IA...'; await corrigirRedacao(); info.textContent = `Arquivo “${arq.name}” enviado e corrigido. O texto extraído está abaixo; você pode ajustar e corrigir de novo.`; }
+    else info.textContent += ' O arquivo será guardado quando você salvar. A correção por IA ainda não foi ativada pela administração.';
+  } catch (er) { info.textContent = er.message; }
+});
+async function statusIA() {
+  try { IA.status = IA.status || (await api('/ia/status')); } catch (e) { IA.status = { redacao: false }; }
+  const b = $('btnRedCorrigir'); b.disabled = !IA.status.redacao;
+  b.title = IA.status.redacao ? 'Corrige pelos critérios da banca, com nota e justificativa' : 'A correção por IA ainda não foi ativada pela administração';
+}
+async function corrigirRedacao() {
+  if (!$('redTexto').value.trim()) { $('redMsg').textContent = 'Escreva ou envie o texto antes de corrigir.'; return; }
+  const b = $('btnRedCorrigir'); b.disabled = true; $('redCorrecao').innerHTML = ld('Corrigindo pelos critérios da banca... pode levar até 1 minuto');
+  try {
+    if (!(await salvarRed('finalizada'))) { $('redCorrecao').innerHTML = ''; return; }
+    const r = await api('/redacoes/corrigir', { body: { id: RED.id } });
+    $('redCorrecao').innerHTML = htmlCorrecao(r.correcao);
+    $('redCorrecao').scrollIntoView({ behavior: 'smooth', block: 'start' });
+  } catch (e) { $('redCorrecao').innerHTML = `<p class="err">${esc(e.message)}</p>`; }
+  finally { b.disabled = !(IA.status && IA.status.redacao); }
+}
+$('btnRedCorrigir').addEventListener('click', corrigirRedacao);
+const ERRO_TIPO = { ortografia: 'Ortografia', acentuacao: 'Acentuação', gramatica: 'Gramática', pontuacao: 'Pontuação', estrutura: 'Estrutura', argumentacao: 'Argumentação', coesao: 'Coesão', fundamentacao: 'Fundamentação' };
+function htmlCorrecao(c) {
+  if (!c) return '';
+  const lista = (t, xs) => (xs && xs.length ? `<div class="mt1"><strong class="small">${t}</strong><ul class="small">${xs.map((x) => `<li>${esc(x)}</li>`).join('')}</ul></div>` : '');
+  return `<div class="card red-cor">
+    <div class="sec-title-row"><div class="card-title">Correção — nota estimada ${esc(String(c.nota_total))} de ${esc(String(c.nota_maxima))}</div><span class="muted small">${esc(c.modelo || '')}</span></div>
+    <p class="muted small">Estimativa pelos critérios do edital; a nota oficial é sempre a da banca.</p>
+    ${c.resumo ? `<p class="small">${esc(c.resumo)}</p>` : ''}
+    <div class="red-crit">${c.criterios.map((k) => `<div class="red-crit-item"><div class="flex" style="justify-content:space-between;gap:8px"><strong>${esc(k.nome)}</strong><span class="badge">${esc(String(k.nota))}/${esc(String(k.maximo))}</span></div><div class="pbar-bg mt1"><div class="pbar" style="width:${Math.round((k.nota / k.maximo) * 100)}%"></div></div><p class="small mt1">${esc(k.justificativa)}</p></div>`).join('')}</div>
+    ${c.adequacao_tema ? `<div class="mt1"><strong class="small">Adequação ao tema</strong><p class="small">${esc(c.adequacao_tema)}</p></div>` : ''}
+    ${lista('Pontos fortes', c.pontos_fortes)}${lista('Pontos fracos', c.pontos_fracos)}${lista('Sugestões de melhoria', c.sugestoes)}
+    ${c.erros && c.erros.length ? `<div class="mt1"><strong class="small">Erros apontados (${c.erros.length})</strong><div class="red-erros">${c.erros.map((e) => `<div class="red-erro"><span class="badge">${esc(ERRO_TIPO[e.tipo] || e.tipo || 'Erro')}</span><div class="small"><s>${esc(e.trecho)}</s> → <strong>${esc(e.correcao)}</strong></div>${e.explicacao ? `<div class="muted small">${esc(e.explicacao)}</div>` : ''}</div>`).join('')}</div></div>` : ''}
+  </div>`;
 }
 $('btnRedRasc').addEventListener('click', () => salvarRed('rascunho'));
 $('btnRedFinal').addEventListener('click', () => { if (!$('redTexto').value.trim()) { $('redMsg').textContent = 'Escreva o texto antes de finalizar.'; return; } salvarRed('finalizada'); });
-$('btnRedNova').addEventListener('click', () => { RED = { id: null, tema_id: null }; $('redTema').value = ''; $('redTituloInp').value = ''; $('redTexto').value = ''; $('redMsg').textContent = ''; contarRed(); });
+$('btnRedNova').addEventListener('click', () => { RED = { id: null, tema_id: null, arquivo: null }; $('redCorrecao').innerHTML = ''; $('redArqInfo').textContent = 'Ou digite abaixo. O texto do arquivo aparece aqui para você conferir antes de salvar ou corrigir.'; $('redTema').value = ''; $('redTituloInp').value = ''; $('redTexto').value = ''; $('redMsg').textContent = ''; contarRed(); });
 async function carregarTemasRed() {
   const box = $('redTemasLista'); box.innerHTML = ld();
   try {
@@ -836,8 +944,9 @@ async function carregarMinhasRed() {
   const box = $('redMinhas'); box.innerHTML = ld();
   try {
     const rs = (await api('/redacoes?' + cq())).redacoes; S.redacoes = rs;
-    box.innerHTML = rs.length ? `<div class="card">${rs.map((r) => `<div class="cob-tema-row"><span><strong>${esc(r.titulo || r.tema_livre || 'Sem título')}</strong><br><span class="muted small">${new Date(r.atualizado_em).toLocaleString('pt-BR')} · ${(r.texto.match(/\S+/g) || []).length} palavras</span></span><span class="badge ${r.status === 'finalizada' ? 'bok' : ''}">${r.status === 'finalizada' ? 'Finalizada' : 'Rascunho'}</span><button type="button" class="btn-ghost btn-sm" data-abrir="${r.id}">Abrir</button><button type="button" class="btn-ghost btn-sm" data-excluir="${r.id}">Excluir</button></div>`).join('')}</div>` : emp('Você ainda não escreveu redações neste curso');
-    $$('#redMinhas [data-abrir]').forEach((b) => b.addEventListener('click', () => { const r = S.redacoes.find((x) => x.id === b.dataset.abrir); RED = { id: r.id, tema_id: r.tema_id }; $('redTema').value = r.tema_livre || ''; $('redTituloInp').value = r.titulo || ''; $('redTexto').value = r.texto; $('redMsg').textContent = ''; contarRed(); abaRed('escrever'); }));
+    box.innerHTML = rs.length ? `<div class="card">${rs.map((r) => `<div class="cob-tema-row"><span><strong>${esc(r.titulo || r.tema_livre || 'Sem título')}</strong><br><span class="muted small">${new Date(r.atualizado_em).toLocaleString('pt-BR')} · ${(r.texto.match(/\S+/g) || []).length} palavras${r.arquivo_nome ? ' · arquivo: ' + esc(r.arquivo_nome) : ''}${r.correcao ? ' · nota estimada ' + esc(String(r.correcao.nota_total)) + '/' + esc(String(r.correcao.nota_maxima)) : ''}</span></span><span class="badge ${r.status === 'finalizada' ? 'bok' : ''}">${r.status === 'finalizada' ? 'Finalizada' : 'Rascunho'}</span><button type="button" class="btn-ghost btn-sm" data-abrir="${r.id}">Abrir</button>${r.arquivo_nome ? `<button type="button" class="btn-ghost btn-sm" data-baixar="${r.id}">Baixar arquivo</button>` : ''}<button type="button" class="btn-ghost btn-sm" data-excluir="${r.id}">Excluir</button></div>`).join('')}</div>` : emp('Você ainda não escreveu redações neste curso');
+    $$('#redMinhas [data-abrir]').forEach((b) => b.addEventListener('click', () => { const r = S.redacoes.find((x) => x.id === b.dataset.abrir); RED = { id: r.id, tema_id: r.tema_id, arquivo: null }; $('redCorrecao').innerHTML = htmlCorrecao(r.correcao); $('redTema').value = r.tema_livre || ''; $('redTituloInp').value = r.titulo || ''; $('redTexto').value = r.texto; $('redMsg').textContent = ''; contarRed(); abaRed('escrever'); }));
+    $$('#redMinhas [data-baixar]').forEach((b) => b.addEventListener('click', async () => { try { const r = await api('/redacoes/arquivo?id=' + b.dataset.baixar); window.open(r.url, '_blank', 'noopener'); } catch (e) { alert(e.message); } }));
     $$('#redMinhas [data-excluir]').forEach((b) => b.addEventListener('click', async () => { if (!confirm('Excluir esta redação?')) return; await api('/redacoes/excluir', { body: { id: b.dataset.excluir } }).catch(() => {}); if (RED.id === b.dataset.excluir) RED.id = null; carregarMinhasRed(); }));
   } catch (e) { box.innerHTML = emp(e.message); }
 }
@@ -1159,8 +1268,46 @@ $('btnContaSenha').addEventListener('click', async () => {
 $$('#admTabs .tab').forEach((t) => t.addEventListener('click', () => {
   $$('#admTabs .tab').forEach((x) => x.classList.toggle('on', x === t));
   $$('#v-admin [data-ap]').forEach((p) => p.classList.toggle('hidden', p.dataset.ap !== t.dataset.at));
-  ({ estrutura: renderAdmEstrutura, cobertura: renderAdmCobertura, banco: renderAdmBanco, simulados: renderAdmSimulados, comentarios: renderAdmComentarios, videos: renderAdmVideos, usuarios: renderAdmUsuarios, acessos: renderAdmAcessos, uso: renderAdmUso, apostilas: renderAdmApostilas })[t.dataset.at]();
+  ({ estrutura: renderAdmEstrutura, cobertura: renderAdmCobertura, banco: renderAdmBanco, simulados: renderAdmSimulados, comentarios: renderAdmComentarios, videos: renderAdmVideos, usuarios: renderAdmUsuarios, acessos: renderAdmAcessos, uso: renderAdmUso, apostilas: renderAdmApostilas, noticias: renderAdmNoticias, ia: renderAdmIA })[t.dataset.at]();
 }));
+async function renderAdmNoticias() {
+  const box = $('admNoticias'); box.innerHTML = ld();
+  try {
+    const ns = (await api('/admin/noticias')).noticias;
+    box.innerHTML = `<div class="card mb2"><div class="card-title">Adicionar notícia</div>
+      <p class="muted small">Só publique o que estiver confirmado na fonte. Notícias repetidas (mesmo concurso, link e título) são atualizadas, não duplicadas.</p>
+      <div class="filters">
+        <div class="fgroup"><label for="anCurso">Curso</label><select id="anCurso"><option value="">Todos</option>${S.cursos.map((c) => `<option value="${esc(c.id)}">${esc(c.nome)}</option>`).join('')}</select></div>
+        <div class="fgroup"><label for="anConc">Concurso</label><input id="anConc" placeholder="ex.: PM-SP Aluno-Soldado 2026"></div>
+        <div class="fgroup"><label for="anTipo">Tipo</label><select id="anTipo">${Object.entries(NOT_TIPO).map(([k, v]) => `<option value="${k}">${v}</option>`).join('')}</select></div>
+        <div class="fgroup"><label for="anData">Data na fonte</label><input id="anData" type="date"></div>
+        <div class="fgroup fgrow"><label for="anTit">Título</label><input id="anTit"></div>
+        <div class="fgroup fgrow"><label for="anRes">Resumo</label><input id="anRes"></div>
+        <div class="fgroup fgrow"><label for="anUrl">Link da fonte (https)</label><input id="anUrl"></div>
+        <div class="fgroup"><label for="anFonte">Nome da fonte</label><input id="anFonte"></div>
+        <label class="check"><input type="checkbox" id="anOficial"> Fonte oficial</label>
+        <button type="button" class="btn-blue" id="anSalvar">Publicar</button>
+      </div><div class="small" id="anMsg" role="status"></div></div>
+      <div class="card tbl-wrap"><table class="tbl"><thead><tr><th>Data</th><th>Concurso</th><th>Título</th><th>Fonte</th><th>Situação</th></tr></thead><tbody>${ns.map((n) => `<tr><td>${esc(n.publicado_em)}</td><td>${esc(n.concurso)}</td><td>${esc(n.titulo)}</td><td><a href="${esc(n.fonte_url)}" target="_blank" rel="noopener">${esc(n.fonte_nome)}</a>${n.oficial ? ' · oficial' : ''}</td><td><button type="button" class="btn-ghost btn-sm" data-npub="${esc(n.id)}" data-v="${n.publicado ? '0' : '1'}">${n.publicado ? 'Publicada (ocultar)' : 'Oculta (publicar)'}</button></td></tr>`).join('') || '<tr><td colspan="5" class="muted">Nenhuma notícia cadastrada.</td></tr>'}</tbody></table></div>`;
+    $('anSalvar').addEventListener('click', async () => {
+      const it = { curso_id: $('anCurso').value || null, concurso: $('anConc').value.trim(), tipo: $('anTipo').value, publicado_em: $('anData').value, titulo: $('anTit').value.trim(), resumo: $('anRes').value.trim(), fonte_url: $('anUrl').value.trim(), fonte_nome: $('anFonte').value.trim() || undefined, oficial: $('anOficial').checked };
+      try { const r = await api('/admin/noticias', { body: { itens: [it] } }); if (r.rejeitadas.length) { $('anMsg').textContent = 'Não publicada: ' + r.rejeitadas.join('; '); return; } renderAdmNoticias(); } catch (e) { $('anMsg').textContent = e.message; }
+    });
+    $$('#admNoticias [data-npub]').forEach((b) => b.addEventListener('click', async () => { await api('/admin/noticias', { body: { acao: 'publicar', id: b.dataset.npub, publicado: b.dataset.v === '1' } }).catch(() => {}); renderAdmNoticias(); }));
+  } catch (e) { box.innerHTML = emp(e.message); }
+}
+async function renderAdmIA() {
+  const box = $('admIA'); box.innerHTML = ld();
+  try {
+    const r = await api('/admin/ia'); const st = r.status;
+    box.innerHTML = `<div class="card mb2"><div class="card-title">Provedores</div>
+      <p class="muted small">As chaves ficam só nos segredos da função no Supabase (Edge Functions → Secrets): ANTHROPIC_API_KEY, OPENAI_API_KEY, GEMINI_API_KEY. Nenhuma chave é enviada ao navegador.</p>
+      <div class="flex gap1" style="flex-wrap:wrap">${st.provedores.map((p) => `<span class="badge ${p.ativo ? 'bok' : ''}">${esc(p.nome)}: ${p.ativo ? 'ativo' : 'sem chave'}</span>`).join('')}</div></div>
+      <div class="card mb2"><div class="card-title">Funções</div><div class="tbl-wrap"><table class="tbl"><thead><tr><th>Função</th><th>Disponível</th><th>Modelos (ordem de uso)</th><th>Limite por aluno/dia</th></tr></thead><tbody>${st.funcoes.map((f) => `<tr><td>${f.funcao === 'chatx' ? 'Chat X' : 'Correção de redação'}</td><td>${f.disponivel ? 'Sim' : 'Não'}</td><td>${esc(f.modelos.join(' → ') || '—')}</td><td>${f.limite_dia_aluno}</td></tr>`).join('')}</tbody></table></div>
+      <p class="muted small mt1">Orçamento diário: ${st.orcamento_dia_usd ? 'US$ ' + st.orcamento_dia_usd : 'não definido'} · preços para estimar custo: ${st.precos_configurados ? 'configurados' : 'não configurados (custo não é estimado)'}.</p></div>
+      <div class="card"><div class="card-title">Uso nos últimos 30 dias</div><div class="tbl-wrap"><table class="tbl"><thead><tr><th>Função</th><th>Modelo</th><th>Hoje</th><th>30 dias</th><th>Erros</th><th>Tokens (entrada/saída)</th><th>Custo estimado</th></tr></thead><tbody>${r.uso.map((u) => `<tr><td>${esc(u.funcao)}</td><td>${esc(u.modelo)}</td><td>${u.chamadas_hoje}</td><td>${u.chamadas_30d}</td><td>${u.erros_30d}</td><td>${u.tokens_in} / ${u.tokens_out}</td><td>${u.custo_usd ? 'US$ ' + u.custo_usd.toFixed(4) : '—'}</td></tr>`).join('') || '<tr><td colspan="7" class="muted">Nenhum uso registrado.</td></tr>'}</tbody></table></div></div>`;
+  } catch (e) { box.innerHTML = emp(e.message); }
+}
 function renderAdmin() { if (!S.admin) { showView('painel'); return; } const t = $$('#admTabs .tab.on')[0]; t.click(); }
 function renderAdmEstrutura() {
   const box = $('admEstrutura');

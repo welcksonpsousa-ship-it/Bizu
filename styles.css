@@ -890,3 +890,21 @@ div:has(>.ldots:first-child)[style]{font-size:var(--fs-sm)}
 .crono-aviso{grid-column:1/-1;margin:0}
 .crono-fora{opacity:.6}
 .crono-hoje{border-color:var(--primary-text);box-shadow:0 0 0 1px var(--primary-text) inset}
+
+/* Notícias dos concursos */
+.not-filtro{display:flex;gap:6px;flex-wrap:wrap}
+.chip.on{border-color:var(--primary-text);color:var(--primary-text)}
+.not-lista{list-style:none;margin:10px 0 0;padding:0;display:grid;gap:12px}
+.not-item{padding:12px 0;border-top:1px solid var(--border)}
+.not-item:first-child{border-top:0;padding-top:0}
+.not-meta{display:flex;gap:6px;align-items:center;flex-wrap:wrap;margin-bottom:6px}
+.not-tit{font-weight:700;color:var(--text);text-decoration:none;display:block;overflow-wrap:anywhere}
+.not-tit:hover{text-decoration:underline}
+.not-res{margin:4px 0}
+/* Redação: anexo e correção */
+.red-anexo{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin:6px 0 10px}
+.red-anexo label{cursor:pointer}
+.red-crit{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px;margin-top:10px}
+.red-crit-item{border:1px solid var(--border);border-radius:var(--r-lg);padding:12px}
+.red-erros{display:grid;gap:8px;margin-top:6px}
+.red-erro{border-left:3px solid var(--border);padding-left:10px;overflow-wrap:anywhere}

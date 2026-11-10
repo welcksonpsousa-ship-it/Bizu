@@ -171,6 +171,17 @@
           <div class="kpi" role="listitem"><span class="kpi-val"><span id="stDom">0</span><span class="kpi-of">/<span id="stAssuntos">0</span></span></span><span class="kpi-lbl">Assuntos dominados</span></div>
           <div class="kpi" role="listitem"><span class="kpi-val" id="stRevP">0</span><span class="kpi-lbl">Revisões pendentes</span></div>
         </div>
+        <section class="card mb2" id="notCard" aria-labelledby="notTit">
+          <div class="sec-title-row">
+            <div class="sec-title" id="notTit">Notícias dos concursos</div>
+            <div class="not-filtro" role="group" aria-label="Filtrar notícias">
+              <button type="button" class="chip on" data-not="curso" aria-pressed="true">Meu curso</button>
+              <button type="button" class="chip" data-not="todos" aria-pressed="false">Todos os concursos</button>
+            </div>
+          </div>
+          <div class="sec-sub">Editais, inscrições, provas e resultados, com link para a fonte (oficial sempre que disponível)</div>
+          <div id="notLista"></div>
+        </section>
         <div class="dash-grid">
           <section class="card dash-main">
             <div class="sec-title">Seu progresso por disciplina</div>
@@ -460,15 +471,22 @@
               <div class="fgroup fgrow"><label for="redTema">Tema</label><input id="redTema" placeholder="Escreva o tema que você vai desenvolver"></div>
               <div class="fgroup fgrow"><label for="redTituloInp">Título (opcional)</label><input id="redTituloInp"></div>
             </div>
+            <div class="red-anexo">
+              <label class="btn-ghost btn-sm" for="redArquivo">Enviar arquivo (PDF, DOCX ou TXT)</label>
+              <input type="file" id="redArquivo" class="sr-only" accept=".pdf,.docx,.txt,application/pdf,application/vnd.openxmlformats-officedocument.wordprocessingml.document,text/plain">
+              <span class="muted small" id="redArqInfo">Ou digite abaixo. O texto do arquivo aparece aqui para você conferir antes de salvar ou corrigir.</span>
+            </div>
             <textarea id="redTexto" rows="18" class="red-texto" placeholder="Desenvolva seu texto aqui."></textarea>
             <div class="flex gap2 mt1 muted small" id="redContagem"></div>
             <div class="flex gap1 mt2" style="flex-wrap:wrap">
               <button type="button" class="btn-ghost" id="btnRedNova">Nova redação</button>
               <button type="button" class="btn-ghost" id="btnRedRasc">Salvar rascunho</button>
               <button type="button" class="btn-blue" id="btnRedFinal">Finalizar</button>
+              <button type="button" class="btn-blue" id="btnRedCorrigir">Corrigir com IA</button>
               <span class="muted small center flex" id="redMsg"></span>
             </div>
           </div>
+          <div id="redCorrecao" class="mt2"></div>
         </div>
         <div data-rp="temas" class="hidden"><div id="redTemasLista"></div></div>
         <div data-rp="minhas" class="hidden"><div id="redMinhas"></div></div>
@@ -581,6 +599,8 @@
           <button type="button" class="tab" data-at="acessos" role="tab">Acessos</button>
           <button type="button" class="tab" data-at="uso" role="tab">Uso das questões</button>
           <button type="button" class="tab" data-at="apostilas" role="tab">Apostilas PDF</button>
+          <button type="button" class="tab" data-at="noticias" role="tab">Notícias</button>
+          <button type="button" class="tab" data-at="ia" role="tab">Inteligência artificial</button>
         </div>
         <div data-ap="estrutura"><div id="admEstrutura"></div></div>
         <div data-ap="cobertura" class="hidden"><div id="admCobertura"></div></div>
@@ -591,6 +611,8 @@
         <div data-ap="acessos" class="hidden"><div id="admAcessos"></div></div>
         <div data-ap="uso" class="hidden"><div id="admUso"></div></div>
         <div data-ap="apostilas" class="hidden"><div id="admApostilas"></div></div>
+        <div data-ap="noticias" class="hidden"><div id="admNoticias"></div></div>
+        <div data-ap="ia" class="hidden"><div id="admIA"></div></div>
         <div data-ap="usuarios" class="hidden">
           <div class="card mb2">
             <div class="card-title">Criar usuário</div>
