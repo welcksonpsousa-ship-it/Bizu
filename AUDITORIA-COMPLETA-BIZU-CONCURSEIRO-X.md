@@ -163,3 +163,12 @@ Fonte: pasta MENTORIA/SIMULADOS/SD PM SP. Arquivos públicos (abrem e baixam sem
 - **Vídeos:** os 3 assuntos que estavam sem vídeo (História e Geografia do município, Estatuto dos servidores municipais, Leis municipais da GCM) receberam 2 vídeos cada, de assunto mais amplo (urbanização, Lei 8.112 e Regime Jurídico, Estatuto Geral das Guardas Municipais).
 - **Prova do Soldado 2021 (caderno PMES1903):** continua sem importar. O Drive só tem o caderno; o arquivo chamado "gabarito 2021" é uma página do Diário Oficial sem as respostas. Falta o arquivo do gabarito.
 - **Chat X:** funciona com a chave `ANTHROPIC_API_KEY` nos segredos das Edge Functions do Supabase; sem ela responde só com regras internas.
+
+## 27. Atualização geral (10/11/2026)
+- **Questões:** busca simples (matéria, assunto, banca, dificuldade, quantidade), filtros extras recolhidos e 5 treinos rápidos; histórico e estatísticas preservados. Corrigida rolagem lateral no celular.
+- **Lei Seca e Jurisprudência:** só matérias jurídicas do curso, agrupadas por matéria e ordenadas por artigo; troca de curso corrigida; 5 duplicatas ocultadas (não apagadas); corrigido o art. 245, § 4º do CPP.
+- **Cronograma X:** exibição por semana (segunda a domingo) com navegação; plano e metodologia inalterados.
+- **Notícias:** card no painel (meu curso / todos) com 12 notícias de fonte oficial (DOE-SP, Prefeitura de SP, Instituto Mais); administração publica/oculta. Não há atualização automática: a administração cadastra as notícias confirmadas.
+- **Redação:** envio de PDF, DOCX ou TXT (texto extraído no navegador, original guardado em armazenamento privado), correção automática por IA após o anexo (4 critérios com nota e justificativa, erros com trecho, pontos fortes/fracos, sugestões), histórico com arquivo e nota. A correção só funciona com chave de IA configurada.
+- **IA com vários modelos:** camada única (Anthropic, OpenAI, Gemini), ordem de preferência por função, fallback, limite diário por aluno (Chat X 40, redação 5), orçamento diário opcional, registro de uso, erros e custo; aba "Inteligência artificial" na administração. Sem chaves, as funções de IA ficam desativadas.
+- **Cobertura do edital:** 126 assuntos auditados; relatório em `RELATORIO-COBERTURA-EDITAL.md`. 39 complementos de aula publicados (2 de Atualidades ocultos para revisão). Cobertura real: PM-SP 95,7% → 99,5%; GCM 89,1% → 99,8%.
