@@ -117,7 +117,9 @@ async function aplicarPerfilPreparacao() {
 }
 async function carregarEstrutura() {
   if (!S.curso) return;
+  const pedido = S.curso.id;
   const d = await api('/estrutura?' + cq());
+  if (!S.curso || S.curso.id !== pedido) return; // o aluno trocou de curso enquanto esta resposta chegava
   S.est = d.disciplinas || []; S.ass = {}; S.disc = {};
   S.est.forEach((di) => { S.disc[di.id] = di; di.assuntos.forEach((a) => { S.ass[a.id] = { ...a, disciplina: di.nome, disciplina_id: di.id }; }); });
   preencherCascatas();
@@ -134,7 +136,8 @@ async function trocarCurso(id) {
   S.crono = undefined;
   renderCursoSwitch();
   api('/perfil', { body: { curso_id: id } }).catch(() => {});
-  await carregarEstrutura();
+  S.carregando = carregarEstrutura();
+  try { await S.carregando; } finally { S.carregando = null; }
   showView(S.view.startsWith('assunto') ? 'materias' : S.view);
 }
 
@@ -202,6 +205,7 @@ function opts(lista, vazio) { return `<option value="">${esc(vazio)}</option>` +
 function preencherCascatas() {
   CASCATAS.forEach((c) => {
     const d = $(c.d), val = d.value;
+    delete d.dataset.lista;
     d.innerHTML = opts(S.est, 'Todas as disciplinas');
     if (S.disc[val]) d.value = val;
     preencherAss(c);
@@ -459,19 +463,38 @@ async function renderMaterial(tipo) {
   $('matlTitulo').textContent = t.nome; $('matlSub').textContent = t.sub;
   const box = $('matlLista'); box.innerHTML = ld('Carregando...');
   const seq = (S.matSeq = (S.matSeq || 0) + 1);
+  if (S.carregando) { try { await S.carregando; } catch (e) {} if (seq !== S.matSeq) return; } // troca de curso em andamento
+  // Lei Seca e Jurisprudência: só as matérias jurídicas do concurso escolhido.
+  const jur = TIPOS_JURIDICOS.includes(tipo);
+  const discs = jur ? S.est.filter(ehJuridica) : S.est;
+  const sd = $(CASCATAS[1].d), chave = (jur ? 'j:' : 't:') + (S.curso ? S.curso.id : '');
+  if (sd.dataset.lista !== chave) {
+    const val = sd.value;
+    sd.innerHTML = opts(discs, jur ? 'Todas as matérias jurídicas' : 'Todas as disciplinas');
+    sd.value = discs.some((d) => d.id === val) ? val : '';
+    sd.dataset.lista = chave; preencherAss(CASCATAS[1]);
+  }
   try {
     // Sem disciplina escolhida, busca por disciplina (a API devolve no máximo 200 itens por consulta).
-    const itens = $(CASCATAS[1].d).value ? (await api('/materiais?tipo=' + tipo + '&' + filtroQS(CASCATAS[1]))).materiais
-      : (await Promise.all(S.est.map((d) => api('/materiais?tipo=' + tipo + '&' + cq() + '&disciplina_id=' + d.id)))).flatMap((r) => r.materiais);
+    let itens = sd.value ? (await api('/materiais?tipo=' + tipo + '&' + filtroQS(CASCATAS[1]))).materiais
+      : (await Promise.all(discs.map((d) => api('/materiais?tipo=' + tipo + '&' + cq() + '&disciplina_id=' + d.id)))).flatMap((r) => r.materiais);
     if (seq !== S.matSeq) return; // outra tela de material foi aberta enquanto esta carregava
-    if (!itens.length) { box.innerHTML = emp(EM_PREPARO, EM_PREPARO_SUB); return; }
+    if (!itens.length) {
+      const di = S.disc[sd.value];
+      box.innerHTML = jur && di && /municipal/i.test(di.nome)
+        ? emp('Esta matéria depende da lei do seu município', 'Consulte a lei orgânica, o estatuto dos servidores e a lei de criação da Guarda do município do seu edital. A parte geral está nas aulas e apostilas da matéria.')
+        : emp(EM_PREPARO, EM_PREPARO_SUB);
+      return;
+    }
+    if (jur) itens = ordenarJuridico(itens);
     if (tipo === 'flashcard') {
       box.innerHTML = `<div class="res-grid" id="fcGrid">${itens.map((f) => `<div class="fccard" tabindex="0"><span class="badge">${esc(S.ass[f.assunto_id]?.nome || '')}</span><div class="fcfront">${esc(f.conteudo.pergunta || f.titulo)}</div><div class="fcback">${esc(f.conteudo.resposta || '')}</div></div>`).join('')}</div>`;
       $$('#fcGrid .fccard').forEach((c) => c.addEventListener('click', () => c.classList.toggle('flip')));
       return;
     }
     const aberto = !!$('matlAss').value;
-    box.innerHTML = itens.map((m) => { const a = S.ass[m.assunto_id]; return `<details class="card mat-item"${aberto ? ' open' : ''}><summary><span class="card-title">${esc(m.titulo)}</span><span class="muted small">${esc(a ? a.disciplina + ' › ' + a.nome : '')}</span>${selo(m)}</summary><div class="mat-corpo">${tipo === 'aula' ? `<div class="vid-box" data-ass="${m.assunto_id}" data-mat="${m.id}"></div>` : ''}${corpoMaterial(m)}</div></details>`; }).join('');
+    let ultDisc = '';
+    box.innerHTML = itens.map((m) => { const cab = jur && !sd.value && S.ass[m.assunto_id] && S.ass[m.assunto_id].disciplina !== ultDisc ? `<h2 class="jur-disc">${esc((ultDisc = S.ass[m.assunto_id].disciplina))}</h2>` : ''; return cab + (() => { const a = S.ass[m.assunto_id]; return `<details class="card mat-item"${aberto ? ' open' : ''}><summary><span class="card-title">${esc(m.titulo)}</span><span class="muted small">${esc(a ? a.disciplina + ' › ' + a.nome : '')}</span>${selo(m)}</summary><div class="mat-corpo">${tipo === 'aula' ? `<div class="vid-box" data-ass="${m.assunto_id}" data-mat="${m.id}"></div>` : ''}${corpoMaterial(m)}</div></details>`; })(); }).join('');
     if (tipo === 'aula') {
       for (const k in VID_CACHE) delete VID_CACHE[k];
       $$('#matlLista details.mat-item').forEach((d) => { const vb = $$('.vid-box', d)[0]; const go = () => { if (vb.dataset.ok) return; vb.dataset.ok = '1'; carregarVideos(vb); }; if (d.open) go(); d.addEventListener('toggle', () => { if (d.open) go(); }); });
@@ -479,6 +502,16 @@ async function renderMaterial(tipo) {
   } catch (e) { if (seq === S.matSeq) box.innerHTML = emp(e.message); }
 }
 
+
+/* Matérias jurídicas (Lei Seca e Jurisprudência mostram só estas). */
+const TIPOS_JURIDICOS = ['lei_seca', 'jurisprudencia'];
+const ehJuridica = (d) => /direito|legisla|c[oó]digo|constitui|estatuto|administra[cç][aã]o p[uú]blica/i.test(d.nome);
+// Ordem: matéria (ordem do edital) › assunto (ordem do edital) › número do artigo.
+function ordenarJuridico(itens) {
+  const pos = {}; S.est.forEach((d, i) => d.assuntos.forEach((a, k) => { pos[a.id] = i * 1000 + k; }));
+  const nArt = (m) => { const x = /art\.?\s*(\d+)/i.exec((m.conteudo && (m.conteudo.artigo || m.conteudo.referencia)) || m.titulo || ''); return x ? +x[1] : 99999; };
+  return itens.slice().sort((a, b) => (pos[a.assunto_id] ?? 1e9) - (pos[b.assunto_id] ?? 1e9) || nArt(a) - nArt(b) || String(a.titulo).localeCompare(String(b.titulo), 'pt-BR', { numeric: true }));
+}
 const selo = (m) => (m.compartilhado ? '<span class="badge badge-share" title="Este material é o mesmo nos dois cursos">Material compartilhado PM-SP + GCM</span>' : '');
 const VID_CACHE = {};
 async function carregarVideos(box) {

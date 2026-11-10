@@ -879,3 +879,7 @@ div:has(>.ldots:first-child)[style]{font-size:var(--fs-sm)}
 }
 /* etiquetas longas (origem/fonte da questão) quebram linha em vez de alargar a tela */
 .qcard .badge,#qContainer .badge,#simQuestoes .badge{white-space:normal;max-width:100%;overflow-wrap:anywhere;text-align:left}
+
+/* Lei Seca / Jurisprudência agrupadas por matéria */
+.jur-disc{font-size:15px;font-weight:700;margin:22px 0 10px;padding-bottom:6px;border-bottom:1px solid var(--border);color:var(--text)}
+.jur-disc:first-child{margin-top:0}
