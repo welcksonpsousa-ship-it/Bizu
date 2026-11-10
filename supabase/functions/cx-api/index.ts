@@ -4,6 +4,7 @@
 // apenas o que foi publicado. O conteúdo entra pelas rotas /admin/* (importação por
 // assunto, montagem de simulados e temas de redação), restritas a administradores.
 import { createClient } from 'jsr:@supabase/supabase-js@2';
+import { iaGerar, iaDisponivel, iaStatus } from './ia.ts';
 
 const SUPABASE_URL = Deno.env.get('SUPABASE_URL')!;
 const SERVICE_KEY = Deno.env.get('SUPABASE_SERVICE_ROLE_KEY')!;
@@ -408,14 +409,44 @@ function respostaChatX(msg: string, D: any, curso: string) {
   }
   return null;
 }
-async function chamarLLM(system: string, hist: any[], msg: string) {
-  const key = Deno.env.get('ANTHROPIC_API_KEY'); if (!key) return null;
-  const model = Deno.env.get('CHATX_MODEL') ?? 'claude-haiku-4-5-20251001';
-  try {
-    const r = await fetch('https://api.anthropic.com/v1/messages', { method: 'POST', signal: AbortSignal.timeout(25000), headers: { 'content-type': 'application/json', 'x-api-key': key, 'anthropic-version': '2023-06-01' }, body: JSON.stringify({ model, max_tokens: 800, system, messages: [...hist, { role: 'user', content: msg }] }) });
-    if (!r.ok) return null; const j = await r.json();
-    return (j.content ?? []).map((c: any) => c.text ?? '').join('').trim() || null;
-  } catch { return null; }
+// ----- correção de redação por IA -----
+const PROMPT_REDACAO = (curso: string, banca: string, formato: string) => `Você é corretor de redação de concursos policiais, com experiência em bancas como VUNESP. Corrija a redação do aluno do curso ${curso} (banca de referência: ${banca}).
+
+FORMATO E CRITÉRIOS DO EDITAL:
+${formato}
+
+Use EXATAMENTE estes 4 critérios, cada um valendo de 0 a 10 (total 0 a 40):
+1. "Tema" — adequação ao tema e à proposta; fuga total = 0 no critério e alerta.
+2. "Estrutura" — gênero dissertativo-argumentativo, tese clara, desenvolvimento com argumentos, conclusão; coerência e progressão; uso correto de repertório (inclusive dados e fundamentos jurídicos, quando o tema pedir: aponte citação de lei errada ou genérica).
+3. "Língua" — norma-padrão: ortografia, acentuação, concordância, regência, crase, pontuação, registro formal.
+4. "Coesão" — conectivos, retomadas, paragrafação e articulação entre as partes.
+
+Regras:
+- Toda nota precisa de justificativa técnica que cite trechos do próprio texto. Nunca dê nota sem justificar.
+- Liste os erros encontrados com o trecho exato, a correção e a explicação. Não invente erros: só aponte o que está no texto.
+- Seja rigoroso e honesto; é uma estimativa de desempenho, não a nota oficial da banca.
+- Responda SOMENTE com um objeto JSON válido, sem texto antes ou depois, neste formato:
+{"criterios":[{"nome":"Tema","nota":0,"maximo":10,"justificativa":"..."},{"nome":"Estrutura","nota":0,"maximo":10,"justificativa":"..."},{"nome":"Língua","nota":0,"maximo":10,"justificativa":"..."},{"nome":"Coesão","nota":0,"maximo":10,"justificativa":"..."}],
+ "adequacao_tema":"...", "erros":[{"tipo":"ortografia|acentuacao|gramatica|pontuacao|estrutura|argumentacao|coesao|fundamentacao","trecho":"...","correcao":"...","explicacao":"..."}],
+ "pontos_fortes":["..."], "pontos_fracos":["..."], "sugestoes":["..."], "resumo":"2 a 3 frases com o diagnóstico geral"}`;
+// deno-lint-ignore no-explicit-any
+function validarCorrecao(txt: string): any | null {
+  let j: any;
+  try { const ini = txt.indexOf('{'), fim = txt.lastIndexOf('}'); j = JSON.parse(txt.slice(ini, fim + 1)); } catch { return null; }
+  const crit = Array.isArray(j.criterios) ? j.criterios : [];
+  if (crit.length !== 4) return null;
+  for (const c of crit) {
+    c.maximo = 10; c.nota = Math.max(0, Math.min(10, Math.round(Number(c.nota) * 2) / 2));
+    if (!Number.isFinite(c.nota) || typeof c.justificativa !== 'string' || c.justificativa.trim().length < 40) return null;
+  }
+  const lst = (x: any) => (Array.isArray(x) ? x.filter((y: any) => typeof y === 'string' && y.trim()).map((y: string) => y.slice(0, 600)).slice(0, 12) : []);
+  return {
+    criterios: crit.map((c: any) => ({ nome: String(c.nome).slice(0, 40), nota: c.nota, maximo: 10, justificativa: String(c.justificativa).slice(0, 1500) })),
+    nota_total: crit.reduce((s: number, c: any) => s + c.nota, 0), nota_maxima: 40,
+    adequacao_tema: String(j.adequacao_tema ?? '').slice(0, 800),
+    erros: (Array.isArray(j.erros) ? j.erros : []).filter((e: any) => e && e.trecho && e.correcao).slice(0, 40).map((e: any) => ({ tipo: String(e.tipo ?? '').slice(0, 30), trecho: String(e.trecho).slice(0, 300), correcao: String(e.correcao).slice(0, 300), explicacao: String(e.explicacao ?? '').slice(0, 500) })),
+    pontos_fortes: lst(j.pontos_fortes), pontos_fracos: lst(j.pontos_fracos), sugestoes: lst(j.sugestoes), resumo: String(j.resumo ?? '').slice(0, 800),
+  };
 }
 const PROMPT_CHATX = `Você é o Chat X, mentor virtual do Bizu do Concurseiro X.
 
@@ -864,7 +895,8 @@ async function handle(req: Request, ck: Ck): Promise<Response> {
       return json({ videos: data ?? [] });
     }
     // ----- Chat X -----
-    if (path === '/chatx/status') return json({ llm: !!Deno.env.get('ANTHROPIC_API_KEY') });
+    if (path === '/chatx/status') return json({ llm: iaDisponivel('chatx') });
+    if (path === '/ia/status') return json({ chatx: iaDisponivel('chatx'), redacao: iaDisponivel('redacao') });
     if (path === '/chatx' && req.method === 'POST') {
       const cid = body.curso_id ?? curso;
       if (!(await cursoValido(cid))) return fail('Curso inválido');
@@ -880,9 +912,19 @@ async function handle(req: Request, ck: Ck): Promise<Response> {
         disciplinas: D.disciplinas.map((d: any) => ({ nome: d.nome, peso: d.peso, acerto_pct: d.acerto, respondidas: d.tent })),
         prioridades: [...D.ins.assuntos].sort((x: any, y: any) => y.prioridade - x.prioridade).slice(0, 8).map((a: any) => ({ assunto: a.assunto, disciplina: a.disciplina, motivos: a.motivos })),
         simulados: D.simr.map((r: any) => ({ titulo: r.cx_simulados_drive.titulo, acertos: r.acertos, total: r.total })) };
-      const txt = await chamarLLM(PROMPT_CHATX + '\n\nDADOS DO ALUNO (JSON):\n' + JSON.stringify(ctx), hist, msg);
+      const ia = await iaGerar(db, uid, 'chatx', { system: PROMPT_CHATX + '\n\nDADOS DO ALUNO (JSON):\n' + JSON.stringify(ctx), mensagens: [...hist, { role: 'user', content: msg }], maxTokens: 800, timeoutMs: 25000 });
+      if (!ia.ok && (ia.motivo === 'limite' || ia.motivo === 'orcamento')) return json({ texto: ia.mensagem, acoes: [], llm: false });
+      const txt = ia.ok ? ia.texto : null;
       if (txt) return json({ texto: txt, acoes: [{ tipo: 'treino', rotulo: 'FAZER QUESTÕES', modo: 'adaptativo', qtd: 20 }, { tipo: 'plano', rotulo: 'O QUE ESTUDAR HOJE', minutos: 90 }], llm: true, dados: true });
       return json({ texto: 'Esta pergunta é aberta (conceito, explicação de questão ou tema jurídico) e exige o modelo de IA do Chat X, que ainda não está ativado neste ambiente. Não vou inventar resposta. Enquanto isso, posso orientar pelos seus dados: o que estudar hoje, matéria mais fraca, onde você mais erra, revisão de amanhã, prioridades e evolução — e o conteúdo jurídico você encontra na Aula e na Lei Seca do assunto.', acoes: [{ tipo: 'plano', rotulo: 'O QUE ESTUDAR HOJE', minutos: 90 }, { tipo: 'estudar_menu', rotulo: 'ABRIR MATÉRIAS' }], llm: false, dados: true, llm_indisponivel: true });
+    }
+
+    // ----- notícias dos concursos -----
+    if (path === '/noticias') {
+      let qb = db.from('cx_noticias').select('id,curso_id,concurso,tipo,titulo,resumo,fonte_nome,fonte_url,oficial,publicado_em,verificado_em').eq('publicado', true).order('publicado_em', { ascending: false }).limit(30);
+      if (curso && (await cursoValido(curso))) qb = qb.or(`curso_id.eq.${curso},curso_id.is.null`);
+      const { data } = await qb;
+      return json({ noticias: data ?? [] });
     }
 
     // ----- desempenho -----
@@ -982,7 +1024,7 @@ async function handle(req: Request, ck: Ck): Promise<Response> {
       return json({ temas: data ?? [] });
     }
     if (path === '/redacoes' && req.method === 'GET') {
-      let qb = db.from('cx_redacoes').select('id,curso_id,tema_id,tema_livre,titulo,texto,status,criado_em,atualizado_em').eq('user_id', uid).order('atualizado_em', { ascending: false });
+      let qb = db.from('cx_redacoes').select('id,curso_id,tema_id,tema_livre,titulo,texto,status,criado_em,atualizado_em,origem,arquivo_nome,arquivo_mime,correcao,corrigida_em,correcao_modelo').eq('user_id', uid).order('atualizado_em', { ascending: false });
       if (curso) qb = qb.eq('curso_id', curso);
       const { data } = await qb.limit(100);
       return json({ redacoes: data ?? [] });
@@ -1006,6 +1048,50 @@ async function handle(req: Request, ck: Ck): Promise<Response> {
       const { data, error } = await db.from('cx_redacoes').insert(reg).select('id').single();
       if (error) return fail('Não foi possível salvar a redação');
       return json({ id: data.id });
+    }
+    if (path === '/redacoes/anexo' && req.method === 'POST') {
+      // arquivo original da redação (PDF, DOCX ou TXT), guardado em armazenamento privado
+      if (!uuidOk(body.id)) return fail('Salve a redação antes de anexar o arquivo');
+      const { data: rd } = await db.from('cx_redacoes').select('id').eq('id', body.id).eq('user_id', uid).maybeSingle();
+      if (!rd) return fail('Redação não encontrada', 404);
+      const TIPOS: Record<string, string> = { 'application/pdf': 'pdf', 'application/vnd.openxmlformats-officedocument.wordprocessingml.document': 'docx', 'text/plain': 'txt' };
+      const mime = String(body.mime ?? ''); const ext = TIPOS[mime];
+      if (!ext) return fail('Formato não aceito. Envie PDF, DOCX ou TXT.');
+      let bytes: Uint8Array;
+      try { bytes = Uint8Array.from(atob(String(body.base64 ?? '')), (c) => c.charCodeAt(0)); } catch { return fail('Arquivo inválido'); }
+      if (!bytes.length || bytes.length > 5 * 1024 * 1024) return fail('O arquivo deve ter até 5 MB.');
+      const nome = String(body.nome ?? 'redacao.' + ext).replace(/[^\w.\- ]+/g, '_').slice(0, 120);
+      const caminho = `${uid}/${body.id}.${ext}`;
+      const { error } = await db.storage.from('cx-redacoes').upload(caminho, bytes, { contentType: mime, upsert: true });
+      if (error) return fail('Não foi possível guardar o arquivo: ' + error.message, 500);
+      await db.from('cx_redacoes').update({ origem: 'arquivo', arquivo_nome: nome, arquivo_path: caminho, arquivo_mime: mime }).eq('id', body.id).eq('user_id', uid);
+      return json({ ok: true, arquivo_nome: nome });
+    }
+    if (path === '/redacoes/arquivo') {
+      const { data: rd } = await db.from('cx_redacoes').select('arquivo_path').eq('id', q.get('id')).eq('user_id', uid).maybeSingle();
+      if (!rd?.arquivo_path) return fail('Esta redação não tem arquivo anexado', 404);
+      const { data, error } = await db.storage.from('cx-redacoes').createSignedUrl(rd.arquivo_path, 120);
+      if (error || !data) return fail('Arquivo indisponível', 500);
+      return json({ url: data.signedUrl });
+    }
+    if (path === '/redacoes/corrigir' && req.method === 'POST') {
+      const { data: rd } = await db.from('cx_redacoes').select('id,curso_id,tema_id,tema_livre,titulo,texto').eq('id', body.id).eq('user_id', uid).maybeSingle();
+      if (!rd) return fail('Redação não encontrada', 404);
+      const palavras = (rd.texto.match(/\S+/g) || []).length;
+      if (palavras < 80) return fail('O texto tem só ' + palavras + ' palavras. Para uma correção confiável, envie uma redação completa (pelo menos 80 palavras).');
+      if (!iaDisponivel('redacao')) return fail('A correção por IA ainda não está ativada na plataforma (nenhum modelo configurado no servidor).', 503);
+      const { data: cur } = await db.from('cx_cursos').select('nome,banca,redacao_formato').eq('id', rd.curso_id).single();
+      let proposta = '';
+      if (rd.tema_id) { const { data: t } = await db.from('cx_redacao_temas').select('titulo,proposta').eq('id', rd.tema_id).maybeSingle(); if (t) proposta = `${t.titulo}\n${t.proposta}`; }
+      const sistema = PROMPT_REDACAO(cur?.nome ?? rd.curso_id, cur?.banca ?? '', cur?.redacao_formato ?? '');
+      const pedido = `TEMA: ${rd.tema_livre || rd.titulo || '(não informado)'}\n${proposta ? 'PROPOSTA DA BANCA:\n' + proposta + '\n' : ''}\nREDAÇÃO DO ALUNO (${palavras} palavras):\n<<<\n${rd.texto}\n>>>`;
+      const ia = await iaGerar(db, uid, 'redacao', { system: sistema, mensagens: [{ role: 'user', content: pedido }], maxTokens: 3500, json: true, timeoutMs: 90000 });
+      if (!ia.ok) return fail(ia.mensagem, ia.motivo === 'limite' || ia.motivo === 'orcamento' ? 429 : 503);
+      const cor = validarCorrecao(ia.texto);
+      if (!cor) return fail('A correção gerada veio incompleta (sem justificativa de algum critério) e foi descartada. Tente novamente.', 502);
+      cor.modelo = `${ia.provedor}:${ia.modelo}`;
+      await db.from('cx_redacoes').update({ correcao: cor, corrigida_em: new Date().toISOString(), correcao_modelo: cor.modelo }).eq('id', rd.id).eq('user_id', uid);
+      return json({ ok: true, correcao: cor });
     }
     if (path === '/redacoes/excluir' && req.method === 'POST') {
       await db.from('cx_redacoes').delete().eq('id', body.id).eq('user_id', uid);
@@ -1432,6 +1518,42 @@ async function handle(req: Request, ck: Ck): Promise<Response> {
         return fail('Ação inválida');
       }
       // Vídeos do YouTube das aulas (validados pelo oEmbed do YouTube; nada hospedado no site).
+      if (path === '/admin/ia') {
+        const desde30 = new Date(Date.now() - 30 * 86400e3).toISOString();
+        const { data } = await db.from('cx_ia_uso').select('funcao,provedor,modelo,ok,tokens_in,tokens_out,custo_usd,criado_em').gte('criado_em', desde30).order('criado_em', { ascending: false }).limit(10000);
+        const hoje = new Date(Date.now() - 3 * 3600e3).toISOString().slice(0, 10);
+        const ag: Record<string, any> = {};
+        (data ?? []).forEach((x: any) => {
+          const k = `${x.funcao}|${x.provedor}:${x.modelo}`;
+          const a = (ag[k] ??= { funcao: x.funcao, modelo: `${x.provedor}:${x.modelo}`, chamadas_30d: 0, erros_30d: 0, chamadas_hoje: 0, tokens_in: 0, tokens_out: 0, custo_usd: 0 });
+          a.chamadas_30d++; if (!x.ok) a.erros_30d++;
+          if (new Date(new Date(x.criado_em).getTime() - 3 * 3600e3).toISOString().slice(0, 10) === hoje) a.chamadas_hoje++;
+          a.tokens_in += x.tokens_in ?? 0; a.tokens_out += x.tokens_out ?? 0; a.custo_usd += Number(x.custo_usd ?? 0);
+        });
+        return json({ status: iaStatus(), uso: Object.values(ag) });
+      }
+      if (path === '/admin/noticias' && req.method === 'GET') {
+        const { data } = await db.from('cx_noticias').select('*').order('publicado_em', { ascending: false }).limit(300);
+        return json({ noticias: data ?? [] });
+      }
+      if (path === '/admin/noticias' && req.method === 'POST') {
+        const TIPOS_N = ['edital', 'autorizacao', 'comissao', 'banca', 'inscricoes', 'cronograma', 'resultado', 'prova', 'outro'];
+        if (body.acao === 'publicar') { if (!uuidOk(body.id)) return fail('Notícia inválida'); await db.from('cx_noticias').update({ publicado: body.publicado === true }).eq('id', body.id); return json({ ok: true }); }
+        if (body.acao === 'excluir') { if (!uuidOk(body.id)) return fail('Notícia inválida'); await db.from('cx_noticias').delete().eq('id', body.id); return json({ ok: true }); }
+        const itens = Array.isArray(body.itens) ? body.itens.slice(0, 100) : [];
+        const rej: string[] = []; let ok = 0;
+        for (const n of itens) {
+          const url = String(n.fonte_url ?? '').trim();
+          if (!n.titulo || !n.resumo || !n.concurso || !/^https:\/\//.test(url) || !/^\d{4}-\d{2}-\d{2}$/.test(String(n.publicado_em ?? ''))) { rej.push('incompleta: ' + String(n.titulo ?? '').slice(0, 60)); continue; }
+          if (n.curso_id && !(await cursoValido(n.curso_id))) { rej.push('curso inválido: ' + n.titulo); continue; }
+          const chave = (String(n.concurso) + '|' + url.replace(/[#?].*$/, '').toLowerCase() + '|' + normTxt(String(n.titulo)).slice(0, 80));
+          const reg = { curso_id: n.curso_id || null, concurso: String(n.concurso).slice(0, 120), tipo: TIPOS_N.includes(n.tipo) ? n.tipo : 'outro', titulo: String(n.titulo).slice(0, 220), resumo: String(n.resumo).slice(0, 900),
+            fonte_nome: String(n.fonte_nome ?? new URL(url).hostname).slice(0, 120), fonte_url: url, oficial: n.oficial === true, publicado_em: n.publicado_em, verificado_em: new Date().toISOString(), publicado: n.publicado !== false, chave };
+          const { error } = await db.from('cx_noticias').upsert(reg, { onConflict: 'chave' });
+          if (error) rej.push(error.message); else ok++;
+        }
+        return json({ ok: true, gravadas: ok, rejeitadas: rej });
+      }
       if (path === '/admin/videos' && req.method === 'GET') {
         const { data } = await db.from('cx_videos').select('id,video_id,titulo,canal,ordem,publicado,origem,verificado_em,cx_assuntos!inner(nome,cx_disciplinas!inner(nome,curso_id))').order('criado_em');
         return json({ videos: (data ?? []).filter((v: any) => !curso || v.cx_assuntos.cx_disciplinas.curso_id === curso).map((v: any) => ({ id: v.id, video_id: v.video_id, titulo: v.titulo, canal: v.canal, ordem: v.ordem, publicado: v.publicado, origem: v.origem, verificado_em: v.verificado_em, assunto: v.cx_assuntos.nome, disciplina: v.cx_assuntos.cx_disciplinas.nome, curso_id: v.cx_assuntos.cx_disciplinas.curso_id })) });
