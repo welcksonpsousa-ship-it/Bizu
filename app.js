@@ -101,7 +101,7 @@ async function iniciar() {
   cronRecuperar();
   aplicarPerfilPreparacao();
   const v = (location.hash.match(/^#v=([\w-]+)/) || [])[1];
-  showView(v && $('v-' + (v.startsWith('m-') ? 'material' : v)) ? v : 'painel');
+  showView(v && $('v-' + (v.startsWith('m-') ? 'material' : v)) ? v : S.view || 'painel'); // mantém a tela que o aluno abriu durante o carregamento
 }
 // Usa o perfil de preparação (se preenchido) para sugerir tempo de estudo e rotina; nada é obrigatório.
 async function aplicarPerfilPreparacao() {
@@ -824,6 +824,7 @@ let RED = { id: null, tema_id: null, arquivo: null };
 const IA = { status: null };
 function renderRedacao() {
   const c = S.curso;
+  if (!c) { $('redSub').textContent = 'Carregando o curso...'; return; } // curso ainda não carregado após o login
   $('redSub').textContent = `${c.nome} — escreva, guarde e acompanhe suas redações`;
   $('redFormato').innerHTML = `<div class="card-title">Formato cobrado</div><p class="small">${esc(c.redacao_formato || 'Consulte o edital.')}</p>`;
   contarRed(); statusIA();
