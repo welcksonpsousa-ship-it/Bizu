@@ -172,3 +172,12 @@ Fonte: pasta MENTORIA/SIMULADOS/SD PM SP. Arquivos públicos (abrem e baixam sem
 - **Redação:** envio de PDF, DOCX ou TXT (texto extraído no navegador, original guardado em armazenamento privado), correção automática por IA após o anexo (4 critérios com nota e justificativa, erros com trecho, pontos fortes/fracos, sugestões), histórico com arquivo e nota. A correção só funciona com chave de IA configurada.
 - **IA com vários modelos:** camada única (Anthropic, OpenAI, Gemini), ordem de preferência por função, fallback, limite diário por aluno (Chat X 40, redação 5), orçamento diário opcional, registro de uso, erros e custo; aba "Inteligência artificial" na administração. Sem chaves, as funções de IA ficam desativadas.
 - **Cobertura do edital:** 126 assuntos auditados; relatório em `RELATORIO-COBERTURA-EDITAL.md`. 39 complementos de aula publicados (2 de Atualidades ocultos para revisão). Cobertura real: PM-SP 95,7% → 99,5%; GCM 89,1% → 99,8%.
+
+
+## 28. Apostilas 2.0 — padrão editorial completo (11/11/2026)
+
+- **114 PDFs** refeitos (cobrem os 126 assuntos; 12 de conteúdo comum PM/GCM usam o mesmo arquivo), total de 3076 páginas (de 21 a 37 por apostila).
+- Mesmo padrão visual e editorial das apostilas do Bizu Delta X (estudado só em modo leitura; nada foi alterado lá), com a marca Bizu do Concurseiro X: capa, sumário, 11 a 13 seções (apresentação, base legal/teórica, conceitos, desenvolvimento, lei seca comentada, jurisprudência quando há base segura, quadro comparativo, aplicação na atividade policial/da guarda/na prova, pontos críticos, pegadinhas, 10 questões comentadas e resumo da véspera), caixas BIZU/ATENÇÃO/PEGADINHA/EXEMPLO e tabelas.
+- Parte integrada ao final, com dados do próprio banco do site: mapa mental, lei seca, jurisprudência, bateria de até 10 questões publicadas e compatíveis (reais primeiro, com gabarito e comentário), revisão rápida (flashcards) e vídeos.
+- Correções da auditoria incorporadas (ex.: improbidade art. 23 §5º após ADI 7.156/7.236; "intervirá" na flexão verbal; maus-tratos com hífen; aba padrão "Planilha1" no Excel; art. 245 §4º do CPP; Google Workspace; regra de três 42,97). Pontos sem fonte conferível (leis de 2026 não verificadas no Planalto) foram omitidos ou tratados de forma geral.
+- Verificação automática: nenhum caractere perdido na renderização, nenhuma menção a outro produto, todas com título, tabela, caixas e gabarito em cada questão; registros `cx_apostilas` em versão 2.0 (126/126 publicados) e arquivos conferidos no site publicado.
