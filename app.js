@@ -780,7 +780,16 @@ async function renderSimulados() {
   $$('#simTabs .tab').forEach((x) => x.classList.toggle('on', x.dataset.st === SIM_CAT));
   $('simTabInfo').textContent = SIM_CAT === 'prova_real' ? 'Provas oficiais de concursos anteriores, em ordem cronológica.' : 'Simulados exclusivos do Bizu: cada um tem seu próprio conjunto de questões, sem repetição entre eles nem com as provas reais.';
   try {
-    const dAll = await api('/simulados-drive?' + cq()); const d = { ...dAll, simulados: dAll.simulados.filter((s) => (s.categoria || 'prova_real') === SIM_CAT).sort((x, y) => (x.numero || 0) - (y.numero || 0)) }; const por = {}; d.resultados.forEach((r) => { (por[r.simulado_id] = por[r.simulado_id] || []).push(r); });
+    const dAll = await api('/simulados-drive?' + cq());
+    // Mostra só as abas que têm conteúdo neste curso e abre na que tem (ex.: GCM não tem provas reais).
+    const cats = new Set(dAll.simulados.map((s) => s.categoria || 'prova_real'));
+    $$('#simTabs .tab').forEach((x) => x.classList.toggle('hidden', cats.size > 0 && !cats.has(x.dataset.st)));
+    if (cats.size && !cats.has(SIM_CAT)) {
+      SIM_CAT = [...cats][0];
+      $$('#simTabs .tab').forEach((x) => x.classList.toggle('on', x.dataset.st === SIM_CAT));
+      $('simTabInfo').textContent = SIM_CAT === 'prova_real' ? 'Provas oficiais de concursos anteriores, em ordem cronológica.' : 'Simulados exclusivos do Bizu: cada um tem seu próprio conjunto de questões, sem repetição entre eles nem com as provas reais.';
+    }
+    const d = { ...dAll, simulados: dAll.simulados.filter((s) => (s.categoria || 'prova_real') === SIM_CAT).sort((x, y) => (x.numero || 0) - (y.numero || 0)) }; const por = {}; d.resultados.forEach((r) => { (por[r.simulado_id] = por[r.simulado_id] || []).push(r); });
     box.innerHTML = d.simulados.length ? `<div class="sim-grid">${d.simulados.map((s) => simCard(s, por[s.id] || [])).join('')}</div>` : emp(SIM_CAT === 'prova_real' ? 'Nenhuma prova real publicada para este curso ainda' : 'Os simulados deste curso serão publicados em breve', 'O administrador publica por aqui assim que estiverem prontos.');
     $$('.sim-card', box).forEach((c) => $$('.sr-ok', c)[0].addEventListener('click', async () => {
       const ac = parseInt($$('.sr-ac', c)[0].value, 10), tt = parseInt($$('.sr-tt', c)[0].value, 10), msg = $$('.sr-msg', c)[0];

@@ -40,9 +40,37 @@ function anon() { return createClient(SUPABASE_URL, ANON_KEY, { auth: { autoRefr
 
 // limpar: só a rota /session apaga os cookies quando a sessão não renova. Nas demais, um pedido que saiu com a
 // sessão antiga (ex.: logo após trocar a senha) não pode apagar os cookies novos que outra resposta acabou de gravar.
+// Validação local do token de acesso (ES256, chaves públicas do próprio Supabase em cache):
+// evita uma ida ao serviço de autenticação em todo pedido. Qualquer dúvida → validação completa no Supabase.
+let JWKS: { em: number; chaves: Record<string, CryptoKey> } | null = null;
+const b64url = (s: string) => Uint8Array.from(atob(s.replace(/-/g, '+').replace(/_/g, '/') + '='.repeat((4 - (s.length % 4)) % 4)), (c) => c.charCodeAt(0));
+async function chavePublica(kid: string): Promise<CryptoKey | null> {
+  if (!JWKS || Date.now() - JWKS.em > 3600_000 || !JWKS.chaves[kid]) {
+    try {
+      const r = await fetch(SUPABASE_URL + '/auth/v1/.well-known/jwks.json', { signal: AbortSignal.timeout(4000) });
+      const j = await r.json(); const chaves: Record<string, CryptoKey> = {};
+      for (const k of j.keys ?? []) if (k.kty === 'EC' && k.crv === 'P-256' && k.kid) chaves[k.kid] = await crypto.subtle.importKey('jwk', { kty: 'EC', crv: 'P-256', x: k.x, y: k.y, ext: true }, { name: 'ECDSA', namedCurve: 'P-256' }, false, ['verify']);
+      JWKS = { em: Date.now(), chaves };
+    } catch { return null; }
+  }
+  return JWKS?.chaves[kid] ?? null;
+}
+async function usuarioDoToken(t: string): Promise<any | null> {
+  try {
+    const [h, p, sg] = t.split('.'); if (!h || !p || !sg) return null;
+    const cab = JSON.parse(new TextDecoder().decode(b64url(h)));
+    if (cab.alg !== 'ES256' || !cab.kid) return null;
+    const chave = await chavePublica(cab.kid); if (!chave) return null;
+    const ok = await crypto.subtle.verify({ name: 'ECDSA', hash: 'SHA-256' }, chave, b64url(sg), new TextEncoder().encode(h + '.' + p));
+    if (!ok) return null;
+    const pl = JSON.parse(new TextDecoder().decode(b64url(p)));
+    if (pl.iss !== SUPABASE_URL + '/auth/v1' || pl.aud !== 'authenticated' || !pl.sub || !pl.exp || pl.exp * 1000 < Date.now() + 5000) return null;
+    return { id: pl.sub, email: pl.email, user_metadata: pl.user_metadata ?? {} };
+  } catch { return null; }
+}
 async function getUser(req: Request, ck: Ck, limpar = true) {
   const t = readCookie(req, C_ACCESS);
-  if (t) { const { data } = await db.auth.getUser(t); if (data?.user) return data.user; }
+  if (t) { const u = await usuarioDoToken(t); if (u) return u; const { data } = await db.auth.getUser(t); if (data?.user) return data.user; }
   const r = readCookie(req, C_REFRESH);
   if (!r) return null;
   const { data, error } = await anon().auth.refreshSession({ refresh_token: r });
