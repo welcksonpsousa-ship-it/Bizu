@@ -225,3 +225,26 @@ Fonte: pasta MENTORIA/SIMULADOS/SD PM SP. Arquivos públicos (abrem e baixam sem
   - 1 marcada como desatualizada: a Q49, sobre a Constituição do Chile, cujo contexto mudou depois de 2022.
   - 5 que dependem de figura (Q22, 28, 44, 45 e 52) ficam só no caderno.
 - **Provas reais:** "PM-SP 2021 — Prova + gabarito comentado" foi publicada em ordem cronológica, com o caderno oficial, o gabarito oficial definitivo e o gabarito comentado (PDF de 31 páginas no padrão das apostilas). As provas reais de PM-SP Soldado no site passam a ser 17.
+
+## 32. Auditoria geral de prontidão para receber alunos (12/11/2026)
+
+**Vídeos (183):**
+- Todos existem no YouTube e permitem incorporação ao site. Cada assunto tem pelo menos 1 vídeo e eles aparecem embutidos ao abrir a aula.
+- Relevância avaliada um a um: 172 adequados e 11 trocados por vídeos conferidos.
+  - 3 errados: um sobre a GCM de Belém no assunto de organização do município, um sobre regime jurídico no assunto de estatuto e um duplicado.
+  - 8 fracos: público escolar, live antiga anterior às mudanças da Lei Maria da Penha, improbidade sem a Lei 14.230/2021, Lei 8.112 (federal) no estatuto municipal e outros.
+
+**Telas:** 23 telas percorridas nos dois cursos, no computador e no celular.
+- Sem erro de JavaScript, sem erro do servidor e sem tela vazia.
+- Corrigido: rolagem horizontal nos Flashcards, causada pelo nome longo do assunto.
+- Corrigido: Lei Seca e Flashcards passaram a carregar em uma consulta só (antes eram 10 consultas, uma por disciplina).
+
+**Segurança:**
+- Sem login, todas as rotas da API respondem 401. Aluno recebe 403 em todas as rotas de administração. Gabarito e comentário só chegam ao navegador depois da resposta.
+- As tabelas do banco não aceitam acesso direto: tudo passa pelo servidor, que confere a permissão.
+- Corrigido: apostilas, provas e simulados (PDF e versão de leitura) eram arquivos públicos. Agora só abrem para aluno logado e com acesso ativo, conferido na borda da Vercel (middleware.js). Testado: sem login 401; logado abre; depois de sair, 401 de novo.
+
+**Pendências do administrador (painel do Supabase):**
+- Ativar a proteção contra senhas vazadas (Auth → Password security).
+- Configurar um SMTP próprio para os e-mails de recuperação de senha, porque o envio padrão do Supabase tem limite baixo por hora.
+- Configurar as chaves de IA, que ficaram por último a pedido.
