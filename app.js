@@ -69,7 +69,7 @@ $('lnkEsqueci').addEventListener('click', async (e) => {
 });
 $('btnReset').addEventListener('click', async () => {
   const msg = $('resetMsg'); const p1 = $('resetSenha').value, p2 = $('resetSenha2').value;
-  if (p1.length < 6) { msg.textContent = 'A senha deve ter no mínimo 6 caracteres.'; return; }
+  if (p1.length < 8) { msg.textContent = 'A senha deve ter no mínimo 8 caracteres.'; return; }
   if (p1 !== p2) { msg.textContent = 'As senhas não coincidem.'; return; }
   const token = new URLSearchParams(location.hash.slice(1)).get('access_token');
   if (!token) { msg.textContent = 'Link de recuperação inválido ou expirado.'; return; }

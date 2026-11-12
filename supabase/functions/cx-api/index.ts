@@ -574,7 +574,7 @@ async function handle(req: Request, ck: Ck): Promise<Response> {
     if (path === '/password/redefinir' && req.method === 'POST') {
       const { data } = await db.auth.getUser(String(body.access_token ?? ''));
       if (!data?.user) return fail('Link de recuperação inválido ou expirado.', 401);
-      if (String(body.password ?? '').length < 6) return fail('A senha deve ter no mínimo 6 caracteres.');
+      if (String(body.password ?? '').length < 8) return fail('A senha deve ter no mínimo 8 caracteres.');
       const { error } = await db.auth.admin.updateUserById(data.user.id, { password: body.password });
       if (error) return fail('Não foi possível salvar a nova senha.');
       return json({ ok: true });
@@ -661,6 +661,9 @@ async function handle(req: Request, ck: Ck): Promise<Response> {
       const { error } = await db.auth.admin.updateUserById(uid, { password: nova });
       if (error) return fail('Não foi possível alterar a senha.');
       await db.from('cx_acessos').update({ trocar_senha: false }).eq('user_id', uid);
+      // Trocar a senha encerra as sessões antigas: abre uma nova com a senha nova para o aluno continuar logado.
+      const { data: s2 } = await anon().auth.signInWithPassword({ email: user.email!, password: nova });
+      if (s2?.session) setSession(ck, s2.session);
       return json({ ok: true });
     }
 
