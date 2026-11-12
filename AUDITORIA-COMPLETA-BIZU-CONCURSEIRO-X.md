@@ -181,3 +181,25 @@ Fonte: pasta MENTORIA/SIMULADOS/SD PM SP. Arquivos públicos (abrem e baixam sem
 - Parte integrada ao final, com dados do próprio banco do site: mapa mental, lei seca, jurisprudência, bateria de até 10 questões publicadas e compatíveis (reais primeiro, com gabarito e comentário), revisão rápida (flashcards) e vídeos.
 - Correções da auditoria incorporadas (ex.: improbidade art. 23 §5º após ADI 7.156/7.236; "intervirá" na flexão verbal; maus-tratos com hífen; aba padrão "Planilha1" no Excel; art. 245 §4º do CPP; Google Workspace; regra de três 42,97). Pontos sem fonte conferível (leis de 2026 não verificadas no Planalto) foram omitidos ou tratados de forma geral.
 - Verificação automática: nenhum caractere perdido na renderização, nenhuma menção a outro produto, todas com título, tabela, caixas e gabarito em cada questão; registros `cx_apostilas` em versão 2.0 (126/126 publicados) e arquivos conferidos no site publicado.
+
+## 29. Auditoria de matérias, assuntos, subassuntos, materiais e questões (12/11/2026)
+
+**Estrutura e materiais**
+- Nenhuma disciplina ou assunto do edital faltando nos dois cursos. Os 126 assuntos têm os 5 materiais (aula, revisão, flashcards, mapa mental e apostila).
+- Atualidades: os 2 complementos que estavam ocultos foram checados em fontes oficiais (TSE, Senado, Agência Brasil), corrigidos e publicados. Com isso a cobertura do edital fica completa.
+- Drive (pasta BIZUCON X): não havia arquivos novos para importar. Os simulados de PM e GCM continuam só na área de Simulados, para não repetir questões no banco.
+
+**Questões**
+- **Revisão:** as 62 questões que estavam em revisão foram decididas sem pendência manual.
+  - 22 publicadas: algumas com o enunciado corrigido (grifo reconstruído ou contexto datado ajustado) e com comentário fundamentado.
+  - 40 retiradas, cada uma com o motivo registrado: fora do edital (RDPM, Lei 10.261/68, Lei 10.177/98, LC 1.080/08 etc.), gabarito duvidoso, figura ausente, conteúdo datado ou norma não conferida.
+- **Classificação:** 71 questões publicadas que estavam sem subassunto foram classificadas. As demais tratam de conteúdo do assunto que não cabe em nenhum subassunto listado e continuam ligadas ao assunto.
+- **Questões autorais novas:** 254, com 5 alternativas e comentário, criadas para completar os subassuntos que tinham menos de 5 questões compatíveis (antes, 9 subassuntos da PM tinham zero).
+- **Questões reais VUNESP do acervo Bizu (lido sem nenhuma alteração na origem):**
+  - Cargos de origem: Soldado PM, Investigador, Escrivão, Agente, Papiloscopista e Guarda Municipal.
+  - Critérios: só as compatíveis com cada edital; gabarito conferido; descartadas as que dependem de figura, as desatualizadas, as já existentes e as que ficaram com a resposta alterada por mudança de lei.
+  - Resultado: 186 publicadas na PM e 266 na GCM (as que servem aos dois cursos têm uma cópia em cada).
+- **Resultado final:**
+  - PM-SP: 1.799 questões publicadas (1.130 reais), mínimo de 16 por assunto e de 5 por subassunto.
+  - GCM: 2.580 publicadas (256 reais), mínimo de 25 por assunto e de 5 por subassunto.
+  - Nenhuma questão em revisão.
