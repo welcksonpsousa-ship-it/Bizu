@@ -569,8 +569,8 @@ div:has(>.ldots:first-child)[style]{font-size:var(--fs-sm)}
   .ui-collapsed .nav-badge{position:static}
   .menu-toggle{display:inline-flex}
   .topbar{padding:0 12px;gap:10px;padding-top:env(safe-area-inset-top)}
-  .topbar-brand{display:inline}
-  .topbar-page{display:none}
+  .topbar-brand{display:none}
+  .topbar-page{display:block;min-width:0;font-size:15px}
   .main{padding:18px 16px 56px}
   .nav-btn,.adm-nav-btn,.adm-back{min-height:44px;font-size:14.5px}
   .career-btn{min-height:48px}
@@ -928,3 +928,12 @@ body.leitor-aberto{overflow:hidden}
 .fccard{min-width:0}
 .fccard .badge{white-space:normal;max-width:100%;overflow-wrap:anywhere;text-align:left}
 .fccard .fcfront,.fccard .fcback{overflow-wrap:anywhere}
+
+/* Primeiro acesso: escolha do concurso */
+.escolha-curso{position:fixed;inset:0;z-index:1100;background:rgba(5,8,12,.78);display:flex;align-items:center;justify-content:center;padding:16px}
+.escolha-box{width:100%;max-width:520px;background:var(--surface);border:1px solid var(--border);border-radius:var(--r-lg);padding:24px;box-shadow:0 20px 60px rgba(0,0,0,.45)}
+.escolha-box h2{margin:0 0 6px;font-size:20px}
+.escolha-ops{display:grid;gap:10px;margin:16px 0 4px}
+.escolha-op{display:flex;flex-direction:column;align-items:flex-start;gap:2px;text-align:left;padding:16px 18px;border-radius:var(--r-md,10px);border:1px solid var(--border-2,var(--border));background:var(--surface-2,var(--surface));color:var(--text);cursor:pointer;font-size:16px}
+.escolha-op:hover,.escolha-op:focus-visible{border-color:var(--accent-line);outline:none;background:var(--accent-soft)}
+.escolha-op:disabled{opacity:.6;cursor:wait}

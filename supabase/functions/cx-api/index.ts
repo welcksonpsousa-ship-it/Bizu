@@ -135,13 +135,18 @@ async function sha1(s: string) {
 const hashQuestao = (enun: string, ops: string[]) => sha1(normTxt(enun) + '|' + ops.map(normTxt).join('|'));
 const embaralhar = <T,>(a: T[]) => { const r = [...a]; for (let i = r.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [r[i], r[j]] = [r[j], r[i]]; } return r; };
 // PostgREST limita 1000 linhas por resposta: lê página a página.
+// Páginas pedidas de 4 em 4 em paralelo (a ordem é mantida); para na primeira página incompleta.
 async function todos(mk: (a: number, b: number) => any) {
   const out: any[] = [];
-  for (let i = 0; i < 20; i++) {
-    const { data, error } = await mk(i * 1000, i * 1000 + 999);
-    if (error) throw error;
-    out.push(...(data ?? []));
-    if (!data || data.length < 1000) break;
+  for (let i = 0; i < 20; i += 4) {
+    const rs = await Promise.all([0, 1, 2, 3].map((k) => mk((i + k) * 1000, (i + k) * 1000 + 999)));
+    let fim = false;
+    for (const { data, error } of rs) {
+      if (error) throw error;
+      out.push(...(data ?? []));
+      if (!data || data.length < 1000) { fim = true; break; }
+    }
+    if (fim) break;
   }
   return out;
 }
@@ -634,6 +639,7 @@ async function handle(req: Request, ck: Ck): Promise<Response> {
       return json({
         profile: { full_name: perfil?.nome ?? (user.user_metadata as any)?.full_name ?? null, email: user.email },
         curso_id: perfil?.curso_id ?? cursos?.[0]?.id ?? null,
+        curso_escolhido: !!perfil?.curso_id,
         cursos: cursos ?? [], admin, acesso: acessoPublico(acesso),
         metrics: { questions: total, accuracy: total ? (acertos / total) * 100 : 0, xp, nivel: nivelDe(xp) },
       });

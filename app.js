@@ -107,6 +107,26 @@ async function iniciar() {
   aplicarPerfilPreparacao();
   const v = (location.hash.match(/^#v=([\w-]+)/) || [])[1];
   showView(v && $('v-' + (v.startsWith('m-') ? 'material' : v)) ? v : S.view || 'painel'); // mantém a tela que o aluno abriu durante o carregamento
+  if (d.curso_escolhido === false && S.cursos.length > 1) escolherCurso();
+}
+// Primeiro acesso: o aluno escolhe o concurso antes de começar (antes caía no primeiro curso da lista sem perceber).
+function escolherCurso() {
+  if ($('escolhaCurso')) return;
+  const ov = document.createElement('div'); ov.id = 'escolhaCurso'; ov.className = 'escolha-curso'; ov.setAttribute('role', 'dialog'); ov.setAttribute('aria-modal', 'true'); ov.setAttribute('aria-labelledby', 'escolhaTit');
+  ov.innerHTML = `<div class="escolha-box"><h2 id="escolhaTit">Qual concurso você vai fazer?</h2>
+    <p class="muted small">Todo o conteúdo do site (disciplinas, questões, simulados, cronograma) segue o edital do concurso escolhido. Você pode trocar quando quiser no seletor "Curso" do menu.</p>
+    <div class="escolha-ops">${S.cursos.map((c) => `<button type="button" class="escolha-op" data-c="${esc(c.id)}"><strong>${esc(c.nome)}</strong><span class="muted small">${esc(c.banca || '')}</span></button>`).join('')}</div>
+    <p class="muted small" id="escolhaMsg" role="status"></p></div>`;
+  document.body.appendChild(ov);
+  ov.querySelectorAll('[data-c]').forEach((b) => b.addEventListener('click', async () => {
+    ov.querySelectorAll('button').forEach((x) => { x.disabled = true; }); $('escolhaMsg').textContent = 'Preparando o seu curso...';
+    try {
+      if (S.curso && S.curso.id === b.dataset.c) await api('/perfil', { body: { curso_id: b.dataset.c } });
+      else await trocarCurso(b.dataset.c);
+      ov.remove();
+    } catch (e) { $('escolhaMsg').textContent = e.message; ov.querySelectorAll('button').forEach((x) => { x.disabled = false; }); }
+  }));
+  ov.querySelector('[data-c]').focus();
 }
 // Usa o perfil de preparação (se preenchido) para sugerir tempo de estudo e rotina; nada é obrigatório.
 async function aplicarPerfilPreparacao() {
@@ -482,6 +502,11 @@ async function renderMaterial(tipo) {
     sd.innerHTML = opts(discs, jur ? 'Todas as matérias jurídicas' : 'Todas as disciplinas');
     sd.value = discs.some((d) => d.id === val) ? val : '';
     sd.dataset.lista = chave; preencherAss(CASCATAS[1]);
+  }
+  // Flashcards: são mais de 500 por curso. Na primeira abertura mostra só a primeira disciplina (rápido);
+  // o aluno pode escolher outra ou "Todas as disciplinas" no filtro.
+  if (tipo === 'flashcard' && !sd.value && discs.length && S.fcAuto !== (S.curso && S.curso.id)) {
+    S.fcAuto = S.curso && S.curso.id; sd.value = discs[0].id; preencherAss(CASCATAS[1]);
   }
   try {
     // Uma consulta só (a API devolve a lista completa, paginada no servidor); em Lei Seca/Jurisprudência
