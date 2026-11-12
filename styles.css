@@ -924,3 +924,7 @@ body.leitor-aberto{overflow:hidden}
 .leitor-pag .bx{max-width:none}
 .leitor-pag a{color:#2447A8}
 @media (max-width:640px){.leitor-corpo{padding:0 0 48px}.leitor-pag{border-radius:0;box-shadow:none}.leitor-tit{flex-basis:100%;order:-1}.leitor-barra{gap:6px;padding:8px 12px}}
+/* Flashcards: nome longo do assunto quebra linha em vez de alargar a tela */
+.fccard{min-width:0}
+.fccard .badge{white-space:normal;max-width:100%;overflow-wrap:anywhere;text-align:left}
+.fccard .fcfront,.fccard .fcback{overflow-wrap:anywhere}
