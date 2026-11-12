@@ -938,3 +938,74 @@ body.leitor-aberto{overflow:hidden}
 .escolha-op{display:flex;flex-direction:column;align-items:flex-start;gap:2px;text-align:left;padding:16px 18px;border-radius:var(--r-md,10px);border:1px solid var(--border-2,var(--border));background:var(--surface-2,var(--surface));color:var(--text);cursor:pointer;font-size:16px}
 .escolha-op:hover,.escolha-op:focus-visible{border-color:var(--accent-line);outline:none;background:var(--accent-soft)}
 .escolha-op:disabled{opacity:.6;cursor:wait}
+
+/* ===== Página de entrada (login) com temática de concursos de segurança ===== */
+#gate{position:relative;overflow:hidden;display:block;padding:0;background:
+  radial-gradient(800px 520px at 12% 8%,rgba(15,138,95,.22),transparent 62%),
+  radial-gradient(700px 520px at 95% 100%,rgba(212,167,58,.12),transparent 60%),
+  repeating-linear-gradient(135deg,rgba(255,255,255,.018) 0 14px,transparent 14px 28px),
+  var(--bg)}
+#gate::after{content:"";position:absolute;right:-120px;top:50%;width:620px;height:700px;transform:translateY(-50%);opacity:.05;pointer-events:none;
+  background:no-repeat center/contain url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 72'%3E%3Cpath d='M32 3 58 12v20c0 17-11 29-26 37C17 61 6 49 6 32V12Z' fill='none' stroke='%23e9c86b' stroke-width='2'/%3E%3Cpath d='m32 22 3.6 7.3 8 1.2-5.8 5.6 1.4 8L32 40.3l-7.2 3.8 1.4-8-5.8-5.6 8-1.2Z' fill='%23e9c86b'/%3E%3C/svg%3E")}
+.gate-luz{position:absolute;left:0;right:0;top:0;height:4px;z-index:2;background:linear-gradient(90deg,#1d4ed8 0%,#3b82f6 22%,transparent 40%,transparent 60%,#ef4444 78%,#b91c1c 100%);background-size:200% 100%;animation:gateSirene 3.2s linear infinite;box-shadow:0 0 18px rgba(59,130,246,.35),0 0 18px rgba(239,68,68,.25)}
+@keyframes gateSirene{0%{background-position:0 0}100%{background-position:200% 0}}
+@media (prefers-reduced-motion:reduce){.gate-luz{animation:none}}
+.gate-wrap{position:relative;z-index:1;min-height:100vh;max-width:1180px;margin:0 auto;padding:48px 28px;display:grid;grid-template-columns:minmax(0,1.15fr) minmax(320px,410px);gap:56px;align-items:center}
+.gate-hero{color:var(--text)}
+.gh-marca{display:flex;align-items:center;gap:14px;margin-bottom:34px}
+.gh-escudo{width:54px;height:60px;flex-shrink:0;filter:drop-shadow(0 6px 18px rgba(212,167,58,.25))}
+.gh-escudo svg{width:100%;height:100%}
+.gh-nome{font-size:20px;font-weight:800;letter-spacing:-.01em}
+.gh-nome span{color:var(--accent-text)}
+.gh-sub{font-size:11.5px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--text-3);margin-top:2px}
+.gh-titulo{font-size:clamp(32px,4.4vw,52px);line-height:1.06;font-weight:800;letter-spacing:-.03em;margin:0 0 16px}
+.gh-titulo span{background:linear-gradient(90deg,#6ee7b7,#e9c86b);-webkit-background-clip:text;background-clip:text;color:transparent}
+.gh-texto{font-size:16.5px;line-height:1.6;color:var(--text-2);max-width:560px;margin:0 0 26px}
+.gh-cursos{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:24px;max-width:600px}
+.gh-curso{display:flex;gap:12px;align-items:center;padding:14px 16px;border-radius:14px;border:1px solid var(--border-2);background:linear-gradient(180deg,rgba(255,255,255,.035),rgba(255,255,255,.01))}
+.gh-curso strong{display:block;font-size:15px}
+.gh-curso span{display:block;font-size:12.5px;color:var(--text-3);margin-top:2px;line-height:1.35}
+.gh-ic{width:34px;height:34px;flex-shrink:0;padding:6px;border-radius:10px;fill:none;stroke-width:1.7;stroke-linejoin:round;stroke-linecap:round}
+.gh-pm .gh-ic{stroke:#93c5fd;background:rgba(59,130,246,.14);border:1px solid rgba(96,165,250,.35)}
+.gh-pm .gh-ic .gh-ic-f{fill:#93c5fd;stroke:none}
+.gh-gcm .gh-ic{stroke:var(--accent-text);background:var(--accent-soft);border:1px solid var(--accent-line)}
+.gh-numeros{list-style:none;padding:0;margin:0 0 24px;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1px;max-width:600px;border:1px solid var(--border);border-radius:14px;overflow:hidden;background:var(--border)}
+.gh-numeros li{background:rgba(17,24,33,.92);padding:14px 12px}
+.gh-numeros strong{display:block;font-size:22px;font-weight:800;color:var(--primary-text);letter-spacing:-.02em}
+.gh-numeros span{display:block;font-size:12px;color:var(--text-3);line-height:1.3;margin-top:2px}
+.gh-recursos{list-style:none;padding:0;margin:0;display:grid;gap:9px;color:var(--text-2);font-size:14.5px}
+.gh-recursos li{display:flex;gap:10px;align-items:flex-start}
+.gh-recursos svg{width:18px;height:18px;flex-shrink:0;margin-top:2px;fill:none;stroke:var(--ok);stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round}
+.gate-lado{display:flex;flex-direction:column;gap:14px}
+.gate-lado .gate-panel{max-width:none;position:relative;border-color:var(--border-2);background:linear-gradient(180deg,rgba(21,30,41,.96),rgba(17,24,33,.96));box-shadow:0 24px 60px rgba(0,0,0,.5),0 0 0 1px rgba(212,167,58,.06)}
+.gate-lado .gate-panel::before{content:"";position:absolute;left:24px;right:24px;top:-1px;height:2px;border-radius:2px;background:linear-gradient(90deg,transparent,var(--accent),transparent)}
+.gate-lado .gate-logo-top{font-size:24px}
+.gate-lado .gate-logo-sub{letter-spacing:.02em;text-transform:none;font-size:13.5px;font-weight:500;margin-top:6px}
+.gate-lado .btn-primary{width:100%;padding:13px 16px;font-size:15.5px}
+.gate-selos{display:flex;justify-content:center;gap:8px;margin-top:18px;padding-top:16px;border-top:1px solid var(--border)}
+.gate-selos span{font-size:10.5px;font-weight:700;letter-spacing:.08em;padding:4px 10px;border-radius:999px;border:1px solid var(--border-2);color:var(--text-3)}
+.gate-legal{font-size:11.5px;color:var(--text-3);text-align:center;line-height:1.5;margin:0 8px}
+@media (max-width:960px){
+  .gate-wrap{grid-template-columns:1fr;gap:26px;padding:32px 16px 28px;max-width:560px;align-items:start}
+  .gh-marca{margin-bottom:20px}
+  .gh-texto{font-size:15px;margin-bottom:18px}
+  .gh-recursos{display:none}
+  .gh-numeros{grid-template-columns:repeat(2,minmax(0,1fr));margin-bottom:0}
+  #gate::after{width:360px;height:420px;right:-140px;top:120px;transform:none}
+}
+@media (max-width:420px){
+  .gh-cursos{grid-template-columns:1fr}
+  .gh-titulo{font-size:31px}
+  .gh-numeros strong{font-size:19px}
+}
+/* Celular: o formulário de entrada vem logo após a marca e o título (sem precisar rolar). */
+@media (max-width:960px){
+  .gate-hero{display:contents}
+  .gh-marca{order:1;margin-bottom:0}
+  .gh-titulo{order:2;margin:0;font-size:30px}
+  .gate-lado{order:3}
+  .gh-texto{order:4;margin:6px 0 0}
+  .gh-cursos{order:5;margin:0}
+  .gh-numeros{order:6}
+  .gate-wrap{display:flex;flex-direction:column;gap:18px}
+}
