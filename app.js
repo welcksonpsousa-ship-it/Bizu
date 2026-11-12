@@ -542,7 +542,7 @@ function corpoMaterial(m) {
   if (m.tipo === 'mapa_mental') return `<p class="small" style="margin:0 0 8px"><strong>${esc(c.no_central || m.titulo)}</strong></p><ul class="mapa-ul">${(c.ramos || []).map((r) => `<li><strong>${esc(r.label)}</strong>${(r.filhos || []).length ? `<ul class="mapa-ul">${r.filhos.map((f) => `<li>${esc(f)}</li>`).join('')}</ul>` : ''}</li>`).join('')}</ul>`;
   if (m.tipo === 'lei_seca') return `${c.lei ? `<div class="badge">${esc(c.lei)}${c.artigo ? ' · ' + esc(c.artigo) : ''}</div>` : ''}<div class="scrl mt1">${esc(c.texto || '')}</div>${c.observacao ? `<p class="muted small mt1">${esc(c.observacao)}</p>` : ''}${fonte}`;
   if (m.tipo === 'jurisprudencia') return `<div class="juris-trib">${esc([c.tribunal, c.referencia].filter(Boolean).join(' · '))}</div><div class="juris-tese">${esc(c.enunciado || '')}</div>${fonte}`;
-  if (m.tipo === 'pdf' && m.url) return `<div class="pdf-card"><div class="pdf-meta">${textoFmt(c.texto)}<div class="muted small">${c.versao ? 'Versão ' + esc(c.versao) + ' · ' : ''}${c.atualizado_em ? 'atualizada em ' + esc(new Date(c.atualizado_em + 'T12:00:00').toLocaleDateString('pt-BR')) : ''}${c.paginas ? ' · ' + esc(c.paginas) + ' páginas' : ''}${c.tamanho_kb ? ' · ' + esc(c.tamanho_kb) + ' KB' : ''}</div></div><div class="flex gap2 wrap"><a class="btn-blue btn-sm" href="${esc(m.url)}" target="_blank" rel="noopener">Abrir PDF</a><a class="btn-ghost btn-sm" href="${esc(m.url)}" download>Baixar</a></div></div>` + fonte;
+  if (m.tipo === 'pdf' && m.url) return `<div class="pdf-card"><div class="pdf-meta">${textoFmt(c.texto)}<div class="muted small">${c.versao ? 'Versão ' + esc(c.versao) + ' · ' : ''}${c.atualizado_em ? 'atualizada em ' + esc(new Date(c.atualizado_em + 'T12:00:00').toLocaleDateString('pt-BR')) : ''}${c.paginas ? ' · ' + esc(c.paginas) + ' páginas' : ''}${c.tamanho_kb ? ' · ' + esc(c.tamanho_kb) + ' KB' : ''}</div></div><div class="flex gap2 wrap">${/^\/apostilas\/[\w.-]+\.pdf$/.test(m.url) ? `<button type="button" class="btn-blue btn-sm" data-ler="${esc(m.url)}" data-ler-tit="${esc(m.titulo || '')}">Ler no site</button>` : ''}<a class="btn-ghost btn-sm" href="${esc(m.url)}" target="_blank" rel="noopener">Abrir PDF</a><a class="btn-ghost btn-sm" href="${esc(m.url)}" download>Baixar</a></div></div>` + fonte;
   return textoFmt(c.texto) + (m.url ? `<p class="mt1"><a class="btn-blue btn-sm" href="${esc(m.url)}" target="_blank" rel="noopener">Abrir</a></p>` : '') + fonte;
 }
 
@@ -1521,3 +1521,76 @@ if (location.hash.includes('type=recovery') && location.hash.includes('access_to
   api('/session').then(() => iniciar()).catch(() => {});
 }
 if ('serviceWorker' in navigator) window.addEventListener('load', () => navigator.serviceWorker.register('/sw.js').catch(() => {}));
+
+/* ---------------- LEITOR DE APOSTILAS NA TELA ----------------
+   A apostila é desenhada dentro do site com o mesmo padrão editorial do PDF (editorial.js):
+   sumário clicável, caixas Bizu/Atenção/Pegadinha, tabelas e questões interativas. */
+const LEITOR = { url: null };
+function leitorCss() {
+  if (document.getElementById('bxCss') || !window.BizuEditorial) return;
+  const st = document.createElement('style'); st.id = 'bxCss'; st.textContent = window.BizuEditorial.css; document.head.appendChild(st);
+  const f = document.createElement('link'); f.rel = 'stylesheet'; f.href = window.BizuEditorial.fontesCss; document.head.appendChild(f);
+}
+function leitorLinks(raiz) {
+  const w = document.createTreeWalker(raiz, NodeFilter.SHOW_TEXT); const nos = [];
+  while (w.nextNode()) if (/https?:\/\//.test(w.currentNode.nodeValue) && !w.currentNode.parentElement.closest('a')) nos.push(w.currentNode);
+  nos.forEach((t) => {
+    const frag = document.createDocumentFragment(); let ult = 0; const re = /https?:\/\/[^\s<>"')]+/g; let m;
+    while ((m = re.exec(t.nodeValue))) {
+      frag.appendChild(document.createTextNode(t.nodeValue.slice(ult, m.index)));
+      const a = document.createElement('a'); a.href = m[0].replace(/[.,;]$/, ''); a.textContent = /youtu/.test(m[0]) ? 'Assistir vídeo' : m[0]; a.target = '_blank'; a.rel = 'noopener'; frag.appendChild(a);
+      ult = m.index + m[0].length;
+    }
+    frag.appendChild(document.createTextNode(t.nodeValue.slice(ult))); t.replaceWith(frag);
+  });
+}
+const leitorChave = (u) => 'cx-leitor:' + u;
+function leitorSalvar() { try { const c = $('leitorCorpo'); if (LEITOR.url && c) localStorage.setItem(leitorChave(LEITOR.url), String(c.scrollTop)); } catch (e) {} }
+async function abrirLeitor(url, titulo) {
+  leitorCss();
+  let ov = $('leitor');
+  if (!ov) {
+    ov = document.createElement('div'); ov.id = 'leitor'; ov.className = 'leitor'; ov.setAttribute('role', 'dialog'); ov.setAttribute('aria-modal', 'true');
+    ov.innerHTML = `<div class="leitor-barra"><button type="button" class="btn-ghost btn-sm" id="leitorFechar" aria-label="Fechar leitor">← Voltar</button>
+      <div class="leitor-tit" id="leitorTit"></div>
+      <div class="leitor-acoes"><button type="button" class="btn-ghost btn-sm" data-lfonte="-1" aria-label="Diminuir letra">A−</button><button type="button" class="btn-ghost btn-sm" data-lfonte="1" aria-label="Aumentar letra">A+</button>
+      <button type="button" class="btn-ghost btn-sm" id="leitorSum">Sumário</button><a class="btn-blue btn-sm" id="leitorPdf" target="_blank" rel="noopener" download>Baixar PDF</a></div></div>
+      <div class="leitor-prog"><span id="leitorProg"></span></div><div class="leitor-corpo" id="leitorCorpo"><div class="leitor-pag" id="leitorPag"></div></div>`;
+    document.body.appendChild(ov);
+    $('leitorFechar').addEventListener('click', fecharLeitor);
+    $('leitorSum').addEventListener('click', () => { const s = $('leitorPag').querySelector('.bx-sumario'); if (s) s.scrollIntoView({ behavior: 'smooth', block: 'start' }); });
+    ov.querySelectorAll('[data-lfonte]').forEach((b) => b.addEventListener('click', () => {
+      let t = 0; try { t = Number(localStorage.getItem('cx-leitor-fonte')) || 0; } catch (e) {}
+      t = Math.max(-2, Math.min(4, t + Number(b.dataset.lfonte))); try { localStorage.setItem('cx-leitor-fonte', String(t)); } catch (e) {}
+      $('leitorPag').style.fontSize = (100 + t * 8) + '%';
+    }));
+    let pend = null;
+    $('leitorCorpo').addEventListener('scroll', () => {
+      const c = $('leitorCorpo'); const p = c.scrollHeight > c.clientHeight ? c.scrollTop / (c.scrollHeight - c.clientHeight) : 0;
+      $('leitorProg').style.width = Math.round(p * 100) + '%';
+      clearTimeout(pend); pend = setTimeout(leitorSalvar, 400);
+    });
+    document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && $('leitor') && !$('leitor').classList.contains('hidden')) fecharLeitor(); });
+  }
+  LEITOR.url = url;
+  ov.classList.remove('hidden'); document.body.classList.add('leitor-aberto');
+  $('leitorTit').textContent = titulo || 'Apostila'; $('leitorPdf').href = url;
+  const pag = $('leitorPag'); pag.innerHTML = '<p class="muted" style="padding:24px">Carregando a apostila...</p>';
+  let t = 0; try { t = Number(localStorage.getItem('cx-leitor-fonte')) || 0; } catch (e) {} pag.style.fontSize = (100 + t * 8) + '%';
+  try {
+    if (!window.BizuEditorial) throw new Error('leitor indisponível');
+    const r = await fetch(url.replace(/^\/apostilas\//, '/apostilas/web/').replace(/\.pdf$/, '.json'));
+    if (!r.ok) throw new Error('não encontrada');
+    const d = await r.json();
+    if (LEITOR.url !== url) return;
+    const trilha = d.curso === 'gcm-geral' ? 'GCM · Guarda Civil Municipal' : 'PM-SP · Soldado PM 2ª Classe';
+    pag.innerHTML = window.BizuEditorial.html(d.md, { trilha, materia: d.materia, prefixo: 'bx-' });
+    window.BizuEditorial.ativar(pag); leitorLinks(pag);
+    let pos = 0; try { pos = Number(localStorage.getItem(leitorChave(url))) || 0; } catch (e) {}
+    $('leitorCorpo').scrollTop = pos;
+  } catch (e) {
+    pag.innerHTML = `<div style="padding:24px"><p>Não foi possível mostrar a apostila no site agora.</p><p><a class="btn-blue btn-sm" href="${esc(url)}" target="_blank" rel="noopener">Abrir o PDF</a></p></div>`;
+  }
+}
+function fecharLeitor() { leitorSalvar(); const ov = $('leitor'); if (ov) ov.classList.add('hidden'); document.body.classList.remove('leitor-aberto'); LEITOR.url = null; }
+document.addEventListener('click', (e) => { const b = e.target.closest('[data-ler]'); if (b) { e.preventDefault(); abrirLeitor(b.dataset.ler, b.dataset.lerTit || ''); } });

@@ -908,3 +908,19 @@ div:has(>.ldots:first-child)[style]{font-size:var(--fs-sm)}
 .red-crit-item{border:1px solid var(--border);border-radius:var(--r-lg);padding:12px}
 .red-erros{display:grid;gap:8px;margin-top:6px}
 .red-erro{border-left:3px solid var(--border);padding-left:10px;overflow-wrap:anywhere}
+
+/* Leitor de apostilas na tela */
+.leitor{position:fixed;inset:0;z-index:1000;background:#EEF1F6;display:flex;flex-direction:column}
+.leitor.hidden{display:none}
+body.leitor-aberto{overflow:hidden}
+.leitor-barra{display:flex;align-items:center;gap:10px;padding:10px 16px;background:#0F1B33;color:#fff;flex-wrap:wrap}
+.leitor-barra .btn-ghost{color:#fff;border-color:rgba(255,255,255,.35);background:transparent}
+.leitor-tit{flex:1;min-width:0;font-weight:700;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.leitor-acoes{display:flex;gap:6px;flex-wrap:wrap}
+.leitor-prog{height:3px;background:rgba(15,27,51,.12)}
+.leitor-prog span{display:block;height:100%;width:0;background:#B8860B;transition:width .15s}
+.leitor-corpo{flex:1;overflow-y:auto;-webkit-overflow-scrolling:touch;padding:24px 16px 64px}
+.leitor-pag{max-width:880px;margin:0 auto;background:#fff;border-radius:10px;box-shadow:0 2px 14px rgba(15,27,51,.10);overflow:hidden;color:#1C2430}
+.leitor-pag .bx{max-width:none}
+.leitor-pag a{color:#2447A8}
+@media (max-width:640px){.leitor-corpo{padding:0 0 48px}.leitor-pag{border-radius:0;box-shadow:none}.leitor-tit{flex-basis:100%;order:-1}.leitor-barra{gap:6px;padding:8px 12px}}
