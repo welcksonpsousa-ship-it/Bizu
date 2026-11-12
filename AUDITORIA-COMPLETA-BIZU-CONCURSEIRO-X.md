@@ -215,3 +215,13 @@ Fonte: pasta MENTORIA/SIMULADOS/SD PM SP. Arquivos públicos (abrem e baixam sem
   - todos os 126 assuntos mostram as questões, com soma igual ao banco (PM 1.799; GCM 2.580);
   - os 396 itens (assuntos e subassuntos) trazem questões na tela Questões;
   - os flashcards voltam completos (PM 522; GCM 504).
+
+## 31. Prova PM-SP Soldado 2021 com gabarito oficial (12/11/2026)
+
+- **Gabarito:** encontrado na internet, oficial e definitivo. É o Comunicado DP-22/321/21 da Diretoria de Pessoal da PM-SP, publicado no DOE de 04/06/2021 e disponível no site de concursos da PM. Corresponde à prova de 16/05/2021, Edital DP-1/321/21, caderno PMES1903/001, versão 1 (o mesmo caderno do Drive).
+- **Conferência:** o gabarito definitivo é igual ao preliminar (DP-21/321/21, DOE de 18/05/2021). Nenhuma questão foi anulada e as contas de Matemática foram refeitas.
+- **Questões no banco:** 60 transcritas e comentadas.
+  - 54 publicadas como questões reais da PM.
+  - 1 marcada como desatualizada: a Q49, sobre a Constituição do Chile, cujo contexto mudou depois de 2022.
+  - 5 que dependem de figura (Q22, 28, 44, 45 e 52) ficam só no caderno.
+- **Provas reais:** "PM-SP 2021 — Prova + gabarito comentado" foi publicada em ordem cronológica, com o caderno oficial, o gabarito oficial definitivo e o gabarito comentado (PDF de 31 páginas no padrão das apostilas). As provas reais de PM-SP Soldado no site passam a ser 17.
