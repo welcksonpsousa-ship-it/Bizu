@@ -198,7 +198,7 @@ Fonte: pasta MENTORIA/SIMULADOS/SD PM SP. Arquivos públicos (abrem e baixam sem
 - **Questões reais VUNESP do acervo Bizu (lido sem nenhuma alteração na origem):**
   - Cargos de origem: Soldado PM, Investigador, Escrivão, Agente, Papiloscopista e Guarda Municipal.
   - Critérios: só as compatíveis com cada edital; gabarito conferido; descartadas as que dependem de figura, as desatualizadas, as já existentes e as que ficaram com a resposta alterada por mudança de lei.
-  - Resultado: 186 publicadas na PM e 266 na GCM (as que servem aos dois cursos têm uma cópia em cada).
+  - Resultado: 186 publicadas na PM e 256 na GCM (as que servem aos dois cursos têm uma cópia em cada).
 - **Resultado final:**
   - PM-SP: 1.799 questões publicadas (1.130 reais), mínimo de 16 por assunto e de 5 por subassunto.
   - GCM: 2.580 publicadas (256 reais), mínimo de 25 por assunto e de 5 por subassunto.
