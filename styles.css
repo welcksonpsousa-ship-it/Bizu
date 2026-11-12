@@ -671,8 +671,9 @@ div:has(>.ldots:first-child)[style]{font-size:var(--fs-sm)}
 .cron-linha .cron-quando{color:var(--text-3);font-size:var(--fs-xs)}
 .cron-linha strong{font-variant-numeric:tabular-nums;white-space:nowrap}
 @media (max-width:860px){
-  /* com mais um item no topo, a marca precisa saber encolher em vez de invadir o chip da trilha */
-  .topbar-brand{display:inline-block;max-width:100%;min-width:0;overflow:hidden;text-overflow:ellipsis;vertical-align:middle}
+  /* no celular/tablet o topo mostra o nome da tela (a marca já aparece no menu lateral) */
+  .topbar-brand{display:none}
+  .topbar-page{display:block;min-width:0;max-width:100%;overflow:hidden;text-overflow:ellipsis}
 }
 @media (max-width:640px){
   .cron-display{font-size:42px}
