@@ -67,13 +67,10 @@ async function carregarEstrutura(curso: string, incluirNaoPublicado = false) {
     .eq('curso_id', curso).order('ordem');
   if (error) throw error;
   const cont: Record<string, Record<string, number>> = {};
-  // Paginado: o banco devolve no máximo 1000 linhas por consulta; sem isso os contadores ficavam cortados.
-  const qq = (a: number, b: number) => { let q = porCurso(db.from('cx_questoes').select('id,assunto_id' + JOIN_CURSO), curso); if (!incluirNaoPublicado) q = q.eq('publicado', true); return q.order('id').range(a, b); };
-  const qm = (a: number, b: number) => { let q = porCurso(db.from('cx_materiais').select('id,assunto_id,tipo' + JOIN_CURSO), curso); if (!incluirNaoPublicado) q = q.eq('publicado', true); return q.order('id').range(a, b); };
-  const [qs, ms, vs] = await Promise.all([todos(qq), todos(qm), vinculosDoCurso(curso, { soPublicados: !incluirNaoPublicado })]);
-  vs.forEach((v: any) => { const t = v.m.tipo; (cont[v.assunto_id] ??= {})[t] = (cont[v.assunto_id][t] ?? 0) + 1; });
-  (qs ?? []).forEach((q: any) => { (cont[q.assunto_id] ??= {}).questoes = (cont[q.assunto_id].questoes ?? 0) + 1; });
-  (ms ?? []).forEach((m: any) => { (cont[m.assunto_id] ??= {})[m.tipo] = (cont[m.assunto_id][m.tipo] ?? 0) + 1; });
+  // Contagem feita no banco (uma consulta agregada): antes lia milhares de linhas só para contar.
+  const { data: cts, error: ec } = await db.rpc('cx_contagem', { p_curso: curso, p_todos: incluirNaoPublicado });
+  if (ec) throw ec;
+  (cts ?? []).forEach((r: any) => { const c = (cont[r.assunto_id] ??= {}); c[r.tipo] = (c[r.tipo] ?? 0) + r.n; });
   const ord = (a: any, b: any) => a.ordem - b.ordem || String(a.nome).localeCompare(b.nome);
   return (disc ?? []).map((d: any) => ({
     id: d.id, nome: d.nome, questoes: d.questoes,
@@ -689,7 +686,19 @@ async function handle(req: Request, ck: Ck): Promise<Response> {
           a.subassuntos.forEach((s: any) => { if (n(s.nome).includes(termo)) res.push({ nivel: 'subassunto', disciplina_id: d.id, disciplina: d.nome, assunto_id: a.id, assunto: a.nome, subassunto_id: s.id, subassunto: s.nome }); });
         });
       });
-      return json({ resultados: res.slice(0, 60) });
+      // Busca também no conteúdo (aulas, lei seca, flashcards, jurisprudência, mapas, revisões e enunciados de questões),
+      // agrupada por assunto. Termos curtos demais só procuram nos nomes do edital.
+      const lim = termo.replace(/[%_\\]/g, ' ').trim();
+      if (lim.length >= 3) {
+        const { data: hits } = await db.rpc('cx_buscar', { p_curso: curso, p_termo: lim });
+        const porA: Record<string, { total: number; tipos: Record<string, number> }> = {};
+        (hits ?? []).forEach((h: any) => { const x = (porA[h.assunto_id] ??= { total: 0, tipos: {} }); x.total += h.qtd; x.tipos[h.tipo] = h.qtd; });
+        const info: Record<string, any> = {}; est.forEach((d: any) => d.assuntos.forEach((a: any) => { info[a.id] = { disciplina_id: d.id, disciplina: d.nome, assunto: a.nome }; }));
+        const ja = new Set(res.filter((r: any) => r.assunto_id).map((r: any) => r.assunto_id));
+        Object.entries(porA).filter(([id]) => info[id]).sort((a, b) => b[1].total - a[1].total).slice(0, 25)
+          .forEach(([id, v]) => res.push({ nivel: 'conteudo', assunto_id: id, ...info[id], tipos: v.tipos, tambem_no_nome: ja.has(id) }));
+      }
+      return json({ resultados: res.slice(0, 90) });
     }
 
     // ----- questões -----

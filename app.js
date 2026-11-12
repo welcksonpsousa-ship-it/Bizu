@@ -94,7 +94,7 @@ async function iniciar() {
   $('gate').style.display = 'none'; $('shell').classList.add('on');
   S.cursos = d.cursos || []; S.admin = !!d.admin; S.perfil = d.profile || {}; S.email = d.profile?.email || '';
   S.metrics = d.metrics || {}; S.acesso = d.acesso || null;
-  if (S.acesso && S.acesso.bloqueado) { mostrarAcessoBloqueado(S.acesso.situacao === 'suspenso' ? 'Seu acesso está suspenso. Procure o administrador do Bizu do Concurseiro X.' : 'Seu acesso ao Bizu do Concurseiro X terminou em ' + new Date(S.acesso.expira_em).toLocaleDateString('pt-BR') + '. Procure o administrador para renovar. Seus dados e histórico foram preservados.'); return; }
+  if (S.acesso && S.acesso.bloqueado) { mostrarAcessoBloqueado(S.acesso.situacao === 'suspenso' ? 'Seu acesso está suspenso. Procure o administrador do Bizu do Concurseiro X.' : 'Seu acesso ao Bizu do Concurseiro X terminou em ' + new Date(S.acesso.expira_em).toLocaleDateString('pt-BR', { timeZone: 'America/Sao_Paulo' }) + '. Procure o administrador para renovar. Seus dados e histórico foram preservados.'); return; }
   if (S.acesso && S.acesso.trocar_senha) $('bannerSenha').classList.remove('hidden');
   S.curso = S.cursos.find((c) => c.id === d.curso_id) || S.cursos[0] || null;
   if (S.admin) { $('admNavSec').classList.remove('hidden'); $('admNavBtn').classList.remove('hidden'); }
@@ -431,7 +431,7 @@ async function renderAssunto(id) {
   }));
   renderDomBtns($('assDominio'), id);
   $('assNota').value = ''; $('assNotaMsg').textContent = 'Carregando...';
-  try { const n = (await api('/notas?assunto_id=' + id)).nota; if (ASS_ATUAL === id) { $('assNota').value = n ? n.texto : ''; $('assNotaMsg').textContent = n ? 'Salvo em ' + new Date(n.atualizado_em).toLocaleString('pt-BR') : ''; } } catch (e) { $('assNotaMsg').textContent = ''; }
+  try { const n = (await api('/notas?assunto_id=' + id)).nota; if (ASS_ATUAL === id) { $('assNota').value = n ? n.texto : ''; $('assNotaMsg').textContent = n ? 'Salvo em ' + new Date(n.atualizado_em).toLocaleString('pt-BR', { timeZone: 'America/Sao_Paulo' }) : ''; } } catch (e) { $('assNotaMsg').textContent = ''; }
 }
 $('assNota').addEventListener('input', () => {
   clearTimeout(notaTimer); $('assNotaMsg').textContent = 'Digitando...';
@@ -457,7 +457,10 @@ async function buscar() {
   box.innerHTML = ld('Buscando...');
   try {
     const r = (await api('/busca?' + cq() + '&q=' + encodeURIComponent(q))).resultados;
-    box.innerHTML = r.length ? `<div class="card">${r.map((x) => `<div class="cob-tema-row link-row" ${x.assunto_id ? `data-ass="${x.assunto_id}"` : `data-disc="${x.disciplina_id}"`}><span><strong>${esc(x.subassunto || x.assunto || x.disciplina)}</strong></span><span class="badge">${x.nivel}</span><span class="muted small">${esc([x.disciplina, x.subassunto ? x.assunto : ''].filter(Boolean).join(' › '))}</span></div>`).join('')}</div>` : emp('Nada encontrado no edital deste curso');
+    const NOMES = { aula: 'Aula', revisao: 'Revisão', flashcard: 'Flashcards', mapa_mental: 'Mapa mental', lei_seca: 'Lei seca', jurisprudencia: 'Jurisprudência', questoes: 'Questões' };
+    const linha = (x) => `<div class="cob-tema-row link-row" ${x.assunto_id ? `data-ass="${x.assunto_id}"` : `data-disc="${x.disciplina_id}"`}><span><strong>${esc(x.subassunto || x.assunto || x.disciplina)}</strong></span>${x.tipos ? Object.entries(x.tipos).map(([k, n]) => `<span class="badge">${esc(NOMES[k] || k)} · ${n}</span>`).join('') : `<span class="badge">${x.nivel}</span>`}<span class="muted small">${esc([x.disciplina, x.subassunto ? x.assunto : (x.tipos ? '' : '')].filter(Boolean).join(' › '))}</span></div>`;
+    const nomes = r.filter((x) => x.nivel !== 'conteudo'), cont = r.filter((x) => x.nivel === 'conteudo' && !x.tambem_no_nome);
+    box.innerHTML = r.length ? (nomes.length ? `<div class="card"><div class="card-title">No edital (${nomes.length})</div>${nomes.map(linha).join('')}</div>` : '') + (cont.length ? `<div class="card mt1"><div class="card-title">Citado no conteúdo (${cont.length} assuntos)</div>${cont.map(linha).join('')}</div>` : '') : emp('Nada encontrado neste curso', 'Tente outra palavra, por exemplo o nome da lei, do artigo ou do assunto.');
     $$('#buscaRes [data-ass]').forEach((el) => el.addEventListener('click', () => showView('assunto', el.dataset.ass)));
     $$('#buscaRes [data-disc]').forEach((el) => el.addEventListener('click', () => showView('materias')));
   } catch (e) { box.innerHTML = emp(e.message); }
@@ -549,7 +552,7 @@ function corpoMaterial(m) {
   if (m.tipo === 'mapa_mental') return `<p class="small" style="margin:0 0 8px"><strong>${esc(c.no_central || m.titulo)}</strong></p><ul class="mapa-ul">${(c.ramos || []).map((r) => `<li><strong>${esc(r.label)}</strong>${(r.filhos || []).length ? `<ul class="mapa-ul">${r.filhos.map((f) => `<li>${esc(f)}</li>`).join('')}</ul>` : ''}</li>`).join('')}</ul>`;
   if (m.tipo === 'lei_seca') return `${c.lei ? `<div class="badge">${esc(c.lei)}${c.artigo ? ' · ' + esc(c.artigo) : ''}</div>` : ''}<div class="scrl mt1">${esc(c.texto || '')}</div>${c.observacao ? `<p class="muted small mt1">${esc(c.observacao)}</p>` : ''}${fonte}`;
   if (m.tipo === 'jurisprudencia') return `<div class="juris-trib">${esc([c.tribunal, c.referencia].filter(Boolean).join(' · '))}</div><div class="juris-tese">${esc(c.enunciado || '')}</div>${fonte}`;
-  if (m.tipo === 'pdf' && m.url) return `<div class="pdf-card"><div class="pdf-meta">${textoFmt(c.texto)}<div class="muted small">${c.versao ? 'Versão ' + esc(c.versao) + ' · ' : ''}${c.atualizado_em ? 'atualizada em ' + esc(new Date(c.atualizado_em + 'T12:00:00').toLocaleDateString('pt-BR')) : ''}${c.paginas ? ' · ' + esc(c.paginas) + ' páginas' : ''}${c.tamanho_kb ? ' · ' + esc(c.tamanho_kb) + ' KB' : ''}</div></div><div class="flex gap2 wrap">${/^\/apostilas\/[\w.-]+\.pdf$/.test(m.url) ? `<button type="button" class="btn-blue btn-sm" data-ler="${esc(m.url)}" data-ler-tit="${esc(m.titulo || '')}">Ler no site</button>` : ''}<a class="btn-ghost btn-sm" href="${esc(m.url)}" target="_blank" rel="noopener">Abrir PDF</a><a class="btn-ghost btn-sm" href="${esc(m.url)}" download>Baixar</a></div></div>` + fonte;
+  if (m.tipo === 'pdf' && m.url) return `<div class="pdf-card"><div class="pdf-meta">${textoFmt(c.texto)}<div class="muted small">${c.versao ? 'Versão ' + esc(c.versao) + ' · ' : ''}${c.atualizado_em ? 'atualizada em ' + esc(new Date(c.atualizado_em + 'T12:00:00').toLocaleDateString('pt-BR', { timeZone: 'America/Sao_Paulo' })) : ''}${c.paginas ? ' · ' + esc(c.paginas) + ' páginas' : ''}${c.tamanho_kb ? ' · ' + esc(c.tamanho_kb) + ' KB' : ''}</div></div><div class="flex gap2 wrap">${/^\/apostilas\/[\w.-]+\.pdf$/.test(m.url) ? `<button type="button" class="btn-blue btn-sm" data-ler="${esc(m.url)}" data-ler-tit="${esc(m.titulo || '')}">Ler no site</button>` : ''}<a class="btn-ghost btn-sm" href="${esc(m.url)}" target="_blank" rel="noopener">Abrir PDF</a><a class="btn-ghost btn-sm" href="${esc(m.url)}" download>Baixar</a></div></div>` + fonte;
   return textoFmt(c.texto) + (m.url ? `<p class="mt1"><a class="btn-blue btn-sm" href="${esc(m.url)}" target="_blank" rel="noopener">Abrir</a></p>` : '') + fonte;
 }
 
@@ -654,7 +657,7 @@ function ligarQuestoes(box) {
         $$('.opcao', card)[r.gabarito].classList.add('certa'); if (!r.correta) b.classList.add('errada');
         const g = $$('.gab-box', card)[0];
         const ex = [r.lei_relacionada ? `Lei relacionada: ${esc(r.lei_relacionada)}` : '', r.juris_relacionada ? `Jurisprudência: ${esc(r.juris_relacionada)}` : '', r.legislacao_considerada ? `Legislação considerada: ${esc(r.legislacao_considerada)}` : ''].filter(Boolean);
-        g.innerHTML = `<div class="gab-title">${r.correta ? 'Você acertou!' : 'Você errou.'} Gabarito: ${String.fromCharCode(65 + r.gabarito)}</div>${r.comentario ? `<div>${esc(r.comentario)}</div>` : '<div class="muted small">Esta questão não tem comentário detalhado.</div>'}${ex.length ? `<div class="muted small mt1">${ex.join(' · ')}</div>` : ''}${r.fonte ? `<div class="muted small mt1">Fonte: ${esc(r.fonte)}</div>` : ''}`;
+        g.innerHTML = `<div class="gab-title">${r.correta ? 'Você acertou!' : 'Você errou.'} Gabarito: ${String.fromCharCode(65 + r.gabarito)}</div>${r.comentario ? `<div>${esc(String(r.comentario).replace(/^\s*Gabarito( oficial)?( VUNESP)?\s*:\s*[A-E]\.?\s*/i, ''))}</div>` : '<div class="muted small">Esta questão não tem comentário detalhado.</div>'}${ex.length ? `<div class="muted small mt1">${ex.join(' · ')}</div>` : ''}${r.fonte ? `<div class="muted small mt1">Fonte: ${esc(r.fonte)}</div>` : ''}`;
         g.classList.remove('hidden');
       } catch (e) { alert(e.message); $$('.opcao', card).forEach((x) => { x.disabled = false; }); }
     }));
@@ -668,7 +671,7 @@ function ligarQuestoes(box) {
 function quandoCom(iso) {
   const s = (Date.now() - new Date(iso).getTime()) / 1000;
   if (s < 60) return 'agora há pouco'; if (s < 3600) return Math.floor(s / 60) + ' min'; if (s < 86400) return Math.floor(s / 3600) + ' h';
-  if (s < 86400 * 30) return Math.floor(s / 86400) + ' d'; return new Date(iso).toLocaleDateString('pt-BR');
+  if (s < 86400 * 30) return Math.floor(s / 86400) + ' d'; return new Date(iso).toLocaleDateString('pt-BR', { timeZone: 'America/Sao_Paulo' });
 }
 async function alternarComentarios(card, btn) {
   const box = $$('.q-com', card)[0], abrir = box.classList.contains('hidden');
@@ -764,9 +767,9 @@ function simCard(s, rs) {
     s.gabaritoUrl ? lnk(driveView(s.gabaritoUrl), igual ? 'Gabarito comentado' : 'Gabarito') : '',
     s.comentarioUrl && !igual ? lnk(driveView(s.comentarioUrl), 'Gabarito comentado') : '',
   ].join('');
-  const ult = rs[0] ? `<div class="small mt1">Último resultado: <strong>${rs[0].acertos}/${rs[0].total}</strong> (${Math.round(rs[0].acertos / rs[0].total * 100)}%) em ${new Date(rs[0].criado_em).toLocaleDateString('pt-BR')}${rs.length > 1 ? ` · ${rs.length} tentativas` : ''}</div>` : '';
+  const ult = rs[0] ? `<div class="small mt1">Último resultado: <strong>${rs[0].acertos}/${rs[0].total}</strong> (${Math.round(rs[0].acertos / rs[0].total * 100)}%) em ${new Date(rs[0].criado_em).toLocaleDateString('pt-BR', { timeZone: 'America/Sao_Paulo' })}${rs.length > 1 ? ` · ${rs.length} tentativas` : ''}</div>` : '';
   return `<div class="card sim-card" data-sim="${s.id}"><div class="card-title">${esc(s.titulo)}</div>
-    <div class="qmeta">${s.tipo ? `<span class="badge ${/real/i.test(s.tipo) ? 'q-real' : 'q-aut'}">${esc(s.tipo)}</span>` : ''}${s.numero ? `<span class="badge">Nº ${s.numero}</span>` : ''}${s.data ? `<span class="badge">${new Date(s.data + 'T12:00:00').toLocaleDateString('pt-BR')}</span>` : ''}${s.banca ? `<span class="badge">${esc(s.banca)}</span>` : ''}${s.ano ? `<span class="badge">${esc(s.ano)}</span>` : ''}${s.cargo ? `<span class="badge">${esc(s.cargo)}</span>` : ''}</div>
+    <div class="qmeta">${s.tipo ? `<span class="badge ${/real/i.test(s.tipo) ? 'q-real' : 'q-aut'}">${esc(s.tipo)}</span>` : ''}${s.numero ? `<span class="badge">Nº ${s.numero}</span>` : ''}${s.data ? `<span class="badge">${new Date(s.data + 'T12:00:00').toLocaleDateString('pt-BR', { timeZone: 'America/Sao_Paulo' })}</span>` : ''}${s.banca ? `<span class="badge">${esc(s.banca)}</span>` : ''}${s.ano ? `<span class="badge">${esc(s.ano)}</span>` : ''}${s.cargo ? `<span class="badge">${esc(s.cargo)}</span>` : ''}</div>
     ${s.descricao ? `<p class="muted small">${esc(s.descricao)}</p>` : ''}<div class="sim-acoes">${acoes}</div>${ult}
     <details class="sim-reg"><summary>Registrar meu resultado</summary><div class="filters mt1"><div class="fgroup"><label>Acertos</label><input type="number" min="0" max="300" class="sr-ac"></div><div class="fgroup"><label>Total de questões</label><input type="number" min="1" max="300" value="60" class="sr-tt"></div><div class="fgroup"><label>Tempo (min, opcional)</label><input type="number" min="0" max="600" class="sr-tm"></div><button type="button" class="btn-blue btn-sm sr-ok">Registrar</button></div><div class="muted small sr-msg" role="status"></div></details></div>`;
 }
@@ -785,7 +788,7 @@ async function renderSimulados() {
       try { await api('/simulados-drive/resultado', { body: { simulado_id: c.dataset.sim, acertos: ac, total: tt, tempo_min: parseInt($$('.sr-tm', c)[0].value, 10) || null } }); renderSimulados(); } catch (e) { msg.textContent = e.message; }
     }));
     const nome = {}; d.simulados.forEach((s) => { nome[s.id] = s.titulo; });
-    $('simHist').innerHTML = d.resultados.length ? d.resultados.map((h) => `<div class="cob-tema-row"><span>${esc(nome[h.simulado_id] || 'Simulado')} · ${new Date(h.criado_em).toLocaleString('pt-BR')}</span><span><span class="badge">${h.acertos}/${h.total} · ${Math.round(h.acertos / h.total * 100)}%</span> <button type="button" class="btn-ghost btn-sm" data-delres="${h.id}">Excluir</button></span></div>`).join('') : emp('Nenhum simulado registrado ainda');
+    $('simHist').innerHTML = d.resultados.length ? d.resultados.map((h) => `<div class="cob-tema-row"><span>${esc(nome[h.simulado_id] || 'Simulado')} · ${new Date(h.criado_em).toLocaleString('pt-BR', { timeZone: 'America/Sao_Paulo' })}</span><span><span class="badge">${h.acertos}/${h.total} · ${Math.round(h.acertos / h.total * 100)}%</span> <button type="button" class="btn-ghost btn-sm" data-delres="${h.id}">Excluir</button></span></div>`).join('') : emp('Nenhum simulado registrado ainda');
     $$('#simHist [data-delres]').forEach((b) => b.addEventListener('click', async () => { if (confirm('Excluir este resultado?')) { await api('/simulados-drive/resultado/excluir', { body: { id: b.dataset.delres } }).catch((e) => alert(e.message)); renderSimulados(); } }));
   } catch (e) { box.innerHTML = emp(e.message); }
 }
@@ -952,7 +955,7 @@ async function carregarMinhasRed() {
   const box = $('redMinhas'); box.innerHTML = ld();
   try {
     const rs = (await api('/redacoes?' + cq())).redacoes; S.redacoes = rs;
-    box.innerHTML = rs.length ? `<div class="card">${rs.map((r) => `<div class="cob-tema-row"><span><strong>${esc(r.titulo || r.tema_livre || 'Sem título')}</strong><br><span class="muted small">${new Date(r.atualizado_em).toLocaleString('pt-BR')} · ${(r.texto.match(/\S+/g) || []).length} palavras${r.arquivo_nome ? ' · arquivo: ' + esc(r.arquivo_nome) : ''}${r.correcao ? ' · nota estimada ' + esc(String(r.correcao.nota_total)) + '/' + esc(String(r.correcao.nota_maxima)) : ''}</span></span><span class="badge ${r.status === 'finalizada' ? 'bok' : ''}">${r.status === 'finalizada' ? 'Finalizada' : 'Rascunho'}</span><button type="button" class="btn-ghost btn-sm" data-abrir="${r.id}">Abrir</button>${r.arquivo_nome ? `<button type="button" class="btn-ghost btn-sm" data-baixar="${r.id}">Baixar arquivo</button>` : ''}<button type="button" class="btn-ghost btn-sm" data-excluir="${r.id}">Excluir</button></div>`).join('')}</div>` : emp('Você ainda não escreveu redações neste curso');
+    box.innerHTML = rs.length ? `<div class="card">${rs.map((r) => `<div class="cob-tema-row"><span><strong>${esc(r.titulo || r.tema_livre || 'Sem título')}</strong><br><span class="muted small">${new Date(r.atualizado_em).toLocaleString('pt-BR', { timeZone: 'America/Sao_Paulo' })} · ${(r.texto.match(/\S+/g) || []).length} palavras${r.arquivo_nome ? ' · arquivo: ' + esc(r.arquivo_nome) : ''}${r.correcao ? ' · nota estimada ' + esc(String(r.correcao.nota_total)) + '/' + esc(String(r.correcao.nota_maxima)) : ''}</span></span><span class="badge ${r.status === 'finalizada' ? 'bok' : ''}">${r.status === 'finalizada' ? 'Finalizada' : 'Rascunho'}</span><button type="button" class="btn-ghost btn-sm" data-abrir="${r.id}">Abrir</button>${r.arquivo_nome ? `<button type="button" class="btn-ghost btn-sm" data-baixar="${r.id}">Baixar arquivo</button>` : ''}<button type="button" class="btn-ghost btn-sm" data-excluir="${r.id}">Excluir</button></div>`).join('')}</div>` : emp('Você ainda não escreveu redações neste curso');
     $$('#redMinhas [data-abrir]').forEach((b) => b.addEventListener('click', () => { const r = S.redacoes.find((x) => x.id === b.dataset.abrir); RED = { id: r.id, tema_id: r.tema_id, arquivo: null }; $('redCorrecao').innerHTML = htmlCorrecao(r.correcao); $('redTema').value = r.tema_livre || ''; $('redTituloInp').value = r.titulo || ''; $('redTexto').value = r.texto; $('redMsg').textContent = ''; contarRed(); abaRed('escrever'); }));
     $$('#redMinhas [data-baixar]').forEach((b) => b.addEventListener('click', async () => { try { const r = await api('/redacoes/arquivo?id=' + b.dataset.baixar); window.open(r.url, '_blank', 'noopener'); } catch (e) { alert(e.message); } }));
     $$('#redMinhas [data-excluir]').forEach((b) => b.addEventListener('click', async () => { if (!confirm('Excluir esta redação?')) return; await api('/redacoes/excluir', { body: { id: b.dataset.excluir } }).catch(() => {}); if (RED.id === b.dataset.excluir) RED.id = null; carregarMinhasRed(); }));
@@ -1165,7 +1168,7 @@ async function carregarCronometro(soResumo) {
 
 /* ---------------- MINHA CONTA ---------------- */
 const CONTA = { dados: null, pausas: [], foto: null };
-const dtBR = (iso) => (iso ? new Date(iso).toLocaleDateString('pt-BR') : '—');
+const dtBR = (iso) => (iso ? new Date(iso).toLocaleDateString('pt-BR', { timeZone: 'America/Sao_Paulo' }) : '—');
 const iniciais = (n) => { const p = String(n || '?').trim().split(/\s+/); return ((p[0] || '?')[0] + (p[1] ? p[1][0] : '')).toUpperCase(); };
 function desenharAvatar(foto) {
   const nome = ($('cApelido').value || $('cNome').value || S.perfil.full_name || S.email || '?');
@@ -1464,7 +1467,7 @@ async function renderAdmAcessos() {
     });
     $$('#admAcessos [data-ac]').forEach((b) => b.addEventListener('click', async () => {
       const uid = b.closest('tr').dataset.u, ac = b.dataset.ac;
-      if (ac === 'historico') { const a = l.find((x) => x.user_id === uid); $('acHist').innerHTML = `<div class="card"><div class="card-title">Histórico — ${esc(a.email)}</div>${(a.historico || []).map((h) => `<div class="small">${esc(new Date(h.em).toLocaleString('pt-BR'))} · <strong>${esc(h.evento)}</strong>${h.ate ? ' · até ' + dtBR(h.ate) : ''}${h.motivo ? ' · ' + esc(h.motivo) : ''}${h.por ? ' · por ' + esc(h.por) : ''}</div>`).join('') || '<div class="muted small">Sem eventos.</div>'}</div>`; return; }
+      if (ac === 'historico') { const a = l.find((x) => x.user_id === uid); $('acHist').innerHTML = `<div class="card"><div class="card-title">Histórico — ${esc(a.email)}</div>${(a.historico || []).map((h) => `<div class="small">${esc(new Date(h.em).toLocaleString('pt-BR', { timeZone: 'America/Sao_Paulo' }))} · <strong>${esc(h.evento)}</strong>${h.ate ? ' · até ' + dtBR(h.ate) : ''}${h.motivo ? ' · ' + esc(h.motivo) : ''}${h.por ? ' · por ' + esc(h.por) : ''}</div>`).join('') || '<div class="muted small">Sem eventos.</div>'}</div>`; return; }
       if (ac === 'renovar' && !confirm('Renovar o acesso por mais 6 meses?')) return;
       if (ac === 'suspender' && !confirm('Suspender o acesso desta conta?')) return;
       try { await api('/admin/acessos', { body: { user_id: uid, acao: ac, meses: 6 } }); renderAdmAcessos(); } catch (e) { $('acMsg').textContent = e.message; }
@@ -1513,7 +1516,7 @@ async function renderAdmUsuarios() {
   try {
     const us = (await api('/admin/usuarios')).usuarios;
     const nomeC = (id) => (S.cursos.find((c) => c.id === id) || {}).nome || '—';
-    box.innerHTML = `<div class="tbl-wrap"><table class="tbl"><thead><tr><th>E-mail</th><th>Nome</th><th>Curso</th><th>XP</th><th>Último acesso</th></tr></thead><tbody>${us.map((u) => `<tr><td>${esc(u.email)}${u.admin ? ' <span class="badge bgold">admin</span>' : ''}</td><td>${esc(u.nome || '—')}</td><td>${esc(nomeC(u.curso_id))}</td><td>${u.xp}</td><td>${u.ultimo_login ? new Date(u.ultimo_login).toLocaleString('pt-BR') : '—'}</td></tr>`).join('')}</tbody></table></div>`;
+    box.innerHTML = `<div class="tbl-wrap"><table class="tbl"><thead><tr><th>E-mail</th><th>Nome</th><th>Curso</th><th>XP</th><th>Último acesso</th></tr></thead><tbody>${us.map((u) => `<tr><td>${esc(u.email)}${u.admin ? ' <span class="badge bgold">admin</span>' : ''}</td><td>${esc(u.nome || '—')}</td><td>${esc(nomeC(u.curso_id))}</td><td>${u.xp}</td><td>${u.ultimo_login ? new Date(u.ultimo_login).toLocaleString('pt-BR', { timeZone: 'America/Sao_Paulo' }) : '—'}</td></tr>`).join('')}</tbody></table></div>`;
   } catch (e) { box.innerHTML = emp(e.message); }
 }
 $('btnAdmUCriar').addEventListener('click', async () => {
