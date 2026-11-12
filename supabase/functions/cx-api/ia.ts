@@ -7,7 +7,7 @@
 //   ANTHROPIC_API_KEY, OPENAI_API_KEY, GEMINI_API_KEY   → ativam cada provedor (basta um)
 //   IA_CHATX   = "anthropic:claude-haiku-5-5,openai:gpt-4o-mini"   (opcional; ordem de preferência)
 //   IA_REDACAO = "anthropic:claude-sonnet-5-5,openai:gpt-4o"       (opcional)
-//   IA_LIMITE_CHATX (padrão 40/dia), IA_LIMITE_REDACAO (padrão 5/dia)  → por aluno, por dia (horário de Brasília)
+//   IA_LIMITE_CHATX (padrão 10/dia), IA_LIMITE_REDACAO (padrão 1/semana)  → por aluno (horário de Brasília)
 //   IA_PRECOS = {"claude-haiku-5-5":[1,5]}  → US$ por milhão de tokens [entrada, saída], para estimar custo (opcional)
 //   IA_ORCAMENTO_DIA_USD = 5   → para todas as chamadas do dia quando o custo estimado atingir o valor (opcional)
 
@@ -18,9 +18,12 @@ const CHAVE: Record<Provedor, string> = { anthropic: 'ANTHROPIC_API_KEY', openai
 // Modelos padrão: rápido e barato para conversa; mais capaz para corrigir redação.
 const PADRAO: Record<Funcao, [Provedor, string][]> = {
   chatx: [['anthropic', 'claude-haiku-5-5'], ['openai', 'gpt-4o-mini'], ['gemini', 'gemini-2.5-flash']],
-  redacao: [['anthropic', 'claude-sonnet-5-5'], ['openai', 'gpt-4o'], ['gemini', 'gemini-2.5-pro']],
+  // Redação: Gemini Flash primeiro (cabe no plano grátis do Google); os outros só entram se ele falhar.
+  redacao: [['gemini', 'gemini-2.5-flash'], ['anthropic', 'claude-sonnet-5-5'], ['openai', 'gpt-4o']],
 };
-const LIMITE_PADRAO: Record<Funcao, number> = { chatx: 40, redacao: 5 };
+// Chat X: por dia. Redação: por SEMANA (segunda a domingo, horário de Brasília).
+const LIMITE_PADRAO: Record<Funcao, number> = { chatx: 10, redacao: 1 };
+const PERIODO: Record<Funcao, 'dia' | 'semana'> = { chatx: 'dia', redacao: 'semana' };
 const NOME: Record<Provedor, string> = { anthropic: 'Anthropic (Claude)', openai: 'OpenAI', gemini: 'Google Gemini' };
 
 const env = (k: string) => (Deno.env.get(k) ?? '').trim();
@@ -42,12 +45,17 @@ export const iaDisponivel = (f: Funcao) => cadeia(f).length > 0;
 export function iaStatus() {
   return {
     provedores: (Object.keys(CHAVE) as Provedor[]).map((p) => ({ id: p, nome: NOME[p], ativo: provedorAtivo(p) })),
-    funcoes: (['chatx', 'redacao'] as Funcao[]).map((f) => ({ funcao: f, disponivel: iaDisponivel(f), modelos: cadeia(f).map(([p, m]) => `${p}:${m}`), limite_dia_aluno: limite(f) })),
+    funcoes: (['chatx', 'redacao'] as Funcao[]).map((f) => ({ funcao: f, disponivel: iaDisponivel(f), modelos: cadeia(f).map(([p, m]) => `${p}:${m}`), limite_aluno: limite(f), periodo: PERIODO[f] })),
     orcamento_dia_usd: Number(env('IA_ORCAMENTO_DIA_USD')) || null,
     precos_configurados: !!env('IA_PRECOS'),
   };
 }
 const limite = (f: Funcao) => Number(env('IA_LIMITE_' + f.toUpperCase())) || LIMITE_PADRAO[f];
+function inicioDoPeriodoBR(f: Funcao) {
+  const base = new Date(Date.now() - 3 * 3600e3); base.setUTCHours(0, 0, 0, 0);
+  if (PERIODO[f] === 'semana') base.setUTCDate(base.getUTCDate() - ((base.getUTCDay() + 6) % 7)); // volta até a segunda-feira
+  return new Date(base.getTime() + 3 * 3600e3).toISOString();
+}
 function inicioDoDiaBR() { const agora = Date.now() - 3 * 3600e3; const d = new Date(agora); d.setUTCHours(0, 0, 0, 0); return new Date(d.getTime() + 3 * 3600e3).toISOString(); }
 function custo(modelo: string, tin = 0, tout = 0): number | null {
   try { const t = JSON.parse(env('IA_PRECOS') || '{}'); const p = t[modelo]; if (!Array.isArray(p)) return null; return Math.round(((tin * p[0] + tout * p[1]) / 1e6) * 1e5) / 1e5; } catch { return null; }
@@ -89,8 +97,8 @@ export async function iaGerar(db: any, uid: string | null, f: Funcao, r: Pedido)
   if (!lista.length) return { ok: false, motivo: 'sem_provedor', mensagem: 'Nenhum modelo de IA está configurado no servidor para esta função.' };
   const desde = inicioDoDiaBR();
   if (uid) {
-    const { count } = await db.from('cx_ia_uso').select('id', { count: 'exact', head: true }).eq('user_id', uid).eq('funcao', f).eq('ok', true).gte('criado_em', desde);
-    if ((count ?? 0) >= limite(f)) return { ok: false, motivo: 'limite', mensagem: `Você atingiu o limite diário de ${limite(f)} uso(s) desta função. O limite renova à meia-noite.` };
+    const { count } = await db.from('cx_ia_uso').select('id', { count: 'exact', head: true }).eq('user_id', uid).eq('funcao', f).eq('ok', true).gte('criado_em', inicioDoPeriodoBR(f));
+    if ((count ?? 0) >= limite(f)) return { ok: false, motivo: 'limite', mensagem: PERIODO[f] === 'semana' ? `Você já usou ${limite(f)} correção(ões) nesta semana. O limite renova na segunda-feira.` : `Você atingiu o limite de ${limite(f)} mensagem(ns) de hoje. Renova à meia-noite.` };
   }
   const orc = Number(env('IA_ORCAMENTO_DIA_USD'));
   if (orc > 0) {
