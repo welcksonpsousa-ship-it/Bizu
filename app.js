@@ -34,7 +34,12 @@ async function api(path, opts = {}) {
   if (opts.body) { opts.headers['Content-Type'] = 'application/json'; opts.method = opts.method || 'POST'; }
   const r = await fetch(API + path, opts);
   const d = await r.json().catch(() => ({}));
-  if (r.status === 401 && !path.startsWith('/login') && $('shell').classList.contains('on')) { location.reload(); throw new Error('Sessão expirada'); }
+  if (r.status === 401 && !path.startsWith('/login') && $('shell').classList.contains('on')) {
+    // Um pedido que saiu com a sessão antiga (ex.: logo após trocar a senha) pode voltar 401 mesmo com a sessão nova válida:
+    // confere a sessão e repete o pedido uma vez antes de mandar para a tela de login.
+    if (!opts._repetido) { const s = await fetch(API + '/session', { credentials: 'same-origin' }).catch(() => null); if (s && s.ok) { opts._repetido = true; return api(path, opts); } }
+    location.reload(); throw new Error('Sessão expirada');
+  }
   if (d.codigo === 'acesso_expirado') { mostrarAcessoBloqueado(d.message); throw new Error(d.message); }
   if (r.status >= 400 || d.error) throw new Error(d.message || 'Erro ' + r.status);
   return d;

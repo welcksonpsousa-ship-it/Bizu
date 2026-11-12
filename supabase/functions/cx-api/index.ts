@@ -38,13 +38,15 @@ function setSession(ck: Ck, s: { access_token: string; refresh_token: string }) 
 function clearSession(ck: Ck) { setCookie(ck, C_ACCESS, '', 0); setCookie(ck, C_REFRESH, '', 0); }
 function anon() { return createClient(SUPABASE_URL, ANON_KEY, { auth: { autoRefreshToken: false, persistSession: false } }); }
 
-async function getUser(req: Request, ck: Ck) {
+// limpar: só a rota /session apaga os cookies quando a sessão não renova. Nas demais, um pedido que saiu com a
+// sessão antiga (ex.: logo após trocar a senha) não pode apagar os cookies novos que outra resposta acabou de gravar.
+async function getUser(req: Request, ck: Ck, limpar = true) {
   const t = readCookie(req, C_ACCESS);
   if (t) { const { data } = await db.auth.getUser(t); if (data?.user) return data.user; }
   const r = readCookie(req, C_REFRESH);
   if (!r) return null;
   const { data, error } = await anon().auth.refreshSession({ refresh_token: r });
-  if (error || !data.session || !data.user) { clearSession(ck); return null; }
+  if (error || !data.session || !data.user) { if (limpar) clearSession(ck); return null; }
   setSession(ck, data.session);
   return data.user;
 }
@@ -581,7 +583,7 @@ async function handle(req: Request, ck: Ck): Promise<Response> {
     }
 
     // ----- autenticadas -----
-    const user = await getUser(req, ck);
+    const user = await getUser(req, ck, path === '/session');
     if (!user) return fail('Sessão expirada. Entre novamente.', 401);
     const uid = user.id;
     const admin = ehAdmin(user);
