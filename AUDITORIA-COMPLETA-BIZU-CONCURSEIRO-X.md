@@ -203,3 +203,15 @@ Fonte: pasta MENTORIA/SIMULADOS/SD PM SP. Arquivos públicos (abrem e baixam sem
   - PM-SP: 1.799 questões publicadas (1.130 reais), mínimo de 16 por assunto e de 5 por subassunto.
   - GCM: 2.580 publicadas (256 reais), mínimo de 25 por assunto e de 5 por subassunto.
   - Nenhuma questão em revisão.
+
+## 30. Correção: assuntos aparecendo sem questões (12/11/2026)
+
+- **Causa:** o contador de conteúdo de cada assunto lia no máximo 1.000 linhas por consulta. O banco da PM tem 1.799 questões e o da GCM tem 2.580, então assuntos com questões apareciam como "Conteúdo em preparação". O mesmo tipo de corte existia em mais três pontos:
+  - a lista de flashcards e de lei seca do curso inteiro (corte em 200);
+  - os filtros de questões respondidas, erradas e acertadas;
+  - os totais do Painel e do Desempenho de quem passa de 1.000 respostas.
+- **Correção (cx-api v12):** todas essas leituras passaram a ser paginadas.
+- **Verificação no site publicado:**
+  - todos os 126 assuntos mostram as questões, com soma igual ao banco (PM 1.799; GCM 2.580);
+  - os 396 itens (assuntos e subassuntos) trazem questões na tela Questões;
+  - os flashcards voltam completos (PM 522; GCM 504).
