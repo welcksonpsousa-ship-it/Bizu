@@ -65,10 +65,10 @@ async function carregarEstrutura(curso: string, incluirNaoPublicado = false) {
     .eq('curso_id', curso).order('ordem');
   if (error) throw error;
   const cont: Record<string, Record<string, number>> = {};
-  let qq = porCurso(db.from('cx_questoes').select('assunto_id' + JOIN_CURSO), curso);
-  let qm = porCurso(db.from('cx_materiais').select('assunto_id,tipo' + JOIN_CURSO), curso);
-  if (!incluirNaoPublicado) { qq = qq.eq('publicado', true); qm = qm.eq('publicado', true); }
-  const [{ data: qs }, { data: ms }, vs] = await Promise.all([qq, qm, vinculosDoCurso(curso, { soPublicados: !incluirNaoPublicado })]);
+  // Paginado: o banco devolve no máximo 1000 linhas por consulta; sem isso os contadores ficavam cortados.
+  const qq = (a: number, b: number) => { let q = porCurso(db.from('cx_questoes').select('id,assunto_id' + JOIN_CURSO), curso); if (!incluirNaoPublicado) q = q.eq('publicado', true); return q.order('id').range(a, b); };
+  const qm = (a: number, b: number) => { let q = porCurso(db.from('cx_materiais').select('id,assunto_id,tipo' + JOIN_CURSO), curso); if (!incluirNaoPublicado) q = q.eq('publicado', true); return q.order('id').range(a, b); };
+  const [qs, ms, vs] = await Promise.all([todos(qq), todos(qm), vinculosDoCurso(curso, { soPublicados: !incluirNaoPublicado })]);
   vs.forEach((v: any) => { const t = v.m.tipo; (cont[v.assunto_id] ??= {})[t] = (cont[v.assunto_id][t] ?? 0) + 1; });
   (qs ?? []).forEach((q: any) => { (cont[q.assunto_id] ??= {}).questoes = (cont[q.assunto_id].questoes ?? 0) + 1; });
   (ms ?? []).forEach((m: any) => { (cont[m.assunto_id] ??= {})[m.tipo] = (cont[m.assunto_id][m.tipo] ?? 0) + 1; });
@@ -600,7 +600,7 @@ async function handle(req: Request, ck: Ck): Promise<Response> {
       const [{ data: perfil }, { data: cursos }, { data: tent }] = await Promise.all([
         db.from('cx_perfis').select('nome,curso_id,xp').eq('user_id', uid).maybeSingle(),
         db.from('cx_cursos').select('id,nome,banca,edital_ref,redacao_formato,fontes').eq('ativo', true).order('ordem'),
-        db.from('cx_tentativas').select('correta').eq('user_id', uid),
+        todos((a: number, b: number) => db.from('cx_tentativas').select('id,correta').eq('user_id', uid).order('id').range(a, b)).then((data) => ({ data })),
       ]);
       const total = tent?.length ?? 0, acertos = (tent ?? []).filter((t: any) => t.correta).length;
       const xp = perfil?.xp ?? 0;
@@ -711,7 +711,7 @@ async function handle(req: Request, ck: Ck): Promise<Response> {
       let cand = rows as any[];
       const estado = p.get('estado') ?? '';
       let ultima: Record<string, boolean> = {};
-      const { data: tentAll } = await db.from('cx_tentativas').select('questao_id,correta,criado_em').eq('user_id', uid).order('criado_em').limit(20000);
+      const tentAll = await todos((a: number, b: number) => db.from('cx_tentativas').select('id,questao_id,correta,criado_em').eq('user_id', uid).order('criado_em').order('id').range(a, b));
       (tentAll ?? []).forEach((t: any) => { ultima[t.questao_id] = t.correta; });
       if (estado === 'nao_respondidas') cand = cand.filter((x) => !(x.id in ultima));
       else if (estado === 'erradas') cand = cand.filter((x) => ultima[x.id] === false);
@@ -873,11 +873,14 @@ async function handle(req: Request, ck: Ck): Promise<Response> {
       const tipo = q.get('tipo') ?? '';
       if (!TIPOS_MATERIAL.includes(tipo)) return fail('Tipo de material inválido');
       if (!(await cursoValido(curso))) return fail('Curso inválido');
-      let qb = porCurso(db.from('cx_materiais').select('id,assunto_id,subassunto_id,tipo,titulo,conteudo,url,fonte_oficial' + JOIN_CURSO).eq('publicado', true).eq('tipo', tipo), curso);
-      if (uuidOk(q.get('disciplina_id'))) qb = qb.eq('cx_assuntos.disciplina_id', q.get('disciplina_id'));
-      if (uuidOk(q.get('assunto_id'))) qb = qb.eq('assunto_id', q.get('assunto_id'));
-      if (uuidOk(q.get('subassunto_id'))) qb = qb.eq('subassunto_id', q.get('subassunto_id'));
-      const { data } = await qb.limit(200);
+      // Paginado (antes cortava em 200: flashcards e lei seca do curso inteiro passam disso).
+      const data = await todos((ini: number, fim: number) => {
+        let qb = porCurso(db.from('cx_materiais').select('id,assunto_id,subassunto_id,tipo,titulo,conteudo,url,fonte_oficial' + JOIN_CURSO).eq('publicado', true).eq('tipo', tipo), curso);
+        if (uuidOk(q.get('disciplina_id'))) qb = qb.eq('cx_assuntos.disciplina_id', q.get('disciplina_id'));
+        if (uuidOk(q.get('assunto_id'))) qb = qb.eq('assunto_id', q.get('assunto_id'));
+        if (uuidOk(q.get('subassunto_id'))) qb = qb.eq('subassunto_id', q.get('subassunto_id'));
+        return qb.order('criado_em').order('id').range(ini, fim);
+      });
       const lista: any[] = semJoin(data);
       if (!uuidOk(q.get('subassunto_id'))) {
         // materiais compartilhados: uma única fonte de verdade vinculada a assuntos de outros cursos
@@ -933,7 +936,7 @@ async function handle(req: Request, ck: Ck): Promise<Response> {
       const as = await assuntosDoCurso(curso);
       const porAssunto: Record<string, any> = {};
       as.forEach((a) => porAssunto[a.id] = a);
-      const { data: tent } = await db.from('cx_tentativas').select('correta,criado_em,cx_questoes(assunto_id)').eq('user_id', uid);
+      const tent = await todos((a: number, b: number) => db.from('cx_tentativas').select('id,correta,criado_em,cx_questoes(assunto_id)').eq('user_id', uid).order('id').range(a, b));
       const por_disciplina: Record<string, { acertos: number; total: number }> = {};
       const por_assunto: Record<string, { assunto: string; disciplina: string; acertos: number; total: number }> = {};
       (tent ?? []).forEach((t: any) => {
