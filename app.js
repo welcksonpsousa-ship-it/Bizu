@@ -476,9 +476,11 @@ async function renderMaterial(tipo) {
     sd.dataset.lista = chave; preencherAss(CASCATAS[1]);
   }
   try {
-    // Sem disciplina escolhida, busca por disciplina (a API devolve no máximo 200 itens por consulta).
+    // Uma consulta só (a API devolve a lista completa, paginada no servidor); em Lei Seca/Jurisprudência
+    // ficam apenas as matérias jurídicas do concurso.
+    const ids = new Set(discs.map((d) => d.id));
     let itens = sd.value ? (await api('/materiais?tipo=' + tipo + '&' + filtroQS(CASCATAS[1]))).materiais
-      : (await Promise.all(discs.map((d) => api('/materiais?tipo=' + tipo + '&' + cq() + '&disciplina_id=' + d.id)))).flatMap((r) => r.materiais);
+      : (await api('/materiais?tipo=' + tipo + '&' + cq())).materiais.filter((m) => !jur || ids.has(S.ass[m.assunto_id]?.disciplina_id));
     if (seq !== S.matSeq) return; // outra tela de material foi aberta enquanto esta carregava
     if (!itens.length) {
       const di = S.disc[sd.value];
