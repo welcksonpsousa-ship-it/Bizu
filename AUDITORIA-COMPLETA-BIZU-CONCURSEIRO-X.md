@@ -258,3 +258,11 @@ Fonte: pasta MENTORIA/SIMULADOS/SD PM SP. Arquivos públicos (abrem e baixam sem
 - **Desempenho:** cache de 2 minutos no servidor para a estrutura do curso e os metadados das questões. Teste com 100 alunos simultâneos (pico de ~32 pedidos/s): lista de questões caiu de 5,1 s para 0,9 s (mediana) e de 7,3 s para 1,5 s (95%), sem erros. Filtros conferidos contra o banco (mesmos totais).
 - **Beta:** botão "Feedback" (topo no computador, menu no celular) com aba "Feedback dos alunos" no admin; página de termos de uso, privacidade (LGPD) e reembolso em /termos.html; botão "Nova senha" no admin (Acessos) para destravar aluno que esquecer a senha.
 - **Contas de teste:** as 10 contas estão ativas até 31/12/2027, sem dados de teste, com troca de senha e escolha de curso obrigatórias no primeiro acesso.
+
+## 34. Material por subassunto e jurisprudência (13/11/2026)
+
+- **Causa:** ao escolher um subassunto nas telas de material (Bizu PDF, Aulas, Flashcards, Mapas, Revisões, Lei Seca, Jurisprudência), o site pedia só o material cadastrado no próprio subassunto. Como o material é cadastrado no assunto, os 270 subassuntos (114 PM-SP, 156 GCM) apareciam vazios, sem material e sem vídeos.
+- **Correção:** com subassunto escolhido, o site mostra primeiro o material específico do subassunto (se houver) e depois o do assunto, com um aviso de que ele cobre todos os subassuntos. Os vídeos voltam a aparecer nas aulas. Teste em navegador: 80 subassuntos sorteados × 5 tipos, nenhum vazio.
+- **Jurisprudência:** incluídas súmulas (texto oficial) e teses (síntese identificada, com número do processo) em 5 assuntos da PM-SP e 19 da GCM. Lei seca incluída em "Uso de algemas" (CPP arts. 292 e 474, § 3º; Decreto 8.858/2016) e na Declaração Universal dos Direitos Humanos (arts. 1º, 3º, 5º, 9º e 11).
+- **Sem jurisprudência de propósito:** "Sinalização de trânsito" (o site agora diz que o tema é cobrado pela letra da lei) e os 2 assuntos de legislação municipal (variam por cidade; o site já explica).
+- Questões por subassunto conferidas: todos os 270 têm pelo menos 5 questões.

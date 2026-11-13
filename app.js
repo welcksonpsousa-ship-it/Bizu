@@ -521,25 +521,38 @@ async function renderMaterial(tipo) {
     // Uma consulta só (a API devolve a lista completa, paginada no servidor); em Lei Seca/Jurisprudência
     // ficam apenas as matérias jurídicas do concurso.
     const ids = new Set(discs.map((d) => d.id));
-    let itens = sd.value ? (await api('/materiais?tipo=' + tipo + '&' + filtroQS(CASCATAS[1]))).materiais
+    // Subassunto escolhido: o material é cadastrado no assunto e vale para todos os seus subassuntos.
+    // Busca pelo assunto e mostra primeiro o que for específico do subassunto (antes a tela ficava vazia).
+    const subId = $('matlSubA') ? $('matlSubA').value : '';
+    let itens = sd.value ? (await api('/materiais?tipo=' + tipo + '&' + filtroQS({ ...CASCATAS[1], s: null }))).materiais
       : (await api('/materiais?tipo=' + tipo + '&' + cq())).materiais.filter((m) => !jur || ids.has(S.ass[m.assunto_id]?.disciplina_id));
     if (seq !== S.matSeq) return; // outra tela de material foi aberta enquanto esta carregava
+    let avisoSub = '';
+    if (subId) {
+      const proprios = itens.filter((m) => m.subassunto_id === subId);
+      const gerais = itens.filter((m) => !m.subassunto_id);
+      itens = [...proprios, ...gerais];
+      const as = S.ass[$('matlAss').value], sn = as && (as.subassuntos.find((x) => x.id === subId) || {}).nome;
+      if (gerais.length && as) avisoSub = `<p class="muted small mat-aviso-sub">${proprios.length ? `Primeiro o material específico de <strong>${esc(sn || '')}</strong>; depois o` : 'O'} material do assunto <strong>${esc(as.nome)}</strong>, que cobre todos os subassuntos, inclusive <strong>${esc(sn || '')}</strong>.</p>`;
+    }
     if (!itens.length) {
       const di = S.disc[sd.value];
       box.innerHTML = jur && di && /municipal/i.test(di.nome)
         ? emp('Esta matéria depende da lei do seu município', 'Consulte a lei orgânica, o estatuto dos servidores e a lei de criação da Guarda do município do seu edital. A parte geral está nas aulas e apostilas da matéria.')
-        : emp(EM_PREPARO, EM_PREPARO_SUB);
+        : tipo === 'jurisprudencia' && $('matlAss').value
+          ? emp('Sem súmula ou tese específica para este assunto', 'Este tema é cobrado pela letra da lei: estude pela Lei Seca e pela Aula do assunto.')
+          : emp(EM_PREPARO, EM_PREPARO_SUB);
       return;
     }
     if (jur) itens = ordenarJuridico(itens);
     if (tipo === 'flashcard') {
-      box.innerHTML = `<div class="res-grid" id="fcGrid">${itens.map((f) => `<div class="fccard" tabindex="0"><span class="badge">${esc(S.ass[f.assunto_id]?.nome || '')}</span><div class="fcfront">${esc(f.conteudo.pergunta || f.titulo)}</div><div class="fcback">${esc(f.conteudo.resposta || '')}</div></div>`).join('')}</div>`;
+      box.innerHTML = avisoSub + `<div class="res-grid" id="fcGrid">${itens.map((f) => `<div class="fccard" tabindex="0"><span class="badge">${esc(S.ass[f.assunto_id]?.nome || '')}</span><div class="fcfront">${esc(f.conteudo.pergunta || f.titulo)}</div><div class="fcback">${esc(f.conteudo.resposta || '')}</div></div>`).join('')}</div>`;
       $$('#fcGrid .fccard').forEach((c) => c.addEventListener('click', () => c.classList.toggle('flip')));
       return;
     }
     const aberto = !!$('matlAss').value;
     let ultDisc = '';
-    box.innerHTML = itens.map((m) => { const cab = jur && !sd.value && S.ass[m.assunto_id] && S.ass[m.assunto_id].disciplina !== ultDisc ? `<h2 class="jur-disc">${esc((ultDisc = S.ass[m.assunto_id].disciplina))}</h2>` : ''; return cab + (() => { const a = S.ass[m.assunto_id]; return `<details class="card mat-item"${aberto ? ' open' : ''}><summary><span class="card-title">${esc(m.titulo)}</span><span class="muted small">${esc(a ? a.disciplina + ' › ' + a.nome : '')}</span>${selo(m)}</summary><div class="mat-corpo">${tipo === 'aula' ? `<div class="vid-box" data-ass="${m.assunto_id}" data-mat="${m.id}"></div>` : ''}${corpoMaterial(m)}</div></details>`; })(); }).join('');
+    box.innerHTML = avisoSub + itens.map((m) => { const cab = jur && !sd.value && S.ass[m.assunto_id] && S.ass[m.assunto_id].disciplina !== ultDisc ? `<h2 class="jur-disc">${esc((ultDisc = S.ass[m.assunto_id].disciplina))}</h2>` : ''; return cab + (() => { const a = S.ass[m.assunto_id]; return `<details class="card mat-item"${aberto ? ' open' : ''}><summary><span class="card-title">${esc(m.titulo)}</span><span class="muted small">${esc(a ? a.disciplina + ' › ' + a.nome : '')}</span>${selo(m)}</summary><div class="mat-corpo">${tipo === 'aula' ? `<div class="vid-box" data-ass="${m.assunto_id}" data-mat="${m.id}"></div>` : ''}${corpoMaterial(m)}</div></details>`; })(); }).join('');
     if (tipo === 'aula') {
       for (const k in VID_CACHE) delete VID_CACHE[k];
       $$('#matlLista details.mat-item').forEach((d) => { const vb = $$('.vid-box', d)[0]; const go = () => { if (vb.dataset.ok) return; vb.dataset.ok = '1'; carregarVideos(vb); }; if (d.open) go(); d.addEventListener('toggle', () => { if (d.open) go(); }); });
