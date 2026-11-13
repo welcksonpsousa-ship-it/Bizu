@@ -1030,3 +1030,4 @@ body.leitor-aberto{overflow:hidden}
   .gh-tem li{font-size:12px;padding:5px 9px}
   .ghg-abas button{font-size:12px;padding:5px 10px}
 }
+.gate-legal a{color:var(--text-2);text-decoration:underline;white-space:nowrap}

@@ -89,7 +89,21 @@ const uuidOk = (s: unknown) => typeof s === 'string' && /^[0-9a-f-]{36}$/i.test(
 const JOIN_CURSO = ',cx_assuntos!inner(disciplina_id,cx_disciplinas!inner(curso_id))';
 const porCurso = (qb: any, curso: string) => qb.eq('cx_assuntos.cx_disciplinas.curso_id', curso);
 const semJoin = (rows: any[] | null) => (rows ?? []).map(({ cx_assuntos: _j, ...r }: any) => r);
-async function carregarEstrutura(curso: string, incluirNaoPublicado = false) {
+// Cache em memória (por instância da função) para dados que mudam pouco e são lidos em todo pedido.
+// Expira sozinho; o admin vê mudanças na hora porque usa as consultas sem cache.
+const CACHE_MS = 120_000;
+const memo: Record<string, { em: number; p: Promise<any> }> = {};
+function emCache<T>(chave: string, f: () => Promise<T>): Promise<T> {
+  const c = memo[chave];
+  if (c && Date.now() - c.em < CACHE_MS) return c.p;
+  const p = f(); memo[chave] = { em: Date.now(), p };
+  p.catch(() => { if (memo[chave]?.p === p) delete memo[chave]; });
+  return p;
+}
+function carregarEstrutura(curso: string, incluirNaoPublicado = false) {
+  return incluirNaoPublicado ? lerEstrutura(curso, true) : emCache('est:' + curso, () => lerEstrutura(curso, false));
+}
+async function lerEstrutura(curso: string, incluirNaoPublicado: boolean) {
   const { data: disc, error } = await db.from('cx_disciplinas')
     .select('id,nome,questoes,ordem,cx_assuntos(id,nome,ordem,cx_subassuntos(id,nome,ordem))')
     .eq('curso_id', curso).order('ordem');
@@ -115,8 +129,8 @@ async function assuntosDoCurso(curso: string) {
 }
 async function cursoValido(c: unknown) {
   if (typeof c !== 'string' || !c) return false;
-  const { data } = await db.from('cx_cursos').select('id').eq('id', c).eq('ativo', true).maybeSingle();
-  return !!data;
+  const ativos = await emCache('cursos', async () => { const { data, error } = await db.from('cx_cursos').select('id').eq('ativo', true); if (error) throw error; return new Set((data ?? []).map((r: any) => r.id)); });
+  return ativos.has(c);
 }
 
 // ---------- banco de questões: metadados, estatísticas, cobertura ----------
@@ -155,6 +169,10 @@ const questoesDoCurso = (curso: string, cols: string, soPublicadas = true) => to
   if (soPublicadas) qb = qb.eq('publicado', true).eq('status', 'publicada');
   return qb.order('id').range(a, b);
 });
+// Metadados de todas as questões publicadas do curso (sem enunciado), em cache: os filtros são aplicados em memória.
+const META_Q = 'id,assunto_id,subassunto_id,tipo,banca_ref,banca,ano,dificuldade,nivel,nivel_compat,cargo';
+const metaQuestoes = (curso: string): Promise<any[]> => emCache('metaq:' + curso, async () =>
+  (await questoesDoCurso(curso, META_Q)).map(({ cx_assuntos: j, ...r }: any) => ({ ...r, disciplina_id: j?.disciplina_id ?? null })));
 const diasEntre = (iso: string, hoje: string) => Math.max(0, Math.round((Date.parse(hoje + 'T12:00:00Z') - Date.parse(iso.slice(0, 10) + 'T12:00:00Z')) / 86400000));
 
 // Estatísticas por assunto: banco (reais/autorais/banca-alvo/recentes) + desempenho do aluno + prioridade adaptativa.
@@ -163,7 +181,7 @@ async function insightsAssuntos(curso: string, uid: string) {
   const hoje = hojeISO();
   const [est, qs, tent, revs, dom] = await Promise.all([
     carregarEstrutura(curso),
-    questoesDoCurso(curso, 'id,assunto_id,tipo,banca_ref,ano,nivel_compat'),
+    metaQuestoes(curso),
     todos((a, b) => db.from('cx_tentativas').select('questao_id,correta,criado_em,cx_questoes!inner(assunto_id,cx_assuntos!inner(cx_disciplinas!inner(curso_id)))').eq('user_id', uid).eq('cx_questoes.cx_assuntos.cx_disciplinas.curso_id', curso).order('criado_em').range(a, b)),
     db.from('cx_revisoes').select('assunto_id,vence_em').eq('user_id', uid).is('feita_em', null).lte('vence_em', hoje).then((r: any) => r.data ?? []),
     db.from('cx_dominio').select('assunto_id,nivel,atualizado_em').eq('user_id', uid).then((r: any) => r.data ?? []),
@@ -740,7 +758,13 @@ async function handle(req: Request, ck: Ck): Promise<Response> {
     async function selecionarQuestoes(curso: string, p: URLSearchParams, opt: { pesoAssunto?: Record<string, number>; apenasIds?: Set<string>; qtd?: number } = {}) {
       const alvo = BANCA_ALVO[curso] ?? '';
       const cols = 'id,assunto_id,subassunto_id,tipo,banca_ref,banca,ano,dificuldade,nivel,nivel_compat,cargo';
-      const rows = await todos((a, b) => {
+      const termo = (p.get('q') ?? '').trim().replace(/[%,()]/g, ' ').slice(0, 80);
+      const u = (k: string) => (uuidOk(p.get(k)) ? p.get(k) : null);
+      const fAno = parseInt(p.get('ano') ?? ''), fNivel = NIVEIS.includes(p.get('nivel') ?? '') ? p.get('nivel') : null;
+      const fTipo = ['real', 'autoral'].includes(p.get('tipo') ?? p.get('origem') ?? '') ? (p.get('tipo') ?? p.get('origem')) : null;
+      const fDif = ['facil', 'media', 'dificil'].includes(p.get('dificuldade') ?? '') ? p.get('dificuldade') : null;
+      const fCompat = (p.get('compat') ?? 'compativeis') !== 'todas';
+      const rows = termo.length >= 3 ? await todos((a, b) => {
         let qb = porCurso(db.from('cx_questoes').select(cols + JOIN_CURSO).eq('publicado', true).eq('status', 'publicada'), curso);
         if (uuidOk(p.get('disciplina_id'))) qb = qb.eq('cx_assuntos.disciplina_id', p.get('disciplina_id'));
         if (uuidOk(p.get('assunto_id'))) qb = qb.eq('assunto_id', p.get('assunto_id'));
@@ -752,10 +776,13 @@ async function handle(req: Request, ck: Ck): Promise<Response> {
         const tipo = p.get('tipo') ?? p.get('origem'); if (tipo === 'real' || tipo === 'autoral') qb = qb.eq('tipo', tipo);
         if (['facil', 'media', 'dificil'].includes(p.get('dificuldade') ?? '')) qb = qb.eq('dificuldade', p.get('dificuldade'));
         if ((p.get('compat') ?? 'compativeis') !== 'todas') qb = qb.eq('nivel_compat', 'Compatível');
-        const termo = (p.get('q') ?? '').trim().replace(/[%,()]/g, ' ').slice(0, 80);
-        if (termo.length >= 3) qb = qb.ilike('enunciado', `%${termo}%`);
+        qb = qb.ilike('enunciado', `%${termo}%`);
         return qb.order('id').range(a, b);
-      });
+      }) : (await metaQuestoes(curso)).filter((x: any) =>
+        (!u('disciplina_id') || x.disciplina_id === u('disciplina_id')) && (!u('assunto_id') || x.assunto_id === u('assunto_id')) &&
+        (!u('subassunto_id') || x.subassunto_id === u('subassunto_id')) && (!p.get('banca') || x.banca_ref === p.get('banca')) &&
+        (!p.get('cargo') || x.cargo === p.get('cargo')) && (!fAno || x.ano === fAno) && (!fNivel || x.nivel === fNivel) &&
+        (!fTipo || x.tipo === fTipo) && (!fDif || x.dificuldade === fDif) && (!fCompat || x.nivel_compat === 'Compatível'));
       let cand = rows as any[];
       const estado = p.get('estado') ?? '';
       let ultima: Record<string, boolean> = {};
@@ -804,7 +831,7 @@ async function handle(req: Request, ck: Ck): Promise<Response> {
     // Opções dos filtros (contagens por banca, ano, cargo, nível, origem) para o curso.
     if (path === '/questoes/filtros') {
       if (!(await cursoValido(curso))) return fail('Curso inválido');
-      const rows = await questoesDoCurso(curso, 'id,tipo,banca_ref,ano,cargo,nivel,nivel_compat,dificuldade');
+      const rows = await metaQuestoes(curso);
       const c = (k: string, f: (x: any) => any = (x) => x[k]) => { const m: Record<string, number> = {}; rows.forEach((x: any) => { const v = f(x); if (v !== null && v !== undefined && v !== '') m[String(v)] = (m[String(v)] ?? 0) + 1; }); return m; };
       return json({ total: rows.length, banca_alvo: BANCA_ALVO[curso] ?? null, bancas: c('banca_ref'), anos: c('ano'), cargos: c('cargo'), niveis: c('nivel'), origem: c('tipo'), dificuldades: c('dificuldade'), compat: c('nivel_compat') });
     }
@@ -913,6 +940,19 @@ async function handle(req: Request, ck: Ck): Promise<Response> {
       if (!uuidOk(body.questao_id)) return fail('Questão inválida');
       if (body.salvar === false) await db.from('cx_questoes_salvas').delete().eq('user_id', uid).eq('questao_id', body.questao_id);
       else await db.from('cx_questoes_salvas').upsert({ user_id: uid, questao_id: body.questao_id });
+      return json({ ok: true });
+    }
+
+    // ----- feedback dos alunos (beta): erro, sugestão ou problema de conteúdo -----
+    if (path === '/feedback' && req.method === 'POST') {
+      const tipo = ['erro', 'sugestao', 'conteudo', 'outro'].includes(body.tipo) ? body.tipo : 'outro';
+      const mensagem = String(body.mensagem ?? '').trim().slice(0, 4000);
+      if (mensagem.length < 3) return fail('Escreva o que aconteceu ou a sua sugestão.');
+      const ontem = new Date(Date.now() - 86400e3).toISOString();
+      const { count } = await db.from('cx_feedback').select('id', { count: 'exact', head: true }).eq('user_id', uid).gte('criado_em', ontem);
+      if ((count ?? 0) >= 20) return fail('Você já enviou muitas mensagens hoje. Tente novamente amanhã.');
+      const { error } = await db.from('cx_feedback').insert({ user_id: uid, email: user.email ?? null, curso_id: typeof body.curso_id === 'string' ? body.curso_id.slice(0, 60) : null, tela: String(body.tela ?? '').slice(0, 120) || null, tipo, mensagem });
+      if (error) return fail('Não foi possível enviar agora. Tente de novo.', 500);
       return json({ ok: true });
     }
 
@@ -1584,6 +1624,15 @@ async function handle(req: Request, ck: Ck): Promise<Response> {
           a.tokens_in += x.tokens_in ?? 0; a.tokens_out += x.tokens_out ?? 0; a.custo_usd += Number(x.custo_usd ?? 0);
         });
         return json({ status: iaStatus(), uso: Object.values(ag) });
+      }
+      if (path === '/admin/feedback' && req.method === 'GET') {
+        const { data } = await db.from('cx_feedback').select('*').order('criado_em', { ascending: false }).limit(500);
+        return json({ feedback: data ?? [] });
+      }
+      if (path === '/admin/feedback' && req.method === 'POST') {
+        if (!uuidOk(body.id)) return fail('Mensagem inválida');
+        await db.from('cx_feedback').update({ resolvido: body.resolvido !== false }).eq('id', body.id);
+        return json({ ok: true });
       }
       if (path === '/admin/noticias' && req.method === 'GET') {
         const { data } = await db.from('cx_noticias').select('*').order('publicado_em', { ascending: false }).limit(300);

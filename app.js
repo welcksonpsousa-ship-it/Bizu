@@ -1322,7 +1322,7 @@ $('btnContaSenha').addEventListener('click', async () => {
 $$('#admTabs .tab').forEach((t) => t.addEventListener('click', () => {
   $$('#admTabs .tab').forEach((x) => x.classList.toggle('on', x === t));
   $$('#v-admin [data-ap]').forEach((p) => p.classList.toggle('hidden', p.dataset.ap !== t.dataset.at));
-  ({ estrutura: renderAdmEstrutura, cobertura: renderAdmCobertura, banco: renderAdmBanco, simulados: renderAdmSimulados, comentarios: renderAdmComentarios, videos: renderAdmVideos, usuarios: renderAdmUsuarios, acessos: renderAdmAcessos, uso: renderAdmUso, apostilas: renderAdmApostilas, noticias: renderAdmNoticias, ia: renderAdmIA })[t.dataset.at]();
+  ({ estrutura: renderAdmEstrutura, cobertura: renderAdmCobertura, banco: renderAdmBanco, simulados: renderAdmSimulados, comentarios: renderAdmComentarios, videos: renderAdmVideos, usuarios: renderAdmUsuarios, acessos: renderAdmAcessos, uso: renderAdmUso, apostilas: renderAdmApostilas, noticias: renderAdmNoticias, ia: renderAdmIA, feedback: renderAdmFeedback })[t.dataset.at]();
 }));
 async function renderAdmNoticias() {
   const box = $('admNoticias'); box.innerHTML = ld();
@@ -1350,6 +1350,47 @@ async function renderAdmNoticias() {
     $$('#admNoticias [data-npub]').forEach((b) => b.addEventListener('click', async () => { await api('/admin/noticias', { body: { acao: 'publicar', id: b.dataset.npub, publicado: b.dataset.v === '1' } }).catch(() => {}); renderAdmNoticias(); }));
   } catch (e) { box.innerHTML = emp(e.message); }
 }
+const FB_TIPO = { erro: 'Erro no site', conteudo: 'Erro em questão ou material', sugestao: 'Sugestão', outro: 'Outro' };
+async function renderAdmFeedback() {
+  const box = $('admFeedback'); box.innerHTML = ld();
+  try {
+    const fs = (await api('/admin/feedback')).feedback;
+    const abertos = fs.filter((f) => !f.resolvido).length;
+    box.innerHTML = `<div class="card mb2"><div class="card-title">Feedback dos alunos</div><p class="muted small">${abertos} em aberto · ${fs.length - abertos} resolvido(s). As mensagens chegam pelo botão "Feedback" no topo do site.</p></div>` +
+      (fs.length ? `<div class="card tbl-wrap"><table class="tbl"><thead><tr><th>Data</th><th>Aluno</th><th>Tipo</th><th>Tela</th><th>Mensagem</th><th></th></tr></thead><tbody>${fs.map((f) => `<tr${f.resolvido ? ' style="opacity:.55"' : ''}><td>${esc(new Date(f.criado_em).toLocaleString('pt-BR', { timeZone: 'America/Sao_Paulo' }))}</td><td>${esc(f.email || '—')}</td><td>${esc(FB_TIPO[f.tipo] || f.tipo)}</td><td>${esc(f.tela || '—')}${f.curso_id ? `<div class="muted small">${esc(f.curso_id)}</div>` : ''}</td><td style="white-space:pre-wrap;min-width:240px">${esc(f.mensagem)}</td><td><button type="button" class="btn-ghost btn-sm" data-fb="${esc(f.id)}" data-v="${f.resolvido ? '0' : '1'}">${f.resolvido ? 'Reabrir' : 'Resolvido'}</button></td></tr>`).join('')}</tbody></table></div>` : emp('Nenhuma mensagem ainda.'));
+    $$('#admFeedback [data-fb]').forEach((b) => b.addEventListener('click', async () => { await api('/admin/feedback', { body: { id: b.dataset.fb, resolvido: b.dataset.v === '1' } }).catch(() => {}); renderAdmFeedback(); }));
+  } catch (e) { box.innerHTML = emp(e.message); }
+}
+// Botão "Feedback" (beta): o aluno conta um erro, um problema de conteúdo ou uma sugestão; vai para a aba do admin.
+function abrirFeedback() {
+  if ($('fbModal')) return;
+  const ov = document.createElement('div'); ov.id = 'fbModal'; ov.className = 'escolha-curso'; ov.setAttribute('role', 'dialog'); ov.setAttribute('aria-modal', 'true'); ov.setAttribute('aria-labelledby', 'fbTit');
+  const tela = (document.querySelector('.topbar-page')?.textContent || S.view || '').trim();
+  ov.innerHTML = `<div class="escolha-box"><h2 id="fbTit">Enviar feedback</h2>
+    <p class="muted small">Você está na versão de testes. Conte o que deu errado, o que está confuso ou o que poderia melhorar: cada mensagem é lida.</p>
+    <div class="form-group mt1"><label class="form-label" for="fbTipo">Sobre o quê?</label><select id="fbTipo">${Object.entries(FB_TIPO).map(([k, v]) => `<option value="${k}">${v}</option>`).join('')}</select></div>
+    <div class="form-group"><label class="form-label" for="fbMsg">Mensagem</label><textarea id="fbMsg" rows="5" maxlength="4000" placeholder="Ex.: na questão sobre regra de três, o gabarito parece errado porque..."></textarea></div>
+    <p class="muted small">Tela atual: <strong>${esc(tela || '—')}</strong> (enviada junto para ajudar a achar o problema).</p>
+    <p class="small" id="fbRes" role="status"></p>
+    <div class="flex gap1" style="justify-content:flex-end;flex-wrap:wrap"><button type="button" class="btn-ghost" id="fbCancelar">Cancelar</button><button type="button" class="btn-primary" id="fbEnviar" style="width:auto">Enviar</button></div></div>`;
+  document.body.appendChild(ov);
+  const fecha = () => { ov.parentNode && ov.parentNode.removeChild(ov); $('btnFeedback').focus(); };
+  $('fbCancelar').addEventListener('click', fecha);
+  ov.addEventListener('click', (e) => { if (e.target === ov) fecha(); });
+  ov.addEventListener('keydown', (e) => { if (e.key === 'Escape') fecha(); });
+  $('fbEnviar').addEventListener('click', async () => {
+    const msg = $('fbMsg').value.trim();
+    if (msg.length < 3) { $('fbRes').textContent = 'Escreva o que aconteceu ou a sua sugestão.'; return; }
+    $('fbEnviar').disabled = true; $('fbRes').textContent = 'Enviando...';
+    try {
+      await api('/feedback', { body: { tipo: $('fbTipo').value, mensagem: msg, tela, curso_id: S.curso && S.curso.id } });
+      ov.querySelector('.escolha-box').innerHTML = '<h2 id="fbTit">Obrigado!</h2><p class="muted">Sua mensagem foi enviada. Ela ajuda a deixar a plataforma melhor para todos.</p><div class="flex" style="justify-content:flex-end"><button type="button" class="btn-primary" id="fbOk" style="width:auto">Fechar</button></div>';
+      $('fbOk').addEventListener('click', fecha); $('fbOk').focus();
+    } catch (e) { $('fbRes').textContent = e.message; $('fbEnviar').disabled = false; }
+  });
+  $('fbMsg').focus();
+}
+$('btnFeedback').addEventListener('click', abrirFeedback);
 async function renderAdmIA() {
   const box = $('admIA'); box.innerHTML = ld();
   try {

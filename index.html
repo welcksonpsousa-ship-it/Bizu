@@ -130,7 +130,7 @@
         <div class="form-group"><label class="form-label" for="resetSenha2">Confirmar senha</label><input id="resetSenha2" type="password" placeholder="repita a senha" autocomplete="new-password"></div>
         <button type="button" class="btn-primary" id="btnReset">Salvar nova senha</button>
       </div>
-      <p class="gate-legal">Plataforma independente de estudos. Não é vinculada à Polícia Militar, às prefeituras nem às bancas organizadoras.</p>
+      <p class="gate-legal">Plataforma independente de estudos. Não é vinculada à Polícia Militar, às prefeituras nem às bancas organizadoras. <a href="/termos.html">Termos de uso e privacidade</a></p>
     </div>
   </div>
 </div>
@@ -147,6 +147,7 @@
     <div class="topbar-right">
       <button type="button" class="cron-pill" id="cronPill" data-go="cronometro" title="Cronômetro X — tempo de estudo"><svg class="ic"><use href="#i-clock"/></svg><span id="cronPillTxt">Estudar</span></button>
       <span class="xp-pill" id="xpPill" title="Pontos de experiência">0 XP</span>
+      <button type="button" class="btn-ghost btn-sm" id="btnFeedback" aria-label="Enviar feedback, erro ou sugestão"><svg class="ic"><use href="#i-edit"/></svg><span class="hide-sm">Feedback</span></button>
       <button type="button" class="btn-ghost btn-sm" id="btnLogout" aria-label="Sair da conta"><svg class="ic"><use href="#i-logout"/></svg><span class="hide-sm">Sair</span></button>
     </div>
   </header>
@@ -561,7 +562,7 @@
 
       <!-- MINHA CONTA -->
       <section id="v-conta" class="view">
-        <div class="view-hdr"><div><h1 class="view-title">Minha conta</h1><div class="view-sub" id="contaEmail"></div></div></div>
+        <div class="view-hdr"><div><h1 class="view-title">Minha conta</h1><div class="view-sub" id="contaEmail"></div><div class="view-sub"><a href="/termos.html" target="_blank" rel="noopener">Termos de uso e privacidade</a></div></div></div>
         <div id="contaAcesso" class="card conta-acesso hidden" role="status"></div>
         <div class="card mb2" id="cardFoto">
           <div class="card-title">Foto de perfil</div>
@@ -653,6 +654,7 @@
           <button type="button" class="tab" data-at="apostilas" role="tab">Apostilas PDF</button>
           <button type="button" class="tab" data-at="noticias" role="tab">Notícias</button>
           <button type="button" class="tab" data-at="ia" role="tab">Inteligência artificial</button>
+          <button type="button" class="tab" data-at="feedback" role="tab">Feedback dos alunos</button>
         </div>
         <div data-ap="estrutura"><div id="admEstrutura"></div></div>
         <div data-ap="cobertura" class="hidden"><div id="admCobertura"></div></div>
@@ -665,6 +667,7 @@
         <div data-ap="apostilas" class="hidden"><div id="admApostilas"></div></div>
         <div data-ap="noticias" class="hidden"><div id="admNoticias"></div></div>
         <div data-ap="ia" class="hidden"><div id="admIA"></div></div>
+        <div data-ap="feedback" class="hidden"><div id="admFeedback"></div></div>
         <div data-ap="usuarios" class="hidden">
           <div class="card mb2">
             <div class="card-title">Criar usuário</div>
