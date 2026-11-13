@@ -969,13 +969,6 @@ body.leitor-aberto{overflow:hidden}
 .gh-pm .gh-ic{stroke:#93c5fd;background:rgba(59,130,246,.14);border:1px solid rgba(96,165,250,.35)}
 .gh-pm .gh-ic .gh-ic-f{fill:#93c5fd;stroke:none}
 .gh-gcm .gh-ic{stroke:var(--accent-text);background:var(--accent-soft);border:1px solid var(--accent-line)}
-.gh-numeros{list-style:none;padding:0;margin:0 0 24px;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1px;max-width:600px;border:1px solid var(--border);border-radius:14px;overflow:hidden;background:var(--border)}
-.gh-numeros li{background:rgba(17,24,33,.92);padding:14px 12px}
-.gh-numeros strong{display:block;font-size:22px;font-weight:800;color:var(--primary-text);letter-spacing:-.02em}
-.gh-numeros span{display:block;font-size:12px;color:var(--text-3);line-height:1.3;margin-top:2px}
-.gh-recursos{list-style:none;padding:0;margin:0;display:grid;gap:9px;color:var(--text-2);font-size:14.5px}
-.gh-recursos li{display:flex;gap:10px;align-items:flex-start}
-.gh-recursos svg{width:18px;height:18px;flex-shrink:0;margin-top:2px;fill:none;stroke:var(--ok);stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round}
 .gate-lado{display:flex;flex-direction:column;gap:14px}
 .gate-lado .gate-panel{max-width:none;position:relative;border-color:var(--border-2);background:linear-gradient(180deg,rgba(21,30,41,.96),rgba(17,24,33,.96));box-shadow:0 24px 60px rgba(0,0,0,.5),0 0 0 1px rgba(212,167,58,.06)}
 .gate-lado .gate-panel::before{content:"";position:absolute;left:24px;right:24px;top:-1px;height:2px;border-radius:2px;background:linear-gradient(90deg,transparent,var(--accent),transparent)}
@@ -989,14 +982,11 @@ body.leitor-aberto{overflow:hidden}
   .gate-wrap{grid-template-columns:1fr;gap:26px;padding:32px 16px 28px;max-width:560px;align-items:start}
   .gh-marca{margin-bottom:20px}
   .gh-texto{font-size:15px;margin-bottom:18px}
-  .gh-recursos{display:none}
-  .gh-numeros{grid-template-columns:repeat(2,minmax(0,1fr));margin-bottom:0}
   #gate::after{width:360px;height:420px;right:-140px;top:120px;transform:none}
 }
 @media (max-width:420px){
   .gh-cursos{grid-template-columns:1fr}
   .gh-titulo{font-size:31px}
-  .gh-numeros strong{font-size:19px}
 }
 /* Celular: o formulário de entrada vem logo após a marca e o título (sem precisar rolar). */
 @media (max-width:960px){
@@ -1006,6 +996,37 @@ body.leitor-aberto{overflow:hidden}
   .gate-lado{order:3}
   .gh-texto{order:4;margin:6px 0 0}
   .gh-cursos{order:5;margin:0}
-  .gh-numeros{order:6}
   .gate-wrap{display:flex;flex-direction:column;gap:18px}
+}
+
+/* Entrada: o que a plataforma tem (sem números) + telas reais do site */
+.gh-tem{list-style:none;padding:0;margin:0 0 22px;display:flex;flex-wrap:wrap;gap:8px;max-width:620px}
+.gh-tem li{font-size:13px;color:var(--text-2);padding:6px 11px;border-radius:999px;border:1px solid var(--border-2);background:rgba(255,255,255,.025)}
+.gh-tem li::before{content:"✓";color:var(--ok);font-weight:800;margin-right:6px}
+.gh-galeria{margin:0;max-width:620px}
+.ghg-moldura{border:1px solid var(--border-2);border-radius:14px;overflow:hidden;background:var(--surface);box-shadow:0 18px 50px rgba(0,0,0,.45)}
+.ghg-barra{display:flex;align-items:center;gap:6px;padding:9px 12px;border-bottom:1px solid var(--border);background:var(--surface-2);font-size:12px;color:var(--text-3)}
+.ghg-barra i{width:9px;height:9px;border-radius:50%;background:var(--border-2)}
+.ghg-barra i:nth-child(1){background:#ef4444aa}.ghg-barra i:nth-child(2){background:#e9c86baa}.ghg-barra i:nth-child(3){background:#34d399aa}
+.ghg-barra span{margin-left:8px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.ghg-telas{position:relative;aspect-ratio:16/10;background:#0b1017}
+.ghg-telas img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:top center;opacity:0;transition:opacity .5s ease}
+.ghg-telas img.on{opacity:1}
+.ghg-abas{display:flex;gap:6px;margin-top:10px;flex-wrap:wrap}
+.ghg-abas button{font:inherit;font-size:12.5px;font-weight:600;padding:6px 12px;border-radius:999px;border:1px solid var(--border-2);background:transparent;color:var(--text-3);cursor:pointer}
+.ghg-abas button[aria-selected="true"]{color:var(--primary-text);border-color:var(--primary-line);background:var(--primary-soft)}
+@media (prefers-reduced-motion:reduce){.ghg-telas img{transition:none}}
+@media (max-width:960px){
+  .gh-tem{order:5;margin:0}
+  .gh-galeria{order:6}
+  .gh-cursos{order:4}
+  .gh-texto{order:3}
+  .gate-lado{order:2}
+  .gh-titulo{order:1}
+  .gh-marca{order:0}
+}
+@media (max-width:520px){
+  .gh-tem{gap:6px}
+  .gh-tem li{font-size:12px;padding:5px 9px}
+  .ghg-abas button{font-size:12px;padding:5px 10px}
 }

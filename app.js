@@ -63,6 +63,15 @@ async function doLogin() {
 }
 $('btnLogin').addEventListener('click', doLogin);
 $('loginSenha').addEventListener('keydown', (e) => { if (e.key === 'Enter') doLogin(); });
+// Entrada: galeria com telas reais do site (troca sozinha a cada 5 s, para quando o aluno escolhe uma aba).
+(function galeriaEntrada() {
+  const abas = [...document.querySelectorAll('.ghg-abas button')], imgs = [...document.querySelectorAll('.ghg-telas img')];
+  if (!abas.length || abas.length !== imgs.length) return;
+  let i = 0, timer = null;
+  const mostra = (k) => { i = k; imgs.forEach((im, n) => im.classList.toggle('on', n === k)); abas.forEach((b, n) => b.setAttribute('aria-selected', String(n === k))); $('ghgTit').textContent = abas[k].dataset.t; };
+  abas.forEach((b, n) => b.addEventListener('click', () => { clearInterval(timer); mostra(n); }));
+  if (!matchMedia('(prefers-reduced-motion: reduce)').matches) timer = setInterval(() => { if ($('gate').style.display === 'none') return clearInterval(timer); mostra((i + 1) % imgs.length); }, 5000);
+})();
 $('lnkEsqueci').addEventListener('click', async (e) => {
   e.preventDefault();
   const msg = $('loginMsg');
