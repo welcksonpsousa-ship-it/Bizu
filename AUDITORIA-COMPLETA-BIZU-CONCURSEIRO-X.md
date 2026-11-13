@@ -248,3 +248,13 @@ Fonte: pasta MENTORIA/SIMULADOS/SD PM SP. Arquivos públicos (abrem e baixam sem
 - Ativar a proteção contra senhas vazadas (Auth → Password security).
 - Configurar um SMTP próprio para os e-mails de recuperação de senha, porque o envio padrão do Supabase tem limite baixo por hora.
 - Configurar as chaves de IA, que ficaram por último a pedido.
+
+## 33. Preparação do beta com os 10 alunos de teste (13/11/2026)
+
+- **Novo edital PM-SP (DP-4/321/26, DOE-SP 05/11/2026):** conteúdo programático conferido no PDF oficial; é idêntico ao do curso. Atualizada a referência do curso (2.000 vagas, inscrições de 09/11 a 22/12/2026, prova prevista para 28/02/2027).
+- **Cobertura:** os 126 assuntos (42 PM-SP, 84 GCM) têm questões (mínimo 10), apostila, mapa mental, revisão, flashcards e aula.
+- **Redação:** 15 temas publicados por curso (eram 5), com 3 textos de apoio cada. Limite de 1 correção por semana; Chat X com 10 mensagens por dia.
+- **Tela de entrada:** sem contagens de material; lista do que a plataforma oferece e galeria com telas reais do site.
+- **Desempenho:** cache de 2 minutos no servidor para a estrutura do curso e os metadados das questões. Teste com 100 alunos simultâneos (pico de ~32 pedidos/s): lista de questões caiu de 5,1 s para 0,9 s (mediana) e de 7,3 s para 1,5 s (95%), sem erros. Filtros conferidos contra o banco (mesmos totais).
+- **Beta:** botão "Feedback" (topo no computador, menu no celular) com aba "Feedback dos alunos" no admin; página de termos de uso, privacidade (LGPD) e reembolso em /termos.html; botão "Nova senha" no admin (Acessos) para destravar aluno que esquecer a senha.
+- **Contas de teste:** as 10 contas estão ativas até 31/12/2027, sem dados de teste, com troca de senha e escolha de curso obrigatórias no primeiro acesso.

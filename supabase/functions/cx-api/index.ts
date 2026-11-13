@@ -1341,6 +1341,14 @@ async function handle(req: Request, ck: Ck): Promise<Response> {
           upd.expira_em = fim.toISOString(); upd.situacao = 'ativo'; hist.push({ evento: 'renovacao', em: agora.toISOString(), de: a.expira_em, ate: fim.toISOString(), meses, por: user.email });
         } else if (body.acao === 'suspender') { upd.situacao = 'suspenso'; hist.push({ evento: 'suspensao', em: agora.toISOString(), por: user.email }); }
         else if (body.acao === 'reativar') { upd.situacao = 'ativo'; hist.push({ evento: 'reativacao', em: agora.toISOString(), por: user.email }); }
+        else if (body.acao === 'senha') {
+          // Senha temporária definida pelo admin (contas de teste não recebem e-mail): o aluno troca no próximo acesso.
+          const nova = String(body.senha ?? '');
+          if (nova.length < 8 || nova.length > 72) return fail('A senha temporária deve ter de 8 a 72 caracteres.');
+          const { error } = await db.auth.admin.updateUserById(body.user_id, { password: nova });
+          if (error) return fail('Não foi possível definir a senha: ' + error.message, 500);
+          upd.trocar_senha = true; hist.push({ evento: 'senha_temporaria', em: agora.toISOString(), por: user.email });
+        }
         else if (body.acao === 'definir') {
           const t = Date.parse(String(body.expira_em ?? '')); if (!isFinite(t)) return fail('Data inválida');
           upd.expira_em = new Date(t).toISOString(); upd.situacao = t < agora.getTime() ? 'expirado' : 'ativo'; hist.push({ evento: 'ajuste_manual', em: agora.toISOString(), de: a.expira_em, ate: upd.expira_em, motivo: body.motivo ? String(body.motivo).slice(0, 160) : null, por: user.email });
