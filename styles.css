@@ -1031,3 +1031,6 @@ body.leitor-aberto{overflow:hidden}
   .ghg-abas button{font-size:12px;padding:5px 10px}
 }
 .gate-legal a{color:var(--text-2);text-decoration:underline;white-space:nowrap}
+/* Feedback: no topo no computador; no celular fica no menu lateral (o topo já está cheio) */
+.nav-feedback{display:none}
+@media (max-width:860px){#btnFeedback{display:none}.nav-feedback{display:flex}}

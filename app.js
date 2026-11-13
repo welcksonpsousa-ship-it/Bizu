@@ -1374,7 +1374,7 @@ function abrirFeedback() {
     <p class="small" id="fbRes" role="status"></p>
     <div class="flex gap1" style="justify-content:flex-end;flex-wrap:wrap"><button type="button" class="btn-ghost" id="fbCancelar">Cancelar</button><button type="button" class="btn-primary" id="fbEnviar" style="width:auto">Enviar</button></div></div>`;
   document.body.appendChild(ov);
-  const fecha = () => { ov.parentNode && ov.parentNode.removeChild(ov); $('btnFeedback').focus(); };
+  const fecha = () => { ov.parentNode && ov.parentNode.removeChild(ov); const bt = $('btnFeedback'); (bt.offsetParent ? bt : $('btnFeedbackNav')).focus(); };
   $('fbCancelar').addEventListener('click', fecha);
   ov.addEventListener('click', (e) => { if (e.target === ov) fecha(); });
   ov.addEventListener('keydown', (e) => { if (e.key === 'Escape') fecha(); });
@@ -1391,6 +1391,7 @@ function abrirFeedback() {
   $('fbMsg').focus();
 }
 $('btnFeedback').addEventListener('click', abrirFeedback);
+$('btnFeedbackNav').addEventListener('click', () => { if ($('sidebar').classList.contains('open')) fecharDrawer(); abrirFeedback(); });
 async function renderAdmIA() {
   const box = $('admIA'); box.innerHTML = ld();
   try {
