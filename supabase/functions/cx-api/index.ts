@@ -4,7 +4,7 @@
 // apenas o que foi publicado. O conteúdo entra pelas rotas /admin/* (importação por
 // assunto, montagem de simulados e temas de redação), restritas a administradores.
 import { createClient } from 'jsr:@supabase/supabase-js@2';
-import { iaGerar, iaDisponivel, iaStatus } from './ia.ts';
+import { iaGerar, iaDisponivel, iaStatus, type Anexo } from './ia.ts';
 
 const SUPABASE_URL = Deno.env.get('SUPABASE_URL')!;
 const SERVICE_KEY = Deno.env.get('SUPABASE_SERVICE_ROLE_KEY')!;
@@ -987,7 +987,7 @@ async function handle(req: Request, ck: Ck): Promise<Response> {
     }
     // ----- Chat X -----
     if (path === '/chatx/status') return json({ llm: iaDisponivel('chatx') });
-    if (path === '/ia/status') return json({ chatx: iaDisponivel('chatx'), redacao: iaDisponivel('redacao') });
+    if (path === '/ia/status') return json({ chatx: iaDisponivel('chatx'), redacao: iaDisponivel('redacao'), transcricao: iaDisponivel('transcricao') });
     if (path === '/chatx' && req.method === 'POST') {
       const cid = body.curso_id ?? curso;
       if (!(await cursoValido(cid))) return fail('Curso inválido');
@@ -1145,9 +1145,9 @@ async function handle(req: Request, ck: Ck): Promise<Response> {
       if (!uuidOk(body.id)) return fail('Salve a redação antes de anexar o arquivo');
       const { data: rd } = await db.from('cx_redacoes').select('id').eq('id', body.id).eq('user_id', uid).maybeSingle();
       if (!rd) return fail('Redação não encontrada', 404);
-      const TIPOS: Record<string, string> = { 'application/pdf': 'pdf', 'application/vnd.openxmlformats-officedocument.wordprocessingml.document': 'docx', 'text/plain': 'txt' };
+      const TIPOS: Record<string, string> = { 'application/pdf': 'pdf', 'application/vnd.openxmlformats-officedocument.wordprocessingml.document': 'docx', 'text/plain': 'txt', 'image/jpeg': 'jpg', 'image/png': 'png', 'image/webp': 'webp' };
       const mime = String(body.mime ?? ''); const ext = TIPOS[mime];
-      if (!ext) return fail('Formato não aceito. Envie PDF, DOCX ou TXT.');
+      if (!ext) return fail('Formato não aceito. Envie PDF, DOCX, TXT ou foto (JPG, PNG).');
       let bytes: Uint8Array;
       try { bytes = Uint8Array.from(atob(String(body.base64 ?? '')), (c) => c.charCodeAt(0)); } catch { return fail('Arquivo inválido'); }
       if (!bytes.length || bytes.length > 5 * 1024 * 1024) return fail('O arquivo deve ter até 5 MB.');
@@ -1164,6 +1164,33 @@ async function handle(req: Request, ck: Ck): Promise<Response> {
       const { data, error } = await db.storage.from('cx-redacoes').createSignedUrl(rd.arquivo_path, 120);
       if (error || !data) return fail('Arquivo indisponível', 500);
       return json({ url: data.signedUrl });
+    }
+    // Redação escrita à mão: a IA lê a foto (ou PDF escaneado) e devolve o texto para o aluno conferir antes de corrigir.
+    if (path === '/redacoes/transcrever' && req.method === 'POST') {
+      const MIMES = ['image/jpeg', 'image/png', 'image/webp', 'application/pdf'];
+      const arqs = (Array.isArray(body.arquivos) ? body.arquivos : []).slice(0, 3);
+      if (!arqs.length) return fail('Envie a foto da redação.');
+      let total = 0; const anexos: Anexo[] = [];
+      for (const a of arqs) {
+        const mime = String(a?.mime ?? ''), b64 = String(a?.base64 ?? '');
+        if (!MIMES.includes(mime)) return fail('Formato não aceito. Envie foto (JPG ou PNG) ou PDF.');
+        const tam = Math.floor(b64.length * 3 / 4); total += tam;
+        if (!tam || tam > 5 * 1024 * 1024) return fail('Cada arquivo deve ter até 5 MB.');
+        anexos.push({ mime, base64: b64 });
+      }
+      if (total > 9 * 1024 * 1024) return fail('Os arquivos somados devem ter até 9 MB.');
+      if (!iaDisponivel('transcricao')) return fail('A leitura de redação manuscrita ainda não está ativada na plataforma.', 503);
+      const sistema = 'Você transcreve redações de concurso escritas à mão. Copie o texto exatamente como o candidato escreveu, '
+        + 'na ordem das páginas: NÃO corrija ortografia, acentuação, pontuação, concordância nem palavras; mantenha os erros. '
+        + 'Separe os parágrafos com uma linha em branco e una as linhas de um mesmo parágrafo. Se houver título, coloque-o na primeira linha. '
+        + 'Ignore números de linha, cabeçalhos do formulário, rasuras riscadas e anotações fora do texto. '
+        + 'Se uma palavra estiver ilegível, escreva [ilegível]. Se a imagem não contiver uma redação manuscrita, responda apenas: SEM_TEXTO. '
+        + 'Responda somente com o texto transcrito, sem comentários.';
+      const ia = await iaGerar(db, uid, 'transcricao', { system: sistema, mensagens: [{ role: 'user', content: `Transcreva a redação ${anexos.length > 1 ? `(${anexos.length} páginas, nesta ordem)` : ''}.` }], anexos, maxTokens: 2500, timeoutMs: 90000 });
+      if (!ia.ok) return fail(ia.mensagem, ia.motivo === 'limite' || ia.motivo === 'orcamento' ? 429 : 503);
+      const texto = ia.texto.replace(/^```[a-z]*\n?|```$/g, '').trim();
+      if (!texto || /^SEM_TEXTO/.test(texto)) return fail('Não encontrei uma redação escrita à mão nesta imagem. Tire a foto de frente, com boa luz e a folha inteira.', 422);
+      return json({ ok: true, texto, ilegiveis: (texto.match(/\[ilegível\]/g) || []).length });
     }
     if (path === '/redacoes/corrigir' && req.method === 'POST') {
       const { data: rd } = await db.from('cx_redacoes').select('id,curso_id,tema_id,tema_livre,titulo,texto').eq('id', body.id).eq('user_id', uid).maybeSingle();

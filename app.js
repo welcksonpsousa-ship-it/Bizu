@@ -955,18 +955,58 @@ $('redArquivo').addEventListener('change', async (e) => {
   try {
     const r = await extrairTexto(arq);
     const texto = r.texto.replace(/\r/g, '').replace(/[ \t]+\n/g, '\n').replace(/\n{3,}/g, '\n\n').trim();
-    if ((texto.match(/\S+/g) || []).length < 20) { info.textContent = 'Não encontrei texto neste arquivo. Se for foto ou digitalização de manuscrito, digite o texto no campo abaixo.'; return; }
+    if ((texto.match(/\S+/g) || []).length < 20) {
+      if (r.mime === 'application/pdf') { info.textContent = 'Este PDF parece ser uma digitalização (sem texto). Lendo a letra com IA...'; await transcreverRedacao([arq]); return; }
+      info.textContent = 'Não encontrei texto neste arquivo. Se for foto ou digitalização de manuscrito, use o botão “Foto da redação escrita à mão”.'; return;
+    }
     $('redTexto').value = texto; contarRed();
     RED.arquivo = { nome: arq.name, mime: r.mime, base64: paraBase64(r.buf) };
     info.textContent = `Texto extraído de “${arq.name}”.`;
-    // Depois de anexado, o arquivo é guardado e corrigido pela IA automaticamente (se a IA estiver ativada).
-    await statusIA();
-    if (IA.status && IA.status.redacao) { info.textContent += ' Corrigindo com IA...'; await corrigirRedacao(); info.textContent = `Arquivo “${arq.name}” enviado e corrigido. O texto extraído está abaixo; você pode ajustar e corrigir de novo.`; }
-    else info.textContent += ' O arquivo será guardado quando você salvar. A correção por IA ainda não foi ativada pela administração.';
+    info.textContent += ' Confira o texto abaixo e clique em “Corrigir com IA” quando estiver pronto (1 correção por semana). O arquivo é guardado quando você salvar.';
   } catch (er) { info.textContent = er.message; }
 });
+// Foto da redação manuscrita: a imagem é reduzida no navegador (até ~1800 px, JPEG) e a IA transcreve o texto.
+function reduzirImagem(arq) {
+  return new Promise((ok, erro) => {
+    const url = URL.createObjectURL(arq); const im = new Image();
+    im.onload = () => {
+      const max = 1800, k = Math.min(1, max / Math.max(im.width, im.height));
+      const c = document.createElement('canvas'); c.width = Math.round(im.width * k); c.height = Math.round(im.height * k);
+      c.getContext('2d').drawImage(im, 0, 0, c.width, c.height); URL.revokeObjectURL(url);
+      ok({ mime: 'image/jpeg', base64: c.toDataURL('image/jpeg', 0.85).split(',')[1], nome: arq.name.replace(/\.[^.]+$/, '') + '.jpg' });
+    };
+    im.onerror = () => { URL.revokeObjectURL(url); erro(new Error(`Não consegui abrir “${arq.name}”. Envie a foto em JPG ou PNG.`)); };
+    im.src = url;
+  });
+}
+async function transcreverRedacao(arqs) {
+  const info = $('redArqInfo');
+  await statusIA();
+  if (!IA.status.transcricao) { info.textContent = 'A leitura de redação escrita à mão ainda não foi ativada pela administração. Por enquanto, digite o texto no campo abaixo.'; return; }
+  try {
+    const arquivos = [];
+    for (const f of arqs) {
+      if (f.type === 'application/pdf' || /\.pdf$/i.test(f.name)) {
+        if (f.size > 5 * 1024 * 1024) throw new Error('O PDF deve ter até 5 MB.');
+        arquivos.push({ mime: 'application/pdf', base64: paraBase64(await f.arrayBuffer()), nome: f.name });
+      } else arquivos.push(await reduzirImagem(f));
+    }
+    info.textContent = `Lendo a sua letra (${arquivos.length} ${arquivos.length > 1 ? 'páginas' : 'página'})... pode levar até 1 minuto.`;
+    $('redFoto').disabled = true;
+    const r = await api('/redacoes/transcrever', { body: { arquivos: arquivos.map(({ mime, base64 }) => ({ mime, base64 })) } });
+    $('redTexto').value = r.texto; contarRed();
+    RED.arquivo = { nome: arquivos[0].nome, mime: arquivos[0].mime, base64: arquivos[0].base64 };
+    info.innerHTML = `<strong>Texto transcrito.</strong> Confira com a sua folha e corrija o que a IA tiver lido errado${r.ilegiveis ? ` (há ${r.ilegiveis} trecho(s) marcados como [ilegível])` : ''}. Os erros de português que você cometeu foram mantidos de propósito, para a correção apontar. Depois clique em “Corrigir com IA” (1 correção por semana).`;
+    $('redTexto').focus();
+  } catch (e) { info.textContent = e.message; }
+  finally { $('redFoto').disabled = false; }
+}
+$('redFoto').addEventListener('change', async (e) => {
+  const arqs = [...e.target.files].slice(0, 3); e.target.value = ''; if (!arqs.length) return;
+  await transcreverRedacao(arqs);
+});
 async function statusIA() {
-  try { IA.status = IA.status || (await api('/ia/status')); } catch (e) { IA.status = { redacao: false }; }
+  try { IA.status = IA.status || (await api('/ia/status')); } catch (e) { IA.status = { redacao: false, transcricao: false }; }
   const b = $('btnRedCorrigir'); b.disabled = !IA.status.redacao;
   b.title = IA.status.redacao ? 'Corrige pelos critérios da banca, com nota e justificativa' : 'A correção por IA ainda não foi ativada pela administração';
 }
@@ -1412,7 +1452,7 @@ async function renderAdmIA() {
     box.innerHTML = `<div class="card mb2"><div class="card-title">Provedores</div>
       <p class="muted small">As chaves ficam só nos segredos da função no Supabase (Edge Functions → Secrets): ANTHROPIC_API_KEY, OPENAI_API_KEY, GEMINI_API_KEY. Nenhuma chave é enviada ao navegador.</p>
       <div class="flex gap1" style="flex-wrap:wrap">${st.provedores.map((p) => `<span class="badge ${p.ativo ? 'bok' : ''}">${esc(p.nome)}: ${p.ativo ? 'ativo' : 'sem chave'}</span>`).join('')}</div></div>
-      <div class="card mb2"><div class="card-title">Funções</div><div class="tbl-wrap"><table class="tbl"><thead><tr><th>Função</th><th>Disponível</th><th>Modelos (ordem de uso)</th><th>Limite por aluno</th></tr></thead><tbody>${st.funcoes.map((f) => `<tr><td>${f.funcao === 'chatx' ? 'Chat X' : 'Correção de redação'}</td><td>${f.disponivel ? 'Sim' : 'Não'}</td><td>${esc(f.modelos.join(' → ') || '—')}</td><td>${f.limite_aluno} por ${f.periodo}</td></tr>`).join('')}</tbody></table></div>
+      <div class="card mb2"><div class="card-title">Funções</div><div class="tbl-wrap"><table class="tbl"><thead><tr><th>Função</th><th>Disponível</th><th>Modelos (ordem de uso)</th><th>Limite por aluno</th></tr></thead><tbody>${st.funcoes.map((f) => `<tr><td>${({ chatx: 'Chat X', redacao: 'Correção de redação', transcricao: 'Leitura de redação manuscrita' })[f.funcao] || f.funcao}</td><td>${f.disponivel ? 'Sim' : 'Não'}</td><td>${esc(f.modelos.join(' → ') || '—')}</td><td>${f.limite_aluno} por ${f.periodo}</td></tr>`).join('')}</tbody></table></div>
       <p class="muted small mt1">Orçamento diário: ${st.orcamento_dia_usd ? 'US$ ' + st.orcamento_dia_usd : 'não definido'} · preços para estimar custo: ${st.precos_configurados ? 'configurados' : 'não configurados (custo não é estimado)'}.</p></div>
       <div class="card"><div class="card-title">Uso nos últimos 30 dias</div><div class="tbl-wrap"><table class="tbl"><thead><tr><th>Função</th><th>Modelo</th><th>Hoje</th><th>30 dias</th><th>Erros</th><th>Tokens (entrada/saída)</th><th>Custo estimado</th></tr></thead><tbody>${r.uso.map((u) => `<tr><td>${esc(u.funcao)}</td><td>${esc(u.modelo)}</td><td>${u.chamadas_hoje}</td><td>${u.chamadas_30d}</td><td>${u.erros_30d}</td><td>${u.tokens_in} / ${u.tokens_out}</td><td>${u.custo_usd ? 'US$ ' + u.custo_usd.toFixed(4) : '—'}</td></tr>`).join('') || '<tr><td colspan="7" class="muted">Nenhum uso registrado.</td></tr>'}</tbody></table></div></div>`;
   } catch (e) { box.innerHTML = emp(e.message); }

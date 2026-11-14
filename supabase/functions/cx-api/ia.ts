@@ -11,7 +11,7 @@
 //   IA_PRECOS = {"claude-haiku-5-5":[1,5]}  → US$ por milhão de tokens [entrada, saída], para estimar custo (opcional)
 //   IA_ORCAMENTO_DIA_USD = 5   → para todas as chamadas do dia quando o custo estimado atingir o valor (opcional)
 
-export type Funcao = 'chatx' | 'redacao';
+export type Funcao = 'chatx' | 'redacao' | 'transcricao';
 type Provedor = 'anthropic' | 'openai' | 'gemini';
 
 const CHAVE: Record<Provedor, string> = { anthropic: 'ANTHROPIC_API_KEY', openai: 'OPENAI_API_KEY', gemini: 'GEMINI_API_KEY' };
@@ -20,10 +20,12 @@ const PADRAO: Record<Funcao, [Provedor, string][]> = {
   chatx: [['anthropic', 'claude-haiku-5-5'], ['openai', 'gpt-4o-mini'], ['gemini', 'gemini-2.5-flash']],
   // Redação: Gemini Flash primeiro (cabe no plano grátis do Google); os outros só entram se ele falhar.
   redacao: [['gemini', 'gemini-2.5-flash'], ['anthropic', 'claude-sonnet-5-5'], ['openai', 'gpt-4o']],
+  // Transcrição de redação manuscrita (foto ou PDF escaneado): modelos com visão, do mais barato ao mais caro.
+  transcricao: [['gemini', 'gemini-2.5-flash'], ['anthropic', 'claude-haiku-5-5'], ['openai', 'gpt-4o-mini']],
 };
 // Chat X: por dia. Redação: por SEMANA (segunda a domingo, horário de Brasília).
-const LIMITE_PADRAO: Record<Funcao, number> = { chatx: 10, redacao: 1 };
-const PERIODO: Record<Funcao, 'dia' | 'semana'> = { chatx: 'dia', redacao: 'semana' };
+const LIMITE_PADRAO: Record<Funcao, number> = { chatx: 10, redacao: 1, transcricao: 5 };
+const PERIODO: Record<Funcao, 'dia' | 'semana'> = { chatx: 'dia', redacao: 'semana', transcricao: 'semana' };
 const NOME: Record<Provedor, string> = { anthropic: 'Anthropic (Claude)', openai: 'OpenAI', gemini: 'Google Gemini' };
 
 const env = (k: string) => (Deno.env.get(k) ?? '').trim();
@@ -45,7 +47,7 @@ export const iaDisponivel = (f: Funcao) => cadeia(f).length > 0;
 export function iaStatus() {
   return {
     provedores: (Object.keys(CHAVE) as Provedor[]).map((p) => ({ id: p, nome: NOME[p], ativo: provedorAtivo(p) })),
-    funcoes: (['chatx', 'redacao'] as Funcao[]).map((f) => ({ funcao: f, disponivel: iaDisponivel(f), modelos: cadeia(f).map(([p, m]) => `${p}:${m}`), limite_aluno: limite(f), periodo: PERIODO[f] })),
+    funcoes: (['chatx', 'redacao', 'transcricao'] as Funcao[]).map((f) => ({ funcao: f, disponivel: iaDisponivel(f), modelos: cadeia(f).map(([p, m]) => `${p}:${m}`), limite_aluno: limite(f), periodo: PERIODO[f] })),
     orcamento_dia_usd: Number(env('IA_ORCAMENTO_DIA_USD')) || null,
     precos_configurados: !!env('IA_PRECOS'),
   };
@@ -62,27 +64,38 @@ function custo(modelo: string, tin = 0, tout = 0): number | null {
 }
 
 type Msg = { role: 'user' | 'assistant'; content: string };
-type Pedido = { system: string; mensagens: Msg[]; maxTokens?: number; json?: boolean; timeoutMs?: number };
+// anexos: imagens (JPEG/PNG/WEBP) ou PDF em base64, enviados junto com a última mensagem do aluno.
+export type Anexo = { mime: string; base64: string };
+type Pedido = { system: string; mensagens: Msg[]; maxTokens?: number; json?: boolean; timeoutMs?: number; anexos?: Anexo[] };
 type Resposta = { texto: string; tin?: number; tout?: number };
 
+// Monta as mensagens no formato de cada provedor, com os anexos (se houver) na última mensagem do aluno.
+// deno-lint-ignore no-explicit-any
+function comAnexos(r: Pedido, bloco: (a: Anexo) => any, texto: (t: string) => any): any[] {
+  if (!r.anexos?.length) return r.mensagens;
+  return r.mensagens.map((m, i) => (i === r.mensagens.length - 1 ? { role: m.role, content: [...r.anexos!.map(bloco), texto(m.content)] } : m));
+}
 async function chamar(p: Provedor, modelo: string, r: Pedido): Promise<Resposta> {
   const key = env(CHAVE[p]); const sinal = AbortSignal.timeout(r.timeoutMs ?? 30000); const max = r.maxTokens ?? 800;
   if (p === 'anthropic') {
     const resp = await fetch('https://api.anthropic.com/v1/messages', { method: 'POST', signal: sinal, headers: { 'content-type': 'application/json', 'x-api-key': key, 'anthropic-version': '2023-06-01' },
-      body: JSON.stringify({ model: modelo, max_tokens: max, system: r.system, messages: r.mensagens }) });
+      body: JSON.stringify({ model: modelo, max_tokens: max, system: r.system, messages: comAnexos(r, (a) => a.mime === 'application/pdf'
+        ? { type: 'document', source: { type: 'base64', media_type: a.mime, data: a.base64 } }
+        : { type: 'image', source: { type: 'base64', media_type: a.mime, data: a.base64 } }, (t) => ({ type: 'text', text: t })) }) });
     if (!resp.ok) throw new Error(`HTTP ${resp.status}: ${(await resp.text()).slice(0, 160)}`);
     const j = await resp.json();
     return { texto: (j.content ?? []).map((c: any) => c.text ?? '').join('').trim(), tin: j.usage?.input_tokens, tout: j.usage?.output_tokens };
   }
   if (p === 'openai') {
+    if ((r.anexos ?? []).some((a) => a.mime === 'application/pdf')) throw new Error('PDF não suportado neste provedor');
     const resp = await fetch('https://api.openai.com/v1/chat/completions', { method: 'POST', signal: sinal, headers: { 'content-type': 'application/json', authorization: 'Bearer ' + key },
-      body: JSON.stringify({ model: modelo, max_completion_tokens: max, messages: [{ role: 'system', content: r.system }, ...r.mensagens], ...(r.json ? { response_format: { type: 'json_object' } } : {}) }) });
+      body: JSON.stringify({ model: modelo, max_completion_tokens: max, messages: [{ role: 'system', content: r.system }, ...comAnexos(r, (a) => ({ type: 'image_url', image_url: { url: `data:${a.mime};base64,${a.base64}` } }), (t) => ({ type: 'text', text: t }))], ...(r.json ? { response_format: { type: 'json_object' } } : {}) }) });
     if (!resp.ok) throw new Error(`HTTP ${resp.status}: ${(await resp.text()).slice(0, 160)}`);
     const j = await resp.json();
     return { texto: String(j.choices?.[0]?.message?.content ?? '').trim(), tin: j.usage?.prompt_tokens, tout: j.usage?.completion_tokens };
   }
   const resp = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/${encodeURIComponent(modelo)}:generateContent`, { method: 'POST', signal: sinal, headers: { 'content-type': 'application/json', 'x-goog-api-key': key },
-    body: JSON.stringify({ systemInstruction: { parts: [{ text: r.system }] }, contents: r.mensagens.map((m) => ({ role: m.role === 'assistant' ? 'model' : 'user', parts: [{ text: m.content }] })),
+    body: JSON.stringify({ systemInstruction: { parts: [{ text: r.system }] }, contents: r.mensagens.map((m, i) => ({ role: m.role === 'assistant' ? 'model' : 'user', parts: [{ text: m.content }, ...(i === r.mensagens.length - 1 ? (r.anexos ?? []).map((a) => ({ inlineData: { mimeType: a.mime, data: a.base64 } })) : [])] })),
       generationConfig: { maxOutputTokens: max, ...(r.json ? { responseMimeType: 'application/json' } : {}) } }) });
   if (!resp.ok) throw new Error(`HTTP ${resp.status}: ${(await resp.text()).slice(0, 160)}`);
   const j = await resp.json();

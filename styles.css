@@ -1034,3 +1034,4 @@ body.leitor-aberto{overflow:hidden}
 /* Feedback: no topo no computador; no celular fica no menu lateral (o topo já está cheio) */
 .nav-feedback{display:none}
 @media (max-width:860px){#btnFeedback{display:none}.nav-feedback{display:flex}}
+#redArqInfo{flex-basis:100%}
