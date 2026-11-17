@@ -17,11 +17,14 @@ type Provedor = 'anthropic' | 'openai' | 'gemini';
 const CHAVE: Record<Provedor, string> = { anthropic: 'ANTHROPIC_API_KEY', openai: 'OPENAI_API_KEY', gemini: 'GEMINI_API_KEY' };
 // Modelos padrão: rápido e barato para conversa; mais capaz para corrigir redação.
 const PADRAO: Record<Funcao, [Provedor, string][]> = {
-  chatx: [['anthropic', 'claude-haiku-5-5'], ['openai', 'gpt-4o-mini'], ['gemini', 'gemini-2.5-flash']],
+  // Gemini primeiro (tem plano grátis). Em nov/2026 o plano grátis respondia só no "Flash-Lite": os Flash (latest, 3.8, 3.6)
+  // davam "alta demanda" (503). Por isso o Lite vai primeiro (respostas em ~3 s) e os Flash ficam de reserva.
+  // Nome inexistente responde 404 em ~0,1 s e o próximo é tentado. (O 2.5 Flash foi aposentado pelo Google.)
+  chatx: [['gemini', 'gemini-flash-lite-latest'], ['gemini', 'gemini-flash-latest'], ['gemini', 'gemini-3.8-flash'], ['gemini', 'gemini-3.6-flash'], ['anthropic', 'claude-haiku-5-5'], ['openai', 'gpt-4o-mini']],
   // Redação: Gemini Flash primeiro (cabe no plano grátis do Google); os outros só entram se ele falhar.
-  redacao: [['gemini', 'gemini-2.5-flash'], ['anthropic', 'claude-sonnet-5-5'], ['openai', 'gpt-4o']],
+  redacao: [['gemini', 'gemini-flash-lite-latest'], ['gemini', 'gemini-flash-latest'], ['gemini', 'gemini-3.8-flash'], ['gemini', 'gemini-3.6-flash'], ['anthropic', 'claude-sonnet-5-5'], ['openai', 'gpt-4o']],
   // Transcrição de redação manuscrita (foto ou PDF escaneado): modelos com visão, do mais barato ao mais caro.
-  transcricao: [['gemini', 'gemini-2.5-flash'], ['anthropic', 'claude-haiku-5-5'], ['openai', 'gpt-4o-mini']],
+  transcricao: [['gemini', 'gemini-flash-lite-latest'], ['gemini', 'gemini-flash-latest'], ['gemini', 'gemini-3.8-flash'], ['gemini', 'gemini-3.6-flash'], ['anthropic', 'claude-haiku-5-5'], ['openai', 'gpt-4o-mini']],
 };
 // Chat X: por dia. Redação: por SEMANA (segunda a domingo, horário de Brasília).
 const LIMITE_PADRAO: Record<Funcao, number> = { chatx: 10, redacao: 1, transcricao: 5 };
@@ -82,7 +85,7 @@ async function chamar(p: Provedor, modelo: string, r: Pedido): Promise<Resposta>
       body: JSON.stringify({ model: modelo, max_tokens: max, system: r.system, messages: comAnexos(r, (a) => a.mime === 'application/pdf'
         ? { type: 'document', source: { type: 'base64', media_type: a.mime, data: a.base64 } }
         : { type: 'image', source: { type: 'base64', media_type: a.mime, data: a.base64 } }, (t) => ({ type: 'text', text: t })) }) });
-    if (!resp.ok) throw new Error(`HTTP ${resp.status}: ${(await resp.text()).slice(0, 160)}`);
+    if (!resp.ok) throw new Error(`HTTP ${resp.status}: ${(await resp.text()).replace(/\s+/g, ' ').slice(0, 400)}`);
     const j = await resp.json();
     return { texto: (j.content ?? []).map((c: any) => c.text ?? '').join('').trim(), tin: j.usage?.input_tokens, tout: j.usage?.output_tokens };
   }
@@ -90,14 +93,14 @@ async function chamar(p: Provedor, modelo: string, r: Pedido): Promise<Resposta>
     if ((r.anexos ?? []).some((a) => a.mime === 'application/pdf')) throw new Error('PDF não suportado neste provedor');
     const resp = await fetch('https://api.openai.com/v1/chat/completions', { method: 'POST', signal: sinal, headers: { 'content-type': 'application/json', authorization: 'Bearer ' + key },
       body: JSON.stringify({ model: modelo, max_completion_tokens: max, messages: [{ role: 'system', content: r.system }, ...comAnexos(r, (a) => ({ type: 'image_url', image_url: { url: `data:${a.mime};base64,${a.base64}` } }), (t) => ({ type: 'text', text: t }))], ...(r.json ? { response_format: { type: 'json_object' } } : {}) }) });
-    if (!resp.ok) throw new Error(`HTTP ${resp.status}: ${(await resp.text()).slice(0, 160)}`);
+    if (!resp.ok) throw new Error(`HTTP ${resp.status}: ${(await resp.text()).replace(/\s+/g, ' ').slice(0, 400)}`);
     const j = await resp.json();
     return { texto: String(j.choices?.[0]?.message?.content ?? '').trim(), tin: j.usage?.prompt_tokens, tout: j.usage?.completion_tokens };
   }
   const resp = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/${encodeURIComponent(modelo)}:generateContent`, { method: 'POST', signal: sinal, headers: { 'content-type': 'application/json', 'x-goog-api-key': key },
     body: JSON.stringify({ systemInstruction: { parts: [{ text: r.system }] }, contents: r.mensagens.map((m, i) => ({ role: m.role === 'assistant' ? 'model' : 'user', parts: [{ text: m.content }, ...(i === r.mensagens.length - 1 ? (r.anexos ?? []).map((a) => ({ inlineData: { mimeType: a.mime, data: a.base64 } })) : [])] })),
       generationConfig: { maxOutputTokens: max, ...(r.json ? { responseMimeType: 'application/json' } : {}) } }) });
-  if (!resp.ok) throw new Error(`HTTP ${resp.status}: ${(await resp.text()).slice(0, 160)}`);
+  if (!resp.ok) throw new Error(`HTTP ${resp.status}: ${(await resp.text()).replace(/\s+/g, ' ').slice(0, 400)}`);
   const j = await resp.json();
   return { texto: (j.candidates?.[0]?.content?.parts ?? []).map((x: any) => x.text ?? '').join('').trim(), tin: j.usageMetadata?.promptTokenCount, tout: j.usageMetadata?.candidatesTokenCount };
 }
@@ -122,12 +125,18 @@ export async function iaGerar(db: any, uid: string | null, f: Funcao, r: Pedido)
   for (const [p, modelo] of lista) {
     const t0 = Date.now();
     try {
-      const resp = await chamar(p, modelo, r);
+      let resp: Resposta;
+      try { resp = await chamar(p, modelo, r); }
+      catch (e1) {
+        if (!/HTTP (429|500|503)|timed out/i.test(String((e1 as Error)?.message ?? e1))) throw e1;
+        await new Promise((ok) => setTimeout(ok, 1500));
+        resp = await chamar(p, modelo, r);
+      }
       if (!resp.texto) throw new Error('resposta vazia');
       await db.from('cx_ia_uso').insert({ user_id: uid, funcao: f, provedor: p, modelo, ok: true, tokens_in: resp.tin ?? null, tokens_out: resp.tout ?? null, custo_usd: custo(modelo, resp.tin, resp.tout), ms: Date.now() - t0 });
       return { ok: true, texto: resp.texto, provedor: p, modelo };
     } catch (e) {
-      await db.from('cx_ia_uso').insert({ user_id: uid, funcao: f, provedor: p, modelo, ok: false, erro: String((e as Error)?.message ?? e).slice(0, 300), ms: Date.now() - t0 });
+      await db.from('cx_ia_uso').insert({ user_id: uid, funcao: f, provedor: p, modelo, ok: false, erro: String((e as Error)?.message ?? e).slice(0, 500), ms: Date.now() - t0 });
     }
   }
   return { ok: false, motivo: 'falha', mensagem: 'O serviço de IA não respondeu agora. Tente novamente em alguns minutos.' };
