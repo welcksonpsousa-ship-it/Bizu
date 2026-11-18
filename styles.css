@@ -1035,3 +1035,12 @@ body.leitor-aberto{overflow:hidden}
 .nav-feedback{display:none}
 @media (max-width:860px){#btnFeedback{display:none}.nav-feedback{display:flex}}
 #redArqInfo{flex-basis:100%}
+
+/* Explicar por que errei */
+.expl{margin-top:12px}
+.expl-box{margin-top:10px;padding:12px 14px;border-radius:var(--r-lg);border:1px solid var(--primary-line);background:var(--primary-soft)}
+.expl-box.hidden{display:none}
+.expl-box .expl-tx p{margin:0 0 8px}
+.expl-box .expl-tx p:last-child{margin-bottom:0}
+.expl-aviso{margin:10px 0 0;padding-top:8px;border-top:1px solid var(--border)}
+.expl-erro{border-color:var(--accent-line);background:var(--accent-soft)}

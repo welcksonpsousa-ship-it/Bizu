@@ -7,11 +7,12 @@
 //   ANTHROPIC_API_KEY, OPENAI_API_KEY, GEMINI_API_KEY   → ativam cada provedor (basta um)
 //   IA_CHATX   = "anthropic:claude-haiku-5-5,openai:gpt-4o-mini"   (opcional; ordem de preferência)
 //   IA_REDACAO = "anthropic:claude-sonnet-5-5,openai:gpt-4o"       (opcional)
-//   IA_LIMITE_CHATX (padrão 10/dia), IA_LIMITE_REDACAO (padrão 1/semana)  → por aluno (horário de Brasília)
+//   IA_LIMITE_CHATX (padrão 10/dia), IA_LIMITE_REDACAO (padrão 1/semana), IA_LIMITE_EXPLICAR (padrão 5/dia)  → por aluno (horário de Brasília)
+//   IA_EXPLICAR = "gemini:gemini-flash-lite-latest,anthropic:claude-haiku-5-5"  (opcional; ordem de preferência da função "explicar")
 //   IA_PRECOS = {"claude-haiku-5-5":[1,5]}  → US$ por milhão de tokens [entrada, saída], para estimar custo (opcional)
 //   IA_ORCAMENTO_DIA_USD = 5   → para todas as chamadas do dia quando o custo estimado atingir o valor (opcional)
 
-export type Funcao = 'chatx' | 'redacao' | 'transcricao';
+export type Funcao = 'chatx' | 'redacao' | 'transcricao' | 'explicar';
 type Provedor = 'anthropic' | 'openai' | 'gemini';
 
 const CHAVE: Record<Provedor, string> = { anthropic: 'ANTHROPIC_API_KEY', openai: 'OPENAI_API_KEY', gemini: 'GEMINI_API_KEY' };
@@ -23,12 +24,14 @@ const PADRAO: Record<Funcao, [Provedor, string][]> = {
   chatx: [['gemini', 'gemini-flash-lite-latest'], ['gemini', 'gemini-flash-latest'], ['gemini', 'gemini-3.8-flash'], ['gemini', 'gemini-3.6-flash'], ['anthropic', 'claude-haiku-5-5'], ['openai', 'gpt-4o-mini']],
   // Redação: Gemini Flash primeiro (cabe no plano grátis do Google); os outros só entram se ele falhar.
   redacao: [['gemini', 'gemini-flash-lite-latest'], ['gemini', 'gemini-flash-latest'], ['gemini', 'gemini-3.8-flash'], ['gemini', 'gemini-3.6-flash'], ['anthropic', 'claude-sonnet-5-5'], ['openai', 'gpt-4o']],
+  // "Explicar por que errei": explicação curta a partir dos dados da questão (comentário, lei, jurisprudência). Mesma ordem do Chat X.
+  explicar: [['gemini', 'gemini-flash-lite-latest'], ['gemini', 'gemini-flash-latest'], ['gemini', 'gemini-3.8-flash'], ['gemini', 'gemini-3.6-flash'], ['anthropic', 'claude-haiku-5-5'], ['openai', 'gpt-4o-mini']],
   // Transcrição de redação manuscrita (foto ou PDF escaneado): modelos com visão, do mais barato ao mais caro.
   transcricao: [['gemini', 'gemini-flash-lite-latest'], ['gemini', 'gemini-flash-latest'], ['gemini', 'gemini-3.8-flash'], ['gemini', 'gemini-3.6-flash'], ['anthropic', 'claude-haiku-5-5'], ['openai', 'gpt-4o-mini']],
 };
 // Chat X: por dia. Redação: por SEMANA (segunda a domingo, horário de Brasília).
-const LIMITE_PADRAO: Record<Funcao, number> = { chatx: 10, redacao: 1, transcricao: 5 };
-const PERIODO: Record<Funcao, 'dia' | 'semana'> = { chatx: 'dia', redacao: 'semana', transcricao: 'semana' };
+const LIMITE_PADRAO: Record<Funcao, number> = { chatx: 10, redacao: 1, transcricao: 5, explicar: 5 };
+const PERIODO: Record<Funcao, 'dia' | 'semana'> = { chatx: 'dia', redacao: 'semana', transcricao: 'semana', explicar: 'dia' };
 const NOME: Record<Provedor, string> = { anthropic: 'Anthropic (Claude)', openai: 'OpenAI', gemini: 'Google Gemini' };
 
 const env = (k: string) => (Deno.env.get(k) ?? '').trim();
@@ -50,7 +53,7 @@ export const iaDisponivel = (f: Funcao) => cadeia(f).length > 0;
 export function iaStatus() {
   return {
     provedores: (Object.keys(CHAVE) as Provedor[]).map((p) => ({ id: p, nome: NOME[p], ativo: provedorAtivo(p) })),
-    funcoes: (['chatx', 'redacao', 'transcricao'] as Funcao[]).map((f) => ({ funcao: f, disponivel: iaDisponivel(f), modelos: cadeia(f).map(([p, m]) => `${p}:${m}`), limite_aluno: limite(f), periodo: PERIODO[f] })),
+    funcoes: (['chatx', 'redacao', 'transcricao', 'explicar'] as Funcao[]).map((f) => ({ funcao: f, disponivel: iaDisponivel(f), modelos: cadeia(f).map(([p, m]) => `${p}:${m}`), limite_aluno: limite(f), periodo: PERIODO[f] })),
     orcamento_dia_usd: Number(env('IA_ORCAMENTO_DIA_USD')) || null,
     precos_configurados: !!env('IA_PRECOS'),
   };
@@ -114,7 +117,9 @@ export async function iaGerar(db: any, uid: string | null, f: Funcao, r: Pedido)
   const desde = inicioDoDiaBR();
   if (uid) {
     const { count } = await db.from('cx_ia_uso').select('id', { count: 'exact', head: true }).eq('user_id', uid).eq('funcao', f).eq('ok', true).gte('criado_em', inicioDoPeriodoBR(f));
-    if ((count ?? 0) >= limite(f)) return { ok: false, motivo: 'limite', mensagem: PERIODO[f] === 'semana' ? `Você já usou ${limite(f)} correção(ões) nesta semana. O limite renova na segunda-feira.` : `Você atingiu o limite de ${limite(f)} mensagem(ns) de hoje. Renova à meia-noite.` };
+    if ((count ?? 0) >= limite(f)) return { ok: false, motivo: 'limite', mensagem: PERIODO[f] === 'semana'
+      ? `Você já usou ${limite(f)} ${f === 'transcricao' ? 'leitura(s) de redação' : 'correção(ões)'} nesta semana. O limite renova na segunda-feira.`
+      : `Você atingiu o limite de ${limite(f)} ${f === 'explicar' ? 'explicação(ões) por IA' : 'mensagem(ns)'} de hoje. Renova à meia-noite.` };
   }
   const orc = Number(env('IA_ORCAMENTO_DIA_USD'));
   if (orc > 0) {

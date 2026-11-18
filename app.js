@@ -705,7 +705,9 @@ function ligarQuestoes(box) {
         const g = $$('.gab-box', card)[0];
         const ex = [r.lei_relacionada ? `Lei relacionada: ${esc(r.lei_relacionada)}` : '', r.juris_relacionada ? `Jurisprudência: ${esc(r.juris_relacionada)}` : '', r.legislacao_considerada ? `Legislação considerada: ${esc(r.legislacao_considerada)}` : ''].filter(Boolean);
         g.innerHTML = `<div class="gab-title">${r.correta ? 'Você acertou!' : 'Você errou.'} Gabarito: ${String.fromCharCode(65 + r.gabarito)}</div>${r.comentario ? `<div>${esc(String(r.comentario).replace(/^\s*Gabarito( oficial)?( VUNESP)?\s*:\s*[A-E]\.?\s*/i, ''))}</div>` : '<div class="muted small">Esta questão não tem comentário detalhado.</div>'}${ex.length ? `<div class="muted small mt1">${ex.join(' · ')}</div>` : ''}${r.fonte ? `<div class="muted small mt1">Fonte: ${esc(r.fonte)}</div>` : ''}`;
+        if (!r.correta) g.insertAdjacentHTML('beforeend', `<div class="expl"><button type="button" class="btn-blue btn-sm btn-explicar" data-r="${+b.dataset.i}">EXPLICAR POR QUE ERREI</button><div class="expl-box hidden" role="status" aria-live="polite"></div></div>`);
         g.classList.remove('hidden');
+        const be = $$('.btn-explicar', g)[0]; if (be) be.addEventListener('click', () => explicarErro(card, be));
       } catch (e) { alert(e.message); $$('.opcao', card).forEach((x) => { x.disabled = false; }); }
     }));
     const bc = $$('.btn-com', card)[0]; if (bc) bc.addEventListener('click', () => alternarComentarios(card, bc));
@@ -714,6 +716,20 @@ function ligarQuestoes(box) {
   });
 }
 
+/* ---------------- EXPLICAR POR QUE ERREI (IA, só com os dados da questão) ---------------- */
+async function explicarErro(card, btn) {
+  const box = $$('.expl-box', card)[0];
+  btn.disabled = true; box.className = 'expl-box'; box.innerHTML = ld('Analisando o seu erro... pode levar alguns segundos');
+  try {
+    const r = await api('/questoes/explicar', { body: { questao_id: card.dataset.q, resposta: +btn.dataset.r } });
+    box.innerHTML = `<div class="expl-tx">${textoFmt(r.texto)}</div><p class="expl-aviso muted small">Explicação gerada por IA a partir do comentário e da Lei Seca do assunto. Confira a fonte oficial.</p>`;
+    btn.textContent = 'Explicação abaixo'; // a explicação fica na tela; novo pedido só ao recarregar a questão (evita gastar o limite diário)
+  } catch (e) {
+    box.className = 'expl-box expl-erro';
+    box.innerHTML = `<p class="small">${esc(e.message || 'Não foi possível gerar a explicação agora.')}</p>`;
+    btn.disabled = false; // se foi falha temporária, o aluno pode tentar de novo
+  }
+}
 /* ---------------- COMENTÁRIOS DOS ALUNOS NAS QUESTÕES ---------------- */
 function quandoCom(iso) {
   const s = (Date.now() - new Date(iso).getTime()) / 1000;
@@ -1452,7 +1468,7 @@ async function renderAdmIA() {
     box.innerHTML = `<div class="card mb2"><div class="card-title">Provedores</div>
       <p class="muted small">As chaves ficam só nos segredos da função no Supabase (Edge Functions → Secrets): ANTHROPIC_API_KEY, OPENAI_API_KEY, GEMINI_API_KEY. Nenhuma chave é enviada ao navegador.</p>
       <div class="flex gap1" style="flex-wrap:wrap">${st.provedores.map((p) => `<span class="badge ${p.ativo ? 'bok' : ''}">${esc(p.nome)}: ${p.ativo ? 'ativo' : 'sem chave'}</span>`).join('')}</div></div>
-      <div class="card mb2"><div class="card-title">Funções</div><div class="tbl-wrap"><table class="tbl"><thead><tr><th>Função</th><th>Disponível</th><th>Modelos (ordem de uso)</th><th>Limite por aluno</th></tr></thead><tbody>${st.funcoes.map((f) => `<tr><td>${({ chatx: 'Chat X', redacao: 'Correção de redação', transcricao: 'Leitura de redação manuscrita' })[f.funcao] || f.funcao}</td><td>${f.disponivel ? 'Sim' : 'Não'}</td><td>${esc(f.modelos.join(' → ') || '—')}</td><td>${f.limite_aluno} por ${f.periodo}</td></tr>`).join('')}</tbody></table></div>
+      <div class="card mb2"><div class="card-title">Funções</div><div class="tbl-wrap"><table class="tbl"><thead><tr><th>Função</th><th>Disponível</th><th>Modelos (ordem de uso)</th><th>Limite por aluno</th></tr></thead><tbody>${st.funcoes.map((f) => `<tr><td>${({ chatx: 'Chat X', redacao: 'Correção de redação', transcricao: 'Leitura de redação manuscrita', explicar: 'Explicar por que errei' })[f.funcao] || f.funcao}</td><td>${f.disponivel ? 'Sim' : 'Não'}</td><td>${esc(f.modelos.join(' → ') || '—')}</td><td>${f.limite_aluno} por ${f.periodo}</td></tr>`).join('')}</tbody></table></div>
       <p class="muted small mt1">Orçamento diário: ${st.orcamento_dia_usd ? 'US$ ' + st.orcamento_dia_usd : 'não definido'} · preços para estimar custo: ${st.precos_configurados ? 'configurados' : 'não configurados (custo não é estimado)'}.</p></div>
       <div class="card"><div class="card-title">Uso nos últimos 30 dias</div><div class="tbl-wrap"><table class="tbl"><thead><tr><th>Função</th><th>Modelo</th><th>Hoje</th><th>30 dias</th><th>Erros</th><th>Tokens (entrada/saída)</th><th>Custo estimado</th></tr></thead><tbody>${r.uso.map((u) => `<tr><td>${esc(u.funcao)}</td><td>${esc(u.modelo)}</td><td>${u.chamadas_hoje}</td><td>${u.chamadas_30d}</td><td>${u.erros_30d}</td><td>${u.tokens_in} / ${u.tokens_out}</td><td>${u.custo_usd ? 'US$ ' + u.custo_usd.toFixed(4) : '—'}</td></tr>`).join('') || '<tr><td colspan="7" class="muted">Nenhum uso registrado.</td></tr>'}</tbody></table></div></div>`;
   } catch (e) { box.innerHTML = emp(e.message); }
