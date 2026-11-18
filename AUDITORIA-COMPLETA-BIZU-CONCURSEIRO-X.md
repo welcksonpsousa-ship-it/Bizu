@@ -266,3 +266,9 @@ Fonte: pasta MENTORIA/SIMULADOS/SD PM SP. Arquivos públicos (abrem e baixam sem
 - **Jurisprudência:** incluídas súmulas (texto oficial) e teses (síntese identificada, com número do processo) em 5 assuntos da PM-SP e 19 da GCM. Lei seca incluída em "Uso de algemas" (CPP arts. 292 e 474, § 3º; Decreto 8.858/2016) e na Declaração Universal dos Direitos Humanos (arts. 1º, 3º, 5º, 9º e 11).
 - **Sem jurisprudência de propósito:** "Sinalização de trânsito" (o site agora diz que o tema é cobrado pela letra da lei) e os 2 assuntos de legislação municipal (variam por cidade; o site já explica).
 - Questões por subassunto conferidas: todos os 270 têm pelo menos 5 questões.
+
+## 35. "Explicar por que errei" (18/11/2026)
+
+- Botão aparece só depois de uma resposta errada. A IA recebe apenas os dados da questão (enunciado, alternativas, gabarito, alternativa marcada, comentário, lei/jurisprudência/legislação relacionadas) e é instruída a não citar nada de memória.
+- Rede de segurança no servidor: frases com número de artigo, lei, súmula, tema ou processo que não conste nos dados da questão são removidas antes de mostrar ao aluno (conferência por número inteiro).
+- Rota `POST /questoes/explicar`: só funciona se o aluno já respondeu e errou aquela questão. Limite de 5 por dia (variável `IA_LIMITE_EXPLICAR`), modelos: Gemini Flash-Lite primeiro, depois Flash, claude-haiku-5-5 e gpt-4o-mini. Uso registrado em `cx_ia_uso` (função `explicar`). Nada é gravado como material de estudo.
